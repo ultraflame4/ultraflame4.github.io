@@ -1,0 +1,38 @@
+
+
+
+*{
+    font-family: Consolas;
+}
+
+
+.center{
+    text-align: center;
+}
+
+.project-list-item{
+    font-size: 1em;
+    margin: 1em;
+    padding: .1em;
+}
+
+.project-list-item:hover{
+    padding-left: 2em;
+    color: #a0a0a0;
+}
+
+hr{
+    height: 5px;
+    border-width: 0;
+    background-color: #cccccc;
+}
+
+h1{
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+h2{
+    font-size: 2.5em;
+    font-weight: lighter;
+}
