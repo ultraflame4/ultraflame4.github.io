@@ -21,7 +21,8 @@
     color: #a0a0a0;
 }
 
-hr{
+#lhr{
+
     height: 5px;
     border-width: 0;
     background-color: #cccccc;
