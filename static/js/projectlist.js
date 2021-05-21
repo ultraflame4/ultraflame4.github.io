@@ -2,6 +2,7 @@
 
 function populateList(){
     addRepoToList("OnlineTicTacToe",true)
+    addRepoToList("DiscordBotClient")
     addRepoToList("Rock-Paper-Scissors")
     addRepoToList("Rock-Paper-Scissors")
     addRepoToList("PythonQtBrowser")
