@@ -4,6 +4,7 @@ function populateList(){
     addRepoToList("OnlineTicTacToe",true)
     addRepoToList("Minesweeper",true)
     addRepoToList("DiscordBotClient")
+    addRepoToList("TiledImage")
     addRepoToList("Rock-Paper-Scissors")
     addRepoToList("PythonQtBrowser")
     addRepoToList("Binosaur-game")
