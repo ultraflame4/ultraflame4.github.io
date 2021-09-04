@@ -1,0 +1,69 @@
+
+/*This file contains css shared across websites*/
+
+*{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI";
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: dotted;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#horizontal-line {
+    border-width: 0;
+    height: 2px;
+    color: white;
+}
+
+.container{
+    display: inherit;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+#nav_header{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 64px;
+    background-color: black;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+
+}
+
+
+#nav_header_icon{
+    text-align: center;
+    padding-right: 12px;
+    width: 128px;
+    color: white;
+    font-size:20px;
+}
+
+
+#nav_header #nav_header_items *{
+    width: 128px;
+    font-size:20px;
+    color: white;
+    text-align: center;
+}
