@@ -27,11 +27,19 @@ function addRepoToList(name,has_page=false){
     list_item.textContent = name
     list_item.dataset.url = "https://github.com/ultraflame4/"+name
     list_item.dataset.has_site=has_page
+    if (has_page){
+
+    }
 
 
     list.appendChild(list_item)
 
 
+}
+
+
+function openProjectSite(tag){
+    window.open("https://ultraflame4.github.io/"+tag.dataset.name)
 }
 
 function projectlistItemClicked(tag){
