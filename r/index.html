@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ultr42 | < ( ' v ' ) ></title>
+    <link href="/css/core.css" rel="stylesheet">
+</head>
+<body style="overflow: hidden">
+<div class="row" id="nav_header">
+    <div class="container">
+        <div id="nav_header_icon"><a href="https://ultraflame4.github.io" style="color: white;">ultr42</a></div>
+        <svg height="25px" style="width: 10px">
+            <line style="stroke:white;stroke-width:5" x1="0" x2="0" y1="0" y2="25"/>
+        </svg>
+    </div>
+    
+    <div class="row" id="nav_header_items">
+        <a href="../#about">About</a>
+        <a href="../#project-list">Projects</a>
+        <a href="../#others">Others</a>
+        <a href="../#contact">Contact</a>
+        <a href="../#socials">Socials</a>
+    </div>
+</div>
+
+
+
+<iframe style="height: 100vh"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen frameborder="0"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player"
+        ></iframe>
+
+<div style="display: flex;align-items: center;justify-content: center">
+    <h1 id="dancing_guy" style="position: fixed; top:256px;font-size: 128px;background: white;padding: 8px;width: fit-content">
+        \( ' v ' )/
+    </h1>
+</div>
+
+<script>
+    window.addEventListener("load", () => {
+        setInterval(() => {
+            if (document.getElementById("dancing_guy").textContent === "\\( ' v ' )/") {
+                document.getElementById("dancing_guy").textContent = "<( ' v ' )>"
+            } else {
+                document.getElementById("dancing_guy").textContent = "\\( ' v ' )/"
+            }
+        }, 500)
+    })
+</script>
+
+<footer style="position:fixed;bottom: 0">
+    <div class="row">
+        <p>Website created and design by ultraflame42 (alias: ultraflame4,ultr42)</p>
+        |
+        <p>Email: <a href="mailto:ultraflame4@gmail.com" style="text-decoration: underline">ultraflame4@gmail.com</a>
+        </p>
+        |
+        <p>Website: <a href="https://ultraflame4.github.io/"
+                       style="text-decoration: underline">ultraflame4.github.io</a></p>
+        |
+        <p>Github: <a href="https://ultraflame4.github.io/"
+                      style="text-decoration: underline">ultraflame4.github.io/</a></p>
+    </div>
+</footer>
+</body>
+</html>

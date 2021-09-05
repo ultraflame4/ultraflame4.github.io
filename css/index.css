@@ -8,13 +8,6 @@
     position: relative;
 }
 
-.sections{
-    padding-top: 64px;
-    margin: 16px 0px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
 
 #project-list-container {
     position: relative;
