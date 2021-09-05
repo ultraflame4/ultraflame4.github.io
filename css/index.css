@@ -16,14 +16,17 @@
     overflow: hidden;
 }
 
-#project-list-container{
+#project-list-container {
     position: relative;
     box-sizing: border-box;
     border-radius: 16px;
     border: 4px solid black;
     justify-content: flex-start;
-    height: 512px;
-    padding: 16px;
+    height: 612px;
+
+
+    padding: 8px;
+    justify-content: center;
     flex-wrap: wrap;
     overflow-y: scroll;
 }
