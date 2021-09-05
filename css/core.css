@@ -14,8 +14,30 @@ html{
 }
 
 a{
+    text-decoration: none;
+}
+
+footer{
     color: white;
-    text-decoration: dotted;
+    height: 48px;
+    width: 100%;
+    background-color: black;
+}
+
+footer div{
+    box-sizing: border-box;
+    padding: 8px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+footer div *{
+    color: white;
+    margin: 0 8px;
+    width: fit-content;
 }
 
 .column{
@@ -28,7 +50,7 @@ a{
     flex-direction: row;
 }
 
-#horizontal-line {
+.horizontal-line {
     border-width: 0;
     height: 2px;
     color: white;

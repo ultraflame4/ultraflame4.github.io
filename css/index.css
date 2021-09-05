@@ -25,7 +25,7 @@
     height: 612px;
 
 
-    padding: 8px;
+    padding: 32px 8px;
     justify-content: center;
     flex-wrap: wrap;
     overflow-y: scroll;
@@ -43,8 +43,8 @@
 .project-item{
 
     display: flex;
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
     padding: 0;
     align-items: center;
     justify-content: center;
@@ -60,15 +60,15 @@
     transition: height .5s, width .5s;
     border-radius: 16px;
     background-color: white;
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     z-index: 0;
 }
 .project-item-content:hover{
 
     z-index: 1;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
 }
 
 .project-item-content-text{
@@ -130,4 +130,23 @@
 
 .project-item-more:active{
     background-color: black;
+}
+
+#contact a{
+    color: black;
+}
+
+
+#socials div{
+    justify-content: center;
+}
+
+#socials div a{
+    width: fit-content;
+}
+
+#socials div a img {
+    width: 40px;
+    margin: 0 16px;
+
 }
