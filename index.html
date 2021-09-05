@@ -9,8 +9,8 @@
 <body>
 
 
-<div id="top-banner" class="column">
-    <div style="align-items: center;margin: 8px" class="container">
+<div class="column" id="top-banner">
+    <div class="container" style="align-items: center;margin: 8px">
         <h1>ultr42</h1>
     </div>
     <p>
@@ -20,33 +20,82 @@
     </p>
     
     
-    <a style="position: absolute;bottom: 10px" href="./#about">
+    <a href="./#about" style="position: absolute;bottom: 10px">
         / ( ' v ' ) \
         <br>
         v scroll v
     </a>
 </div>
 <div id="horizontal-line"></div>
-<div id="nav_header" class="row">
+<div class="row" id="nav_header">
     <div class="container">
         <div id="nav_header_icon"><a href=".s">ultr42</a></div>
         <svg height="25px" style="width: 10px">
-            <line x1="0" y1="0" x2="0" y2="25" style="stroke:white;stroke-width:5" />
+            <line style="stroke:white;stroke-width:5" x1="0" x2="0" y1="0" y2="25"/>
         </svg>
     </div>
     
-    <div id="nav_header_items" class="row">
+    <div class="row" id="nav_header_items">
         <a href="./#about">About</a>
         <a href="./#project-list">Projects</a>
         <a href="./#contact">Contact</a>
         <a href="./#others">Others</a>
     </div>
 </div>
+
+<div class="sections column" id="about">
+    <h1>About Me</h1>
+    <p>
+        Im an amateur teen programmer who started programming in ~2018-2019.
+        <br>
+        I started programming because i wanted to create games and cool stuff, outside of minecraft, so that they were
+        more accessible.
+        <br>
+        I've since then became alot better and also have learnt a wide variety of programming languages listed below
+        <br>
+        Python , C++ (meh) , C# (unity) , Java (meh), JavaScript, Typescript.
+    
+    </p>
+</div>
+
+<div class="sections column" id="project-list">
+    <h1>Projects</h1>
+    <p> Here you can find a list of my projects!</p>
+    <br>
+    <div class="container" style="width: 100%;padding: 0 32px">
+        <div class="row" id="project-list-container">
+            <div class="project-item">
+                <div class="project-item-content column">
+                    <div class="project-item-content-text column">
+                    <h1>
+                        Project Title
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    </p>
+                    </div>
+                    <div class="project-item-content-links row">
+                        <a class="project-item-more">
+                            Go
+                        </a>
+                        <a class="project-item-extlink"><img src="./assets/globe.svg"></a>
+                        <a class="project-item-extlink"><img src="./assets/GitHub-Mark-64px.png"></a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+
+</div>
 <script>
     let height = document.getElementById("top-banner").clientHeight;
-    let header_height = document.getElementById("nav_header").clientHeight+5;
-    document.getElementById("top-banner").style.height = height - header_height+"px";
-    
+    let header_height = document.getElementById("nav_header").clientHeight + 5;
+    document.getElementById("top-banner").style.height = height - header_height + "px";
+
 </script>
 
 
