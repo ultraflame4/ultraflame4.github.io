@@ -1,5 +1,5 @@
 
-#top-banner{
+#top-banner {
     height: 100vh;
     background-color: black;
     color: white;
@@ -24,16 +24,16 @@
     overflow-y: scroll;
 }
 
-#project-list-container::-webkit-scrollbar{
+#project-list-container::-webkit-scrollbar {
     width: 5px;
 }
 
-#project-list-container::-webkit-scrollbar-thumb{
+#project-list-container::-webkit-scrollbar-thumb {
     background-color: black;
     border-radius: 16px;
 }
 
-.project-item{
+.project-item {
 
     display: flex;
     width: 250px;
@@ -45,7 +45,7 @@
 
 }
 
-.project-item-content{
+.project-item-content {
     position: absolute;
     box-sizing: border-box;
     padding: 8px;
@@ -57,20 +57,21 @@
     height: 240px;
     z-index: 0;
 }
-.project-item-content:hover{
+
+.project-item-content:hover {
 
     z-index: 1;
     width: 300px;
     height: 300px;
 }
 
-.project-item-content-text{
+.project-item-content-text {
     overflow: hidden;
 
     justify-content: center;
 }
 
-.project-item-content-text *{
+.project-item-content-text * {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -84,7 +85,7 @@
     margin-bottom: 8px;
 }
 
-.project-item-content-links{
+.project-item-content-links {
     box-sizing: border-box;
     padding-top: 8px;
     min-height: fit-content;
@@ -98,11 +99,11 @@
     height: 32px;
 }
 
-.project-item-extlink{
+.project-item-extlink {
     width: 32px;
 }
 
-.project-item-more{
+.project-item-more {
     border-radius: 4px;
     background-color: #57F287;
     line-height: 32px;
@@ -119,24 +120,33 @@
 }
 
 
-.project-item-more:hover{
+.project-item-more:hover {
     background-color: #aFa;
 }
 
-.project-item-more:active{
+.project-item-more:active {
     background-color: black;
 }
 
-#contact a{
+#legend_box img {
+    width: 32px;
+    height: 32px;
+}
+
+#legend_box * {
+    padding-left: 4px;
+}
+
+#contact a {
     color: black;
 }
 
 
-#socials div{
+#socials div {
     justify-content: center;
 }
 
-#socials div a{
+#socials div a {
     width: fit-content;
 }
 
@@ -146,6 +156,6 @@
 
 }
 
-a img[disabled]{
+a img[disabled] {
     opacity: 20%;
 }
