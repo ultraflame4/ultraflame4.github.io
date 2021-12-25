@@ -1,4 +1,8 @@
-
+*
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+  @extend .m-0
 
 $color-dark1: #304630
 $color-dark2: #2c441e
@@ -24,6 +28,10 @@ $size-10: 100px
 
 .fw
   width: 100%
+
+.fh
+  height: 100%
+
 
 .box-0
   @extend .m-0
@@ -53,15 +61,16 @@ $size-10: 100px
 .m-sides-20px
   margin-left: 20px
   margin-right: 20px
+
+
+
 body
   @extend .box-0
   color: $color-white1
+  overflow: auto
+  width: 100vw
+  height: 100vh
 
-*
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
-  @extend .m-0
 
 h1
   font-size: $size-6
