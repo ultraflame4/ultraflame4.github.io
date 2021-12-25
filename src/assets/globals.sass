@@ -1,0 +1,90 @@
+
+
+$color-dark1: #304630
+$color-dark2: #2c441e
+$color-white1: #f3faf0
+$color-white2: #dadcd8
+
+$size-1 : 10px
+$size-2 : 20px
+$size-3 : 30px
+$size-4 : 40px
+$size-5 : 50px
+$size-6 : 50px
+$size-7 : 70px
+$size-8 : 80px
+$size-9 : 90px
+$size-10: 100px
+
+.m-0
+  margin: 0
+
+.p-0
+  padding: 0
+
+.fw
+  width: 100%
+
+.box-0
+  @extend .m-0
+  @extend .p-0
+
+.row-v-center
+  align-items: center
+.row-h-center
+  justify-content: center
+
+.p-sides-10px
+  padding-left: 10px
+  padding-right: 10px
+.p-sides-20px
+  padding-left: 20px
+  padding-right: 20px
+.p-sides-30px
+  padding-left: 30px
+  padding-right: 30px
+.p-sides-40px
+  padding-left: 40px
+  padding-right: 40px
+
+.m-sides-10px
+  margin-left: 10px
+  margin-right: 10px
+.m-sides-20px
+  margin-left: 20px
+  margin-right: 20px
+body
+  @extend .box-0
+  color: $color-white1
+
+*
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+  @extend .m-0
+
+h1
+  font-size: $size-6
+h2
+  font-size: $size-5
+h3
+  font-size: $size-4
+h4
+  font-size: $size-3
+h5
+  font-size: $size-2
+h6
+  font-size: $size-1
+
+.navbaritem-container
+  max-width: 200px
+  height: 100%
+  display: flex
+  @extend .row-h-center
+  @extend .row-v-center
+
+
+h1,h2,h3,h4,h5,h6
+  a
+    text-decoration: none
+    color: inherit
