@@ -8,7 +8,7 @@
       <h1>ultr42</h1>
       <p>A cool site for my projects and other cool stuff</p>
     </div>
-    <div id="scroll-link" title="Scroll down. There is more below">
+    <div id="scroll-link" title="Scroll down. There is more below" @click="scrolldowb()">
       <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
         <path d="m18.707 12.707-1.414-1.414L13 15.586V6h-2v9.586l-4.293-4.293-1.414 1.414L12 19.414z"></path>
       </svg>
@@ -24,6 +24,9 @@ export default {
   name: "HomeBanner",
   components: {SlideShow},
   methods: {
+    scrolldowb(){
+      window.location.replace("http://localhost:3000/#projects-view")
+    },
     getImages() {
       //https://wallpapercave.com/wp/wp2077533.jpg,
       return [
@@ -50,12 +53,11 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@import "/src/assets/globals"
+@import "../../assets/globals"
 #container
-  height: 100%
-  width: 100%
+  height: calc(100vh - $size-7)
+  width: 100vw
   position: relative
-
   #layer
     width: 100%
     height: 100%

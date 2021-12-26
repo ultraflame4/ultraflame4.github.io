@@ -89,15 +89,13 @@ export default {
 
     updateSnapButtons() {
       let children = this.$refs.snapbuttons.children
-      console.log(children)
       for (var i = 0; i < children.length; i++) {
         var child = children[i];
         if (child.dataset.index == this.currentIndex){
           child.dataset.s="true"
-          console.log(children[i])
         }
         else{
-          child.firstChild.dataset.s="false"
+          child.dataset.s="false"
         }
       }
     }

@@ -2,10 +2,11 @@
   <div id="nav-header">
     <h4 id="title"><a href="/">ultr42</a></h4>
     <div id="items">
-      <NavHeaderPageLink title="Projects" link="/#projects"/>
-      <NavHeaderPageLink title="Contact" link="/#contact"/>
+      <NavHeaderPageLink title="Home" link="/#home"/>
+      <NavHeaderPageLink title="Projects" link="/#projects-view"/>
       <NavHeaderPageLink title="Socials" link="/#socials"/>
       <NavHeaderPageLink title="About" link="/#about"/>
+      <NavHeaderPageLink title="Contact" link="/#contact"/>
       <NavHeaderPageLink title="Others" link="/#others"/>
     </div>
   </div>
@@ -26,22 +27,23 @@ export default {
   @extend .m-0
   @extend .fw
   @extend .row-v-center
-  height: $size-8
+  height: $size-7
   background-color: $color-dark1
   color: $color-white1
   display: flex
-
+  position: sticky
+  top: 0
   #title
     width: 200px
 
   #items
-
     display: flex
     flex-grow: 1
     justify-content: flex-end
     column-gap: $size-1
     height: 100%
     padding-right: 100px
+
 
 
 </style>

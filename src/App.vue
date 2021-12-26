@@ -9,6 +9,10 @@
 
 <style lang="sass">
 @import "assets/globals"
+body
+  background-color: $color-dark2
+
+
 #app
   @extend .box-0
   font-family: Avenir, Helvetica, Arial, sans-serif
@@ -16,7 +20,8 @@
   -moz-osx-font-smoothing: grayscale
   text-align: center
   width: 100%
-  height: 100%
-  overflow: auto
+  height: 100vh
+  overflow-y: auto
+
 
 </style>

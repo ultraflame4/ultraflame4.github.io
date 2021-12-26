@@ -3,14 +3,16 @@
   white-space: nowrap
   text-overflow: ellipsis
   @extend .m-0
+  scroll-behavior: smooth
 
-
-$color-dark1: #074d2d
-$color-dark2: #254414
+$color-dark1: #178051
+$color-dark2: #012516
 $color-mid1: #01945a
 $color-mid2: #05945d
+$color-mid3: #c3dc42
 $color-white1: #f6fff1
 $color-white2: #dadcd8
+$color-white3: #fffbe6
 
 $size-1 : 10px
 $size-2 : 20px
@@ -68,12 +70,18 @@ $size-10: 100px
 .txt-shadow
   text-shadow: 2px 2px 1px #111
 
+.full-page
+  height: 100vh
+  width: 100vw
+  padding-top: $size-9
+
 body
   @extend .box-0
   color: $color-white1
-  overflow: auto
   width: 100vw
-  height: 100vh
+
+html
+  overflow: auto
 
 a
   color: $color-white2

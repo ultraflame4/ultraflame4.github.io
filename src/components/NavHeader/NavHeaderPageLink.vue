@@ -1,6 +1,6 @@
 <template>
   <div class="navbaritem-container">
-    <button @click="open_link(link)">
+    <button @click="scrollto(link)">
       <h5>
         {{title}}
       </h5>
@@ -13,8 +13,8 @@ export default {
   name: "NavHeaderPageLink",
   props:["title","link"],
   methods:{
-    open_link(url:string){
-      window.open(url,"_self")
+    scrollto(url:string){
+      window.location.assign(url)
     }
   }
 }
@@ -30,6 +30,7 @@ div
     border-radius: 10px
     h5
       color: $color-white2
+
     @extend .p-sides-30px
 
   button:hover
