@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@import "@/assets/globals"
+@import "/src/assets/globals"
 #nav-header
   @extend .m-0
   @extend .fw

@@ -20,8 +20,8 @@ export default {
     getImages() {
       //https://wallpapercave.com/wp/wp2077533.jpg,
       return [
-        "/src/assets/tiledimage0.png",
-        "/src/assets/tiledimage0.png"
+        {url:"/src/assets/tiledimage0.png",text:"Original image from https://wallpapercave.com/wp/wp2077533.jpg"},
+        {url:"/src/assets/onlinetictactoe.png",text:""},
       ]
     }
   }

@@ -4,8 +4,11 @@
   text-overflow: ellipsis
   @extend .m-0
 
+
 $color-dark1: #304630
 $color-dark2: #2c441e
+$color-mid1: #4c8026
+$color-mid2: #42a11d
 $color-white1: #f3faf0
 $color-white2: #dadcd8
 
@@ -62,7 +65,8 @@ $size-10: 100px
   margin-left: 20px
   margin-right: 20px
 
-
+.txt-shadow
+  text-shadow: 3px 3px 3px black
 
 body
   @extend .box-0
@@ -71,6 +75,8 @@ body
   width: 100vw
   height: 100vh
 
+a
+  color: $color-white2
 
 h1
   font-size: $size-6
