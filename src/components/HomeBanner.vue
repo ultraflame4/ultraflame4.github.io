@@ -1,13 +1,20 @@
 <template>
   <div id="container">
-    <SlideShow :images="getImages()">
-      <img ref="im" src="/src/assets/tiledimage0.png"
-           alt="A beautiful picture created by tiling together many minecraft blocks"/>
-    </SlideShow>
+    <SlideShow :images="getImages()"/>
     <div id="layer">
+    </div>
 
+    <div id="banner-title">
+      <h1>ultr42</h1>
+      <p>A cool site for my projects and other cool stuff</p>
+    </div>
+    <div id="scroll-link" title="Scroll down. There is more below">
+      <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+        <path d="m18.707 12.707-1.414-1.414L13 15.586V6h-2v9.586l-4.293-4.293-1.414 1.414L12 19.414z"></path>
+      </svg>
     </div>
   </div>
+
 </template>
 
 <script lang="ts">
@@ -30,11 +37,11 @@ export default {
         },
         {
           url: "/src/assets/bgario.png",
-          text:"Python Bgario. an Agario inspired game created in python."
+          text: "Python Bgario. an Agario inspired game created in python."
         },
         {
           url: "/src/assets/minesweeper.png",
-          text:"Minesweeper. Created using css, html and javascript"
+          text: "Minesweeper. Created using css, html and javascript"
         }
       ]
     }
@@ -58,6 +65,38 @@ export default {
     left: 0
     top: 0
     pointer-events: none
+
+  #banner-title
+    pointer-events: auto
+    position: absolute
+    width: fit-content
+    height: fit-content
+    margin: auto
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    p
+      color: $color-white2
+
+  #scroll-link
+    position: absolute
+    width: fit-content
+    height: fit-content
+    top: 400px
+    bottom: 0
+    right: 0
+    left: 0
+    margin: auto
+    display: flex
+    flex-direction: column
+    transition: transform 0.2s ease
+    cursor: pointer
+    svg
+      fill: rgba($color-white2,0.6)
+
+  #scroll-link:hover
+    transform: translate(0,10px)
 
 
 </style>

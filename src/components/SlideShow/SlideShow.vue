@@ -8,13 +8,13 @@
       </SlideshowItem>
     </div>
 
-    <button class="arrows" id="arrow-l" @click="scrollNext(true)">
+    <button class="arrows" id="arrow-l" @click="scrollNext(true)" title="Go to previous page">
       <svg xmlns="http://www.w3.org/2000/svg" width="76" height="72" viewBox="0 0 24 24"
            style="fill: rgba(255, 255, 255, 1);">
         <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
       </svg>
     </button>
-    <button class="arrows" id="arrow-r" @click="scrollNext()">
+    <button class="arrows" id="arrow-r" @click="scrollNext()" title="Go to next page">
       <svg xmlns="http://www.w3.org/2000/svg" width="76" height="72" viewBox="0 0 24 24"
            style="fill: rgba(255, 255, 255, 1);">
         <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
@@ -46,7 +46,7 @@ export default {
     }
   },
   created() {
-    this.slideshowLoop = setInterval(()=>this.slideShowLoop(),5000)
+    this.slideshowLoop = setInterval(()=>this.slideShowLoop(),7000)
   },
   beforeUnmount() {
     clearInterval(this.slideshowLoop)
@@ -94,9 +94,10 @@ export default {
         var child = children[i];
         if (child.dataset.index == this.currentIndex){
           child.dataset.s="true"
+          console.log(children[i])
         }
         else{
-          child.dataset.s="false"
+          child.firstChild.dataset.s="false"
         }
       }
     }
@@ -116,6 +117,8 @@ export default {
   #slidersnap-buttons
     position: absolute
     bottom: $size-5
+    left: 0
+    right: 0
     width: 100%
     display: flex
     justify-content: center

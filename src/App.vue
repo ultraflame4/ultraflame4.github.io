@@ -17,7 +17,6 @@
   text-align: center
   width: 100%
   height: 100%
-  color: #2c3e50
   overflow: auto
 
 </style>

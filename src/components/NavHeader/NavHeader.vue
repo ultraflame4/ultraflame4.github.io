@@ -2,10 +2,10 @@
   <div id="nav-header">
     <h4 id="title"><a href="/">ultr42</a></h4>
     <div id="items">
-      <NavHeaderPageLink title="About" link="/#about"/>
       <NavHeaderPageLink title="Projects" link="/#projects"/>
       <NavHeaderPageLink title="Contact" link="/#contact"/>
       <NavHeaderPageLink title="Socials" link="/#socials"/>
+      <NavHeaderPageLink title="About" link="/#about"/>
       <NavHeaderPageLink title="Others" link="/#others"/>
     </div>
   </div>
