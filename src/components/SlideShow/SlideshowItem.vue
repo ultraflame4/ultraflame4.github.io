@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="url">
+    <img :src="url" :alt="text">
     <p v-html="formatText(text)"></p>
   </div>
 </template>
@@ -42,8 +42,8 @@ div
   overflow: hidden
   flex-shrink: 0
   position: relative
-  max-width: 100%
-  max-height: 100%
+  width: 100%
+  height: 100%
   scroll-snap-align: start
   img
     object-fit: cover
