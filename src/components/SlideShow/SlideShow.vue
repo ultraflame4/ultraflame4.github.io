@@ -34,7 +34,6 @@
 import SlideshowItem from "@/components/SlideShow/SlideshowItem.vue";
 import SliderSnapButtons from "@/components/SlideShow/SliderSnapButtons.vue";
 
-const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
 export default {
   name: "SlideShow",
   components: {SliderSnapButtons, SlideshowItem},
@@ -42,27 +41,44 @@ export default {
 
   data: function () {
     return {
-      currentIndex: 0
+      currentIndex: 0,
+      slideshowLoop: null
     }
+  },
+  created() {
+    this.slideshowLoop = setInterval(()=>this.slideShowLoop(),5000)
+  },
+  beforeUnmount() {
+    clearInterval(this.slideshowLoop)
   },
   mounted() {
     this.updateSnapButtons()
   },
   methods: {
 
+    slideShowLoop(){
+      if (this.currentIndex==this.images.length-1){
+        this.scrollToIndex(0)
+      }
+      else{
+        this.scrollToIndex(this.currentIndex+1)
+      }
+    },
     scrollNext(left: boolean = false) {
       let direction = (left ? -1 : 1)
-      this.$refs.slideshow.scrollBy(
-          {
-            left: this.$refs.slideshow.offsetWidth * direction,
-            behavior: "smooth"
-          }
-      )
-      this.currentIndex = clamp(this.currentIndex + direction, 0, this.images.length)
+      this.scrollToIndex(this.currentIndex+direction)
       this.updateSnapButtons()
     },
 
     scrollToIndex(index: number) {
+      if (index >= this.images.length){
+        index=0
+      }
+      else if (index < 0)
+      {
+        index = this.images.length-1
+      }
+
       this.$refs.slideshow.scroll({
         left: this.$refs.slideshow.offsetWidth * index,
         behavior: "smooth"

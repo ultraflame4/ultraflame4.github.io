@@ -26,13 +26,16 @@ export default {
         },
         {
           url: "/src/assets/onlinetictactoe.png",
-          text: "OnlineTicTacToe Project. Link: https://ultraflame4.github.io/OnlineTicTacToe ,Source Code: https://github.com/ultraflame4/OnlineTicTacToe"
+          text: "OnlineTicTacToe Project. A Multiplayer TicTacToe"
         },
         {
-          url: "",
-          text:""
+          url: "/src/assets/bgario.png",
+          text:"Python Bgario. an Agario inspired game created in python."
+        },
+        {
+          url: "/src/assets/minesweeper.png",
+          text:"Minesweeper. Created using css, html and javascript"
         }
-
       ]
     }
   }
