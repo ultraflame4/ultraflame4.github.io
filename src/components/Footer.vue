@@ -25,4 +25,8 @@ export default {
   padding: 0 $size-2
   align-items: center
   justify-content: center
+  position: relative
+  bottom: 0
+  left: 0
+  right: 0
 </style>
