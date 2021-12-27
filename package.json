@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "forcebuild": "vite build",
+    "build": "vue-tsc --noEmit && vite build && ncp ./dist/index.html ./dist/404.html",
+    "forcebuild": "vite build && ncp ./dist/index.html ./dist/404.html",
     "serve": "vite preview"
   },
   "dependencies": {
     "jquery": "^3.6.0",
+    "ncp": "^2.0.0",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12",
     "vue-scrollto": "^2.20.0"
