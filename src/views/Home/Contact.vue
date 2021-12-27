@@ -4,9 +4,9 @@
       Contact
     </h1>
     <div id="contacts-ctn">
-      <ContactItem img="/src/assets/glyph-logo_May2016.png" text="@ultraflame42" url="https://www.instagram.com/ultraflame42/"/>
-      <ContactItem img="/src/assets/Reddit_Mark_OnDark.png" text="u/Ultraflame4" url="https://www.reddit.com/user/Ultraflame4"/>
-      <ContactItem img="/src/assets/GitHub-Mark-64px.png" text="ultraflame42" url="https://github.com/ultraflame4/"/>
+      <ContactItem img="./glyph-logo_May2016.png" text="@ultraflame42" url="https://www.instagram.com/ultraflame42/"/>
+      <ContactItem img="./Reddit_Mark_OnDark.png" text="u/Ultraflame4" url="https://www.reddit.com/user/Ultraflame4"/>
+      <ContactItem img="./GitHub-Mark-64px.png" text="ultraflame42" url="https://github.com/ultraflame4/"/>
     </div>
   </div>
 </template>

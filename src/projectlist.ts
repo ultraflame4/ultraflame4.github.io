@@ -37,7 +37,7 @@ export function getProjects(): ProjectListItem[] {
         {
             name: "Minesweeper",
             desc: "A Minesweeper clone thrown together haphazardly in a couple of days. Written in html and javascript",
-            image_url: "/src/assets/minesweeper.png",
+            image_url: "./minesweeper.png",
             repo: "https://github.com/ultraflame4/Minesweeper",
             web: "https://ultraflame4.github.io/Minesweeper"
         },
@@ -52,7 +52,7 @@ export function getProjects(): ProjectListItem[] {
             name: "Python BGario",
             desc: "An amateur remake of agario written in python in 2018",
             repo: "https://github.com/ultraflame4/Python-Bgario",
-            image_url: "/src/bgario.png"
+            image_url: "./bgario.png"
         },
         {
             name: "Binosaur",

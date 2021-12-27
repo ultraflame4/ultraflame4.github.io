@@ -4,7 +4,6 @@ import App from './App.vue'
 import Home from './views/Home/Home.vue'
 import RouteR from "@/views/RouteR/RouteR.vue";
 
-
 const router = createRouter({
     history: createWebHistory(),
     routes: [
