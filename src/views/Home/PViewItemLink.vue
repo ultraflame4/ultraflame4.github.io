@@ -23,7 +23,7 @@ export default {
     getIconUrl(name: iconNames) {
       switch (name) {
         case "github":
-          return "Github-Mark-64px.png"
+          return "/Github-Mark-64px.png"
 
         default:
           return ""
