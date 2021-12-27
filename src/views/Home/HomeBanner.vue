@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <SlideShow enable-overlay="true">
+    <SlideShow enable-overlay=true>
       <SlideshowItem v-for="image in getImages()"
                      :url="image.url"
                      :text="image.text"

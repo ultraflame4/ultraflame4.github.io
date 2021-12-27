@@ -22,7 +22,7 @@ export default {
 <template>
   <div id="projects-view">
     <div id="pview-slideshow-ctn">
-      <SlideShow enable-overlay="true">
+      <SlideShow enable-overlay=true>
         <SlideshowItem v-for="item in getProjectList()"
                        :url = "item.image_url"
                        text=""
