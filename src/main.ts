@@ -3,6 +3,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import App from './App.vue'
 import Home from './views/Home/Home.vue'
 
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -15,7 +16,7 @@ const router = createRouter({
                 ele.scrollIntoView({behavior: "smooth"})
             } else {
                 console.log("D")
-                document.querySelector("#app").scrollTo(0, 0)
+                document.querySelector("#app")?.scrollTo(0, 0)
             }
         }
 

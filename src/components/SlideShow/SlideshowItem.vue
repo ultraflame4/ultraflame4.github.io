@@ -2,6 +2,9 @@
   <div>
     <img :src="url" :alt="text">
     <p v-html="formatText(text)"></p>
+    <div class="slot-container">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -54,4 +57,12 @@ div
     color: $color-white1
     letter-spacing: 1px
     @extend .txt-shadow
+
+  .slot-container
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
 </style>

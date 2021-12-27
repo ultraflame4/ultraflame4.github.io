@@ -1,8 +1,11 @@
 <template>
   <div id="container">
-    <SlideShow :images="getImages()"/>
-    <div id="layer">
-    </div>
+    <SlideShow enable-overlay="true">
+      <SlideshowItem v-for="image in getImages()"
+                     :url="image.url"
+                     :text="image.text"
+      />
+    </SlideShow>
 
     <div id="banner-title">
       <h1>ultr42</h1>
@@ -19,10 +22,11 @@
 
 <script lang="ts">
 import SlideShow from "@/components/SlideShow/SlideShow.vue";
+import SlideshowItem from "@/components/SlideShow/SlideshowItem.vue";
 
 export default {
   name: "HomeBanner",
-  components: {SlideShow},
+  components: {SlideshowItem, SlideShow},
   methods: {
     scrolldowb(){
       window.location.replace("http://localhost:3000/#projects-view")
@@ -58,15 +62,6 @@ export default {
   height: calc(100vh - $size-7)
   width: 100vw
   position: relative
-  #layer
-    width: 100%
-    height: 100%
-
-    background-color: rgba($color-dark2, 0.5)
-    position: absolute
-    left: 0
-    top: 0
-    pointer-events: none
 
   #banner-title
     pointer-events: auto

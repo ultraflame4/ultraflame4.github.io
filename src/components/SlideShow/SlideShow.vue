@@ -1,11 +1,9 @@
 <template>
   <div id="container">
-    <div id="images-container" ref="slideshow">
-      <SlideshowItem v-for="image in images"
-                     :url="image.url"
-                     :text="image.text"
-      >
-      </SlideshowItem>
+    <div class="slides-container" ref="slideshow">
+      <slot></slot>
+    </div>
+    <div v-if="enableOverlay" class="slides-overlay">
     </div>
 
     <button class="arrows" id="arrow-l" @click="scrollNext(true)" title="Go to previous page">
@@ -22,8 +20,8 @@
     </button>
 
     <div id="slidersnap-buttons" ref="snapbuttons">
-      <SliderSnapButtons v-for="(image,index) in images"
-                         :index="index"
+      <SliderSnapButtons v-for="index in getSlidesCount()"
+                         :index="index-1"
       ></SliderSnapButtons>
     </div>
   </div>
@@ -37,8 +35,9 @@ import SliderSnapButtons from "@/components/SlideShow/SliderSnapButtons.vue";
 export default {
   name: "SlideShow",
   components: {SliderSnapButtons, SlideshowItem},
-  props: ["images"],
-
+  props:{
+    enableOverlay:Boolean,
+  },
   data: function () {
     return {
       currentIndex: 0,
@@ -46,7 +45,7 @@ export default {
     }
   },
   created() {
-    this.slideshowLoop = setInterval(()=>this.slideShowLoop(),7000)
+    this.slideshowLoop = setInterval(() => this.slideShowLoop(), 7000)
   },
   beforeUnmount() {
     clearInterval(this.slideshowLoop)
@@ -54,29 +53,33 @@ export default {
   mounted() {
     this.updateSnapButtons()
   },
-  methods: {
 
-    slideShowLoop(){
-      if (this.currentIndex==this.images.length-1){
-        this.scrollToIndex(0)
+
+  methods: {
+    getSlidesCount() {
+      if (!Array.isArray(this.$slots.default()[0].children)){
+        return 0
       }
-      else{
-        this.scrollToIndex(this.currentIndex+1)
+      return this.$slots.default()[0].children.length
+    },
+    slideShowLoop() {
+      if (this.currentIndex == this.getSlidesCount() - 1) {
+        this.scrollToIndex(0)
+      } else {
+        this.scrollToIndex(this.currentIndex + 1)
       }
     },
     scrollNext(left: boolean = false) {
       let direction = (left ? -1 : 1)
-      this.scrollToIndex(this.currentIndex+direction)
+      this.scrollToIndex(this.currentIndex + direction)
       this.updateSnapButtons()
     },
 
     scrollToIndex(index: number) {
-      if (index >= this.images.length){
-        index=0
-      }
-      else if (index < 0)
-      {
-        index = this.images.length-1
+      if (index >= this.getSlidesCount()) {
+        index = 0
+      } else if (index < 0) {
+        index = this.getSlidesCount() - 1
       }
 
       this.$refs.slideshow.scroll({
@@ -91,11 +94,10 @@ export default {
       let children = this.$refs.snapbuttons.children
       for (var i = 0; i < children.length; i++) {
         var child = children[i];
-        if (child.dataset.index == this.currentIndex){
-          child.dataset.s="true"
-        }
-        else{
-          child.dataset.s="false"
+        if (child.dataset.index == this.currentIndex) {
+          child.dataset.s = "true"
+        } else {
+          child.dataset.s = "false"
         }
       }
     }
@@ -112,6 +114,16 @@ export default {
   max-width: 100%
   display: flex
 
+  .slides-overlay
+    width: 100%
+    height: 100%
+
+    background-color: rgba($color-dark2, 0.5)
+    position: absolute
+    left: 0
+    top: 0
+    pointer-events: none
+
   #slidersnap-buttons
     position: absolute
     bottom: $size-5
@@ -122,7 +134,7 @@ export default {
     justify-content: center
     gap: $size-1
 
-  #images-container
+  .slides-container
     display: flex
     overflow-x: auto
     scroll-snap-type: x mandatory
@@ -131,6 +143,7 @@ export default {
     /* IE and Edge */
     scrollbar-width: none
   /* Firefox */
+
 
 
 
