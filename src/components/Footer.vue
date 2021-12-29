@@ -5,7 +5,7 @@
       | Website: <a href="https://ultraflame4.github.io">https://ultraflame4.github.io</a>
       | Email: <a href="mailto://ultraflame4@gmail.com">ultraflame4@gmail.com</a>
       | Github: <a href="https://github.com/ultraflame4/">https://github.com/ultraflame4/</a>
-      | Contact: <a href="https://github.com/ultraflame4/#contact">https://ultraflame4.github.io/#contact</a>
+      | Contact: <a href="https://ultraflame4.github.io/#contact">https://ultraflame4.github.io/#contact</a>
     </small>
   </footer>
 </template>

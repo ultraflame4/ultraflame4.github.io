@@ -24,7 +24,7 @@ export default {
 @import "/src/assets/globals"
 #contact
   color: $color-white1
-  @extend .full-page
+  @extend .fullpage-section
   position: relative
   h1
     margin-top: $size-5

@@ -15,7 +15,7 @@
 
 import NavHeaderPageLink from "./NavHeaderPageLink.vue";
 export default {
-  name: "Header",
+  name: "NavHeader",
   components: {NavHeaderPageLink},
 }
 </script>

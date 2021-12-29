@@ -38,7 +38,7 @@ export default {
 <style scoped lang="sass">
 @import "/src/assets/globals"
 #others
-  @extend .full-page
+  @extend .fullpage-section
   position: relative
   display: flex
   align-content: center

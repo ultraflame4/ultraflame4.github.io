@@ -47,7 +47,7 @@ export default {
 <style scoped lang="sass">
 @import "src/assets/globals"
 #projects-view
-  @extend .full-page
+  @extend .fullpage-section
   color: $color-white1
   position: relative
   padding-top: $size-7

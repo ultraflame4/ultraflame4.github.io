@@ -28,7 +28,7 @@ export default {
 <style scoped lang="sass">
 @import "/src/assets/globals"
 #about
-  @extend .full-page
+  @extend .fullpage-section
   display: flex
   align-items: center
   height: $size-50
