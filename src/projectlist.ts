@@ -12,14 +12,14 @@ export function getProjects(): ProjectListItem[] {
     return [
         {
             name: "OnlineTicTacToe",
-            desc: "A multiplayer capable tic tac toe. game",
+            desc: "A multiplayer capable tic tac toe game",
             repo: "https://github.com/ultraflame4/OnlineTicTacToe",
             web: "https://ultraflame4.github.io/OnlineTicTacToe",
             image_url: "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png"
         },
         {
             name: "TiledImage",
-            desc: "This program recreate a reference image using a set of images as pixels referred to as tiles",
+            desc: "This program recreate a reference image using a set of images as pixels referred to as tiles.",
             image_url: "https://user-images.githubusercontent.com/34125174/147404436-d5be34b1-4816-4005-95b6-adffdaad8307.png",
             repo: "https://github.com/ultraflame4/TiledImage"
         },
@@ -31,7 +31,9 @@ export function getProjects(): ProjectListItem[] {
         },
         {
             name: "DiscordBotClient",
-            desc: "A client for discord bots.",
+            desc: "A client with a GUI interface for controlling discord bots." +
+                "\n Allowing you to control a discord bot like how you normally use discord" +
+                "\n Features include sending messages, and more.",
             repo: "https://github.com/ultraflame4/DiscordBotClient"
         },
         {
@@ -44,7 +46,7 @@ export function getProjects(): ProjectListItem[] {
         {
             name: "Python Qt Browser",
             desc: "A custom browser written for fun using python and the PyQt5 library. " +
-                "Features include a built-in adblocker, multiple tabs support," +
+                "\nFeatures include a built-in adblocker, multiple tabs support," +
                 " and not being able to log into any google account.  ¯\\_(ツ)_/¯",
             repo: "https://github.com/ultraflame4/PythonQtBrowser"
         },

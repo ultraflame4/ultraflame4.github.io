@@ -35,10 +35,13 @@ export default {
         </SlideshowItem>
       </SlideShow>
     </div>
-    <div id="pview-layer">
+    <div id="pview-title">
       <h1>Projects</h1>
       <br>
       <p>The best of my projects</p>
+    </div>
+    <div id="pview-seeall">
+      <a href="./projects">See All Projects ➡</a>
     </div>
 
   </div>
@@ -51,11 +54,12 @@ export default {
   color: $color-white1
   position: relative
   padding-top: $size-7
-  #pview-layer
+  #pview-title
     h1
       @extend .txt-shadow
     p
       @extend .txt-shadow
+      //flex-grow: 1
     position: absolute
     top: $size-5
     left: 0
@@ -63,7 +67,23 @@ export default {
     height: 100%
     padding-top: $size-8
     pointer-events: none
+
+  #pview-seeall
+    position: absolute
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    bottom: 150px
+    font-size: $size-2
+    text-decoration: underline
+    letter-spacing: 1px
+
+    a
+      pointer-events: all
+      cursor: pointer
+
   #pview-slideshow-ctn
-    height: calc(100% - $size-7)
+    height: 100%
 
 </style>

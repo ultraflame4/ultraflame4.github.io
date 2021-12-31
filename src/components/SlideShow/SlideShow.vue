@@ -6,20 +6,20 @@
     <div v-if="enableOverlay" class="slides-overlay">
     </div>
 
-    <button class="arrows" id="arrow-l" @click="scrollNext(true)" title="Go to previous page">
+    <button v-if="enableArrows" class="arrows" id="arrow-l" @click="scrollNext(true)" title="Go to previous page" >
       <svg xmlns="http://www.w3.org/2000/svg" width="76" height="72" viewBox="0 0 24 24"
            style="fill: rgba(255, 255, 255, 1);">
         <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
       </svg>
     </button>
-    <button class="arrows" id="arrow-r" @click="scrollNext()" title="Go to next page">
+    <button v-if="enableArrows" class="arrows" id="arrow-r" @click="scrollNext()" title="Go to next page" >
       <svg xmlns="http://www.w3.org/2000/svg" width="76" height="72" viewBox="0 0 24 24"
            style="fill: rgba(255, 255, 255, 1);">
         <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
       </svg>
     </button>
 
-    <div id="slidersnap-buttons" ref="snapbuttons">
+    <div id="slidersnap-buttons" ref="snapbuttons" v-if="enableSnapButtons">
       <SliderSnapButtons v-for="index in getSlidesCount()"
                          :index="index-1"
       ></SliderSnapButtons>
@@ -37,6 +37,18 @@ export default {
   components: {SliderSnapButtons, SlideshowItem},
   props:{
     enableOverlay:Boolean,
+    enableArrows:{
+      default:true,
+      type:Boolean
+    },
+    enableSnapButtons:{
+      default:true,
+      type:Boolean
+    },
+    enableAutoPlay:{
+      default:true,
+      type:Boolean
+    }
   },
   data: function () {
     return {
@@ -45,7 +57,9 @@ export default {
     }
   },
   created() {
-    this.slideshowLoop = setInterval(() => this.slideShowLoop(), 7000)
+    if (this.enableAutoPlay){
+      this.slideshowLoop = setInterval(() => this.slideShowLoop(), 7000)
+    }
   },
   beforeUnmount() {
     clearInterval(this.slideshowLoop)
@@ -91,6 +105,9 @@ export default {
     },
 
     updateSnapButtons() {
+      if (!this.enableSnapButtons){
+        return
+      }
       let children = this.$refs.snapbuttons.children
       for (var i = 0; i < children.length; i++) {
         var child = children[i];

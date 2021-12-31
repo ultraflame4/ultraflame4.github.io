@@ -1,8 +1,10 @@
 import {createApp} from 'vue'
 import {createRouter, createWebHistory} from "vue-router";
+
 import App from './App.vue'
 import Home from '@/views/Home/Home.vue'
 import RouteR from "@/views/RouteR/RouteR.vue";
+import ProjectList from "@/views/ProjectsList/ProjectsList.vue";
 import PageNotFound from '@/views/PageNotFound.vue';
 
 const router = createRouter({
@@ -10,6 +12,7 @@ const router = createRouter({
     routes: [
         {path: "/", name: "Home", component: Home},
         {path: "/r", name: "Rock", component: RouteR},
+        {path: "/projects", name: "ProjectsList", component: ProjectList},
         {path: "/404", name: "404", component: PageNotFound},
         {path: "/:pathMatch(.*)*", redirect: "404"}
     ],

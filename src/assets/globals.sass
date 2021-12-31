@@ -6,11 +6,12 @@
   @extend .txt-shadow
   scroll-behavior: smooth
 
-$color-dark1: #178051
-$color-dark2: #40482d
-$color-mid1: #01945a
-$color-mid2: #16c499
-$color-mid3: #527214
+$color-dark1: #004441
+$color-dark2: #1b251d
+$color-mid1: #19b63a
+$color-mid2: #681a9a
+$color-mid2-5: #9c00fd
+$color-mid3: #725f14
 $color-white1: #f6fff1
 $color-white2: #dadcd8
 $color-white3: #fffbe6
@@ -77,16 +78,27 @@ $size-90: 900px
   margin-right: 20px
 
 .txt-shadow
-  text-shadow: 0.06em .05em .06em #111
+  text-shadow: 1px 1px 2px #111
+
+$fullpage-width: 100vh
+$fullpage-height: max(100vh,900px)
+$fullpage-section-height: calc($fullpage-height - $size-7) // minus size 7-> account for height of headers
+$fullpage-end-section-height: calc($fullpage-section-height - $size-5) // minus size 5-> account for height of footer
+
 
 .fullpage-size
-  height: max(100vh,900px)
+  height: $fullpage-height
   width: 100vw
 
 .fullpage-section
-  height: max(100vh,900px)
+  height:  $fullpage-section-height
   width: 100vw
-  padding-top: $size-9
+  padding-top: $size-7
+
+.fullpage-end-section
+  height: $fullpage-end-section-height
+  width: 100vw
+  padding-top: $size-7
 
 
 body
@@ -125,3 +137,7 @@ h1,h2,h3,h4,h5,h6
   a
     text-decoration: none
     color: inherit
+
+p
+  white-space: break-spaces
+  line-height: 30px

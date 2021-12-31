@@ -8,18 +8,19 @@
       </h4>
       <p class="pview-desc">{{desc}}</p>
       <div class="pview-links-ctn">
-        <PViewItemLink icon-name="web" :text="'Goto website'" :url="web" v-if="web.length>0"/>
-        <PViewItemLink icon-name="github" :text="'Visit the github repository'" :url="repo" v-if="repo.length>0"/>
+        <Weblink :url="web" v-if="web.length>0"/>
+        <GithubLink :url="repo" v-if="repo.length>0"/>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import PViewItemLink from "@/views/Home/PViewItemLink.vue";
+import Weblink from "@/components/Buttons/Weblink.vue";
+import GithubLink from "@/components/Buttons/GithubLink.vue";
 export default {
   name: "PViewItem",
-  components: {PViewItemLink},
+  components: {GithubLink, Weblink},
   props:{
     title: String,
     desc: String,
@@ -60,9 +61,6 @@ export default {
     .pview-title
       margin-top: $size-2
       margin-bottom: $size-3
-
-    .pview-desc
-      white-space: normal
 
     .pview-links-ctn
       width: 100%

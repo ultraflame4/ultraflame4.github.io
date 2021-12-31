@@ -48,8 +48,8 @@ export default {
 @import "/src/assets/globals"
 #contents
   color: black
-  width: 100vw
-  height: calc(100vh - $size-7 - $size-5)
+  @extend .fullpage-end-section
+  padding: 0
   #dance-ctn
     position: absolute
     top: 0

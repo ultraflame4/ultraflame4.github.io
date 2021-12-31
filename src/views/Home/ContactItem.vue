@@ -1,7 +1,7 @@
 <template>
   <div class="ci-ctn" @click="open()">
     <img :src="img">
-    <h4>{{text}}</h4>
+    <h4 style="text-shadow: none">{{text}}</h4>
   </div>
 </template>
 
