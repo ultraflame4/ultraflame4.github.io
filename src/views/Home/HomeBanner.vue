@@ -49,6 +49,10 @@ export default {
         {
           url: "minesweeper.png",
           text: "Minesweeper. Created using css, html and javascript"
+        },
+        {
+          url: "renders/donut/donut-compressed.png",
+          text: "A donut made in blender rendered in 4k"
         }
       ]
     }

@@ -1,5 +1,6 @@
 import {createApp} from 'vue'
 import {createRouter, createWebHistory} from "vue-router";
+import vToolTip from 'v-tooltip'
 
 import App from './App.vue'
 import Home from '@/views/Home/Home.vue'
@@ -33,4 +34,5 @@ const router = createRouter({
 
 createApp(App)
     .use(router)
+    .use(vToolTip)
     .mount('#app')

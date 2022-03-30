@@ -4,6 +4,7 @@
     <div id="items">
       <NavHeaderPageLink title="Home" link="/#home"/>
       <NavHeaderPageLink title="About" link="/#about"/>
+      <NavHeaderPageLink title="Renders" link="/#renders"/>
       <NavHeaderPageLink title="Projects" link="/#projects-view"/>
       <NavHeaderPageLink title="Contact" link="/#contact"/>
       <NavHeaderPageLink title="Others" link="/#others"/>

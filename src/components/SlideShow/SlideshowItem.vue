@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="url" :alt="text">
+    <img v-if="!nosave" :src="url" :alt="text"/>
     <p v-html="formatText(text)"></p>
     <div class="slot-container">
       <slot></slot>
@@ -11,7 +11,14 @@
 <script lang="ts">
 export default {
   name: "SlideshowItem",
-  props:["url","text"],
+  props:{
+    "url":String,
+    "text":String,
+    "nosave":{
+      type:Boolean,
+      default:false
+    }
+  },
   methods:{
     formatText (text:string){
       return linkify(text);
@@ -49,6 +56,9 @@ div
   height: 100%
   scroll-snap-align: start
   img
+    width: 100%
+    height: 100%
+    object-position: center center
     object-fit: cover
   p
     position: absolute
