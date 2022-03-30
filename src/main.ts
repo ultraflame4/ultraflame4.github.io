@@ -1,29 +1,22 @@
 import {createApp} from 'vue'
 import {createRouter, createWebHistory} from "vue-router";
-import vToolTip from 'v-tooltip'
 
 import App from './App.vue'
-import Home from '@/views/Home/Home.vue'
-import RouteR from "@/views/RouteR/RouteR.vue";
-import ProjectList from "@/views/ProjectsList/ProjectsList.vue";
-import PageNotFound from '@/views/PageNotFound.vue';
+
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path: "/", name: "Home", component: Home},
-        {path: "/r", name: "Rock", component: RouteR},
-        {path: "/projects", name: "ProjectsList", component: ProjectList},
-        {path: "/404", name: "404", component: PageNotFound},
-        {path: "/:pathMatch(.*)*", redirect: "404"}
+
+        {path: "/:pathMatch(.*)*", redirect: "404"} // redirect path to 404. all previous path does not match
     ],
     scrollBehavior(to, from, savedPosition) {
+        // if is a hash, scroll to corresponding element id
         if (to.hash) {
             let ele = document.querySelector(to.hash)
             if (ele) {
                 ele.scrollIntoView({behavior: "smooth"})
             } else {
-                console.log("D")
                 document.querySelector("#app")?.scrollTo(0, 0)
             }
         }
@@ -33,6 +26,4 @@ const router = createRouter({
 
 
 createApp(App)
-    .use(router)
-    .use(vToolTip)
     .mount('#app')
