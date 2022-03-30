@@ -1,13 +1,15 @@
 import {createApp} from 'vue'
 import {createRouter, createWebHistory} from "vue-router";
-
+import '@/assets/index.scss'
+import '@/assets/colors.scss'
 import App from './App.vue'
+import Home from "@/views/Home.vue";
 
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-
+        {path:"/", component: Home},
         {path: "/:pathMatch(.*)*", redirect: "404"} // redirect path to 404. all previous path does not match
     ],
     scrollBehavior(to, from, savedPosition) {
@@ -26,4 +28,5 @@ const router = createRouter({
 
 
 createApp(App)
+    .use(router)
     .mount('#app')
