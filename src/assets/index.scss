@@ -4,6 +4,7 @@
 *{
   margin: auto;
   font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease 0s;
 }
 
 body{
@@ -12,4 +13,10 @@ body{
 
 .windowframe-shadow{
   box-shadow: 0 1px 8px rgba(0,0,0,.12);
+}
+
+
+.stickytop {
+  position: sticky;
+  top: -1px;
 }

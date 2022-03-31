@@ -9,7 +9,7 @@ import Home from "@/views/Home.vue";
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path:"/", component: Home},
+        {path: "/", component: Home},
         {path: "/:pathMatch(.*)*", redirect: "404"} // redirect path to 404. all previous path does not match
     ],
     scrollBehavior(to, from, savedPosition) {
@@ -30,3 +30,4 @@ const router = createRouter({
 createApp(App)
     .use(router)
     .mount('#app')
+

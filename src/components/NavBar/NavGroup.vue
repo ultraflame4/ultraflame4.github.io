@@ -11,7 +11,7 @@ export default defineComponent({
   name: "NavGroup",
   props:{
     align:{
-      type: Object as PropType<"start" | "center" | "end">,
+      type: String as PropType<"start" | "center" | "end">,
       default: "start",
     }
   }

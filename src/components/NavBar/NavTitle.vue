@@ -1,6 +1,6 @@
 <template>
-  <NavText class="nav-title">
-    <slot></slot>
+  <NavText >
+    <h1 class="nav-title"><slot></slot></h1>
   </NavText>
 </template>
 
@@ -15,8 +15,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.nav-title>.nav-text{
-  font-weight: 600;
-  font-size: 24px;
+.nav-title{
+  //font-weight: 600;
+  //font-size: 24px;
 }
 </style>
