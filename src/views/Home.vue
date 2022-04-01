@@ -34,6 +34,7 @@ function getNowSeconds() {
 }
 
 let t = 0
+const vidend = 360
 gvars.discomode_callback=()=>{
   setTimeout(()=>{
     setText("DISCO TIME")
