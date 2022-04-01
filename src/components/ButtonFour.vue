@@ -40,9 +40,8 @@ export default defineComponent({
 
     }
     let c = (ev: FocusEvent) => {
-      console.log("AB");
       if (document.activeElement?.tagName === "IFRAME") {
-        console.log("ABC")
+        el.style.pointerEvents = "all"
         window.removeEventListener("click", c)
         el.attributes.removeNamedItem("style")
         el.classList.add("b4-disco")
@@ -56,12 +55,12 @@ export default defineComponent({
       this.count += 1;
 
       if (this.count > 3) {
-        el.style.pointerEvents = "none"
+        alert("Woah Woah There, sloooww dooown..")
         el.removeEventListener("click", a);
         anim.removeEventListener("finish", b);
         this.discomode = true
-        console.log("A")
         window.addEventListener("blur", c)
+        el.style.pointerEvents = "none"
       }
 
     }
