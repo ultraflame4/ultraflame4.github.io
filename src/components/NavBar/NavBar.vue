@@ -27,11 +27,13 @@ export default defineComponent({
   },
   mounted() {
     if (this.stickTop) {
+
       (<HTMLElement>this.$refs.nav).style.position = "sticky";
       (<HTMLElement>this.$refs.nav).style.top = (64 * stickyNavbars -1).toString() + "px";
       // (<HTMLElement>this.$refs.nav).classList.add("isnot-pinned");
       console.log((64 * stickyNavbars).toString())
       stickyNavbars += 1
+
       this.observer = new IntersectionObserver(
           ([e]) => {
             e.target.classList.toggle("isnot-pinned", !(e.intersectionRatio < 1))
@@ -47,18 +49,19 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-
+@use "/src/assets/vars";
 .navbar {
   display: flex;
   padding: 0 24px;
-  height: 64px;
+  height: vars.$navbar-height;
   background-color: rgba(white,0.5);
   backdrop-filter: blur(6px);
+  z-index: 500;
 }
 
 .navbar.isnot-pinned {
   background-color: transparent;
-  height: 96px;
+  height: vars.$navbar-unpinned-height;
 }
 
 .navbar-rootgroup {

@@ -5,12 +5,13 @@ import NavTitle from "@/components/NavBar/NavTitle.vue";
 import NavText from "@/components/NavBar/NavText.vue";
 import NavGroup from "@/components/NavBar/NavGroup.vue";
 import NavLink from "@/components/NavBar/NavLink.vue";
+import ButtonFour from "@/components/ButtonFour.vue";
 </script>
 
 <template>
 
     <NavBar :stickTop=true>
-      <NavTitle>ultr<span id="titles1">4</span>2</NavTitle>
+      <NavTitle style="cursor: pointer" @click="$router.push('/')">ultr<ButtonFour/>2</NavTitle>
       <NavGroup align="end">
         <NavLink>About</NavLink>
         <NavLink>Projects</NavLink>
@@ -26,8 +27,6 @@ import NavLink from "@/components/NavBar/NavLink.vue";
 
 <style lang="scss">
 @use "assets/colors.scss" as colors;
-#titles1{
-  color: colors.$accent-1;
-}
+
 
 </style>

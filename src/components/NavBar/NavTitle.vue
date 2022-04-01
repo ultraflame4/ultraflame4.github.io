@@ -15,8 +15,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.nav-title{
-  //font-weight: 600;
-  //font-size: 24px;
+.isnot-pinned *.nav-title{
+  font-weight: 400;
+  font-size: 32px;
 }
+
+.nav-title{
+  font-weight: 500;
+  font-size: 24px;
+
+}
+
+
 </style>
