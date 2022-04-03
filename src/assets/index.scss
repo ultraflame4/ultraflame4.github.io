@@ -5,6 +5,7 @@
   margin: auto;
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease 0s;
+  ;
 }
 
 body {
@@ -22,11 +23,11 @@ body {
 }
 
 
-h1,h2,h3,h4,h5,h6,p,a{
-  animation: text-fadein 1s ease-in 0s;
+*{
+  animation: fadein 1s ease-in 0s;
 }
 
-@keyframes text-fadein {
+@keyframes fadein {
   from{
     opacity: 0;
   }

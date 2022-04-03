@@ -2,6 +2,7 @@
   <main>
     <section>
       <div id="home-section">
+        <video id="bg-anim" src="moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
         <div id="center-text">
           <h1 id="bigtext" ref="bigtext">Hello</h1>
         </div>
@@ -72,13 +73,31 @@ export default defineComponent({
   name: "Home",
   components: {NavBar},
   mounted() {
-
+    window.addEventListener("load",()=>{
+      // (<HTMLVideoElement>this.$refs.anim).play();
+    })
   }
 })
 </script>
 
 <style lang="scss">
 @use "src/assets/vars";
+
+
+#bg-anim {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 30%;
+  filter: brightness(180%) grayscale(.5);
+  animation-duration: 6s;
+  background: transparent;
+}
+
+
 #home-section {
   height: calc(100vh - vars.$navbar-unpinned-height);
   width: 100%;
@@ -102,6 +121,9 @@ export default defineComponent({
   animation-duration: 3s;
   text-align: center;
   margin: 0 64px;
+  color: black;
+  mix-blend-mode: difference;
+
 }
 
 </style>
