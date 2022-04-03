@@ -79,7 +79,7 @@ export default defineComponent({
 #thevideo {
   position: absolute;
   z-index: -1;
-  opacity: 0;
+  opacity: 1;
   left: 0;
   transform: translate(-50%, -20%);
   pointer-events: auto;
