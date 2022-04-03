@@ -2,7 +2,7 @@
   <main>
     <section>
       <div id="home-section">
-        <video id="bg-anim" src="moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
+        <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
         <div id="center-text">
           <h1 id="bigtext" ref="bigtext">Hello</h1>
         </div>
