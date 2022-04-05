@@ -11,7 +11,7 @@ import ButtonFour from "@/components/ButtonFour.vue";
 <template>
 
     <NavBar :stickTop=true>
-      <NavTitle style="cursor: pointer" @click="$router.push('/')">ultr<ButtonFour/>2</NavTitle>
+      <NavTitle style="cursor: pointer;letter-spacing: 1px" @click="$router.push('/')">ultr<ButtonFour/>2</NavTitle>
       <NavGroup align="end">
         <NavLink>About</NavLink>
         <NavLink>Projects</NavLink>

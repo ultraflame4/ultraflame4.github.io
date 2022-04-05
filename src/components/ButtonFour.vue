@@ -90,6 +90,8 @@ export default defineComponent({
   background-color: white;
   opacity: 0;
   pointer-events: all;
+  cursor: auto;
+
 }
 
 #b4 {
@@ -109,7 +111,7 @@ export default defineComponent({
 
 #b4:hover {
   font-size: 105%;
-  cursor: not-allowed;
+  cursor: zoom-in;
 }
 
 .b4-disco {

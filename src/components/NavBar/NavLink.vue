@@ -28,8 +28,9 @@ export default defineComponent({
 @use "src/assets/colors" as colors;
 .nav-link{
   position: relative;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
   cursor: pointer;
   text-decoration: none;
   color: black;
@@ -40,7 +41,7 @@ export default defineComponent({
   bottom: -1px;
   right: 0;
   left: auto;
-  height: 0.05rem;
+  height: 2px;
   width: 0;
   background-color: colors.$accent-1;
   transition-property: width;

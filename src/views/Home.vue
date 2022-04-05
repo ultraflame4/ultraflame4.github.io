@@ -1,12 +1,20 @@
 <template>
   <main>
-    <section>
-      <div id="home-section">
-        <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
-        <div id="center-text">
-          <h1 id="bigtext" ref="bigtext">Hello</h1>
-        </div>
+    <section id="home-section">
+
+      <div id="center-text">
+        <h5 style="font-weight: 600;letter-spacing: 2px;position: absolute;top: -10px">ultr<span class="b4-color">4</span>2</h5>
+        <h1 id="homeHeading" ref="bigtext">Hello !</h1>
+        <p>I'm an amateur teen programmer and I do a variety things.</p>
+        <br>
+        <p>These are some of the projects I've worked on. </p>
+        <p>Hopefully I'll finish them someday...</p>
       </div>
+      <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
+
+    </section>
+    <section>
+
     </section>
 
   </main>
@@ -26,8 +34,10 @@ fetch("ricksubs.lrc").then(value => {
 })
 
 function setText(text: string) {
-  let e = document.querySelector<HTMLHeadingElement>("#bigtext")
-  if (e){e.textContent = text}
+  let e = document.querySelector<HTMLHeadingElement>("#homeHeading")
+  if (e) {
+    e.textContent = text
+  }
 }
 
 function getNowSeconds() {
@@ -36,44 +46,48 @@ function getNowSeconds() {
 
 let t = 0
 const vidend = 360
-gvars.discomode_callback=()=>{
-  setTimeout(()=>{
+gvars.discomode_callback = () => {
+  setTimeout(() => {
     setText("DISCO TIME")
-    let e = document.querySelector<HTMLHeadingElement>("#bigtext")
-    if (e){e.style.fontSize="96px"}
-  },0)
-  setTimeout(()=>{
+    let e = document.querySelector<HTMLHeadingElement>("#homeHeading")
+    if (e) {
+      e.style.fontSize = "96px"
+    }
+  }, 0)
+  setTimeout(() => {
     setText("NOW PLAYING:")
-  },3000)
-  setTimeout(()=>{
+  }, 3000)
+  setTimeout(() => {
     setText("NEVER GONNA GIVE YOU UP")
-  },6000)
-  setTimeout(()=>{
+  }, 6000)
+  setTimeout(() => {
     setText("BY:")
-  },9000)
-  setTimeout(()=>{
+  }, 9000)
+  setTimeout(() => {
     setText("RICK ASTLEY")
-  },12000)
+  }, 12000)
 
   t = getNowSeconds();
-  setTimeout(()=>{
+  setTimeout(() => {
 
-    setInterval(()=>{
+    setInterval(() => {
       let current = getNowSeconds();
-      let timestamp = current-t;
+      let timestamp = current - t;
       lyricsRunner.timeUpdate(timestamp)
-      let e = document.querySelector<HTMLHeadingElement>("#bigtext")
-      if (e){setText(lyricsRunner.curLyric().content)}
+      let e = document.querySelector<HTMLHeadingElement>("#homeHeading")
+      if (e) {
+        setText(lyricsRunner.curLyric().content)
+      }
 
-    },10)
-  },18000)
+    }, 10)
+  }, 18000)
 }
 
 export default defineComponent({
   name: "Home",
   components: {NavBar},
   mounted() {
-    window.addEventListener("load",()=>{
+    window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
     })
   }
@@ -91,9 +105,10 @@ export default defineComponent({
   top: 0;
   left: 0;
   object-fit: cover;
-  opacity: 30%;
+  opacity: 15%;
   filter: brightness(180%) grayscale(.5);
   animation-duration: 6s;
+
   background: transparent;
 }
 
@@ -105,22 +120,23 @@ export default defineComponent({
 }
 
 #center-text {
-  height: 100vh;
-  width: 100%;
-  top: calc(100% - 100vh);
-  position: absolute;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
-#bigtext{
+#homeHeading {
   font-size: 128px;
   font-weight: 100;
-  animation-duration: 3s;
+  transition: none;
+  animation-delay: 500ms;
   text-align: center;
-  margin: 0 64px;
   color: black;
   mix-blend-mode: difference;
 
