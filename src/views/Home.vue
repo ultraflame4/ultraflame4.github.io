@@ -1,8 +1,7 @@
 <template>
   <main>
     <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
-    <section id="home-section">
-
+    <section id="about">
       <div id="center-text">
         <h5 style="font-weight: 600;letter-spacing: 2px;position: absolute;top: -10px">ultr<span class="b4-color">4</span>2</h5>
         <h1 id="homeHeading" ref="bigtext">Hello!</h1>
@@ -12,9 +11,8 @@
         <p>Hopefully I'll finish them someday...</p>
       </div>
 
-
     </section>
-    <section style="height: 100vh">
+    <section>
 
     </section>
 
@@ -113,29 +111,25 @@ export default defineComponent({
 }
 
 
-#home-section {
-  height: calc(100vh - vars.$header-unpinned-height);
-  width: 100%;
-  position: relative;
-}
 
 #center-text {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 46%;
   transform: translate(-50%, -50%);
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 90%;
 }
 
 #homeHeading {
   font-size: min(128px ,20vw);
   font-weight: 100;
   transition: none;
-  animation-delay: 500ms;
+  animation-delay: 1s;
   text-align: center;
   color: black;
   mix-blend-mode: difference;

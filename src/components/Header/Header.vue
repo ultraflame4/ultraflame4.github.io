@@ -3,7 +3,7 @@
     <div id="header-items-container">
       <h1 id="header-title">ultr<ButtonFour/>2</h1>
       <NavGroup style="margin-right:0;margin-left: auto;justify-self: flex-end">
-        <NavLink>About</NavLink>
+        <NavLink href="/#about">About</NavLink>
         <NavLink>Projects</NavLink>
         <NavLink>Contact</NavLink>
         <NavLink>Others</NavLink>
