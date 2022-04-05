@@ -28,8 +28,8 @@ export default defineComponent({
 @use "src/assets/colors" as colors;
 .nav-link{
   position: relative;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 750;
   letter-spacing: 0.2px;
   cursor: pointer;
   text-decoration: none;

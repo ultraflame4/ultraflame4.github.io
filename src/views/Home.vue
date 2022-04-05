@@ -5,7 +5,7 @@
 
       <div id="center-text">
         <h5 style="font-weight: 600;letter-spacing: 2px;position: absolute;top: -10px">ultr<span class="b4-color">4</span>2</h5>
-        <h1 id="homeHeading" ref="bigtext">Hello !</h1>
+        <h1 id="homeHeading" ref="bigtext">Hello!</h1>
         <p>I'm an amateur teen programmer and I do a variety things.</p>
         <br>
         <p>These are some of the projects I've worked on. </p>
@@ -132,7 +132,7 @@ export default defineComponent({
 }
 
 #homeHeading {
-  font-size: 128px;
+  font-size: min(128px ,20vw);
   font-weight: 100;
   transition: none;
   animation-delay: 500ms;
