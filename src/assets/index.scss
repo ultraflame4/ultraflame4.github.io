@@ -70,5 +70,7 @@ section{
 }
 
 main>section:first-of-type{
+  box-sizing: border-box;
   top: -(vars.$header-unpinned-height);
+  padding-top: vars.$header-unpinned-height;
 }
