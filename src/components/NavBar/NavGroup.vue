@@ -1,7 +1,9 @@
 <template>
-  <ul class="navbar-items" :style="{justifySelf:align}">
-    <slot></slot>
-  </ul>
+  <nav>
+    <ul class="navbar-items" :style="{justifySelf:align}">
+      <slot></slot>
+    </ul>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -9,12 +11,7 @@ import {defineComponent, PropType} from "vue"
 
 export default defineComponent({
   name: "NavGroup",
-  props:{
-    align:{
-      type: String as PropType<"start" | "center" | "end">,
-      default: "start",
-    }
-  }
+
 })
 </script>
 

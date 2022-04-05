@@ -1,5 +1,6 @@
 <template>
   <main>
+    <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
     <section id="home-section">
 
       <div id="center-text">
@@ -10,10 +11,10 @@
         <p>These are some of the projects I've worked on. </p>
         <p>Hopefully I'll finish them someday...</p>
       </div>
-      <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
+
 
     </section>
-    <section>
+    <section style="height: 100vh">
 
     </section>
 
@@ -22,7 +23,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
-import NavBar from "@/components/NavBar/NavBar.vue";
+
 import {Lrc, Runner} from "lrc-kit";
 import gvars from "@/gvars";
 
@@ -85,7 +86,6 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
-  components: {NavBar},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
@@ -114,13 +114,13 @@ export default defineComponent({
 
 
 #home-section {
-  height: calc(100vh - vars.$navbar-unpinned-height);
+  height: calc(100vh - vars.$header-unpinned-height);
   width: 100%;
   position: relative;
 }
 
 #center-text {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
