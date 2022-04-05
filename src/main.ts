@@ -5,7 +5,7 @@ import '@/assets/colors.scss'
 import App from './App.vue'
 import Home from "@/views/Home.vue";
 
-const extractHashRegex = new RegExp(":\\/\\/.+?\\/#\\/(#.+?)(\\/|$|[^a-z])")
+
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
@@ -14,6 +14,7 @@ const router = createRouter({
     ],
     scrollBehavior(to, from, savedPosition) {
         // if is a hash, scroll to corresponding element id
+
         if (to.hash) {
 
             let ele = document.querySelector(to.hash)
