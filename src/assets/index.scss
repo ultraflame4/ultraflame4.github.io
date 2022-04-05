@@ -11,10 +11,11 @@
 
 body {
   margin: 0;
+
 }
 
 .windowframe-shadow {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, .12);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
 }
 
 
@@ -27,6 +28,7 @@ body {
 * {
   animation: fadein 500ms ease-in 0s;
   animation-fill-mode: both;
+
 }
 
 
@@ -48,12 +50,27 @@ small{
   from {
     opacity: 0;
   }
-  to {
-    from {
-      opacity: 1;
-    }
+
+}
+
+
+@keyframes slidein-right {
+  from {
+    color: #7f00ff;
+    transform: translateX(100%);
   }
 }
+
+@keyframes flip{
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
 
 .b4-color {
   color: colors.$accent-1;
@@ -65,6 +82,15 @@ small{
   transform: translateX(-50%);
 }
 
+.fadein-anim{
+  animation: fadein 1s ease 0;
+}
+.flip-anim{
+  animation: flip 1s linear 0;
+}
+.slidein-r-anim {
+  animation: slidein-right 1s ease 0;
+}
 
 section{
   height: min(100vh,970px);
@@ -91,3 +117,4 @@ main>section:first-of-type{
   top: -(vars.$header-unpinned-height);
 
 }
+

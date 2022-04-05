@@ -53,6 +53,12 @@ export default defineComponent({
   width: 100%;
 }
 
+@media only screen and (max-width: 600px) {
+  .nav-link{
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
 
 
 </style>

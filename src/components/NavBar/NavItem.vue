@@ -18,7 +18,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  //height: 100%;
   padding: 0 24px;
   margin: 0;
   width: fit-content;

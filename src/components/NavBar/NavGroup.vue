@@ -1,17 +1,26 @@
 <template>
   <nav class="grpnav">
-    <button class="menu-button" @click="toggleMenu"><span class="material-icons">menu</span></button>
-    <ul class="navbar-items" ref="navitems" :style="{justifySelf:align}">
-      <slot></slot>
-    </ul>
+<!--    <button class="menu-button" @click="toggleMenu"><span class="material-icons">menu</span></button>-->
+<!--    <button class="menu-button" @click="toggleMenu"><span class="material-icons">menu</span></button>-->
+    <VButton class="menu-button" :stateful="true" @click="toggleMenu()">
+      <span class="material-icons">menu</span>
+      <span class="material-icons">close</span>
+    </VButton>
+    <div>
+      <ul  class="navbar-items" ref="navitems" :style="{justifySelf:align}">
+        <slot></slot>
+      </ul>
+    </div>
   </nav>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import VButton from "@/components/VButton.vue";
 
 export default defineComponent({
   name: "NavGroup",
+  components: {VButton},
   methods:{
     toggleMenu(){
       (<HTMLElement>this.$refs.navitems).classList.toggle("navbaritems-active")
@@ -27,6 +36,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   position: relative;
+
 }
 
 .navbar-items {
@@ -35,6 +45,8 @@ export default defineComponent({
   margin: 0;
   margin-left: auto;
   padding: 0;
+
+
 }
 
 .menu-button {
@@ -49,40 +61,39 @@ export default defineComponent({
   cursor: pointer;
   height: fit-content;
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 32px;
   transition-duration: 100ms;
 }
 
-.menu-button:hover{
-  @extend .windowframe-shadow;
 
-}
-.menu-button:active{
-  transform: translateY(-50%) scale(90%);
-  box-shadow: none;
-
-}
 
 @media only screen and (max-width: 600px) {
   .menu-button {
     display: flex;
   }
 
+
   .navbar-items {
     display: none;
     padding: 16px;
-    position: relative;
-    bottom: -50%;
-    transform: translateY(50%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 50%;
+    padding: 64px 0;
     gap: 24px;
     flex-direction: column;
     background-color: white;
+
   }
 }
 .navbaritems-active{
   @extend .windowframe-shadow;
-  height: fit-content;
   display: flex;
+
+
 }
 
 

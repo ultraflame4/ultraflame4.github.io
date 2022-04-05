@@ -9,7 +9,7 @@
       <p>Welcome to my website!</p>
       <br>
       <small>No.4 is looking kinda out of place.</small>
-
+      <SectionGoTo href="/#about">About</SectionGoTo>
     </section>
     <section id="about">
       <SectionHeading>
@@ -39,6 +39,7 @@ import {defineComponent} from "vue"
 import {Lrc, Runner} from "lrc-kit";
 import gvars from "@/gvars";
 import SectionHeading from "@/components/Section/SectionHeading.vue";
+import SectionGoTo from "@/components/Section/SectionGoTo.vue";
 
 const lyricsRunner = new Runner()
 fetch("ricksubs.lrc").then(value => {
@@ -99,7 +100,7 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
-  components: {SectionHeading},
+  components: {SectionGoTo, SectionHeading},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
