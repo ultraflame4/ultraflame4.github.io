@@ -1,7 +1,7 @@
 import {createApp} from 'vue'
 import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
-import '@/assets/index.scss'
-import '@/assets/colors.scss'
+// import '@/assets/index.scss'
+// import '@/assets/colors.scss'
 import App from './App.vue'
 import Home from "@/views/Home.vue";
 

@@ -1,10 +1,10 @@
 <template>
   <header class="windowframe-shadow" ref="he">
     <div id="header-items-container">
-      <h1 id="header-title">ultr<ButtonFour/>2</h1>
+      <NavTitle href="/#home"  id="header-title">ultr<ButtonFour/>2</NavTitle>
       <NavGroup style="margin-right:0;margin-left: auto;justify-self: flex-end">
         <NavLink href="/#about">About</NavLink>
-        <NavLink>Projects</NavLink>
+        <NavLink href="/#projects">Projects</NavLink>
         <NavLink>Contact</NavLink>
         <NavLink>Others</NavLink>
       </NavGroup>
@@ -18,10 +18,11 @@ import {defineComponent} from "vue"
 import ButtonFour from "@/components/ButtonFour.vue";
 import NavGroup from "@/components/NavBar/NavGroup.vue";
 import NavLink from "@/components/NavBar/NavLink.vue";
+import NavTitle from "@/components/NavBar/NavTitle.vue";
 
 export default defineComponent({
   name: "Header",
-  components: {NavLink, NavGroup, ButtonFour},
+  components: {NavTitle, NavLink, NavGroup, ButtonFour},
   data() {
     return {
       observer: <IntersectionObserver | null>null
@@ -77,6 +78,7 @@ header.isnot-pinned {
   margin-right: auto;
   font-weight: 550;
   font-size: 24px;
+
 }
 
 </style>

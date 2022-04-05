@@ -1,7 +1,7 @@
 <template>
-  <NavText >
-    <h1 class="nav-title"><slot></slot></h1>
-  </NavText>
+
+  <h1 class="nav-title" @click="$router.push(href)"><slot></slot></h1>
+
 </template>
 
 <script lang="ts">
@@ -10,7 +10,13 @@ import NavText from "@/components/NavBar/NavText.vue";
 
 export default defineComponent({
   name: "NavTitle",
-  components: {NavText}
+  components: {NavText},
+  props:{
+    href:{
+      type:String,
+      default:"."
+    }
+  }
 })
 </script>
 
@@ -23,7 +29,7 @@ export default defineComponent({
 .nav-title{
   font-weight: 550;
   font-size: 24px;
-
+  cursor: pointer;
 }
 
 

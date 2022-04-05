@@ -1,18 +1,32 @@
 <template>
   <main>
     <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
-    <section id="about">
-      <div id="center-text">
-        <h5 style="font-weight: 600;letter-spacing: 2px;position: absolute;top: -10px">ultr<span class="b4-color">4</span>2</h5>
-        <h1 id="homeHeading" ref="bigtext">Hello!</h1>
-        <p>I'm an amateur teen programmer and I do a variety things.</p>
-        <br>
-        <p>These are some of the projects I've worked on. </p>
-        <p>Hopefully I'll finish them someday...</p>
-      </div>
+    <section id="home">
+      <SectionHeading>
+        ultr<span class="b4-color">4</span>2
+      </SectionHeading>
+      <h1 id="homeHeading" ref="bigtext">Hello!</h1>
+      <p>Welcome to my website!</p>
+      <br>
+      <small>No.4 is looking kinda out of place.</small>
 
     </section>
-    <section>
+    <section id="about">
+      <SectionHeading>
+        ABOUT ME
+      </SectionHeading>
+      <p>I'm an amateur self-taught programmer,</p>
+      <p> learned programming at the age of 12, learning from various </p>
+      <p> youtube videos & online courses.</p>
+      <br>
+      <p>Since then, I've dabbled in a bunch of stuff and have done a variety projects</p>
+
+      <br>
+      <p>These are some of the projects I've worked on. </p>
+      <br>
+      <small>Hopefully I'll finish them someday...</small>
+    </section>
+    <section id="projects">
 
     </section>
 
@@ -24,6 +38,7 @@ import {defineComponent} from "vue"
 
 import {Lrc, Runner} from "lrc-kit";
 import gvars from "@/gvars";
+import SectionHeading from "@/components/Section/SectionHeading.vue";
 
 const lyricsRunner = new Runner()
 fetch("ricksubs.lrc").then(value => {
@@ -84,6 +99,7 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
+  components: {SectionHeading},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
@@ -111,11 +127,10 @@ export default defineComponent({
 }
 
 
-
 #center-text {
   position: absolute;
   left: 50%;
-  top: 46%;
+  top: 50%;
   transform: translate(-50%, -50%);
   margin: auto;
   display: flex;
@@ -126,13 +141,14 @@ export default defineComponent({
 }
 
 #homeHeading {
-  font-size: min(128px ,20vw);
+  font-size: min(128px, 20vw);
   font-weight: 100;
   transition: none;
   animation-delay: 1s;
   text-align: center;
   color: black;
   mix-blend-mode: difference;
+
 
 }
 
