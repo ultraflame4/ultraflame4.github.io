@@ -30,7 +30,7 @@ export default defineComponent({
   position: relative;
   font-size: 13px;
   font-weight: 750;
-  letter-spacing: 0.2px;
+  letter-spacing: 1px;
   cursor: pointer;
   text-decoration: none;
   color: black;

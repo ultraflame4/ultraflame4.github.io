@@ -1,7 +1,7 @@
 <template>
-  <h4 class="section-heading">
+  <h2 class="section-heading">
     <slot></slot>
-  </h4>
+  </h2>
 </template>
 
 <script lang="ts">
@@ -17,6 +17,7 @@ export default defineComponent({
   font-weight: 600;
   letter-spacing: 2px;
   position: relative;
+  font-size: 14px;
   //top: -10px
   margin-bottom: 24px;
 }

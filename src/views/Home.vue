@@ -25,9 +25,11 @@
       <p>These are some of the projects I've worked on. </p>
       <br>
       <small>Hopefully I'll finish them someday...</small>
+      <SectionGoTo href="/#projects">Projects</SectionGoTo>
     </section>
     <section id="projects">
-
+      <SectionHeading>Projects</SectionHeading>
+      <p>Here are some of the projects I've done.</p>
     </section>
 
   </main>
