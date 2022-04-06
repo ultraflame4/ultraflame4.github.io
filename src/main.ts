@@ -20,6 +20,9 @@ const router = createRouter({
             let ele = document.querySelector(to.hash)
             if (ele) {
                 ele.scrollIntoView({behavior: "smooth"})
+                setTimeout(() => {
+                    ele.scrollIntoView({behavior: "smooth"})
+                }, 200)
             } else {
                 document.querySelector("#app")?.scrollTo(0, 0)
             }

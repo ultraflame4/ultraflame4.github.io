@@ -30,6 +30,9 @@
     <section id="projects">
       <SectionHeading>Projects</SectionHeading>
       <p>Here are some of the projects I've done.</p>
+      <div style="width: 100px">
+        <Card>Test</Card>
+      </div>
     </section>
 
   </main>
@@ -42,6 +45,7 @@ import {Lrc, Runner} from "lrc-kit";
 import gvars from "@/gvars";
 import SectionHeading from "@/components/Section/SectionHeading.vue";
 import SectionGoTo from "@/components/Section/SectionGoTo.vue";
+import Card from "@/components/Card.vue";
 
 const lyricsRunner = new Runner()
 fetch("ricksubs.lrc").then(value => {
@@ -102,7 +106,7 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
-  components: {SectionGoTo, SectionHeading},
+  components: {Card, SectionGoTo, SectionHeading},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
