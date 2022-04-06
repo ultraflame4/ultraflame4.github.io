@@ -30,9 +30,21 @@
     <section id="projects">
       <SectionHeading>Projects</SectionHeading>
       <p>Here are some of the projects I've done.</p>
-      <div style="width: 100px">
-        <Card>Test</Card>
+      <div id="feature-projects-card-ctn">
+<!--        // todo: Change repo link to preview on full projects page-->
+        <Card class="project-card" v-for="item in getFeaturedProjects()"
+              :style="`background-image: url(${item.image_url});`"
+              :title="item.name"
+              :href="item.repo"
+        >
+          <h3 class="absCenter" style="letter-spacing: 2px;mix-blend-mode: difference;color: white">{{item.name}}</h3>
+        </Card>
+
       </div>
+      <br>
+      <br>
+      <VLink href="/projects">See all projects <span class="material-icons absYcenter">arrow_right_alt</span></VLink>
+      <SectionGoTo href="/#contact">Contact</SectionGoTo>
     </section>
 
   </main>
@@ -46,6 +58,8 @@ import gvars from "@/gvars";
 import SectionHeading from "@/components/Section/SectionHeading.vue";
 import SectionGoTo from "@/components/Section/SectionGoTo.vue";
 import Card from "@/components/Card.vue";
+import VLink from "@/components/Link.vue";
+import {getProjects, ProjectListItem} from "@/projectlist";
 
 const lyricsRunner = new Runner()
 fetch("ricksubs.lrc").then(value => {
@@ -106,18 +120,22 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
-  components: {Card, SectionGoTo, SectionHeading},
+  components: {VLink, Card, SectionGoTo, SectionHeading},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
     })
+  },
+  methods: {
+    getFeaturedProjects(): ProjectListItem[] {
+      return getProjects().slice(0, 5)
+    }
   }
 })
 </script>
 
 <style lang="scss">
 @use "src/assets/vars";
-
 
 #bg-anim {
   width: 100vw;
@@ -132,7 +150,6 @@ export default defineComponent({
 
   background: transparent;
 }
-
 
 #center-text {
   position: absolute;
@@ -157,6 +174,32 @@ export default defineComponent({
   mix-blend-mode: difference;
 
 
+}
+
+#projects {
+
+
+  & > #feature-projects-card-ctn {
+    margin-top: 32px;
+    max-width: 60%;
+    max-height: 600px;
+    display: flex;
+    gap: 18px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    align-content: center;
+    padding: 16px;
+
+    & > .project-card {
+      flex-grow: 1;
+      min-width: 300px;
+      min-height: 200px;
+
+    }
+
+  }
 }
 
 </style>

@@ -1,19 +1,19 @@
 <template>
 <NavItem>
-  <router-link :to="href" class="nav-link">
+  <VLink class="nav-link" :href="href">
     <slot></slot>
-    <div class="nav-link-underline"></div>
-  </router-link>
+  </VLink>
 </NavItem>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue"
 import NavItem from "@/components/NavBar/NavItem.vue";
+import VLink from "@/components/Link.vue";
 
 export default defineComponent({
   name: "NavLink",
-  components: {NavItem},
+  components: {VLink, NavItem},
   props:{
     href:{
       type: String,
@@ -26,37 +26,18 @@ export default defineComponent({
 
 <style lang="scss">
 @use "src/assets/colors" as colors;
+
 .nav-link{
   position: relative;
   font-size: 13px;
-  font-weight: 750;
-  letter-spacing: 1px;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-}
+  font-weight: 800 !important;
 
-.nav-link-underline{
-  position: absolute;
-  bottom: -1px;
-  right: 0;
-  left: auto;
-  height: 2px;
-  width: 0;
-  background-color: colors.$accent-1;
-  transition-property: width;
-}
-
-.nav-link:hover>.nav-link-underline{
-  left: 0;
-  right: auto;
-  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
   .nav-link{
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 500 !important;
+    font-size: 18px !important;
   }
 }
 

@@ -12,6 +12,7 @@ const router = createRouter({
         {path: "/", component: Home},
         // {path: "/:pathMatch(.*)*", redirect: "404"} // redirect path to 404. all previous path does not match
     ],
+
     scrollBehavior(to, from, savedPosition) {
         // if is a hash, scroll to corresponding element id
 
@@ -21,7 +22,7 @@ const router = createRouter({
             if (ele) {
                 ele.scrollIntoView({behavior: "smooth"})
                 setTimeout(() => {
-                    ele.scrollIntoView({behavior: "smooth"})
+                    ele?.scrollIntoView({behavior: "smooth"})
                 }, 200)
             } else {
                 document.querySelector("#app")?.scrollTo(0, 0)
@@ -31,8 +32,26 @@ const router = createRouter({
     }
 })
 
+router.beforeEach((to, from, next) => {
+    let exists = to.matched.length > 0
+    if (exists) {
+        next()
+    } else {
+        next({name: "404"})
+    }
+})
 
-createApp(App)
-    .use(router)
+
+const app = createApp(App)
+app.use(router)
     .mount('#app')
 
+app.config.globalProperties.$vroute = (path: string) => {
+    let url = new URL(path);
+    if (url.origin!==location.origin){
+        location.assign(url)
+    }
+    else{
+        router.push(path)
+    }
+}

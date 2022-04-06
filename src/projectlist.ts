@@ -18,6 +18,19 @@ export function getProjects(): ProjectListItem[] {
             image_url: "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png"
         },
         {
+            name: "DiscordBotClient",
+            desc: "A client with a GUI interface for controlling discord bots." +
+                "\n Allowing you to control a discord bot like how you normally use discord" +
+                "\n Features include sending messages, and more.",
+            repo: "https://github.com/ultraflame4/DiscordBotClient"
+        },
+        {
+            name: "Minesweeper",
+            desc: "A Minesweeper clone thrown together haphazardly in a couple of days. Written in html and javascript",
+            repo: "https://github.com/ultraflame4/Minesweeper",
+            web: "https://ultraflame4.github.io/Minesweeper"
+        },
+        {
             name: "TiledImage",
             desc: "This program recreate a reference image using a set of images as pixels referred to as tiles.",
             image_url: "https://user-images.githubusercontent.com/34125174/147404436-d5be34b1-4816-4005-95b6-adffdaad8307.png",
@@ -28,20 +41,6 @@ export function getProjects(): ProjectListItem[] {
             desc: "Tis project aims to provide a better console for logging in python",
             repo: "https://github.com/ultraflame4/Better-Console-Python",
             image_url: "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif"
-        },
-        {
-            name: "DiscordBotClient",
-            desc: "A client with a GUI interface for controlling discord bots." +
-                "\n Allowing you to control a discord bot like how you normally use discord" +
-                "\n Features include sending messages, and more.",
-            repo: "https://github.com/ultraflame4/DiscordBotClient"
-        },
-        {
-            name: "Minesweeper",
-            desc: "A Minesweeper clone thrown together haphazardly in a couple of days. Written in html and javascript",
-            image_url: "minesweeper.png",
-            repo: "https://github.com/ultraflame4/Minesweeper",
-            web: "https://ultraflame4.github.io/Minesweeper"
         },
         {
             name: "Python Qt Browser",
