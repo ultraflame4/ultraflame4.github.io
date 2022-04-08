@@ -37,8 +37,14 @@ router.beforeEach((to, from, next) => {
     if (exists) {
         next()
     } else {
+        console.log(to)
         next({name: "404"})
     }
+})
+
+
+router.onError((error) => {
+    console.log("E",error)
 })
 
 

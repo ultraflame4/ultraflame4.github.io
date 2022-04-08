@@ -5,7 +5,7 @@
       <NavGroup style="margin-right:0;margin-left: auto;justify-self: flex-end">
         <NavLink href="/#about">About</NavLink>
         <NavLink href="/#projects">Projects</NavLink>
-        <NavLink>Contact</NavLink>
+        <NavLink href="/#contact">Contact</NavLink>
         <NavLink>Others</NavLink>
       </NavGroup>
     </div>

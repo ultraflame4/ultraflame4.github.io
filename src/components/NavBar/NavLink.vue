@@ -9,7 +9,7 @@
 <script lang="ts">
 import {defineComponent} from "vue"
 import NavItem from "@/components/NavBar/NavItem.vue";
-import VLink from "@/components/Link.vue";
+import VLink from "@/components/Misc/Link.vue";
 
 export default defineComponent({
   name: "NavLink",

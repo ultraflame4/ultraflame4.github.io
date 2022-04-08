@@ -1,8 +1,12 @@
 <template>
-    <router-link :to="href" :class="`${$props.class} link`">
+    <router-link v-if="sameOrigin" :to="href" :class="`${$props.class} link`">
       <slot></slot>
       <div class="link-underline"></div>
     </router-link>
+  <a v-else :href="href" :class="`${$props.class} link`">
+    <slot></slot>
+    <div class="link-underline"></div>
+  </a>
 </template>
 
 <script lang="ts">
@@ -22,12 +26,30 @@ export default defineComponent({
       default: ""
     }
   },
+  data(){
+    return {
+      sameOrigin: this.sameOrigin_()
+    }
+  },
+  methods: {
+    sameOrigin_(){
+      try {
+        let a = new URL(this.href);
+        if (["http:", "https:"].includes(a.protocol)) {
+          return a.origin === window.location.origin;
+        }
+        return false
+      } catch (e) {
+        return true
+      }
+    }
+  }
 
 })
 </script>
 
 <style lang="scss">
-@use "src/assets/colors" as colors;
+@use "../../assets/colors" as colors;
 .link{
   position: relative;
   font-size: 13px;

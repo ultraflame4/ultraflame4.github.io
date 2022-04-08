@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import Header from "@/components/Header/Header.vue";
+import Header from "@/components/Misc/Header.vue";
 </script>
 
 <template>

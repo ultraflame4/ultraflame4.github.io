@@ -6,7 +6,7 @@
         ultr<span class="b4-color">4</span>2
       </SectionHeading>
       <h1 id="homeHeading" ref="bigtext">Hello!</h1>
-      <p>Welcome to my website!</p>
+      <p style="animation-delay: 1s">Welcome to my website!</p>
       <br>
       <small>No.4 is looking kinda out of place.</small>
       <SectionGoTo href="/#about">About</SectionGoTo>
@@ -31,13 +31,13 @@
       <SectionHeading>Projects</SectionHeading>
       <p>Here are some of the projects I've done.</p>
       <div id="feature-projects-card-ctn">
-<!--        // todo: Change repo link to preview on full projects page-->
+        <!--        // todo: Change repo link to preview on full projects page-->
         <Card class="project-card" v-for="item in getFeaturedProjects()"
               :style="`background-image: url(${item.image_url});`"
               :title="item.name"
               :href="item.repo"
         >
-          <h3 class="absCenter" style="letter-spacing: 2px;mix-blend-mode: difference;color: white">{{item.name}}</h3>
+          <h3 class="absCenter" style="letter-spacing: 2px;mix-blend-mode: difference;color: white">{{ item.name }}</h3>
         </Card>
 
       </div>
@@ -46,7 +46,44 @@
       <VLink href="/projects">See all projects <span class="material-icons absYcenter">arrow_right_alt</span></VLink>
       <SectionGoTo href="/#contact">Contact</SectionGoTo>
     </section>
-
+    <section id="contact">
+      <SectionHeading>Contact</SectionHeading>
+      <p>You can contact me at:</p>
+      <ul id="contact-list">
+        <li>
+          <SocialRef
+              name="Github"
+              text="ultraflame4"
+              href="https://github.com/ultraflame4"
+              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/github.svg"
+          />
+        </li>
+        <li>
+          <SocialRef
+              name="Instagram"
+              text="@ultraflame42"
+              href="https://www.instagram.com/ultraflame42/"
+              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/dark/instagram.svg"
+          />
+        </li>
+        <li>
+          <SocialRef
+              name="Reddit"
+              text="u/Ultraflame4"
+              href="https://www.reddit.com/user/Ultraflame4"
+              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/dark/reddit.svg"
+          />
+        </li>
+        <li>
+          <SocialRef
+              name="Email"
+              text="ultraflame4@gmail.com"
+              href="mailto:ultraflame4@gmail.com"
+              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/dark/gmail.svg"
+          />
+        </li>
+      </ul>
+    </section>
   </main>
 </template>
 
@@ -58,8 +95,9 @@ import gvars from "@/gvars";
 import SectionHeading from "@/components/Section/SectionHeading.vue";
 import SectionGoTo from "@/components/Section/SectionGoTo.vue";
 import Card from "@/components/Card.vue";
-import VLink from "@/components/Link.vue";
+import VLink from "@/components/Misc/Link.vue";
 import {getProjects, ProjectListItem} from "@/projectlist";
+import SocialRef from "@/components/Misc/SocialRef.vue";
 
 const lyricsRunner = new Runner()
 fetch("ricksubs.lrc").then(value => {
@@ -120,7 +158,7 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
-  components: {VLink, Card, SectionGoTo, SectionHeading},
+  components: {SocialRef, VLink, Card, SectionGoTo, SectionHeading},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
@@ -168,7 +206,7 @@ export default defineComponent({
   font-size: min(128px, 20vw);
   font-weight: 100;
   transition: none;
-  animation-delay: 1s;
+  animation-delay: 500ms;
   text-align: center;
   color: black;
   mix-blend-mode: difference;
@@ -177,7 +215,6 @@ export default defineComponent({
 }
 
 #projects {
-
 
   & > #feature-projects-card-ctn {
     margin-top: 32px;
@@ -197,6 +234,21 @@ export default defineComponent({
       min-width: 300px;
       min-height: 200px;
 
+    }
+
+  }
+}
+
+#contact {
+
+  & > #contact-list {
+    padding: 0;
+    ;
+    & > li {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
     }
 
   }
