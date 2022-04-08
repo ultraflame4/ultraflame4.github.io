@@ -30,17 +30,19 @@
     <section id="projects">
       <SectionHeading>Projects</SectionHeading>
       <p>Here are some of the projects I've done.</p>
-      <div id="feature-projects-card-ctn">
-        <!--        // todo: Change repo link to preview on full projects page-->
-        <Card class="project-card" v-for="item in getFeaturedProjects()"
-              :style="`background-image: url(${item.image_url});`"
-              :title="item.name"
-              :href="item.repo"
-        >
-          <h3 class="absCenter" style="letter-spacing: 2px;mix-blend-mode: difference;color: white">{{ item.name }}</h3>
-        </Card>
 
-      </div>
+        <div id="feature-projects-card-ctn">
+          <!--        // todo: Change repo link to preview on full projects page-->
+          <Card class="project-card" v-for="item in getFeaturedProjects()"
+                :style="`background-image: url(${item.image_url});`"
+                :title="item.name"
+                :href="item.repo"
+          >
+            <h3 class="absCenter" style="letter-spacing: 2px;mix-blend-mode: difference;color: white">{{ item.name }}</h3>
+          </Card>
+        </div>
+
+
       <br>
       <br>
       <VLink href="/projects">See all projects <span class="material-icons absYcenter">arrow_right_alt</span></VLink>
@@ -215,28 +217,51 @@ export default defineComponent({
 }
 
 #projects {
-
+  ;
   & > #feature-projects-card-ctn {
+
+
     margin-top: 32px;
     max-width: 60%;
-    max-height: 600px;
+    max-height: 50%;
+
     display: flex;
     gap: 18px;
-    overflow: hidden;
+    overflow-x: hidden;
     flex-wrap: wrap;
-    justify-content: center;
-
-    align-content: center;
+    flex-direction: row;
     padding: 16px;
+
+    @media only screen and (max-height: 940px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 600px;
+    }
+
+    & > .project-card:nth-child(1){ // force the first two card to be bigger (increased width of first card pushes the rest to next row)
+      @media only screen and (min-width: 600px) { // check if screen is big enough
+        min-width: 400px;
+      }
+
+    }
 
     & > .project-card {
       flex-grow: 1;
       min-width: 300px;
       min-height: 200px;
 
+      @media only screen and (max-width: 600px) {
+        min-width: 200px;
+        min-height: 150px;
+        font-size: 14px;
+      }
+
+      margin: auto; //use flexbox auto margin instead of justify content so that when overflowing, we can scroll to top
     }
 
   }
+
+
 }
 
 #contact {

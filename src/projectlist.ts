@@ -11,6 +11,18 @@ export type ProjectListItem = {
 export function getProjects(): ProjectListItem[] {
     return [
         {
+            name: "TiledImage",
+            desc: "This program recreate a reference image using a set of images as pixels referred to as tiles.",
+            image_url: "https://user-images.githubusercontent.com/34125174/147404436-d5be34b1-4816-4005-95b6-adffdaad8307.png",
+            repo: "https://github.com/ultraflame4/TiledImage"
+        },
+        {
+            name: "Better Console",
+            desc: "Tis project aims to provide a better console for logging in python",
+            repo: "https://github.com/ultraflame4/Better-Console-Python",
+            image_url: "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif"
+        },
+        {
             name: "OnlineTicTacToe",
             desc: "A multiplayer capable tic tac toe game",
             repo: "https://github.com/ultraflame4/OnlineTicTacToe",
@@ -30,18 +42,8 @@ export function getProjects(): ProjectListItem[] {
             repo: "https://github.com/ultraflame4/Minesweeper",
             web: "https://ultraflame4.github.io/Minesweeper"
         },
-        {
-            name: "TiledImage",
-            desc: "This program recreate a reference image using a set of images as pixels referred to as tiles.",
-            image_url: "https://user-images.githubusercontent.com/34125174/147404436-d5be34b1-4816-4005-95b6-adffdaad8307.png",
-            repo: "https://github.com/ultraflame4/TiledImage"
-        },
-        {
-            name: "Better Console",
-            desc: "Tis project aims to provide a better console for logging in python",
-            repo: "https://github.com/ultraflame4/Better-Console-Python",
-            image_url: "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif"
-        },
+
+
         {
             name: "Python Qt Browser",
             desc: "A custom browser written for fun using python and the PyQt5 library. " +
