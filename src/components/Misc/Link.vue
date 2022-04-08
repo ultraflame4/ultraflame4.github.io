@@ -53,8 +53,8 @@ export default defineComponent({
 .link{
   position: relative;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 1px;
   cursor: pointer;
   text-decoration: none;
   color: black;

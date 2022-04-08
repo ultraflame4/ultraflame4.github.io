@@ -6,7 +6,7 @@
         <NavLink href="/#about">About</NavLink>
         <NavLink href="/#projects">Projects</NavLink>
         <NavLink href="/#contact">Contact</NavLink>
-        <NavLink>Others</NavLink>
+        <NavLink href="/#others">Others</NavLink>
       </NavGroup>
     </div>
 

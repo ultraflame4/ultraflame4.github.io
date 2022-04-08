@@ -3,7 +3,7 @@
     <video id="bg-anim" src="/moon.webm" type="video/webm" loop autoplay muted ref="anim"/>
     <section id="home">
       <SectionHeading>
-        ultr<span class="b4-color">4</span>2
+        <SiteTitle/>
       </SectionHeading>
       <h1 id="homeHeading" ref="bigtext">Hello!</h1>
       <p style="animation-delay: 1s">Welcome to my website!</p>
@@ -51,40 +51,12 @@
     <section id="contact">
       <SectionHeading>Contact</SectionHeading>
       <p>You can contact me at:</p>
-      <ul id="contact-list">
-        <li>
-          <SocialRef
-              name="Github"
-              text="ultraflame4"
-              href="https://github.com/ultraflame4"
-              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/github.svg"
-          />
-        </li>
-        <li>
-          <SocialRef
-              name="Instagram"
-              text="@ultraflame42"
-              href="https://www.instagram.com/ultraflame42/"
-              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/dark/instagram.svg"
-          />
-        </li>
-        <li>
-          <SocialRef
-              name="Reddit"
-              text="u/Ultraflame4"
-              href="https://www.reddit.com/user/Ultraflame4"
-              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/dark/reddit.svg"
-          />
-        </li>
-        <li>
-          <SocialRef
-              name="Email"
-              text="ultraflame4@gmail.com"
-              href="mailto:ultraflame4@gmail.com"
-              icon="https://raw.githubusercontent.com/rdimascio/icons/932c4cf6c9e2031abeca1c164baa0f76785c16fe/icons/dark/gmail.svg"
-          />
-        </li>
-      </ul>
+      <ContactList/>
+    </section>
+    <section id="others" style="height: 500px">
+      <SectionHeading>Others</SectionHeading>
+      <p>There seems to be nothing here.</p>
+      <p>Why dont u check out the suspicous No.4 I was talking about <VLink href="/#home" class="inherit-txtsize">earlier</VLink>.</p>
     </section>
   </main>
 </template>
@@ -100,6 +72,8 @@ import Card from "@/components/Card.vue";
 import VLink from "@/components/Misc/Link.vue";
 import {getProjects, ProjectListItem} from "@/projectlist";
 import SocialRef from "@/components/Misc/SocialRef.vue";
+import SiteTitle from "@/components/Misc/SiteTitle.vue";
+import ContactList from "@/components/ContactList.vue";
 
 const lyricsRunner = new Runner()
 fetch("ricksubs.lrc").then(value => {
@@ -160,7 +134,7 @@ gvars.discomode_callback = () => {
 
 export default defineComponent({
   name: "Home",
-  components: {SocialRef, VLink, Card, SectionGoTo, SectionHeading},
+  components: {ContactList, SiteTitle, SocialRef, VLink, Card, SectionGoTo, SectionHeading},
   mounted() {
     window.addEventListener("load", () => {
       // (<HTMLVideoElement>this.$refs.anim).play();
@@ -262,21 +236,6 @@ export default defineComponent({
   }
 
 
-}
-
-#contact {
-
-  & > #contact-list {
-    padding: 0;
-    ;
-    & > li {
-      list-style-type: none;
-      display: flex;
-      align-items: center;
-      margin-top: 16px;
-    }
-
-  }
 }
 
 </style>

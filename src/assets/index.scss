@@ -122,6 +122,10 @@ small{
   animation: slidein-right 1s ease 0;
 }
 
+.inherit-txtsize{
+  font-size: inherit;
+}
+
 section{
   height: min(100vh,1200px);
 
