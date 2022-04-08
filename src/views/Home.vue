@@ -52,6 +52,7 @@
       <SectionHeading>Contact</SectionHeading>
       <p>You can contact me at:</p>
       <ContactList/>
+      <SectionGoTo href="/#others">Others</SectionGoTo>
     </section>
     <section id="others" style="height: 500px">
       <SectionHeading>Others</SectionHeading>
