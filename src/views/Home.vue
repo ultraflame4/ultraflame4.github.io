@@ -232,14 +232,14 @@ export default defineComponent({
     flex-direction: row;
     padding: 16px;
 
-    @media only screen and (max-height: 940px) {
+    @media only screen and (max-height: vars.$minscreen-h) {
       flex-direction: row;
       flex-wrap: wrap;
       max-width: 600px;
     }
 
     & > .project-card:nth-child(1){ // force the first two card to be bigger (increased width of first card pushes the rest to next row)
-      @media only screen and (min-width: 600px) { // check if screen is big enough
+      @media only screen and (min-width: vars.$minscreen-w) { // check if screen is big enough
         min-width: 400px;
       }
 
@@ -250,7 +250,7 @@ export default defineComponent({
       min-width: 300px;
       min-height: 200px;
 
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: vars.$minscreen-w) {
         min-width: 200px;
         min-height: 150px;
         font-size: 14px;
