@@ -4,12 +4,14 @@ import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
 // import '@/assets/colors.scss'
 import App from './App.vue'
 import Home from "@/views/Home.vue";
+import Projects from "@/views/Projects.vue";
 
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
         {path: "/", component: Home},
+        {path: "/projects", component: Projects},
         // {path: "/:pathMatch(.*)*", redirect: "404"} // redirect path to 404. all previous path does not match
     ],
 
