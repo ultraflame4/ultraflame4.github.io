@@ -64,7 +64,7 @@ export default defineComponent({
 }
 
 .sect-goto:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
 }
 
 .sect-goto:hover > .sect-goto-underline {

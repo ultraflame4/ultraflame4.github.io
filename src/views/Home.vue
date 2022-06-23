@@ -192,12 +192,13 @@ export default defineComponent({
 }
 
 #projects {
-  ;
+
   & > #feature-projects-card-ctn {
 
 
     margin-top: 32px;
-    max-width: 60%;
+    min-width: calc(90% - 256px);
+    max-width: 1000px;
     max-height: 50%;
 
     display: flex;
