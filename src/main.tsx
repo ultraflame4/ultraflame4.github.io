@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Projects from "./routes/projects";
+import Projects from "./routes/Projects";
+import "./assets/css/index.css"
+import "./assets/css/splash.css"
 
 
 const rootElement = document.getElementById("root")

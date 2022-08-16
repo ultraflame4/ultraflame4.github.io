@@ -1,0 +1,13 @@
+.underConstruction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.underConstruction-svg{
+    width: 500px;
+
+    aspect-ratio: 1;
+}
+
