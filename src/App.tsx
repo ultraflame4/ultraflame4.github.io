@@ -1,10 +1,10 @@
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
+import UnderConstruction from "./components/UnderConstruction";
 
 export default function App() {
     return (
-        <div>
-            <h1>Bookkeeper!</h1>
-            <Link to="/projects">Projects</Link>
+        <div className={"fillSpace"}>
+            <Outlet/>
         </div>
     );
 }
