@@ -5,8 +5,8 @@ export default function () {
             <object type="image/svg+xml" data="/under_construction.svg" className={"underConstruction-svg"}>
                 <img src="/under_construction.svg" />
             </object>
-
-            <text>test</text>
+            <h1>Under construction</h1>
+            <text>This section is under construction</text>
         </div>
     )
 };
