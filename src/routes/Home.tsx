@@ -5,7 +5,6 @@ export default function Home() {
     return (
         <main className={"fillSpace"}>
 
-            <Link to="/projects">Projects</Link>
             <UnderConstruction/>
         </main>
     )
