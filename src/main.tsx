@@ -13,8 +13,8 @@ if (rootElement != null) {
     root.render(
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/" element={<App/>}>
-                    <Route index element={<Home/>}/>
                     <Route path="projects" element={<Projects/>}/>
                 </Route>
 

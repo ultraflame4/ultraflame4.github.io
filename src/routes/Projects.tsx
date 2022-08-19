@@ -4,7 +4,7 @@ export default function Projects(){
 
 
     return (
-        <main className={"fillSpace"} >
+        <main className={"fillViewport"} >
             <UnderConstruction/>
 
         </main>

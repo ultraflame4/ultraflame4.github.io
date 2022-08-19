@@ -5,11 +5,12 @@ export default function () {
     const [reY,setReY] = React.useState("0px")
 
     function mouseMove(ev:React.MouseEvent<HTMLDivElement>) {
-        let relativeX = ev.pageX-ev.currentTarget.offsetLeft
-        let relativeY = ev.pageY-ev.currentTarget.offsetTop
 
-        setReX(relativeX+"px")
-        setReY(relativeY+"px")
+        let rect = ev.currentTarget.getBoundingClientRect();
+        let x = ev.clientX - rect.left;
+        let y = ev.clientY - rect.top;
+        setReX(x+"px")
+        setReY(y+"px")
     }
 
     const styles = {

@@ -6,7 +6,7 @@
     justify-content: center;
     flex-direction: column;
     font-family: "Poppins";
-    background: radial-gradient(circle at var(--rx) var(--ry) , rgba(80, 0, 255, 3%), transparent 100%);
+    background: radial-gradient(circle at var(--rx) var(--ry) , rgba(80, 0, 255, 10%), transparent 50%);
     pointer-events: all;
 }
 
