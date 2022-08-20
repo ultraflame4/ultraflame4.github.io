@@ -123,7 +123,7 @@ button:focus-visible {
 .topnav-stickied{
   height: var(--topNavHeightStickied);
   background: #1a1a1a;
-
+  border-bottom: #333 solid 1px;
 }
 
 #topnav-title{
@@ -138,8 +138,42 @@ button:focus-visible {
   letter-spacing: 2px;
   font-weight: 600;
   font-size: 16px;
+
 }
 
+#topnav-links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  gap: 32px;
+  height: 100%;
+  align-items: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: all ease 400ms;
+}
+
+.topnav-stickied > #topnav-links{
+  gap: 14px;
+}
+
+#topnav-links a{
+  color: #aaa;
+  font-weight: 600;
+  transition: all ease 400ms;
+  letter-spacing: 2px;
+}
+
+#topnav-links a:hover{
+  color: #fff;
+}
+
+.topnav-stickied > #topnav-links a{
+  letter-spacing: 1px;
+  font-size: 14px;
+
+}
 
 .centerItems{
   display: flex;

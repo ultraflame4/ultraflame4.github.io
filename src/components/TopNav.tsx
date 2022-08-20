@@ -37,9 +37,19 @@ export default function TopNav(props:TopNavProps) {
             <h2 id={"topnav-title"}>
                 ultr42
             </h2>
-            <ul>
-                <Link to="/">Home</Link>
-                <Link to="/projects">Projects</Link>
+            <ul id={"topnav-links"}>
+
+                <li>
+                    <Link to="/#about">About</Link>
+                </li>
+                <li>
+                    <Link to="/projects">Projects</Link>
+                </li>
+
+                <li>
+                    <Link to="/#others">Others</Link>
+                </li>
+
             </ul>
         </nav>
     )
