@@ -7,12 +7,14 @@
     filter: opacity(30%);
 }
 
-#home-header{
+#home-header {
     position: sticky;
     top: var(--topNavHeight);
     z-index: 0;
     width: 100vw;
-    height: calc(100vh - var(--topNavHeight))
+    height: calc(100vh - var(--topNavHeight));
+    padding-bottom: var(--topNavHeight);
+    box-sizing: border-box;
 }
 
 
