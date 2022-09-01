@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51c17b10-df75-46c9-acf4-4cf49c00155f" name="Changes" comment="fixed build script" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="builds worktree update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +33,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/builds" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -84,7 +85,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.forcebuild">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -117,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.forcebuild" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.forcebuild" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.forcebuild" />
         <item itemvalue="npm.dev" />
@@ -569,7 +570,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="v5" />
                       </list>
                     </value>
                   </entry>
