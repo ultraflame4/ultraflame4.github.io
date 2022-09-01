@@ -6,3 +6,21 @@
     object-fit: cover;
     filter: opacity(30%);
 }
+
+.header-text {
+    font-family: "Poppins";
+    font-weight: 900;
+}
+
+.header-text h1 {
+    letter-spacing: 10px;
+    position: relative;
+    left:-1rem
+}
+
+.header-text h2 {
+    letter-spacing: 3px;
+    position: relative;
+    /*left:-1rem*/
+    /*line-height: 32px;*/
+}

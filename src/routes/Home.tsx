@@ -19,14 +19,14 @@ export default function Home() {
                     top: 0,
                     zIndex: -1
                 }}>
-                <div className={"centerItems fillSpace"}>
-                    <h1
-                        style={{
-                            fontFamily: "Poppins",
-                            fontWeight: "900",
-                            letterSpacing: 10
-                        }}
-                    >ultr42</h1>
+                <div className={"centerItems fillSpace flex-col header-text"}>
+                    <h1>
+                        👋 HELLO!
+                    </h1>
+                    <h2>
+                        Welcome to my website 🌐 !
+                    </h2>
+
                 </div>
 
                 <video
@@ -41,12 +41,11 @@ export default function Home() {
                 style={{
                     height: "fit-content"
                 }}
-                className={"vCarousell topShadow"}
-
+                className={"topShadow"}
             >
 
 
-                {/* Spacer to push down stuff*/}
+                {/* Spacer to push down stuff so got space for the header*/}
                 <div
                     style={{
                         height: "calc(100vh - var(--topNavHeight))"
@@ -54,7 +53,7 @@ export default function Home() {
                 ></div>
 
 
-                <section className={"fillViewport"}>
+                <section className={"fillViewport"} id={"about"}>
                     <UnderConstruction/>
                 </section>
                 <section className={"fillViewport"}>
