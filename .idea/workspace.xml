@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="xml">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="idea stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "ts.external.directory.path": "C:\\Users\\Chester Lai\\AppData\\Local\\JetBrains\\Toolbox\\apps\\WebStorm\\ch-0\\222.3345.108\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "D:\\Programming\\Programming Projects\\ultraflame4.github.io\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -208,13 +207,6 @@
       <workItem from="1662033412013" duration="936000" />
       <workItem from="1662034486192" duration="2902000" />
       <workItem from="1662046204690" duration="340000" />
-    </task>
-    <task id="LOCAL-00035" summary="added license + moon">
-      <created>1648959488346</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1648959488346</updated>
     </task>
     <task id="LOCAL-00036" summary="added anim">
       <created>1648964605403</created>
@@ -552,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662045736457</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="idea stuff">
+      <created>1662049479155</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1662049479156</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +590,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="added stuiff" />
     <MESSAGE value="updated svg to be less big" />
     <MESSAGE value="Added proper font" />
     <MESSAGE value="Added proper font and text" />
@@ -616,7 +614,8 @@
     <MESSAGE value="aaaaaaa" />
     <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 6d0f3072" />
     <MESSAGE value="fixed build script" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed build script" />
+    <MESSAGE value="idea stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
