@@ -22,7 +22,6 @@ export default function Home() {
                         Welcome to my website 🌐 !
                     </h2>
                 </div>
-
                 <ul id={"header-links"}>
                     <li><HashLink to={"/#about"}>about</HashLink></li>
                 </ul>
