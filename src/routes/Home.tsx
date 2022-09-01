@@ -3,6 +3,7 @@ import UnderConstruction from "../components/UnderConstruction";
 import TopNav from "../components/TopNav";
 import "../assets/css/routes/Home.css";
 import {useEffect} from "react";
+import {HashLink} from 'react-router-hash-link';
 
 export default function Home() {
 
@@ -12,22 +13,20 @@ export default function Home() {
 
             <TopNav allowSizeChange={true}/>
 
-            <header
-                className={"fillViewport"}
-                style={{
-                    position: "fixed",
-                    top: 0,
-                    zIndex: -1
-                }}>
-                <div className={"centerItems fillSpace flex-col header-text"}>
+            <header id="home-header">
+                <div className={"centerItems fillSpace flex-col"} id={"header-text"}>
                     <h1>
                         👋 HELLO!
                     </h1>
                     <h2>
                         Welcome to my website 🌐 !
                     </h2>
-
                 </div>
+
+                <ul id={"header-links"}>
+                    <li><HashLink to={"/#about"}>about</HashLink></li>
+                </ul>
+
 
                 <video
                     id={"bg-vid"}
@@ -37,20 +36,13 @@ export default function Home() {
                 </video>
             </header>
 
+
             <main
                 style={{
                     height: "fit-content"
                 }}
                 className={"topShadow"}
             >
-
-
-                {/* Spacer to push down stuff so got space for the header*/}
-                <div
-                    style={{
-                        height: "calc(100vh - var(--topNavHeight))"
-                    }}
-                ></div>
 
 
                 <section className={"fillViewport"} id={"about"}>

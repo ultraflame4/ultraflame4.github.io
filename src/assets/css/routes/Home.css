@@ -7,20 +7,40 @@
     filter: opacity(30%);
 }
 
-.header-text {
+#home-header{
+    position: sticky;
+    top: var(--topNavHeight);
+    z-index: 0;
+    width: 100vw;
+    height: calc(100vh - var(--topNavHeight))
+}
+
+
+#header-text {
     font-family: "Poppins";
     font-weight: 900;
 }
 
-.header-text h1 {
+#header-text h1 {
     letter-spacing: 10px;
     position: relative;
     left:-1rem
 }
 
-.header-text h2 {
+#header-text h2 {
     letter-spacing: 3px;
     position: relative;
     /*left:-1rem*/
     /*line-height: 32px;*/
 }
+
+#header-links{
+    position: absolute;
+    top: calc(50% + 128px)
+}
+
+#header-links a{
+    color: white;
+    cursor: pointer;
+}
+
