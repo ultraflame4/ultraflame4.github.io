@@ -54,16 +54,4 @@ print(f"- Commiting with message 'deploy code: {d_code}'")
 print(os.popen(f"git commit -m \"deploy code: {d_code}\"").read())
 print(os.popen("git push origin builds:builds").read())
 
-
-# print(os.popen(f'git add "./{deploy_dir}/*"').read())
-# print("Commiting...")
-# print(os.popen(f"git commit -m \"deploying {branch_name}\"").read())
-
-# print("Deploying to github pages...")
-#
-# print(os.popen(f"git subtree split --prefix builds -b deploy-builds").read())
-# print(os.popen(f"git fetch origin {gh_pages_branch}:deploy-builds").read())
-# print(os.popen(f"git push origin deploy-builds:{gh_pages_branch}").read())
-# print(os.popen(f"git branch -D deploy-builds").read())
-#
-# os.system("pause")
+os.system("pause")
