@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="builds worktree update" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="builds worktree update">
+      <change afterPath="$PROJECT_DIR$/builds/v4/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/assets/index.09e80e0c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/assets/index.0e290322.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/assets/index.3d1cba8b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/assets/index.c44d54c3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/assets/vendor.a527ca77.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builds/v4/ricksubs.lrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/builds/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/deploy.py" beforeDir="false" afterPath="$PROJECT_DIR$/builds/deploy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/public/moon.webm" beforeDir="false" afterPath="$PROJECT_DIR$/builds/v4/moon.webm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/public/under_construction.svg" beforeDir="false" afterPath="$PROJECT_DIR$/builds/v4/under_construction.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/assets/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/assets/css/routes/Home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/assets/css/splash.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/components/TopNav.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/components/UnderConstruction.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/routes/Home.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/routes/Projects.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/v5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/builds/v5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/vite.config.ts" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
