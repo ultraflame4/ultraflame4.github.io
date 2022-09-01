@@ -21,9 +21,9 @@
         <br>
         <br>
         <br>
-        <a href="./r">
+        <router-link to="/r">
         <b style="letter-spacing: 3px;font-weight: bolder; font-size: 20px;">D̵͔̣̠̯̦̗̾̿̾̓͋͘ọ̵̧̡̧͍̘̼͚̅͐͝͝͝N̴̨̞̞̝̖͕͔̠̣̓̅͂̈́̇̕'̵̡͍̗͓̤̇̋͗̌͒̂͊̕͝ͅt̵̢̪̓̊͌͘̕ ̷̬̞̔̀́̑̿͂͝╘̷̭̖̭̻̺̒e̸͔̳͉̓̑̎̿̾̓̑̇̃à̴͖̱̣̳̬̖͖͔̮̆͌v̶̡̨̢̗̤̒̈̈́̍̎̕̕ͅe̸͎̰͑̃ͅ</b>
-        </a>
+        </router-link>
       </p>
     </div>
   </div>

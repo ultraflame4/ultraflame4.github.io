@@ -1,5 +1,5 @@
 <template>
-  <button @click="open(url)">
+  <button @click="openurl()">
     <img v-if="iconUrl.length>0" :src="iconUrl"/>
     <p>{{ text }}</p>
   </button>
@@ -20,6 +20,11 @@ export default {
     url:{
       type:String,
       default: "/404"
+    }
+  },
+  methods:{
+    openurl: function () {
+      open(this.url)
     }
   }
 }

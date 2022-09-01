@@ -1,10 +1,12 @@
 <template>
   <div class="navbaritem-container">
-    <button @click="scrollto(link)">
-      <h5>
+    <h5>
+    <router-link :to="link">
+
         {{title}}
-      </h5>
-    </button>
+
+    </router-link>
+    </h5>
   </div>
 </template>
 
@@ -23,20 +25,24 @@ export default {
 <style scoped lang="sass">
 @import "@/assets/globals"
 div
-  button
-    height: 70%
+  h5
+    height: 100%
     background-color: rgba($color-white1,0)
     border: none
     border-radius: 10px
-    h5
-      color: $color-white2
+    cursor: pointer
+    display: flex
+
+  a
+    margin: auto
+    color: $color-white2
 
     @extend .p-sides-30px
 
-  button:hover
+  h5:hover
     background-color: rgba($color-white1,.2)
 
-  button:active
+  h5:active
     background-color: rgba($color-white1,.3)
 
 </style>

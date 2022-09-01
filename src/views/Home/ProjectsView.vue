@@ -41,7 +41,7 @@ export default {
       <p>The best of my projects</p>
     </div>
     <div id="pview-seeall">
-      <a href="./projects">See All Projects ➡</a>
+      <router-link to="./projects">See All Projects ➡</router-link>
     </div>
 
   </div>
