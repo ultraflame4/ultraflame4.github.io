@@ -14,12 +14,6 @@ def setup_worktree_if_needed():
 
     print("- Creating worktree for branch 'builds'")
     os.system(f"git worktree add builds")
-    for i in os.listdir("./builds"):
-        if i not in (".git"):
-            try:
-                os.remove(f"./builds/{i}")
-            except PermissionError:
-                shutil.rmtree(f"./builds/{i}")
 
     os.chdir("builds")
     print(os.popen("git add .").read())
