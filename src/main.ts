@@ -1,5 +1,5 @@
 import {createApp} from 'vue'
-import {createRouter, createWebHistory} from "vue-router";
+import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
 import vToolTip from 'v-tooltip'
 
 import App from './App.vue'
@@ -9,7 +9,7 @@ import ProjectList from "@/views/ProjectsList/ProjectsList.vue";
 import PageNotFound from '@/views/PageNotFound.vue';
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {path: "/", name: "Home", component: Home},
         {path: "/r", name: "Rock", component: RouteR},
