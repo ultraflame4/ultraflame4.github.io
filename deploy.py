@@ -15,11 +15,6 @@ def setup_worktree_if_needed():
     print("- Creating worktree for branch 'builds'")
     os.system(f"git worktree add builds")
 
-    os.chdir("builds")
-    print(os.popen("git add .").read())
-    print(os.popen("git commit -m\"Initial commit\"").read())
-    print(os.popen("git pull origin builds").read())
-    os.chdir("..")
     print(os.popen("git push origin builds:builds").read())
 
 print("- Starting deployment of website")
