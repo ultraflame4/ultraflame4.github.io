@@ -25,6 +25,7 @@ export default function Home() {
 
                 <ul id={"header-links"}>
                     <li><HashLink to={"/#about"}>about</HashLink></li>
+                    <li><HashLink to={"/#projects"}>projects</HashLink></li>
                 </ul>
 
 
