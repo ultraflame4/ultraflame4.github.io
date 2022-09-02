@@ -1,0 +1,77 @@
+[
+  {
+    "title": " ultr42 Site",
+    "name": "ultraflame4.github.io",
+    "description": "Repository for ultraflame4.github.io. Aka the repo for this site",
+    "has_app": true
+  },
+
+  {
+    "title": "Binosaur",
+    "name": "Binosaur-game",
+    "description": "A very bad remade of the classic chrome dino game where you jump over obstacles and gain points."
+  },
+  {
+    "title": "BetterConsole",
+    "name": "Better-Console-Python",
+    "description": "This project aims to provide a better console for python programs so that logging and viewing logs are cleaner and easier. Some of the features provided are log filtering and inline command execution!"
+  },
+  {
+    "title": "DiscordBotClient",
+    "name": "DiscordBotClient",
+    "description": "This python program gives your boring commandline interface readonly bot into a significantly better one by giving it a ui! This program also allows you to manually control your bot and send messages!"
+  },
+  {
+    "title": "Online TicTacToe",
+    "name": "OnlineTicTacToe",
+    "description": "This project allows you to play TicTacToe online! over the internet! over long distances!. It also includes a scoreboard to keep track of scores! If you are lonely and have no one to play with.. have no fear because there is also a singleplayer mode! Have fun!",
+    "has_app": true
+  },
+  {
+    "title": "Tiled Image",
+    "name": "TileImage",
+    "description": "This very cool python project uses a reference image and tiles images together to form a very large image similar to the reference image"
+  },
+  {
+    "title": "Python Bgario",
+    "name": "Python-Bgario",
+    "description": "An crappy amateur remake of agario written in python by a noob in 2018"
+  },
+  {
+    "title": "Minesweeper",
+    "name": "Minesweeper",
+    "description": "An amateur remake of minesweeper written in javascript and html thrown together haphazardly in a couple of days",
+    "has_app": true
+  },
+  {
+    "title": "Rock Paper Scissors",
+    "name": "Rock-Paper-Scissors",
+    "description": "An amateur remake of Rock Paper Scissors written in python by a noob in 2018 with very little experience"
+  },
+  {
+    "title": "Python Qt Browser",
+    "name": "PythonQtBrowser",
+    "description": "A custom browser, with a built-in ad blocker, written in python using the Qt5 library"
+  },
+  {
+    "title": "TicTacToe",
+    "name": "TicTacToe",
+    "description": "The precursor to OnlineTicTacToe, the Tic Tac Toe game written in python by an amateur in 2019"
+  },
+
+  {
+    "title": "AutoClicker",
+    "name": "AutoClicker",
+    "description": "*USE AT YOUR OWN RISK*  A simple autoclicker written in python by a noob in 2019."
+  },
+  {
+    "title" : "Space Filler",
+    "name": "SpaceFiller",
+    "description": "*USE AT YOUR OWN RISK* This very dangerous program will fill up what ever disk space you have. written by a noob in 2019."
+  },
+  {
+    "title": "SpamWeb",
+    "name": "SpamWeb",
+    "description": "*USE AT YOUR OWN RISK* This also very dangerous program will open a f*ck ton of webpages. You will BSOD if you dont kill the program. written by a noob in 2019"
+  }
+]
