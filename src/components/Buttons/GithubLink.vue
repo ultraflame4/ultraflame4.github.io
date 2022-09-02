@@ -1,5 +1,5 @@
 <template>
-  <BaseLink class="github-link" text="View on Github" icon-url="/GitHub-Mark-64px.png" :url="url">
+  <BaseLink class="github-link" text="View on Github" icon-url="GitHub-Mark-64px.png" :url="url">
   </BaseLink>
 </template>
 
