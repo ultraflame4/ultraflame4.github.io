@@ -33,7 +33,7 @@ export default function Home() {
                     id={"bg-vid"}
 
                     className={"fillSpace"} muted autoPlay loop>
-                    <source src={"/moon.webm"} type={"video/webm"}/>
+                    <source src={"moon.webm"} type={"video/webm"}/>
                 </video>
             </header>
 

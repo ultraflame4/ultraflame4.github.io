@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="idea stuff">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="--">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index.09e80e0c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index.c44d54c3.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/assets/index.c44d54c3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,7 @@
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -60,17 +67,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Programming/Programming Projects/ultraflame4.github.io",
+    "last_opened_file_path": "D:/Programming/Programming Projects/ultraflame4.github.io/builds",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "web.server",
     "ts.external.directory.path": "D:\\Programming\\Programming Projects\\ultraflame4.github.io\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -88,7 +96,10 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -121,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.forcebuild" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.forcebuild" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.forcebuild" />
+        <item itemvalue="npm.forcebuild" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +146,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="51c17b10-df75-46c9-acf4-4cf49c00155f" name="Changes" comment="" />
+      <changelist id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="--" />
       <created>1637853307200</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -207,6 +218,7 @@
       <workItem from="1662033412013" duration="936000" />
       <workItem from="1662034486192" duration="2902000" />
       <workItem from="1662046204690" duration="340000" />
+      <workItem from="1662082443074" duration="2713000" />
     </task>
     <task id="LOCAL-00036" summary="added anim">
       <created>1648964605403</created>
@@ -573,7 +585,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="v5" />
+                        <option value="builds" />
                       </list>
                     </value>
                   </entry>

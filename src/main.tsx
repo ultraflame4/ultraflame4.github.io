@@ -4,6 +4,7 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import Projects from "./routes/Projects";
 import "./assets/css/index.css"
 import "./assets/css/splash.css"
+
 import Home from "./routes/Home";
 
 
