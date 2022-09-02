@@ -2,9 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ultr42 - web version routing</title>
+    <title>ultr42 - site versions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            background: #1a1a1a;
+            color: white;
+            font-family: "Poppins";
+
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h4, h3, h5 {
+            margin: 8px 0;
+
+            letter-spacing: 0.1rem;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: aquamarine;
+        }
+
+        hr {
+            width: 30rem;
+
+        }
+
+    </style>
 </head>
 <body>
+
+<h1 id="title-text">
+    Routing to latest site version . . .
+</h1>
+<h1 id="timer">
+    -
+</h1>
+<script>
+    var getJSON = function (url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status === 200) {
+                callback(null, xhr.response);
+            } else {
+                callback(status, xhr.response);
+            }
+        };
+        xhr.send();
+    };
+    var countdown = 3
+    var interval_ = null
+
+    getJSON("./versions.json", function (err, data) {
+        if (err !== null) {
+            document.querySelector("#title-text").textContent = "Something went wrong!\n" + err
+        } else {
+            var released = data.release
+            var pre = data.pre
+
+            var list = document.querySelector("#version-list")
+
+            released.reverse().forEach(function (item, index) {
+                var child = document.createElement("li")
+                var link = document.createElement("a")
+                link.textContent = item
+                link.href = "./" + item
+                child.append(link)
+                list.append(child)
+            })
+
+            document.querySelector("#latest").href = released[0];
+
+            if (pre == undefined || pre == null) {
+                document.querySelector("#pre").href = released[0];
+            } else {
+                document.querySelector("#pre").href = pre;
+            }
+
+            interval_ = setInterval(function () {
+                document.querySelector("#timer").textContent = countdown
+                countdown -= 1
+                if (countdown < 0) {
+                    clearInterval(interval_)
+                    location.assign("./"+released[0])
+                }
+            }, 1000)
+        }
+    })
+
+</script>
+<hr/>
+<h3>Releases: </h3>
+<h4><a id="latest">Latest</a></h4>
+<ul id="version-list">
+
+</ul>
+<h5><a id="pre">bleeding-edge</a></h5>
 
 </body>
 </html>
