@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="builds">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="work tree v4">
+      <change afterPath="$PROJECT_DIR$/v3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/builds/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,26 +61,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Programming/Programming Projects/ultraflame4.github.io/builds",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "web.server",
-    "ts.external.directory.path": "D:\\Programming\\Programming Projects\\ultraflame4.github.io\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/Programming Projects/ultraflame4.github.io/builds/v4&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Programming\\Programming Projects\\ultraflame4.github.io\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\builds\v4" />
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\views\Home" />
     </key>
@@ -213,21 +215,8 @@
       <workItem from="1662033412013" duration="936000" />
       <workItem from="1662034486192" duration="2902000" />
       <workItem from="1662046204690" duration="340000" />
-      <workItem from="1662082443074" duration="6322000" />
-    </task>
-    <task id="LOCAL-00038" summary="fixed- easter egg + build">
-      <created>1648967160277</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1648967160278</updated>
-    </task>
-    <task id="LOCAL-00039" summary="increased font weight for links. added more details to home section">
-      <created>1649132989518</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1649132989518</updated>
+      <workItem from="1662082443074" duration="8093000" />
+      <workItem from="1662090938268" duration="433000" />
     </task>
     <task id="LOCAL-00040" summary="swapped to header instead of navbar component">
       <created>1649139546192</created>
@@ -558,7 +547,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662085745744</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="added font link just in case">
+      <created>1662089248806</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1662089248806</updated>
+    </task>
+    <task id="LOCAL-00088" summary="work tree v4">
+      <created>1662089428534</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1662089428534</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,8 +600,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Added proper font and text" />
-    <MESSAGE value="Added glowy background" />
     <MESSAGE value="settedup proper route nesting" />
     <MESSAGE value="did a bunch of stuff" />
     <MESSAGE value="Added additional topnav links" />
@@ -622,7 +623,9 @@
     <MESSAGE value="idea stuff" />
     <MESSAGE value="fixed some public asset path issues" />
     <MESSAGE value="builds" />
-    <option name="LAST_COMMIT_MESSAGE" value="builds" />
+    <MESSAGE value="added font link just in case" />
+    <MESSAGE value="work tree v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="work tree v4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
