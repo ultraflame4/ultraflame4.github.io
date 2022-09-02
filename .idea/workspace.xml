@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="--">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="builds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index.09e80e0c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index.c44d54c3.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/assets/index.c44d54c3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/builds/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,21 +213,7 @@
       <workItem from="1662033412013" duration="936000" />
       <workItem from="1662034486192" duration="2902000" />
       <workItem from="1662046204690" duration="340000" />
-      <workItem from="1662082443074" duration="2713000" />
-    </task>
-    <task id="LOCAL-00036" summary="added anim">
-      <created>1648964605403</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1648964605403</updated>
-    </task>
-    <task id="LOCAL-00037" summary="build">
-      <created>1648966649745</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1648966649745</updated>
+      <workItem from="1662082443074" duration="6322000" />
     </task>
     <task id="LOCAL-00038" summary="fixed- easter egg + build">
       <created>1648967160277</created>
@@ -563,7 +544,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662049479156</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="fixed some public asset path issues">
+      <created>1662085660125</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1662085660126</updated>
+    </task>
+    <task id="LOCAL-00086" summary="builds">
+      <created>1662085745744</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1662085745744</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,8 +597,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="updated svg to be less big" />
-    <MESSAGE value="Added proper font" />
     <MESSAGE value="Added proper font and text" />
     <MESSAGE value="Added glowy background" />
     <MESSAGE value="settedup proper route nesting" />
@@ -627,7 +620,9 @@
     <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 6d0f3072" />
     <MESSAGE value="fixed build script" />
     <MESSAGE value="idea stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="idea stuff" />
+    <MESSAGE value="fixed some public asset path issues" />
+    <MESSAGE value="builds" />
+    <option name="LAST_COMMIT_MESSAGE" value="builds" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
