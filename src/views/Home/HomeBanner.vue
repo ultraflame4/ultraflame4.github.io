@@ -29,7 +29,7 @@ export default {
   components: {SlideshowItem, SlideShow},
   methods: {
     scrolldowb(){
-      window.location.replace("/#projects-view")
+      window.location.replace("./#projects-view")
     },
     getImages() {
       //https://wallpapercave.com/wp/wp2077533.jpg,
