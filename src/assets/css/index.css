@@ -1,8 +1,6 @@
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
+
 
     color: rgba(255, 255, 255, 0.87);
 
@@ -12,13 +10,20 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    --topNavHeight: 124px;
-    --topNavHeightStickied: 64px;
+    --topNavHeight: 7.75rem;
+    --topNavHeightStickied: 4rem;
 
     --backgrondColor: #171717;
 
     --max-width: 1600px
 }
+
+@media only screen and (max-width: 1150px) {
+    :root {
+        font-size: .85rem;
+    }
+}
+
 
 * {
     overflow: hidden;
@@ -56,41 +61,6 @@ h1 {
     line-height: 1.1;
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-
-button:hover {
-    border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
-}
 
 .fillSpace {
     width: 100%;
@@ -119,7 +89,7 @@ button:focus-visible {
     position: sticky;
     top: -1px;
     display: flex;
-    padding: 0 32px;
+    padding: 0 2rem;
     height: var(--topNavHeight);
     z-index: 100;
     transition: all 400ms ease;
@@ -136,16 +106,17 @@ button:focus-visible {
 #topnav-title a {
     font-family: Poppins;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.156rem;
     transition: all 400ms ease;
     cursor: pointer;
     color: white;
+
 }
 
 .topnav-stickied #topnav-title a {
     letter-spacing: 2px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.25rem;
 
 }
 
@@ -159,17 +130,30 @@ li {
     display: flex;
     margin: 0;
     padding: 0;
-    margin-left: 128px;
-    gap: 48px;
+    margin-left: min(8rem, 9vw);
+    gap: 3rem;
     height: 100%;
     align-items: center;
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    letter-spacing: 0.063rem;
     transition: all ease 1s;
     flex-grow: 0;
     list-style: none;
     justify-content: flex-end;
 }
+
+@media only screen and (max-width: 800px) {
+    #topnav-links {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+    }
+
+    #topnav-socials{
+        margin-right: 64rem;
+    }
+}
+
 
 #topnav-socials {
     display: flex;
@@ -186,26 +170,26 @@ li {
 }
 
 .topnav-stickied #topnav-links {
-    gap: 24px;
+    gap: 1.5rem;
     flex-grow: 1;
 
 }
 
 
 .topnav-stickied #topnav-socials {
-    margin-left: 64px;
+    margin-left: 4rem;
     flex-grow: 0;
 }
 
 #topnav-socials a {
     aspect-ratio: 1;
-    height: 48px;
+    height: 3rem;
     transition: all ease 1s;
     margin: auto;
 }
 
 .topnav-stickied #topnav-socials a {
-    height: 32px;
+    height: 2rem;
 }
 
 
@@ -214,7 +198,7 @@ li {
     color: #aaa;
     font-weight: 600;
     transition: all ease 400ms;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     margin: auto;
 }
 
@@ -224,8 +208,8 @@ li {
 }
 
 .topnav-stickied #topnav-links a {
-    letter-spacing: 1px;
-    font-size: 14px;
+    letter-spacing: 0.063rem;
+    font-size: 0.875rem;
 
 }
 
@@ -240,7 +224,7 @@ section {
 }
 
 .topShadow {
-    filter: drop-shadow(0 -2px 48px rgba(0, 0, 0, 80%));
+    filter: drop-shadow(0 -0.125rem 3rem rgba(0, 0, 0, 80%));
 }
 
 main {
@@ -248,8 +232,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    padding: 3px;
+    width: 0.375rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -257,15 +240,12 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-    padding-top: 3px;
     background: #fff;
-    border-radius: 4px;
-
+    border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #aaa;
-    width: 4px;
 }
 
 /*A wrapper so that we can center things and set max width so that things that are aligned to left or right are not too far apart*/
@@ -283,4 +263,27 @@ main {
 .flex-col {
     display: flex;
     flex-direction: column;
+}
+
+#about{
+    letter-spacing: 0.5px;
+    line-height: 1.5em;
+    font-size: 1.2rem;
+}
+
+#about h2{
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+
+#about-languages{
+    width: 100%;
+    height: 4rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1.1rem;
 }
