@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="work tree v4">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="worktree stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,28 +216,7 @@
       <workItem from="1662046204690" duration="340000" />
       <workItem from="1662082443074" duration="8093000" />
       <workItem from="1662090938268" duration="433000" />
-      <workItem from="1662185435592" duration="3056000" />
-    </task>
-    <task id="LOCAL-00040" summary="swapped to header instead of navbar component">
-      <created>1649139546192</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1649139546192</updated>
-    </task>
-    <task id="LOCAL-00041" summary="home section now somewhat mobile friendly. Header navbar now collapses if width &lt; 600">
-      <created>1649144035545</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1649144035545</updated>
-    </task>
-    <task id="LOCAL-00042" summary="added regex pattern to extract hash">
-      <created>1649147628823</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1649147628823</updated>
+      <workItem from="1662185435592" duration="3308000" />
     </task>
     <task id="LOCAL-00043" summary="removed regex pattern as it is uneeded">
       <created>1649148024625</created>
@@ -563,7 +540,28 @@
       <option name="project" value="LOCAL" />
       <updated>1662089428534</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Added about section : )">
+      <created>1662188552231</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1662188552231</updated>
+    </task>
+    <task id="LOCAL-00090" summary="build">
+      <created>1662188682134</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1662188682134</updated>
+    </task>
+    <task id="LOCAL-00091" summary="worktree stuff">
+      <created>1662188712310</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1662188712310</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,9 +615,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="settedup proper route nesting" />
-    <MESSAGE value="did a bunch of stuff" />
-    <MESSAGE value="Added additional topnav links" />
     <MESSAGE value="did alot of stuff" />
     <MESSAGE value="fixed click through issues with header" />
     <MESSAGE value="heading center styling issues" />
@@ -642,7 +637,10 @@
     <MESSAGE value="builds" />
     <MESSAGE value="added font link just in case" />
     <MESSAGE value="work tree v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="work tree v4" />
+    <MESSAGE value="Added about section : )" />
+    <MESSAGE value="build" />
+    <MESSAGE value="worktree stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="worktree stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
