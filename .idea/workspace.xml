@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed topnav about hashlink">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added skill confidence">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,14 +217,7 @@
       <workItem from="1662082443074" duration="8093000" />
       <workItem from="1662090938268" duration="433000" />
       <workItem from="1662185435592" duration="3630000" />
-      <workItem from="1662259476837" duration="4942000" />
-    </task>
-    <task id="LOCAL-00044" summary="all sections height are now 100vh, max 970px&#10;&#10;first section when linked to is at the top">
-      <created>1649150968083</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1649150968083</updated>
+      <workItem from="1662259476837" duration="5714000" />
     </task>
     <task id="LOCAL-00045" summary="top padding in first section to prevent content from overlaping with header">
       <created>1649151031637</created>
@@ -566,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662188886668</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Added skill confidence">
+      <created>1662264570263</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1662264570263</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +616,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="fixed click through issues with header" />
     <MESSAGE value="heading center styling issues" />
     <MESSAGE value="Added working deploy script" />
     <MESSAGE value="line breaks" />
@@ -645,7 +640,8 @@
     <MESSAGE value="build" />
     <MESSAGE value="worktree stuff" />
     <MESSAGE value="fixed topnav about hashlink" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed topnav about hashlink" />
+    <MESSAGE value="Added skill confidence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added skill confidence" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

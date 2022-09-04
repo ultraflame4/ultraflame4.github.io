@@ -16,28 +16,28 @@ const languages: p_language[] = [
     {
         name: "C Sharp",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-        confidence: .75
+        confidence: .7
     },
     {
         name: "Unity",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
-        confidence: .5,
+        confidence: .65,
         invert_image: true
     },
     {
         name: "Java",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-        confidence: .4
+        confidence: .5
     },
     {
         name: "Python",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-        confidence: .8
+        confidence: .9
     },
     {
         name: "Javascript",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        confidence: .6
+        confidence: .5
     },
     {
         name: "Typescript",
@@ -117,6 +117,7 @@ export default function Home() {
                     </p>
                     <br/>
                     <br/>
+
                     {/* todo Maybe add a compentency/preferred meter here */}
                     <h2>What I Know 📖</h2>
                     <p>Below are the skills, languages & technologies I've learned over the years and my <b>confidence</b> level in them</p>
