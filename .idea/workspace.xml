@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="worktree stuff">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed topnav about hashlink">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,14 +220,8 @@
       <workItem from="1662046204690" duration="340000" />
       <workItem from="1662082443074" duration="8093000" />
       <workItem from="1662090938268" duration="433000" />
-      <workItem from="1662185435592" duration="3308000" />
-    </task>
-    <task id="LOCAL-00043" summary="removed regex pattern as it is uneeded">
-      <created>1649148024625</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1649148024625</updated>
+      <workItem from="1662185435592" duration="3630000" />
+      <workItem from="1662259476837" duration="4942000" />
     </task>
     <task id="LOCAL-00044" summary="all sections height are now 100vh, max 970px&#10;&#10;first section when linked to is at the top">
       <created>1649150968083</created>
@@ -561,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662188712310</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="fixed topnav about hashlink">
+      <created>1662188886668</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1662188886668</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +620,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="did alot of stuff" />
     <MESSAGE value="fixed click through issues with header" />
     <MESSAGE value="heading center styling issues" />
     <MESSAGE value="Added working deploy script" />
@@ -640,7 +644,8 @@
     <MESSAGE value="Added about section : )" />
     <MESSAGE value="build" />
     <MESSAGE value="worktree stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="worktree stuff" />
+    <MESSAGE value="fixed topnav about hashlink" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed topnav about hashlink" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

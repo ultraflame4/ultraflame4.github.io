@@ -1,7 +1,7 @@
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    /*font-family: Inter, Avenir, Helvetica, Arial, sans-serif;*/
 
-
+    font-family: "Poppins";
     color: rgba(255, 255, 255, 0.87);
 
     font-synthesis: none;
@@ -265,25 +265,13 @@ main {
     flex-direction: column;
 }
 
-#about{
-    letter-spacing: 0.5px;
-    line-height: 1.5em;
-    font-size: 1.2rem;
+p a{
+    font-weight: 600;
+    color: white;
+    transition: all ease 1s;
+    cursor: pointer;
 }
-
-#about h2{
-    margin: 0;
-    margin-bottom: 16px;
-}
-
-
-#about-languages{
-    width: 100%;
-    height: 4rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    gap: 1.1rem;
+p a:hover{
+    text-decoration: underline;
+    color: white;
 }
