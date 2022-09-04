@@ -26,7 +26,7 @@
 
 
 * {
-    overflow: hidden;
+    overflow: visible;
 }
 
 #root {
@@ -34,7 +34,7 @@
     height: 100%;
     box-sizing: border-box;
     overflow-y: auto;
-
+    overflow-x: hidden;
     padding: 0;
 }
 
@@ -274,4 +274,12 @@ p a{
 p a:hover{
     text-decoration: underline;
     color: white;
+}
+
+.child-wrapper {
+    height: fit-content;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    background: transparent ;
 }

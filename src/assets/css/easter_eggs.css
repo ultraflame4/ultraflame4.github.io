@@ -1,0 +1,95 @@
+.falling-item {
+    position: relative;
+    overflow: visible;
+    animation: 200ms linear shake;
+    box-sizing: content-box;
+}
+
+.falling-item-fallen {
+    animation: 400ms ease-in fall;
+    position: fixed;
+    bottom: 0;
+}
+
+.falling-item-fallen-inversed {
+    filter: grayscale(1) brightness(100);
+    animation: 1s ease-in fall-inverse, 100ms linear shake infinite, 10s ease-in glow 600ms;
+}
+
+.falling-item:active {
+    animation: none;
+}
+
+.glowy-overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    animation: 5s linear glowy-overlay;
+    background: white;
+    pointer-events: none;
+}
+
+@keyframes shake {
+    0% {
+        left: 0;
+    }
+    25% {
+        left: -10%;
+    }
+    50% {
+        left: 10%;
+    }
+    75% {
+        left: -5%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes fall {
+    0% {
+        position: relative;
+        top: 0;
+
+    }
+    100% {
+        position: relative;
+        top: 800%;
+    }
+}
+
+@keyframes fall-inverse {
+    0% {
+        position: relative;
+        top: 800%;
+    }
+    100% {
+        position: relative;
+        top: 0;
+
+    }
+}
+
+@keyframes glow {
+    0% {
+
+        filter: grayscale(0) brightness(1);
+    }
+    100% {
+        filter: grayscale(1) brightness(100);
+
+    }
+}
+
+@keyframes glowy-overlay {
+    from{
+        background: transparent;
+    }
+    to{
+        background: white;
+    }
+}

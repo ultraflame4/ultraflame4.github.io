@@ -2,8 +2,10 @@ import {Link, Outlet} from "react-router-dom";
 import UnderConstruction from "../components/UnderConstruction";
 import TopNav from "../components/TopNav";
 import "../assets/css/routes/Home.css";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {HashLink} from 'react-router-hash-link';
+import Counter from "../components/Counter";
+import FallingItem from "../components/easter_eggs/FallingItem";
 
 interface p_language {
     name: string,
@@ -56,7 +58,54 @@ const languages: p_language[] = [
     }
 ]
 
+let abtLangEasterEgg = false
+
+
 export default function Home() {
+
+    function aboutLangEasterEgg() {
+        let about_langs= document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
+        if (about_langs == null){
+            return
+        }
+        for (let i = 0; i < about_langs.length; i++) {
+            let e = about_langs[i]
+            setTimeout(()=>{
+                e.classList.remove("falling-item-fallen")
+                e.classList.add("falling-item-fallen-inversed")
+            },i*600)
+        }
+
+        setTimeout(()=>{
+            let a = document.createElement("div")
+            a.classList.add("glowy-overlay")
+            document.querySelector("body")?.append(a)
+
+            setTimeout(()=>{
+                location.assign("/v2/rr.html")
+            },6000)
+        },languages.length*600+2000)
+    }
+
+
+    function onLangLogoClicked() {
+
+        // Check if all items have fallen. If yes  begin easter egg sequence 2.
+        // Use set time out to wait so that this executes aft the child listner executes
+        setTimeout(()=>{
+            let about_langs= document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
+            if (about_langs==null){
+                return
+            }
+            if (about_langs.length == languages.length){ // if started dont start again
+                if (!abtLangEasterEgg){
+                    abtLangEasterEgg=true
+                    setTimeout(aboutLangEasterEgg,1000)
+                }
+
+            }
+        },0)
+    }
 
 
     return (
@@ -120,27 +169,35 @@ export default function Home() {
 
                     {/* todo Maybe add a compentency/preferred meter here */}
                     <h2>What I Know 📖</h2>
-                    <p>Below are the skills, languages & technologies I've learned over the years and my <b>confidence</b> level in them</p>
+                    <p>Below are the skills, languages & technologies I've learned over the years and
+                        my <b>confidence</b> level in them</p>
                     <br/>
                     <ul id={"about-languages"}>
                         {
                             languages.map((value, index) => (
                                 <li key={index} className={"about-languages-item"}>
 
-                                    <img src={value.logo}
-                                         alt={value.name}
-                                         title={value.name}
+                                    <FallingItem>
+                                        <img src={value.logo}
+                                             alt={value.name}
+                                             title={value.name}
+                                             onClick={onLangLogoClicked}
+                                             style={{
+                                                 filter: value.invert_image ? "invert()" : "",
+                                             }}
+                                        />
+                                    </FallingItem>
 
-                                         style={{
-                                             filter: value.invert_image ? "invert()" : "",
-                                         }}
-                                    />
                                     <h5>{value.name}</h5>
                                     <p style={{
-                                        fontWeight:700,
-                                        fontSize:"0.9em",
+                                        fontWeight: 700,
+                                        fontSize: "0.9em",
                                         color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
-                                    }}>{value.confidence}</p>
+                                    }}>
+
+                                        <Counter to={value.confidence} steps={0.02} interval={50} resetOnClick={true}/>
+                                    </p>
+
 
                                 </li>
                             ))

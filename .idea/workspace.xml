@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added skill confidence">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="updated values">
+      <change afterPath="$PROJECT_DIR$/src/assets/css/easter_eggs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Counter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/easter_eggs/FallingItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +27,11 @@
         <option value="package.json" />
         <option value="SCSS File" />
         <option value="Vue Single File Component" />
+        <option value="Python Script" />
+        <option value="HTML File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
-        <option value="Python Script" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -217,14 +223,7 @@
       <workItem from="1662082443074" duration="8093000" />
       <workItem from="1662090938268" duration="433000" />
       <workItem from="1662185435592" duration="3630000" />
-      <workItem from="1662259476837" duration="5714000" />
-    </task>
-    <task id="LOCAL-00045" summary="top padding in first section to prevent content from overlaping with header">
-      <created>1649151031637</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1649151031637</updated>
+      <workItem from="1662259476837" duration="22456000" />
     </task>
     <task id="LOCAL-00046" summary="added about section">
       <created>1649156020274</created>
@@ -562,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662264570263</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="updated values">
+      <created>1662265310382</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1662265310382</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +622,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="heading center styling issues" />
     <MESSAGE value="Added working deploy script" />
     <MESSAGE value="line breaks" />
     <MESSAGE value="added some links" />
@@ -641,7 +646,8 @@
     <MESSAGE value="worktree stuff" />
     <MESSAGE value="fixed topnav about hashlink" />
     <MESSAGE value="Added skill confidence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added skill confidence" />
+    <MESSAGE value="updated values" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated values" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
