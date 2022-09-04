@@ -82,7 +82,7 @@ export default function Home() {
             document.querySelector("body")?.append(a)
 
             setTimeout(()=>{
-                location.assign("/v2/rr.html")
+                location.assign("/v1/rr.html")
             },6000)
         },languages.length*600+2000)
     }

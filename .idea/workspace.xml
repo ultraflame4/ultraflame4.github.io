@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="updated values">
-      <change afterPath="$PROJECT_DIR$/src/assets/css/easter_eggs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Counter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/easter_eggs/FallingItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools.ts" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added an easter egg in about me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +93,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -134,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="npm.forcebuild" />
         <item itemvalue="npm.forcebuild" />
@@ -223,14 +218,7 @@
       <workItem from="1662082443074" duration="8093000" />
       <workItem from="1662090938268" duration="433000" />
       <workItem from="1662185435592" duration="3630000" />
-      <workItem from="1662259476837" duration="22456000" />
-    </task>
-    <task id="LOCAL-00046" summary="added about section">
-      <created>1649156020274</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1649156020274</updated>
+      <workItem from="1662259476837" duration="22705000" />
     </task>
     <task id="LOCAL-00047" summary="added &quot;mobile friendly&quot; nav bar">
       <created>1649167884153</created>
@@ -568,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662265310382</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Added an easter egg in about me">
+      <created>1662283107633</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1662283107633</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +617,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Added working deploy script" />
     <MESSAGE value="line breaks" />
     <MESSAGE value="added some links" />
     <MESSAGE value="a" />
@@ -647,7 +641,8 @@
     <MESSAGE value="fixed topnav about hashlink" />
     <MESSAGE value="Added skill confidence" />
     <MESSAGE value="updated values" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated values" />
+    <MESSAGE value="Added an easter egg in about me" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an easter egg in about me" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
