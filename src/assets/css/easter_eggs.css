@@ -20,16 +20,49 @@
     animation: none;
 }
 
-.glowy-overlay{
+.lang-easter-egg-overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: 100;
     top: 0;
     left: 0;
-    animation: 5s linear glowy-overlay;
-    background: white;
-    pointer-events: none;
+    animation: 7s linear lang-easter-egg-overlay;
+    background: var(--backgrondColor);
+    pointer-events: all;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: not-allowed;
+
+}
+
+.lang-easter-egg-overlay > div {
+
+    animation: 500ms linear fadein 7s;
+    animation-fill-mode: both;
+
+}
+
+.lang-easter-respawn {
+    width: fit-content;
+    padding: 1em 2em;
+    height: 4em;
+    font-family: "Poppins";
+    font-size: 1.3em;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    border: solid 2px white;
+    border-radius: 1em;
+    letter-spacing: 6px;
+    margin-top: 1em;
+}
+
+.lang-easter-respawn-hover {
+
 }
 
 @keyframes shake {
@@ -85,11 +118,27 @@
     }
 }
 
-@keyframes glowy-overlay {
-    from{
+@keyframes lang-easter-egg-overlay {
+    0% {
         background: transparent;
+        cursor: pointer;
     }
-    to{
+    70% {
         background: white;
+    }
+    95% {
+        background: white;
+    }
+    100% {
+        background: var(--backgrondColor);
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

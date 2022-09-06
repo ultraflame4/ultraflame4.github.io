@@ -283,3 +283,11 @@ p a:hover{
     padding: 0;
     background: transparent ;
 }
+
+.disable-pointer-evs{
+    pointer-events: none;
+}
+
+.transparent{
+    opacity: 0;
+}

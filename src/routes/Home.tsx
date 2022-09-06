@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {HashLink} from 'react-router-hash-link';
 import Counter from "../components/Counter";
 import FallingItem from "../components/easter_eggs/FallingItem";
+import FunnyOverlay from "../components/easter_eggs/LangEasterEggOverlay";
 
 interface p_language {
     name: string,
@@ -63,6 +64,8 @@ let abtLangEasterEgg = false
 
 export default function Home() {
 
+    const [langEasterEgg,setLangEasterEgg] = useState(false)
+
     function aboutLangEasterEgg() {
         let about_langs= document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
         if (about_langs == null){
@@ -77,13 +80,8 @@ export default function Home() {
         }
 
         setTimeout(()=>{
-            let a = document.createElement("div")
-            a.classList.add("glowy-overlay")
-            document.querySelector("body")?.append(a)
+            setLangEasterEgg(true)
 
-            setTimeout(()=>{
-                location.assign("/v1/rr.html")
-            },6000)
         },languages.length*600+2000)
     }
 
@@ -110,6 +108,7 @@ export default function Home() {
 
     return (
         <>
+            {langEasterEgg? <FunnyOverlay/>:""}
 
             <TopNav allowSizeChange={true}/>
 
@@ -166,8 +165,8 @@ export default function Home() {
                     </p>
                     <br/>
                     <br/>
+                    <br/>
 
-                    {/* todo Maybe add a compentency/preferred meter here */}
                     <h2>What I Know 📖</h2>
                     <p>Below are the skills, languages & technologies I've learned over the years and
                         my <b>confidence</b> level in them</p>
