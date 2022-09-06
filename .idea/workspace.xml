@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changed link to proper link">
-      <change afterPath="$PROJECT_DIR$/src/components/easter_eggs/LangEasterEggOverlay.tsx" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="added proper link to lang easter egg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/easter_eggs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/easter_eggs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easter_eggs/LangEasterEggOverlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easter_eggs/LangEasterEggOverlay.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,14 +216,7 @@
       <workItem from="1662185435592" duration="3630000" />
       <workItem from="1662259476837" duration="22855000" />
       <workItem from="1662439331984" duration="18000" />
-      <workItem from="1662449003806" duration="4826000" />
-    </task>
-    <task id="LOCAL-00048" summary="started on proejcts - finished section goto">
-      <created>1649205969228</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1649205969228</updated>
+      <workItem from="1662449003806" duration="5023000" />
     </task>
     <task id="LOCAL-00049" summary="made section goto links nicer">
       <created>1649241061465</created>
@@ -565,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662283219998</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="added proper link to lang easter egg">
+      <created>1662453908276</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1662453908277</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +615,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="added some links" />
     <MESSAGE value="a" />
     <MESSAGE value="aaaa" />
     <MESSAGE value="AAAAAA" />
@@ -644,7 +639,8 @@
     <MESSAGE value="updated values" />
     <MESSAGE value="Added an easter egg in about me" />
     <MESSAGE value="changed link to proper link" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed link to proper link" />
+    <MESSAGE value="added proper link to lang easter egg" />
+    <option name="LAST_COMMIT_MESSAGE" value="added proper link to lang easter egg" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -9,8 +9,10 @@ export default defineComponent(function (props) {
 
         const a = () => {
             setTimeout(() => {
+                // @ts-ignore
                 if (document.activeElement.tagName === "IFRAME") {
-                    console.log("clicked");
+                    document.querySelector("#langEasterEggText")?.classList.remove("disable-pointer-evs")
+                    document.querySelector("#langEasterEggVid")?.classList.remove("transparent")
                 }
             });
         }
@@ -22,7 +24,7 @@ export default defineComponent(function (props) {
 
         return ()=>{
             window.removeEventListener("blur",a)
-            document.querySelector("#langEasterEggVid")?.classList.remove("transparent")
+
         }
     })
 
@@ -39,7 +41,9 @@ export default defineComponent(function (props) {
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen></iframe>
 
-            <div style={{
+            <div
+                id={"langEasterEggText"}
+                style={{
                 position: "absolute",
                 left: 0,
                 top: 0,
