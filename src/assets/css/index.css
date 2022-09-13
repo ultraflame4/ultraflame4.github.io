@@ -15,7 +15,9 @@
 
     --backgrondColor: #171717;
 
-    --max-width: 1600px
+    --max-width: 1600px;
+
+    --lineColor: #333;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -100,7 +102,7 @@ h1 {
 .topnav-stickied {
     height: var(--topNavHeightStickied);
     background: #1a1a1a;
-    border-bottom: #333 solid 1px;
+    border-bottom: var(--lineColor) solid 1px;
 }
 
 #topnav-title a {
@@ -271,10 +273,37 @@ p a{
     transition: all ease 1s;
     cursor: pointer;
 }
-p a:hover{
-    text-decoration: underline;
+
+
+a:hover{
+
     color: white;
 }
+
+.link-underline{
+    position: relative;
+}
+
+.link-underline::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    bottom: -0.15em;
+    height: 3px;
+    background: #ad4cde;
+    left: auto;
+    right: 0;
+    transition: width ease 200ms;
+    transform: translateZ(-1px);
+    border-radius: 3px;
+}
+.link-underline:hover::after, .link-underline:focus::after {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+
 
 .child-wrapper {
     height: fit-content;
@@ -290,4 +319,12 @@ p a:hover{
 
 .transparent{
     opacity: 0;
+}
+
+hr{
+    width: 100%;
+    border-color: var(--lineColor);
+    background: var(--lineColor);
+    border-style: solid;
+    border-width: 1px;
 }

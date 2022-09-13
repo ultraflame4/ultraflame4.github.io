@@ -7,6 +7,7 @@ import {HashLink} from 'react-router-hash-link';
 import Counter from "../components/Counter";
 import FallingItem from "../components/easter_eggs/FallingItem";
 import FunnyOverlay from "../components/easter_eggs/LangEasterEggOverlay";
+import HashLinkW from "../components/HashLinkW";
 
 interface p_language {
     name: string,
@@ -64,25 +65,25 @@ let abtLangEasterEgg = false
 
 export default function Home() {
 
-    const [langEasterEgg,setLangEasterEgg] = useState(false)
+    const [langEasterEgg, setLangEasterEgg] = useState(false)
 
     function aboutLangEasterEgg() {
-        let about_langs= document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
-        if (about_langs == null){
+        let about_langs = document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
+        if (about_langs == null) {
             return
         }
         for (let i = 0; i < about_langs.length; i++) {
             let e = about_langs[i]
-            setTimeout(()=>{
+            setTimeout(() => {
                 e.classList.remove("falling-item-fallen")
                 e.classList.add("falling-item-fallen-inversed")
-            },i*600)
+            }, i * 600)
         }
 
-        setTimeout(()=>{
+        setTimeout(() => {
             setLangEasterEgg(true)
 
-        },languages.length*600+2000)
+        }, languages.length * 600 + 2000)
     }
 
 
@@ -90,25 +91,25 @@ export default function Home() {
 
         // Check if all items have fallen. If yes  begin easter egg sequence 2.
         // Use set time out to wait so that this executes aft the child listner executes
-        setTimeout(()=>{
-            let about_langs= document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
-            if (about_langs==null){
+        setTimeout(() => {
+            let about_langs = document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
+            if (about_langs == null) {
                 return
             }
-            if (about_langs.length == languages.length){ // if started dont start again
-                if (!abtLangEasterEgg){
-                    abtLangEasterEgg=true
-                    setTimeout(aboutLangEasterEgg,1000)
+            if (about_langs.length == languages.length) { // if started dont start again
+                if (!abtLangEasterEgg) {
+                    abtLangEasterEgg = true
+                    setTimeout(aboutLangEasterEgg, 1000)
                 }
 
             }
-        },0)
+        }, 0)
     }
 
 
     return (
         <>
-            {langEasterEgg? <FunnyOverlay/>:""}
+            {langEasterEgg ? <FunnyOverlay/> : ""}
 
             <TopNav allowSizeChange={true}/>
 
@@ -123,8 +124,8 @@ export default function Home() {
                 </div>
 
                 <ul id={"header-links"}>
-                    <li><HashLink smooth to={"/#about"}>about</HashLink></li>
-                    <li><HashLink smooth to={"/#projects"}>projects</HashLink></li>
+                    <li><HashLinkW className={"link-underline"} to={"/#about"}>about</HashLinkW></li>
+                    <li><HashLinkW className={"link-underline"} to={"/#projects"}>projects</HashLinkW></li>
                 </ul>
 
 
@@ -145,7 +146,8 @@ export default function Home() {
             >
 
 
-                <section className={"fillViewport centerItems flex-col"} id={"about"}>
+                <section className={"centerItems flex-col"} id={"about"}>
+
                     <h2>About Me 😐</h2>
                     <p style={{
                         textAlign: "center"
@@ -155,7 +157,7 @@ export default function Home() {
                         I don't really rmb.
                         <br/>
                         <br/>
-                        Started with <a href={"https://minecraft.net"}>minecraft</a> ⛏️ redstone and command blocks.
+                        Started with <a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️ redstone and command blocks.
                         <br/>
                         Proceeded to learn "real" programming from various youtube tutorials & online courses.
                         <br/>
@@ -163,48 +165,52 @@ export default function Home() {
                         Since then, I've dabbled in a bunch of stuff and have done a variety projects
 
                     </p>
-                    <br/>
-                    <br/>
-                    <br/>
-
-                    <h2>What I Know 📖</h2>
-                    <p>Below are the skills, languages & technologies I've learned over the years and
-                        my <b>confidence</b> level in them</p>
-                    <br/>
-                    <ul id={"about-languages"}>
-                        {
-                            languages.map((value, index) => (
-                                <li key={index} className={"about-languages-item"}>
-
-                                    <FallingItem>
-                                        <img src={value.logo}
-                                             alt={value.name}
-                                             title={value.name}
-                                             onClick={onLangLogoClicked}
-                                             style={{
-                                                 filter: value.invert_image ? "invert()" : "",
-                                             }}
-                                        />
-                                    </FallingItem>
-
-                                    <h5>{value.name}</h5>
-                                    <p style={{
-                                        fontWeight: 700,
-                                        fontSize: "0.9em",
-                                        color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
-                                    }}>
-
-                                        <Counter to={value.confidence} steps={0.02} interval={50} resetOnClick={true}/>
-                                    </p>
 
 
-                                </li>
-                            ))
+                    {/*<section className={"centerItems flex-col"} id={"about-skills"}>*/}
 
-                        }
+                    {/*    <h2>What I Know 📖</h2>*/}
+                    {/*    <p>Below are the skills, languages & technologies I've learned over the years.*/}
+                    {/*        my level in them</p>*/}
+                    {/*    <br/>*/}
+                    {/*    <ul id={"about-languages"}>*/}
+                    {/*        {*/}
+                    {/*            languages.map((value, index) => (*/}
+                    {/*                <li key={index} className={"about-languages-item"}>*/}
 
-                    </ul>
+                    {/*                    <FallingItem>*/}
+                    {/*                        <img src={value.logo}*/}
+                    {/*                             alt={value.name}*/}
+                    {/*                             title={value.name}*/}
+                    {/*                             onClick={onLangLogoClicked}*/}
+                    {/*                             style={{*/}
+                    {/*                                 filter: value.invert_image ? "invert()" : "",*/}
+                    {/*                             }}*/}
+                    {/*                        />*/}
+                    {/*                    </FallingItem>*/}
+
+                    {/*                    <p>{value.name}</p>*/}
+                    {/*                    <p style={{*/}
+                    {/*                        fontWeight: 700,*/}
+                    {/*                        fontSize: "0.9em",*/}
+                    {/*                        color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`*/}
+                    {/*                    }}>*/}
+
+                    {/*                        <Counter to={value.confidence} steps={0.02} interval={50}*/}
+                    {/*                                 resetOnClick={true}/>*/}
+                    {/*                    </p>*/}
+
+
+                    {/*                </li>*/}
+                    {/*            ))*/}
+
+                    {/*        }*/}
+
+                    {/*    </ul>*/}
+                    {/*</section>*/}
+
                 </section>
+                <hr/>
                 <section className={"fillViewport"} id={"#projects"}>
                     <UnderConstruction/>
                 </section>

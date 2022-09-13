@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
-import {HashLink} from "react-router-hash-link";
+import HashLinkW from "./HashLinkW";
 
 
 export const TopNavHeightStickied = 64
@@ -54,7 +54,7 @@ export default function TopNav(props: TopNavProps) {
                 <ul id={"topnav-links"}>
 
                     <li>
-                        <HashLink smooth to="/#about">About</HashLink>
+                        <HashLinkW to="/#about">About</HashLinkW>
                     </li>
                     <li>
                         <Link to="/projects">Projects</Link>
