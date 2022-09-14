@@ -8,6 +8,7 @@ import Counter from "../components/Counter";
 import FallingItem from "../components/easter_eggs/FallingItem";
 import FunnyOverlay from "../components/easter_eggs/LangEasterEggOverlay";
 import HashLinkW from "../components/HashLinkW";
+import StickyW from "../components/StickyW";
 
 interface p_language {
     name: string,
@@ -157,7 +158,8 @@ export default function Home() {
                         I don't really rmb.
                         <br/>
                         <br/>
-                        Started with <a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️ redstone and command blocks.
+                        Started with <a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️
+                        redstone and command blocks.
                         <br/>
                         Proceeded to learn "real" programming from various youtube tutorials & online courses.
                         <br/>
@@ -169,48 +171,51 @@ export default function Home() {
 
                     {/*<section className={"centerItems flex-col"} id={"about-skills"}>*/}
 
-                    {/*    <h2>What I Know 📖</h2>*/}
-                    {/*    <p>Below are the skills, languages & technologies I've learned over the years.*/}
-                    {/*        my level in them</p>*/}
-                    {/*    <br/>*/}
-                    {/*    <ul id={"about-languages"}>*/}
-                    {/*        {*/}
-                    {/*            languages.map((value, index) => (*/}
-                    {/*                <li key={index} className={"about-languages-item"}>*/}
-
-                    {/*                    <FallingItem>*/}
-                    {/*                        <img src={value.logo}*/}
-                    {/*                             alt={value.name}*/}
-                    {/*                             title={value.name}*/}
-                    {/*                             onClick={onLangLogoClicked}*/}
-                    {/*                             style={{*/}
-                    {/*                                 filter: value.invert_image ? "invert()" : "",*/}
-                    {/*                             }}*/}
-                    {/*                        />*/}
-                    {/*                    </FallingItem>*/}
-
-                    {/*                    <p>{value.name}</p>*/}
-                    {/*                    <p style={{*/}
-                    {/*                        fontWeight: 700,*/}
-                    {/*                        fontSize: "0.9em",*/}
-                    {/*                        color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`*/}
-                    {/*                    }}>*/}
-
-                    {/*                        <Counter to={value.confidence} steps={0.02} interval={50}*/}
-                    {/*                                 resetOnClick={true}/>*/}
-                    {/*                    </p>*/}
-
-
-                    {/*                </li>*/}
-                    {/*            ))*/}
-
-                    {/*        }*/}
-
-                    {/*    </ul>*/}
                     {/*</section>*/}
 
                 </section>
-                <hr/>
+                <section id={"skills"}>
+                    <div id={"skills-text-ctn"}>
+                        <div id={"skills-text"}>
+                            <h2>What I Know 📖</h2>
+                            <p>Below are the skills, languages & technologies I've learned over the years.
+                                The numbers represent how confident i am in each of them</p>
+                            <br/>
+                        </div>
+                    </div>
+                    <ul id={"skills-list"}>
+                        {
+                            languages.map((value, index) => (
+                                <li key={index} className={"skills-list-item"}>
+
+
+                                    <img src={value.logo}
+                                         alt={value.name}
+                                         title={value.name}
+                                         style={{
+                                             filter: value.invert_image ? "invert()" : "",
+                                         }}
+                                    />
+
+                                    <h5>{value.name}</h5>
+                                    <p style={{
+                                        fontWeight: 700,
+                                        fontSize: "0.9em",
+                                        color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
+                                    }}>
+
+                                        <Counter to={value.confidence} steps={0.02} interval={50}
+                                                 resetOnClick={true}/>
+                                    </p>
+
+
+                                </li>
+                            ))
+
+                        }
+
+                    </ul>
+                </section>
                 <section className={"fillViewport"} id={"#projects"}>
                     <UnderConstruction/>
                 </section>

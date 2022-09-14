@@ -28,7 +28,7 @@
     top: 0;
     left: 0;
     animation: 7s linear lang-easter-egg-overlay;
-    background: var(--backgrondColor);
+    background: var(--backgroundColor);
     pointer-events: all;
     animation-fill-mode: forwards;
     display: flex;
@@ -130,7 +130,7 @@
         background: white;
     }
     100% {
-        background: var(--backgrondColor);
+        background: var(--backgroundColor);
     }
 }
 

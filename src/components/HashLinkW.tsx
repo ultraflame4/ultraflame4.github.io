@@ -2,7 +2,7 @@ import {defineComponent} from "../tools";
 import {HashLink} from "react-router-hash-link";
 import React from "react";
 
-interface HashLinkWProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
+interface HashLinkWProps extends React.ButtonHTMLAttributes<HTMLAnchorElement>{
     to:string,
 
 }
@@ -18,7 +18,7 @@ export default defineComponent<HashLinkWProps>((props, context) => {
 
 
     return (
-        // @ts-ignore
+
         <HashLink {...props} to={props.to} scroll={scrollToElement}>{props.children}</HashLink>
     )
 })
