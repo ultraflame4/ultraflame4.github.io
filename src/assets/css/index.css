@@ -298,11 +298,6 @@ a:hover {
     color: white;
 }
 
-.link-underline {
-    position: relative;
-    z-index: 1;
-}
-
 .link-underline::after {
     position: absolute;
     content: "";
@@ -317,6 +312,12 @@ a:hover {
     z-index: -1;
     border-radius: 3px;
 
+}
+
+.link-underline {
+    position: relative;
+    height: calc(1.4em + 3px);
+    z-index: 1;
 }
 
 .link-underline:hover::after, .link-underline:focus::after {

@@ -8,6 +8,8 @@ interface HashLinkWProps extends React.ButtonHTMLAttributes<HTMLAnchorElement>{
 }
 
 function scrollToElement(element: HTMLElement) {
+    console.log(element.clientHeight>window.innerHeight)
+    console.log(element.clientHeight)
     element.scrollIntoView({
         behavior: "smooth",
         block: element.clientHeight>window.innerHeight?"start":"center"

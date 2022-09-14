@@ -126,6 +126,7 @@ export default function Home() {
 
                 <ul id={"header-links"}>
                     <li><HashLinkW className={"link-underline"} to={"/#about"}>about</HashLinkW></li>
+                    <li><HashLinkW className={"link-underline"} to={"/#skills"}>skills</HashLinkW></li>
                     <li><HashLinkW className={"link-underline"} to={"/#projects"}>projects</HashLinkW></li>
                 </ul>
 
@@ -174,12 +175,12 @@ export default function Home() {
                 <section id={"skills"}>
                     <div id={"skills-text-ctn"}>
                         <div id={"skills-text"}>
-                            <h2>What I Know 📖</h2>
-                            <p>Below are the skills, languages & technologies <br/>
-                                I've learned over the years. <br/>
-                                The numbers represent how confident i am in each of them</p>
+                            <h2>🎓 What I Know 📖</h2>
+                            <p>Below are the skills 🛠️, languages🌎 & technologies 🧑‍💻,<br/>
+                                I've learned 🏫 over the years 🕑. <br/>
+                                The numbers 📈 represents my confidence 👍 in each of them.</p>
                             <br/>
-                            <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects</HashLinkW>
+                            <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
                         </div>
                     </div>
                     <ul id={"skills-list"}>
