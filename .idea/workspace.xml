@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="edited fancy underline and skills sction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HashLinkW.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HashLinkW.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,14 +219,7 @@
       <workItem from="1662449003806" duration="5135000" />
       <workItem from="1662454894156" duration="491000" />
       <workItem from="1663061295553" duration="16768000" />
-      <workItem from="1663131619460" duration="8393000" />
-    </task>
-    <task id="LOCAL-00053" summary="added minscreen dimensions">
-      <created>1649405197758</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1649405197758</updated>
+      <workItem from="1663131619460" duration="8999000" />
     </task>
     <task id="LOCAL-00054" summary="added footer + notice">
       <created>1649410826174</created>
@@ -568,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663138100451</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="edited fancy underline and skills sction">
+      <created>1663140283836</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1663140283837</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

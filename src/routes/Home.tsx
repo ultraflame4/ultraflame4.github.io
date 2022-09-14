@@ -17,7 +17,7 @@ interface p_language {
     invert_image?: boolean
 }
 
-const languages: p_language[] = [
+const skills: p_language[] = [
     {
         name: "C Sharp",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
@@ -61,52 +61,9 @@ const languages: p_language[] = [
     }
 ]
 
-let abtLangEasterEgg = false
-
-
 export default function Home() {
 
     const [langEasterEgg, setLangEasterEgg] = useState(false)
-
-    function aboutLangEasterEgg() {
-        let about_langs = document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
-        if (about_langs == null) {
-            return
-        }
-        for (let i = 0; i < about_langs.length; i++) {
-            let e = about_langs[i]
-            setTimeout(() => {
-                e.classList.remove("falling-item-fallen")
-                e.classList.add("falling-item-fallen-inversed")
-            }, i * 600)
-        }
-
-        setTimeout(() => {
-            setLangEasterEgg(true)
-
-        }, languages.length * 600 + 2000)
-    }
-
-
-    function onLangLogoClicked() {
-
-        // Check if all items have fallen. If yes  begin easter egg sequence 2.
-        // Use set time out to wait so that this executes aft the child listner executes
-        setTimeout(() => {
-            let about_langs = document.querySelector("#about-languages")?.querySelectorAll(".falling-item-fallen")
-            if (about_langs == null) {
-                return
-            }
-            if (about_langs.length == languages.length) { // if started dont start again
-                if (!abtLangEasterEgg) {
-                    abtLangEasterEgg = true
-                    setTimeout(aboutLangEasterEgg, 1000)
-                }
-
-            }
-        }, 0)
-    }
-
 
     return (
         <>
@@ -177,7 +134,7 @@ export default function Home() {
                         <div id={"skills-text"}>
                             <h2>🎓 What I Know 📖</h2>
                             <p>Below are the skills 🛠️, languages🌎 & technologies 🧑‍💻,<br/>
-                                I've learned 🏫 over the years 🕑. <br/>
+                                I've learned 🏫 over the years 🕑. <br/><br/>
                                 The numbers 📈 represents my confidence 👍 in each of them.</p>
                             <br/>
                             <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
@@ -185,7 +142,7 @@ export default function Home() {
                     </div>
                     <ul id={"skills-list"}>
                         {
-                            languages.map((value, index) => (
+                            skills.map((value, index) => (
                                 <li key={index} className={"skills-list-item"}>
 
 
