@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="added fancy link underline. temporarily removed skills section">
-      <change afterPath="$PROJECT_DIR$/src/components/StickyW.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ultraflame4.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ultraflame4.github.io.iml" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="edited fancy underline and stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/easter_eggs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/easter_eggs.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HashLinkW.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HashLinkW.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/splash.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/splash.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,14 +222,7 @@
       <workItem from="1662449003806" duration="5135000" />
       <workItem from="1662454894156" duration="491000" />
       <workItem from="1663061295553" duration="16768000" />
-      <workItem from="1663131619460" duration="2826000" />
-    </task>
-    <task id="LOCAL-00051" summary="added contacts">
-      <created>1649402016192</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1649402016192</updated>
+      <workItem from="1663131619460" duration="6397000" />
     </task>
     <task id="LOCAL-00052" summary="made featured project cards mobile friendly">
       <created>1649405021633</created>
@@ -570,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663067347143</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="css sticky has decided to work, link underlines now go behind text">
+      <created>1663134521867</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1663134521867</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,8 +621,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="AAAAAA" />
-    <MESSAGE value="changed title" />
     <MESSAGE value="working deploy script :D" />
     <MESSAGE value="removed uneeded code" />
     <MESSAGE value="added new deploy script" />
@@ -649,7 +644,9 @@
     <MESSAGE value="added proper link to lang easter egg" />
     <MESSAGE value="disallow clicking again when user clicked on video" />
     <MESSAGE value="added fancy link underline. temporarily removed skills section" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fancy link underline. temporarily removed skills section" />
+    <MESSAGE value="css sticky has decided to work, link underlines now go behind text" />
+    <MESSAGE value="edited fancy underline and stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited fancy underline and stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

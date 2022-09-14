@@ -168,19 +168,18 @@ export default function Home() {
 
                     </p>
 
-
-                    {/*<section className={"centerItems flex-col"} id={"about-skills"}>*/}
-
-                    {/*</section>*/}
-
                 </section>
+                <div className={"hr"}>
+                </div>
                 <section id={"skills"}>
                     <div id={"skills-text-ctn"}>
                         <div id={"skills-text"}>
                             <h2>What I Know 📖</h2>
-                            <p>Below are the skills, languages & technologies I've learned over the years.
+                            <p>Below are the skills, languages & technologies <br/>
+                                I've learned over the years. <br/>
                                 The numbers represent how confident i am in each of them</p>
                             <br/>
+                            <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects</HashLinkW>
                         </div>
                     </div>
                     <ul id={"skills-list"}>
@@ -216,7 +215,7 @@ export default function Home() {
 
                     </ul>
                 </section>
-                <section className={"fillViewport"} id={"#projects"}>
+                <section className={"fillViewport"} id={"projects"}>
                     <UnderConstruction/>
                 </section>
             </main>
