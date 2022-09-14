@@ -2,13 +2,10 @@ import {Link, Outlet} from "react-router-dom";
 import UnderConstruction from "../components/UnderConstruction";
 import TopNav from "../components/TopNav";
 import "../assets/css/routes/Home.css";
-import {useEffect, useState} from "react";
-import {HashLink} from 'react-router-hash-link';
+import { useState} from "react";
 import Counter from "../components/Counter";
-import FallingItem from "../components/easter_eggs/FallingItem";
 import FunnyOverlay from "../components/easter_eggs/LangEasterEggOverlay";
 import HashLinkW from "../components/HashLinkW";
-import StickyW from "../components/StickyW";
 
 interface p_language {
     name: string,
@@ -133,7 +130,7 @@ export default function Home() {
                     <div id={"skills-text-ctn"}>
                         <div id={"skills-text"}>
                             <h2>🎓 What I Know 📖</h2>
-                            <p>Below are the skills 🛠️, languages🌎 & technologies 🧑‍💻,<br/>
+                            <p>These are the skills 🛠️, languages🌎 & technologies 🧑‍💻,<br/>
                                 I've learned 🏫 over the years 🕑. <br/><br/>
                                 The numbers 📈 represents my confidence 👍 in each of them.</p>
                             <br/>

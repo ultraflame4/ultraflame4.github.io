@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="edited fancy underline and skills sction">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Made topnav for mobile alot better">
+      <change afterPath="$PROJECT_DIR$/src/assets/css/topnav.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +27,8 @@
         <option value="Python Script" />
         <option value="HTML File" />
         <option value="TypeScript File" />
-        <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -219,14 +222,7 @@
       <workItem from="1662449003806" duration="5135000" />
       <workItem from="1662454894156" duration="491000" />
       <workItem from="1663061295553" duration="16768000" />
-      <workItem from="1663131619460" duration="8999000" />
-    </task>
-    <task id="LOCAL-00054" summary="added footer + notice">
-      <created>1649410826174</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1649410826174</updated>
+      <workItem from="1663131619460" duration="13890000" />
     </task>
     <task id="LOCAL-00055" summary="build">
       <created>1649410906470</created>
@@ -564,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663140283837</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="changed some names">
+      <created>1663140852141</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1663140852141</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,8 +621,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="removed uneeded code" />
-    <MESSAGE value="added new deploy script" />
     <MESSAGE value="remvoed builds folder" />
     <MESSAGE value="aaaaaaa" />
     <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 6d0f3072" />
@@ -643,7 +644,9 @@
     <MESSAGE value="css sticky has decided to work, link underlines now go behind text" />
     <MESSAGE value="edited fancy underline and stuff" />
     <MESSAGE value="edited fancy underline and skills sction" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited fancy underline and skills sction" />
+    <MESSAGE value="changed some names" />
+    <MESSAGE value="Made topnav for mobile alot better" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made topnav for mobile alot better" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

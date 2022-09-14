@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import HashLinkW from "./HashLinkW";
-
+import "../assets/css/topnav.css"
 
 export const TopNavHeightStickied = 64
 
@@ -16,6 +16,9 @@ export interface TopNavProps {
 }
 
 export default function TopNav(props: TopNavProps) {
+    const topNavLinks = useRef<HTMLUListElement>(null);
+    const topNavLinksMobilebtn = useRef<HTMLButtonElement>(null);
+
     useEffect(() => {
         let el = document.querySelector(".topnav")
 
@@ -31,6 +34,13 @@ export default function TopNav(props: TopNavProps) {
         el.classList.add("topnav-stickied")
 
     })
+
+    function openMobileLinksMenu() {
+        if (topNavLinks.current == null || topNavLinksMobilebtn.current == null) return;
+
+        topNavLinks.current.classList.toggle("topnav-links-inactive");
+        topNavLinksMobilebtn.current.classList.toggle("topnav-links-mobile-btn-active")
+    }
 
     return (
 
@@ -51,7 +61,10 @@ export default function TopNav(props: TopNavProps) {
                             }}/>
                     </li>
                 </ul>
-                <ul id={"topnav-links"}>
+                <button id={"topnav-links-mobile-btn"} onClick={openMobileLinksMenu} ref={topNavLinksMobilebtn}>
+                    <img src={"https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/menu_open/grad200/48px.svg"}/>
+                </button>
+                <ul id={"topnav-links"} className={"topnav-links-inactive"} ref={topNavLinks}>
 
                     <li>
                         <HashLinkW to="/#about">About</HashLinkW>

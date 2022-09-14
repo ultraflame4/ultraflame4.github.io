@@ -90,9 +90,6 @@ h1 {
     height: 100%;
 }
 
-.topnavSpacePadding {
-    padding-top: var(--topNavHeight);
-}
 
 .fillViewport {
     width: 100vw;
@@ -106,134 +103,6 @@ h1 {
 
 .vCarousell > * {
     scroll-snap-align: start;
-}
-
-.topnav {
-    position: sticky;
-    top: -1px;
-    display: flex;
-    padding: 0 2rem;
-    height: var(--topNavHeight);
-    z-index: 100;
-    transition: all 400ms ease;
-    align-items: center;
-}
-
-
-.topnav-stickied {
-    height: var(--topNavHeightStickied);
-    background: #1a1a1a;
-    border-bottom: var(--lineColor) solid 1px;
-}
-
-#topnav-title a {
-    font-family: Poppins;
-    font-weight: 700;
-    letter-spacing: 0.156rem;
-    transition: all 400ms ease;
-    cursor: pointer;
-    color: white;
-
-}
-
-.topnav-stickied #topnav-title a {
-    letter-spacing: 2px;
-    font-weight: 600;
-    font-size: 1.25rem;
-
-}
-
-li {
-    height: 100%;
-    display: flex;
-}
-
-
-#topnav-links {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    margin-left: min(8rem, 9vw);
-    gap: 3rem;
-    height: 100%;
-    align-items: center;
-    font-size: 1rem;
-    letter-spacing: 0.063rem;
-    transition: all ease 1s;
-    flex-grow: 0;
-    list-style: none;
-    justify-content: flex-end;
-}
-
-@media only screen and (max-width: 800px) {
-    #topnav-links {
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-    }
-
-    #topnav-socials {
-        margin-right: 64rem;
-    }
-}
-
-
-#topnav-socials {
-    display: flex;
-    margin: 0;
-
-    flex-grow: 1;
-    justify-content: flex-end;
-    padding: 0;
-    height: 100%;
-    width: fit-content;
-    list-style: none;
-    align-items: center;
-    transition: all ease 1s;
-}
-
-.topnav-stickied #topnav-links {
-    gap: 1.5rem;
-    flex-grow: 1;
-
-}
-
-
-.topnav-stickied #topnav-socials {
-    margin-left: 4rem;
-    flex-grow: 0;
-}
-
-#topnav-socials a {
-    aspect-ratio: 1;
-    height: 3rem;
-    transition: all ease 1s;
-    margin: auto;
-}
-
-.topnav-stickied #topnav-socials a {
-    height: 2rem;
-}
-
-
-#topnav-links a {
-
-    color: #aaa;
-    font-weight: 600;
-    transition: all ease 400ms;
-    letter-spacing: 0.125rem;
-    margin: auto;
-}
-
-
-#topnav-links a:hover {
-    color: #fff;
-}
-
-.topnav-stickied #topnav-links a {
-    letter-spacing: 0.063rem;
-    font-size: 0.875rem;
-
 }
 
 .centerItems {
@@ -359,4 +228,8 @@ hr {
     border-style: solid;
     border-width: 1px;
 
+}
+li {
+    height: 100%;
+    display: flex;
 }
