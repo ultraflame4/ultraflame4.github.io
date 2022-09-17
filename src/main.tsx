@@ -1,11 +1,9 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import {HashRouter, Route, Routes} from "react-router-dom";
-import Projects from "./routes/Projects";
 import "./assets/css/index.css"
-import "./assets/css/easter_eggs.css"
-import "./assets/css/splash.css"
 
+import Projects from "./routes/Projects";
 import Home from "./routes/Home";
 
 

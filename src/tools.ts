@@ -4,3 +4,8 @@ export function defineComponent<P>(component: FunctionComponent<PropsWithChildre
 
     return component
 }
+
+export interface PageLinkData {
+    to:string,
+    name:string
+}

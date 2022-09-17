@@ -1,11 +1,13 @@
-import {Link, Outlet} from "react-router-dom";
 import UnderConstruction from "../components/UnderConstruction";
 import TopNav from "../components/TopNav";
-import "../assets/css/routes/Home.css";
-import { useState} from "react";
+import "@/assets/css/routes/Home.css";
+import "animate.css"
+import {useEffect, useRef, useState} from "react";
 import Counter from "../components/Counter";
 import FunnyOverlay from "../components/easter_eggs/LangEasterEggOverlay";
 import HashLinkW from "../components/HashLinkW";
+import {PageLinkData} from "@/tools";
+
 
 interface p_language {
     name: string,
@@ -58,10 +60,38 @@ const skills: p_language[] = [
     }
 ]
 
+
+const HeaderLinksList: PageLinkData[] = [
+    {name: "about", to: "/#about"},
+    {name: "skills", to: "/#skills"},
+    {name: "projects", to: "/#projects"}
+]
+
+const animObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((value, index, array) => {
+        value.target.getAnimations().forEach(anim => {
+            // anim.cancel()
+            anim.play()
+        })
+
+    })
+}, {
+})
+
 export default function Home() {
 
     const [langEasterEgg, setLangEasterEgg] = useState(false)
 
+
+    useEffect(() => {
+        let allAnimations = document.querySelectorAll(".home-anim")
+
+        allAnimations.forEach((value, key) => {
+            animObserver.observe(value)
+        })
+
+
+    })
     return (
         <>
             {langEasterEgg ? <FunnyOverlay/> : ""}
@@ -70,18 +100,29 @@ export default function Home() {
 
             <header id="home-header">
                 <div className={"centerItems fillSpace flex-col"} id={"header-text"}>
-                    <h1>
+                    <h1 className={"animate__animated animate__fadeInLeft animate__delay-1s"}>
                         👋 HELLO!
                     </h1>
-                    <h2>
+                    <h2 className={"animate__animated animate__fadeIn animate__delay-2s"}>
                         Welcome to my website 🌐 !
                     </h2>
                 </div>
 
                 <ul id={"header-links"}>
-                    <li><HashLinkW className={"link-underline"} to={"/#about"}>about</HashLinkW></li>
-                    <li><HashLinkW className={"link-underline"} to={"/#skills"}>skills</HashLinkW></li>
-                    <li><HashLinkW className={"link-underline"} to={"/#projects"}>projects</HashLinkW></li>
+                    {HeaderLinksList.map((value, index) =>
+                        <li
+                            className={"animate__animated animate__fadeInLeft"}
+                            style={{
+                                animationDelay: `${(index + 3) * 1}s`
+                            }}>
+                            <HashLinkW
+                                className={"link-underline"}
+                                to={value.to}
+                            >{value.name}</HashLinkW>
+                        </li>
+                    )}
+
+
                 </ul>
 
 
@@ -105,9 +146,11 @@ export default function Home() {
                 <section className={"centerItems flex-col"} id={"about"}>
 
                     <h2>About Me 😐</h2>
-                    <p style={{
-                        textAlign: "center"
-                    }}>
+                    <p
+                        className={"home-anim animate__animated animate__fadeInLeft"}
+                        style={{
+                            textAlign: "center"
+                        }}>
                         I'm an aspiring <b>self-taught</b> developer who started programming in 2018-2019.
                         <br/>
                         I don't really rmb.
@@ -127,20 +170,21 @@ export default function Home() {
                 <div className={"hr"}>
                 </div>
                 <section id={"skills"}>
-                    <div id={"skills-text-ctn"}>
+                    <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
                         <div id={"skills-text"}>
                             <h2>🎓 What I Know 📖</h2>
                             <p>These are the skills 🛠️, languages🌎 & technologies 🧑‍💻,<br/>
                                 I've learned 🏫 over the years 🕑. <br/><br/>
                                 The numbers 📈 represents my confidence 👍 in each of them.</p>
                             <br/>
-                            <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
+
                         </div>
+                        <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
                     </div>
                     <ul id={"skills-list"}>
                         {
                             skills.map((value, index) => (
-                                <li key={index} className={"skills-list-item"}>
+                                <li key={index} className={"skills-list-item animate__animated animate__fadeInRight home-anim"}>
 
 
                                     <img src={value.logo}

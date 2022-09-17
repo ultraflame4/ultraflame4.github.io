@@ -1,4 +1,5 @@
 import React, {CSSProperties, MouseEventHandler} from "react";
+import "@/assets/css/splash.css"
 
 export default function () {
     const [reX,setReX] = React.useState("0px")
@@ -15,7 +16,7 @@ export default function () {
 
     const styles = {
         "--rx": reX,
-        "--ry": reY
+        "--ry": reY,
     }
 
     return (

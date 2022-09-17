@@ -1,3 +1,4 @@
+
 #bg-vid {
     position: absolute;
     top: 0;
@@ -85,16 +86,13 @@
 
 #skills-text-ctn {
     position: sticky;
-    top: var(--topNavHeight);
+    /*top: var(--topNavHeight);*/
+    top: 40%;
     height: fit-content;
-    width: min(50%,500px);
-    background: rgba(var(--radialColor),255);
-}
-
-#skills-text{
+    width: min(50%, 500px);
+    background: rgba(var(--radialColor), 255);
 
 }
-
 
 #skills-list {
     width: min(50%,400px);
