@@ -105,7 +105,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -141,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
