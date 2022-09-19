@@ -1,0 +1,45 @@
+.underConstruction {
+    --rx: 0px;
+    --ry: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Poppins";
+    background: var(--backgroundColor);
+    pointer-events: all;
+    position: relative;
+
+    p{
+        z-index: 1;
+    }
+
+    &:hover::before{
+        background: radial-gradient(circle at var(--rx) var(--ry) , var(--radialColor), transparent 60%);
+    }
+}
+
+.underConstruction::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: none;
+    z-index: 0;
+}
+
+.underConstruction > h1{
+    letter-spacing: 2px;
+    font-size: 2rem;
+    z-index: 1;
+}
+.underConstruction > *{
+    pointer-events: none;
+}
+
+.underConstruction-svg{
+    width: 300px;
+    aspect-ratio: 1;
+    z-index: 1;
+}
+

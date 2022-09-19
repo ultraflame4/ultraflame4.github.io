@@ -1,5 +1,5 @@
 import React, {CSSProperties, MouseEventHandler} from "react";
-import "@/assets/css/splash.css"
+import "@/assets/css/splash.scss"
 
 export default function () {
     const [reX,setReX] = React.useState("0px")

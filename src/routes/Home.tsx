@@ -63,7 +63,7 @@ const skills: p_language[] = [
 
 const HeaderLinksList: PageLinkData[] = [
     {name: "about", to: "/#about"},
-    {name: "skills", to: "/#skills"},
+    {name: "skills", to: "/#skills-anchor"},
     {name: "projects", to: "/#projects"}
 ]
 
@@ -78,7 +78,7 @@ const animObserver = new IntersectionObserver((entries, observer) => {
         });
 
     })
-},{threshold:0.5})
+}, {threshold: 0.5})
 
 export default function Home() {
 
@@ -169,10 +169,8 @@ export default function Home() {
                     </p>
 
                 </section>
-                <div className={"hr"}>
-                </div>
+                <div className={"hr"} id={"skills-anchor"}/>
                 <section id={"skills"}>
-
                     <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
                         <div className={"child-wrapper"}>
                             <div id={"skills-text"}>
@@ -191,7 +189,7 @@ export default function Home() {
                         {
                             skills.map((value, index) => (
                                 <li key={index}
-                                    className={"skills-list-item animate__animated animate__fadeInRight home-anim"}>
+                                    className={"skills-list-item animate__animated animate__fadeInRight home-anim delay-500ms"}>
 
 
                                     <img src={value.logo}
@@ -209,7 +207,7 @@ export default function Home() {
                                         color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
                                     }}>
 
-                                        <Counter to={value.confidence} steps={0.02} interval={50}
+                                        <Counter to={value.confidence} steps={0.04} interval={25}
                                                  resetOnClick={true}/>
                                     </p>
 
