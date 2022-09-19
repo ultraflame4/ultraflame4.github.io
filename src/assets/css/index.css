@@ -27,16 +27,26 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+    :root {
+        font-size: .8rem;
+    }
+}
+
 @media only screen and (max-width: 400px) {
     :root {
         font-size: .7rem;
+    }
+}
+@media only screen and (max-width: 330px) {
+    :root {
+        font-size: .5rem;
     }
 }
 
 
 * {
     overflow: clip;
-
 }
 
 #root {

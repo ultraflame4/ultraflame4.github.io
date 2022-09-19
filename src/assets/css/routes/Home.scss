@@ -80,7 +80,7 @@
 #skills {
     display: flex;
     justify-content: center;
-    gap: min(2rem,100px);
+    gap: min(8vw,200px);
     padding: 4rem 1rem;
 }
 
@@ -89,21 +89,28 @@
     /*top: var(--topNavHeight);*/
     top: 40%;
     height: fit-content;
-    width: min(50%, 500px);
+
     background: rgba(var(--radialColor), 255);
+    width: max(50%,200px);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+
 
 }
 
 #skills-list {
-    width: min(50%,400px);
+
     height: fit-content;
     padding: 0;
     list-style: none;
     display: flex;
+    width: 50%;
     flex-direction: column;
     gap: 2rem;
     font-size: 1.5rem;
-
+    flex-shrink: 2;
+    align-items: flex-start;
 }
 
 .skills-list-item{
@@ -114,7 +121,7 @@
 }
 
 .skills-list-item img{
-    width: 50%;
+    width: min(100%,250px);
 }
 .skills-list-item p {
     cursor: pointer;

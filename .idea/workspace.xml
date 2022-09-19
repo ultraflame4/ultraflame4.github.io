@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Made topnav for mobile alot better">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed skills list scaling issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/topnav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/topnav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +94,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -141,8 +130,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -234,21 +223,9 @@
       <workItem from="1663061295553" duration="16768000" />
       <workItem from="1663131619460" duration="14573000" />
       <workItem from="1663327091262" duration="10800000" />
-      <workItem from="1663397760325" duration="4189000" />
-    </task>
-    <task id="LOCAL-00056" summary="missing link + build">
-      <created>1649411063639</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1649411063639</updated>
-    </task>
-    <task id="LOCAL-00057" summary="fixed footer small screen issues">
-      <created>1649674294102</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1649674294102</updated>
+      <workItem from="1663397760325" duration="4335000" />
+      <workItem from="1663412675220" duration="2499000" />
+      <workItem from="1663580519562" duration="2305000" />
     </task>
     <task id="LOCAL-00058" summary="build">
       <created>1649674316856</created>
@@ -579,7 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663145699373</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="added a bunch of animations">
+      <created>1663402091598</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1663402091598</updated>
+    </task>
+    <task id="LOCAL-00106" summary="web deploy">
+      <created>1663402148237</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1663402148237</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,9 +624,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="remvoed builds folder" />
-    <MESSAGE value="aaaaaaa" />
-    <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 6d0f3072" />
     <MESSAGE value="fixed build script" />
     <MESSAGE value="idea stuff" />
     <MESSAGE value="fixed some public asset path issues" />
@@ -658,7 +646,10 @@
     <MESSAGE value="edited fancy underline and skills sction" />
     <MESSAGE value="changed some names" />
     <MESSAGE value="Made topnav for mobile alot better" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made topnav for mobile alot better" />
+    <MESSAGE value="added a bunch of animations" />
+    <MESSAGE value="web deploy" />
+    <MESSAGE value="fixed skills list scaling issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed skills list scaling issue" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,6 @@
 import UnderConstruction from "../components/UnderConstruction";
 import TopNav from "../components/TopNav";
-import "@/assets/css/routes/Home.css";
+import "@/assets/css/routes/Home.scss";
 import "animate.css"
 import {useEffect, useRef, useState} from "react";
 import Counter from "../components/Counter";
@@ -69,14 +69,16 @@ const HeaderLinksList: PageLinkData[] = [
 
 const animObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((value, index, array) => {
+        if (value.intersectionRatio < 0.4) {
+            return
+        }
         value.target.getAnimations().forEach(anim => {
             // anim.cancel()
             anim.play()
-        })
+        });
 
     })
-}, {
-})
+},{threshold:0.5})
 
 export default function Home() {
 
@@ -170,21 +172,26 @@ export default function Home() {
                 <div className={"hr"}>
                 </div>
                 <section id={"skills"}>
-                    <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
-                        <div id={"skills-text"}>
-                            <h2>🎓 What I Know 📖</h2>
-                            <p>These are the skills 🛠️, languages🌎 & technologies 🧑‍💻,<br/>
-                                I've learned 🏫 over the years 🕑. <br/><br/>
-                                The numbers 📈 represents my confidence 👍 in each of them.</p>
-                            <br/>
 
+                    <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
+                        <div className={"child-wrapper"}>
+                            <div id={"skills-text"}>
+                                <h2>🎓 What I Know 📖</h2>
+                                <p>These are the skills 🛠️, languages🌎 & technologies🧑‍💻,<br/>
+                                    I've learned 🏫 over the years 🕑. <br/><br/>
+                                    The numbers 📈 represents my confidence 👍 in each of them.</p>
+                                <br/>
+
+                            </div>
+                            <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
                         </div>
-                        <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
+
                     </div>
                     <ul id={"skills-list"}>
                         {
                             skills.map((value, index) => (
-                                <li key={index} className={"skills-list-item animate__animated animate__fadeInRight home-anim"}>
+                                <li key={index}
+                                    className={"skills-list-item animate__animated animate__fadeInRight home-anim"}>
 
 
                                     <img src={value.logo}
