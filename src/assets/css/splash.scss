@@ -10,12 +10,13 @@
     pointer-events: all;
     position: relative;
 
+
     p{
         z-index: 1;
     }
 
     &:hover::before{
-        background: radial-gradient(circle at var(--rx) var(--ry) , var(--radialColor), transparent 60%);
+        background: radial-gradient(circle at var(--rx) var(--ry) , var(--radialColor) 40%, transparent 0);
     }
 }
 
@@ -26,6 +27,7 @@
     position: absolute;
     background: none;
     z-index: 0;
+
 }
 
 .underConstruction > h1{

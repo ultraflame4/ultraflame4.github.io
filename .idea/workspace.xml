@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed skills list scaling issue">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/splash.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/splash.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UnderConstruction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/splash.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/splash.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HashLinkW.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HashLinkW.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,14 +227,9 @@
       <workItem from="1663327091262" duration="10800000" />
       <workItem from="1663397760325" duration="4335000" />
       <workItem from="1663412675220" duration="2499000" />
-      <workItem from="1663580519562" duration="3734000" />
-    </task>
-    <task id="LOCAL-00059" summary="added stuiff">
-      <created>1660641711614</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1660641711614</updated>
+      <workItem from="1663580519562" duration="4452000" />
+      <workItem from="1663598080543" duration="52000" />
+      <workItem from="1664605022171" duration="4823000" />
     </task>
     <task id="LOCAL-00060" summary="updated svg to be less big">
       <created>1660644672701</created>
@@ -571,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663582937638</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list">
+      <created>1663584418457</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1663584418457</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +628,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="fixed build script" />
     <MESSAGE value="idea stuff" />
     <MESSAGE value="fixed some public asset path issues" />
     <MESSAGE value="builds" />
@@ -650,7 +652,8 @@
     <MESSAGE value="added a bunch of animations" />
     <MESSAGE value="web deploy" />
     <MESSAGE value="fixed skills list scaling issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed skills list scaling issue" />
+    <MESSAGE value="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

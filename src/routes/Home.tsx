@@ -63,7 +63,7 @@ const skills: p_language[] = [
 
 const HeaderLinksList: PageLinkData[] = [
     {name: "about", to: "/#about"},
-    {name: "skills", to: "/#skills-anchor"},
+    {name: "skills", to: "/#skills"},
     {name: "projects", to: "/#projects"}
 ]
 
@@ -169,7 +169,6 @@ export default function Home() {
                     </p>
 
                 </section>
-                <div className={"hr"} id={"skills-anchor"}/>
                 <section id={"skills"}>
                     <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
                         <div className={"child-wrapper"}>
@@ -189,28 +188,30 @@ export default function Home() {
                         {
                             skills.map((value, index) => (
                                 <li key={index}
-                                    className={"skills-list-item animate__animated animate__fadeInRight home-anim delay-500ms"}>
+                                    className={"skills-list-item"}>
 
+                                    <div className={"container"}>
 
-                                    <img src={value.logo}
-                                         alt={value.name}
-                                         title={value.name}
-                                         style={{
-                                             filter: value.invert_image ? "invert()" : "",
-                                         }}
-                                    />
+                                        <img src={value.logo}
+                                             alt={value.name}
+                                             title={value.name}
+                                             style={{
+                                                 filter: value.invert_image ? "invert()" : "",
+                                             }}
+                                        />
 
-                                    <h5>{value.name}</h5>
-                                    <p style={{
-                                        fontWeight: 700,
-                                        fontSize: "0.9em",
-                                        color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
-                                    }}>
+                                        <h5>{value.name}</h5>
+                                        <p style={{
+                                            fontWeight: 700,
+                                            fontSize: "0.9em",
+                                            color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
+                                        }}>
 
-                                        <Counter to={value.confidence} steps={0.04} interval={25}
-                                                 resetOnClick={true}/>
-                                    </p>
+                                            <Counter to={value.confidence} steps={0.04} interval={25}
+                                                     resetOnClick={true}/>
+                                        </p>
 
+                                    </div>
 
                                 </li>
                             ))
