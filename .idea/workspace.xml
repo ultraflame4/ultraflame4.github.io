@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="upadtes site.&#10;+ skills are now in a card form&#10;&#10;+ underconstruction mouse glow is now flat">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="ide stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,14 +227,7 @@
       <workItem from="1663412675220" duration="2499000" />
       <workItem from="1663580519562" duration="4452000" />
       <workItem from="1663598080543" duration="52000" />
-      <workItem from="1664605022171" duration="5059000" />
-    </task>
-    <task id="LOCAL-00061" summary="Added proper font and text">
-      <created>1660645787979</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1660645787979</updated>
+      <workItem from="1664605022171" duration="5449000" />
     </task>
     <task id="LOCAL-00062" summary="Added glowy background">
       <created>1660664800111</created>
@@ -570,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664610019284</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="ide stuff">
+      <created>1664610177506</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1664610177506</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +626,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="fixed some public asset path issues" />
     <MESSAGE value="builds" />
     <MESSAGE value="added font link just in case" />
     <MESSAGE value="work tree v4" />
@@ -649,7 +650,8 @@
     <MESSAGE value="fixed skills list scaling issue" />
     <MESSAGE value="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list" />
     <MESSAGE value="upadtes site.&#10;+ skills are now in a card form&#10;&#10;+ underconstruction mouse glow is now flat" />
-    <option name="LAST_COMMIT_MESSAGE" value="upadtes site.&#10;+ skills are now in a card form&#10;&#10;+ underconstruction mouse glow is now flat" />
+    <MESSAGE value="ide stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="ide stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
