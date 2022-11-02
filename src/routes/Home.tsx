@@ -185,12 +185,13 @@ export default function Home() {
 
                     </div>
                     <ul id={"skills-list"}>
+                        <li className={"dummy-item"}></li>
                         {
                             skills.map((value, index) => (
                                 <li key={index}
                                     className={"skills-list-item"}>
 
-                                    <div className={"container"}>
+                                    <div className={"skill-card"}>
 
                                         <img src={value.logo}
                                              alt={value.name}
