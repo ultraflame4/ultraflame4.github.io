@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="worktree">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added a name to this nameless site">
+      <change afterPath="$PROJECT_DIR$/src/assets/skills.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,14 +233,7 @@
       <workItem from="1667309025234" duration="694000" />
       <workItem from="1667382683685" duration="3265000" />
       <workItem from="1667442022714" duration="20000" />
-      <workItem from="1667811227492" duration="4110000" />
-    </task>
-    <task id="LOCAL-00067" summary="did alot of stuff">
-      <created>1662027255750</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1662027255751</updated>
+      <workItem from="1667811227492" duration="4807000" />
     </task>
     <task id="LOCAL-00068" summary="fixed click through issues with header">
       <created>1662029081109</created>
@@ -579,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667813879248</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Added a name to this nameless site">
+      <created>1667815486191</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1667815486191</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +632,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="worktree stuff" />
     <MESSAGE value="fixed topnav about hashlink" />
     <MESSAGE value="Added skill confidence" />
     <MESSAGE value="updated values" />
@@ -658,7 +656,8 @@
     <MESSAGE value="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices" />
     <MESSAGE value="Updated cards, - looked ugly on mobile so revereted some changes" />
     <MESSAGE value="worktree" />
-    <option name="LAST_COMMIT_MESSAGE" value="worktree" />
+    <MESSAGE value="Added a name to this nameless site" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a name to this nameless site" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
