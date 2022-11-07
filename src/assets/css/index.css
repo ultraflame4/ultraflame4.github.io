@@ -275,3 +275,31 @@ li {
 .delay-1000ms {
     animation-delay: 1s;
 }
+.delay-1200ms{
+    animation-delay: 1200ms;
+}
+.delay-1300ms{
+    animation-delay: 1300ms;
+}
+.delay-1400ms{
+    animation-delay: 1400ms;
+}
+
+.delay-1500ms {
+    animation-delay: 1500ms;
+}
+.delay-1600ms {
+    animation-delay: 1600ms;
+}
+.delay-1700ms {
+    animation-delay: 1700ms;
+}
+.delay-1800ms {
+    animation-delay: 1800ms;
+}
+.delay-1900ms {
+    animation-delay: 1900ms;
+}
+.delay-2000ms {
+    animation-delay: 2s;
+}

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="worktree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,21 +234,7 @@
       <workItem from="1667309025234" duration="694000" />
       <workItem from="1667382683685" duration="3265000" />
       <workItem from="1667442022714" duration="20000" />
-      <workItem from="1667811227492" duration="2505000" />
-    </task>
-    <task id="LOCAL-00065" summary="did a bunch of stuff">
-      <created>1660918203994</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1660918203994</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Added additional topnav links">
-      <created>1660973672816</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1660973672816</updated>
+      <workItem from="1667811227492" duration="4110000" />
     </task>
     <task id="LOCAL-00067" summary="did alot of stuff">
       <created>1662027255750</created>
@@ -577,7 +565,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667813282070</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="Updated cards, - looked ugly on mobile so revereted some changes">
+      <created>1667813843678</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1667813843678</updated>
+    </task>
+    <task id="LOCAL-00115" summary="worktree">
+      <created>1667813879248</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1667813879248</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,8 +633,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Added about section : )" />
-    <MESSAGE value="build" />
     <MESSAGE value="worktree stuff" />
     <MESSAGE value="fixed topnav about hashlink" />
     <MESSAGE value="Added skill confidence" />
@@ -656,7 +656,9 @@
     <MESSAGE value="added dropshadow to skill cards" />
     <MESSAGE value="updated the skill cards look and responsive design" />
     <MESSAGE value="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices" />
+    <MESSAGE value="Updated cards, - looked ugly on mobile so revereted some changes" />
+    <MESSAGE value="worktree" />
+    <option name="LAST_COMMIT_MESSAGE" value="worktree" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

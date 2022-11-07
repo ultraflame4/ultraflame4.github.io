@@ -105,9 +105,11 @@ export default function Home() {
                     <h1 className={"animate__animated animate__fadeInLeft animate__delay-1s"}>
                         👋 HELLO!
                     </h1>
-                    <h2 className={"animate__animated animate__fadeIn animate__delay-2s"}>
+                    <h2 className={"animate__animated animate__fadeIn delay-1500ms"}>I'm Chester</h2>
+                    <h3 className={"animate__animated animate__fadeIn delay-2000ms"}>&</h3>
+                    <h3 className={"animate__animated animate__fadeIn animate__delay-3s"}>
                         Welcome to my website 🌐 !
-                    </h2>
+                    </h3>
                 </div>
 
                 <ul id={"header-links"}>
