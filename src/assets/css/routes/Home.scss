@@ -95,9 +95,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-
 }
+
+#skills-text{
+    white-space: nowrap;
+    word-break: break-all;
+}
+
 
 #skills-list {
     //margin-top: 50vh;
@@ -105,7 +109,7 @@
     padding: 0;
     list-style: none;
     width: 50%;
-    gap: 1rem;
+    gap: 4rem;
     font-size: 1.5rem;
     flex-shrink: 2;
 
@@ -125,7 +129,9 @@
 
     box-sizing: border-box;
     position: sticky;
-    top: calc(40vh - 16em);
+    top: calc(50vh + var(--topNavHeight) - 50vw*(3/8));
+
+
 
     padding: 1em;
 
@@ -145,7 +151,7 @@
         box-sizing: border-box;
         aspect-ratio: 6/8;
         background: var(--backgroundColor);
-        filter: drop-shadow(2px -3px 12px black);
+        filter: drop-shadow(2px -3px 0.5em black);
     }
 }
 

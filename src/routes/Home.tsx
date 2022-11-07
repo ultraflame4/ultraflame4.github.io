@@ -25,13 +25,13 @@ const skills: p_language[] = [
     {
         name: "Unity",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
-        confidence: .65,
+        confidence: .7,
         invert_image: true
     },
     {
         name: "Java",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-        confidence: .5
+        confidence: .6
     },
     {
         name: "Python",
@@ -41,7 +41,7 @@ const skills: p_language[] = [
     {
         name: "Javascript",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        confidence: .5
+        confidence: .75
     },
     {
         name: "Typescript",
@@ -51,12 +51,12 @@ const skills: p_language[] = [
     {
         name: "Vue.js",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-        confidence: .65
+        confidence: .7
     },
     {
         name: "React.js",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        confidence: .6
+        confidence: .8
     }
 ]
 
@@ -174,9 +174,16 @@ export default function Home() {
                         <div className={"child-wrapper"}>
                             <div id={"skills-text"}>
                                 <h2>🎓 What I Know 📖</h2>
-                                <p>These are the skills 🛠️, languages🌎 & technologies🧑‍💻,<br/>
-                                    I've learned 🏫 over the years 🕑. <br/><br/>
-                                    The numbers 📈 represents my confidence 👍 in each of them.</p>
+                                <p>These are the&nbsp;
+                                    <wbr/>
+                                    <span style={{color:"lightgreen"}}>📜<b>skills</b></span>,&nbsp;
+                                    <wbr/>
+                                    <span style={{color:"orchid"}}>🔤<b>languages</b></span>&nbsp;&&nbsp;
+                                    <wbr/>
+                                    <span style={{color:"peru"}}>🛠️<b>frameworks</b></span>,<br/>
+                                    <wbr/>
+                                    I've learned over the years. <br/><br/>
+                                    The numbers below <wbr/>represents my confidence 🔥<wbr/> in each of them.</p>
                                 <br/>
 
                             </div>
