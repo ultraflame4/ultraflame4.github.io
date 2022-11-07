@@ -106,17 +106,19 @@ export default function Home() {
                         }}>
                         I'm an aspiring <b>self-taught</b> developer who started programming in 2018-2019.
                         <br/>
-                        I don't really rmb.
+                        I don't really remember.
                         <br/>
                         <br/>
                         Started with <a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️
                         redstone and command blocks.
                         <br/>
-                        Proceeded to learn "real" programming from various youtube tutorials & online courses.
+                        Then I learned python from various youtube tutorials & various online courses.
                         <br/>
                         <br/>
-                        Since then, I've dabbled in a bunch of stuff and have done a variety projects
-
+                        Since then, I've come a long way and have done a wide variety of projects
+                        <br/>
+                        <br/>
+                        <small>Hopefully I'll finish the mountain of side projects someday... <small>maybe</small>...</small>
                     </p>
 
                 </section>

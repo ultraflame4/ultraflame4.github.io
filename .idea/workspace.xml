@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added a name to this nameless site">
-      <change afterPath="$PROJECT_DIR$/src/assets/skills.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +93,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -129,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +234,7 @@
       <workItem from="1667382683685" duration="3265000" />
       <workItem from="1667442022714" duration="20000" />
       <workItem from="1667811227492" duration="4807000" />
+      <workItem from="1667832764477" duration="1131000" />
     </task>
     <task id="LOCAL-00068" summary="fixed click through issues with header">
       <created>1662029081109</created>
