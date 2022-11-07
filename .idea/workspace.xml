@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Edited about me section" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="worktree" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,13 +231,7 @@
       <workItem from="1667442022714" duration="20000" />
       <workItem from="1667811227492" duration="4807000" />
       <workItem from="1667832764477" duration="1204000" />
-    </task>
-    <task id="LOCAL-00069" summary="heading center styling issues">
-      <created>1662029240554</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1662029240554</updated>
+      <workItem from="1667835476436" duration="26000" />
     </task>
     <task id="LOCAL-00070" summary="Added working deploy script">
       <created>1662036627339</created>
@@ -575,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667835288730</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="worktree">
+      <created>1667835492850</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1667835492851</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,10 +652,10 @@
     <MESSAGE value="updated the skill cards look and responsive design" />
     <MESSAGE value="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices" />
     <MESSAGE value="Updated cards, - looked ugly on mobile so revereted some changes" />
-    <MESSAGE value="worktree" />
     <MESSAGE value="Added a name to this nameless site" />
     <MESSAGE value="Edited about me section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited about me section" />
+    <MESSAGE value="worktree" />
+    <option name="LAST_COMMIT_MESSAGE" value="worktree" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
