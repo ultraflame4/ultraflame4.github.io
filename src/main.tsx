@@ -5,7 +5,7 @@ import "./assets/css/index.css"
 
 import Projects from "./routes/Projects";
 import Home from "./routes/Home";
-
+import React from "react";
 
 const rootElement = document.getElementById("root")
 if (rootElement != null) {

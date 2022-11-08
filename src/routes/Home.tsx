@@ -90,29 +90,36 @@ export default function Home() {
 
                 <section className={"centerItems flex-col"} id={"about"}>
 
-                    <h2>About Me 😐</h2>
-                    <p
-                        className={"home-anim animate__animated animate__fadeInLeft"}
-                        style={{
-                            textAlign: "center"
-                        }}>
-                        I'm an aspiring <b>self-taught</b> developer who started programming in 2018-2019.
-                        <br/>
-                        I don't really remember.
-                        <br/>
-                        <br/>
-                        Started with <a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️
-                        redstone and command blocks.
-                        <br/>
-                        Then I learned python from various youtube tutorials & various online courses.
-                        <br/>
-                        <br/>
-                        Since then, I've come a long way and have done a wide variety of projects
-                        <br/>
-                        <br/>
-                        <small>Hopefully I'll finish the mountain of side projects
-                               someday... <small>maybe</small>...</small>
-                    </p>
+                    <ForEachChild callback={(child,index)=>{
+                        return (
+                            <AnimationOnScroll animateIn={"animate__fadeIn"} afterAnimatedIn={()=>{console.log("test")}} initiallyVisible={true}>
+                                {child}
+                            </AnimationOnScroll>
+                        )
+                    }}>
+                        <h2>About Me 😐</h2>
+                        <p
+                            style={{
+                                textAlign: "center"
+                            }}>
+                            I'm an aspiring <b>self-taught</b> developer <wbr/>who started programming in 2018-2019.
+                            <br/>
+                            I don't really remember.
+                            <br/>
+                            <br/>
+                            Started with <wbr/><a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️
+                            redstone and command blocks.
+                            <br/>
+                            Then I learned python from <wbr/>various youtube tutorials & various online courses.
+                            <br/>
+                            <br/>
+                            Since then, <wbr/>I've come a long way and have done a wide variety of projects
+                            <br/>
+                            <br/>
+                            <small>Hopefully I'll finish the mountain of side projects
+                                   someday... <small>maybe</small>...</small>
+                        </p>
+                    </ForEachChild>
 
                 </section>
                 <section id={"skills"}>

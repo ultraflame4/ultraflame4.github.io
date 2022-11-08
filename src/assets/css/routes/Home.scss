@@ -61,13 +61,13 @@
   height: fit-content;
   padding: 6em 0;
   gap: 1.5em;
-
+  white-space: nowrap;
 }
 
 #about h2 {
   letter-spacing: 2px;
   position: relative;
-  left: .6em;
+
   margin-bottom: 1em;
 }
 
