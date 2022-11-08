@@ -12,6 +12,7 @@ import HashLinkW from "../components/HashLinkW";
 import "@/assets/css/routes/Home.scss";
 import "animate.css"
 import ForEachChild from "@/components/ForEachChild";
+import AOS from "@/components/AOS";
 
 
 const HeaderLinksList: PageLinkData[] = [
@@ -36,10 +37,12 @@ export default function Home() {
 
                     <ForEachChild callback={(child, index) => {
                         return (
-                            <AnimationOnScroll animateIn={index == 0 ? "animate__fadeInLeft" : "animate__fadeIn"}
-                                               delay={800 * index}>
+                            <AOS animateIn={index == 0 ? "animate__fadeInLeft" : "animate__fadeIn"}
+                                 delay={800 * index}
+
+                            >
                                 {child}
-                            </AnimationOnScroll>)
+                            </AOS>)
                     }}>
                         <h1>
                             👋 HELLO!
@@ -93,14 +96,13 @@ export default function Home() {
 
                     <ForEachChild callback={(child, index) => {
                         return (
-                            <AnimationOnScroll
+                            <AOS
                                 animateIn={"animate__fadeIn"}
-                                scrollableParentSelector={"#root"}
                                 delay={500 * index}
                                 animateOnce={true}
                             >
                                 {child}
-                            </AnimationOnScroll>
+                            </AOS>
                         )
                     }}>
                         <h2>About Me 😐</h2>
@@ -133,16 +135,16 @@ export default function Home() {
                     <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
                         <div className={"child-wrapper"}>
                             <div id={"skills-text"}>
-                                <AnimationOnScroll scrollableParentSelector={"#root"}
-                                                   animateIn={"animate__fadeInLeft"}
-                                                   animateOnce={true}
-                                                   delay={200}>
+                                <AOS
+                                    animateIn={"animate__fadeInLeft"}
+                                    animateOnce={true}
+                                    delay={200}>
                                     <h2>🎓 What I Know 📖</h2>
-                                </AnimationOnScroll>
-                                <AnimationOnScroll scrollableParentSelector={"#root"}
-                                                   animateIn={"animate__fadeIn"}
-                                                   animateOnce={true}
-                                                   delay={700}>
+                                </AOS>
+                                <AOS
+                                    animateIn={"animate__fadeIn"}
+                                    animateOnce={true}
+                                    delay={700}>
                                     <p>These are the&nbsp;
                                         <wbr/>
                                         <span style={{color: "lightgreen"}}>📜<b>skills</b></span>,&nbsp;
@@ -156,17 +158,18 @@ export default function Home() {
                                         <wbr/>
                                        in each of them.
                                     </p>
-                                </AnimationOnScroll>
+                                </AOS>
 
                                 <br/>
 
                             </div>
-                            <AnimationOnScroll scrollableParentSelector={"#root"}
-                                               animateIn={"animate__fadeIn"}
-                                               delay={800}
-                                               animateOnce={true}>
-                                <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
-                            </AnimationOnScroll>
+                            <AOS
+                                animateIn={"animate__fadeIn"}
+                                delay={800}
+                                animateOnce={true}>
+                                <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects
+                                                                                          ➡️</HashLinkW>
+                            </AOS>
                         </div>
 
                     </div>

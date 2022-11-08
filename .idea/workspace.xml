@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Adde back AnimationOnScroll">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added a bunch of animations">
+      <change afterPath="$PROJECT_DIR$/src/components/AOS.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/splash.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/splash.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,14 +238,7 @@
       <workItem from="1667832764477" duration="1204000" />
       <workItem from="1667835476436" duration="315000" />
       <workItem from="1667883286017" duration="4000" />
-      <workItem from="1667907655535" duration="8312000" />
-    </task>
-    <task id="LOCAL-00083" summary="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 6d0f3072">
-      <created>1662045736457</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1662045736457</updated>
+      <workItem from="1667907655535" duration="9505000" />
     </task>
     <task id="LOCAL-00084" summary="idea stuff">
       <created>1662049479155</created>
@@ -581,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667915643876</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Added a bunch of animations">
+      <created>1667916126156</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1667916126156</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +637,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="added a bunch of animations" />
     <MESSAGE value="web deploy" />
     <MESSAGE value="fixed skills list scaling issue" />
     <MESSAGE value="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list" />
@@ -660,7 +661,8 @@
     <MESSAGE value="removed delays" />
     <MESSAGE value="Removed AnimationOnScroll because it does not work" />
     <MESSAGE value="Adde back AnimationOnScroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adde back AnimationOnScroll" />
+    <MESSAGE value="Added a bunch of animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a bunch of animations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
