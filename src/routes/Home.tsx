@@ -1,13 +1,17 @@
+import {AnimationOnScroll} from "react-animation-on-scroll";
 import UnderConstruction from "../components/UnderConstruction";
-import TopNav from "../components/TopNav";
-import "@/assets/css/routes/Home.scss";
-import "animate.css"
 import {useEffect, useRef, useState} from "react";
-import Counter from "../components/Counter";
-import FunnyOverlay from "../components/easter_eggs/LangEasterEggOverlay";
-import HashLinkW from "../components/HashLinkW";
+
+import TopNav from "../components/TopNav";
 import {PageLinkData} from "@/tools";
 import {skills} from "@/assets/skills";
+
+import Counter from "../components/Counter";
+import HashLinkW from "../components/HashLinkW";
+
+import "@/assets/css/routes/Home.scss";
+import "animate.css"
+import ForEachChild from "@/components/ForEachChild";
 
 
 const HeaderLinksList: PageLinkData[] = [
@@ -16,49 +20,37 @@ const HeaderLinksList: PageLinkData[] = [
     {name: "projects", to: "/#projects"}
 ]
 
-const animObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((value, index, array) => {
-        if (value.intersectionRatio < 0.4) {
-            return
-        }
-        value.target.getAnimations().forEach(anim => {
-            // anim.cancel()
-            anim.play()
-        });
-
-    })
-}, {threshold: 0.5})
 
 export default function Home() {
 
-    const [langEasterEgg, setLangEasterEgg] = useState(false)
 
-
-    useEffect(() => {
-        let allAnimations = document.querySelectorAll(".home-anim")
-
-        allAnimations.forEach((value, key) => {
-            animObserver.observe(value)
-        })
-
-
-    })
     return (
         <>
-            {langEasterEgg ? <FunnyOverlay/> : ""}
+
 
             <TopNav allowSizeChange={true}/>
 
             <header id="home-header">
                 <div className={"centerItems fillSpace flex-col"} id={"header-text"}>
-                    <h1 className={"animate__animated animate__fadeInLeft animate__delay-1s"}>
-                        👋 HELLO!
-                    </h1>
-                    <h2 className={"animate__animated animate__fadeIn delay-1500ms"}>I'm Chester</h2>
-                    <h3 className={"animate__animated animate__fadeIn delay-2000ms"}>&</h3>
-                    <h3 className={"animate__animated animate__fadeIn animate__delay-3s"}>
-                        Welcome to my website 🌐 !
-                    </h3>
+
+
+                    <ForEachChild callback={(child,index)=>{
+                        return (
+                            <AnimationOnScroll animateIn={index==0?"animate__fadeInLeft":"animate__fadeIn"} delay={800 * index}>
+                                {child}
+                            </AnimationOnScroll>)
+                    }}>
+                        <h1>
+                            👋 HELLO!
+                        </h1>
+                        <h2>I'm Chester</h2>
+                        <h3>&</h3>
+                        <h3>
+                            Welcome to my website 🌐 !
+                        </h3>
+                    </ForEachChild>
+
+
                 </div>
 
                 <ul id={"header-links"}>
@@ -118,7 +110,8 @@ export default function Home() {
                         Since then, I've come a long way and have done a wide variety of projects
                         <br/>
                         <br/>
-                        <small>Hopefully I'll finish the mountain of side projects someday... <small>maybe</small>...</small>
+                        <small>Hopefully I'll finish the mountain of side projects
+                               someday... <small>maybe</small>...</small>
                     </p>
 
                 </section>
@@ -129,14 +122,17 @@ export default function Home() {
                                 <h2>🎓 What I Know 📖</h2>
                                 <p>These are the&nbsp;
                                     <wbr/>
-                                    <span style={{color:"lightgreen"}}>📜<b>skills</b></span>,&nbsp;
+                                    <span style={{color: "lightgreen"}}>📜<b>skills</b></span>,&nbsp;
                                     <wbr/>
-                                    <span style={{color:"orchid"}}>🔤<b>languages</b></span>&nbsp;&&nbsp;
+                                    <span style={{color: "orchid"}}>🔤<b>languages</b></span>&nbsp;&&nbsp;
                                     <wbr/>
-                                    <span style={{color:"peru"}}>🛠️<b>frameworks</b></span>,<br/>
+                                    <span style={{color: "peru"}}>🛠️<b>frameworks</b></span>,<br/>
                                     <wbr/>
-                                    I've learned over the years. <br/><br/>
-                                    The numbers below <wbr/>represents my confidence 🔥<wbr/> in each of them.</p>
+                                   I've learned over the years. <br/><br/>
+                                   The numbers below <wbr/>represents my confidence 🔥
+                                    <wbr/>
+                                   in each of them.
+                                </p>
                                 <br/>
 
                             </div>
