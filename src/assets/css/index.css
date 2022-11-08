@@ -163,11 +163,11 @@ a:hover {
     position: absolute;
     content: "";
     width: 0;
-    bottom: 3px;
-    height: 3px;
+    bottom: calc(var(--underlineWidth) + var(--link-padding));
+    height: var(--underlineWidth);
     background: #ad4cde;
     left: auto;
-    right: 0;
+    right: var(--link-padding);
     transition: width ease 300ms;
     animation: link-underline-enter ease 500ms;
     z-index: -1;
@@ -176,25 +176,29 @@ a:hover {
 }
 
 .link-underline {
+    --link-padding: 0.5em;
+    --underlineWidth: max(min(3px,0.3em),2px);
     display: inline-block;
     position: relative;
-    height: calc(1.5em + 6px);
+    padding: var(--link-padding);
+    height: calc(1.5em + (2 * var(--underlineWidth)));
     z-index: 1;
 }
 
 .link-underline:hover::after, .link-underline:focus::after {
-    left: 0;
+    --w: 100%;
+    left: var(--link-padding);
     right: auto;
-    width: 100%;
+    width: calc(var(--w) - 2*var(--link-padding));
     animation: none;
 }
 
 @keyframes link-underline-enter {
     from {
-        width: 100%;
+        --w: 100%;
     }
     to {
-        width: 0;
+        --w: 0;
     }
 }
 
