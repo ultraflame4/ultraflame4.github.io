@@ -23,24 +23,7 @@
 
 @media only screen and (max-width: 1150px) {
     :root {
-        font-size: .85rem;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    :root {
-        font-size: .8rem;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    :root {
-        font-size: .5rem;
-    }
-}
-@media only screen and (max-width: 330px) {
-    :root {
-        font-size: .4rem;
+        font-size: min(2.5vmin, 0.85rem);
     }
 }
 
@@ -239,67 +222,84 @@ hr {
     border-width: 1px;
 
 }
+
 li {
     height: 100%;
     display: flex;
 }
 
-.delay-100ms{
+.delay-100ms {
     animation-delay: 100ms;
 }
-.delay-200ms{
+
+.delay-200ms {
     animation-delay: 200ms;
 }
-.delay-300ms{
+
+.delay-300ms {
     animation-delay: 300ms;
 }
-.delay-400ms{
+
+.delay-400ms {
     animation-delay: 400ms;
 }
 
 .delay-500ms {
     animation-delay: 500ms;
 }
+
 .delay-600ms {
     animation-delay: 600ms;
 }
+
 .delay-700ms {
     animation-delay: 700ms;
 }
+
 .delay-800ms {
     animation-delay: 800ms;
 }
+
 .delay-900ms {
     animation-delay: 900ms;
 }
+
 .delay-1000ms {
     animation-delay: 1s;
 }
-.delay-1200ms{
+
+.delay-1200ms {
     animation-delay: 1200ms;
 }
-.delay-1300ms{
+
+.delay-1300ms {
     animation-delay: 1300ms;
 }
-.delay-1400ms{
+
+.delay-1400ms {
     animation-delay: 1400ms;
 }
 
 .delay-1500ms {
     animation-delay: 1500ms;
 }
+
 .delay-1600ms {
     animation-delay: 1600ms;
 }
+
 .delay-1700ms {
     animation-delay: 1700ms;
 }
+
 .delay-1800ms {
     animation-delay: 1800ms;
 }
+
 .delay-1900ms {
     animation-delay: 1900ms;
 }
+
 .delay-2000ms {
     animation-delay: 2s;
 }
