@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed header links dissapearing if height too small">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed link underline thickness scaling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,14 +236,7 @@
       <workItem from="1667832764477" duration="1204000" />
       <workItem from="1667835476436" duration="315000" />
       <workItem from="1667883286017" duration="4000" />
-      <workItem from="1667907655535" duration="1657000" />
-    </task>
-    <task id="LOCAL-00075" summary="aaaa">
-      <created>1662040732219</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1662040732220</updated>
+      <workItem from="1667907655535" duration="2707000" />
     </task>
     <task id="LOCAL-00076" summary="AAAAAA">
       <created>1662041500892</created>
@@ -581,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667908246569</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="fixed link underline thickness scaling">
+      <created>1667909648182</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1667909648182</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +635,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="disallow clicking again when user clicked on video" />
     <MESSAGE value="added fancy link underline. temporarily removed skills section" />
     <MESSAGE value="css sticky has decided to work, link underlines now go behind text" />
     <MESSAGE value="edited fancy underline and stuff" />
@@ -660,7 +659,8 @@
     <MESSAGE value="updated how to font scales on sizes &lt; 1150px" />
     <MESSAGE value="updated how to font scales on sizes width &lt; 1150px" />
     <MESSAGE value="fixed header links dissapearing if height too small" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed header links dissapearing if height too small" />
+    <MESSAGE value="fixed link underline thickness scaling" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed link underline thickness scaling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
