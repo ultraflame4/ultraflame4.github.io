@@ -34,9 +34,10 @@ export default function Home() {
                 <div className={"centerItems fillSpace flex-col"} id={"header-text"}>
 
 
-                    <ForEachChild callback={(child,index)=>{
+                    <ForEachChild callback={(child, index) => {
                         return (
-                            <AnimationOnScroll animateIn={index==0?"animate__fadeInLeft":"animate__fadeIn"} delay={800 * index}>
+                            <AnimationOnScroll animateIn={index == 0 ? "animate__fadeInLeft" : "animate__fadeIn"}
+                                               delay={800 * index}>
                                 {child}
                             </AnimationOnScroll>)
                     }}>
@@ -90,9 +91,14 @@ export default function Home() {
 
                 <section className={"centerItems flex-col"} id={"about"}>
 
-                    <ForEachChild callback={(child,index)=>{
+                    <ForEachChild callback={(child, index) => {
                         return (
-                            <AnimationOnScroll animateIn={"animate__fadeIn"} afterAnimatedIn={()=>{console.log("test")}} initiallyVisible={true}>
+                            <AnimationOnScroll
+                                animateIn={"animate__fadeIn"}
+                                scrollableParentSelector={"#root"}
+                                delay={500 * index}
+                                animateOnce={true}
+                            >
                                 {child}
                             </AnimationOnScroll>
                         )
@@ -107,7 +113,8 @@ export default function Home() {
                             I don't really remember.
                             <br/>
                             <br/>
-                            Started with <wbr/><a href={"https://minecraft.net"} className={"link-underline"}>minecraft</a> ⛏️
+                            Started with <wbr/><a href={"https://minecraft.net"}
+                                                  className={"link-underline"}>minecraft</a> ⛏️
                             redstone and command blocks.
                             <br/>
                             Then I learned python from <wbr/>various youtube tutorials & various online courses.
@@ -126,24 +133,40 @@ export default function Home() {
                     <div id={"skills-text-ctn"} className={"home-anim animate__animated animate__fadeInLeft delay-1s"}>
                         <div className={"child-wrapper"}>
                             <div id={"skills-text"}>
-                                <h2>🎓 What I Know 📖</h2>
-                                <p>These are the&nbsp;
-                                    <wbr/>
-                                    <span style={{color: "lightgreen"}}>📜<b>skills</b></span>,&nbsp;
-                                    <wbr/>
-                                    <span style={{color: "orchid"}}>🔤<b>languages</b></span>&nbsp;&&nbsp;
-                                    <wbr/>
-                                    <span style={{color: "peru"}}>🛠️<b>frameworks</b></span>,<br/>
-                                    <wbr/>
-                                   I've learned over the years. <br/><br/>
-                                   The numbers below <wbr/>represents my confidence 🔥
-                                    <wbr/>
-                                   in each of them.
-                                </p>
+                                <AnimationOnScroll scrollableParentSelector={"#root"}
+                                                   animateIn={"animate__fadeInLeft"}
+                                                   animateOnce={true}
+                                                   delay={200}>
+                                    <h2>🎓 What I Know 📖</h2>
+                                </AnimationOnScroll>
+                                <AnimationOnScroll scrollableParentSelector={"#root"}
+                                                   animateIn={"animate__fadeIn"}
+                                                   animateOnce={true}
+                                                   delay={700}>
+                                    <p>These are the&nbsp;
+                                        <wbr/>
+                                        <span style={{color: "lightgreen"}}>📜<b>skills</b></span>,&nbsp;
+                                        <wbr/>
+                                        <span style={{color: "orchid"}}>🔤<b>languages</b></span>&nbsp;&&nbsp;
+                                        <wbr/>
+                                        <span style={{color: "peru"}}>🛠️<b>frameworks</b></span>,<br/>
+                                        <wbr/>
+                                       I've learned over the years. <br/><br/>
+                                       The numbers below <wbr/>represents my confidence 🔥
+                                        <wbr/>
+                                       in each of them.
+                                    </p>
+                                </AnimationOnScroll>
+
                                 <br/>
 
                             </div>
-                            <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
+                            <AnimationOnScroll scrollableParentSelector={"#root"}
+                                               animateIn={"animate__fadeIn"}
+                                               delay={800}
+                                               animateOnce={true}>
+                                <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects ➡️</HashLinkW>
+                            </AnimationOnScroll>
                         </div>
 
                     </div>
