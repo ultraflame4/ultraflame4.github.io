@@ -84,6 +84,7 @@
     transition: all ease 300ms;
     padding: 1rem;
 
+
     &.menu-open {
       transform: rotateZ(180deg);
     }
@@ -91,9 +92,13 @@
     img {
       filter: invert(1);
     }
+
+
   }
 
-
+  .topnav{
+    padding-right: 0;
+  }
 
   .topnav-links-inactive {
 
