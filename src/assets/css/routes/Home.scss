@@ -41,7 +41,7 @@
 #header-links {
   display: flex;
   position: absolute;
-  top: calc(50% + 128px);
+  top: calc(50% + min(20vh,128px));
   width: 100%;
   justify-content: center;
   align-items: center;
