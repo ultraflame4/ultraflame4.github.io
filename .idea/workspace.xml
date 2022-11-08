@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added animate on scroll react library">
-      <change afterPath="$PROJECT_DIR$/src/components/ForEachChild.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Swapping to AnimateOnScroll library">
+      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,14 +235,7 @@
       <workItem from="1667832764477" duration="1204000" />
       <workItem from="1667835476436" duration="315000" />
       <workItem from="1667883286017" duration="4000" />
-      <workItem from="1667907655535" duration="4735000" />
-    </task>
-    <task id="LOCAL-00078" summary="working deploy script :D">
-      <created>1662045028396</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1662045028396</updated>
+      <workItem from="1667907655535" duration="4956000" />
     </task>
     <task id="LOCAL-00079" summary="removed uneeded code">
       <created>1662045121218</created>
@@ -582,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667911295273</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Swapping to AnimateOnScroll library">
+      <created>1667912505806</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1667912505806</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +634,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="edited fancy underline and stuff" />
     <MESSAGE value="edited fancy underline and skills sction" />
     <MESSAGE value="changed some names" />
     <MESSAGE value="Made topnav for mobile alot better" />
@@ -661,7 +658,8 @@
     <MESSAGE value="fixed link underline thickness scaling" />
     <MESSAGE value="clarified README.md" />
     <MESSAGE value="Added animate on scroll react library" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added animate on scroll react library" />
+    <MESSAGE value="Swapping to AnimateOnScroll library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Swapping to AnimateOnScroll library" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
