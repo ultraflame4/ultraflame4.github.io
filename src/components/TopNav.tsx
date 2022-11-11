@@ -28,7 +28,14 @@ const topNavSocialsList: topNavSocialsItem[] = [
         href: "https://github.com/ultraflame4",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
         invert: true
+    },
+    {
+        href: "https://www.linkedin.com/in/chester-lai-664803239/",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg",
+        invert: true
+
     }
+
 ]
 
 
@@ -84,7 +91,7 @@ export default function TopNav(props: TopNavProps) {
                                 style={{
                                     backgroundImage: `url(${value.icon})`,
                                     filter: value.invert ? "invert()" : "",
-                                    animationDelay: `${(index+topNavLinksList.length+1)*500}ms`
+                                    animationDelay: `${(index + topNavLinksList.length + 1) * 500}ms`
                                 }}
                             />
                         </li>

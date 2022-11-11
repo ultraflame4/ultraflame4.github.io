@@ -22,7 +22,7 @@
 
     #topnav-socials {
       margin-left: 4rem;
-
+      gap: 1rem;
       flex-grow: 0;
 
       a {
@@ -55,12 +55,14 @@
     list-style: none;
     align-items: center;
     transition: all ease 1s;
+    gap: 2rem;
 
     a {
       aspect-ratio: 1;
       height: 3rem;
       transition: all ease 1s;
       margin: auto;
+      border-radius: 0.5em;
     }
   }
 

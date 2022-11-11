@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Fixed card scaling issue and somehow managed to somwhat center text">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Attempted fix for topnav mobile menu btn being too far left">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/topnav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/topnav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programming/Programming Projects/ultraflame4.github.io/builds&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SchoolStuff/CDEV/CDEVRestaurantReview&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -236,14 +238,11 @@
       <workItem from="1667832764477" duration="1204000" />
       <workItem from="1667835476436" duration="315000" />
       <workItem from="1667883286017" duration="4000" />
-      <workItem from="1667907655535" duration="10530000" />
-    </task>
-    <task id="LOCAL-00087" summary="added font link just in case">
-      <created>1662089248806</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1662089248806</updated>
+      <workItem from="1667907655535" duration="10840000" />
+      <workItem from="1668074882800" duration="181000" />
+      <workItem from="1668137411408" duration="38000" />
+      <workItem from="1668138556708" duration="67000" />
+      <workItem from="1668165924419" duration="528000" />
     </task>
     <task id="LOCAL-00088" summary="work tree v4">
       <created>1662089428534</created>
@@ -581,11 +580,23 @@
       <option name="project" value="LOCAL" />
       <updated>1667917879779</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Attempted fix for topnav mobile menu btn being too far left">
+      <created>1667918378862</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1667918378862</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/tools.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -635,8 +646,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="upadtes site.&#10;+ skills are now in a card form&#10;&#10;+ underconstruction mouse glow is now flat" />
-    <MESSAGE value="ide stuff" />
     <MESSAGE value="added dropshadow to skill cards" />
     <MESSAGE value="updated the skill cards look and responsive design" />
     <MESSAGE value="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices" />
@@ -660,7 +669,9 @@
     <MESSAGE value="Added QOL component" />
     <MESSAGE value="fixed svg scaling issue" />
     <MESSAGE value="Fixed card scaling issue and somehow managed to somwhat center text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed card scaling issue and somehow managed to somwhat center text" />
+    <MESSAGE value="Attempted fix for topnav mobile menu btn" />
+    <MESSAGE value="Attempted fix for topnav mobile menu btn being too far left" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempted fix for topnav mobile menu btn being too far left" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
