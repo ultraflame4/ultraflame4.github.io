@@ -38,7 +38,7 @@ export default function Home() {
                     <ForEachChild callback={(child, index) => {
                         return (
                             <AOS animateIn={index == 0 ? "animate__fadeInLeft" : "animate__fadeIn"}
-                                 delay={800 * index}
+                                 delay={900 * index + 1500}
 
                             >
                                 {child}
@@ -62,7 +62,7 @@ export default function Home() {
                         <li
                             className={"animate__animated animate__fadeInLeft"}
                             style={{
-                                animationDelay: `${(index + 3) * 1}s`
+                                animationDelay: `${(index + 5)}s`
                             }}>
                             <HashLinkW
                                 className={"link-underline"}
@@ -77,8 +77,8 @@ export default function Home() {
 
                 <video
                     id={"bg-vid"}
-
-                    className={"fillSpace"} muted autoPlay loop>
+                    className={"fillSpace animate__animated animate__fadeIn"}
+                    muted autoPlay loop>
                     <source src={"moon.webm"} type={"video/webm"}/>
                 </video>
             </header>

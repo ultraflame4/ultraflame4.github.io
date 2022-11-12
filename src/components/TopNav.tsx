@@ -83,7 +83,7 @@ export default function TopNav(props: TopNavProps) {
                     </a>
                 </h2>
                 <ul id={"topnav-socials"}>
-                    {topNavSocialsList.map((value, index) =>
+                    {topNavSocialsList.map((value, index,array) =>
                         <li>
                             <a
                                 className={"animate__animated animate__fadeIn"}
@@ -91,7 +91,7 @@ export default function TopNav(props: TopNavProps) {
                                 style={{
                                     backgroundImage: `url(${value.icon})`,
                                     filter: value.invert ? "invert()" : "",
-                                    animationDelay: `${(index + topNavLinksList.length + 1) * 500}ms`
+                                    animationDelay: `${(array.length-index + topNavLinksList.length + 1) * 400}ms`
                                 }}
                             />
                         </li>
