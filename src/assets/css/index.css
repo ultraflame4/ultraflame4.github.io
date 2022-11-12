@@ -21,7 +21,8 @@
     --radialColor: rgb(62, 25, 131);
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1150px),
+            screen and (max-height: 800px){
     :root {
         font-size: min(2.5vmin, 0.85rem);
     }
