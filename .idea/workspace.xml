@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed height scaling issue stuff">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added animations to bg vid and changed animation order of socials links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/routes/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/topnav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/topnav.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,14 +241,7 @@
       <workItem from="1668137411408" duration="38000" />
       <workItem from="1668138556708" duration="67000" />
       <workItem from="1668165924419" duration="632000" />
-      <workItem from="1668241210766" duration="1004000" />
-    </task>
-    <task id="LOCAL-00090" summary="build">
-      <created>1662188682134</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1662188682134</updated>
+      <workItem from="1668241210766" duration="1499000" />
     </task>
     <task id="LOCAL-00091" summary="worktree stuff">
       <created>1662188712310</created>
@@ -588,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668241646833</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="Added animations to bg vid and changed animation order of socials links">
+      <created>1668242254153</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1668242254153</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +645,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices" />
     <MESSAGE value="Updated cards, - looked ugly on mobile so revereted some changes" />
     <MESSAGE value="Added a name to this nameless site" />
     <MESSAGE value="Edited about me section" />
@@ -672,7 +669,8 @@
     <MESSAGE value="Attempted fix for topnav mobile menu btn being too far left" />
     <MESSAGE value="Added linkedin profile link" />
     <MESSAGE value="fixed height scaling issue stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed height scaling issue stuff" />
+    <MESSAGE value="Added animations to bg vid and changed animation order of socials links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added animations to bg vid and changed animation order of socials links" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

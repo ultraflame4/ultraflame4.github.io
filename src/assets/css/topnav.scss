@@ -28,9 +28,27 @@
       a {
         height: 2rem;
       }
+
+      &>li:nth-child(2n){
+        margin-left: 0;
+        animation: breath 500ms linear;
+      }
     }
 
   }
+
+  @keyframes breath {
+    from, to{
+      margin-left: 0;
+    }
+    40%{
+      margin-left: 5rem;
+    }
+    60%{
+      margin-left: 5rem;
+    }
+  }
+
 
   & #title a {
 
