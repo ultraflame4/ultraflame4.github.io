@@ -84,7 +84,7 @@ export default function TopNav(props: TopNavProps) {
                 </h2>
                 <ul id={"topnav-socials"}>
                     {topNavSocialsList.map((value, index,array) =>
-                        <li>
+                        <li key={index}>
                             <a
                                 className={"animate__animated animate__fadeIn"}
                                 href={value.href}
@@ -105,7 +105,7 @@ export default function TopNav(props: TopNavProps) {
                 <ul id={"topnav-links"} className={"topnav-links-inactive"} ref={topNavLinks}>
                     {topNavLinksList.map((value, index) =>
                         <li className={"animate__animated animate__fadeIn"}
-                            style={{animationDelay: `${(index + 1) * 500}ms`}}>
+                            style={{animationDelay: `${(index + 1) * 500}ms`}} key={index}>
                             <HashLinkW to={value.to}>{value.name}</HashLinkW>
                         </li>
                     )}

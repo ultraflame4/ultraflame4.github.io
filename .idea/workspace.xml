@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="refactored skills into skill carsd, started working on projects section">
-      <change afterPath="$PROJECT_DIR$/src/assets/projects.ts" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changed accent color">
+      <change afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/projects.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
     </list>
@@ -246,21 +250,7 @@
       <workItem from="1668241210766" duration="1578000" />
       <workItem from="1668266255388" duration="25000" />
       <workItem from="1671601251050" duration="1011000" />
-      <workItem from="1671608244668" duration="8856000" />
-    </task>
-    <task id="LOCAL-00095" summary="Added an easter egg in about me">
-      <created>1662283107633</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1662283107633</updated>
-    </task>
-    <task id="LOCAL-00096" summary="changed link to proper link">
-      <created>1662283219998</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1662283219998</updated>
+      <workItem from="1671608244668" duration="21113000" />
     </task>
     <task id="LOCAL-00097" summary="added proper link to lang easter egg">
       <created>1662453908276</created>
@@ -591,7 +581,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671615157744</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="working on projects list">
+      <created>1671617348714</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1671617348714</updated>
+    </task>
+    <task id="LOCAL-00145" summary="changed accent color">
+      <created>1671620876712</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1671620876712</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,8 +649,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="worktree" />
-    <MESSAGE value="worktree stuff" />
     <MESSAGE value="updated how to font scales on sizes &lt; 1150px" />
     <MESSAGE value="updated how to font scales on sizes width &lt; 1150px" />
     <MESSAGE value="fixed header links dissapearing if height too small" />
@@ -670,7 +672,9 @@
     <MESSAGE value="fixed scrollbar not working and some other stuff" />
     <MESSAGE value="changedup scrollbar design" />
     <MESSAGE value="refactored skills into skill carsd, started working on projects section" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored skills into skill carsd, started working on projects section" />
+    <MESSAGE value="working on projects list" />
+    <MESSAGE value="changed accent color" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed accent color" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

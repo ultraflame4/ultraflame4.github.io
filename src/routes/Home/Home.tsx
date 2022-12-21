@@ -13,6 +13,8 @@ import "@/routes/Home/Home.scss";
 import "animate.css"
 import ForEachChild from "@/components/ForEachChild";
 import AOS from "@/components/AOS";
+import {Icon} from "@iconify-icon/react";
+import {allProjects, featuredProjects, proj_entry} from "@/assets/allProjects";
 
 
 const HeaderLinksList: PageLinkData[] = [
@@ -22,8 +24,7 @@ const HeaderLinksList: PageLinkData[] = [
 ]
 
 
-
-const SkillCard = defineComponent<{value:p_language}>((props, context) => {
+const SkillCard = defineComponent<{ value: p_language }>((props, context) => {
     return (
         <li
             className={"skills-list-item"}>
@@ -55,17 +56,53 @@ const SkillCard = defineComponent<{value:p_language}>((props, context) => {
     )
 })
 
-const FeaturedProjectItem = defineComponent((props, context) => {
+const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, context) => {
     return (
         <li className={"featuredProject-item"}>
             <div className={"project-details"}>
-                <h3>Project title</h3>
+                <h3>{props.item.title}</h3>
                 <p>
-                    ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+                    {props.item.desc}
                 </p>
+                <ul className={"project-links"}>
+                    {
+                        props.item.source ?
+                            <li>
+                                <a href={props.item.source} target={"_blank"}>
+                                    <Icon icon={"humbleicons:code"} className={"icon"}/>
+                                    {props.item.sourceLabel ?? "Source"}
+                                </a>
+                            </li> : ""
+                    }
+                    {
+                        props.item.links?.map((value, index) =>
+                            <li key={index}>
+
+                                <a href={value.url}
+                                   //@ts-ignore using custom properties here
+                                   style={{"--color": value.fillColor ?? "var(--accent-color)",
+                                       "--fill-text-color": value.filledTextColor ?? "white"}}
+
+                                   target={"_blank"} data-filled={value.filled}>
+                                    <Icon icon={value.icon ?? "eva:external-link-fill"} className={"icon"}/>
+                                    {value.name}
+                                </a>
+                            </li>
+                        )
+                    }
+
+                </ul>
+                <ul className={"project-skills"}>
+                    {props.item.skillsUsed.map((value, index) =>
+                        <li key={index}>
+                            {value.toLowerCase()}
+                        </li>
+                    )}
+                </ul>
+
             </div>
             <div className={"project-image"}>
-                <img src={"https://picsum.photos/2300/1800"}/>
+                {props.item.bannerImg ? <img src={props.item.bannerImg}/> : ""}
             </div>
         </li>
     )
@@ -149,6 +186,7 @@ export default function Home() {
                                 animateIn={"animate__fadeIn"}
                                 delay={500 * index}
                                 animateOnce={true}
+                                key={index}
                             >
                                 {child}
                             </AOS>
@@ -225,7 +263,7 @@ export default function Home() {
                     <ul id={"skills-list"}>
                         <li className={"dummy-item"}></li>
                         {
-                            skills.map((value, index) => <SkillCard value={value}/>)
+                            skills.map((value, index) => <SkillCard key={index} value={value}/>)
 
                         }
 
@@ -234,9 +272,9 @@ export default function Home() {
                 <section id={"projects"}>
                     <h2>Featured Projects</h2>
                     <ul>
-                        <FeaturedProjectItem/>
-                        <FeaturedProjectItem/>
-                        <FeaturedProjectItem/>
+                        {featuredProjects.map((item, index) => {
+                            return <FeaturedProjectItem key={index} item={item}/>
+                        })}
                     </ul>
                 </section>
             </main>
