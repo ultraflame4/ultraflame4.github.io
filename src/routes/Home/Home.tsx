@@ -3,8 +3,8 @@ import UnderConstruction from "../../components/UnderConstruction";
 import {useEffect, useRef, useState} from "react";
 
 import TopNav from "../../components/TopNav";
-import {PageLinkData} from "@/tools";
-import {skills} from "@/assets/skills";
+import {defineComponent, PageLinkData} from "@/tools";
+import {p_language, skills} from "@/assets/skills";
 
 import Counter from "../../components/Counter";
 import HashLinkW from "../../components/HashLinkW";
@@ -21,6 +21,39 @@ const HeaderLinksList: PageLinkData[] = [
     {name: "projects", to: "/#projects"}
 ]
 
+
+
+const SkillCard = defineComponent<{value:p_language}>((props, context) => {
+    return (
+        <li
+            className={"skills-list-item"}>
+
+            <div className={"skill-card"}>
+
+                <img src={props.value.logo}
+                     alt={props.value.name}
+                     title={props.value.name}
+                     style={{
+                         filter: props.value.invert_image ? "invert()" : "",
+                     }}
+                />
+
+                <h5>{props.value.name}</h5>
+                <p style={{
+                    fontWeight: 700,
+                    fontSize: "0.9em",
+                    color: `hsl(calc(${props.value.confidence} * 120), 90%, 40%)`
+                }}>
+
+                    <Counter to={props.value.confidence} steps={0.04} interval={25}
+                             resetOnClick={true}/>
+                </p>
+
+            </div>
+
+        </li>
+    )
+})
 
 export default function Home() {
 
@@ -176,42 +209,17 @@ export default function Home() {
                     <ul id={"skills-list"}>
                         <li className={"dummy-item"}></li>
                         {
-                            skills.map((value, index) => (
-                                <li key={index}
-                                    className={"skills-list-item"}>
-
-                                    <div className={"skill-card"}>
-
-                                        <img src={value.logo}
-                                             alt={value.name}
-                                             title={value.name}
-                                             style={{
-                                                 filter: value.invert_image ? "invert()" : "",
-                                             }}
-                                        />
-
-                                        <h5>{value.name}</h5>
-                                        <p style={{
-                                            fontWeight: 700,
-                                            fontSize: "0.9em",
-                                            color: `hsl(calc(${value.confidence} * 120), 90%, 40%)`
-                                        }}>
-
-                                            <Counter to={value.confidence} steps={0.04} interval={25}
-                                                     resetOnClick={true}/>
-                                        </p>
-
-                                    </div>
-
-                                </li>
-                            ))
+                            skills.map((value, index) => <SkillCard value={value}/>)
 
                         }
 
                     </ul>
                 </section>
-                <section className={"fillViewport"} id={"projects"}>
-                    <UnderConstruction/>
+                <section id={"projects"}>
+                    <h2>Featured Projects</h2>
+                    <ul>
+
+                    </ul>
                 </section>
             </main>
 

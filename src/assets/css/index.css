@@ -2,7 +2,8 @@
     /*font-family: Inter, Avenir, Helvetica, Arial, sans-serif;*/
 
     font-family: "Poppins";
-    color: rgba(255, 255, 255, 0.87);
+    --h-color: rgb(220, 220, 220);
+    color: var(--h-color);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -19,6 +20,7 @@
 
     --lineColor: #333;
     --radialColor: rgb(62, 25, 131);
+    --scroll-top:0;
 }
 
 @media only screen and (max-width: 1150px),
@@ -62,8 +64,9 @@ body {
 
 h1 {
     font-size: 3.2em;
-    line-height: 1.1;
+    letter-spacing: 0.05em;
 }
+
 
 .hr {
     background: var(--backgroundColor);

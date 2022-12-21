@@ -1,4 +1,4 @@
-interface p_language {
+export interface p_language {
     name: string,
     logo: string,
     confidence: number // percentage.

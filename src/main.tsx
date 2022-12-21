@@ -7,7 +7,13 @@ import Projects from "./routes/Projects";
 import Home from "./routes/Home/Home";
 import React from "react";
 
-const rootElement = document.getElementById("root")
+const rootElement:HTMLDivElement = document.getElementById("root")
+rootElement.addEventListener("scroll", (event) => {
+    let scroll = rootElement?.scrollTop;
+    rootElement.style.setProperty("--scroll-top",scroll.toString())
+});
+
+
 if (rootElement != null) {
     const root = ReactDOM.createRoot(rootElement);
     root.render(

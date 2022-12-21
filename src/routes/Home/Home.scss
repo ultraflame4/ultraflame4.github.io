@@ -17,12 +17,15 @@
   height: calc(100vh - var(--topNavHeight));
   padding-bottom: var(--topNavHeight);
   box-sizing: border-box;
+  --scroll-scaling: calc(1 / (var(--scroll-top) / 1000 + 1))
 }
 
 
 #header-text {
   font-family: "Poppins";
   font-weight: 900;
+  transform: scale(var(--scroll-scaling));
+  opacity: calc(var(--scroll-scaling));
 }
 
 #header-text h1 {
@@ -32,7 +35,7 @@
   margin: 0.6em;
 }
 
-#header-text h2, h3,h4,h5,h6 {
+#header-text h2, h3, h4, h5, h6 {
   letter-spacing: 0.12em;
   position: relative;
   margin: 0.1em;
@@ -42,12 +45,14 @@
 #header-links {
   display: flex;
   position: absolute;
-  top: calc(50% + min(20vh,128px));
+  top: calc(50% + min(20vh, 128px));
   width: 100%;
   justify-content: center;
   align-items: center;
   padding: 0;
   gap: 32px;
+  transform: scale(var(--scroll-scaling));
+  opacity: var(--scroll-scaling);
 }
 
 #header-links a {
@@ -87,7 +92,7 @@
 
 #skills-text-ctn {
   position: sticky;
-  top: calc(50vh - min(50vw,100px));
+  top: calc(50vh - min(50vw, 100px));
   height: fit-content;
   background: rgba(var(--radialColor), 255);
   width: max(50%, 100px);
@@ -165,4 +170,24 @@
 
 .skills-list-item * {
   margin: 0;
+}
+
+#projects {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: var(--topNavHeightStickied);
+  min-height: 100vh;
+  height: fit-content;
+
+  & > h2 {
+    letter-spacing: 2px;
+
+    position: sticky;
+    top: var(--topNavHeightStickied);
+    mix-blend-mode: difference;
+
+  }
 }
