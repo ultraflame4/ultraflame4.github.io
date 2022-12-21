@@ -7,8 +7,8 @@ import Projects from "./routes/Projects";
 import Home from "./routes/Home/Home";
 import React from "react";
 
-const rootElement:HTMLDivElement = document.getElementById("root")
-rootElement.addEventListener("scroll", (event) => {
+const rootElement:HTMLDivElement|null = document.getElementById("root") as HTMLDivElement
+rootElement?.addEventListener("scroll", (event) => {
     let scroll = rootElement?.scrollTop;
     rootElement.style.setProperty("--scroll-top",scroll.toString())
 });

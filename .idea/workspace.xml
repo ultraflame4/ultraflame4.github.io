@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added more projects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/allProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -128,8 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -244,14 +244,7 @@
       <workItem from="1668241210766" duration="1578000" />
       <workItem from="1668266255388" duration="25000" />
       <workItem from="1671601251050" duration="1011000" />
-      <workItem from="1671608244668" duration="23201000" />
-    </task>
-    <task id="LOCAL-00099" summary="added fancy link underline. temporarily removed skills section">
-      <created>1663067347143</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1663067347143</updated>
+      <workItem from="1671608244668" duration="24729000" />
     </task>
     <task id="LOCAL-00100" summary="css sticky has decided to work, link underlines now go behind text">
       <created>1663134521867</created>
@@ -589,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671634038208</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="Added more projects">
+      <created>1671636536961</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1671636536961</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
