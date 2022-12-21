@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changedup scrollbar design">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="refactored skills into skill carsd, started working on projects section">
+      <change afterPath="$PROJECT_DIR$/src/assets/projects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/skills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/skills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
     </list>
@@ -248,14 +246,7 @@
       <workItem from="1668241210766" duration="1578000" />
       <workItem from="1668266255388" duration="25000" />
       <workItem from="1671601251050" duration="1011000" />
-      <workItem from="1671608244668" duration="6691000" />
-    </task>
-    <task id="LOCAL-00094" summary="updated values">
-      <created>1662265310382</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1662265310382</updated>
+      <workItem from="1671608244668" duration="8856000" />
     </task>
     <task id="LOCAL-00095" summary="Added an easter egg in about me">
       <created>1662283107633</created>
@@ -593,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671609220120</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="refactored skills into skill carsd, started working on projects section">
+      <created>1671615157744</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1671615157744</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +645,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Revert &quot;deploy code: 947&quot;&#10;&#10;This reverts commit 22a04966" />
     <MESSAGE value="worktree" />
     <MESSAGE value="worktree stuff" />
     <MESSAGE value="updated how to font scales on sizes &lt; 1150px" />
@@ -672,7 +669,8 @@
     <MESSAGE value="added stagured sliding of socials when stickied" />
     <MESSAGE value="fixed scrollbar not working and some other stuff" />
     <MESSAGE value="changedup scrollbar design" />
-    <option name="LAST_COMMIT_MESSAGE" value="changedup scrollbar design" />
+    <MESSAGE value="refactored skills into skill carsd, started working on projects section" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored skills into skill carsd, started working on projects section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -55,6 +55,22 @@ const SkillCard = defineComponent<{value:p_language}>((props, context) => {
     )
 })
 
+const FeaturedProjectItem = defineComponent((props, context) => {
+    return (
+        <li className={"featuredProject-item"}>
+            <div className={"project-details"}>
+                <h3>Project title</h3>
+                <p>
+                    ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+                </p>
+            </div>
+            <div className={"project-image"}>
+                <img src={"https://picsum.photos/2300/1800"}/>
+            </div>
+        </li>
+    )
+})
+
 export default function Home() {
 
 
@@ -218,7 +234,9 @@ export default function Home() {
                 <section id={"projects"}>
                     <h2>Featured Projects</h2>
                     <ul>
-
+                        <FeaturedProjectItem/>
+                        <FeaturedProjectItem/>
+                        <FeaturedProjectItem/>
                     </ul>
                 </section>
             </main>
