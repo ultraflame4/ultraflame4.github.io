@@ -4,7 +4,7 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import "./assets/css/index.css"
 
 import Projects from "./routes/Projects";
-import Home from "./routes/Home";
+import Home from "./routes/Home/Home";
 import React from "react";
 
 const rootElement = document.getElementById("root")

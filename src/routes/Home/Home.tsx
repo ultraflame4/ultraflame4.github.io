@@ -1,15 +1,15 @@
 import {AnimationOnScroll} from "react-animation-on-scroll";
-import UnderConstruction from "../components/UnderConstruction";
+import UnderConstruction from "../../components/UnderConstruction";
 import {useEffect, useRef, useState} from "react";
 
-import TopNav from "../components/TopNav";
+import TopNav from "../../components/TopNav";
 import {PageLinkData} from "@/tools";
 import {skills} from "@/assets/skills";
 
-import Counter from "../components/Counter";
-import HashLinkW from "../components/HashLinkW";
+import Counter from "../../components/Counter";
+import HashLinkW from "../../components/HashLinkW";
 
-import "@/assets/css/routes/Home.scss";
+import "@/routes/Home/Home.scss";
 import "animate.css"
 import ForEachChild from "@/components/ForEachChild";
 import AOS from "@/components/AOS";
