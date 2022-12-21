@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added projects section in home page">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added more projects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/allProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,14 +244,7 @@
       <workItem from="1668241210766" duration="1578000" />
       <workItem from="1668266255388" duration="25000" />
       <workItem from="1671601251050" duration="1011000" />
-      <workItem from="1671608244668" duration="22112000" />
-    </task>
-    <task id="LOCAL-00098" summary="disallow clicking again when user clicked on video">
-      <created>1662454098140</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1662454098140</updated>
+      <workItem from="1671608244668" duration="23201000" />
     </task>
     <task id="LOCAL-00099" summary="added fancy link underline. temporarily removed skills section">
       <created>1663067347143</created>
@@ -590,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671633110677</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="Added more projects">
+      <created>1671634038208</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1671634038208</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +643,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="updated how to font scales on sizes width &lt; 1150px" />
     <MESSAGE value="fixed header links dissapearing if height too small" />
     <MESSAGE value="fixed link underline thickness scaling" />
     <MESSAGE value="clarified README.md" />
@@ -669,7 +667,8 @@
     <MESSAGE value="working on projects list" />
     <MESSAGE value="changed accent color" />
     <MESSAGE value="Added projects section in home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added projects section in home page" />
+    <MESSAGE value="Added more projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more projects" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
