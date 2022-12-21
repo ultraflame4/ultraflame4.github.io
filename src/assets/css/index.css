@@ -19,8 +19,10 @@
     --max-width: 1600px;
 
     --lineColor: #333;
-    --radialColor: rgb(62, 25, 131);
+    --accent-color: #fd386d;
+    --radialColor: var(--accent-color);
     --scroll-top:0;
+    --underline-color: var(--accent-color);
 }
 
 @media only screen and (max-width: 1150px),
@@ -171,7 +173,7 @@ a:hover {
     width: 0;
     bottom: calc(var(--underlineWidth) + var(--link-padding));
     height: var(--underlineWidth);
-    background: #ad4cde;
+    background: var(--underline-color);
     left: auto;
     right: var(--link-padding);
     transition: width ease 300ms;
