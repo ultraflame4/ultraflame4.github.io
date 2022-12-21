@@ -116,7 +116,7 @@ section {
 
 
 ::-webkit-scrollbar {
-    width: 0.375rem;
+    width: 0.6rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -125,7 +125,8 @@ section {
 
 ::-webkit-scrollbar-thumb {
     background: #fff;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
+
 }
 
 ::-webkit-scrollbar-thumb:hover {

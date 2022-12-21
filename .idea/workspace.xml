@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added animations to bg vid and changed animation order of socials links">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixed scrollbar not working and some other stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/topnav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/topnav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +23,9 @@
         <option value="Vue Single File Component" />
         <option value="Python Script" />
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -85,11 +85,11 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\views\Home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\routes\Home" />
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\assets\css" />
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\routes" />
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src" />
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
-      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\components\Misc" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -241,21 +241,10 @@
       <workItem from="1668137411408" duration="38000" />
       <workItem from="1668138556708" duration="67000" />
       <workItem from="1668165924419" duration="632000" />
-      <workItem from="1668241210766" duration="1499000" />
-    </task>
-    <task id="LOCAL-00091" summary="worktree stuff">
-      <created>1662188712310</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1662188712310</updated>
-    </task>
-    <task id="LOCAL-00092" summary="fixed topnav about hashlink">
-      <created>1662188886668</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1662188886668</updated>
+      <workItem from="1668241210766" duration="1578000" />
+      <workItem from="1668266255388" duration="25000" />
+      <workItem from="1671601251050" duration="1011000" />
+      <workItem from="1671608244668" duration="936000" />
     </task>
     <task id="LOCAL-00093" summary="Added skill confidence">
       <created>1662264570263</created>
@@ -586,16 +575,25 @@
       <option name="project" value="LOCAL" />
       <updated>1668242254153</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="added stagured sliding of socials when stickied">
+      <created>1668242761608</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1668242761608</updated>
+    </task>
+    <task id="LOCAL-00141" summary="fixed scrollbar not working and some other stuff">
+      <created>1671609029887</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1671609029888</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/tools.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -645,8 +643,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Updated cards, - looked ugly on mobile so revereted some changes" />
-    <MESSAGE value="Added a name to this nameless site" />
     <MESSAGE value="Edited about me section" />
     <MESSAGE value="Revert &quot;deploy code: 947&quot;&#10;&#10;This reverts commit 22a04966" />
     <MESSAGE value="worktree" />
@@ -670,7 +666,9 @@
     <MESSAGE value="Added linkedin profile link" />
     <MESSAGE value="fixed height scaling issue stuff" />
     <MESSAGE value="Added animations to bg vid and changed animation order of socials links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added animations to bg vid and changed animation order of socials links" />
+    <MESSAGE value="added stagured sliding of socials when stickied" />
+    <MESSAGE value="fixed scrollbar not working and some other stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed scrollbar not working and some other stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
