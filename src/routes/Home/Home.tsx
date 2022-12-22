@@ -102,7 +102,10 @@ const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, contex
 
             </div>
             <div className={"project-image"}>
-                {props.item.bannerImg ? <img src={props.item.bannerImg}/> : ""}
+                {
+                    props.item.bannerImgIsVideo?  (props.item.bannerSrc ? <video controls><source src={props.item.bannerSrc}/></video> : "") :
+                        (props.item.bannerSrc ? <img src={props.item.bannerSrc}/> : "")
+                }
             </div>
         </li>
     )

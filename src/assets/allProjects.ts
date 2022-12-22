@@ -17,53 +17,64 @@ export interface proj_entry {
     title: string,
     desc?: string,
     skillsUsed: string[],
-    bannerImg?: string
+    bannerSrc?: string
+    /*Uses video tag instead of img tag*/
+    bannerImgIsVideo?: boolean
 }
 
 
-export const allProjects:proj_entry[] = [
+export const allProjects: proj_entry[] = [
     {
         featured: true,
         title: "TilImg (TiledImage)",
-        skillsUsed: ["python","numpy","numba"],
-        desc:"This program stitches or \"Tiles\" a set of images (called tiles) together into one large composite image with likeness to a reference image.\n" +
+        skillsUsed: ["python", "numpy", "numba"],
+        desc: "This program stitches or \"Tiles\" a set of images (called tiles) together into one large composite image with likeness to a reference image.\n" +
             "This uses the python 'rich' library for fancy command-line (cli) interfaces",
-        source:"https://github.com/ultraflame4/TiledImage",
-        bannerImg:"https://user-images.githubusercontent.com/34125174/208235487-44f5e641-e6eb-453a-a9db-25d93a093782.png"
+        source: "https://github.com/ultraflame4/TiledImage",
+        bannerSrc: "https://user-images.githubusercontent.com/34125174/208235487-44f5e641-e6eb-453a-a9db-25d93a093782.png"
     },
     {
         featured: true,
         title: "WebDevCreate",
-        skillsUsed: ["typescript","scss","html","python"],
+        skillsUsed: ["typescript", "scss", "html", "python"],
         desc: "A website builder I made for myself to eventually build websites with.\nIt is designed for people who already know HTML and CSS." +
             "\nFor those who want a more simple and lightweight tool to make websites with.",
         source: "https://github.com/ultraflame4/WebDevCreate",
-        bannerImg: "https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",
-        links:[
+        bannerSrc: "https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",
+        links: [
             {
-                name:"Webapp",
-                url:"https://ultraflame4.github.io/WebDevCreate"
+                name: "Webapp",
+                url: "https://ultraflame4.github.io/WebDevCreate"
             }
         ]
     },
     {
         featured: true,
+        title: "Moosic App Electric Boogalo",
+        skillsUsed: ["java", "android", "android studio"],
+        desc: "An android music app done for a school project. Features include account login, google login, playlists etc.",
+        source: "https://github.com/ultraflame4/MoosicElectricBoogaloo",
+        bannerSrc: "https://user-images.githubusercontent.com/34125174/209052797-04de64b1-5645-4b96-a1a0-75f40a411bd2.mov",
+        bannerImgIsVideo:true
+    },
+    {
+        featured: true,
         title: "Online Tic Tac Toe",
-        bannerImg: "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png",
-        skillsUsed: ["html","css","javascript"],
+        bannerSrc: "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png",
+        skillsUsed: ["html", "css", "javascript"],
         desc: "A simple multiplayer Tic Tac Toe game playable on the browser. This taught me about how multiplayer and networking works in games and some of the troubles associated with it.",
         source: "https://github.com/ultraflame4/OnlineTicTacToe",
-        links:[
+        links: [
             {
-                name:"Game",
-                url:"https://ultraflame4.github.io/OnlineTicTacToe"
+                name: "Game",
+                url: "https://ultraflame4.github.io/OnlineTicTacToe"
             }
         ]
     },
     {
         featured: true,
         title: "PythonQtBrowser",
-        bannerImg:"https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png",
+        bannerSrc: "https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png",
         skillsUsed: ["python"],
         desc: "This was my attempt at creating a browser using python (and initially pygame). However i very quickly realised that I underestimated this huge task, " +
             "and promptly decided to use the WebView component from the Qt library to do the heavy lifting (rendering the actual page)",
@@ -72,7 +83,7 @@ export const allProjects:proj_entry[] = [
     {
         featured: true,
         title: "Better Console",
-        bannerImg: "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
+        bannerSrc: "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
         skillsUsed: ["Python"],
         desc: "This was created when I was still learning python and got frustrated with logging in it." +
             "\nThis features an input box that allows you to enter in commands whilst the program is running.\nThis library is also non-blocking.",

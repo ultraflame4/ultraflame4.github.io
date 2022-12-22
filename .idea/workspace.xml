@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added more projects">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="fixewd type errros">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/allProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +95,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -128,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -244,14 +247,8 @@
       <workItem from="1668241210766" duration="1578000" />
       <workItem from="1668266255388" duration="25000" />
       <workItem from="1671601251050" duration="1011000" />
-      <workItem from="1671608244668" duration="24729000" />
-    </task>
-    <task id="LOCAL-00100" summary="css sticky has decided to work, link underlines now go behind text">
-      <created>1663134521867</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1663134521867</updated>
+      <workItem from="1671608244668" duration="24802000" />
+      <workItem from="1671681355160" duration="1625000" />
     </task>
     <task id="LOCAL-00101" summary="edited fancy underline and stuff">
       <created>1663138100451</created>
@@ -589,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671636536961</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="fixewd type errros">
+      <created>1671637479049</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1671637479049</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,7 +647,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="fixed header links dissapearing if height too small" />
     <MESSAGE value="fixed link underline thickness scaling" />
     <MESSAGE value="clarified README.md" />
     <MESSAGE value="Added animate on scroll react library" />
@@ -668,7 +671,8 @@
     <MESSAGE value="changed accent color" />
     <MESSAGE value="Added projects section in home page" />
     <MESSAGE value="Added more projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more projects" />
+    <MESSAGE value="fixewd type errros" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixewd type errros" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
