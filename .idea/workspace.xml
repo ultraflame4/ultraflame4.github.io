@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Add another project and video support and changed letter spacing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added fancy fade in text">
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,14 +251,7 @@
       <workItem from="1671777579229" duration="1384000" />
       <workItem from="1671781207352" duration="349000" />
       <workItem from="1671785060773" duration="2017000" />
-      <workItem from="1672190087938" duration="3044000" />
-    </task>
-    <task id="LOCAL-00102" summary="edited fancy underline and skills sction">
-      <created>1663140283836</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1663140283837</updated>
+      <workItem from="1672190087938" duration="3348000" />
     </task>
     <task id="LOCAL-00103" summary="changed some names">
       <created>1663140852141</created>
@@ -600,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671683091768</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Added fancy fade in text">
+      <created>1672194234427</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194234427</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +650,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="clarified README.md" />
     <MESSAGE value="Added animate on scroll react library" />
     <MESSAGE value="Swapping to AnimateOnScroll library" />
     <MESSAGE value="removed delays" />
@@ -679,7 +674,8 @@
     <MESSAGE value="Added more projects" />
     <MESSAGE value="fixewd type errros" />
     <MESSAGE value="Add another project and video support and changed letter spacing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add another project and video support and changed letter spacing" />
+    <MESSAGE value="Added fancy fade in text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fancy fade in text" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
