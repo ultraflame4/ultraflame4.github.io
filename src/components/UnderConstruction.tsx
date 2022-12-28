@@ -1,4 +1,4 @@
-import React, {CSSProperties, MouseEventHandler} from "react";
+import React from "react";
 import "@/assets/css/splash.scss"
 
 export default function () {

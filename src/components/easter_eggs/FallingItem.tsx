@@ -1,4 +1,4 @@
-import {defineComponent} from "../../tools";
+import {defineComponent} from "@/tools";
 import {useState} from "react";
 
 

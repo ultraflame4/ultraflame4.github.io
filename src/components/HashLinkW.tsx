@@ -1,4 +1,4 @@
-import {defineComponent} from "../tools";
+import {defineComponent} from "@/tools";
 import {HashLink} from "react-router-hash-link";
 import React from "react";
 
@@ -16,7 +16,7 @@ function scrollToElement(element: HTMLElement) {
     })
 }
 
-export default defineComponent<HashLinkWProps>((props, context) => {
+export default defineComponent<HashLinkWProps>((props) => {
 
 
     return (

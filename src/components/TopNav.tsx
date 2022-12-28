@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {useEffect, useRef} from "react";
 import HashLinkW from "./HashLinkW";
 import "../assets/css/topnav.scss"

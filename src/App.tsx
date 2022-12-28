@@ -1,5 +1,5 @@
-import {Link, Outlet} from "react-router-dom";
-import UnderConstruction from "./components/UnderConstruction";
+import {Outlet} from "react-router-dom";
+
 import TopNav from "./components/TopNav";
 
 export default function App() {

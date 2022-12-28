@@ -11,7 +11,7 @@ interface props {
     scrollableParentSelector?: string
 }
 
-export default defineComponent<props>((props, context) => {
+export default defineComponent<props>((props) => {
     return (<AnimationOnScroll animateIn={props.animateIn} delay={props.delay} animateOnce={props.animateOnce}
                                scrollableParentSelector={props.scrollableParentSelector ?? "#root"}
                                offset={window.innerHeight*(1080/150)}

@@ -1,8 +1,8 @@
-import {defineComponent} from "../../tools";
-import {MouseEventHandler, useEffect} from "react";
+import {defineComponent} from "@/tools";
+import {useEffect} from "react";
 
 
-export default defineComponent(function (props) {
+export default defineComponent(function () {
 
     useEffect(() => {
         window.focus()

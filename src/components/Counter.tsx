@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {defineComponent} from "../tools";
+import {defineComponent} from "@/tools";
 
 export interface CounterProps {
     /**
