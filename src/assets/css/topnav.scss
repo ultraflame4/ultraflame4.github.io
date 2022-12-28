@@ -22,11 +22,12 @@
 
     #topnav-socials {
       margin-left: 4rem;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-grow: 0;
 
       a {
-        height: 2rem;
+        height: 1.9rem;
+
       }
 
       &>li:nth-child(2n){
@@ -73,7 +74,7 @@
     list-style: none;
     align-items: center;
     transition: all ease 1s;
-    gap: 2rem;
+    gap: 2.5rem;
 
     a {
       aspect-ratio: 1;
@@ -81,7 +82,11 @@
       transition: all ease 1s;
       margin: auto;
       border-radius: 0.5em;
+      background-clip: content-box;
+      -webkit-background-clip: content-box;
+
     }
+
   }
 
 
