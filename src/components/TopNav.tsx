@@ -3,6 +3,8 @@ import HashLinkW from "./HashLinkW";
 import "../assets/css/topnav.scss"
 import "animate.css"
 import {PageLinkData} from "@/tools";
+import {NavLink} from "react-router-dom";
+import {NavHashLink} from "react-router-hash-link";
 
 export const TopNavHeightStickied = 64
 
@@ -17,9 +19,9 @@ interface topNavSocialsItem {
 }
 
 const topNavLinksList: PageLinkData[] = [
-    {name: "About", to: "/#about"},
+    {name: "About", to: "/"},
     {name: "Projects", to: "/projects"},
-    {name: "Others", to: "/#others"},
+    {name: "Others", to: "/others"},
 ]
 
 const topNavSocialsList: topNavSocialsItem[] = [
@@ -105,7 +107,11 @@ export default function TopNav(props: TopNavProps) {
                     {topNavLinksList.map((value, index) =>
                         <li className={"animate__animated animate__fadeIn"}
                             style={{animationDelay: `${(index + 1) * 500}ms`}} key={index}>
-                            <HashLinkW to={value.to}>{value.name}</HashLinkW>
+                            <NavLink to={value.to} className={isActive => {
+
+                                return "link-underline " + (isActive.isActive?"active":undefined)
+                            }
+                            } end>{value.name}</NavLink>
                         </li>
                     )}
 

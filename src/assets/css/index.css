@@ -193,7 +193,7 @@ a:hover {
     z-index: 1;
 }
 
-.link-underline:hover::after, .link-underline:focus::after {
+.link-underline:hover::after, .link-underline:focus::after, .link-underline.active::after {
     --w: 100%;
     left: var(--link-padding);
     right: auto;

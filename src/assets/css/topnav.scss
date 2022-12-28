@@ -153,7 +153,7 @@
   #topnav-links a {
     display: flex;
     align-items: center;
-    color: #aaa;
+
     font-weight: 600;
     letter-spacing: 0.3rem;
     font-size: 1.5rem;
@@ -163,10 +163,10 @@
     padding-left: 2rem;
   }
 
-  #topnav-links a:hover {
-    color: #fff;
-  }
+
 }
+
+
 
 /*Desktop Only*/
 @media only screen and (min-width: 800px) {
@@ -179,7 +179,7 @@
     margin: 0;
     padding: 0;
     margin-left: min(6rem, 5vw);
-    gap: 3rem;
+    gap: 2rem;
     height: 100%;
     align-items: center;
     font-size: 1rem;
@@ -191,22 +191,19 @@
   }
 
   .stickied #topnav-links {
-    gap: 1.5rem;
+    gap: 1rem;
     flex-grow: 1;
   }
 
   #topnav-links a {
 
-    color: #aaa;
     font-weight: 600;
     transition: all ease 400ms;
     letter-spacing: 0.125rem;
     margin: auto;
   }
 
-  #topnav-links a:hover {
-    color: #fff;
-  }
+
 
   .stickied #topnav-links a {
     letter-spacing: 0.063rem;
