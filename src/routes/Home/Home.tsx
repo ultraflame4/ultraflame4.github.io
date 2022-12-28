@@ -15,7 +15,8 @@ import ForEachChild from "@/components/ForEachChild";
 import AOS from "@/components/AOS";
 import {Icon} from "@iconify-icon/react";
 import {allProjects, featuredProjects, proj_entry} from "@/assets/allProjects";
-
+import {TestComponent, TxtCharsFadeIn} from "ultr42-react-components";
+import "ultr42-react-components/lib/style.css"
 
 const HeaderLinksList: PageLinkData[] = [
     {name: "about", to: "/#about"},
@@ -79,9 +80,11 @@ const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, contex
                             <li key={index}>
 
                                 <a href={value.url}
-                                   //@ts-ignore using custom properties here
-                                   style={{"--color": value.fillColor ?? "var(--accent-color)",
-                                       "--fill-text-color": value.filledTextColor ?? "white"}}
+                                    //@ts-ignore using custom properties here
+                                   style={{
+                                       "--color": value.fillColor ?? "var(--accent-color)",
+                                       "--fill-text-color": value.filledTextColor ?? "white"
+                                   }}
 
                                    target={"_blank"} data-filled={value.filled}>
                                     <Icon icon={value.icon ?? "eva:external-link-fill"} className={"icon"}/>
@@ -103,7 +106,9 @@ const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, contex
             </div>
             <div className={"project-image"}>
                 {
-                    props.item.bannerImgIsVideo?  (props.item.bannerSrc ? <video controls><source src={props.item.bannerSrc}/></video> : "") :
+                    props.item.bannerImgIsVideo ? (props.item.bannerSrc ? <video controls>
+                            <source src={props.item.bannerSrc}/>
+                        </video> : "") :
                         (props.item.bannerSrc ? <img src={props.item.bannerSrc}/> : "")
                 }
             </div>
@@ -116,7 +121,6 @@ export default function Home() {
 
     return (
         <>
-
 
             <TopNav allowSizeChange={true}/>
 
@@ -183,23 +187,19 @@ export default function Home() {
 
                 <section className={"centerItems flex-col"} id={"about"}>
 
-                    <ForEachChild callback={(child, index) => {
-                        return (
-                            <AOS
-                                animateIn={"animate__fadeIn"}
-                                delay={500 * index}
-                                animateOnce={true}
-                                key={index}
-                            >
-                                {child}
-                            </AOS>
-                        )
-                    }}>
+
+                    <AOS
+                        animateIn={"animate__fadeIn"}
+                        delay={0}
+                        animateOnce={true}>
                         <h2>About Me 😐</h2>
-                        <p
-                            style={{
-                                textAlign: "center"
-                            }}>
+                    </AOS>
+
+                    <p
+                        style={{
+                            textAlign: "center"
+                        }}>
+                        <TxtCharsFadeIn style={{animationDuration: "8s"}} animateOnScroll={true}>
                             I'm an aspiring <b>self-taught</b> developer <wbr/>who started programming in 2018-2019.
                             <br/>
                             I don't really remember.
@@ -217,8 +217,9 @@ export default function Home() {
                             <br/>
                             <small>Hopefully I'll finish the mountain of side projects
                                    someday... <small>maybe</small>...</small>
-                        </p>
-                    </ForEachChild>
+                        </TxtCharsFadeIn>
+                    </p>
+
 
                 </section>
                 <section id={"skills"}>

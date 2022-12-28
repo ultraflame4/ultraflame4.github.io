@@ -9,6 +9,10 @@
   pointer-events: none;
 }
 
+*{
+  --color: var(--h-color) ;
+}
+
 #home-header {
   position: sticky;
   top: var(--topNavHeight);
@@ -75,6 +79,11 @@
   position: relative;
 
   margin-bottom: 1em;
+}
+
+
+#about p{
+  font-weight: 600;
 }
 
 
