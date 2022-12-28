@@ -1,6 +1,3 @@
-import {AnimationOnScroll} from "react-animation-on-scroll";
-import UnderConstruction from "../../components/UnderConstruction";
-import {useEffect, useRef, useState} from "react";
 
 import TopNav from "../../components/TopNav";
 import {defineComponent, PageLinkData} from "@/tools";
@@ -14,8 +11,8 @@ import "animate.css"
 import ForEachChild from "@/components/ForEachChild";
 import AOS from "@/components/AOS";
 import {Icon} from "@iconify-icon/react";
-import {allProjects, featuredProjects, proj_entry} from "@/assets/allProjects";
-import {TestComponent, TxtCharsFadeIn} from "ultr42-react-components";
+import {featuredProjects, proj_entry} from "@/assets/allProjects";
+import {TxtCharsFadeIn} from "ultr42-react-components";
 import "ultr42-react-components/lib/style.css"
 
 const HeaderLinksList: PageLinkData[] = [
@@ -25,7 +22,7 @@ const HeaderLinksList: PageLinkData[] = [
 ]
 
 
-const SkillCard = defineComponent<{ value: p_language }>((props, context) => {
+const SkillCard = defineComponent<{ value: p_language }>((props) => {
     return (
         <li
             className={"skills-list-item"}>
@@ -57,7 +54,8 @@ const SkillCard = defineComponent<{ value: p_language }>((props, context) => {
     )
 })
 
-const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, context) => {
+const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props) => {
+    // @ts-ignore
     return (
         <li className={"featuredProject-item"}>
             <div className={"project-details"}>
@@ -80,9 +78,11 @@ const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, contex
                             <li key={index}>
 
                                 <a href={value.url}
-                                    //@ts-ignore using custom properties here
+
                                    style={{
+                                       //@ts-ignore using custom properties here
                                        "--color": value.fillColor ?? "var(--accent-color)",
+                                       //@ts-ignore using custom properties here
                                        "--fill-text-color": value.filledTextColor ?? "white"
                                    }}
 
@@ -109,7 +109,7 @@ const FeaturedProjectItem = defineComponent<{ item: proj_entry }>((props, contex
                     props.item.bannerImgIsVideo ? (props.item.bannerSrc ? <video controls>
                             <source src={props.item.bannerSrc}/>
                         </video> : "") :
-                        (props.item.bannerSrc ? <img src={props.item.bannerSrc}/> : "")
+                        (props.item.bannerSrc ? <img src={props.item.bannerSrc} alt={""}/> : "")
                 }
             </div>
         </li>

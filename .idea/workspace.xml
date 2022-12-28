@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="Added fancy fade in text">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="updated component library version  to get correct types">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,14 +251,7 @@
       <workItem from="1671777579229" duration="1384000" />
       <workItem from="1671781207352" duration="349000" />
       <workItem from="1671785060773" duration="2017000" />
-      <workItem from="1672190087938" duration="3348000" />
-    </task>
-    <task id="LOCAL-00103" summary="changed some names">
-      <created>1663140852141</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1663140852141</updated>
+      <workItem from="1672190087938" duration="3507000" />
     </task>
     <task id="LOCAL-00104" summary="Made topnav for mobile alot better">
       <created>1663145699373</created>
@@ -596,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672194234427</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="updated component library version  to get correct types">
+      <created>1672194399514</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194399514</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +650,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Added animate on scroll react library" />
     <MESSAGE value="Swapping to AnimateOnScroll library" />
     <MESSAGE value="removed delays" />
     <MESSAGE value="Removed AnimationOnScroll because it does not work" />
@@ -675,7 +674,8 @@
     <MESSAGE value="fixewd type errros" />
     <MESSAGE value="Add another project and video support and changed letter spacing" />
     <MESSAGE value="Added fancy fade in text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fancy fade in text" />
+    <MESSAGE value="updated component library version  to get correct types" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated component library version  to get correct types" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
