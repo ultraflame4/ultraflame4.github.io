@@ -1,6 +1,20 @@
+*{
+    box-sizing: border-box;
+    overflow: clip;
+}
+
+
+html{
+    height: 100vh;
+    overflow: auto;
+}
 
 body{
     margin: 0;
     color: white;
 
+}
+
+#app{
+    min-height: 100vh;
 }
