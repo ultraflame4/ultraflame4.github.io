@@ -18,5 +18,9 @@ body{
 
 #app{
     height: 100vh;
-    overflow: auto;
+
+}
+
+button{
+    cursor: pointer;
 }
