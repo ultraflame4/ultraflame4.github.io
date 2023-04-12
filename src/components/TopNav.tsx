@@ -5,6 +5,7 @@ import "animate.css"
 import {PageLinkData} from "@/tools";
 import {NavLink} from "react-router-dom";
 import {NavHashLink} from "react-router-hash-link";
+import {Icon} from "@iconify-icon/react";
 
 export const TopNavHeightStickied = 64
 
@@ -100,8 +101,8 @@ export default function TopNav(props: TopNavProps) {
 
                 </ul>
                 <button id={"topnav-links-menu-btn"} onClick={openMobileLinksMenu} ref={topNavLinksMobilebtn}>
-                    <img
-                        src={"https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/menu_open/grad200/48px.svg"}/>
+                    <Icon icon={"ic:round-menu"}/>
+
                 </button>
                 <ul id={"topnav-links"} className={"topnav-links-inactive"} ref={topNavLinks}>
                     {topNavLinksList.map((value, index) =>

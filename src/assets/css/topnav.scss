@@ -108,10 +108,13 @@
     border: none;
     transition: all ease 300ms;
     padding: 1rem;
+    font-size: 2rem;
+    color: white;
 
 
     &.menu-open {
-      transform: rotateZ(180deg);
+      transform: rotateZ(45deg);
+      color: var(--accent-color);
     }
 
     img {

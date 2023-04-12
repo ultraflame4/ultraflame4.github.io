@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="added final project">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="clarified some names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/topnav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/topnav.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,13 +258,6 @@
       <workItem from="1671785060773" duration="2017000" />
       <workItem from="1672190087938" duration="3819000" />
       <workItem from="1672210016878" duration="2317000" />
-    </task>
-    <task id="LOCAL-00109" summary="upadtes site.&#10;+ skills are now in a card form&#10;&#10;+ underconstruction mouse glow is now flat">
-      <created>1664610019284</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1664610019284</updated>
     </task>
     <task id="LOCAL-00110" summary="ide stuff">
       <created>1664610177506</created>
@@ -602,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681300801753</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="clarified some names">
+      <created>1681301288094</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1681301288094</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +656,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Added QOL component" />
     <MESSAGE value="fixed svg scaling issue" />
     <MESSAGE value="Fixed card scaling issue and somehow managed to somwhat center text" />
     <MESSAGE value="Attempted fix for topnav mobile menu btn" />
@@ -681,7 +680,8 @@
     <MESSAGE value="changed styling of featured projects" />
     <MESSAGE value="adjusted additional spacig and styles and sizes" />
     <MESSAGE value="added final project" />
-    <option name="LAST_COMMIT_MESSAGE" value="added final project" />
+    <MESSAGE value="clarified some names" />
+    <option name="LAST_COMMIT_MESSAGE" value="clarified some names" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
