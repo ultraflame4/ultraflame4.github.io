@@ -20,7 +20,7 @@ interface topNavSocialsItem {
 
 const topNavLinksList: PageLinkData[] = [
     {name: "About", to: "/"},
-    {name: "Projects", to: "/projects"},
+    {name: "All Projects", to: "/projects"},
     {name: "Others", to: "/others"},
 ]
 

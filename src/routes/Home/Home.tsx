@@ -18,7 +18,7 @@ import "ultr42-react-components/lib/style.css"
 const HeaderLinksList: PageLinkData[] = [
     {name: "about", to: "/#about"},
     {name: "skills", to: "/#skills"},
-    {name: "projects", to: "/#projects"}
+    {name: "featured", to: "/#projects"}
 ]
 
 
@@ -258,7 +258,7 @@ export default function Home() {
                                 animateIn={"animate__fadeIn"}
                                 delay={800}
                                 animateOnce={true}>
-                                <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to projects
+                                <HashLinkW to={"/#projects"} className={"link-underline"}>Skip to featured projects
                                                                                           ➡️</HashLinkW>
                             </AOS>
                         </div>
