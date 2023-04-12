@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changed styling of featured projects">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="adjusted additional spacig and styles and sizes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/allProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,13 +257,6 @@
       <workItem from="1671785060773" duration="2017000" />
       <workItem from="1672190087938" duration="3819000" />
       <workItem from="1672210016878" duration="2317000" />
-    </task>
-    <task id="LOCAL-00107" summary="fixed skills list scaling issue">
-      <created>1663582937637</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1663582937638</updated>
     </task>
     <task id="LOCAL-00108" summary="+ modified animation for skills liss&#10;+ fixed under construction component mouse glowy issue&#10;&#10;+ added anchor for hyperlinks to skills list">
       <created>1663584418457</created>
@@ -601,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681298819815</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="adjusted additional spacig and styles and sizes">
+      <created>1681299741254</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1681299741254</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +655,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Adde back AnimationOnScroll" />
     <MESSAGE value="Added a bunch of animations" />
     <MESSAGE value="Added QOL component" />
     <MESSAGE value="fixed svg scaling issue" />
@@ -680,7 +679,8 @@
     <MESSAGE value="ts-ignored some custom css properties and fixed some warnings" />
     <MESSAGE value="fixed a bunch of warnings" />
     <MESSAGE value="changed styling of featured projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed styling of featured projects" />
+    <MESSAGE value="adjusted additional spacig and styles and sizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusted additional spacig and styles and sizes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

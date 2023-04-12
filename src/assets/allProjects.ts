@@ -48,6 +48,19 @@ export const allProjects: proj_entry[] = [
             }
         ]
     },
+
+    {
+        featured: true,
+        title: "RestauRant",
+        desc: "A website listing various restaurants and reviews for them.\nRestaurants are dynamically loaded as the user scrolls and can be sorted & filtered" +
+            "\n\nThis was done as part of a school final project (for the year).",
+        skillsUsed: ["express.js","fuse.js", "js", "html", "css", "mysql"],
+        source:"https://github.com/ultraflame4/CDEVRestaurantReview",
+        links:[{
+            name: "Project Site",
+            url: "https://sites.google.com/view/restau-rant/home?authuser=0"
+        }]
+    },
     {
         featured: true,
         title: "Moosic App Electric Boogalo",
@@ -55,7 +68,7 @@ export const allProjects: proj_entry[] = [
         desc: "An android music app done for a school project. Features include account login, google login, playlists etc.",
         source: "https://github.com/ultraflame4/MoosicElectricBoogaloo",
         bannerSrc: "https://user-images.githubusercontent.com/34125174/209052797-04de64b1-5645-4b96-a1a0-75f40a411bd2.mov",
-        bannerImgIsVideo:true
+        bannerImgIsVideo: true
     },
     {
         featured: true,
