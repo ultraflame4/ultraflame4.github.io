@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changed menu btn icon">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="finally resetted builds worktree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/allProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,25 +62,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Projects/ultr42s_react_components",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "P:\\ultraflame4.github.io\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/ultr42s_react_components&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;P:\\ultraflame4.github.io\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\builds" />
@@ -257,13 +257,7 @@
       <workItem from="1671785060773" duration="2017000" />
       <workItem from="1672190087938" duration="3819000" />
       <workItem from="1672210016878" duration="2317000" />
-    </task>
-    <task id="LOCAL-00111" summary="added dropshadow to skill cards">
-      <created>1664610580091</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1664610580091</updated>
+      <workItem from="1681302701909" duration="191000" />
     </task>
     <task id="LOCAL-00112" summary="updated the skill cards look and responsive design">
       <created>1667385892075</created>
@@ -601,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681301604404</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="finally resetted builds worktree">
+      <created>1681302643219</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1681302643219</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +639,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/builds" />
+                        <option value="v6" />
                       </list>
                     </value>
                   </entry>
@@ -655,7 +656,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Fixed card scaling issue and somehow managed to somwhat center text" />
     <MESSAGE value="Attempted fix for topnav mobile menu btn" />
     <MESSAGE value="Attempted fix for topnav mobile menu btn being too far left" />
     <MESSAGE value="Added linkedin profile link" />
@@ -680,7 +680,8 @@
     <MESSAGE value="added final project" />
     <MESSAGE value="clarified some names" />
     <MESSAGE value="changed menu btn icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed menu btn icon" />
+    <MESSAGE value="finally resetted builds worktree" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally resetted builds worktree" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

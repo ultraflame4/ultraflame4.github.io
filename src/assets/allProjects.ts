@@ -56,6 +56,7 @@ export const allProjects: proj_entry[] = [
             "\n\nThis was done as part of a school final project (for the year).",
         skillsUsed: ["express.js","fuse.js", "js", "html", "css", "mysql"],
         source:"https://github.com/ultraflame4/CDEVRestaurantReview",
+        bannerSrc:"https://user-images.githubusercontent.com/34125174/231458566-f7089fa4-9f4f-44ce-93c7-30b9dc3a14c2.png",
         links:[{
             name: "Project Site",
             url: "https://sites.google.com/view/restau-rant/home?authuser=0"
