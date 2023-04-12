@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="clarified some names">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changed menu btn icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/topnav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/topnav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds" beforeDir="false" afterPath="$PROJECT_DIR$/builds" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
       <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -133,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -258,13 +257,6 @@
       <workItem from="1671785060773" duration="2017000" />
       <workItem from="1672190087938" duration="3819000" />
       <workItem from="1672210016878" duration="2317000" />
-    </task>
-    <task id="LOCAL-00110" summary="ide stuff">
-      <created>1664610177506</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1664610177506</updated>
     </task>
     <task id="LOCAL-00111" summary="added dropshadow to skill cards">
       <created>1664610580091</created>
@@ -602,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681301288094</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="changed menu btn icon">
+      <created>1681301604404</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1681301604404</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +638,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/v5" />
+                        <option value="origin/builds" />
                       </list>
                     </value>
                   </entry>
@@ -656,7 +655,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="fixed svg scaling issue" />
     <MESSAGE value="Fixed card scaling issue and somehow managed to somwhat center text" />
     <MESSAGE value="Attempted fix for topnav mobile menu btn" />
     <MESSAGE value="Attempted fix for topnav mobile menu btn being too far left" />
@@ -681,7 +679,8 @@
     <MESSAGE value="adjusted additional spacig and styles and sizes" />
     <MESSAGE value="added final project" />
     <MESSAGE value="clarified some names" />
-    <option name="LAST_COMMIT_MESSAGE" value="clarified some names" />
+    <MESSAGE value="changed menu btn icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed menu btn icon" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
