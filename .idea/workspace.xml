@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="added menu hamburger and future space for links behind the site">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="changed styling of featured projects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -258,13 +257,6 @@
       <workItem from="1671785060773" duration="2017000" />
       <workItem from="1672190087938" duration="3819000" />
       <workItem from="1672210016878" duration="2317000" />
-    </task>
-    <task id="LOCAL-00106" summary="web deploy">
-      <created>1663402148237</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1663402148237</updated>
     </task>
     <task id="LOCAL-00107" summary="fixed skills list scaling issue">
       <created>1663582937637</created>
@@ -602,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672194771369</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="changed styling of featured projects">
+      <created>1681298819814</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1681298819815</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +655,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/builds" />
     </ignored-roots>
-    <MESSAGE value="Removed AnimationOnScroll because it does not work" />
     <MESSAGE value="Adde back AnimationOnScroll" />
     <MESSAGE value="Added a bunch of animations" />
     <MESSAGE value="Added QOL component" />
@@ -681,7 +679,8 @@
     <MESSAGE value="updated component library version  to get correct types" />
     <MESSAGE value="ts-ignored some custom css properties and fixed some warnings" />
     <MESSAGE value="fixed a bunch of warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a bunch of warnings" />
+    <MESSAGE value="changed styling of featured projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed styling of featured projects" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
