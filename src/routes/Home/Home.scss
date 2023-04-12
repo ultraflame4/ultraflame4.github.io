@@ -204,21 +204,32 @@
   &>ul{
     list-style-type: none;
     width: min(100%,var(--max-width));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
   }
 
   .featuredProject-item{
 
-    min-height: calc(84vh - var(--topNavHeightStickied));
-    max-height: fit-content;
-    width: 100%;
-    border: 0.1em solid var(--h-color);
+    //aspect-ratio: 5/3;
+    min-height: 35rem;
+    height: fit-content;
+    width: min(100%, 50rem);
+    flex-grow: 1;
+    backdrop-filter: blur(30px);
+    background: var(--backgroundColor);
 
-    border-right: none;
-    border-top: none;
+    border: 0.2em dashed var(--accent-color);
+
+    border-radius: 1rem;
+
     box-sizing: border-box;
     margin-bottom: 3em;
     padding: 1em 2em;
-    padding-right: 0;
+    padding-right: 0.75rem;
+    overflow: visible;
+
 
 
     & > .project-details{
@@ -229,25 +240,27 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+      overflow: visible;
 
       & > p{
 
         font-size: 1.2em;
-        letter-spacing: 0.08rem;
         white-space: break-spaces;
         font-weight: 300;
+        overflow: visible;
       }
 
       h3{
-        font-size: 3em;
+        font-size: 2em;
         margin-left: 0;
-        overflow: hidden;
+        //overflow: hidden;
         height: fit-content;
-
-        letter-spacing: 0.2rem;
+        font-family: "Ubuntu";
+        font-weight: 500;
+        letter-spacing: 0;
         white-space: pre-wrap;
         overflow-wrap: anywhere;
-
+        overflow: visible;
       }
 
       .project-links{
