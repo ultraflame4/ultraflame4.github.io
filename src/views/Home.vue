@@ -4,7 +4,9 @@
             <source src="moon.webm">
         </video>
         <div id="banner-content">
-
+            <h1><span id="handwave">👋</span> Hello ! &nbsp;</h1>
+            <h2>I'm Chester</h2>
+            <p>Welcome to my little corner of the internet!</p>
         </div>
     </div>
     <main>
@@ -58,6 +60,31 @@ const iratio = new iRatioObject({
     width: 100%;
     position: absolute;
     top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    h1, h2, p {
+      margin: 0;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 0.2rem var(--bg-0));
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-family: "Poppins";
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+    }
+
+    #handwave {
+      display: inline-block;
+      animation: wave 2.5s ease infinite;
+      transform-origin: 70% 80%;
+    }
   }
 
 }
@@ -65,5 +92,18 @@ const iratio = new iRatioObject({
 main {
   z-index: 3;
   background: var(--bg-0);
+}
+
+@keyframes wave {
+  0%, 30% {
+    transform: rotate(0);
+  }
+  5%,15% {
+    transform: rotate(-15deg);
+  }
+  10%,20% {
+    transform: rotate(15deg);
+  }
+
 }
 </style>
