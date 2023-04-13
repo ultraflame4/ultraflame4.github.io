@@ -89,7 +89,7 @@ header {
 
 #header-ctn[stuck]{
   font-size: 1.25rem;
-  background: linear-gradient(180deg, var(--bg-0) 4rem, transparent 6rem);
+  background: linear-gradient(180deg, var(--bg-0) 3.5rem, transparent 90%);
 }
 
 </style>
