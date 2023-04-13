@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="finally resetted builds worktree">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/allProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/allProjects.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Sass File" />
+        <option value="JavaScript File" />
+        <option value="package.json" />
+        <option value="SCSS File" />
+        <option value="Vue Single File Component" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="v5" />
+        <entry key="$PROJECT_DIR$/builds" value="builds" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="21PqwJLyFPj9lM463356XHPOOsv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/ultr42s_react_components&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;P:\\ultraflame4.github.io\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\builds" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\builds\v4" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\views\Home" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\routes\Home" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\assets\css" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src\routes" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\src" />
+      <recent name="D:\Programming\Programming Projects\ultraflame4.github.io\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ultraflame4.github.io/builds/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="forcebuild" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="forcebuild" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Chester Lai\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91a0b7f0-4512-4a92-8111-8574b3722fee" name="Changes" comment="--" />
+      <created>1637853307200</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637853307200</updated>
+      <workItem from="1637853308512" duration="488000" />
+      <workItem from="1637891679035" duration="904000" />
+      <workItem from="1637894115310" duration="322000" />
+      <workItem from="1640423185441" duration="6888000" />
+      <workItem from="1640434130280" duration="12503000" />
+      <workItem from="1640486412066" duration="32793000" />
+      <workItem from="1640569195981" duration="4339000" />
+      <workItem from="1640580824435" duration="2000" />
+      <workItem from="1640580908900" duration="22992000" />
+      <workItem from="1640604912930" duration="1637000" />
+      <workItem from="1640607675383" duration="4939000" />
+      <workItem from="1640612822288" duration="288000" />
+      <workItem from="1640613170243" duration="555000" />
+      <workItem from="1640768212941" duration="3964000" />
+      <workItem from="1640867042104" duration="6810000" />
+      <workItem from="1640923263537" duration="300000" />
+      <workItem from="1640927015583" duration="2318000" />
+      <workItem from="1640935287855" duration="9616000" />
+      <workItem from="1641108152497" duration="643000" />
+      <workItem from="1641214053871" duration="1914000" />
+      <workItem from="1641217230758" duration="2989000" />
+      <workItem from="1641631701182" duration="9000" />
+      <workItem from="1648608893157" duration="522000" />
+      <workItem from="1648609526113" duration="19349000" />
+      <workItem from="1648695434146" duration="3804000" />
+      <workItem from="1648727266912" duration="634000" />
+      <workItem from="1648779224758" duration="16937000" />
+      <workItem from="1648799343519" duration="495000" />
+      <workItem from="1648873368720" duration="1666000" />
+      <workItem from="1648950866822" duration="1935000" />
+      <workItem from="1648958389974" duration="5763000" />
+      <workItem from="1648965756055" duration="142000" />
+      <workItem from="1648966518589" duration="245000" />
+      <workItem from="1648967042521" duration="128000" />
+      <workItem from="1649128788301" duration="35244000" />
+      <workItem from="1649201117210" duration="4722000" />
+      <workItem from="1649225922867" duration="3068000" />
+      <workItem from="1649238629639" duration="13845000" />
+      <workItem from="1649396085046" duration="14457000" />
+      <workItem from="1649411022480" duration="69000" />
+      <workItem from="1649663614300" duration="2070000" />
+      <workItem from="1649672210385" duration="2099000" />
+      <workItem from="1649754714755" duration="223000" />
+      <workItem from="1650419554815" duration="33000" />
+      <workItem from="1650419596762" duration="152000" />
+      <workItem from="1650621499391" duration="89000" />
+      <workItem from="1653018784867" duration="35000" />
+      <workItem from="1653022073006" duration="75000" />
+      <workItem from="1655982992787" duration="802000" />
+      <workItem from="1660040912222" duration="941000" />
+      <workItem from="1660626239240" duration="12000" />
+      <workItem from="1660632730942" duration="2173000" />
+      <workItem from="1660640759378" duration="5233000" />
+      <workItem from="1660655272048" duration="92000" />
+      <workItem from="1660655427703" duration="5780000" />
+      <workItem from="1660710642364" duration="2220000" />
+      <workItem from="1660740024020" duration="39000" />
+      <workItem from="1660810862546" duration="13463000" />
+      <workItem from="1660888628275" duration="88000" />
+      <workItem from="1660908049224" duration="3158000" />
+      <workItem from="1660912055492" duration="6016000" />
+      <workItem from="1660918143076" duration="1253000" />
+      <workItem from="1660969664753" duration="4554000" />
+      <workItem from="1662017656627" duration="11458000" />
+      <workItem from="1662033412013" duration="936000" />
+      <workItem from="1662034486192" duration="2902000" />
+      <workItem from="1662046204690" duration="340000" />
+      <workItem from="1662082443074" duration="8093000" />
+      <workItem from="1662090938268" duration="433000" />
+      <workItem from="1662185435592" duration="3630000" />
+      <workItem from="1662259476837" duration="22855000" />
+      <workItem from="1662439331984" duration="18000" />
+      <workItem from="1662449003806" duration="5135000" />
+      <workItem from="1662454894156" duration="491000" />
+      <workItem from="1663061295553" duration="16768000" />
+      <workItem from="1663131619460" duration="14573000" />
+      <workItem from="1663327091262" duration="10800000" />
+      <workItem from="1663397760325" duration="4335000" />
+      <workItem from="1663412675220" duration="2499000" />
+      <workItem from="1663580519562" duration="4452000" />
+      <workItem from="1663598080543" duration="52000" />
+      <workItem from="1664605022171" duration="5874000" />
+      <workItem from="1666270087807" duration="2175000" />
+      <workItem from="1666401673202" duration="81000" />
+      <workItem from="1667187038953" duration="40000" />
+      <workItem from="1667309025234" duration="694000" />
+      <workItem from="1667382683685" duration="3265000" />
+      <workItem from="1667442022714" duration="20000" />
+      <workItem from="1667811227492" duration="4807000" />
+      <workItem from="1667832764477" duration="1204000" />
+      <workItem from="1667835476436" duration="315000" />
+      <workItem from="1667883286017" duration="4000" />
+      <workItem from="1667907655535" duration="10840000" />
+      <workItem from="1668074882800" duration="181000" />
+      <workItem from="1668137411408" duration="38000" />
+      <workItem from="1668138556708" duration="67000" />
+      <workItem from="1668165924419" duration="632000" />
+      <workItem from="1668241210766" duration="1578000" />
+      <workItem from="1668266255388" duration="25000" />
+      <workItem from="1671601251050" duration="1011000" />
+      <workItem from="1671608244668" duration="24802000" />
+      <workItem from="1671681355160" duration="2474000" />
+      <workItem from="1671773988326" duration="4000" />
+      <workItem from="1671774128067" duration="23000" />
+      <workItem from="1671777579229" duration="1384000" />
+      <workItem from="1671781207352" duration="349000" />
+      <workItem from="1671785060773" duration="2017000" />
+      <workItem from="1672190087938" duration="3819000" />
+      <workItem from="1672210016878" duration="2317000" />
+      <workItem from="1681302701909" duration="191000" />
+    </task>
+    <task id="LOCAL-00112" summary="updated the skill cards look and responsive design">
+      <created>1667385892075</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385892076</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Once again updated the skill cards to make them centered. It also now scales much miore nicely on smaller devices">
+      <created>1667813282069</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1667813282070</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Updated cards, - looked ugly on mobile so revereted some changes">
+      <created>1667813843678</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1667813843678</updated>
+    </task>
+    <task id="LOCAL-00115" summary="worktree">
+      <created>1667813879248</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1667813879248</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Added a name to this nameless site">
+      <created>1667815486191</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1667815486191</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Edited about me section">
+      <created>1667835288729</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1667835288730</updated>
+    </task>
+    <task id="LOCAL-00118" summary="worktree">
+      <created>1667835492850</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1667835492851</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Revert &quot;deploy code: 947&quot;&#10;&#10;This reverts commit 22a04966">
+      <created>1667835565366</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1667835565366</updated>
+    </task>
+    <task id="LOCAL-00120" summary="worktree">
+      <created>1667835671821</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1667835671821</updated>
+    </task>
+    <task id="LOCAL-00121" summary="worktree stuff">
+      <created>1667907975005</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1667907975005</updated>
+    </task>
+    <task id="LOCAL-00122" summary="updated how to font scales on sizes width &lt; 1150px">
+      <created>1667908008842</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1667908008842</updated>
+    </task>
+    <task id="LOCAL-00123" summary="fixed header links dissapearing if height too small">
+      <created>1667908246569</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1667908246569</updated>
+    </task>
+    <task id="LOCAL-00124" summary="fixed link underline thickness scaling">
+      <created>1667909648182</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1667909648182</updated>
+    </task>
+    <task id="LOCAL-00125" summary="clarified README.md">
+      <created>1667910417165</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1667910417165</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Added animate on scroll react library">
+      <created>1667911295273</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1667911295273</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Swapping to AnimateOnScroll library">
+      <created>1667912505806</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1667912505806</updated>
+    </task>
+    <task id="LOCAL-00128" summary="removed delays">
+      <created>1667912694322</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1667912694322</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Removed AnimationOnScroll because it does not work">
+      <created>1667915380712</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1667915380712</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Removed AnimationOnScroll because it does not work">
+      <created>1667915397778</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1667915397779</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Adde back AnimationOnScroll">
+      <created>1667915643876</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1667915643876</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Added a bunch of animations">
+      <created>1667916126156</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1667916126156</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Added QOL component">
+      <created>1667917347157</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1667917347158</updated>
+    </task>
+    <task id="LOCAL-00134" summary="fixed svg scaling issue">
+      <created>1667917357513</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1667917357513</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Fixed card scaling issue and somehow managed to somwhat center text">
+      <created>1667917879779</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1667917879779</updated>
+    </task>
+    <task id="LOCAL-00136" summary="Attempted fix for topnav mobile menu btn being too far left">
+      <created>1667918378862</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1667918378862</updated>
+    </task>
+    <task id="LOCAL-00137" summary="Added linkedin profile link">
+      <created>1668166484575</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1668166484576</updated>
+    </task>
+    <task id="LOCAL-00138" summary="fixed height scaling issue stuff">
+      <created>1668241646833</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1668241646833</updated>
+    </task>
+    <task id="LOCAL-00139" summary="Added animations to bg vid and changed animation order of socials links">
+      <created>1668242254153</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1668242254153</updated>
+    </task>
+    <task id="LOCAL-00140" summary="added stagured sliding of socials when stickied">
+      <created>1668242761608</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1668242761608</updated>
+    </task>
+    <task id="LOCAL-00141" summary="fixed scrollbar not working and some other stuff">
+      <created>1671609029887</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1671609029888</updated>
+    </task>
+    <task id="LOCAL-00142" summary="changedup scrollbar design">
+      <created>1671609220120</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1671609220120</updated>
+    </task>
+    <task id="LOCAL-00143" summary="refactored skills into skill carsd, started working on projects section">
+      <created>1671615157744</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1671615157744</updated>
+    </task>
+    <task id="LOCAL-00144" summary="working on projects list">
+      <created>1671617348714</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1671617348714</updated>
+    </task>
+    <task id="LOCAL-00145" summary="changed accent color">
+      <created>1671620876712</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1671620876712</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Added projects section in home page">
+      <created>1671633110677</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1671633110677</updated>
+    </task>
+    <task id="LOCAL-00147" summary="Added more projects">
+      <created>1671634038208</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1671634038208</updated>
+    </task>
+    <task id="LOCAL-00148" summary="Added more projects">
+      <created>1671636536961</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1671636536961</updated>
+    </task>
+    <task id="LOCAL-00149" summary="fixewd type errros">
+      <created>1671637479049</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1671637479049</updated>
+    </task>
+    <task id="LOCAL-00150" summary="Add another project and video support and changed letter spacing">
+      <created>1671683091768</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1671683091768</updated>
+    </task>
+    <task id="LOCAL-00151" summary="Added fancy fade in text">
+      <created>1672194234427</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194234427</updated>
+    </task>
+    <task id="LOCAL-00152" summary="updated component library version  to get correct types">
+      <created>1672194399514</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194399514</updated>
+    </task>
+    <task id="LOCAL-00153" summary="ts-ignored some custom css properties and fixed some warnings">
+      <created>1672194520164</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194520164</updated>
+    </task>
+    <task id="LOCAL-00154" summary="fixed a bunch of warnings">
+      <created>1672194771369</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194771369</updated>
+    </task>
+    <task id="LOCAL-00155" summary="changed styling of featured projects">
+      <created>1681298819814</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1681298819815</updated>
+    </task>
+    <task id="LOCAL-00156" summary="adjusted additional spacig and styles and sizes">
+      <created>1681299741254</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1681299741254</updated>
+    </task>
+    <task id="LOCAL-00157" summary="added final project">
+      <created>1681300801753</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1681300801753</updated>
+    </task>
+    <task id="LOCAL-00158" summary="clarified some names">
+      <created>1681301288094</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1681301288094</updated>
+    </task>
+    <task id="LOCAL-00159" summary="changed menu btn icon">
+      <created>1681301604404</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1681301604404</updated>
+    </task>
+    <task id="LOCAL-00160" summary="finally resetted builds worktree">
+      <created>1681302643219</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1681302643219</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/builds" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="v6" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/builds" />
+    </ignored-roots>
+    <MESSAGE value="Attempted fix for topnav mobile menu btn" />
+    <MESSAGE value="Attempted fix for topnav mobile menu btn being too far left" />
+    <MESSAGE value="Added linkedin profile link" />
+    <MESSAGE value="fixed height scaling issue stuff" />
+    <MESSAGE value="Added animations to bg vid and changed animation order of socials links" />
+    <MESSAGE value="added stagured sliding of socials when stickied" />
+    <MESSAGE value="fixed scrollbar not working and some other stuff" />
+    <MESSAGE value="changedup scrollbar design" />
+    <MESSAGE value="refactored skills into skill carsd, started working on projects section" />
+    <MESSAGE value="working on projects list" />
+    <MESSAGE value="changed accent color" />
+    <MESSAGE value="Added projects section in home page" />
+    <MESSAGE value="Added more projects" />
+    <MESSAGE value="fixewd type errros" />
+    <MESSAGE value="Add another project and video support and changed letter spacing" />
+    <MESSAGE value="Added fancy fade in text" />
+    <MESSAGE value="updated component library version  to get correct types" />
+    <MESSAGE value="ts-ignored some custom css properties and fixed some warnings" />
+    <MESSAGE value="fixed a bunch of warnings" />
+    <MESSAGE value="changed styling of featured projects" />
+    <MESSAGE value="adjusted additional spacig and styles and sizes" />
+    <MESSAGE value="added final project" />
+    <MESSAGE value="clarified some names" />
+    <MESSAGE value="changed menu btn icon" />
+    <MESSAGE value="finally resetted builds worktree" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally resetted builds worktree" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
