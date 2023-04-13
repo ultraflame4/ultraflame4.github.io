@@ -7,6 +7,8 @@
             <h1><span id="handwave">👋</span> Hello ! &nbsp;</h1>
             <h2>I'm Chester</h2>
             <p>Welcome to my little corner of the internet!</p>
+            <br/>
+            <p>Look around</p>
         </div>
     </div>
     <main>
@@ -64,6 +66,7 @@ const iratio = new iRatioObject({
     align-items: center;
     flex-direction: column;
     justify-content: center;
+      z-index: 2;
 
     h1, h2, p {
       margin: 0;
@@ -77,8 +80,13 @@ const iratio = new iRatioObject({
       font-weight: 800;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-
     }
+
+      p{
+          font-weight: 500;
+          font-size: 1.1rem;
+          letter-spacing: 0.05rem;
+      }
 
     #handwave {
       display: inline-block;
