@@ -52,7 +52,8 @@ const props = defineProps<{
 
   position: sticky;
 
-  height: 6rem;
+  height: 10rem;
+
   pointer-events: none;
   font-size: 1.6rem;
   top: -1px;
@@ -62,15 +63,15 @@ const props = defineProps<{
 header {
   height: 100%;
   width: 100%;
-
-  transition: all 200ms ease, padding 2s linear;
+  padding: 0 4rem;
+  transition: all 200ms ease, padding 500ms ease;
   display: flex;
   align-items: center;
-  padding-right: 1rem;
+
   pointer-events: all;
 
   & > h1{
-    margin-left: 2.5em;
+
     transition: all 200ms ease;
     font-family: "Poppins";
     font-weight: 700;
@@ -86,6 +87,7 @@ header {
 #header-ctn[stuck] > header {
   height: 4rem;
   padding-right: 0;
+  padding-left: 2rem;
 
 }
 

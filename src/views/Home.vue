@@ -1,21 +1,10 @@
 <template>
 <main>
-  <div v-for="i in 20">
-    <h1>
-      Title
-    </h1>
-    <h2>
-      Title 2
-    </h2>
-    <p>
-      Paragraph PWJIANHFPIUAWHBNF<br/>
-      Paragraph PWJIANHFPIUAWHBNF <a>Links</a> PWJIANHFPIUAWHBNF <br/>
-      Paragraph PWJIANHFPIUAWHBNF<br/>
-
-    </p>
-    <a>Links</a><br>
-    <a>Links</a>
-  </div>
+    <div id="banner-video">
+        <video autoplay muted loop preload="auto">
+            <source src="moon.webm">
+        </video>
+    </div>
 </main>
 </template>
 
@@ -24,7 +13,11 @@
 </script>
 
 <style lang="scss" scoped>
-main{
+#banner-video{
+    min-height: 100vh;
+    width: 100%;
+    filter: brightness(120%) saturate(45%);
+
 
 }
 </style>
