@@ -1,5 +1,5 @@
 <template>
-  <br/>
+
   <div id="header-ctn" v-stuck>
     <header>
       <h1>ultr42</h1>
@@ -52,7 +52,7 @@ const props = defineProps<{
 
   position: sticky;
 
-  height: 8rem;
+  height: 6rem;
   pointer-events: none;
   font-size: 1.6rem;
   top: -1px;
@@ -61,14 +61,15 @@ const props = defineProps<{
 header {
   height: 100%;
   width: 100%;
-  transition: all 200ms ease;
+
+  transition: all 200ms ease, padding 2s linear;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding-right: 1rem;
   pointer-events: all;
 
   & > h1{
-    margin-left: 3vw;
+    margin-left: 2.5em;
     transition: all 200ms ease;
     font-family: "Poppins";
     font-weight: 700;
@@ -83,7 +84,7 @@ header {
 
 #header-ctn[stuck] > header {
   height: 4rem;
-  padding: 0;
+  padding-right: 0;
 
 }
 
