@@ -9,7 +9,18 @@ const router = createRouter({
       name: 'home',
       component: Home
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (!to.hash) {
+      return
+    }
+    setTimeout(()=>{
+      document.querySelector(to.hash)?.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      })
+    },500)
+  }
 })
 
 export default router

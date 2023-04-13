@@ -12,7 +12,12 @@
         </div>
     </div>
     <main>
+        <section>
+            <h1 id="about">
+                <HashLink hash="about">About</HashLink>
+            </h1>
 
+        </section>
         <p v-for="i in 100">
             tset
         </p>
@@ -21,6 +26,7 @@
 
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
+import HashLink from "@/components/HashLink.vue";
 
 const iratio = new iRatioObject({
     exit: false,
@@ -66,7 +72,7 @@ const iratio = new iRatioObject({
     align-items: center;
     flex-direction: column;
     justify-content: center;
-      z-index: 2;
+    z-index: 2;
 
     h1, h2, p {
       margin: 0;
@@ -82,11 +88,11 @@ const iratio = new iRatioObject({
       text-transform: uppercase;
     }
 
-      p{
-          font-weight: 500;
-          font-size: 1.1rem;
-          letter-spacing: 0.05rem;
-      }
+    p {
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 0.05rem;
+    }
 
     #handwave {
       display: inline-block;
@@ -106,10 +112,10 @@ main {
   0%, 30% {
     transform: rotate(0);
   }
-  5%,15% {
+  5%, 15% {
     transform: rotate(-15deg);
   }
-  10%,20% {
+  10%, 20% {
     transform: rotate(15deg);
   }
 
