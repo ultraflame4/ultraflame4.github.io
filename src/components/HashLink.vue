@@ -16,9 +16,9 @@ import router from "@/router";
 
 interface iprops {
     /**
-     * Id to set for this section. ( So that hash links work)
+     * Path with hash
      */
-    hash: string
+    to: string
 }
 
 const props = defineProps<iprops>()
@@ -26,7 +26,7 @@ const props = defineProps<iprops>()
 function push() {
     router.push({
         path: router.currentRoute.value.path,
-        hash: "#" + props.hash
+        hash: "#" + props.to
     })
 }
 

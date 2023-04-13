@@ -14,7 +14,7 @@
     <main>
         <section>
             <h1 id="about">
-                <HashLink hash="about">About</HashLink>
+                <HashLink to="about">About</HashLink>
             </h1>
 
         </section>
