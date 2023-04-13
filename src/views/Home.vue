@@ -40,7 +40,7 @@ const iratio = new iRatioObject({
     position: sticky;
     bottom: 0;
     height: 100%;
-    transform: translateY(calc(var(--iratio) * -500px + 350px));
+    transform: translateY(calc(var(--iratio) * -500px + 375px));
     filter: brightness(90%) saturate(75%) grayscale(30%);
   }
 
