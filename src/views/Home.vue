@@ -1,9 +1,11 @@
 <template>
     <div id="home-banner" v-iratio="iratio">
-        <h1>Hello</h1>
         <video autoplay muted loop preload="auto">
             <source src="moon.webm">
         </video>
+        <div id="banner-content">
+
+        </div>
     </div>
     <main>
 
@@ -27,20 +29,17 @@ const iratio = new iRatioObject({
 #home-banner {
 
   position: relative;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 10rem);
   width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+
   z-index: 0;
 
   video {
-    margin-top: auto;
-    position: sticky;
+    position: absolute;
     bottom: 0;
     height: 100%;
-    transform: translateY(calc(var(--iratio) * -500px + 375px));
+    transform: translateY(calc(var(--iratio) * -500px + 470px));
     filter: brightness(90%) saturate(75%) grayscale(30%);
   }
 
@@ -51,8 +50,14 @@ const iratio = new iRatioObject({
     width: 100%;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(0deg,var(--bg-0) 0%, transparent 50%);
+    background-image: linear-gradient(0deg, var(--bg-0) 0%, transparent 50%);
 
+  }
+
+  #banner-content {
+    height: 100%;
+    position: absolute;
+    top: 0;
   }
 
 }
