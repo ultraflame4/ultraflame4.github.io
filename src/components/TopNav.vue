@@ -56,6 +56,7 @@ const props = defineProps<{
   pointer-events: none;
   font-size: 1.6rem;
   top: -1px;
+  z-index: 1000;
 }
 
 header {
