@@ -51,11 +51,11 @@ const iratio = new iRatioObject({
     bottom: 0;
     left: 0;
     background-image: linear-gradient(0deg, var(--bg-0) 0%, transparent 50%);
-
   }
 
   #banner-content {
     height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
   }
