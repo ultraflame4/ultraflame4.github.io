@@ -54,7 +54,7 @@ const props = defineProps<{
 
     & > li {
         display: flex;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
 
         font-weight: 700;
         height: 100%;
@@ -67,6 +67,10 @@ const props = defineProps<{
             font-family: "Poppins";
             text-transform: uppercase;
         }
+    }
+
+    @media only screen and (max-width: 650px) {
+        display: none;
     }
 }
 
