@@ -1,5 +1,5 @@
 <template>
-    <a @click="push()">
+    <a @click="push()" class="no-hover">
         <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
         <div class="parent_hover-underline">
             <slot>
