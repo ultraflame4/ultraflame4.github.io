@@ -1,7 +1,7 @@
 <template>
     <a @click="push()">
-        <Icon icon="fa6-solid:hashtag" :inline="true" class="icon"/>
-        <div class="txt">
+        <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
+        <div class="parent_hover-underline">
             <slot>
 
             </slot>
@@ -23,7 +23,8 @@ interface iprops {
     /**
      * Indicates that this hashlink is a heading, this would add it to the current page navigation tree.
      */
-    heading?: number
+    heading?: number,
+    noicon?:boolean
 }
 
 const props = defineProps<iprops>()
@@ -61,38 +62,8 @@ a:hover {
   color: var(--txt-a);
 }
 
-.txt {
-  display: inline-block;
-  margin-left: 0.5rem;
-  position: relative;
-  overflow: visible;
 
-  & > * {
-    margin: 0;
-  }
 
-}
-
-.txt::after {
-  overflow: visible;
-  content: "";
-  position: absolute;
-
-  right: 0;
-  top: 95%;
-  border-radius: 1rem;
-  height: 0.25rem;
-  width: 0;
-  transition: width 150ms ease;
-  background: var(--accent);
-
-}
-
-a:hover > .txt::after {
-  left: 0;
-  right: auto;
-  width: 100%;
-}
 
 .icon {
   color: var(--accent);

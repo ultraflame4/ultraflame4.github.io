@@ -3,6 +3,9 @@
     <div id="header-ctn" v-stuck>
         <header>
             <h1>ultr42</h1>
+            <ul id="topnav-quick">
+                <Icon icon="vaadin:hash" class="icon"/>
+            </ul>
             <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen">
                 <Icon icon="ic:baseline-menu"/>
             </button>
@@ -26,6 +29,18 @@ const props = defineProps<{
 </script>
 
 <style lang="scss" scoped>
+
+#topnav-quick {
+    padding: 0;
+    margin-left: 0.5rem;
+    display: flex;
+
+    & > .icon {
+        font-weight: 600;
+        font-size: 1.1em;
+        color: var(--accent);
+    }
+}
 
 #menu-btn {
     background: none;
