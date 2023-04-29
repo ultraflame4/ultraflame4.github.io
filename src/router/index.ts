@@ -27,7 +27,9 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   next();
-  PageNavTree.clear()
+  if (from.path !== to.path) {
+    PageNavTree.clear()
+  }
 })
 
 export default router
