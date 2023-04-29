@@ -5,8 +5,9 @@
     --bg-1: #222;
     --bg-2: #333;
     --txt-p: #eee;
-    --txt-a: #ddd;
+    --txt-a: #ccc;
     --txt-h: #fff;
+    --txt-a-tinted: color-mix(in srgb, var(--accent) 3%, var(--txt-a));
     --accent: #ff0f6b;
     --line: #2a2a2a;
     @media only screen and (max-width: 700px) {
@@ -26,6 +27,9 @@
     @media only screen and (max-width: 400px) {
         font-size: 0.5rem;
     }
+
+    /// Used for .parent_hover-underline
+    --underline-mult:1
 
 }
 
@@ -90,6 +94,8 @@ a:not(.no-hover):hover {
 /// </slot>
 /// </div>
 /// </a>
+///
+/// Use the --underline-mult css variable to control how thick the line is. (height: calc(0.25rem * var(--underline-mult));)
 .parent_hover-underline
 {
     display: inline-block;
@@ -109,7 +115,7 @@ a:not(.no-hover):hover {
         right: 0;
         top: 95%;
         border-radius: 1rem;
-        height: 0.25rem;
+        height: calc(0.25rem * var(--underline-mult));
         width: 0;
         transition: width 150ms ease;
         background: var(--accent);

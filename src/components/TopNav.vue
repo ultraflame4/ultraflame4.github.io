@@ -5,9 +5,10 @@
             <h1>ultr42</h1>
             <ul id="topnav-quick">
                 <Icon icon="vaadin:hash" class="icon"/>
-                <template  v-for="link in PageNavTree.links.value">
+                <template v-for="link in PageNavTree.links.value">
                     <li v-if="link.level<1">
-                        <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{link.name}}</RouterLink>
+                        <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{ link.name }}
+                        </RouterLink>
                     </li>
 
                 </template>
@@ -44,18 +45,28 @@ const props = defineProps<{
     align-items: center;
     list-style-type: none;
     height: 100%;
+
     & > .icon {
         font-weight: 600;
-        font-size: 1.5rem;
+        font-size: 1em;
         color: var(--accent);
     }
 
-    & > li{
+    & > li {
         display: flex;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+
         font-weight: 700;
         height: 100%;
         align-items: center;
+
+        & > a {
+            color: var(--txt-a-tinted);
+            --underline-mult: 0.75;
+            letter-spacing: 0.05rem;
+            font-family: "Poppins";
+            text-transform: uppercase;
+        }
     }
 }
 
