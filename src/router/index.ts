@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from "@/views/Home.vue";
+import {PageNavTree} from "@/router/page_navtree";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,12 @@ const router = createRouter({
       })
     },500)
   }
+})
+
+
+router.beforeEach((to, from, next) => {
+  next();
+  PageNavTree.clear()
 })
 
 export default router

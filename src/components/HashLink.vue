@@ -13,21 +13,34 @@
 
 import {Icon} from "@iconify/vue";
 import router from "@/router";
+import {PageNavTree} from "@/router/page_navtree";
 
 interface iprops {
     /**
      * Path with hash
      */
     to: string
+    /**
+     * Indicates that this hashlink is a heading, this would add it to the current page navigation tree.
+     */
+    heading?: number
 }
 
 const props = defineProps<iprops>()
 
+const to ={
+    path: router.currentRoute.value.path,
+    hash: "#" + props.to
+}
+
+PageNavTree.add({
+    to:to,
+    level:props.heading??0,
+    name:props.to
+})
+
 function push() {
-    router.push({
-        path: router.currentRoute.value.path,
-        hash: "#" + props.to
-    })
+    router.push(to)
 }
 
 </script>

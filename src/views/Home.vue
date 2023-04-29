@@ -16,7 +16,6 @@
             <h1 id="about">
                 <HashLink to="about">About</HashLink>
             </h1>
-
         </section>
         <p v-for="i in 100">
             tset
@@ -27,6 +26,7 @@
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
 import HashLink from "@/components/HashLink.vue";
+import {PageNavTree} from "../router/page_navtree";
 
 const iratio = new iRatioObject({
     exit: false,
