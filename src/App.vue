@@ -1,13 +1,13 @@
 <template>
-  <div id="site-back">
+    <div id="site-back">
 
-  </div>
-  <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()">
-    <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
-    <div id="page-content">
-      <RouterView/>
     </div>
-  </div>
+    <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()">
+        <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
+        <div id="page-content">
+            <RouterView/>
+        </div>
+    </div>
 
 </template>
 <script setup lang="ts">
@@ -17,17 +17,19 @@ import {ref} from "vue";
 const menuOpen = ref(false);
 const isClosing = ref(false);
 
-function returnToPage(){
-  if (menuOpen.value) {
-    menuOpen.value=false
-    isClosing.value=true
-    setTimeout(()=> {isClosing.value = false},0) // clean up
-  }
+function returnToPage() {
+    if (menuOpen.value) {
+        menuOpen.value = false
+        isClosing.value = true
+        setTimeout(() => {
+            isClosing.value = false
+        }, 0) // clean up
+    }
 }
 
 function menuToggle() {
-  // no need to deal with closing of menu because it will be closed by the returnToPage function
-  menuOpen.value=!isClosing.value
+    // no need to deal with closing of menu because it will be closed by the returnToPage function
+    menuOpen.value = !isClosing.value
 }
 
 </script>
@@ -42,6 +44,7 @@ function menuToggle() {
   background: var(--bg-1);
   z-index: -1;
 }
+
 #site-ctn {
   margin: 0;
   transition: all 500ms ease;
@@ -52,22 +55,19 @@ function menuToggle() {
   background: var(--bg-0);
 
 }
+
 #site-ctn[data-open="true"] {
   border-color: var(--bg-2);
-  @media only screen and (max-width: 800px) {
-    transform: translateX(-40vw) translateY(3vh);
-  }
-  @media only screen and (min-width: 801px) {
-    margin-top: 3%;
-    width: calc(100% - 20rem);
-  }
 
-
-
-
-  border-top-right-radius: 1rem;
+  margin-left: 2rem;
+  width: calc(100% - min(30vw, 20rem));
+  height: calc(100% - 3rem);
+  filter: drop-shadow(3px 3px 1rem var(--bg-0));
+  border-radius: 1rem;
+    transform: translateX(-1rem) translateY(2rem);
 }
-#site-ctn::-webkit-scrollbar-track{
+
+#site-ctn::-webkit-scrollbar-track {
   margin-top: 1rem;
 }
 

@@ -38,86 +38,86 @@ const iratio = new iRatioObject({
 <style lang="scss" scoped>
 #home-banner {
 
-  position: relative;
-  height: calc(100vh - 10rem);
-  width: 100%;
-
-
-  z-index: 0;
-
-  video {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    transform: translateY(calc(var(--iratio) * -500px + 470px));
-    filter: brightness(90%) saturate(75%) grayscale(30%);
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    height: 50%;
+    position: relative;
+    height: calc(100vh - 10rem);
     width: 100%;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(0deg, var(--bg-0) 0%, transparent 50%);
-  }
+    z-index: 0;
 
-  #banner-content {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
-
-    h1, h2, p {
-      margin: 0;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 0.2rem var(--bg-0));
+    video {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        transition: transform 1s cubic-bezier(0.09, 0.81, 0.29, 1.04);
+        transform: translateY(calc(var(--iratio) * -500px + 470px));
+        filter: brightness(90%) saturate(75%) grayscale(30%);
     }
 
-    h1 {
-      font-size: 4rem;
-      font-family: "Poppins";
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+
+    &:after {
+        content: "";
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(0deg, var(--bg-0) 0%, transparent 50%);
     }
 
-    p {
-      font-weight: 500;
-      font-size: 1.1rem;
-      letter-spacing: 0.05rem;
-    }
+    #banner-content {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
 
-    #handwave {
-      display: inline-block;
-      animation: wave 2.5s ease infinite;
-      transform-origin: 70% 80%;
+        h1, h2, p {
+            margin: 0;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 0.2rem var(--bg-0));
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-family: "Poppins";
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.05rem;
+        }
+
+        #handwave {
+            display: inline-block;
+            animation: wave 2.5s ease infinite;
+            transform-origin: 70% 80%;
+        }
     }
-  }
 
 }
 
 main {
-  z-index: 3;
-  background: var(--bg-0);
+    z-index: 3;
+    background: var(--bg-0);
 }
 
 @keyframes wave {
-  0%, 30% {
-    transform: rotate(0);
-  }
-  5%, 15% {
-    transform: rotate(-15deg);
-  }
-  10%, 20% {
-    transform: rotate(15deg);
-  }
+    0%, 30% {
+        transform: rotate(0);
+    }
+    5%, 15% {
+        transform: rotate(-15deg);
+    }
+    10%, 20% {
+        transform: rotate(15deg);
+    }
 
 }
 </style>
