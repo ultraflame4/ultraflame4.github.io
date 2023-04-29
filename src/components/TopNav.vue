@@ -5,6 +5,12 @@
             <h1>ultr42</h1>
             <ul id="topnav-quick">
                 <Icon icon="vaadin:hash" class="icon"/>
+                <template  v-for="link in PageNavTree.links.value">
+                    <li v-if="link.level<1">
+                        <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{link.name}}</RouterLink>
+                    </li>
+
+                </template>
             </ul>
             <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen">
                 <Icon icon="ic:baseline-menu"/>
@@ -16,6 +22,7 @@
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
 import {type Ref} from "vue";
+import {PageNavTree} from "@/router/page_navtree";
 
 const emit = defineEmits<{
     (e: 'menuToggle'): void
@@ -34,11 +41,21 @@ const props = defineProps<{
     padding: 0;
     margin-left: 0.5rem;
     display: flex;
-
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
     & > .icon {
         font-weight: 600;
-        font-size: 1.1em;
+        font-size: 1.5rem;
         color: var(--accent);
+    }
+
+    & > li{
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: 700;
+        height: 100%;
+        align-items: center;
     }
 }
 

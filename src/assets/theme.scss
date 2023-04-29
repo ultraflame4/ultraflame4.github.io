@@ -54,9 +54,11 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+a:not(.no-hover):hover {
     color: var(--accent);
 }
+
+
 
 ::-webkit-scrollbar {
 
@@ -120,4 +122,12 @@ a:hover {
     left: 0;
     right: auto;
     width: 100%;
+}
+
+/// Stops default hover effects
+.no-hover{}
+
+/// Removes all text decorations
+.no-deco{
+    text-decoration: none;
 }
