@@ -66,7 +66,7 @@ a:hover {
   position: absolute;
 
   right: 0;
-  top: 100%;
+  top: 95%;
   border-radius: 1rem;
   height: 0.25rem;
   width: 0;
