@@ -4,7 +4,7 @@
         <ul id="thispage-list">
             <li v-for="link in PageNavTree.links.value">
                 <Icon icon="vaadin:hash" :inline="true" class="icon"/>
-                <RouterLink :to="link.to" class="parent_hover-underline no-hover">{{link.name}}</RouterLink>
+                <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{link.name}}</RouterLink>
 
             </li>
         </ul>
