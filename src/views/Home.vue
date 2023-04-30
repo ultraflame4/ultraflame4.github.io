@@ -12,7 +12,7 @@
         </div>
     </div>
     <main>
-        <section id="about-section" class="flex-center">
+        <section class="flex-center">
             <h1 id="about">
                 <HashLink to="about" :heading="0">About</HashLink>
             </h1>
@@ -22,7 +22,8 @@
                 <wbr>
                 who started programming in 2018-2019.<br>I don't really remember.<br><br>Started with
                 <wbr>
-                <a href="https://minecraft.net" class="link-underline" target="_blank">⛏️minecraft</a> redstone and command
+                <a href="https://minecraft.net" class="link-underline" target="_blank">⛏️minecraft</a> redstone and
+                command
                 blocks.<br>Then I learned python from
                 <wbr>
                 various youtube tutorials &amp; various online courses.<br><br>Since then,
@@ -30,7 +31,41 @@
                 I've come a long way and have done a wide variety of projects<br><br><small>Hopefully I'll finish the
                 mountain of side projects someday... <small>maybe</small>...</small>
             </p>
+        </section>
+        <hr/>
+        <section class="flex-center">
+            <h1 id="skills">
+                <HashLink to="skills" :heading="0">Skills</HashLink>
+            </h1>
+            <div id="skills-section-layout">
+                <div id="skills-txt">
+                    <h1>🎓 What I know</h1>
+                    <p>These are the&nbsp;<wbr>
+                        <span style="color: lightgreen;">📜<b>skills</b></span>,&nbsp;<wbr>
+                        <span style="color: orchid;">🔤<b>languages</b></span>&nbsp;&amp;&nbsp;<wbr>
+                        <span style="color: peru;">🛠️<b>frameworks</b></span>,<br>
+                        <wbr>
+                        I've learned over the years. <br><br>The numbers below
+                        <wbr>
+                        represents my confidence 🔥
+                        <wbr>
+                        in each of them.
+                    </p>
+                </div>
+                <div id="skills-ctn">
+                    <ScrollingColumn v-for="i in 3" :delay="i*300" :speed="10000*((i/4)+1)" :style="`--index:${i}`" class="scrolling-skills">
+                        <ul id="skills-list">
+                            <li v-for="i in 10">
 
+                                <SkillCard image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                           name="C Sharp"/>
+                            </li>
+                        </ul>
+                    </ScrollingColumn>
+                </div>
+
+
+            </div>
         </section>
 
     </main>
@@ -39,6 +74,8 @@
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
 import HashLink from "@/components/HashLink.vue";
+import SkillCard from "@/components/SkillCard.vue";
+import ScrollingColumn from "@/components/ScrollingColumn.vue";
 
 
 const iratio = new iRatioObject({
@@ -115,6 +152,49 @@ const iratio = new iRatioObject({
 
 }
 
+#skills-section-layout {
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+
+    justify-content: center;
+    gap: 4rem;
+
+
+    #skills-txts {
+
+    }
+
+    #skills-ctn {
+        display: flex;
+        justify-content: flex-start;
+        min-width: fit-content;
+        max-width: 40%;
+
+        height: 50vh;
+
+    }
+
+    #skills-list{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .scrolling-skills{
+        z-index: var(--index);
+        background: transparent;
+    }
+
+    // Remove 3rd spinning column on smaller devices
+    @media only screen and (max-width: 450px) {
+        .scrolling-skills:nth-of-type(3) {
+            display: none;
+        }
+    }
+}
 
 main {
     z-index: 3;

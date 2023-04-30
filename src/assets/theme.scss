@@ -7,7 +7,7 @@
     --txt-p: #eee;
     --txt-a: #ddd;
     --txt-h: #fff;
-    --txt-a-tinted: color-mix(in srgb, var(--accent) 5%, var(--txt-a));
+    --txt-a-tinted:color-mix(in srgb, #000 20%, color-mix(in srgb, var(--accent) 3%, var(--txt-a))) ;
     --accent: #ff0f6b;
     --line: #2a2a2a;
     @media only screen and (max-width: 700px) {
@@ -81,7 +81,11 @@ a:not(.no-hover):hover {
     transition: background-position 200ms ease;
 }
 
-
+hr{
+    border: none;
+    border-top: 2px dashed var(--bg-2);
+    margin: 2rem 0;
+}
 
 ::-webkit-scrollbar {
 
