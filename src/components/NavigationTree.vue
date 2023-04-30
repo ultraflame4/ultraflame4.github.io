@@ -42,18 +42,6 @@ ul#thispage-list{
         padding-left: calc(var(--level) * 1em);
         height: 2em;
 
-        .icon{
-            color: var(--accent);
-        }
-
-        a{
-            font-family: "Poppins";
-            --underline-mult: 1;
-            font-weight: 700;
-            letter-spacing: 0.05rem;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
     }
 }
 </style>
