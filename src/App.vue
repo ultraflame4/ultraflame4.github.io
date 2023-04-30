@@ -71,12 +71,17 @@ function menuToggle() {
 #site-ctn[data-open="true"] {
     border-color: var(--bg-2);
 
-    margin-left: 2rem;
+    margin-left: 3rem;
+
+    @media only screen and (max-width: 600px) {
+        margin-left: 0;
+    }
+
     width: calc(100% - min(30vw, 20rem));
     height: calc(100% - 3rem);
     filter: drop-shadow(3px 3px 1rem var(--bg-0));
     border-radius: 1rem;
-    transform: translateX(-1rem) translateY(2rem);
+    transform: translateX(-3rem) translateY(2rem);
 }
 
 #site-ctn::-webkit-scrollbar-track {

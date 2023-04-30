@@ -85,6 +85,8 @@ const props = defineProps<{
     font-size: 1.3em;
     transition: color 200ms ease, transform 100ms linear;
     margin-left: auto;
+    position: absolute;
+    right: 1rem;
 }
 
 #menu-btn:hover, #menu-btn[data-open="true"] {
@@ -114,7 +116,7 @@ header {
     transition: all 200ms ease, padding 500ms ease;
     display: flex;
     align-items: center;
-
+    position: relative;
     pointer-events: all;
 
     & > h1 {
@@ -124,6 +126,11 @@ header {
         font-weight: 700;
         font-size: 1em;
         letter-spacing: 0.1rem;
+
+        @media only screen and (max-width: 650px) {
+            margin: 0 auto;
+        }
+
     }
 
     & > * {
