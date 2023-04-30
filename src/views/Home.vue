@@ -170,7 +170,7 @@ const iratio = new iRatioObject({
         justify-content: flex-start;
         min-width: fit-content;
         max-width: 40%;
-
+        gap: 0.5em;
         height: 50vh;
 
     }
