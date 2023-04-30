@@ -22,7 +22,7 @@
                 <wbr>
                 who started programming in 2018-2019.<br>I don't really remember.<br><br>Started with
                 <wbr>
-                <a href="https://minecraft.net" class="link-underline">⛏️minecraft</a> redstone and command
+                <a href="https://minecraft.net" class="link-underline" target="_blank">⛏️minecraft</a> redstone and command
                 blocks.<br>Then I learned python from
                 <wbr>
                 various youtube tutorials &amp; various online courses.<br><br>Since then,
