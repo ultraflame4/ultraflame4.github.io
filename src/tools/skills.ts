@@ -1,10 +1,10 @@
-export interface skillItem{
+export interface SkillItem{
     name:string,
     image:string,
-    level:string,
+    level:number,
 }
 
 export interface SkillListJsonConfig{
     $schema:string
-    skills:SkillListJsonConfig[]
+    skills:SkillItem[]
 }

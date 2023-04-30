@@ -1,22 +1,38 @@
 {
-   "$ref": "#/definitions/SkillListJsonConfig",
+   "type": "object",
+   "properties": {
+      "$schema": {
+         "type": "string"
+      },
+      "skills": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/SkillItem"
+         }
+      }
+   },
+   "required": [
+      "$schema",
+      "skills"
+   ],
    "definitions": {
-      "SkillListJsonConfig": {
+      "SkillItem": {
          "type": "object",
          "properties": {
-            "$schema": {
+            "name": {
                "type": "string"
             },
-            "skills": {
-               "type": "array",
-               "items": {
-                  "$ref": "#/definitions/SkillListJsonConfig"
-               }
+            "image": {
+               "type": "string"
+            },
+            "level": {
+               "type": "number"
             }
          },
          "required": [
-            "$schema",
-            "skills"
+            "image",
+            "level",
+            "name"
          ]
       }
    },
