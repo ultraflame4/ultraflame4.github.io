@@ -7,7 +7,7 @@
     --txt-p: #eee;
     --txt-a: #ddd;
     --txt-h: #fff;
-    --txt-a-tinted:color-mix(in srgb, #000 20%, color-mix(in srgb, var(--accent) 3%, var(--txt-a))) ;
+    --txt-a-tinted: color-mix(in srgb, #000 20%, color-mix(in srgb, var(--accent) 3%, var(--txt-a)));
     --accent: #ff0f6b;
     --line: #2a2a2a;
     @media only screen and (max-width: 700px) {
@@ -29,7 +29,7 @@
     }
 
     /// Used for .parent_hover-underline
-    --underline-mult:1
+    --underline-mult: 1
 
 }
 
@@ -81,7 +81,7 @@ a:not(.no-hover):hover {
     transition: background-position 200ms ease;
 }
 
-hr{
+hr {
     border: none;
     border-top: 2px dashed var(--bg-2);
     margin: 2rem 0;
@@ -119,8 +119,9 @@ hr{
 /// </a>
 ///
 /// Use the --underline-mult css variable to control how thick the line is. (height: calc(0.25rem * var(--underline-mult));)
-.parent_hover-underline
-{
+.parent_hover-underline {
+    --line-thick: calc(0.25rem * var(--underline-mult));
+    height: calc(var(--line-thick) + 1em);
     display: inline-block;
     margin-left: 0.5rem;
     position: relative;
@@ -138,7 +139,7 @@ hr{
         right: 0;
         top: 95%;
         border-radius: 1rem;
-        height: calc(0.25rem * var(--underline-mult));
+        height: var(--line-thick);
         width: 0;
         transition: width 150ms ease;
         background: var(--accent);
@@ -154,26 +155,27 @@ hr{
 }
 
 /// Stops default hover effects
-.no-hover{}
+.no-hover {
+}
 
 /// Removes all text decorations and resets fontsize to 1em
-.no-deco{
+.no-deco {
     text-decoration: none;
     font-size: 1em;
 }
 
 /// Parallax effect for iratio
-.iratio-parallax{
+.iratio-parallax {
     transition: transform 1s cubic-bezier(0.09, 0.81, 0.29, 1.04);
     transform: translateY(calc(var(--iratio) * -500px + 470px));
 }
 
-.flex-center{
+.flex-center {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
