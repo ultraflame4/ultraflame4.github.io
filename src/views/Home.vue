@@ -12,8 +12,8 @@
         </div>
     </div>
     <main>
-        <section class="flex-center">
-            <h1 id="about">
+        <section class="flex-center" id="about">
+            <h1>
                 <HashLink to="about" :heading="0">About</HashLink>
             </h1>
 
@@ -33,8 +33,8 @@
             </p>
         </section>
         <hr/>
-        <section class="flex-center">
-            <h1 id="skills">
+        <section class="flex-center" id="skills">
+            <h1>
                 <HashLink to="skills" :heading="0">Skills</HashLink>
             </h1>
             <div id="skills-section-layout">
