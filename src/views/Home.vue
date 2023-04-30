@@ -171,6 +171,7 @@ const iratio = new iRatioObject({
     padding: 2rem;
 
     justify-content: center;
+    align-items: center;
     gap: 4rem;
 
 
@@ -184,7 +185,7 @@ const iratio = new iRatioObject({
         min-width: fit-content;
         max-width: 40%;
         gap: 0.5em;
-        height: 50vh;
+        height: 35rem;
 
     }
 
