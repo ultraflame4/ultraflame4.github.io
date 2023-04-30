@@ -3,8 +3,8 @@
         <h1>This Page</h1>
         <ul id="thispage-list">
             <li v-for="link in PageNavTree.links.value">
-                <Icon icon="vaadin:hash" :inline="true" class="icon"/>
-                <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{link.name}}</RouterLink>
+                <HashLink :to="$router.resolve(link.to).fullPath">{{link.name}}</HashLink>
+
 
             </li>
         </ul>
@@ -15,6 +15,11 @@
 
 import {PageNavTree} from "@/router/page_navtree";
 import {Icon} from "@iconify/vue";
+import HashLink from "@/components/HashLink.vue";
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+
 </script>
 
 <style lang="scss" scoped>

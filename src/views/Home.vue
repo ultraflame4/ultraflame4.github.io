@@ -14,7 +14,7 @@
     <main>
         <section id="about-section" class="flex-center">
             <h1 id="about">
-                <HashLink to="about">About</HashLink>
+                <HashLink to="about" :heading="0">About</HashLink>
             </h1>
 
             <p class="text-center">

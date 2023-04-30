@@ -35,11 +35,13 @@ const to ={
     hash: "#" + props.to
 }
 
-PageNavTree.add({
-    to:to,
-    level:props.heading??0,
-    name:props.to
-})
+if (props.heading !== undefined) {
+    PageNavTree.add({
+        to:to,
+        level:props.heading,
+        name:props.to
+    })
+}
 
 function push() {
     router.push(to)
