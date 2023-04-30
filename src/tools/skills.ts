@@ -4,4 +4,7 @@ export interface skillItem{
     level:string,
 }
 
-export type SkillListJsonConfig = SkillListJsonConfig[]
+export interface SkillListJsonConfig{
+    $schema:string
+    skills:SkillListJsonConfig[]
+}

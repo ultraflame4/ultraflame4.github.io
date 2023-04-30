@@ -2,10 +2,22 @@
    "$ref": "#/definitions/SkillListJsonConfig",
    "definitions": {
       "SkillListJsonConfig": {
-         "type": "array",
-         "items": {
-            "$ref": "#/definitions/SkillListJsonConfig"
-         }
+         "type": "object",
+         "properties": {
+            "$schema": {
+               "type": "string"
+            },
+            "skills": {
+               "type": "array",
+               "items": {
+                  "$ref": "#/definitions/SkillListJsonConfig"
+               }
+            }
+         },
+         "required": [
+            "$schema",
+            "skills"
+         ]
       }
    },
    "$schema": "http://json-schema.org/draft-07/schema#"
