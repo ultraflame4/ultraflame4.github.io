@@ -12,21 +12,34 @@
         </div>
     </div>
     <main>
-        <section>
+        <section id="about-section" class="flex-center">
             <h1 id="about">
                 <HashLink to="about">About</HashLink>
             </h1>
+
+            <p class="text-center">
+                I'm an aspiring <b>self-taught</b> developer
+                <wbr>
+                who started programming in 2018-2019.<br>I don't really remember.<br><br>Started with
+                <wbr>
+                <a href="https://minecraft.net" class="link-underline">⛏️minecraft</a> redstone and command
+                blocks.<br>Then I learned python from
+                <wbr>
+                various youtube tutorials &amp; various online courses.<br><br>Since then,
+                <wbr>
+                I've come a long way and have done a wide variety of projects<br><br><small>Hopefully I'll finish the
+                mountain of side projects someday... <small>maybe</small>...</small>
+            </p>
+
         </section>
-        <p v-for="i in 100">
-            tset
-        </p>
+
     </main>
 </template>
 
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
 import HashLink from "@/components/HashLink.vue";
-import {PageNavTree} from "../router/page_navtree";
+
 
 const iratio = new iRatioObject({
     exit: false,
@@ -101,6 +114,7 @@ const iratio = new iRatioObject({
     }
 
 }
+
 
 main {
     z-index: 3;

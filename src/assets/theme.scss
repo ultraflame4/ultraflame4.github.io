@@ -53,13 +53,32 @@ p {
 a {
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85em;
     color: var(--txt-a);
     transition: color 200ms ease;
     cursor: pointer;
+
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    background-image: linear-gradient(90deg, var(--accent) 50%, var(--txt-a) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
+a:not(.no-deco)::after {
+    content: "⭧";
+    font-weight: 300;
+}
+
+
 a:not(.no-hover):hover {
-    color: var(--accent);
+    //color: var(--accent);
+    color: transparent;
+    background-position-x: 0;
+    transition: background-position 200ms ease;
 }
 
 
@@ -133,13 +152,24 @@ a:not(.no-hover):hover {
 /// Stops default hover effects
 .no-hover{}
 
-/// Removes all text decorations
+/// Removes all text decorations and resets fontsize to 1em
 .no-deco{
     text-decoration: none;
+    font-size: 1em;
 }
 
 /// Parallax effect for iratio
 .iratio-parallax{
     transition: transform 1s cubic-bezier(0.09, 0.81, 0.29, 1.04);
     transform: translateY(calc(var(--iratio) * -500px + 470px));
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-center{
+    text-align: center;
 }
