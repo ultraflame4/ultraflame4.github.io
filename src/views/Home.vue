@@ -53,7 +53,7 @@
                     </p>
                 </div>
                 <div id="skills-ctn">
-                    <ScrollingColumn v-for="i in 3" :delay="i*300" :speed="10000*((i/4)+1)" :style="`--index:${i}`" class="scrolling-skills">
+                    <ScrollingColumn v-for="i in 3" :delay="i*300" :speed="10000*((i/3)+1)" :style="`--index:${i}`" class="scrolling-skills">
                         <ul id="skills-list">
                             <li v-for="i in 10">
 
