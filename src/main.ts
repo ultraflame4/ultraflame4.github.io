@@ -11,7 +11,6 @@ import {vyue42} from "vyue42";
 
 const app = createApp(App)
 
-
 app.use(vyue42)
 app.use(router)
 
