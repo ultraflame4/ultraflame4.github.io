@@ -5,9 +5,9 @@
     --bg-1: #222;
     --bg-2: #333;
     --txt-p: #eee;
-    --txt-a: #ccc;
+    --txt-a: #ddd;
     --txt-h: #fff;
-    --txt-a-tinted: color-mix(in srgb, var(--accent) 3%, var(--txt-a));
+    --txt-a-tinted: color-mix(in srgb, var(--accent) 5%, var(--txt-a));
     --accent: #ff0f6b;
     --line: #2a2a2a;
     @media only screen and (max-width: 700px) {
@@ -136,4 +136,10 @@ a:not(.no-hover):hover {
 /// Removes all text decorations
 .no-deco{
     text-decoration: none;
+}
+
+/// Parallax effect for iratio
+.iratio-parallax{
+    transition: transform 1s cubic-bezier(0.09, 0.81, 0.29, 1.04);
+    transform: translateY(calc(var(--iratio) * -500px + 470px));
 }

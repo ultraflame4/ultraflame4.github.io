@@ -1,6 +1,6 @@
 <template>
     <div id="home-banner" v-iratio="iratio">
-        <video autoplay muted loop preload="auto">
+        <video autoplay muted loop preload="auto" class="iratio-parallax">
             <source src="moon.webm">
         </video>
         <div id="banner-content">
@@ -47,8 +47,7 @@ const iratio = new iRatioObject({
         position: absolute;
         bottom: 0;
         height: 100%;
-        transition: transform 1s cubic-bezier(0.09, 0.81, 0.29, 1.04);
-        transform: translateY(calc(var(--iratio) * -500px + 470px));
+
         filter: brightness(90%) saturate(75%) grayscale(30%);
     }
 
