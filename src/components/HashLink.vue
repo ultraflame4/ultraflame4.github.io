@@ -12,9 +12,10 @@
 <script lang="ts" setup>
 
 import {Icon} from "@iconify/vue";
-import router from "@/router";
+import {useRouter} from "vue-router";
 import {PageNavTree} from "@/router/page_navtree";
 
+const router = useRouter()
 interface iprops {
     /**
      * Path with hash
