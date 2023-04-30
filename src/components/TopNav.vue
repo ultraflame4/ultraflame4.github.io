@@ -22,7 +22,7 @@
 
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
-import {type Ref} from "vue";
+import {type Ref, watch} from "vue";
 import {PageNavTree} from "@/router/page_navtree";
 
 const emit = defineEmits<{
