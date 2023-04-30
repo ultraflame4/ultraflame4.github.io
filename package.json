@@ -1,6 +1,6 @@
 {
   "name": "ultraflame4.github.io",
-  "version": "0.0.0",
+  "version": "6",
   "private": true,
   "scripts": {
     "dev": "vite",
