@@ -53,12 +53,24 @@
                     </p>
                 </div>
                 <div id="skills-ctn">
-                    <ScrollingColumn v-for="i in 3" :delay="i*300" :speed="10000*((i/3)+1)" :style="`--index:${i}`" class="scrolling-skills">
+                    <ScrollingColumn v-for="i in 3" :delay="i*300" :speed="AllSkills.length*3000+1000*i*i"
+                                     :style="`--index:${i}`" class="scrolling-skills">
                         <ul id="skills-list">
-                            <li v-for="i in 10">
+                            <li v-for="i in AllSkills">
 
-                                <SkillCard image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                                           name="C Sharp"/>
+                                <SkillCard :image="i.image"
+                                           :name="i.name"
+                                           :invert="i.invert"
+                                           :level="i.level"
+                                />
+                            </li>
+                            <li v-for="i in AllSkills">
+
+                                <SkillCard :image="i.image"
+                                           :name="i.name"
+                                           :invert="i.invert"
+                                           :level="i.level"
+                                />
                             </li>
                         </ul>
                     </ScrollingColumn>
@@ -76,6 +88,7 @@ import {iRatioObject} from "vyue42";
 import HashLink from "@/components/HashLink.vue";
 import SkillCard from "@/components/SkillCard.vue";
 import ScrollingColumn from "@/components/ScrollingColumn.vue";
+import {AllSkills} from "@/tools/skills";
 
 
 const iratio = new iRatioObject({
@@ -175,7 +188,7 @@ const iratio = new iRatioObject({
 
     }
 
-    #skills-list{
+    #skills-list {
         display: flex;
         flex-direction: column;
         gap: 0.5em;
@@ -183,7 +196,7 @@ const iratio = new iRatioObject({
         list-style-type: none;
     }
 
-    .scrolling-skills{
+    .scrolling-skills {
         z-index: var(--index);
         background: transparent;
     }

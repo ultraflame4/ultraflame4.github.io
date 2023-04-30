@@ -1,3 +1,6 @@
+import type {Ref} from "vue";
+import {ref} from "vue";
+
 export interface SkillItem{
     name:string,
     image:string,
@@ -9,3 +12,12 @@ export interface SkillListJsonConfig{
     $schema:string
     skills:SkillItem[]
 }
+
+
+export const AllSkills: Ref<SkillItem[]> = ref([])
+export async function LoadAllSkills(){
+    const res = await fetch("https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6/public/skills.json")
+    AllSkills.value = (await res.json())?.skills ?? null
+}
+
+

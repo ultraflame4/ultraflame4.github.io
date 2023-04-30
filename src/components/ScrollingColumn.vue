@@ -42,7 +42,7 @@ const props = defineProps<props>()
 
 #items{
     height: fit-content;
-
+    transform: translateY(4rem);
     animation: scroll-anim var(--speed) infinite cubic-bezier(0.25, 0, 0.75, 1);
     animation-delay: var(--delay);
     opacity: 0.75;
