@@ -12,5 +12,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       // "vyue42": fileURLToPath(new URL('../vyue42', import.meta.url))
     }
-  }
+  },
+  base:"v6"
 })
