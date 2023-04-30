@@ -2,7 +2,7 @@ export interface SkillItem{
     name:string,
     image:string,
     level:number,
-    invert:boolean
+    invert?:boolean
 }
 
 export interface SkillListJsonConfig{
