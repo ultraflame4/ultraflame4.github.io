@@ -16,7 +16,7 @@ export interface SkillListJsonConfig{
 
 export const AllSkills: Ref<SkillItem[]> = ref([])
 export async function LoadAllSkills(){
-    const res = await fetch("https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6/public/skills.json")
+    const res = await fetch("skills.json")
     AllSkills.value = (await res.json())?.skills ?? null
 }
 

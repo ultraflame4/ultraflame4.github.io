@@ -12,7 +12,7 @@ import {LoadAllSkills} from "@/tools/skills";
 
 const app = createApp(App)
 
-await LoadAllSkills()
+LoadAllSkills()
 
 app.use(vyue42)
 app.use(router)

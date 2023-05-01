@@ -1,7 +1,7 @@
 <template>
     <div id="home-banner" v-iratio="iratio">
         <video autoplay muted loop preload="auto" class="iratio-parallax">
-            <source src="moon.webm">
+            <source src="/moon.webm">
         </video>
         <div id="banner-content">
             <h1><span id="handwave">👋</span> Hello ! &nbsp;</h1>
