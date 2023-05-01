@@ -13,6 +13,6 @@ export default defineConfig({
       // "vyue42": fileURLToPath(new URL('../vyue42', import.meta.url))
     }
   },
-  assetsInclude: ["**/*.webm"],
+
   base:"/v6"
 })
