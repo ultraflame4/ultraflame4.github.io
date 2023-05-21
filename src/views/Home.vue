@@ -81,7 +81,7 @@
         </section>
         <hr/>
         <section id="featured" class="flex-center">
-            <h1>
+            <h1 class="sticky">
                 <HashLink to="featured" :heading="0">Featured Projects</HashLink>
             </h1>
             <ul id="projects-container">
