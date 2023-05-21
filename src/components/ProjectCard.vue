@@ -3,7 +3,7 @@
         <div class="project-details">
             <h3>{{ props.item.title }}</h3>
             <p>
-                {{ props.item.desc }}
+                {{ props.item.desc}}
             </p>
             <ul class="project-links">
                 <li v-if="props.item.source">
@@ -54,23 +54,49 @@ const props = defineProps<{ item: proj_entry }>()
 
 <style lang="scss" scoped>
 .project-item {
-    width: min(40rem,80vw);
+    width: min(40rem, 80vw);
     height: 24rem;
     display: grid;
     grid-template-columns: 5fr 4fr;
-    grid-template-rows: auto 2rem;
+    grid-template-rows: auto min-content;
     box-sizing: border-box;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
+
     max-height: 100%;
     max-width: 100%;
     border: 2px dashed var(--accent);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1rem 1rem 0.65rem;
+
 }
 
 .project-details {
     grid-column: 1/1;
     grid-row: 1/1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    & > h3 {
+        margin: 0;
+        font-size: 1.35rem;
+    }
+
+    & > p {
+        margin: 0;
+        font-size: 0.9em;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        font-family: "Open sans";
+        white-space: pre-wrap;
+    }
+
+    & > .project-links {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        margin-top: auto;
+        gap: 1rem;
+    }
 }
 
 .project-image {
@@ -89,7 +115,7 @@ const props = defineProps<{ item: proj_entry }>()
     height: 100%;
 }
 
-.project-image:hover > img{
+.project-image:hover > img {
     transform: scale(1.1);
 }
 
@@ -105,5 +131,12 @@ const props = defineProps<{ item: proj_entry }>()
     grid-column: 1/2;
     grid-row: 2;
     padding: 0;
+    height: fit-content;
+
+    & > li {
+        font-weight: 600;
+        font-family: "Poppins";
+        font-size: 0.8em;
+    }
 }
 </style>
