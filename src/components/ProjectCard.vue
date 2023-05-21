@@ -54,7 +54,7 @@ const props = defineProps<{ item: proj_entry }>()
 
 <style lang="scss" scoped>
 .project-item {
-    width: 40rem;
+    width: min(40rem,80vw);
     height: 24rem;
     display: grid;
     grid-template-columns: 5fr 4fr;
