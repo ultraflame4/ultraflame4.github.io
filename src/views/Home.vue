@@ -79,6 +79,15 @@
 
             </div>
         </section>
+        <hr/>
+        <section id="featured" class="flex-center">
+            <h1>
+                <HashLink to="featured" :heading="0">Featured Projects</HashLink>
+            </h1>
+            <ul id="projects-container">
+                <ProjectCard :item="p" v-for="p in featuredProjects"/>
+            </ul>
+        </section>
 
     </main>
 </template>
@@ -89,6 +98,8 @@ import HashLink from "@/components/HashLink.vue";
 import SkillCard from "@/components/SkillCard.vue";
 import ScrollingColumn from "@/components/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
+import ProjectCard from "@/components/ProjectCard.vue";
+import {featuredProjects} from "@/assets/projects";
 
 
 const iratio = new iRatioObject({
@@ -208,6 +219,15 @@ const iratio = new iRatioObject({
             display: none;
         }
     }
+}
+
+#projects-container{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
 }
 
 main {
