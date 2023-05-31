@@ -5,9 +5,9 @@
     --bg-1: #222;
     --bg-2: #333;
     --txt-p: #eee;
-    --txt-a: #ddd;
+    --txt-a: #ffffff;
     --txt-h: #fff;
-    --txt-a-tinted: color-mix(in srgb, #000 20%, color-mix(in srgb, var(--accent) 3%, var(--txt-a)));
+    --txt-a-tinted: #ccc;
     --accent: #ff0f6b;
     --line: #2a2a2a;
     @media only screen and (max-width: 700px) {
@@ -121,12 +121,13 @@ hr {
 ///
 /// Use the --underline-mult css variable to control how thick the line is. (height: calc(0.25rem * var(--underline-mult));)
 .parent_hover-underline {
-    --line-thick: calc(0.25rem * var(--underline-mult));
-    height: calc(var(--line-thick) + 1em);
+    --line-thick: calc(2px * var(--underline-mult));
+    height: calc(var(--line-thick) + 4px + 1em);
     display: inline-block;
     margin-left: 0.5rem;
     position: relative;
     overflow: visible;
+    padding: 0 0.05rem ;
 
     & > * {
         margin: 0;
@@ -136,11 +137,11 @@ hr {
         overflow: visible;
         content: "";
         position: absolute;
-
+        z-index: -1;
         right: 0;
-        top: 95%;
-        border-radius: 1rem;
-        height: var(--line-thick);
+        bottom: 0;
+
+        height: calc(var(--line-thick));
         width: 0;
         transition: width 150ms ease;
         background: var(--accent);

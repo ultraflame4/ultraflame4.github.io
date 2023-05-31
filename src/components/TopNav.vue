@@ -56,7 +56,6 @@ const props = defineProps<{
         display: flex;
         font-size: 0.85rem;
 
-        font-weight: 700;
         height: 100%;
         align-items: center;
 
@@ -64,8 +63,14 @@ const props = defineProps<{
             color: var(--txt-a-tinted);
             --underline-mult: 0.75;
             letter-spacing: 0.05rem;
+            font-weight: 700;
             font-family: "Poppins";
             text-transform: uppercase;
+
+        }
+
+        &:hover > a{
+            color: #fff;
         }
     }
 
