@@ -25,6 +25,16 @@ export interface proj_entry {
 
 export const allProjects: proj_entry[] = [
     {
+        featured:true,
+        title: "CliRenderer",
+        desc: "This commandline programs takes in image and renders it into the terminal using braille and other unicode characters.\n\n" +
+            "Use terminals with 256 color support for best experience (eg. Windows Terminal)",
+        skillsUsed: ["python", "numpy"],
+        source: "https://github.com/ultraflame4/CliR",
+        sourceLabel: "Github",
+        bannerSrc:"https://github.com/ultraflame4/CliR/raw/main/resources/img.png"
+    },
+    {
         featured: true,
         title: "TilImg (TiledImage)",
         skillsUsed: ["python", "numpy", "numba"],
