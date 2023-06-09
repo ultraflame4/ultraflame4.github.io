@@ -51,7 +51,7 @@ function menuToggle() {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: var(--bg-1);
+    background: var(--bg-0-5);
 
 }
 
