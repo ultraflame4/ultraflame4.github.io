@@ -2,7 +2,7 @@
 
 
     <header v-stuck>
-        <div id="header-left">
+        <div id="header-left" class="floater-shadow">
             <h1>ultr42</h1>
             <ul id="topnav-quick">
                 <Icon icon="vaadin:hash" class="icon"/>
@@ -15,7 +15,7 @@
                 </template>
             </ul>
         </div>
-        <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen">
+        <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen" class="floater-shadow">
             <Icon icon="ic:baseline-menu"/>
         </button>
     </header>

@@ -2,7 +2,7 @@
 <!--When stuck the font size will also decrease! Use em instead of rem to react accordingly-->
 <template>
     <div class="ctn" v-stuck>
-        <div class="item">
+        <div class="item floater-shadow">
             <slot></slot>
         </div>
     </div>
@@ -22,7 +22,7 @@
     z-index: 50;
     padding: 0.75rem 1rem;
     pointer-events: all;
-    transition: border 400ms ease, font-size 200ms ease, background-color 400ms ease, color 200ms ease;
+    transition: border 200ms linear, font-size 400ms ease, background-color 100ms ease, color 500ms ease;
 }
 
 .item {

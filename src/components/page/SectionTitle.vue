@@ -28,7 +28,7 @@ const props = defineProps<iProps>()
 <style lang="scss" scoped>
 h1{
     background-color: var(--bg-0);
-    transition: font-size 200ms ease;
+    transition: font-size 150ms linear;
 }
 [stuck] > div > h1{
     color: var(--txt-a-tinted);
