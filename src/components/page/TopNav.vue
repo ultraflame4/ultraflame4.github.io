@@ -119,7 +119,7 @@ header {
     align-items: center;
     list-style-type: none;
     height: 100%;
-
+    gap: 0.5em;
 
     & > .icon {
         font-weight: 600;
@@ -133,6 +133,7 @@ header {
         align-items: center;
         position: relative;
         top: 1px; // Alignment
+
         & > a {
             color: var(--txt-a-tinted);
             --underline-mult: 1;
