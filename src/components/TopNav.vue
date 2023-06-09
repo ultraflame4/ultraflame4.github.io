@@ -110,7 +110,7 @@ header {
     align-items: center;
     list-style-type: none;
     height: 100%;
-    top: -1px;
+
 
     & > .icon {
         font-weight: 600;
@@ -122,7 +122,8 @@ header {
         display: flex;
         font-size: 0.75em;
         align-items: center;
-
+        position: relative;
+        top: 1px; // Alignment
         & > a {
             color: var(--txt-a-tinted);
             --underline-mult: 1;
