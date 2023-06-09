@@ -84,8 +84,16 @@ header {
     box-sizing: border-box;
     border: 2px solid transparent;
     padding: 0 0.75rem;
-    transition: border 500ms ease;
+    transition: border 500ms ease, transform 500ms ease;
     border-radius: 1rem;
+
+
+    [data-open="true"] &{ // This css makes sure the logo stays on screen when in mobile mode (screen <1000)
+        @media only screen and (max-width: 1000px) {
+            position: relative;
+            transform: translateX(19rem);
+        }
+    }
 
     & > * {
         margin: 0;

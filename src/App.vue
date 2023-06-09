@@ -72,16 +72,20 @@ function menuToggle() {
     border-color: var(--bg-2);
 
     margin-left: 3rem;
-
-    @media only screen and (max-width: 600px) {
-        margin-left: 0;
-    }
-
-    width: calc(100% - min(30vw, 20rem));
-    height: calc(100% - 3rem);
     filter: drop-shadow(3px 3px 1rem var(--bg-0));
     border-radius: 1rem;
-    transform: translateX(-3rem) translateY(2rem);
+    @media only screen and (max-width: 1000px) {
+        margin-left: 0;
+        transform: translateX(-19rem) translateY(2rem);
+    }
+
+    @media only screen and (min-width: 1001px) {
+        width: calc(100% - min(30vw, 20rem));
+        height: calc(100% - 3rem);
+        transform: translateX(-3rem) translateY(2rem);
+    }
+
+
 }
 
 #site-ctn::-webkit-scrollbar-track {
