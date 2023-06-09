@@ -18,7 +18,7 @@ const router = createRouter({
     setTimeout(()=>{
       document.querySelector(to.hash)?.scrollIntoView({
         behavior:"smooth",
-        block:"center"
+        block:"start"
       })
     },500)
   }
