@@ -1,7 +1,7 @@
 <template>
     <TopSticky>
         <h1 class="no-vmar">
-            <HashLink :to="props.to" :heading="props.heading??0"><slot></slot></HashLink>
+            <HashLink :to="props.to" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></HashLink>
         </h1>
     </TopSticky>
 </template>
@@ -16,9 +16,14 @@ interface iProps{
      */
     to:string
     /**
-     * The heading number passed to HashLink. Defaults to 0
+     * The heading number passed to HashLink. Defaults to 0.
+     * If dont want to use heading, set no-heading to false
      */
     heading?:number
+    /**
+     * If do not want to use heading, set this to false
+     */
+    no_heading?:boolean
 }
 const props = defineProps<iProps>()
 

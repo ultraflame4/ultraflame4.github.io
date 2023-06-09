@@ -9,7 +9,7 @@
 
         <ul id="projects-container">
             <li v-for="(p, index) in allProjects" >
-                <SectionTitle :to="`project-${index}`" :heading="1" class="proj-header">
+                <SectionTitle :to="`project-${index}`" :no_heading="true" class="proj-header">
                     Index - {{index}}
                 </SectionTitle>
                 <ProjectCard :item="p" :id="`project-${index}`" class="proj-item"/>
