@@ -7,10 +7,11 @@
             </p>
             <ul class="project-links">
                 <li v-if="props.item.source">
+
                     <a :href="props.item.source" target="_blank">
-                        <Icon icon="humbleicons:code" class="icon"/>
                         {{ props.item.sourceLabel ?? "Source" }}
                     </a>
+                    <Icon icon="humbleicons:code" class="icon" />
                 </li>
                 <li v-if="props.item.links" v-for="(value,key,index) in props.item.links" :key="index">
 
@@ -20,9 +21,9 @@
                     }"
                        target="_blank"
                        data-filled={value.filled}>
-                        <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon"/>
                         {{ value.name }}
                     </a>
+                    <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
                 </li>
 
             </ul>
@@ -47,12 +48,14 @@
 
 <script lang="ts" setup>
 import type {proj_entry} from "@/assets/projects";
+import {Icon} from "@iconify/vue";
 
 const props = defineProps<{ item: proj_entry }>()
 
 </script>
 
 <style lang="scss" scoped>
+
 .project-item {
     --move-dist: 0.4rem;
     --allow-space: 0.5rem;
@@ -88,6 +91,8 @@ const props = defineProps<{ item: proj_entry }>()
         border-style: solid;
         border-color: var(--accent);
     }
+
+
 }
 
 .project-details {
@@ -117,6 +122,27 @@ const props = defineProps<{ item: proj_entry }>()
         display: flex;
         margin-top: auto;
         gap: 1rem;
+
+        &>li{
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+
+            &:hover .icon{
+                color: white;
+            }
+
+
+            a::after{
+                display: none;
+            }
+        }
+
+        .icon{
+            font-size: 1.1em;
+            color: var(--accent);
+        }
+
     }
 }
 
@@ -160,4 +186,6 @@ const props = defineProps<{ item: proj_entry }>()
         font-size: 0.8em;
     }
 }
+
+
 </style>
