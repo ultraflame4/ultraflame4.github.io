@@ -69,7 +69,7 @@
             <ul id="projects-container">
                 <ProjectCard :item="p" v-for="p in featuredProjects"/>
             </ul>
-            <RouterLink id="btn-allprojects" to="allprojects">all Projects</RouterLink>
+            <RouterLink id="btn-allprojects" to="projects">all Projects</RouterLink>
 
         </section>
 
