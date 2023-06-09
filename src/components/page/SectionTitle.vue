@@ -1,14 +1,14 @@
 <template>
     <TopSticky>
         <h1 class="no-vmar">
-            <HashLink :hash="props.section_id" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></HashLink>
+            <NavLink :hash="props.section_id" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></NavLink>
         </h1>
     </TopSticky>
 </template>
 
 <script lang="ts" setup>
 import TopSticky from "@/components/core/TopSticky.vue";
-import HashLink from "@/components/core/HashLink.vue";
+import NavLink from "@/components/core/NavLink.vue";
 
 interface iProps{
     /**

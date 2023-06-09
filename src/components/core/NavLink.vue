@@ -13,9 +13,8 @@
 <script lang="ts" setup>
 
 import {Icon} from "@iconify/vue";
-import {type RouteLocationRaw, useRouter} from "vue-router";
+import {useRouter} from "vue-router";
 import {PageNavTree} from "@/router/page_navtree";
-import path from "path";
 
 const router = useRouter()
 

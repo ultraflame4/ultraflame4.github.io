@@ -78,13 +78,11 @@
 
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
-import HashLink from "@/components/core/HashLink.vue";
 import SkillCard from "@/components/others/SkillCard.vue";
 import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/others/ProjectCard.vue";
 import {featuredProjects} from "@/assets/projects";
-import TopSticky from "@/components/core/TopSticky.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
 
 

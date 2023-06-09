@@ -3,13 +3,13 @@
         <h1>This Page</h1>
         <ul id="thispage-list">
             <li v-for="link in PageNavTree.links.value">
-                <HashLink :hash="router.resolve(link.to).hash">{{link.name}}</HashLink>
+                <NavLink :hash="router.resolve(link.to).hash">{{link.name}}</NavLink>
             </li>
         </ul>
         <h1>Sitewide</h1>
         <ul id="thispage-list">
             <li v-for="link in router.options.routes">
-                <HashLink :to="link.path">{{link.name}}</HashLink>
+                <NavLink :to="link.path">{{link.name}}</NavLink>
             </li>
         </ul>
     </div>
@@ -19,8 +19,8 @@
 
 import {PageNavTree} from "@/router/page_navtree";
 import {Icon} from "@iconify/vue";
-import HashLink from "@/components/core/HashLink.vue";
 import {useRouter} from "vue-router";
+import NavLink from "@/components/core/NavLink.vue";
 
 const router = useRouter()
 
