@@ -13,9 +13,7 @@
     </div>
     <main>
         <section class="flex-center" id="about">
-            <h1>
-                <HashLink to="about" :heading="0">About</HashLink>
-            </h1>
+            <SectionTitle to="about">About</SectionTitle>
 
             <p class="text-center">
                 I'm an aspiring <b>self-taught</b> developer
@@ -34,9 +32,7 @@
         </section>
         <hr/>
         <section class="flex-center" id="skills">
-            <h1>
-                <HashLink to="skills" :heading="0">Skills</HashLink>
-            </h1>
+            <SectionTitle to="skills">Skills</SectionTitle>
             <div id="skills-section-layout">
                 <div id="skills-txt">
                     <h1>🎓 What I know</h1>
@@ -69,7 +65,7 @@
         </section>
         <hr/>
         <section id="featured" class="flex-center">
-            <SectionTitle>Featured Projects</SectionTitle>
+            <SectionTitle to="featured">Featured Projects</SectionTitle>
             <ul id="projects-container">
                 <ProjectCard :item="p" v-for="p in featuredProjects"/>
             </ul>
