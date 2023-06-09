@@ -75,6 +75,8 @@
             <ul id="projects-container">
                 <ProjectCard :item="p" v-for="p in featuredProjects"/>
             </ul>
+            <RouterLink id="btn-allprojects" to="allprojects">all Projects</RouterLink>
+
         </section>
 
     </main>
@@ -163,61 +165,79 @@ const bannerIRatio = new iRatioObject({
     }
 
 }
-
-#skills-section-layout {
-    display: flex;
-    width: 100%;
-    padding: 2rem;
-
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-
-
-    #skills-txts {
-
-    }
-
-    #skills-ctn {
+#skills{
+    #skills-section-layout {
         display: flex;
-        justify-content: flex-start;
-        min-width: fit-content;
-        max-width: 40%;
-        gap: 0.5em;
-        height: 35rem;
+        width: 100%;
+        padding: 2rem;
 
-    }
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
 
-    #skills-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-        padding: 0;
-        list-style-type: none;
-    }
 
-    .scrolling-skills {
-        z-index: var(--index);
-        background: transparent;
-    }
+        #skills-txts {
 
-    // Remove 3rd spinning column on smaller devices
-    @media only screen and (max-width: 450px) {
-        .scrolling-skills:nth-of-type(3) {
-            display: none;
+        }
+
+        #skills-ctn {
+            display: flex;
+            justify-content: flex-start;
+            min-width: fit-content;
+            max-width: 40%;
+            gap: 0.5em;
+            height: 35rem;
+
+        }
+
+        #skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .scrolling-skills {
+            z-index: var(--index);
+            background: transparent;
+        }
+
+        // Remove 3rd spinning column on smaller devices
+        @media only screen and (max-width: 450px) {
+            .scrolling-skills:nth-of-type(3) {
+                display: none;
+            }
         }
     }
 }
 
-#projects-container{
-    display: flex;
-    list-style-type: none;
-    justify-content: center;
-    flex-wrap: wrap;
 
-    padding: 0;
-    gap: 1rem;
+#featured{
+    #projects-container{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        flex-wrap: wrap;
 
+        padding: 0;
+        gap: 1rem;
+    }
+
+    #btn-allprojects{
+        border: 2px solid var(--accent);
+        border-radius: 0.75rem;
+        padding: 0.5rem 1rem;
+        margin: 1rem;
+        position: sticky;
+        bottom: 1rem;
+        background-clip: border-box;
+        --passive-color: var(--bg-0);
+        font-size: 1em;
+        &:hover{
+            color: white;
+        }
+    }
 }
 
 main {

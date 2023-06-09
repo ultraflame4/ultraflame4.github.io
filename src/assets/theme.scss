@@ -51,6 +51,8 @@ p {
 }
 
 a {
+    --active-color: var(--accent);
+    --passive-color: var(--txt-a);
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0;
     font-weight: 800;
@@ -63,7 +65,7 @@ a {
 
     background-size: 200% 100%;
     background-position-x: 100%;
-    background-image: linear-gradient(90deg, var(--accent) 50%, var(--txt-a) 50%);
+    background-image: linear-gradient(90deg, var(--active-color) 50%, var(--passive-color) 50%);
     background-clip: text;
     -webkit-background-clip: text;
 }
