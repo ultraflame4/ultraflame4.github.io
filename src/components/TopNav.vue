@@ -1,7 +1,8 @@
 <template>
 
-    <div id="header-ctn" v-stuck>
-        <header>
+
+    <header v-stuck>
+        <div id="header-left">
             <h1>ultr42</h1>
             <ul id="topnav-quick">
                 <Icon icon="vaadin:hash" class="icon"/>
@@ -13,11 +14,12 @@
 
                 </template>
             </ul>
-            <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen">
-                <Icon icon="ic:baseline-menu"/>
-            </button>
-        </header>
-    </div>
+        </div>
+        <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen">
+            <Icon icon="ic:baseline-menu"/>
+        </button>
+    </header>
+
 </template>
 
 <script lang="ts" setup>
@@ -38,6 +40,69 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 
+header {
+
+    width: auto;
+    padding: 0.75rem 1rem;
+    box-sizing: content-box;
+    height: 2.75rem;
+    transition: all 500ms ease, padding 500ms ease;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: -1px;
+    z-index: 100;
+    background: transparent;
+    font-size: 1.25rem;
+
+    & > * {
+        margin: 0;
+    }
+
+    &[stuck] {
+        font-size: 0.95rem;
+
+        #header-left {
+            background: var(--bg-1);
+
+            border-color: var(--accent);
+        }
+
+        #menu-btn {
+
+            background: var(--bg-1);
+            border: 2px solid var(--accent);
+        }
+    }
+}
+
+#header-left {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    padding: 0 0.75rem;
+    transition: border 500ms ease;
+    border-radius: 1rem;
+
+    & > * {
+        margin: 0;
+    }
+
+    & > h1 {
+
+        font-family: "Poppins";
+        font-weight: 700;
+        font-size: 1em;
+        letter-spacing: 0.1rem;
+        margin: 0 0.25rem 0 0.5rem;
+        @media only screen and (max-width: 650px) {
+            margin: 0 auto;
+        }
+    }
+}
+
 #topnav-quick {
     padding: 0;
     margin-left: 0.5rem;
@@ -45,6 +110,7 @@ const props = defineProps<{
     align-items: center;
     list-style-type: none;
     height: 100%;
+    top: -1px;
 
     & > .icon {
         font-weight: 600;
@@ -54,14 +120,12 @@ const props = defineProps<{
 
     & > li {
         display: flex;
-        font-size: 0.85rem;
-
-        height: 100%;
+        font-size: 0.75em;
         align-items: center;
 
         & > a {
             color: var(--txt-a-tinted);
-            --underline-mult: 0.75;
+            --underline-mult: 1;
             letter-spacing: 0.05rem;
             font-weight: 700;
             font-family: "Poppins";
@@ -69,7 +133,7 @@ const props = defineProps<{
 
         }
 
-        &:hover > a{
+        &:hover > a {
             color: #fff;
         }
     }
@@ -80,18 +144,21 @@ const props = defineProps<{
 }
 
 #menu-btn {
-    background: none;
-    border: none;
+    background: transparent;
+    border: 2px solid transparent;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    aspect-ratio: 1;
     color: white;
-    height: fit-content;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: fit-content;
-    font-size: 1.3em;
-    transition: color 200ms ease, transform 100ms linear;
+    font-size: 1.5em;
+    transition: color 200ms ease, transform 100ms linear, border 500ms ease;;
     margin-left: auto;
-    position: absolute;
-    right: 1rem;
+
 }
 
 #menu-btn:hover, #menu-btn[data-open="true"] {
@@ -100,59 +167,6 @@ const props = defineProps<{
 
 #menu-btn:active {
     transform: scale(0.8);
-}
-
-#header-ctn {
-
-    position: sticky;
-
-    height: 10rem;
-
-    pointer-events: none;
-    font-size: 1.6rem;
-    top: -1px;
-    z-index: 1000;
-}
-
-header {
-    height: 100%;
-    width: 100%;
-    padding: 0 4rem;
-    transition: all 200ms ease, padding 500ms ease;
-    display: flex;
-    align-items: center;
-    position: relative;
-    pointer-events: all;
-
-    & > h1 {
-
-        transition: all 200ms ease;
-        font-family: "Poppins";
-        font-weight: 700;
-        font-size: 1em;
-        letter-spacing: 0.1rem;
-
-        @media only screen and (max-width: 650px) {
-            margin: 0 auto;
-        }
-
-    }
-
-    & > * {
-        margin: 0;
-    }
-}
-
-#header-ctn[stuck] > header {
-    height: 4rem;
-    padding-right: 0;
-    padding-left: 2rem;
-
-}
-
-#header-ctn[stuck] {
-    font-size: 1.25rem;
-    background: linear-gradient(180deg, var(--bg-0) 3.5rem, transparent 90%);
 }
 
 </style>
