@@ -75,7 +75,7 @@ const props = defineProps<{ item: proj_entry }>()
     padding: 1rem 1rem 0.65rem;
     margin: var(--allow-space);
 
-    &:hover {
+    &:hover, &:focus-within {
         margin-left: calc(var(--allow-space) - var(--move-dist) + 0.01px); // 0.01px is a weirdly specific value that stops the other cards from jiggling/moving when hovered
         margin-top: calc(var(--allow-space) - var(--move-dist) - 1px);
         width: calc(var(--width) + var(--move-dist));
