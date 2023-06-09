@@ -4,6 +4,7 @@
         <SectionTitle to="all">
             All Projects
         </SectionTitle>
+<!--        TODO ADD SEARCH BAR -->
     </section>
     <section class="flex-center">
 
