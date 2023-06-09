@@ -1,5 +1,5 @@
 <template>
-    <div id="home-banner" v-iratio="iratio">
+    <div id="home-banner" v-iratio="bannerIRatio">
         <video autoplay muted loop preload="auto" class="iratio-parallax">
             <source src="/moon.webm">
         </video>
@@ -57,26 +57,14 @@
                                      :style="`--index:${i}`" class="scrolling-skills">
                         <ul id="skills-list">
                             <li v-for="i in AllSkills">
-
-                                <SkillCard :image="i.image"
-                                           :name="i.name"
-                                           :invert="i.invert"
-                                           :level="i.level"
-                                />
+                                <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
                             </li>
                             <li v-for="i in AllSkills">
-
-                                <SkillCard :image="i.image"
-                                           :name="i.name"
-                                           :invert="i.invert"
-                                           :level="i.level"
-                                />
+                                <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
                             </li>
                         </ul>
                     </ScrollingColumn>
                 </div>
-
-
             </div>
         </section>
         <hr/>
@@ -102,7 +90,7 @@ import ProjectCard from "@/components/ProjectCard.vue";
 import {featuredProjects} from "@/assets/projects";
 
 
-const iratio = new iRatioObject({
+const bannerIRatio = new iRatioObject({
     exit: false,
     invert: false
 })
