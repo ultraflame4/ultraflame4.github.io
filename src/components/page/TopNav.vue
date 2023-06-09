@@ -98,7 +98,7 @@ header {
         font-size: 1em;
         letter-spacing: 0.1rem;
         margin: 0 0.25rem 0 0.5rem;
-        @media only screen and (max-width: 650px) {
+        @media only screen and (max-width: 1000px) {
             margin: 0 auto;
         }
     }
@@ -140,7 +140,7 @@ header {
         }
     }
 
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: 1000px) {
         display: none;
     }
 }
