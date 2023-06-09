@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts" setup>
-import TopSticky from "@/components/TopSticky.vue";
-import HashLink from "@/components/HashLink.vue";
+import TopSticky from "@/components/core/TopSticky.vue";
+import HashLink from "@/components/core/HashLink.vue";
 
 
 

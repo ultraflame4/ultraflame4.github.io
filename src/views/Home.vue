@@ -82,14 +82,14 @@
 
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
-import HashLink from "@/components/HashLink.vue";
-import SkillCard from "@/components/SkillCard.vue";
-import ScrollingColumn from "@/components/ScrollingColumn.vue";
+import HashLink from "@/components/core/HashLink.vue";
+import SkillCard from "@/components/others/SkillCard.vue";
+import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
-import ProjectCard from "@/components/ProjectCard.vue";
+import ProjectCard from "@/components/others/ProjectCard.vue";
 import {featuredProjects} from "@/assets/projects";
-import TopSticky from "@/components/TopSticky.vue";
-import SectionTitle from "@/components/SectionTitle.vue";
+import TopSticky from "@/components/core/TopSticky.vue";
+import SectionTitle from "@/components/page/SectionTitle.vue";
 
 
 const bannerIRatio = new iRatioObject({

@@ -15,7 +15,7 @@
 
 import {PageNavTree} from "@/router/page_navtree";
 import {Icon} from "@iconify/vue";
-import HashLink from "@/components/HashLink.vue";
+import HashLink from "@/components/core/HashLink.vue";
 import {useRouter} from "vue-router";
 
 const router = useRouter()

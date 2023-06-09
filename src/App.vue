@@ -11,9 +11,9 @@
 
 </template>
 <script setup lang="ts">
-import TopNav from "@/components/TopNav.vue";
+import TopNav from "@/components/page/TopNav.vue";
 import {ref} from "vue";
-import NavigationTree from "@/components/NavigationTree.vue";
+import NavigationTree from "@/components/core/NavigationTree.vue";
 
 const menuOpen = ref(false);
 const isClosing = ref(false);
