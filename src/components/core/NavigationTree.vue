@@ -3,9 +3,13 @@
         <h1>This Page</h1>
         <ul id="thispage-list">
             <li v-for="link in PageNavTree.links.value">
-                <HashLink :to="$router.resolve(link.to).fullPath">{{link.name}}</HashLink>
-
-
+                <HashLink :hash="router.resolve(link.to).hash">{{link.name}}</HashLink>
+            </li>
+        </ul>
+        <h1>Sitewide</h1>
+        <ul id="thispage-list">
+            <li v-for="link in router.options.routes">
+                <HashLink :to="link.path">{{link.name}}</HashLink>
             </li>
         </ul>
     </div>
@@ -24,7 +28,7 @@ const router = useRouter()
 
 <style lang="scss" scoped>
 div{
-    padding: 0.5em 1rem;
+    padding: 0.5em 2rem;
     padding-left: 0;
 }
 h1{
@@ -32,6 +36,8 @@ h1{
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     font-size: 2.25rem;
+    margin-left: 0;
+    margin-right: 0;
 }
 ul#thispage-list{
     list-style-type: none;

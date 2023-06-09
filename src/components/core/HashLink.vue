@@ -1,27 +1,33 @@
 <template>
-    <a @click="push()" class="no-hover no-deco">
+    <RouterLink :to="fullpath.fullPath"  class="no-hover no-deco">
         <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
         <div class="parent_hover-underline">
             <slot>
 
             </slot>
         </div>
-    </a>
+    </RouterLink>
+
 </template>
 
 <script lang="ts" setup>
 
 import {Icon} from "@iconify/vue";
-import {useRouter} from "vue-router";
+import {type RouteLocationRaw, useRouter} from "vue-router";
 import {PageNavTree} from "@/router/page_navtree";
+import path from "path";
 
 const router = useRouter()
 
 interface iprops {
     /**
-     * Path with hash
+     * The path or name to the new location
      */
-    to: string
+    to?: string
+    /**
+     * Any Hash if need to scroll to id. (With or without '#' works)
+     */
+    hash?: string
     /**
      * Indicates that this hashlink is a heading, this would add it to the current page navigation tree.
      */
@@ -30,23 +36,18 @@ interface iprops {
 }
 
 const props = defineProps<iprops>()
+const fullpath = router.resolve(`${props.to ?? router.currentRoute.value.path}#${props.hash?.replace("#", "") ?? ''}`)
 
-const to = {
-    path: router.currentRoute.value.path,
-    hash: "#" + props.to
-}
+console.log(fullpath, props)
 
 if (props.heading !== undefined) {
     PageNavTree.add({
-        to: to,
+        to: fullpath,
         level: props.heading,
-        name: props.to
+        name: props.to ?? props.hash ?? "unnamed"
     })
 }
 
-function push() {
-    router.push(to)
-}
 
 </script>
 

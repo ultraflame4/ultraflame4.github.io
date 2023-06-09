@@ -1,7 +1,7 @@
 <template>
     <TopSticky>
         <h1 class="no-vmar">
-            <HashLink :to="props.to" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></HashLink>
+            <HashLink :hash="props.section_id" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></HashLink>
         </h1>
     </TopSticky>
 </template>
@@ -12,9 +12,9 @@ import HashLink from "@/components/core/HashLink.vue";
 
 interface iProps{
     /**
-     * The link to this section
+     * The id of this section
      */
-    to:string
+    section_id:string
     /**
      * The heading number passed to HashLink. Defaults to 0.
      * If dont want to use heading, set no-heading to false

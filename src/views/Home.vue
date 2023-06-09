@@ -13,7 +13,7 @@
     </div>
     <main>
         <section class="flex-center" id="about">
-            <SectionTitle to="about">About</SectionTitle>
+            <SectionTitle section_id="about">About</SectionTitle>
 
             <p class="text-center">
                 I'm an aspiring <b>self-taught</b> developer
@@ -32,7 +32,7 @@
         </section>
         <hr/>
         <section class="flex-center" id="skills">
-            <SectionTitle to="skills">Skills</SectionTitle>
+            <SectionTitle section_id="skills">Skills</SectionTitle>
             <div id="skills-section-layout">
                 <div id="skills-txt">
                     <h1>🎓 What I know</h1>
@@ -65,7 +65,7 @@
         </section>
         <hr/>
         <section id="featured" class="flex-center">
-            <SectionTitle to="featured">Featured Projects</SectionTitle>
+            <SectionTitle section_id="featured">Featured Projects</SectionTitle>
             <ul id="projects-container">
                 <ProjectCard :item="p" v-for="p in featuredProjects"/>
             </ul>

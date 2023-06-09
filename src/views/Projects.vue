@@ -1,7 +1,7 @@
 <template>
 <main id="all">
     <section class="flex-center">
-        <SectionTitle to="all">
+        <SectionTitle section_id="all">
             All Projects
         </SectionTitle>
 <!--        TODO ADD SEARCH BAR -->
@@ -10,7 +10,7 @@
 
         <ul id="projects-container">
             <li v-for="(p, index) in allProjects" >
-                <SectionTitle :to="`project-${index}`" :no_heading="true" class="proj-header">
+                <SectionTitle :section_id="`project-${index}`" :no_heading="true" class="proj-header">
                     Index - {{index}}
                 </SectionTitle>
                 <ProjectCard :item="p" :id="`project-${index}`" class="proj-item"/>
