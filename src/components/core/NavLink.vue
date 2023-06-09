@@ -1,5 +1,15 @@
 <template>
-    <RouterLink :to="fullpath.fullPath"  class="no-hover no-deco">
+
+    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco">
+        <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
+        <div class="parent_hover-underline">
+            <slot>
+
+            </slot>
+        </div>
+    </a>
+
+    <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco">
         <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
         <div class="parent_hover-underline">
             <slot>
@@ -20,7 +30,7 @@ const router = useRouter()
 
 interface iprops {
     /**
-     * The path or name to the new location
+     * The path or name to the new location. Can include hash if absolute url
      */
     to?: string
     /**
