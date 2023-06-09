@@ -20,6 +20,7 @@ h1{
 }
 [stuck] > div > h1{
     color: var(--txt-a-tinted);
+    background: none;
     font-size: 1em;
     position: relative;
     top: 1px;
