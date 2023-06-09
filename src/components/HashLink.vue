@@ -16,6 +16,7 @@ import {useRouter} from "vue-router";
 import {PageNavTree} from "@/router/page_navtree";
 
 const router = useRouter()
+
 interface iprops {
     /**
      * Path with hash
@@ -25,21 +26,21 @@ interface iprops {
      * Indicates that this hashlink is a heading, this would add it to the current page navigation tree.
      */
     heading?: number,
-    noicon?:boolean
+    noicon?: boolean
 }
 
 const props = defineProps<iprops>()
 
-const to ={
+const to = {
     path: router.currentRoute.value.path,
     hash: "#" + props.to
 }
 
 if (props.heading !== undefined) {
     PageNavTree.add({
-        to:to,
-        level:props.heading,
-        name:props.to
+        to: to,
+        level: props.heading,
+        name: props.to
     })
 }
 
@@ -51,28 +52,27 @@ function push() {
 
 <style lang="scss" scoped>
 a {
-  letter-spacing: 0.1rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  height: calc(1em + 1rem);
-  width: fit-content;
-  overflow: visible;
+    letter-spacing: 0.1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: calc(1em + 1rem);
+    width: fit-content;
+    overflow: visible;
+    color: inherit;
 }
 
 a:hover {
-  color: var(--txt-a);
+    color: var(--txt-a);
 }
 
 
-
-
 .icon {
-  color: var(--accent);
-  height: 100%;
-  position: relative;
-  top: 0.05rem;
+    color: var(--accent);
+    height: 100%;
+    position: relative;
+    top: 0.05rem;
 }
 
 </style>
