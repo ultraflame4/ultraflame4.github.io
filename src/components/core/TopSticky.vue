@@ -22,6 +22,7 @@
     z-index: 50;
     padding: 0.75rem 1rem;
     pointer-events: all;
+    transition: border 400ms ease, font-size 200ms ease, background-color 400ms ease, color 200ms ease;
 }
 
 .item {
@@ -30,7 +31,7 @@
     display: flex;
     align-items: center;
     border: 2px solid transparent;
-    transition: border 200ms ease, font-size 300ms ease, background-color 200ms ease;
+    transition: inherit;
 
 }
 
