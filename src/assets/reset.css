@@ -24,3 +24,6 @@ body{
 button{
     cursor: pointer;
 }
+pre{
+   font-family: monospace;
+}

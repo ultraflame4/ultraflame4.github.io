@@ -73,6 +73,7 @@ a:hover {
     height: 100%;
     position: relative;
     top: 0.05rem;
+    margin-right: 0.35em;
 }
 
 </style>
