@@ -69,11 +69,7 @@
         </section>
         <hr/>
         <section id="featured" class="flex-center">
-            <TopSticky>
-                <h1 class="sticky no-vmar">
-                    <HashLink to="featured" :heading="0">Featured Projects</HashLink>
-                </h1>
-            </TopSticky>
+            <SectionTitle>Featured Projects</SectionTitle>
             <ul id="projects-container">
                 <ProjectCard :item="p" v-for="p in featuredProjects"/>
             </ul>
@@ -93,6 +89,7 @@ import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/ProjectCard.vue";
 import {featuredProjects} from "@/assets/projects";
 import TopSticky from "@/components/TopSticky.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 
 const bannerIRatio = new iRatioObject({

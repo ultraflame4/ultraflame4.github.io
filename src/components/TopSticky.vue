@@ -1,14 +1,15 @@
 <!--This component is anything like headers that wants to stick to the top like the topnav!-->
 <!--When stuck the font size will also decrease! Use em instead of rem to react accordingly-->
 <template>
-  <div class="ctn" v-stuck>
-      <div class="item">
-          <slot></slot>
-      </div>
-  </div>
+    <div class="ctn" v-stuck>
+        <div class="item">
+            <slot></slot>
+        </div>
+    </div>
 </template>
 
 <script lang="ts" setup>
+
 
 </script>
 
@@ -23,7 +24,7 @@
     pointer-events: all;
 }
 
-.item{
+.item {
     border-radius: 1rem;
     height: 2.75rem;
     display: flex;
@@ -33,11 +34,12 @@
 
 }
 
-.ctn[stuck] > .item{
-    font-size: 0.75rem;
+.ctn[stuck] > .item {
+    font-size: 0.95rem;
     background: var(--bg-1);
     border-color: var(--accent);
     z-index: 100;
     pointer-events: all;
+    color: var(--txt-a-tinted);
 }
 </style>
