@@ -54,9 +54,10 @@ header {
     z-index: 100;
     background: transparent;
     font-size: 1.25rem;
-
+    pointer-events: none;
     & > * {
         margin: 0;
+        pointer-events: auto;
     }
 
     &[stuck] {

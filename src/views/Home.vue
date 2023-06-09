@@ -69,9 +69,11 @@
         </section>
         <hr/>
         <section id="featured" class="flex-center">
-            <h1 class="sticky">
-                <HashLink to="featured" :heading="0">Featured Projects</HashLink>
-            </h1>
+            <TopSticky>
+                <h1 class="sticky no-vmar">
+                    <HashLink to="featured" :heading="0">Featured Projects</HashLink>
+                </h1>
+            </TopSticky>
             <ul id="projects-container">
                 <ProjectCard :item="p" v-for="p in featuredProjects"/>
             </ul>
@@ -90,6 +92,7 @@ import ScrollingColumn from "@/components/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/ProjectCard.vue";
 import {featuredProjects} from "@/assets/projects";
+import TopSticky from "@/components/TopSticky.vue";
 
 
 const bannerIRatio = new iRatioObject({
