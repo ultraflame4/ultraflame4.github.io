@@ -124,12 +124,12 @@ hr {
 /// Use the --underline-mult css variable to control how thick the line is. (height: calc(0.25rem * var(--underline-mult));)
 .parent_hover-underline {
     --line-thick: calc(2px * var(--underline-mult));
-    height: calc(var(--line-thick) + 4px + 1em);
+    height: calc(var(--line-thick) + 5px + 1em);
     display: inline-block;
     margin-left: 0.5rem;
     position: relative;
     overflow: visible;
-    padding: 0 0.05rem ;
+
 
     & > * {
         margin: 0;
@@ -139,7 +139,7 @@ hr {
         overflow: visible;
         content: "";
         position: absolute;
-        z-index: -1;
+        z-index: 1;
         right: 0;
         bottom: 0;
 
