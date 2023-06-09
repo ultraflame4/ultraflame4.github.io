@@ -3,7 +3,7 @@
         <div class="project-details">
             <h3>{{ props.item.title }}</h3>
             <p>
-                {{ props.item.desc}}
+                {{ props.item.desc }}
             </p>
             <ul class="project-links">
                 <li v-if="props.item.source">
@@ -54,8 +54,13 @@ const props = defineProps<{ item: proj_entry }>()
 
 <style lang="scss" scoped>
 .project-item {
-    width: min(40rem, 80vw);
-    height: 24rem;
+    --move-dist: 0.4rem;
+    --allow-space: 0.5rem;
+    --width: min(40rem, 80vw);
+    --height: 24rem;
+
+    width: var(--width);
+    height: var(--height);
     display: grid;
     grid-template-columns: 5fr 4fr;
     grid-template-rows: auto min-content;
@@ -64,10 +69,25 @@ const props = defineProps<{ item: proj_entry }>()
 
     max-height: 100%;
     max-width: 100%;
-    border: 2px dashed var(--accent);
+    border: 2px solid var(--bg-2);
+
     border-radius: 1rem;
     padding: 1rem 1rem 0.65rem;
+    margin: var(--allow-space);
 
+    &:hover {
+        margin-left: calc(var(--allow-space) - var(--move-dist) - 1px);
+        margin-top: calc(var(--allow-space) - var(--move-dist) - 1px);
+        width: calc(var(--width) + var(--move-dist));
+        height: calc(var(--height) + var(--move-dist));
+
+        border-width: var(--move-dist);
+        border-left-width: 1px;
+        border-top-width: 1px;
+
+        border-style: solid;
+        border-color: var(--accent);
+    }
 }
 
 .project-details {
@@ -76,6 +96,7 @@ const props = defineProps<{ item: proj_entry }>()
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
     & > h3 {
         margin: 0;
         font-size: 1.35rem;
