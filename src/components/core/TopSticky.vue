@@ -22,7 +22,7 @@
     z-index: 50;
     padding: 0.75rem 1rem;
     pointer-events: all;
-    transition: border 200ms linear, font-size 400ms ease, background-color 100ms ease, color 500ms ease;
+    //transition: border 2ms linear, font-size 400ms ease, background-color 100ms ease, color 500ms ease;
 }
 
 .item {
