@@ -124,6 +124,15 @@ function cat_link() {
 #navtree {
     margin-top: 1rem;
     margin-left: auto;
+    @media only screen and (max-width: 1000px) {
+        width: 18rem;
+    }
+
+    @media only screen and (min-width: 1001px) {
+        width: calc( min(30vw, 20rem) - 2rem);
+
+    }
+
 }
 
 #site-back {
