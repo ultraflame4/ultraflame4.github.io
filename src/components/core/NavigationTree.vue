@@ -2,8 +2,8 @@
     <div>
         <h1>Index</h1>
         <ul id="thispage-list">
-            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`">
-                <NavLink :hash="router.resolve(link.to).hash">{{link.name}}</NavLink>
+            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1">
+                <NavLink :hash="router.resolve(link.to).hash" :noicon="link.level>1">{{shortenName(link.name,25)}}</NavLink>
             </li>
         </ul>
         <hr/>
@@ -24,6 +24,16 @@ import {useRouter} from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
 
 const router = useRouter()
+
+function shortenName(name: string, maxChars: number) {
+    if (maxChars < 3) {
+        return "..."
+    }
+    if (name.length > maxChars) {
+        return name.slice(0, maxChars-3) + "..."
+    }
+    return name
+}
 
 </script>
 
@@ -51,11 +61,24 @@ ul#thispage-list{
     overflow: auto;
     margin: 0;
     & > li{
-        font-size: calc(1.25em - (var(--level) * 5%));
+
+        font-size:1.25rem;
         margin-left: calc(var(--level) * 0.2rem);
         padding-left: calc(var(--level) * 0.3rem);
         height: 2em;
         border-left: min(var(--line-thick), calc( var(--level) * var(--line-thick))) solid var(--bg-2);
+        &[data-ischild="true"]{
+            font-size: 0.9em;
+            color: var(--txt-a-tinted);
+            a{
+                width: 100%;
+                overflow: hidden;
+                letter-spacing: 1px;
+                font-weight: 700;
+                text-transform: none;
+            }
+
+        }
     }
 }
 

@@ -41,7 +41,11 @@ interface iprops {
      * Indicates that this hashlink is a heading, this would add it to the current page navigation tree.
      */
     heading?: number,
-    noicon?: boolean
+    noicon?: boolean,
+    /**
+     * Specifies the name to use and display
+     */
+    name?:string
 }
 
 const props = defineProps<iprops>()
@@ -53,7 +57,7 @@ if (props.heading !== undefined) {
     PageNavTree.add({
         to: fullpath,
         level: props.heading,
-        name: props.to ?? props.hash ?? "unnamed"
+        name: props.name ?? props.to ?? props.hash ?? "unnamed"
     })
 }
 
@@ -71,6 +75,12 @@ a {
     width: fit-content;
     overflow: visible;
     color: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    div{
+
+    }
 }
 
 a:hover {

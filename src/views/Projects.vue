@@ -9,9 +9,9 @@
     <section class="flex-center">
 
         <ul id="projects-container">
-            <li v-for="(p, index) in allProjects" >
-                <SectionTitle :section_id="`project-${index}`" heading="2" class="proj-header">
-                    Index - {{index}}
+            <li v-for="(p, index) in allProjects" :key="index">
+                <SectionTitle :section_id="`project-${index}`" :name="p.title" heading="2" class="proj-header">
+                    {{p.title}}
                 </SectionTitle>
                 <ProjectCard :item="p" :id="`project-${index}`" class="proj-item"/>
             </li>

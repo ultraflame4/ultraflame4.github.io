@@ -1,7 +1,7 @@
 <template>
     <TopSticky>
         <h1 class="no-vmar">
-            <NavLink :hash="props.section_id" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></NavLink>
+            <NavLink :hash="props.section_id" :name="props.name" :heading="no_heading?undefined:(props.heading??0)"><slot></slot></NavLink>
         </h1>
     </TopSticky>
 </template>
@@ -15,6 +15,10 @@ interface iProps{
      * The id of this section
      */
     section_id:string
+    /**
+     * This will be the name displayed in the nav tree if this is a heading
+     */
+    name?:string
     /**
      * The heading number passed to HashLink. Defaults to 0.
      * If dont want to use heading, set no-heading to false
