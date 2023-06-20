@@ -1,11 +1,11 @@
 import { fileURLToPath, URL } from 'node:url'
-
-import { defineConfig } from 'vite'
+import type {ViteSSGOptions} from "vite-ssg";
+import type {UserConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-// https://vitejs.dev/config/
-export default defineConfig({
+
+const config: UserConfig = {
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
@@ -13,6 +13,14 @@ export default defineConfig({
       // "vyue42": fileURLToPath(new URL('../vyue42', import.meta.url))
     }
   },
-
+  ssr:{
+    noExternal: "vyue42",
+  },
+  ssgOptions:{
+    mock: true,
+    dirStyle: "flat",
+    script: "async defer",
+  },
   base:"/v6"
-})
+}
+export default config

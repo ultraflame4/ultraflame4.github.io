@@ -1,10 +1,11 @@
-import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
+import {createWebHistory, type Router} from 'vue-router'
 import Home from "@/views/Home.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import Projects from "@/views/Projects.vue";
+import type {RouterOptions} from "vite-ssg";
 
-const router = createRouter({
-    history: createWebHashHistory(import.meta.env.BASE_URL),
+export const routerOptions: RouterOptions = {
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',
@@ -27,14 +28,16 @@ const router = createRouter({
             })
         }, 500)
     }
-})
+}
 
 
-router.beforeEach((to, from, next) => {
-    next();
-    if (from.path !== to.path) {
-        PageNavTree.clear()
-    }
-})
+export function setupRouter(router: Router) {
+    router.beforeEach((to, from, next) => {
+        next();
+        if (from.path !== to.path) {
+            PageNavTree.clear()
+        }
+    })
+}
 
-export default router
+

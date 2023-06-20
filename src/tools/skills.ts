@@ -16,8 +16,14 @@ export interface SkillListJsonConfig{
 
 export const AllSkills: Ref<SkillItem[]> = ref([])
 export async function LoadAllSkills(){
-    const res = await fetch("skills.json")
-    AllSkills.value = (await res.json())?.skills ?? null
+    try{
+        const res = await fetch("skills.json")
+        AllSkills.value = (await res.json())?.skills ?? null
+    }
+    catch (e) {
+        console.log("Could not get skills!");
+
+    }
 }
 
 

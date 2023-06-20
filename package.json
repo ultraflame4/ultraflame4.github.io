@@ -7,12 +7,13 @@
     "build": "run-p type-check build-only",
     "schema": "tsx generate.ts",
     "preview": "vite preview",
-    "build-only": "vite build",
+    "build-only": "vite-ssg build",
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
     "sass": "^1.60.0",
     "tsx": "^3.12.7",
+    "vite-ssg": "^0.22.2",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vyue42": "^0.0.0-dev.25"
