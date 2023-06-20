@@ -5,7 +5,7 @@ import Projects from "@/views/Projects.vue";
 import type {RouterOptions} from "vite-ssg";
 
 export const routerOptions :RouterOptions= {
-    history: createWebHashHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',
