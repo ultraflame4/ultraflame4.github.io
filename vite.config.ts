@@ -19,7 +19,7 @@ const config: UserConfig = {
   ssgOptions:{
     mock: true,
     dirStyle: "flat",
-    script: "async defer"
+    script: "async defer",
   },
   base:"/v6"
 }
