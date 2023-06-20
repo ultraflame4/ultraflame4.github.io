@@ -89,10 +89,8 @@ header {
 
 
     [data-open="true"] &{ // This css makes sure the logo stays on screen when in mobile mode (screen <1000)
-        @media only screen and (max-width: 1000px) {
-            position: relative;
-            transform: translateX(19rem);
-        }
+        position: relative;
+        transform: translateX(var(--navtree-width));
     }
 
     & > * {

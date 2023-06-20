@@ -116,7 +116,9 @@ function cat_link() {
 </script>
 
 <style lang="scss" scoped>
-
+:global(:root){
+    --navtree-width: min(50vw, 24rem);
+}
 #site-back {
     display: flex;
 }
@@ -124,14 +126,8 @@ function cat_link() {
 #navtree {
     margin-top: 1rem;
     margin-left: auto;
-    @media only screen and (max-width: 1000px) {
-        width: 18rem;
-    }
-
-    @media only screen and (min-width: 1001px) {
-        width: calc( min(30vw, 20rem) - 2rem);
-
-    }
+    width: var(--navtree-width);
+    padding-left: 1.5rem;
 
 }
 
@@ -160,20 +156,12 @@ function cat_link() {
 
 #site-ctn[data-open="true"] {
     border-color: var(--bg-2);
-
-    margin-left: 3rem;
     filter: drop-shadow(3px 3px 1rem var(--bg-0));
     border-radius: 1rem;
-    @media only screen and (max-width: 1000px) {
-        margin-left: 0;
-        transform: translateX(-19rem) translateY(2rem);
-    }
 
-    @media only screen and (min-width: 1001px) {
-        width: calc(100% - min(30vw, 20rem));
-        height: calc(100% - 3rem);
-        transform: translateX(-3rem) translateY(2rem);
-    }
+    margin-left: 0;
+    transform: translateX(calc(0px - var(--navtree-width))) translateY(2rem);
+
 
 
 }

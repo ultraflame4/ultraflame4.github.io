@@ -1,7 +1,7 @@
 <template>
 <main id="all">
     <section class="flex-center">
-        <SectionTitle section_id="all">
+        <SectionTitle section_id="all" name="Project List">
             All Projects
         </SectionTitle>
 <!--        TODO ADD SEARCH BAR -->

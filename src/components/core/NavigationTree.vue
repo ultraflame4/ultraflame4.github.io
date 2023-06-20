@@ -1,14 +1,14 @@
 <template>
     <div>
         <h1>Index</h1>
-        <ul id="thispage-list">
+        <ul id="page-index">
             <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1">
-                <NavLink :hash="router.resolve(link.to).hash" :noicon="link.level>1">{{shortenName(link.name,25)}}</NavLink>
+                <NavLink :hash="router.resolve(link.to).hash" :noicon="link.level>1">{{shortenName(link.name,32)}}</NavLink>
             </li>
         </ul>
         <hr/>
-        <h1>Pages</h1>
-        <ul id="thispage-list">
+        <h1>Others</h1>
+        <ul id="other-pages">
             <li v-for="link in router.options.routes">
                 <NavLink :to="link.path">{{link.name}}</NavLink>
             </li>
@@ -39,7 +39,9 @@ function shortenName(name: string, maxChars: number) {
 
 <style lang="scss" scoped>
 div{
-    padding: 1.25rem 1rem 0.5rem;
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
 
 }
 h1{
@@ -51,15 +53,15 @@ h1{
 hr{
     margin: 1rem 0;
 }
-ul#thispage-list{
+ul{
     list-style-type: none;
     padding-left: 0;
     --level:0;
     --line-thick: 1px;
-    min-height: fit-content;
-    max-height: 35vh;
+    flex-shrink: 0;
     overflow: auto;
     margin: 0;
+    width: 100%;
     & > li{
 
         font-size:1.25rem;
@@ -81,8 +83,10 @@ ul#thispage-list{
         }
     }
 }
-
-ul{
-    width: 100%;
+#page-index{
+    height: fit-content;
+    flex-grow: 1;
+    margin-top: auto;
 }
+
 </style>
