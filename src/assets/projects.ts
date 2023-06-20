@@ -44,7 +44,7 @@ export const allProjects: proj_entry[] = [
         bannerSrc: "https://user-images.githubusercontent.com/34125174/208235487-44f5e641-e6eb-453a-a9db-25d93a093782.png"
     },
     {
-        featured: true,
+        // featured: true,
         title: "WebDevCreate",
         skillsUsed: ["typescript", "scss", "html", "python"],
         desc: "A website builder I made for myself to eventually build websites with.\nIt is designed for people who already know HTML and CSS." +
@@ -82,7 +82,7 @@ export const allProjects: proj_entry[] = [
         bannerImgIsVideo: true
     },
     {
-        featured: true,
+        // featured: true,
         title: "Online Tic Tac Toe",
         bannerSrc: "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png",
         skillsUsed: ["html", "css", "javascript"],
@@ -96,7 +96,7 @@ export const allProjects: proj_entry[] = [
         ]
     },
     {
-        featured: true,
+        // featured: true,
         title: "PythonQtBrowser",
         bannerSrc: "https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png",
         skillsUsed: ["python"],
@@ -105,7 +105,7 @@ export const allProjects: proj_entry[] = [
         source: "https://github.com/ultraflame4/PythonQtBrowser"
     },
     {
-        featured: true,
+        // featured: true,
         title: "Better Console",
         bannerSrc: "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
         skillsUsed: ["Python"],
