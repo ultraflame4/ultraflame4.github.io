@@ -17,7 +17,9 @@ const config: UserConfig = {
     noExternal: "vyue42",
   },
   ssgOptions:{
-    mock: true
+    mock: true,
+    dirStyle: "flat",
+    script: "async defer"
   },
   base:"/v6"
 }
