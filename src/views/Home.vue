@@ -49,10 +49,10 @@
                     </p>
                 </div>
                 <div id="skills-ctn">
-                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*1000*3 + 500 * i"
+                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*1000*4 + 500 * i"
                                      :style="`--index:${i}`" class="scrolling-skills">
                         <ul id="skills-list">
-                            <li v-for="i in repeatArray(shuffleArray(AllSkills), 3)">
+                            <li v-for="i in repeatArray(shuffleArray(AllSkills), 4)">
                                 <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
                             </li>
                         </ul>
