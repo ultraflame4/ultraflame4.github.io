@@ -3,8 +3,9 @@
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
     "baseUrl": ".",
+    "importsNotUsedAsValues": "preserve",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
 //      "vyue42": ["../../vyue42"]
     }
   },
