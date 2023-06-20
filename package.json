@@ -13,6 +13,7 @@
   "dependencies": {
     "sass": "^1.60.0",
     "tsx": "^3.12.7",
+    "vite-plugin-ssr": "^0.4.131",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vyue42": "^0.0.0-dev.25"
