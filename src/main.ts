@@ -20,6 +20,9 @@ export const createApp = ViteSSG(
         LoadAllSkills()
         app.use(vyue42)
         setupRouter(router)
+    },
+    {
+        rootContainer: "#app"
     }
 )
 
