@@ -42,20 +42,21 @@ const props = defineProps<props>()
 
 #items{
     height: fit-content;
-    transform: translateY(4rem);
+    --start-offset: calc(-45rem * var(--index));
+    transform: translateY(var(--start-offset));
     animation: scroll-anim var(--speed) infinite cubic-bezier(0.25, 0, 0.75, 1);
     animation-delay: var(--delay);
     opacity: 0.75;
 }
 @keyframes scroll-anim {
     0% {
-        transform: translateY(4rem);
+        transform: translateY(var(--start-offset));
     }
     50% {
         transform: translateY(-75%);
     }
     100%{
-        transform: translateY(4rem);
+        transform: translateY(var(--start-offset));
     }
 }
 

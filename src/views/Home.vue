@@ -49,13 +49,10 @@
                     </p>
                 </div>
                 <div id="skills-ctn">
-                    <ScrollingColumn v-for="i in 3" :delay="i*300" :speed="AllSkills.length*3000+1000*i*i"
+                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*1000*3 + 500 * i"
                                      :style="`--index:${i}`" class="scrolling-skills">
                         <ul id="skills-list">
-                            <li v-for="i in AllSkills">
-                                <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
-                            </li>
-                            <li v-for="i in AllSkills">
+                            <li v-for="i in repeatArray(shuffleArray(AllSkills), 3)">
                                 <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
                             </li>
                         </ul>
@@ -90,6 +87,27 @@ const bannerIRatio = new iRatioObject({
     exit: false,
     invert: false
 })
+
+/* Randomize array in-place using Durstenfeld shuffle algorithm */
+function shuffleArray<T>(array_: T[]): T[] {
+    let array = [...array_]
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array
+}
+
+function repeatArray<T>(array:T[],count:number):T[]{
+    let a:T[] = []
+    for (let i = 0; i < count; i++) {
+        a = a.concat(array);
+    }
+
+    return a
+}
 
 </script>
 
