@@ -17,8 +17,10 @@ export const createApp = ViteSSG(
     routerOptions,
     // function to have custom setups
     ({app, router, routes, isClient, initialState}) => {
-        LoadAllSkills()
-        app.use(vyue42)
+        if (isClient) {
+            LoadAllSkills()
+        }
+        app.use(vyue42);
         setupRouter(router)
     },
     {
