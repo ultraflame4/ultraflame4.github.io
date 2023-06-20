@@ -8,8 +8,6 @@ import "vyue42/lib/index.css"
 import {vyue42} from "vyue42";
 import {LoadAllSkills} from "@/tools/skills";
 import {ViteSSG} from "vite-ssg";
-import app from "@/App.vue";
-
 
 // `export const createApp` is required instead of the original `createApp(App).mount('#app')`
 export const createApp = ViteSSG(
@@ -23,6 +21,7 @@ export const createApp = ViteSSG(
         app.use(vyue42)
         setupRouter(router)
     },
+
 )
 
 

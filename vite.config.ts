@@ -13,6 +13,8 @@ export default defineConfig({
       // "vyue42": fileURLToPath(new URL('../vyue42', import.meta.url))
     }
   },
-
+  ssr:{
+    noExternal: "vyue42"
+  },
   base:"/v6"
 })
