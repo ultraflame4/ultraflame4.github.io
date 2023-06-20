@@ -51,7 +51,7 @@ interface iprops {
 const props = defineProps<iprops>()
 const fullpath = router.resolve(`${props.to ?? router.currentRoute.value.path}#${props.hash?.replace("#", "") ?? ''}`)
 
-console.log(fullpath, props)
+// console.log(fullpath, props)
 
 if (props.heading !== undefined) {
     PageNavTree.add({
