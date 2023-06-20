@@ -1,10 +1,10 @@
-import {createRouter, createWebHashHistory, createWebHistory, type Router} from 'vue-router'
+import {createWebHistory, type Router} from 'vue-router'
 import Home from "@/views/Home.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import Projects from "@/views/Projects.vue";
 import type {RouterOptions} from "vite-ssg";
 
-export const routerOptions :RouterOptions= {
+export const routerOptions: RouterOptions = {
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
