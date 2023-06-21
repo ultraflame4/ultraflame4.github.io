@@ -134,9 +134,9 @@ hr {
     display: inline-block;
     position: relative;
     overflow: visible;
-    margin-top: calc(var(--line-offset) / 2);
+
     &.add-align{
-        margin-top: var(--line-offset);
+        margin-top: calc(var(--line-offset) / 1.25);
     }
 
     & > * {

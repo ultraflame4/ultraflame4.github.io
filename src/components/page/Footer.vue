@@ -61,6 +61,7 @@
             <h1>Socials</h1>
             <ul id="socials">
                 <li><SocialLink src="https://github.com/ultraflame4" icon="mdi:github">Github</SocialLink></li>
+                <li><SocialLink src="https://www.linkedin.com/in/chester-lai-yu-heng/" icon="mdi:linkedin">LinkedIn</SocialLink></li>
             </ul>
         </div>
         <br/>

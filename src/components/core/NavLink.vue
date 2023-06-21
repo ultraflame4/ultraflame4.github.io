@@ -2,11 +2,13 @@
 
     <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco" :target="newtab?'_blank':null">
         <Icon v-if="!noicon" icon="vaadin:hash"  class="icon"/>
+        <slot name="prefix"></slot>
         <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
 
             </slot>
         </div>
+        <slot name="suffix"></slot>
     </a>
     <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':null">
         <Icon v-if="!noicon" icon="vaadin:hash" class="icon"/>
@@ -74,7 +76,7 @@ a {
     display: flex;
     align-items: center;
     cursor: pointer;
-    height: fit-content;
+    height: 1.5rem;
     width: fit-content;
     overflow: visible;
     color: inherit;
