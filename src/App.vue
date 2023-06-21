@@ -2,7 +2,7 @@
     <div id="site-back">
         <NavigationTree id="navtree"/>
     </div>
-    <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="">
+    <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="" class="scrollable">
         <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
         <div id="page-content">
             <RouterView/>
@@ -18,7 +18,6 @@ import TopNav from "@/components/page/TopNav.vue";
 import {ref} from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
-import {useRouter} from "vue-router";
 
 
 const menuOpen = ref(false);

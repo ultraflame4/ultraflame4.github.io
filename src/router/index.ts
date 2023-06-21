@@ -3,6 +3,7 @@ import Home from "@/views/Home.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import Projects from "@/views/Projects.vue";
 import type {RouterOptions} from "vite-ssg";
+import { setupRouterScroller } from 'vue-router-better-scroller';
 
 export const routerOptions: RouterOptions = {
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,20 +17,7 @@ export const routerOptions: RouterOptions = {
             name: "projects",
             component: Projects
         }
-    ],
-    scrollBehavior(to, from, savedPosition) {
-        console.log(to)
-        if (!to.hash) {
-            window.scrollTo({top:0})
-            return
-        }
-        setTimeout(() => {
-            document.querySelector(to.hash)?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            })
-        }, 500)
-    }
+    ]
 }
 
 
@@ -39,6 +27,33 @@ export function setupRouter(router: Router) {
         if (from.path !== to.path) {
             PageNavTree.clear()
         }
+    })
+
+    setupRouterScroller(router, {
+        selectors:{
+            "#site-ctn": context => {
+                if (context.to.hash && context.type != "history"){
+
+                    const timer = setInterval(()=>{
+                        let e = document.querySelector(context.to.hash);
+                        if (e){
+                            clearInterval(timer)
+                            let el_top = e.getBoundingClientRect().top
+                            context.element.scrollBy({
+                                top: el_top - window.innerHeight/4,
+                                behavior: "smooth"
+                            })
+                        }
+
+                    },100)
+
+                    return false
+                }
+                return true
+
+            }
+        },
+        behavior: "smooth"
     })
 }
 

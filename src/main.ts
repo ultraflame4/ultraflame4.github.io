@@ -16,7 +16,7 @@ export const createApp = ViteSSG(
     // vue-router options
     routerOptions,
     // function to have custom setups
-    ({app, router, routes, isClient, initialState}) => {
+    ({app, router,  isClient}) => {
         if (isClient) {
             LoadAllSkills()
         }
