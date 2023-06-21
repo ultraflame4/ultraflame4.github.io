@@ -35,21 +35,18 @@
             <SectionTitle section_id="skills">Skills</SectionTitle>
             <div id="skills-section-layout">
                 <div id="skills-txt">
-                    <h1>🎓 What I know</h1>
-                    <p>These are the&nbsp;<wbr>
-                        <span style="color: lightgreen;">📜<b>skills</b></span>,&nbsp;<wbr>
-                        <span style="color: orchid;">🔤<b>languages</b></span>&nbsp;&amp;&nbsp;<wbr>
-                        <span style="color: peru;">🛠️<b>frameworks</b></span>,<br>
+                    <h1>What I know 📖</h1>
+                    <p>These are some of the&nbsp;<wbr>
+                        🛠️<b>skills</b>,&nbsp;<wbr>
+                        📜<b>languages</b>&nbsp;&amp;&nbsp;<wbr>
+                        🪜<b>frameworks</b>,<br>
                         <wbr>
-                        I've learned over the years. <br><br>The numbers below
-                        <wbr>
-                        represents my confidence 🔥
-                        <wbr>
-                        in each of them.
+                        I've picked up over the years.
                     </p>
                 </div>
                 <div id="skills-ctn">
-                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*700+1000*i" :offset="i*1.5" class="scrolling-skills">
+                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*700+1000*i" :offset="i*1.5"
+                                     class="scrolling-skills">
                         <ul id="skills-list">
                             <li v-for="i in repeatArray(shuffleArray(AllSkills), 2)">
                                 <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
@@ -99,8 +96,8 @@ function shuffleArray<T>(array_: T[]): T[] {
     return array
 }
 
-function repeatArray<T>(array:T[],count:number):T[]{
-    let a:T[] = []
+function repeatArray<T>(array: T[], count: number): T[] {
+    let a: T[] = []
     for (let i = 0; i < count; i++) {
         a = a.concat(array);
     }
@@ -176,7 +173,9 @@ function repeatArray<T>(array:T[],count:number):T[]{
     }
 
 }
-#skills{
+
+#skills {
+
     #skills-section-layout {
         display: flex;
         width: 100%;
@@ -187,8 +186,14 @@ function repeatArray<T>(array:T[],count:number):T[]{
         gap: 4rem;
 
 
-        #skills-txts {
-
+        #skills-txt {
+            h1{
+                margin-left: 0;
+                margin-right: 0;
+            }
+            p{
+                margin-left: 0;
+            }
         }
 
         #skills-ctn {
@@ -224,8 +229,8 @@ function repeatArray<T>(array:T[],count:number):T[]{
 }
 
 
-#featured{
-    #projects-container{
+#featured {
+    #projects-container {
         display: flex;
         list-style-type: none;
         justify-content: center;
@@ -235,7 +240,7 @@ function repeatArray<T>(array:T[],count:number):T[]{
         gap: 1rem;
     }
 
-    #btn-allprojects{
+    #btn-allprojects {
         border: 2px solid var(--accent);
         border-radius: 0.75rem;
         padding: 0.5rem 1rem;
@@ -245,7 +250,8 @@ function repeatArray<T>(array:T[],count:number):T[]{
         background-clip: border-box;
         --passive-color: var(--bg-0);
         font-size: 1em;
-        &:hover{
+
+        &:hover {
             color: white;
         }
     }
