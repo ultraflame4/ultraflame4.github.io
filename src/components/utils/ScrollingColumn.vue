@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="items" :style="`--delay:${props.delay??0}ms;--speed:${props.speed??15000}ms;`">
+        <div id="items" :style="`--delay:${props.delay??0}ms;--speed:${props.speed??15000}ms;--start-offset:${offset??0}%;`">
             <slot></slot>
         </div>
         <div id="overlay">
@@ -18,7 +18,8 @@ interface props{
     /**
      * Speed of the animation in ms
      */
-    speed?:number
+    speed?:number,
+    offset?: number
 }
 const props = defineProps<props>()
 </script>
@@ -42,22 +43,22 @@ const props = defineProps<props>()
 
 #items{
     height: fit-content;
-    --start-offset: calc(-45rem * var(--index));
+    --start-offset: 0%;
+    --start-pos: calc(-50% - var(--start-offset));
+    --end-pos: calc(0% - var(--start-offset));
     transform: translateY(var(--start-offset));
-    animation: scroll-anim var(--speed) infinite cubic-bezier(0.25, 0, 0.75, 1);
+    animation: scroll-anim var(--speed) infinite linear;
     animation-delay: var(--delay);
     opacity: 0.75;
 }
 @keyframes scroll-anim {
     0% {
-        transform: translateY(var(--start-offset));
+        transform: translateY(var(--start-pos));
     }
-    50% {
-        transform: translateY(-75%);
+    100% {
+        transform: translateY(var(--end-pos));
     }
-    100%{
-        transform: translateY(var(--start-offset));
-    }
+
 }
 
 </style>
