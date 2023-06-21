@@ -83,7 +83,7 @@ a:not(.no-hover):hover {
     //color: var(--accent);
     color: transparent;
     background-position-x: 0;
-    transition: background-position 200ms ease;
+    transition: background-position 300ms ease;
 }
 
 hr {
@@ -125,13 +125,19 @@ hr {
 /// </a>
 ///
 /// Use the --underline-mult css variable to control how thick the line is. (height: calc(0.25rem * var(--underline-mult));)
+/// Add additional .add-align class if the element does not look right (too high not centered)
 .parent_hover-underline {
     --line-thick: calc(2px * var(--underline-mult));
-    height: calc(var(--line-thick) + 5px + 1em);
+    --line-offset: 4px;
+    height: calc(var(--line-thick) + var(--line-offset) + 1em);
+
     display: inline-block;
     position: relative;
     overflow: visible;
-
+    margin-top: calc(var(--line-offset) / 2);
+    &.add-align{
+        margin-top: var(--line-offset);
+    }
 
     & > * {
         margin: 0;

@@ -1,17 +1,16 @@
 <template>
 
     <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco">
-        <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
-        <div class="parent_hover-underline">
+        <Icon v-if="!noicon" icon="vaadin:hash"  class="icon"/>
+        <div :class="`parent_hover-underline ${ props.align?'add-align':''}`">
             <slot>
 
             </slot>
         </div>
     </a>
-
     <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco">
-        <Icon v-if="!noicon" icon="vaadin:hash" :inline="true" class="icon"/>
-        <div class="parent_hover-underline">
+        <Icon v-if="!noicon" icon="vaadin:hash" class="icon"/>
+        <div :class="`parent_hover-underline ${ props.align?'add-align':''}`">
             <slot>
 
             </slot>
@@ -46,6 +45,10 @@ interface iprops {
      * Specifies the name to use and display
      */
     name?:string
+    /**
+     * If the navlinke does not look right (The words are too high) set this to true
+     */
+    align?:boolean
 }
 
 const props = defineProps<iprops>()
@@ -71,7 +74,7 @@ a {
     display: flex;
     align-items: center;
     cursor: pointer;
-    height: calc(1em + 1rem);
+    height: fit-content;
     width: fit-content;
     overflow: visible;
     color: inherit;
