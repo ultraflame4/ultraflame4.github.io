@@ -59,10 +59,8 @@
                 </li>
             </ul>
             <h1>Socials</h1>
-            <ul id="socials">
-                <li><SocialLink src="https://github.com/ultraflame4" icon="mdi:github">Github</SocialLink></li>
-                <li><SocialLink src="https://www.linkedin.com/in/chester-lai-yu-heng/" icon="mdi:linkedin">LinkedIn</SocialLink></li>
-            </ul>
+            <SocialLinks />
+
         </div>
         <br/>
     </section>
@@ -75,7 +73,7 @@
 <script setup lang="ts">
 
 import {PageNavTree} from "@/router/page_navtree";
-import SocialLink from "@/components/others/SocialLink.vue";
+import SocialLinks from "@/components/others/SocialLinks.vue";
 import NavLink from "@/components/core/NavLink.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import {useRouter} from "vue-router";

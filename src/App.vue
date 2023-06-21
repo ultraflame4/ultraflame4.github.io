@@ -20,7 +20,7 @@ import SectionTitle from "@/components/page/SectionTitle.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import NavLink from "@/components/core/NavLink.vue";
 import {useRouter} from "vue-router";
-import SocialLink from "@/components/others/SocialLink.vue";
+import SocialLink from "@/components/others/SocialLinks.vue";
 import Footer from "@/components/page/Footer.vue";
 
 const menuOpen = ref(false);

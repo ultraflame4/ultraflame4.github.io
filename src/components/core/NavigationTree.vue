@@ -26,6 +26,9 @@
                 <NavLink to="https://ultraflame4.github.io/SiteVersionPicker">Version Picker</NavLink>
             </li>
         </ul>
+        <hr/>
+        <SocialLinks/>
+
     </div>
 </template>
 
@@ -35,6 +38,7 @@ import {PageNavTree} from "@/router/page_navtree";
 import {Icon} from "@iconify/vue";
 import {useRouter} from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
+import SocialLinks from "@/components/others/SocialLinks.vue";
 
 const router = useRouter()
 
@@ -52,10 +56,13 @@ function shortenName(name: string, maxChars: number) {
 
 <style lang="scss" scoped>
 div {
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 1rem 0.25rem;
     display: flex;
     flex-direction: column;
 
+    & > *{
+        flex-shrink: 0;
+    }
 }
 
 h1 {
@@ -108,6 +115,7 @@ ul {
     height: fit-content;
     flex-grow: 1;
     margin-top: auto;
+    flex-shrink: 1;
 }
 
 </style>

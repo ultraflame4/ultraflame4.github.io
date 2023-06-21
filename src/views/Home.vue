@@ -111,7 +111,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
 #home-banner {
 
     position: relative;
-    height: calc(100vh - 10rem);
+    height: 100vh;
     width: 100%;
     z-index: 0;
 
