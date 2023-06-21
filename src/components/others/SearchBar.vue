@@ -2,7 +2,7 @@
     <div>
         <Icon icon="ph:magnifying-glass-bold" class="icon"/>
         <input placeholder="Search for titles, description, skills" v-model="inputValue"/>
-        {{ inputValue }}
+<!--        {{ inputValue }}-->
     </div>
 </template>
 
@@ -17,7 +17,7 @@ const inputValue = computed({
         return props.searchTerm;
     },
     set(v: string): void {
-        console.log(emit)
+        // console.log(emit)
         emit("update:searchTerm",v)
     }
 

@@ -1,41 +1,75 @@
 <template>
-<main id="all">
-    <section class="flex-center">
-        <SectionTitle section_id="all" name="Project List">
-            All Projects
-        </SectionTitle>
-        <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
+    <main id="all">
+        <section class="flex-center">
+            <SectionTitle section_id="all" name="Project List">
+                All Projects
+            </SectionTitle>
+            <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
 
-        <ul id="projects-container">
-            <li v-for="(p, index) in allProjects" :key="index">
-                <SectionTitle :section_id="`project-${index}`" :name="p.title" :heading="2" class="proj-header">
-                    {{p.title}}
-                </SectionTitle>
-                <ProjectCard :item="p" :id="`project-${index}`" class="proj-item"/>
-            </li>
-        </ul>
+            <ul id="projects-container">
+                <li v-for="(p, index) in searchResults" :key="index">
+                    <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
+                                  class="proj-header">
+                        {{ p.item.title }}
+                    </SectionTitle>
+                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item"/>
+                </li>
+            </ul>
 
-    </section>
+        </section>
 
-</main>
+    </main>
 </template>
 
 <script lang="ts" setup>
 import SectionTitle from "@/components/page/SectionTitle.vue";
-import {allProjects} from "@/assets/projects";
+import {allProjects, type proj_entry} from "@/assets/projects";
 import ProjectCard from "@/components/others/ProjectCard.vue";
 import SearchBar from "@/components/others/SearchBar.vue";
-import {ref} from "vue";
+import {type Ref, ref, watch} from "vue";
+import Fuse from "fuse.js";
+import FuseResult = Fuse.FuseResult;
 
 const searchTerm = ref("")
+
+const fuse = new Fuse(allProjects, {
+    includeScore: true,
+    useExtendedSearch: true,
+    shouldSort: true,
+    keys: [
+        {name: "title", weight: 0.5},
+        {name: "desc", weight: 0.2},
+        {name: "skillsUsed", weight: 0.3}
+    ],
+    findAllMatches: true
+
+})
+
+const allProjectsResults: FuseResult<proj_entry>[] = allProjects.map((value, index) => {
+    return {
+        item: value,
+        matches: [],
+        refIndex: 0,
+        score: 0
+    }
+})
+const searchResults: Ref<FuseResult<proj_entry>[]> = ref(allProjectsResults)
+watch(searchTerm, value => {
+    if (value.trim().length > 0) {
+        searchResults.value = fuse.search(value)
+        return
+    }
+    searchResults.value=allProjectsResults;
+})
 
 </script>
 
 <style lang="scss" scoped>
-#searchbar{
+#searchbar {
     width: 52rem;
 }
-#projects-container{
+
+#projects-container {
     width: fit-content;
     padding: 0;
     display: flex;
@@ -43,13 +77,14 @@ const searchTerm = ref("")
     align-items: center;
     justify-content: center;
 }
-.proj-header{
+
+.proj-header {
     width: fit-content;
     margin: 0 auto;
     display: none;
 }
 
-.proj-item{
+.proj-item {
     //--width: min(50rem, 80vw);
     //--height: min(30rem, 45vw);
 
