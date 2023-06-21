@@ -18,7 +18,9 @@ export const routerOptions: RouterOptions = {
         }
     ],
     scrollBehavior(to, from, savedPosition) {
+        console.log(to)
         if (!to.hash) {
+            window.scrollTo({top:0})
             return
         }
         setTimeout(() => {

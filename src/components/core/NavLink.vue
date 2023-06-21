@@ -22,10 +22,10 @@
 </template>
 
 <script lang="ts" setup>
-
 import {Icon} from "@iconify/vue";
 import {useRouter} from "vue-router";
 import {PageNavTree} from "@/router/page_navtree";
+import {Str} from "@supercharge/strings";
 
 const router = useRouter()
 
@@ -54,7 +54,14 @@ interface iprops {
 }
 
 const props = defineProps<iprops>()
-const fullpath = router.resolve(`${props.to ?? router.currentRoute.value.path}#${props.hash?.replace("#", "") ?? ''}`)
+
+let hash_ = ""
+if (props.hash) {
+    let a = Str(props.hash).ltrim("#").get()
+    hash_ = `#${a}`
+}
+
+const fullpath = router.resolve(`${props.to ?? router.currentRoute.value.path}${hash_}`);
 
 // console.log(fullpath, props)
 

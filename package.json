@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@supercharge/strings": "^2.0.0",
     "fuse.js": "^6.6.2",
     "sass": "^1.60.0",
     "tsx": "^3.12.7",
