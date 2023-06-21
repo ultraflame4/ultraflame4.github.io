@@ -1,13 +1,75 @@
 {
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/index.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/random-string-builder.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/random-string-config.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/random-string-generator.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/str.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/string-replacer.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/index.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/md5.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/native.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/nil.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/parse.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/regex.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/rng.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/sha1.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/stringify.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/v1.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/v3.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/v35.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/v4.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/v5.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/validate.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/version.js?commonjs-exports": [
+  ],
+  "\u0000__vite-browser-external:crypto?commonjs-proxy": [
+  ],
+  "\u0000commonjsHelpers.js": [
+  ],
   "\u0000plugin-vue:export-helper": [
   ],
   "\u0000vite/modulepreload-polyfill": [
   ],
   "../../../../../moon.webm": [
   ],
+  "__vite-browser-external:crypto": [
+  ],
   "index.html": [
   ],
   "node_modules/@iconify/vue/dist/iconify.mjs": [
+  ],
+  "node_modules/@supercharge/strings/dist/index.js": [
+  ],
+  "node_modules/@supercharge/strings/dist/random-string-builder.js": [
+  ],
+  "node_modules/@supercharge/strings/dist/random-string-config.js": [
+  ],
+  "node_modules/@supercharge/strings/dist/random-string-generator.js": [
+  ],
+  "node_modules/@supercharge/strings/dist/str.js": [
+  ],
+  "node_modules/@supercharge/strings/dist/string-replacer.js": [
   ],
   "node_modules/@unhead/dom/dist/index.mjs": [
   ],
@@ -41,11 +103,45 @@
   ],
   "node_modules/unhead/dist/index.mjs": [
   ],
+  "node_modules/uuid/dist/commonjs-browser/index.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/md5.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/native.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/nil.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/parse.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/regex.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/rng.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/sha1.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/stringify.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/v1.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/v3.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/v35.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/v4.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/v5.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/validate.js": [
+  ],
+  "node_modules/uuid/dist/commonjs-browser/version.js": [
+  ],
   "node_modules/vite-ssg/dist/index.mjs": [
   ],
   "node_modules/vite-ssg/dist/shared/vite-ssg.5912142e.mjs": [
   ],
   "node_modules/vite-ssg/dist/shared/vite-ssg.a009fbf1.mjs": [
+  ],
+  "node_modules/vue-router-better-scroller/dist/index.mjs": [
   ],
   "node_modules/vue-router/dist/vue-router.mjs": [
   ],
