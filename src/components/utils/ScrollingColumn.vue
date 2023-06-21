@@ -39,6 +39,7 @@ const props = defineProps<props>()
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 #items{
@@ -50,6 +51,10 @@ const props = defineProps<props>()
     animation: scroll-anim var(--speed) infinite linear;
     animation-delay: var(--delay);
     opacity: 0.75;
+
+    &:hover{
+        animation-play-state: paused;
+    }
 }
 @keyframes scroll-anim {
     0% {
