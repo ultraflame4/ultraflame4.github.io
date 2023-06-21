@@ -222,3 +222,16 @@ hr {
 [stuck] .floater-shadow{
     filter: drop-shadow(1px 1px 2px var(--bg-0-5));
 }
+
+.fadein{
+    animation: fadein 1s linear;
+    opacity: 100%;
+}
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}

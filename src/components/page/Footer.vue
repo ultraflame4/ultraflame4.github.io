@@ -65,6 +65,7 @@
         <br/>
     </section>
     <br/>
+    <div id="socials-float"><SocialLinks/></div>
     <footer class="flex-center">
         <small>© Copyright 2023, ultraflame4.github.io All rights reserved.</small>
         <br/>
@@ -101,14 +102,21 @@ footer {
 
 }
 
+#socials-float{
+    position: fixed;
+    right: 2rem;
+    bottom: 0;
+
+}
+
 #foot-directory {
     display: grid;
     grid-template-rows: min-content min-content;
 
     font-size: 0.75rem;
-    grid-column-gap: 5rem;
+    grid-column-gap: 6rem;
     justify-content: center;
-    //width: 32rem;
+
 
 
     h1 {

@@ -9,6 +9,7 @@
         </div>
         <hr/>
        <Footer/>
+
     </div>
 
 </template>
@@ -22,6 +23,8 @@ import NavLink from "@/components/core/NavLink.vue";
 import {useRouter} from "vue-router";
 import SocialLink from "@/components/others/SocialLinks.vue";
 import Footer from "@/components/page/Footer.vue";
+import TopSticky from "@/components/core/TopSticky.vue";
+import SocialLinks from "@/components/others/SocialLinks.vue";
 
 const menuOpen = ref(false);
 const isClosing = ref(false);

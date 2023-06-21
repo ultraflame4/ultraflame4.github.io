@@ -1,9 +1,9 @@
 <template>
     <div id="home-banner" v-iratio="bannerIRatio">
-        <video autoplay muted loop preload="auto" class="iratio-parallax">
+        <video autoplay muted loop preload="auto" class="iratio-parallax fadein" style="filter: brightness(50%)">
             <source src="/moon.webm">
         </video>
-        <div id="banner-content">
+        <div id="banner-content" class="fadein">
             <h1><span id="handwave">👋</span> Hello ! &nbsp;</h1>
             <h2>I'm Chester</h2>
             <p>Welcome to my little corner of the internet!</p>

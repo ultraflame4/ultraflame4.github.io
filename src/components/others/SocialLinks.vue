@@ -13,7 +13,7 @@ import {Icon} from "@iconify/vue";
 
 <style scoped lang="scss">
 a {
-    font-size: 2.35rem;
+    font-size: 2.35em;
     &::after{
         content: "" !important;
     }
