@@ -35,6 +35,8 @@
   ],
   "node_modules/@vueuse/head/dist/index.mjs": [
   ],
+  "node_modules/fuse.js/dist/fuse.esm.js": [
+  ],
   "node_modules/hookable/dist/index.mjs": [
   ],
   "node_modules/unhead/dist/index.mjs": [
@@ -98,6 +100,18 @@
   "src/components/others/SkillCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
   "src/components/others/SkillCard.vue?vue&type=style&index=0&scoped=e1c2237b&lang.scss": [
+  ],
+  "src/components/others/SocialLinks.vue": [
+  ],
+  "src/components/others/SocialLinks.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/others/SocialLinks.vue?vue&type=style&index=0&scoped=8dbc395a&lang.scss": [
+  ],
+  "src/components/page/Footer.vue": [
+  ],
+  "src/components/page/Footer.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=6566d4b9&lang.scss": [
   ],
   "src/components/page/SectionTitle.vue": [
   ],
