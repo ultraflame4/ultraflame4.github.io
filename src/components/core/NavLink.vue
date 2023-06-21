@@ -1,16 +1,16 @@
 <template>
 
-    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco">
+    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco" :target="newtab?'_blank':null">
         <Icon v-if="!noicon" icon="vaadin:hash"  class="icon"/>
-        <div :class="`parent_hover-underline ${ props.align?'add-align':''}`">
+        <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
 
             </slot>
         </div>
     </a>
-    <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco">
+    <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':null">
         <Icon v-if="!noicon" icon="vaadin:hash" class="icon"/>
-        <div :class="`parent_hover-underline ${ props.align?'add-align':''}`">
+        <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
 
             </slot>
@@ -46,9 +46,9 @@ interface iprops {
      */
     name?:string
     /**
-     * If the navlinke does not look right (The words are too high) set this to true
+     * Opens the url in a new tab
      */
-    align?:boolean
+    newtab?:boolean
 }
 
 const props = defineProps<iprops>()
@@ -82,7 +82,8 @@ a {
     white-space: nowrap;
 
     div{
-
+        //display: flex;
+        //align-items: center;
     }
 }
 
