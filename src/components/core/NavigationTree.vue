@@ -1,16 +1,24 @@
 <template>
     <div>
-        <h1>Index</h1>
+        <h1>This Page</h1>
         <ul id="page-index">
             <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1">
                 <NavLink :hash="router.resolve(link.to).hash" :noicon="link.level>1">{{shortenName(link.name,32)}}</NavLink>
             </li>
         </ul>
         <hr/>
-        <h1>Others</h1>
-        <ul id="other-pages">
+        <h1>Index</h1>
+        <ul id="index-pages">
             <li v-for="link in router.options.routes">
                 <NavLink :to="link.path">{{link.name}}</NavLink>
+            </li>
+        </ul>
+        <br/>
+<!--        <hr/>-->
+        <h1>Others</h1>
+        <ul>
+            <li>
+                <NavLink to="https://ultraflame4.github.io/SiteVersionPicker">Version Picker</NavLink>
             </li>
         </ul>
     </div>
@@ -46,7 +54,8 @@ div{
 }
 h1{
     font-family: "Poppins";
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
+    font-size: 1.75rem;
     text-transform: uppercase;
     margin: 0;
 }

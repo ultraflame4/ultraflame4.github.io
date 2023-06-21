@@ -50,18 +50,18 @@
             </p>
             <div id="foot-directory">
                 <h1>This Page</h1>
-                <ul id="thispage-list">
+                <ul>
                     <li v-for="link in PageNavTree.links.value">
                         <NavLink :hash="router.resolve(link.to).hash">{{ link.name }}</NavLink>
                     </li>
                 </ul>
-                <h1>Sitewide</h1>
-                <ul id="thispage-list">
+                <h1>index</h1>
+                <ul>
                     <li v-for="link in router.options.routes">
                         <NavLink :to="link.path">{{ link.name }}</NavLink>
                     </li>
                 </ul>
-                <h1>Other Versions</h1>
+                <h1>Others</h1>
                 <NavLink to="https://ultraflame4.github.io/SiteVersionPicker">Version Picker</NavLink>
             </div>
             <br/>
