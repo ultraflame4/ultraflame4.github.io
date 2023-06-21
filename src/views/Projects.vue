@@ -28,7 +28,6 @@ import ProjectCard from "@/components/others/ProjectCard.vue";
 import SearchBar from "@/components/others/SearchBar.vue";
 import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
-import FuseResult = Fuse.FuseResult;
 
 const searchTerm = ref("")
 
@@ -45,7 +44,7 @@ const fuse = new Fuse(allProjects, {
 
 })
 
-const allProjectsResults: FuseResult<proj_entry>[] = allProjects.map((value, index) => {
+const allProjectsResults: Fuse.FuseResult<proj_entry>[] = allProjects.map((value, index) => {
     return {
         item: value,
         matches: [],
@@ -53,7 +52,7 @@ const allProjectsResults: FuseResult<proj_entry>[] = allProjects.map((value, ind
         score: 0
     }
 })
-const searchResults: Ref<FuseResult<proj_entry>[]> = ref(allProjectsResults)
+const searchResults: Ref<Fuse.FuseResult<proj_entry>[]> = ref(allProjectsResults)
 watch(searchTerm, value => {
     if (value.trim().length > 0) {
         searchResults.value = fuse.search(value)

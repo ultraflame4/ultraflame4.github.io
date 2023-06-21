@@ -1,6 +1,6 @@
 <template>
 
-    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco" :target="newtab?'_blank':null">
+    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco" :target="newtab?'_blank':undefined">
         <Icon v-if="!noicon" icon="vaadin:hash"  class="icon"/>
         <slot name="prefix"></slot>
         <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
@@ -10,7 +10,7 @@
         </div>
         <slot name="suffix"></slot>
     </a>
-    <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':null">
+    <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':undefined">
         <Icon v-if="!noicon" icon="vaadin:hash" class="icon"/>
         <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
