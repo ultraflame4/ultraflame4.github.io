@@ -4,7 +4,7 @@
         <SectionTitle section_id="all" name="Project List">
             All Projects
         </SectionTitle>
-        <SearchBar id="searchbar"/>
+        <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
 
         <ul id="projects-container">
             <li v-for="(p, index) in allProjects" :key="index">
@@ -25,6 +25,10 @@ import SectionTitle from "@/components/page/SectionTitle.vue";
 import {allProjects} from "@/assets/projects";
 import ProjectCard from "@/components/others/ProjectCard.vue";
 import SearchBar from "@/components/others/SearchBar.vue";
+import {ref} from "vue";
+
+const searchTerm = ref("")
+
 </script>
 
 <style lang="scss" scoped>
