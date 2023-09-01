@@ -15,15 +15,20 @@
       </ul>
     </div>
     <div class="header-center"></div>
-    <ul class="floater-shadow header-item">
-      <template v-for="link in PageNavTree.links.value">
-        <li v-if="link.level==0">
-          <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{ link.name }}
+
+    <ul class="floater-shadow header-item" id="index-pages">
+      <template v-for="link in router.options.routes">
+        <li>
+          <RouterLink :to="link.path"
+                      class="no-deco"
+                      active-class="active">
+            {{ link.name }}
           </RouterLink>
         </li>
 
       </template>
     </ul>
+
     <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen" class="floater-shadow header-item">
       <Icon icon="ic:baseline-menu"/>
     </button>
@@ -33,8 +38,11 @@
 
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
-import {type Ref, watch} from "vue";
 import {PageNavTree} from "@/router/page_navtree";
+import {useRouter} from "vue-router";
+import NavLink from "@/components/core/NavLink.vue";
+
+const router = useRouter()
 
 const emit = defineEmits<{
   (e: 'menuToggle'): void
@@ -63,7 +71,7 @@ header {
   background: transparent;
   font-size: 1.25rem;
   pointer-events: none;
-  gap: 0.74rem;
+  gap: 0.5rem;
 
   & > * {
     margin: 0;
@@ -72,7 +80,8 @@ header {
 
   &[stuck] {
     font-size: 0.95rem;
-    & .header-item{
+
+    & .header-item {
       background: var(--bg-1);
       border-color: var(--accent);
     }
@@ -80,12 +89,12 @@ header {
   }
 }
 
-.header-center{
+.header-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.header-item{
+.header-item {
   display: flex;
   height: 100%;
   align-items: center;
@@ -109,11 +118,43 @@ header {
   }
 }
 
-.header-item ul,ul.header-item{
+.header-item ul, ul.header-item {
   gap: 0.5em;
   display: flex;
   align-items: center;
+
   list-style-type: none;
+
+  & li {
+    font-size: 0.75em;
+    display: flex;
+    align-items: center;
+
+    &:has(.parent_hover-underline) {
+      position: relative;
+      bottom: 1px;
+
+      [stuck] & {
+        bottom: 0;
+        top: 1px; // Alignment
+      }
+
+      & > a {
+
+        --underline-mult: 1.1;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-family: "Poppins";
+        text-transform: uppercase;
+      }
+
+      &:hover > a {
+        color: #fff;
+      }
+    }
+
+  }
+
 }
 
 #header-left {
@@ -121,6 +162,11 @@ header {
     position: relative;
     transform: translateX(var(--navtree-width));
   }
+
+  & li > a {
+    color: var(--txt-a-tinted);
+  }
+
   & > * {
     margin: 0;
   }
@@ -139,35 +185,38 @@ header {
     color: var(--accent);
   }
 
-  & > li {
-    display: flex;
-    font-size: 0.75em;
-    align-items: center;
-    position: relative;
-    bottom: 2px;
-    [stuck] &{
-      bottom: 0;
-      top: 1px; // Alignment
-    }
-
-    & > a {
-      color: var(--txt-a-tinted);
-      --underline-mult: 1.1;
-      letter-spacing: 0.05rem;
-      font-weight: 700;
-      font-family: "Poppins";
-      text-transform: uppercase;
-
-    }
-
-    &:hover > a {
-      color: #fff;
-    }
-  }
 
   @media only screen and (max-width: 1000px) {
     display: none;
   }
+}
+
+#index-pages {
+  gap: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  & li {
+    overflow: visible;
+  }
+
+  & li > a {
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: font-size 100ms linear, font-weight 100ms linear, background-position 300ms ease;
+
+    &.active {
+
+      color: var(--active-color);
+      position: relative;
+
+      font-weight: 800;
+      font-size: 1.1em;
+    }
+  }
+
 }
 
 #menu-btn {
@@ -181,7 +230,7 @@ header {
 }
 
 #menu-btn:active {
-  transition:  transform 100ms ease;
+  transition: transform 100ms ease;
   transform: scale(0.8);
 }
 

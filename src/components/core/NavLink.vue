@@ -12,7 +12,7 @@
     </a>
     <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':undefined">
         <Icon v-if="!noicon" icon="vaadin:hash" class="icon"/>
-        <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
+        <div :class="`parent_hover-underline add-align`">
             <slot>
 
             </slot>
