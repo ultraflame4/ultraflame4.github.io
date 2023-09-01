@@ -192,6 +192,11 @@ header {
 }
 
 #index-pages {
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+
+
   gap: 1.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
