@@ -2,7 +2,7 @@
     <div>
         <h1>Sitemap</h1>
         <hr/>
-        <h1>Index</h1>
+        <h1>Main</h1>
         <ul id="index-pages">
             <li v-for="link in router.options.routes">
                 <NavLink :to="link.path">{{ link.name }}</NavLink>
@@ -11,7 +11,7 @@
 
         <hr/>
 
-        <h1>This Page</h1>
+        <h1>Links</h1>
         <ul id="page-index">
             <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1">
                 <NavLink :hash="router.resolve(link.to).hash" :noicon="link.level>1">{{ shortenName(link.name, 32) }}

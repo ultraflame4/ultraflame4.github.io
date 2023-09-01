@@ -61,7 +61,7 @@ header {
   width: auto;
   padding: 0.75rem 1rem;
   box-sizing: content-box;
-  height: 2.75rem;
+  height: 2.9rem;
   transition: all 500ms ease, padding 500ms ease;
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@ header {
   background: transparent;
   box-sizing: border-box;
   border: 2px solid transparent;
-  padding: 0 0.75rem;
+  padding: 0 0.9rem;
   transition: border 500ms ease, transform 500ms ease;
   border-radius: 0.9rem;
 
@@ -126,7 +126,7 @@ header {
   list-style-type: none;
 
   & li {
-    font-size: 0.75em;
+    font-size: 0.9em;
     display: flex;
     align-items: center;
 
@@ -140,10 +140,9 @@ header {
       }
 
       & > a {
-
         --underline-mult: 1.1;
-        letter-spacing: 0.05rem;
-        font-weight: 700;
+        letter-spacing: 0.075rem;
+        font-weight: 600;
         font-family: "Poppins";
         text-transform: uppercase;
       }
@@ -162,8 +161,11 @@ header {
     position: relative;
     transform: translateX(var(--navtree-width));
   }
+  h1{
+    font-size: 1.1em;
+  }
 
-  & li > a {
+  & li > a:not(:hover) {
     color: var(--txt-a-tinted);
   }
 
@@ -209,9 +211,11 @@ header {
 
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.075rem;
     transition: font-size 100ms linear, font-weight 100ms linear, background-position 300ms ease;
-
+    [stuck] &{
+      font-weight: 700;
+    }
     &.active {
 
       color: var(--active-color);
