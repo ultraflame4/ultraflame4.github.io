@@ -40,7 +40,7 @@ const props = defineProps<iProps>()
 <style lang="scss" scoped>
 h1 {
     background-color: var(--bg-0);
-    //transition: font-size 1s ease;
+    padding: 1rem;
 }
 
 [stuck] > div > h1 {
@@ -49,7 +49,7 @@ h1 {
     font-size: 1em;
 
     position: relative;
-    top: 1px;
+
 }
 
 
