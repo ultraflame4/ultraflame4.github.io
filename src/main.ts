@@ -8,6 +8,7 @@ import "vyue42/lib/index.css"
 import {vyue42} from "vyue42";
 import {LoadAllSkills} from "@/tools/skills";
 import {ViteSSG} from "vite-ssg";
+import {LoadAllProjects} from "@/tools/api";
 
 // `export const createApp` is required instead of the original `createApp(App).mount('#app')`
 export const createApp = ViteSSG(
@@ -19,6 +20,7 @@ export const createApp = ViteSSG(
     ({app, router,  isClient}) => {
         if (isClient) {
             LoadAllSkills()
+            LoadAllProjects()
         }
         app.use(vyue42);
         setupRouter(router)

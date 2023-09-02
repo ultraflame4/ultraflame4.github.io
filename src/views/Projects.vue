@@ -23,15 +23,16 @@
 
 <script lang="ts" setup>
 import SectionTitle from "@/components/page/SectionTitle.vue";
-import {allProjects, type proj_entry} from "@/assets/projects";
 import ProjectCard from "@/components/others/ProjectCard.vue";
 import SearchBar from "@/components/others/SearchBar.vue";
 import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
+import {AllProjects} from "@/tools/api";
+import type {proj_entry} from "@/assets/projects";
 
 const searchTerm = ref("")
 
-const fuse = new Fuse(allProjects, {
+const fuse = new Fuse(AllProjects.value, {
     includeScore: true,
     useExtendedSearch: true,
     shouldSort: true,
@@ -44,7 +45,7 @@ const fuse = new Fuse(allProjects, {
 
 })
 
-const allProjectsResults: Fuse.FuseResult<proj_entry>[] = allProjects.map((value, index) => {
+const allProjectsResults: Fuse.FuseResult<proj_entry>[] = AllProjects.value.map((value, index) => {
     return {
         item: value,
         matches: [],

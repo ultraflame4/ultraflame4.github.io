@@ -60,7 +60,7 @@
         <section id="featured" class="flex-center">
             <SectionTitle section_id="featured">Featured Projects</SectionTitle>
             <ul id="projects-container">
-                <ProjectCard :item="p" v-for="p in featuredProjects"/>
+                <ProjectCard :item="p" v-for="p in FeaturedProjects"/>
             </ul>
             <RouterLink id="btn-allprojects" to="projects">all Projects</RouterLink>
 
@@ -75,9 +75,8 @@ import SkillCard from "@/components/others/SkillCard.vue";
 import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/others/ProjectCard.vue";
-import {featuredProjects} from "@/assets/projects";
 import SectionTitle from "@/components/page/SectionTitle.vue";
-
+import {FeaturedProjects} from "@/tools/api";
 
 const bannerIRatio = new iRatioObject({
     exit: false,
