@@ -87,9 +87,13 @@
   ],
   "node_modules/@vueuse/head/dist/index.mjs": [
   ],
+  "node_modules/dompurify/dist/purify.es.js": [
+  ],
   "node_modules/fuse.js/dist/fuse.esm.js": [
   ],
   "node_modules/hookable/dist/index.mjs": [
+  ],
+  "node_modules/marked/lib/marked.esm.js": [
   ],
   "node_modules/unhead/dist/index.mjs": [
   ],
@@ -171,7 +175,7 @@
   ],
   "src/components/others/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/others/ProjectCard.vue?vue&type=style&index=0&scoped=512e7acf&lang.scss": [
+  "src/components/others/ProjectCard.vue?vue&type=style&index=0&scoped=75039cf9&lang.scss": [
   ],
   "src/components/others/SearchBar.vue": [
   ],
@@ -196,6 +200,12 @@
   "src/components/page/Footer.vue?vue&type=script&setup=true&lang.ts": [
   ],
   "src/components/page/Footer.vue?vue&type=style&index=0&scoped=343cb9c1&lang.scss": [
+  ],
+  "src/components/page/MarkdownView.vue": [
+  ],
+  "src/components/page/MarkdownView.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/page/MarkdownView.vue?vue&type=style&index=0&scoped=536103b2&lang.scss": [
   ],
   "src/components/page/SectionTitle.vue": [
   ],
@@ -237,6 +247,6 @@
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=87e8ffd7&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=da669444&lang.scss": [
   ]
 }
