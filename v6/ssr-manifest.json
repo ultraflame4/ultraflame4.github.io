@@ -171,11 +171,15 @@
   ],
   "src/components/core/TopSticky.vue?vue&type=style&index=0&scoped=4ad84e7f&lang.scss": [
   ],
+  "src/components/others/LoadingSpinner.vue": [
+  ],
+  "src/components/others/LoadingSpinner.vue?vue&type=style&index=0&scoped=21b7772b&lang.scss": [
+  ],
   "src/components/others/ProjectCard.vue": [
   ],
   "src/components/others/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/others/ProjectCard.vue?vue&type=style&index=0&scoped=75039cf9&lang.scss": [
+  "src/components/others/ProjectCard.vue?vue&type=style&index=0&scoped=02a0580c&lang.scss": [
   ],
   "src/components/others/SearchBar.vue": [
   ],
@@ -201,23 +205,23 @@
   ],
   "src/components/page/Footer.vue?vue&type=style&index=0&scoped=343cb9c1&lang.scss": [
   ],
-  "src/components/page/MarkdownView.vue": [
-  ],
-  "src/components/page/MarkdownView.vue?vue&type=script&setup=true&lang.ts": [
-  ],
-  "src/components/page/MarkdownView.vue?vue&type=style&index=0&scoped=536103b2&lang.scss": [
-  ],
   "src/components/page/SectionTitle.vue": [
   ],
   "src/components/page/SectionTitle.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/SectionTitle.vue?vue&type=style&index=0&scoped=e9743179&lang.scss": [
+  "src/components/page/SectionTitle.vue?vue&type=style&index=0&scoped=3ba94671&lang.scss": [
   ],
   "src/components/page/TopNav.vue": [
   ],
   "src/components/page/TopNav.vue?vue&type=script&setup=true&lang.ts": [
   ],
   "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=bc2a63a1&lang.scss": [
+  ],
+  "src/components/utils/MarkdownView.vue": [
+  ],
+  "src/components/utils/MarkdownView.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=bb2f7038&lang.scss": [
   ],
   "src/components/utils/ScrollingColumn.vue": [
   ],
@@ -231,9 +235,9 @@
   ],
   "src/router/page_navtree.ts": [
   ],
-  "src/tools/api.ts": [
-  ],
   "src/tools/markdown-tools.ts": [
+  ],
+  "src/tools/projects_api.ts": [
   ],
   "src/tools/skills.ts": [
   ],
@@ -241,12 +245,12 @@
   ],
   "src/views/Home.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Home.vue?vue&type=style&index=0&scoped=4f3917b2&lang.scss": [
+  "src/views/Home.vue?vue&type=style&index=0&scoped=24b21c22&lang.scss": [
   ],
   "src/views/Projects.vue": [
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=da669444&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=21523bef&lang.scss": [
   ]
 }
