@@ -7,7 +7,7 @@ import {extractLinksFromMd} from "@/tools/markdown-tools";
 const apiServerDomain = import.meta.env.DEV ? (import.meta.env.LOCAL_API_SERVER ?? "http://localhost:3000") : (import.meta.env.PRODUCTION_API_SERVER ?? "https://ultraflame4-github-io-backendapi.vercel.app")
 console.log("Using api server at:", apiServerDomain)
 
-export const AllProjects = ref<proj_entry[]>(allProjects)
+export const AllProjects = ref<proj_entry[]>([])
 export const FeaturedProjects = ref<proj_entry[]>(featuredProjects)
 
 
@@ -22,8 +22,12 @@ interface ProjectsApiJson{
     }>
 
 }
-
-export async function LoadAllProjects(): Promise<void> {
+export const status = {
+    loading: false,
+    isfallback: false
+}
+async function _LoadAllProjects(): Promise<void> {
+    status.loading=true
     const url_path = new URL("/api/projects",apiServerDomain).toString()
     console.log("Requesting projects at path",url_path)
 
@@ -59,4 +63,18 @@ export async function LoadAllProjects(): Promise<void> {
 
 
     FeaturedProjects.value = featuredProjects
+}
+
+export async function LoadAllProjects() {
+    try{
+        await _LoadAllProjects()
+    }
+    catch (e) {
+        console.error(e)
+        console.warn("UNABLE TO LOAD PROJECTS. USING FALLBACK!")
+        status.loading=false
+        status.isfallback=true
+        AllProjects.value = allProjects
+
+    }
 }

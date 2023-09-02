@@ -76,7 +76,7 @@ import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/others/ProjectCard.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
-import {FeaturedProjects} from "@/tools/api";
+import {FeaturedProjects} from "@/tools/projects_api";
 
 const bannerIRatio = new iRatioObject({
     exit: false,

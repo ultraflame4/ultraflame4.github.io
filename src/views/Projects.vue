@@ -27,7 +27,7 @@ import ProjectCard from "@/components/others/ProjectCard.vue";
 import SearchBar from "@/components/others/SearchBar.vue";
 import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
-import {AllProjects} from "@/tools/api";
+import {AllProjects} from "@/tools/projects_api";
 import type {proj_entry} from "@/assets/projects";
 
 const searchTerm = ref("")

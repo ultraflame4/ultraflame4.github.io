@@ -8,7 +8,7 @@ import "vyue42/lib/index.css"
 import {vyue42} from "vyue42";
 import {LoadAllSkills} from "@/tools/skills";
 import {ViteSSG} from "vite-ssg";
-import {LoadAllProjects} from "@/tools/api";
+import {LoadAllProjects} from "@/tools/projects_api";
 
 // `export const createApp` is required instead of the original `createApp(App).mount('#app')`
 export const createApp = ViteSSG(
