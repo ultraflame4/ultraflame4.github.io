@@ -1,6 +1,7 @@
 import {allProjects, featuredProjects, type proj_entry} from "@/assets/projects";
 import {ref} from "vue";
 import type {GetDatabaseResponse, PageObjectResponse} from "@notionhq/client/build/src/api-endpoints";
+import type {MdStringObject} from "notion-to-md/build/types";
 
 const apiServerDomain = import.meta.env.DEV ? (import.meta.env.LOCAL_API_SERVER ?? "http://localhost:3000") : (import.meta.env.PRODUCTION_API_SERVER ?? "https://ultraflame4-github-io-backendapi.vercel.app")
 console.log("Using api server at:", apiServerDomain)
@@ -16,7 +17,7 @@ interface ProjectsApiJson{
         title: string
         cover:string,
         properties: PageObjectResponse["properties"],
-        content_md: string
+        content_md: MdStringObject
     }>
 
 }
@@ -37,7 +38,7 @@ export async function LoadAllProjects(): Promise<void> {
         return {
             title,
             bannerSrc: item.cover,
-            desc: item.content_md,
+            desc: Object.values(item.content_md).join("\n"),
             skillsUsed: tags
         };
     })
