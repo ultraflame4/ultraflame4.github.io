@@ -76,7 +76,7 @@ watch([searchTerm, AllProjects], ([search_term,_]) => {
 
 <style lang="scss" scoped>
 #searchbar {
-    width: 52rem;
+    width: min(50rem, 90vw);
 }
 
 #projects-container {
@@ -95,7 +95,7 @@ watch([searchTerm, AllProjects], ([search_term,_]) => {
 }
 
 .proj-item {
-    --width: min(50rem, 90vw);
+    --width: min(55rem, 90vw);
     //--height: min(30rem, 100vw);
 
 }
