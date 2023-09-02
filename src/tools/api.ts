@@ -34,9 +34,11 @@ export async function LoadAllProjects(): Promise<void> {
         const title = title_property.type == "title" ? title_property.title.map(x=>x.plain_text).join(" ") : "UnNamed - Could not get title"
         let tags_property = item.properties["Tags"]
         const tags = tags_property.type == "multi_select" ? tags_property.multi_select.map(x=>x.name) : ["untagged"]
-
+        let source_property = item.properties["Source"]
+        const source = source_property.type == "url" ? source_property.url : null
         return {
             title,
+            source:source??undefined,
             bannerSrc: item.cover,
             desc: Object.values(item.content_md).join("\n"),
             skillsUsed: tags

@@ -66,7 +66,7 @@ const props = defineProps<{ item: proj_entry }>()
     height: var(--height);
     display: grid;
     grid-template-columns: 5fr 4fr;
-    grid-template-rows: auto min-content;
+    grid-template-rows: minmax(0,1fr) auto;
     box-sizing: border-box;
     grid-gap: 1rem;
 
@@ -92,7 +92,6 @@ const props = defineProps<{ item: proj_entry }>()
         border-color: var(--accent);
     }
 
-
 }
 
 .project-details {
@@ -101,10 +100,12 @@ const props = defineProps<{ item: proj_entry }>()
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    height: 100%;
 
     & > h3 {
         margin: 0;
         font-size: 1.35rem;
+        flex-shrink: 0;
     }
 
     & > p {
@@ -114,9 +115,16 @@ const props = defineProps<{ item: proj_entry }>()
         letter-spacing: 0.2px;
         font-family: "Open sans";
         white-space: pre-wrap;
+        flex-shrink: 1;
+        //overflow-y: scroll;
+        display: -webkit-box;
+        -webkit-line-clamp: 12;
+        -webkit-box-orient: vertical;
+
     }
 
     & > .project-links {
+        flex-shrink: 0;
         padding: 0;
         list-style-type: none;
         display: flex;
