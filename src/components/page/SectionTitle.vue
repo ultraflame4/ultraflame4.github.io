@@ -47,7 +47,9 @@ h1 {
     color: var(--txt-a-tinted);
     background: none;
     font-size: 1em;
-
+    @media only screen and (max-width: 650px) {
+        font-size: 1.25em;
+    }
     position: relative;
 
 }

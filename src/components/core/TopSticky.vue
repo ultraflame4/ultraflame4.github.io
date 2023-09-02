@@ -27,12 +27,15 @@
 
 .item {
     border-radius: 1rem;
-    height: 2.75rem;
+    height: 2.9rem;
     display: flex;
     align-items: center;
     border: 2px solid transparent;
     transition: inherit;
-
+    @media only screen and (max-width: 650px) {
+        font-size: 1.5rem;
+        height: 3.5rem;
+    }
 }
 
 .ctn[stuck] > .item {
