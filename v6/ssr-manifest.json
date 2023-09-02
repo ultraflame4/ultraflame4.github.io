@@ -233,6 +233,10 @@
   ],
   "src/router/page_navtree.ts": [
   ],
+  "src/tools/api.ts": [
+  ],
+  "src/tools/markdown-tools.ts": [
+  ],
   "src/tools/skills.ts": [
   ],
   "src/views/Home.vue": [
