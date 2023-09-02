@@ -43,7 +43,7 @@
   ],
   "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/version.js?commonjs-exports": [
   ],
-  "\u0000__vite-browser-external:crypto?commonjs-proxy": [
+  "\u0000__vite-browser-external?commonjs-proxy": [
   ],
   "\u0000commonjsHelpers.js": [
   ],
@@ -53,7 +53,7 @@
   ],
   "../../../../../moon.webm": [
   ],
-  "__vite-browser-external:crypto": [
+  "__vite-browser-external": [
   ],
   "index.html": [
   ],
@@ -76,16 +76,6 @@
   "node_modules/@unhead/shared/dist/index.mjs": [
   ],
   "node_modules/@unhead/vue/dist/shared/vue.505b826e.mjs": [
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/const.js": [
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/env.js": [
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/index.js": [
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/proxy.js": [
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/time.js": [
   ],
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
   ],
@@ -145,8 +135,6 @@
   ],
   "node_modules/vue-router/dist/vue-router.mjs": [
   ],
-  "node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-  ],
   "node_modules/vyue42/lib/index.css": [
   ],
   "node_modules/vyue42/lib/vyue42.es.js": [
@@ -155,7 +143,7 @@
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/App.vue?vue&type=style&index=0&scoped=7a7a37b1&lang.scss": [
+  "src/App.vue?vue&type=style&index=0&scoped=14cefa55&lang.scss": [
   ],
   "src/assets/projects.ts": [
   ],
@@ -167,65 +155,65 @@
   ],
   "src/components/core/NavLink.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/NavLink.vue?vue&type=style&index=0&scoped=a804aac5&lang.scss": [
+  "src/components/core/NavLink.vue?vue&type=style&index=0&scoped=fe5b5a18&lang.scss": [
   ],
   "src/components/core/NavigationTree.vue": [
   ],
   "src/components/core/NavigationTree.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/NavigationTree.vue?vue&type=style&index=0&scoped=c9335601&lang.scss": [
+  "src/components/core/NavigationTree.vue?vue&type=style&index=0&scoped=c42f17f7&lang.scss": [
   ],
   "src/components/core/TopSticky.vue": [
   ],
-  "src/components/core/TopSticky.vue?vue&type=style&index=0&scoped=a46d48c8&lang.scss": [
+  "src/components/core/TopSticky.vue?vue&type=style&index=0&scoped=4ad84e7f&lang.scss": [
   ],
   "src/components/others/ProjectCard.vue": [
   ],
   "src/components/others/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/others/ProjectCard.vue?vue&type=style&index=0&scoped=efe96bd0&lang.scss": [
+  "src/components/others/ProjectCard.vue?vue&type=style&index=0&scoped=512e7acf&lang.scss": [
   ],
   "src/components/others/SearchBar.vue": [
   ],
   "src/components/others/SearchBar.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/others/SearchBar.vue?vue&type=style&index=0&scoped=59bb72c4&lang.scss": [
+  "src/components/others/SearchBar.vue?vue&type=style&index=0&scoped=c8bdcc01&lang.scss": [
   ],
   "src/components/others/SkillCard.vue": [
   ],
   "src/components/others/SkillCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/others/SkillCard.vue?vue&type=style&index=0&scoped=e1c2237b&lang.scss": [
+  "src/components/others/SkillCard.vue?vue&type=style&index=0&scoped=a0b9e02e&lang.scss": [
   ],
   "src/components/others/SocialLinks.vue": [
   ],
   "src/components/others/SocialLinks.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/others/SocialLinks.vue?vue&type=style&index=0&scoped=8dbc395a&lang.scss": [
+  "src/components/others/SocialLinks.vue?vue&type=style&index=0&scoped=5c1c02f3&lang.scss": [
   ],
   "src/components/page/Footer.vue": [
   ],
   "src/components/page/Footer.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=6566d4b9&lang.scss": [
+  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=343cb9c1&lang.scss": [
   ],
   "src/components/page/SectionTitle.vue": [
   ],
   "src/components/page/SectionTitle.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/SectionTitle.vue?vue&type=style&index=0&scoped=e229f535&lang.scss": [
+  "src/components/page/SectionTitle.vue?vue&type=style&index=0&scoped=e9743179&lang.scss": [
   ],
   "src/components/page/TopNav.vue": [
   ],
   "src/components/page/TopNav.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=0d3e6294&lang.scss": [
+  "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=bc2a63a1&lang.scss": [
   ],
   "src/components/utils/ScrollingColumn.vue": [
   ],
   "src/components/utils/ScrollingColumn.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/utils/ScrollingColumn.vue?vue&type=style&index=0&scoped=41c40beb&lang.scss": [
+  "src/components/utils/ScrollingColumn.vue?vue&type=style&index=0&scoped=8cd903ff&lang.scss": [
   ],
   "src/main.ts": [
   ],
@@ -243,12 +231,12 @@
   ],
   "src/views/Home.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Home.vue?vue&type=style&index=0&scoped=2dc54a20&lang.scss": [
+  "src/views/Home.vue?vue&type=style&index=0&scoped=4f3917b2&lang.scss": [
   ],
   "src/views/Projects.vue": [
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=019ac5aa&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=87e8ffd7&lang.scss": [
   ]
 }
