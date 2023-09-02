@@ -3,7 +3,7 @@ import Home from "@/views/Home.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import Projects from "@/views/Projects.vue";
 import type {RouterOptions} from "vite-ssg";
-import { setupRouterScroller } from 'vue-router-better-scroller';
+import {setupRouterScroller} from 'vue-router-better-scroller';
 
 export const routerOptions: RouterOptions = {
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,22 +30,22 @@ export function setupRouter(router: Router) {
     })
 
     setupRouterScroller(router, {
-        selectors:{
+        selectors: {
             "#site-ctn": context => {
-                if (context.to.hash && context.type != "history"){
+                if (context.to.hash && context.type != "history") {
 
-                    const timer = setInterval(()=>{
+                    const timer = setInterval(() => {
                         let e = document.querySelector(context.to.hash);
-                        if (e){
+                        if (e) {
                             clearInterval(timer)
                             let el_top = e.getBoundingClientRect().top
                             context.element.scrollBy({
-                                top: el_top - window.innerHeight/4,
+                                top: el_top - window.innerHeight / 4,
                                 behavior: "smooth"
                             })
                         }
 
-                    },100)
+                    }, 100)
 
                     return false
                 }

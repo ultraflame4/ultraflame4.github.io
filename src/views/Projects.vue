@@ -32,7 +32,8 @@ import type {proj_entry} from "@/assets/projects";
 
 const searchTerm = ref("")
 
-const fuse = new Fuse(AllProjects.value, {
+let allProjectsResults: Fuse.FuseResult<proj_entry>[] = []
+const fuse = new Fuse<proj_entry>([], {
     includeScore: true,
     useExtendedSearch: true,
     shouldSort: true,
@@ -45,21 +46,30 @@ const fuse = new Fuse(AllProjects.value, {
 
 })
 
-const allProjectsResults: Fuse.FuseResult<proj_entry>[] = AllProjects.value.map((value, index) => {
-    return {
-        item: value,
-        matches: [],
-        refIndex: 0,
-        score: 0
-    }
-})
+refreshProjectList(AllProjects.value)
+function refreshProjectList(project_list: proj_entry[]) {
+    allProjectsResults = project_list.map((value, index) => {
+        return {
+            item: value,
+            matches: [],
+            refIndex: 0,
+            score: 0
+        }
+    })
+    fuse.setCollection(project_list)
+}
+
 const searchResults: Ref<Fuse.FuseResult<proj_entry>[]> = ref(allProjectsResults)
-watch(searchTerm, value => {
-    if (value.trim().length > 0) {
-        searchResults.value = fuse.search(value)
+
+watch(AllProjects, value => refreshProjectList(value))
+
+watch([searchTerm, AllProjects], ([search_term,_]) => {
+
+    if (search_term.trim().length > 0) {
+        searchResults.value = fuse.search(search_term)
         return
     }
-    searchResults.value=allProjectsResults;
+    searchResults.value = allProjectsResults;
 })
 
 </script>
