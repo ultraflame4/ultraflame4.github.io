@@ -13,6 +13,7 @@ interface ProjectsApiJson{
     time_ms: string,
     schema: GetDatabaseResponse,
     items: Array<{
+        title: string
         cover:string,
         properties: PageObjectResponse["properties"],
         content_md: string
@@ -25,9 +26,22 @@ export async function LoadAllProjects(): Promise<void> {
     console.log("Requesting projects at path",url_path)
 
     let res = await fetch(url_path)
-    let json = await res.json()
+    let json: ProjectsApiJson = await res.json()
     console.log(json)
+    AllProjects.value = json.items.map(item=>{
+        let title_property = item.properties["Name"]
+        const title = title_property.type == "title" ? title_property.title.join(" ") : "UnNamed - Could not get title"
+        let tags_property = item.properties["Tags"]
+        const tags = tags_property.type == "multi_select" ? tags_property.multi_select.map(x=>x.name) : ["untagged"]
 
-    AllProjects.value = allProjects
+        return {
+            title,
+            bannerSrc: item.cover,
+            desc: item.content_md,
+            skillsUsed: tags
+        };
+    })
+
+
     FeaturedProjects.value = featuredProjects
 }
