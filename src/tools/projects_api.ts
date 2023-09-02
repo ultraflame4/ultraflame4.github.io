@@ -70,7 +70,7 @@ export async function LoadAllProjects() {
         await _LoadAllProjects()
     }
     catch (e) {
-        console.error(e)
+        console.warn(e)
         console.warn("UNABLE TO LOAD PROJECTS. USING FALLBACK!")
         ProjectDataStatus.isfallback=true
         AllProjects.value = allProjects

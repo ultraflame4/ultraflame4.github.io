@@ -6,10 +6,13 @@
             </SectionTitle>
             <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
             <div v-if="ProjectDataStatus.loading.value" class="loading-ctn">
-                <p>Fetching project list </p>
+                <p>Fetching project data</p>
                 <LoadingSpinner/>
             </div>
-            <ul v-else id="projects-container">
+            <p v-if="ProjectDataStatus.isfallback" class="text-warn">
+                Could not get latest project data. Using fallback data!
+            </p>
+            <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
                 <li v-for="(p, index) in searchResults" :key="index">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
                                   class="proj-header">
