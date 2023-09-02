@@ -47,7 +47,7 @@
 <script lang="ts" setup>
 import type {proj_entry} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
-import MarkdownView from "@/components/page/MarkdownView.vue";
+import MarkdownView from "@/components/utils/MarkdownView.vue";
 
 const props = defineProps<{ item: proj_entry }>()
 
