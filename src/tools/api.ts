@@ -30,7 +30,7 @@ export async function LoadAllProjects(): Promise<void> {
     console.log(json)
     AllProjects.value = json.items.map(item=>{
         let title_property = item.properties["Name"]
-        const title = title_property.type == "title" ? title_property.title.join(" ") : "UnNamed - Could not get title"
+        const title = title_property.type == "title" ? title_property.title.map(x=>x.plain_text).join(" ") : "UnNamed - Could not get title"
         let tags_property = item.properties["Tags"]
         const tags = tags_property.type == "multi_select" ? tags_property.multi_select.map(x=>x.name) : ["untagged"]
 
