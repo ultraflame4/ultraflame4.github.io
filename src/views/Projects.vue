@@ -5,8 +5,11 @@
                 All Projects
             </SectionTitle>
             <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
-
-            <ul id="projects-container">
+            <div v-if="ProjectDataStatus.loading.value" class="loading-ctn">
+                <p>Fetching project list </p>
+                <LoadingSpinner/>
+            </div>
+            <ul v-else id="projects-container">
                 <li v-for="(p, index) in searchResults" :key="index">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
                                   class="proj-header">
@@ -27,8 +30,9 @@ import ProjectCard from "@/components/others/ProjectCard.vue";
 import SearchBar from "@/components/others/SearchBar.vue";
 import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
-import {AllProjects} from "@/tools/projects_api";
+import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {proj_entry} from "@/assets/projects";
+import LoadingSpinner from "@/components/others/LoadingSpinner.vue";
 
 const searchTerm = ref("")
 
@@ -47,6 +51,7 @@ const fuse = new Fuse<proj_entry>([], {
 })
 
 refreshProjectList(AllProjects.value)
+
 function refreshProjectList(project_list: proj_entry[]) {
     allProjectsResults = project_list.map((value, index) => {
         return {
@@ -63,7 +68,7 @@ const searchResults: Ref<Fuse.FuseResult<proj_entry>[]> = ref(allProjectsResults
 
 watch(AllProjects, value => refreshProjectList(value))
 
-watch([searchTerm, AllProjects], ([search_term,_]) => {
+watch([searchTerm, AllProjects], ([search_term, _]) => {
 
     if (search_term.trim().length > 0) {
         searchResults.value = fuse.search(search_term)
@@ -86,6 +91,22 @@ watch([searchTerm, AllProjects], ([search_term,_]) => {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.loading-ctn {
+    margin: 2rem 0 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & > p {
+        margin: 1rem 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: Montserrat,serif;
+        font-weight: 600;
+        color: var(--bg-3);
+    }
 }
 
 .proj-header {

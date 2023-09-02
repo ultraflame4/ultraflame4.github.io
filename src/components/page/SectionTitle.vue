@@ -1,6 +1,6 @@
 <template>
     <TopSticky>
-        <h1 class="no-vmar">
+        <h1 class="no-vmar section-title">
             <NavLink :hash="props.section_id" :name="props.name" :heading="no_heading?undefined:(props.heading??0)">
                 <slot></slot>
             </NavLink>

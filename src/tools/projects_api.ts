@@ -22,12 +22,12 @@ interface ProjectsApiJson{
     }>
 
 }
-export const status = {
-    loading: false,
+export const ProjectDataStatus = {
+    loading: ref(false),
     isfallback: false
 }
 async function _LoadAllProjects(): Promise<void> {
-    status.loading=true
+    ProjectDataStatus.loading.value=true
     const url_path = new URL("/api/projects",apiServerDomain).toString()
     console.log("Requesting projects at path",url_path)
 
@@ -72,9 +72,8 @@ export async function LoadAllProjects() {
     catch (e) {
         console.error(e)
         console.warn("UNABLE TO LOAD PROJECTS. USING FALLBACK!")
-        status.loading=false
-        status.isfallback=true
+        ProjectDataStatus.isfallback=true
         AllProjects.value = allProjects
-
     }
+    ProjectDataStatus.loading.value=false
 }
