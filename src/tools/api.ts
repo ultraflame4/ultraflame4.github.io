@@ -2,6 +2,7 @@ import {allProjects, featuredProjects, type proj_entry} from "@/assets/projects"
 import {ref} from "vue";
 import type {GetDatabaseResponse, PageObjectResponse} from "@notionhq/client/build/src/api-endpoints";
 import type {MdStringObject} from "notion-to-md/build/types";
+import {extractLinksFromMd} from "@/tools/markdown-tools";
 
 const apiServerDomain = import.meta.env.DEV ? (import.meta.env.LOCAL_API_SERVER ?? "http://localhost:3000") : (import.meta.env.PRODUCTION_API_SERVER ?? "https://ultraflame4-github-io-backendapi.vercel.app")
 console.log("Using api server at:", apiServerDomain)
@@ -36,12 +37,23 @@ export async function LoadAllProjects(): Promise<void> {
         const tags = tags_property.type == "multi_select" ? tags_property.multi_select.map(x=>x.name) : ["untagged"]
         let source_property = item.properties["Source"]
         const source = source_property.type == "url" ? source_property.url : null
+        let featured_property = item.properties["Featured"]
+        const featured = featured_property.type == "checkbox" ? featured_property.checkbox : false
+
+        const content =  Object.values(item.content_md).join("\n")
+
+
         return {
             title,
             source:source??undefined,
             bannerSrc: item.cover,
-            desc: Object.values(item.content_md).join("\n"),
-            skillsUsed: tags
+            desc:content,
+            skillsUsed: tags,
+            featured,
+            links: extractLinksFromMd(content).map(x=>({
+                name: x.name,
+                url: x.url
+            }))
         };
     })
 
