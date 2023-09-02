@@ -40,21 +40,36 @@ function render(): string {
     white-space: pre-wrap;
 }
 
-::v-deep(ul) {
+
+div::v-deep(ul > li > ul > li > ul) {
+    list-style-type: square;
+}
+
+div::v-deep(ul > li > ul) {
+    list-style-type: circle;
+}
+
+div::v-deep(ul) {
+    list-style: initial;
+}
+
+::v-deep(ul), ::v-deep(ol) {
+    overflow: visible;
     margin: 0 0 0.5em;
-    padding: 0;
-    list-style-type: none;
+    padding-left: 1.25rem;
 }
 
-::v-deep(li) {
+
+div::v-deep(li) {
+    overflow: visible;
     margin: 0 0 0.25em;
-
+    display: list-item;
+    font-size: 1em;
 }
 
-::v-deep(li)::before {
-    display: inline;
-    content: "\2022";
-    margin: 0 0.45em;
+div::v-deep(>*) {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 </style>

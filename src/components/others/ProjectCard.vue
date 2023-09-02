@@ -94,7 +94,7 @@ const props = defineProps<{ item: proj_entry }>()
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li){
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";
