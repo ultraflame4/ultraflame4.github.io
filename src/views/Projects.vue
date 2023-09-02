@@ -95,8 +95,8 @@ watch([searchTerm, AllProjects], ([search_term,_]) => {
 }
 
 .proj-item {
-    //--width: min(50rem, 80vw);
-    //--height: min(30rem, 45vw);
+    --width: min(50rem, 90vw);
+    //--height: min(30rem, 100vw);
 
 }
 </style>

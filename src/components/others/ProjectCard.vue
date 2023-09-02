@@ -2,9 +2,7 @@
     <li class="project-item">
         <div class="project-details">
             <h3>{{ props.item.title }}</h3>
-            <p>
-                {{ props.item.desc }}
-            </p>
+            <MarkdownView class="project-details-desc" v-if="props.item.desc!==undefined" :content="props.item.desc" :remove_link="true"/>
             <ul class="project-links">
                 <li v-if="props.item.source">
 
@@ -49,6 +47,7 @@
 <script lang="ts" setup>
 import type {proj_entry} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
+import MarkdownView from "@/components/page/MarkdownView.vue";
 
 const props = defineProps<{ item: proj_entry }>()
 
@@ -94,6 +93,12 @@ const props = defineProps<{ item: proj_entry }>()
 
 }
 
+.project-details-desc::v-deep(p), .project-details-desc::v-deep(li){
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-family: "Open sans";
+}
 .project-details {
     grid-column: 1/1;
     grid-row: 1/1;
@@ -107,20 +112,10 @@ const props = defineProps<{ item: proj_entry }>()
         font-size: 1.35rem;
         flex-shrink: 0;
     }
-
-    & > p {
-        margin: 0;
-        font-size: 0.9em;
-        font-weight: 400;
-        letter-spacing: 0.2px;
-        font-family: "Open sans";
-        white-space: pre-wrap;
+    .project-details-desc{
         flex-shrink: 1;
-        //overflow-y: scroll;
-        display: -webkit-box;
-        -webkit-line-clamp: 12;
-        -webkit-box-orient: vertical;
-
+        flex-grow: 1;
+        overflow-y: scroll;
     }
 
     & > .project-links {

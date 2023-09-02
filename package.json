@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@supercharge/strings": "^2.0.0",
+    "dompurify": "^3.0.5",
     "fuse.js": "^6.6.2",
+    "marked": "^7.0.5",
     "sass": "^1.60.0",
     "tsx": "^3.12.7",
     "vite-ssg": "^0.22.2",
@@ -24,6 +26,8 @@
   "devDependencies": {
     "@iconify/vue": "^4.1.0",
     "@notionhq/client": "^2.2.13",
+    "@types/dompurify": "^3.0.2",
+    "@types/marked": "^5.0.1",
     "@types/node": "^18.14.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
