@@ -1,0 +1,122 @@
+{
+    "items": [
+        {
+            "title": "Better Console",
+            "source": "https://github.com/ultraflame4/Better-Console-python",
+            "bannerSrc": "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
+            "desc": "\nI forgot why I created this, though I know it was partly inspired by minecraft’s server console\n\n\n\nThis library provides a better console with the following features:\n\n- Log box - See log messages\n- Log filters - Filter log messages by level\n- Input - Enter in commands and stuff\n\nThis library is also non-blocking, thus, it won’t block the regular code execution flow of the program, allowing for easy integration.\n\n",
+            "skillsUsed": [
+                "python"
+            ],
+            "featured": false,
+            "links": []
+        },
+        {
+            "title": " PythonQtBrowser",
+            "source": "https://github.com/ultraflame4/PythonQtBrowser",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png",
+            "desc": "\nThis was my attempt at creating a browser using python (and initially pygame). However i very quickly realised that I underestimated this huge task, and promptly decided to use the WebView component from the Qt library to do the heavy lifting (rendering the actual page)\n\n",
+            "skillsUsed": [
+                "python"
+            ],
+            "featured": false,
+            "links": []
+        },
+        {
+            "title": "Online Tic Tac Toe",
+            "source": "https://github.com/ultraflame4/OnlineTicTacToe",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png",
+            "desc": "\nThis is a simple multiplayer Tic Tac Toe game playable on the browser. \n\n\nThis project taught me about how multiplayer and networking works in games and some of the troubles and difficulties associated with it.\n\n\n[Game](https://ultraflame4.github.io/OnlineTicTacToe)\n\n",
+            "skillsUsed": [
+                "html",
+                "css",
+                "js"
+            ],
+            "featured": false,
+            "links": [
+                {
+                    "name": "Game",
+                    "url": "https://ultraflame4.github.io/OnlineTicTacToe"
+                }
+            ]
+        },
+        {
+            "title": "Moosic App Electric Boogalo",
+            "source": "https://github.com/ultraflame4/MoosicElectricBoogaloo",
+            "bannerSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9c7cbc27-6d76-464f-880c-8ace094afde8/cd7c72fd-3488-4f8f-9fe3-cab76e3866d9/Screenshot_2023-09-02_144229.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230903%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230903T120002Z&X-Amz-Expires=3600&X-Amz-Signature=e3264ffa7df5376381e1f9e105ae78a25247ed18ac802d1dc987a24c5d5a541f&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "desc": "\nThis is an android music app created using android studio (and other tools) for a school project.\n\n\nFeatures include:\n\n- Account system using firebase\n- Playlists, Shuffle, etc.\n- Playing of local music files\n\nThrough this project I learned about the android ecosystem and gained an insight into one of the ways android apps are created and developed.\n\n",
+            "skillsUsed": [
+                "java",
+                "android",
+                "android studio"
+            ],
+            "featured": true,
+            "links": []
+        },
+        {
+            "title": "WebDevCreate",
+            "source": "https://github.com/ultraflame4/WebDevCreate",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",
+            "desc": "\nDisclaimer: This project has since been abandoned\n\n\nA website builder I made for myself to eventually build websites with.\nIt is designed for people who already know HTML and CSS.\nFor those who want a more simple and lightweight tool to make websites with.\n\n\nThroughout this process, I’ve learned a lot more about various aspects of web development and tools used.\n\n\n[Webapp](https://ultraflame4.github.io/WebDevCreate)\n\n",
+            "skillsUsed": [
+                "typescript",
+                "scss",
+                "html",
+                "python"
+            ],
+            "featured": false,
+            "links": [
+                {
+                    "name": "Webapp",
+                    "url": "https://ultraflame4.github.io/WebDevCreate"
+                }
+            ]
+        },
+        {
+            "title": "TilImg (TiledImage)",
+            "source": "https://github.com/ultraflame4/TiledImage",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208235487-44f5e641-e6eb-453a-a9db-25d93a093782.png",
+            "desc": "\nThis program stitches or \"Tiles\" a set of images (called tiles) together into one large composite image with likeness to a reference image.\nThis uses the python 'rich' library for fancy command-line (cli) interfaces\n\n",
+            "skillsUsed": [
+                "python",
+                "numpy",
+                "numba"
+            ],
+            "featured": true,
+            "links": []
+        },
+        {
+            "title": "RestauRant",
+            "source": "https://github.com/ultraflame4/CDEVRestaurantReview",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/231458566-f7089fa4-9f4f-44ce-93c7-30b9dc3a14c2.png",
+            "desc": "\nA website listing various restaurants and reviews for them.\nRestaurants are dynamically loaded as the user scrolls and can be sorted & filtered\n\n\nThis was done as part of a school final project (for the year).\n\n\n[Project Site](https://github.com/ultraflame4/CDEVRestaurantReview)\n\n",
+            "skillsUsed": [
+                "express.js",
+                "fuse.js",
+                "js",
+                "html",
+                "css",
+                "mysql"
+            ],
+            "featured": true,
+            "links": [
+                {
+                    "name": "Project Site",
+                    "url": "https://github.com/ultraflame4/CDEVRestaurantReview"
+                }
+            ]
+        },
+        {
+            "title": "CliRenderer",
+            "source": "https://github.com/ultraflame4/CliR",
+            "bannerSrc": "https://github.com/ultraflame4/CliR/raw/main/resources/img.png",
+            "desc": "\nThis commandline programs takes in image and renders it into the terminal using braille and other unicode characters.\n\n\nUse terminals with 256 color support for best experience (eg. Windows Terminal)\n\n",
+            "skillsUsed": [
+                "python",
+                "numpy"
+            ],
+            "featured": true,
+            "links": []
+        }
+    ]
+}

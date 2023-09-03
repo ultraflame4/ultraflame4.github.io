@@ -65,7 +65,7 @@ export async function LoadAllProjects() {
         await _LoadAllProjects()
         console.info("Successfully retrieved latest project data. Print with window._project_data()")
         // @ts-ignore
-        window._project_data = ()=> console.log(JSON.stringify(AllProjects.value,null,3))
+        window._project_data = ()=> console.log(JSON.stringify({items:AllProjects.value},null,3))
     }
     catch (e) {
         console.warn(e)
