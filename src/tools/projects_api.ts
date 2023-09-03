@@ -63,7 +63,9 @@ async function _LoadAllProjects(): Promise<void> {
 export async function LoadAllProjects() {
     try{
         await _LoadAllProjects()
-        console.info("Successfully retrieved latest project data\n",AllProjects.value)
+        console.info("Successfully retrieved latest project data. Print with window._project_data()")
+        // @ts-ignore
+        window._project_data = ()=> console.log(JSON.stringify(AllProjects.value,null,3))
     }
     catch (e) {
         console.warn(e)
