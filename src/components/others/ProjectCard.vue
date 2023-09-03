@@ -68,6 +68,7 @@ const props = defineProps<{ item: proj_entry }>()
     grid-template-rows: minmax(0,1fr) auto;
     box-sizing: border-box;
     grid-gap: 1rem;
+    overflow: hidden;
 
     max-height: 100%;
     max-width: 100%;
@@ -151,11 +152,12 @@ const props = defineProps<{ item: proj_entry }>()
 
 .project-image {
     grid-column: 2/2;
-    grid-row: 1/1;
-    width: 100%;
+    grid-row: 1/-1;
+    height: 100%;
     overflow: hidden;
     border-radius: 0.5rem;
     aspect-ratio: 1/1;
+    margin-left: auto;
 }
 
 .project-image > img {
