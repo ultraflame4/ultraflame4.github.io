@@ -1,4 +1,4 @@
-import {allProjects, featuredProjects, type proj_entry} from "@/assets/projects";
+import {allProjects, type proj_entry} from "@/assets/projects";
 import {ref} from "vue";
 import type {GetDatabaseResponse, PageObjectResponse} from "@notionhq/client/build/src/api-endpoints";
 import type {MdStringObject} from "notion-to-md/build/types";
@@ -8,8 +8,6 @@ const apiServerDomain = import.meta.env.DEV ? (import.meta.env.LOCAL_API_SERVER 
 console.log("Using api server at:", apiServerDomain)
 
 export const AllProjects = ref<proj_entry[]>([])
-export const FeaturedProjects = ref<proj_entry[]>(featuredProjects)
-
 
 interface ProjectsApiJson{
     time_ms: string,
@@ -60,14 +58,12 @@ async function _LoadAllProjects(): Promise<void> {
             }))
         };
     })
-
-
-    FeaturedProjects.value = featuredProjects
 }
 
 export async function LoadAllProjects() {
     try{
         await _LoadAllProjects()
+        console.info("Successfully retrieved latest project data\n",AllProjects.value)
     }
     catch (e) {
         console.warn(e)

@@ -5,24 +5,7 @@
                 All Projects
             </SectionTitle>
             <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
-            <div v-if="ProjectDataStatus.loading.value" class="loading-ctn">
-                <p>Fetching project data</p>
-                <LoadingSpinner/>
-            </div>
-            <noscript>
-                <p class="text-danger text-center">
-                    Javascript is disabled
-                    <br/>
-                    It is needed to fetch the latest project data & load the fallback data
-                </p>
-            </noscript>
-            <p v-if="ProjectDataStatus.isfallback" class="text-warn text-center">
-                Blocked? Outage? Offline? Who knows?
-                <br/>
-                Unable to fetch latest project data! Using (Outdated) fallback data!
-                <br/>
-                Server Unreachable
-            </p>
+            <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
                 <li v-for="(p, index) in searchResults" :key="index">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
@@ -46,7 +29,8 @@ import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {proj_entry} from "@/assets/projects";
-import LoadingSpinner from "@/components/others/LoadingSpinner.vue";
+import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
+import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 
 const searchTerm = ref("")
 
@@ -105,23 +89,6 @@ watch([searchTerm, AllProjects], ([search_term, _]) => {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-}
-
-.loading-ctn {
-    margin: 2rem 0 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    & > p {
-        margin: 1rem 0;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-family: Montserrat, serif;
-        font-weight: 600;
-        color: var(--bg-3);
-    }
 }
 
 .proj-header {

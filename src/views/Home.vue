@@ -59,13 +59,12 @@
         <hr/>
         <section id="featured" class="flex-center">
             <SectionTitle section_id="featured">Featured Projects</SectionTitle>
+            <ProjectDataStatusView/>
             <ul id="projects-container">
-                <ProjectCard :item="p" v-for="p in FeaturedProjects"/>
+                <ProjectCard :item="p" v-for="p in AllProjects.filter(x=>x.featured)"/>
             </ul>
             <RouterLink id="btn-allprojects" to="projects">all Projects</RouterLink>
-
         </section>
-
     </main>
 </template>
 
@@ -76,7 +75,8 @@ import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/others/ProjectCard.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
-import {FeaturedProjects} from "@/tools/projects_api";
+import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
+import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 
 const bannerIRatio = new iRatioObject({
     exit: false,
@@ -186,11 +186,12 @@ function repeatArray<T>(array: T[], count: number): T[] {
 
 
         #skills-txt {
-            h1{
+            h1 {
                 margin-left: 0;
                 margin-right: 0;
             }
-            p{
+
+            p {
                 margin-left: 0;
             }
         }
