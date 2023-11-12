@@ -16,7 +16,6 @@ export interface proj_entry {
     }[]
     title: string,
     desc?: string,
-    embeds: string[],
     skillsUsed: string[],
     bannerSrc?: string
     /*Uses video tag instead of img tag*/

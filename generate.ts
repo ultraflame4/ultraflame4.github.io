@@ -11,10 +11,11 @@ const settings: TJS.PartialArgs = {
 // optionally pass ts compiler options
 const compilerOptions: TJS.CompilerOptions = {
     strictNullChecks: true,
+    resolveJsonModule: true
 };
 
 const program = TJS.getProgramFromFiles(
-    [path.resolve("./src/tools/skills.ts"),path.resolve("./src/tools/projects.ts")],
+    [path.resolve("./src/tools/skills.ts"),path.resolve("./src/assets/projects.ts")],
     compilerOptions
 );
 
