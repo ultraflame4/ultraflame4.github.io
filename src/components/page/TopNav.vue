@@ -195,7 +195,7 @@ header {
 
     & > .icon {
         font-weight: 600;
-        font-size: 1em;
+        font-size: 1rem;
         color: var(--accent);
     }
 
