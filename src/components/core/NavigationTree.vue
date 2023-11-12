@@ -38,7 +38,7 @@ import {PageNavTree} from "@/router/page_navtree";
 import {Icon} from "@iconify/vue";
 import {useRouter} from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
-import SocialLinks from "@/components/others/SocialLinks.vue";
+import SocialLinks from "@/components/content/SocialLinks.vue";
 
 const router = useRouter()
 

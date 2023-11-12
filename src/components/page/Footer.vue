@@ -74,7 +74,7 @@
 <script setup lang="ts">
 
 import {PageNavTree} from "@/router/page_navtree";
-import SocialLinks from "@/components/others/SocialLinks.vue";
+import SocialLinks from "@/components/content/SocialLinks.vue";
 import NavLink from "@/components/core/NavLink.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import {useRouter} from "vue-router";

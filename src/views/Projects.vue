@@ -23,8 +23,8 @@
 
 <script lang="ts" setup>
 import SectionTitle from "@/components/page/SectionTitle.vue";
-import ProjectCard from "@/components/others/ProjectCard.vue";
-import SearchBar from "@/components/others/SearchBar.vue";
+import ProjectCard from "@/components/content/ProjectCard.vue";
+import SearchBar from "@/components/content/SearchBar.vue";
 import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
