@@ -5,7 +5,6 @@
             <MarkdownView class="project-details-desc" v-if="props.item.desc!==undefined" :content="props.item.desc" :remove_link="true"/>
             <ul class="project-links">
                 <li v-if="props.item.source">
-
                     <a :href="props.item.source" target="_blank">
                         {{ props.item.sourceLabel ?? "Source" }}
                     </a>
@@ -13,16 +12,8 @@
                 </li>
 <!--                <template v-for="i in 10">-->
                 <li v-if="props.item.links" v-for="(value,key,index) in props.item.links" :key="index">
+                    <GetProjectLink :value="value"/>
 
-                    <a :href="value.url" :style="{
-                        '--color': value.fillColor ?? 'var(--accent-color)',
-                        '--fill-text-color': value.filledTextColor ?? 'white'
-                    }"
-                       target="_blank"
-                       data-filled={value.filled}>
-                        {{ value.name }}
-                    </a>
-                    <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
                 </li>
 <!--                </template>-->
             </ul>
@@ -49,6 +40,7 @@
 import type {proj_entry} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
 import MarkdownView from "@/components/utils/MarkdownView.vue";
+import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
 
 const props = defineProps<{ item: proj_entry }>()
 

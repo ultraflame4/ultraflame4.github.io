@@ -73,7 +73,7 @@ import {iRatioObject} from "vyue42";
 import SkillCard from "@/components/content/SkillCard.vue";
 import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
-import ProjectCard from "@/components/content/ProjectCard.vue";
+import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
