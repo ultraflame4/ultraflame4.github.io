@@ -4,7 +4,7 @@
                         '--fill-text-color': value.filledTextColor ?? 'white'
                     }"
        target="_blank"
-       data-filled={value.filled}>
+       :data-filled="value.filled">
         {{ value.name }}
     </a>
     <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
