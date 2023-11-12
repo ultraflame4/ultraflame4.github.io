@@ -24,4 +24,4 @@ export interface proj_entry {
 }
 
 import * as _allProjects from "./projects.json"
-export const allProjects:proj_entry[] = _allProjects.items
+export const allProjects:proj_entry[] = <proj_entry[]>_allProjects.items
