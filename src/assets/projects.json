@@ -1,4 +1,5 @@
 {
+    "$schema": "/public/schema-projects.json",
     "items": [
         {
             "title": "SeaSharkMC",
