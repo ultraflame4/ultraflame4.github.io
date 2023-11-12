@@ -23,7 +23,7 @@ const value = inject("link") as proj_entry_link
     color: var(--accent);
 }
 
-:has(>a):hover .icon{
+:has(>.icon):hover>.icon{
     color: white;
 }
 
