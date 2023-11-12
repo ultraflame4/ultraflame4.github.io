@@ -1,7 +1,6 @@
 import path from "path";
 import * as TJS from "typescript-json-schema";
 import * as fs from "fs";
-import type {proj_entry} from "./src/assets/projects";
 
 // optionally pass argument to schema generator
 const settings: TJS.PartialArgs = {
