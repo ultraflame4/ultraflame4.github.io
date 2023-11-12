@@ -11,6 +11,7 @@
                     </a>
                     <Icon icon="humbleicons:code" class="icon" />
                 </li>
+<!--                <template v-for="i in 10">-->
                 <li v-if="props.item.links" v-for="(value,key,index) in props.item.links" :key="index">
 
                     <a :href="value.url" :style="{
@@ -23,7 +24,7 @@
                     </a>
                     <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
                 </li>
-
+<!--                </template>-->
             </ul>
         </div>
 
@@ -107,6 +108,7 @@ const props = defineProps<{ item: proj_entry }>()
     flex-direction: column;
     gap: 1rem;
     height: 100%;
+    overflow: hidden;
 
     & > h3 {
         margin: 0;
@@ -120,14 +122,15 @@ const props = defineProps<{ item: proj_entry }>()
     }
 
     & > .project-links {
-        flex-shrink: 0;
         padding: 0;
         list-style-type: none;
         display: flex;
         margin-top: auto;
         gap: 1rem;
+        flex-wrap: wrap;
 
         &>li{
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             gap: 0.2rem;
