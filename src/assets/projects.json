@@ -1,6 +1,87 @@
 {
     "items": [
         {
+            "title": "SeaSharkMC",
+            "source": "https://github.com/ultraflame4/SeaSharkMC/tree/main",
+            "bannerSrc": null,
+            "desc": "\nMy attempt at a minecraft server written in C#.\n\n\nThis project has allowed me to see how some multiplayer games such as minecraft implement their networking protocols and how in general multiplayer games can work.\n\n",
+            "skillsUsed": [
+                "incomplete",
+                "csharp"
+            ],
+            "featured": false,
+            "links": []
+        },
+        {
+            "title": "GravSim",
+            "source": "https://github.com/ultraflame4/GravSim",
+            "bannerSrc": "https://github.com/ultraflame4/GravSim/raw/master/blob/img.png",
+            "desc": "\nI started this project on a whim, after thinking about gravitational attraction all night.\n\n\nThe core part of this project was completed in 3 days.\n\n\nThis project uses technologies such as GLFW, OpenGL and C++.\n\n\nN-Body gravity simulation using Newton's law of universal gravitation.\n\n\n[Download](https://github.com/ultraflame4/GravSim/releases)\n\n\n[itch.io](https://notlivingstudios.itch.io/gravsim)\n\n",
+            "skillsUsed": [
+                "c++",
+                "imgui",
+                "opengl"
+            ],
+            "featured": true,
+            "links": [
+                {
+                    "name": "Download",
+                    "url": "https://github.com/ultraflame4/GravSim/releases"
+                },
+                {
+                    "name": "itch.io",
+                    "url": "https://notlivingstudios.itch.io/gravsim"
+                }
+            ]
+        },
+        {
+            "title": "Site Version Picker",
+            "source": "https://github.com/ultraflame4/SiteVersionPicker",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/275385527-38153af3-03ed-41e4-9659-d86c5b41a141.png",
+            "desc": "\nA simple website to redirect to the various different versions of my website.\n\n\n[website](https://ultr42.dev/SiteVersionPicker/)\n\n",
+            "skillsUsed": [
+                "vue",
+                "js",
+                "typescript",
+                "html",
+                "css"
+            ],
+            "featured": false,
+            "links": [
+                {
+                    "name": "website",
+                    "url": "https://ultr42.dev/SiteVersionPicker/"
+                }
+            ]
+        },
+        {
+            "title": "OnlyHumansRedirects",
+            "source": "https://github.com/ultraflame4/OnlyHumansRedirects",
+            "bannerSrc": "https://github.com/ultraflame4/OnlyHumansRedirects/assets/34125174/7ed88872-f77e-4e62-a478-e0b59bdb7c2c",
+            "desc": "\nA fake human captcha design to automatically redirect to a website and sometimes rickroll a person.\n\n\n[link](http://links.ultr42.dev/)\n\n\n[rickroll?](https://knowyourmeme.com/memes/rickroll)\n\n\n[example](https://links.ultr42.dev/?q=MXd3dy5nb29nbGUuY29t7A)\n\n",
+            "skillsUsed": [
+                "js",
+                "html",
+                "typescript",
+                "css"
+            ],
+            "featured": true,
+            "links": [
+                {
+                    "name": "link",
+                    "url": "http://links.ultr42.dev/"
+                },
+                {
+                    "name": "rickroll?",
+                    "url": "https://knowyourmeme.com/memes/rickroll"
+                },
+                {
+                    "name": "example",
+                    "url": "https://links.ultr42.dev/?q=MXd3dy5nb29nbGUuY29t7A"
+                }
+            ]
+        },
+        {
             "title": "Better Console",
             "source": "https://github.com/ultraflame4/Better-Console-python",
             "bannerSrc": "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
@@ -43,7 +124,7 @@
         {
             "title": "Moosic App Electric Boogalo",
             "source": "https://github.com/ultraflame4/MoosicElectricBoogaloo",
-            "bannerSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9c7cbc27-6d76-464f-880c-8ace094afde8/cd7c72fd-3488-4f8f-9fe3-cab76e3866d9/Screenshot_2023-09-02_144229.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230903%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230903T120002Z&X-Amz-Expires=3600&X-Amz-Signature=e3264ffa7df5376381e1f9e105ae78a25247ed18ac802d1dc987a24c5d5a541f&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "bannerSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9c7cbc27-6d76-464f-880c-8ace094afde8/cd7c72fd-3488-4f8f-9fe3-cab76e3866d9/Screenshot_2023-09-02_144229.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231112T041044Z&X-Amz-Expires=3600&X-Amz-Signature=137408cf967b1bb4122f0b365429c4e422ae8f35eec369abd1f8b229558605c0&X-Amz-SignedHeaders=host&x-id=GetObject",
             "desc": "\nThis is an android music app created using android studio (and other tools) for a school project.\n\n\nFeatures include:\n\n- Account system using firebase\n- Playlists, Shuffle, etc.\n- Playing of local music files\n\nThrough this project I learned about the android ecosystem and gained an insight into one of the ways android apps are created and developed.\n\n",
             "skillsUsed": [
                 "java",
