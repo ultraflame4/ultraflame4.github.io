@@ -5,10 +5,12 @@
             <MarkdownView class="project-details-desc" v-if="props.item.desc!==undefined" :content="props.item.desc" :remove_link="true"/>
             <ul class="project-links">
                 <li v-if="props.item.source">
-                    <a :href="props.item.source" target="_blank">
-                        {{ props.item.sourceLabel ?? "Source" }}
-                    </a>
-                    <Icon icon="humbleicons:code" class="icon" />
+                    <GetProjectLink :value="{
+                        name: props.item.sourceLabel ?? 'Source',
+                        url: props.item.source,
+                        icon: 'humbleicons:code'
+                    }"/>
+
                 </li>
 <!--                <template v-for="i in 10">-->
                 <li v-if="props.item.links" v-for="(value,key,index) in props.item.links" :key="index">
@@ -127,20 +129,10 @@ const props = defineProps<{ item: proj_entry }>()
             align-items: center;
             gap: 0.2rem;
 
-            &:hover .icon{
-                color: white;
-            }
 
-
-            a::after{
-                display: none;
-            }
         }
 
-        .icon{
-            font-size: 1.1em;
-            color: var(--accent);
-        }
+
 
     }
 }

@@ -18,5 +18,17 @@ const value = inject("link") as proj_entry_link
 
 </script>
 <style scoped lang="scss">
+.icon{
+    font-size: 1.1em;
+    color: var(--accent);
+}
 
+:has(>a):hover .icon{
+    color: white;
+}
+
+
+a::after{
+    display: none;
+}
 </style>
