@@ -88,7 +88,7 @@ My attempt at a minecraft server written in C#.
 
 This project has allowed me to see how some multiplayer games such as minecraft implement their networking protocols and how in general multiplayer games can work.
 
-`,skillsUsed:["incomplete","csharp"],featured:!1,links:[]},{title:"GravSim",source:"https://github.com/ultraflame4/GravSim",bannerSrc:"https://github.com/ultraflame4/GravSim/raw/master/blob/img.png",desc:`
+`,skillsUsed:["incomplete","csharp"],featured:!1,links:[]},{title:"GravSim",source:"https://github.com/ultraflame4/GravSim",bannerSrc:"https://github.com/ultraflame4/GravSim/assets/34125174/11dfd9a1-0f8b-4d17-b473-81c1e6b61f97",bannerImgIsVideo:!0,desc:`
 I started this project on a whim, after thinking about gravitational attraction all night.
 
 
