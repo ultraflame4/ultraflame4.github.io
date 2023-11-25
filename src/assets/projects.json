@@ -31,7 +31,8 @@
                 },
                 {
                     "name": "itch.io",
-                    "url": "https://notlivingstudios.itch.io/gravsim"
+                    "url": "https://notlivingstudios.itch.io/gravsim",
+                    "icon": "simple-icons:itchdotio"
                 }
             ]
         },
@@ -125,7 +126,7 @@
         {
             "title": "Moosic App Electric Boogalo",
             "source": "https://github.com/ultraflame4/MoosicElectricBoogaloo",
-            "bannerSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9c7cbc27-6d76-464f-880c-8ace094afde8/cd7c72fd-3488-4f8f-9fe3-cab76e3866d9/Screenshot_2023-09-02_144229.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231112T041044Z&X-Amz-Expires=3600&X-Amz-Signature=137408cf967b1bb4122f0b365429c4e422ae8f35eec369abd1f8b229558605c0&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "bannerSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9c7cbc27-6d76-464f-880c-8ace094afde8/cd7c72fd-3488-4f8f-9fe3-cab76e3866d9/Screenshot_2023-09-02_144229.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231125%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231125T085945Z&X-Amz-Expires=3600&X-Amz-Signature=5d8b3444e4232242222f0e65ee8094d35d8f555e488c220a3737a96dd0e107b0&X-Amz-SignedHeaders=host&x-id=GetObject",
             "desc": "\nThis is an android music app created using android studio (and other tools) for a school project.\n\n\nFeatures include:\n\n- Account system using firebase\n- Playlists, Shuffle, etc.\n- Playing of local music files\n\nThrough this project I learned about the android ecosystem and gained an insight into one of the ways android apps are created and developed.\n\n",
             "skillsUsed": [
                 "java",
