@@ -61,20 +61,23 @@ async function _LoadAllProjects(): Promise<void> {
 }
 
 export async function LoadAllProjects() {
-    try{
-        await _LoadAllProjects()
-        console.info("Successfully retrieved latest project data. Print with window._project_data()")
-        // @ts-ignore
-        window._project_data = ()=> console.log(JSON.stringify({
-            "$schema": "/public/schema-projects.json",
-            items:AllProjects.value
-        },null,3))
-    }
-    catch (e) {
-        console.warn(e)
-        console.warn("UNABLE TO LOAD PROJECTS. USING FALLBACK!")
-        ProjectDataStatus.isfallback=true
-        AllProjects.value = allProjects
-    }
-    ProjectDataStatus.loading.value=false
+
+    ProjectDataStatus.isfallback=false
+    AllProjects.value = allProjects
+    // try{
+    //     await _LoadAllProjects()
+    //     console.info("Successfully retrieved latest project data. Print with window._project_data()")
+    //     // @ts-ignore
+    //     window._project_data = ()=> console.log(JSON.stringify({
+    //         "$schema": "/public/schema-projects.json",
+    //         items:AllProjects.value
+    //     },null,3))
+    // }
+    // catch (e) {
+    //     console.warn(e)
+    //     console.warn("UNABLE TO LOAD PROJECTS. USING FALLBACK!")
+    //     ProjectDataStatus.isfallback=true
+    //     AllProjects.value = allProjects
+    // }
+    // ProjectDataStatus.loading.value=false
 }
