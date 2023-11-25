@@ -127,8 +127,9 @@
         {
             "title": "Moosic App Electric Boogalo",
             "source": "https://github.com/ultraflame4/MoosicElectricBoogaloo",
-            "bannerSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9c7cbc27-6d76-464f-880c-8ace094afde8/cd7c72fd-3488-4f8f-9fe3-cab76e3866d9/Screenshot_2023-09-02_144229.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231125%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231125T085945Z&X-Amz-Expires=3600&X-Amz-Signature=5d8b3444e4232242222f0e65ee8094d35d8f555e488c220a3737a96dd0e107b0&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "bannerSrc": "https://private-user-images.githubusercontent.com/34125174/209052797-04de64b1-5645-4b96-a1a0-75f40a411bd2.mov?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDA5MDY4OTAsIm5iZiI6MTcwMDkwNjU5MCwicGF0aCI6Ii8zNDEyNTE3NC8yMDkwNTI3OTctMDRkZTY0YjEtNTY0NS00Yjk2LWExYTAtNzVmNDBhNDExYmQyLm1vdj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzExMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMTI1VDEwMDMxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU4ZmRjYTNhNWVlOGVjY2M2Y2RiYmUxZWNkYWE0YmUwOTJkYTE1MGQ1MTIwOTYzMjczZmJkZDVkZjkxZjdhMTMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.zg7fBNNp5OHYP3mZwuQyX-SQRSoSM56XVER_7a9rYik",
             "desc": "\nThis is an android music app created using android studio (and other tools) for a school project.\n\n\nFeatures include:\n\n- Account system using firebase\n- Playlists, Shuffle, etc.\n- Playing of local music files\n\nThrough this project I learned about the android ecosystem and gained an insight into one of the ways android apps are created and developed.\n\n",
+            "bannerImgIsVideo": true,
             "skillsUsed": [
                 "java",
                 "android",
