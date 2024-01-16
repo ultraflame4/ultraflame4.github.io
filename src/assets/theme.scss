@@ -131,14 +131,16 @@ hr {
 .parent_hover-underline {
     --line-thick: calc(2px * var(--underline-mult));
     --line-offset: 4px;
-    height: calc(var(--line-thick) + var(--line-offset) + 1em);
+    --_unit_h-offset: calc(var(--line-thick) + var(--line-offset));
+    height: calc(2 * var(--_unit_h-offset) + 1em);
 
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     position: relative;
     overflow: visible;
 
     &.add-align{
-        margin-top: calc(var(--line-offset) / 1.25);
+        //margin-top: calc(var(--line-offset) / 4);
     }
 
     & > * {
@@ -151,7 +153,7 @@ hr {
         position: absolute;
         z-index: 1;
         right: 0;
-        bottom: 0;
+        bottom: calc(var(--_unit_h-offset) - var(--line-offset));
 
         height: calc(var(--line-thick));
         width: 0;
