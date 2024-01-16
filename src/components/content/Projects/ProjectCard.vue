@@ -141,6 +141,8 @@ const props = defineProps<{ item: proj_entry }>()
     grid-column: 2/2;
     grid-row: 1/-1;
     height: 100%;
+    width: 100%;
+    background: black;
     overflow: hidden;
     border-radius: 0.5rem;
     aspect-ratio: 1/1;
