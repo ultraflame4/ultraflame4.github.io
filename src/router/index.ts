@@ -10,7 +10,7 @@ export const routerOptions: RouterOptions = {
     routes: [
         {
             path: '/',
-            name: 'index',
+            name: 'about',
             component: Home
         }, {
             path: "/projects",

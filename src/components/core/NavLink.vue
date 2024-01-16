@@ -1,7 +1,7 @@
 <template>
 
     <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco" :target="newtab?'_blank':undefined">
-        <Icon v-if="!noicon" icon="vaadin:hash"  class="icon"/>
+        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'"  class="icon"/>
         <slot name="prefix"></slot>
         <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
@@ -11,7 +11,7 @@
         <slot name="suffix"></slot>
     </a>
     <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':undefined">
-        <Icon v-if="!noicon" icon="vaadin:hash" class="icon"/>
+        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'" class="icon"/>
         <div :class="`parent_hover-underline add-align`">
             <slot>
 
@@ -51,6 +51,10 @@ interface iprops {
      * Opens the url in a new tab
      */
     newtab?:boolean
+    /**
+     * Specifies the icon to use. Useless if noicon = true
+     */
+    icon?:string
 }
 
 const props = defineProps<iprops>()

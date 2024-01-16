@@ -1,20 +1,24 @@
 <template>
     <div>
-        <h1>Sitemap</h1>
+        <h1 style="margin: 0">Sitemap</h1>
         <hr/>
-        <h1>Main</h1>
+        <h1>Index</h1>
         <ul id="index-pages">
             <li v-for="link in router.options.routes">
-                <NavLink :to="link.path">{{ link.name }}</NavLink>
+
+                <NavLink v-if="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-open">{{ link.name }}</NavLink>
+                <NavLink v-else="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-outline">{{ link.name }}</NavLink>
             </li>
         </ul>
 
         <hr/>
 
-        <h1>Links</h1>
+        <h1>Here</h1>
         <ul id="page-index">
             <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1">
-                <NavLink :hash="router.resolve(link.to).hash" :noicon="link.level>1">{{ shortenName(link.name, 32) }}
+                <NavLink :hash="router.resolve(link.to).hash"
+                         :noicon="link.level>1">
+                    {{ shortenName(link.name, 32) }}
                 </NavLink>
             </li>
         </ul>
@@ -59,7 +63,7 @@ div {
     padding: 1.25rem 1rem 0.25rem;
     display: flex;
     flex-direction: column;
-
+    font-size: 0.95rem;
     & > *{
         flex-shrink: 0;
     }
@@ -68,9 +72,9 @@ div {
 h1 {
     font-family: "Poppins";
     letter-spacing: 0.1rem;
-    font-size: 1.75rem;
+    font-size: 1.5em;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 0.25em;
 }
 
 hr {
@@ -89,7 +93,7 @@ ul {
 
     & > li {
 
-        font-size: 1.25rem;
+        font-size: 1.1em;
         margin-left: calc(var(--level) * 0.2rem);
         padding-left: calc(var(--level) * 0.3rem);
         height: 2em;
