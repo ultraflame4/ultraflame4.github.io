@@ -30,7 +30,7 @@
         </ul>
 
         <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen" class="floater-shadow header-item">
-            <Icon icon="ic:baseline-menu"/>
+            <Icon icon="svg-spinners:blocks-shuffle-3"/>
         </button>
     </header>
 
