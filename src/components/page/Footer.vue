@@ -103,8 +103,10 @@ footer {
 }
 
 #socials-float{
-    position: fixed;
-    right: 2rem;
+    position: sticky;
+    //display: flex;
+    width: fit-content;
+    margin-left: auto;
     bottom: 0;
 
 }

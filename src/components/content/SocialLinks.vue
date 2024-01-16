@@ -12,20 +12,32 @@ import {Icon} from "@iconify/vue";
 
 
 <style scoped lang="scss">
+@keyframes shake {
+    0%,100% { transform: rotateZ(10deg); }
+    50% { transform: rotateZ(-10deg); }
+
+}
 a {
-    font-size: 2.35em;
+    font-size: 2.75em;
+    transition: color 200ms ease !important;
+
     &::after{
         content: "" !important;
     }
     color: var(--txt-a-tinted);
     &:hover{
-        color: var(--txt-a) !important;
+        color: var(--active-color) !important;
+
     }
 }
 ul{
     display: flex;
 
     gap: 0.25rem;
+
+    &>li:has(a:hover){
+        animation: shake 150ms infinite linear;
+    }
 }
 
 </style>
