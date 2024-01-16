@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     border: 2px solid transparent;
-    transition: inherit;
+    transition: all 200ms ease;
     @media only screen and (max-width: 650px) {
         font-size: 1.5rem;
         height: 3.5rem;
@@ -40,8 +40,9 @@
 
 .ctn[stuck] > .item {
     font-size: 0.95rem;
-    background: var(--bg-1);
-    border-color: var(--accent);
+    //background: var(--bg-1);
+    backdrop-filter: blur(8px);
+    border-color: var(--active-color);
     z-index: 100;
     pointer-events: all;
     color: var(--txt-a-tinted);

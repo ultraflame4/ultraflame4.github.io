@@ -90,7 +90,8 @@ header {
         }
 
         & .header-item {
-            background: var(--bg-1);
+            backdrop-filter: blur(8px);
+            //background: var(--bg-1);
             border-color: var(--accent);
         }
 
