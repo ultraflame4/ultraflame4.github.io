@@ -2,15 +2,16 @@
     <div id="site-back">
         <NavigationTree id="navtree"/>
     </div>
+
     <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="" class="scrollable">
         <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
         <div id="page-content">
-            <RouterView/>
+            <RouterView />
         </div>
         <hr/>
        <Footer/>
-
     </div>
+    <div id="route-transition" :data-active="isTransitioning" />
 
 </template>
 <script setup lang="ts">
@@ -18,10 +19,24 @@ import TopNav from "@/components/page/TopNav.vue";
 import {ref} from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
+import {useRouter} from "vue-router";
 
-
+const router = useRouter();
 const menuOpen = ref(false);
 const isClosing = ref(false);
+const isTransitioning = ref(false);
+
+router.beforeEach((to, from) =>{
+    if (to.path == from.path) return;
+    if (isTransitioning.value) return true;
+    isTransitioning.value= true;
+    setTimeout(()=>{router.push(to)}, 100)
+    return false;
+})
+
+router.afterEach((to, from) => {
+    setTimeout(()=>{isTransitioning.value= false}, 300)
+})
 
 function returnToPage() {
     if (menuOpen.value) {
@@ -44,6 +59,41 @@ function menuToggle() {
 <style lang="scss" scoped>
 :global(:root){
     --navtree-width: min(50vw, 24rem);
+}
+
+@keyframes route_transition {
+    0%{
+        display: flex;
+        backdrop-filter: blur(0px) saturate(1);
+
+    }
+    20%{
+        backdrop-filter: blur(100px) saturate(0);
+
+    }
+    75%{
+        background: var(--bg-0);
+    }
+    100%{
+        backdrop-filter: blur(0px) saturate(1);
+        background: initial;
+    }
+}
+
+#route-transition{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: transparent;
+    pointer-events: none;
+    display: none;
+}
+#route-transition[data-active="true"]{
+    display: flex;
+    pointer-events: all;
+    animation: route_transition .4s linear 1;
+
 }
 #site-back {
     display: flex;
