@@ -1,11 +1,11 @@
 <template>
-    <Component :is="props.component"/>
     <div id="route-transition" :data-active="isTransitioning" />
+    <Component :is="props.component"/>
 </template>
 <script setup lang="ts">
 import {timeout} from "@/utils";
 import {useRouter} from "vue-router";
-import {ref} from "vue";
+import {ref, watch} from "vue";
 
 interface iprops{
     component: Object
@@ -17,34 +17,47 @@ router.beforeEach(async (to, from) =>{
     if (to.path == from.path) return;
     if (isTransitioning.value) return true;
     isTransitioning.value= true;
-    await timeout(100)
+    await timeout(200)
 
     return true;
 })
 
-router.afterEach((to, from) => {
-    setTimeout(()=>{isTransitioning.value= false}, 300)
+watch(props, async (value, oldValue) => {
+    isTransitioning.value=false;
+}, {
+    flush: "post"
 })
 
 </script>
 <style scoped lang="scss">
 
-@keyframes route_transition {
+@keyframes route_transition_enter {
     0%{
         display: flex;
         backdrop-filter: blur(0px) saturate(1);
 
     }
-    20%{
+    50%{
         backdrop-filter: blur(100px) saturate(0);
 
     }
-    75%{
+
+    100%{
         background: var(--bg-0);
     }
+}
+
+@keyframes route_transition_exit {
+    0%{
+        display: flex;
+        backdrop-filter: blur(100px) saturate(0);
+        background: var(--bg-0);
+
+    }
     100%{
-        backdrop-filter: blur(0px) saturate(1);
+        display: flex;
         background: initial;
+        backdrop-filter: blur(0px) saturate(1);
     }
 }
 
@@ -54,16 +67,16 @@ router.afterEach((to, from) => {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 200;
     background: transparent;
     pointer-events: none;
     display: none;
-    //backdrop-filter: blur(100px) saturate(0);
+    animation: route_transition_exit .2s linear 1;
+    backdrop-filter: blur(100px) saturate(0);
 }
 #route-transition[data-active="true"]{
     display: flex;
     pointer-events: all;
-    animation: route_transition .4s linear 1;
-
+    animation: route_transition_enter .2s linear 1;
 }
 </style>

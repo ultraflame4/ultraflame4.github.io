@@ -67,7 +67,7 @@ header {
     align-items: center;
     position: sticky;
     top: -1px;
-    z-index: 100;
+    z-index: 1000;
     background: transparent;
     font-size: 1.25rem;
     pointer-events: none;
