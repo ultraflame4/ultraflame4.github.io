@@ -174,7 +174,8 @@
         {
             "title": "RestauRant",
             "source": "https://github.com/ultraflame4/CDEVRestaurantReview",
-            "bannerSrc": "https://user-images.githubusercontent.com/34125174/231458566-f7089fa4-9f4f-44ce-93c7-30b9dc3a14c2.png",
+            "bannerSrc": "https://www.youtube.com/watch?v=dnfZHMKeGaM",
+            "bannerImgIsVideo": true,
             "desc": "\nA website listing various restaurants and reviews for them.\nRestaurants are dynamically loaded as the user scrolls and can be sorted & filtered\n\n\nThis was done as part of a school final project (for the year).\n\n\n[Project Site](https://github.com/ultraflame4/CDEVRestaurantReview)\n\n",
             "skillsUsed": [
                 "express.js",
