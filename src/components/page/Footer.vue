@@ -59,7 +59,7 @@
                 </li>
             </ul>
             <h1>Socials</h1>
-            <SocialLinks />
+            <SocialLinks class="social"/>
 
         </div>
         <br/>
@@ -100,6 +100,9 @@ function cat_link() {
 footer {
     height: fit-content;
 
+}
+.social{
+    height: fit-content;
 }
 
 #socials-float{
