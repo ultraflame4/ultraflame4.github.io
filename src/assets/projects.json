@@ -7,7 +7,7 @@
             "bannerSrc": null,
             "desc": "\nMy attempt at a minecraft server written in C#.\n\n\nThis project has allowed me to see how some multiplayer games such as minecraft implement their networking protocols and how in general multiplayer games can work.\n\n",
             "skillsUsed": [
-                "incomplete",
+                "WIP",
                 "csharp"
             ],
             "featured": false,
@@ -133,7 +133,8 @@
             "skillsUsed": [
                 "java",
                 "android",
-                "android studio"
+                "android studio",
+                "firebase"
             ],
             "featured": true,
             "links": []
