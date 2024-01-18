@@ -1,7 +1,8 @@
 <template>
 
-    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco" :target="newtab?'_blank':undefined">
-        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'"  class="icon"/>
+    <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco"
+       :target="newtab?'_blank':undefined">
+        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'" class="icon"/>
         <slot name="prefix"></slot>
         <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
@@ -26,6 +27,7 @@ import {Icon} from "@iconify/vue";
 import {useRouter} from "vue-router";
 import {PageNavTree} from "@/router/page_navtree";
 import {Str} from "@supercharge/strings";
+import {onBeforeUnmount} from "vue";
 
 const router = useRouter()
 
@@ -46,15 +48,15 @@ interface iprops {
     /**
      * Specifies the name to use and display
      */
-    name?:string
+    name?: string
     /**
      * Opens the url in a new tab
      */
-    newtab?:boolean
+    newtab?: boolean
     /**
      * Specifies the icon to use. Useless if noicon = true
      */
-    icon?:string
+    icon?: string
 }
 
 const props = defineProps<iprops>()
@@ -68,14 +70,19 @@ if (props.hash) {
 const fullpath = router.resolve(`${props.to ?? router.currentRoute.value.path}${hash_}`);
 
 // console.log(fullpath, props)
-
+let index = -1;
 if (props.heading !== undefined) {
-    PageNavTree.add({
+    index = PageNavTree.add({
         to: fullpath,
         level: props.heading,
         name: props.name ?? props.to ?? props.hash ?? "unnamed"
     })
 }
+
+onBeforeUnmount(() => {
+        if (index > -1) PageNavTree.remove(index)
+    }
+)
 
 
 </script>
@@ -94,7 +101,7 @@ a {
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    div{
+    div {
         //display: flex;
         //align-items: center;
     }

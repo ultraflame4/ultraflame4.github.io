@@ -26,7 +26,7 @@ export interface PageNavLink {
 }
 
 export class PageNavTree_ {
-    links:Ref<PageNavLink[]> = ref<PageNavLink[]>([])
+    links: Ref<PageNavLink[]> = ref<PageNavLink[]>([])
 
     constructor() {
     }
@@ -35,8 +35,13 @@ export class PageNavTree_ {
         this.links.value = []
     }
 
-    public add(link:PageNavLink) {
+    public add(link: PageNavLink) {
         this.links.value.push(link)
+        return this.links.value.indexOf(link);
+    }
+
+    public remove(index: number) {
+        this.links.value.splice(index, 1)
     }
 }
 

@@ -22,11 +22,8 @@ export const routerOptions: RouterOptions = {
 
 
 export function setupRouter(router: Router) {
-    router.beforeEach((to, from, next) => {
-        next();
-        if (from.path !== to.path) {
-            PageNavTree.clear()
-        }
+    router.beforeEach((to, from) => {
+        if (from.path !== to.path) PageNavTree.clear()
     })
 
     setupRouterScroller(router, {
