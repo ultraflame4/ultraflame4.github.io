@@ -133,7 +133,8 @@
             "skillsUsed": [
                 "java",
                 "android",
-                "android studio"
+                "android studio",
+                "firebase"
             ],
             "featured": true,
             "links": []
