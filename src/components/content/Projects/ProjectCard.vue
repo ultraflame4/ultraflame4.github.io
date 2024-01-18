@@ -22,10 +22,12 @@
         </div>
 
         <div class="project-image">
-            <video v-if="props.item.bannerImgIsVideo && props.item.bannerSrc" controls>
-                <source :src="props.item.bannerSrc"/>
-            </video>
-
+            <template v-if="props.item.bannerImgIsVideo && props.item.bannerSrc">
+                <YoutubeEmbed v-if="isYTUrl(props.item.bannerSrc)" :src="props.item.bannerSrc"/>
+                <video v-else controls>
+                    <source :src="props.item.bannerSrc"/>
+                </video>
+            </template>
             <img v-else-if="props.item.bannerSrc" :src="props.item.bannerSrc" alt=""/>
         </div>
 
@@ -43,6 +45,9 @@ import type {proj_entry} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
 import MarkdownView from "@/components/utils/MarkdownView.vue";
 import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
+import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
+import {isYoutubeUrl} from "@/external";
+const isYTUrl = isYoutubeUrl;
 
 const props = defineProps<{ item: proj_entry }>()
 

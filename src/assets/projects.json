@@ -16,7 +16,7 @@
         {
             "title": "GravSim",
             "source": "https://github.com/ultraflame4/GravSim",
-            "bannerSrc": "https://github.com/ultraflame4/GravSim/assets/34125174/11dfd9a1-0f8b-4d17-b473-81c1e6b61f97",
+            "bannerSrc": "https://www.youtube.com/watch?v=ec8uOtU8HOU",
             "bannerImgIsVideo": true,
             "desc": "\nI started this project on a whim, after thinking about gravitational attraction all night.\n\n\nThe core part of this project was completed in 3 days.\n\n\nThis project uses technologies such as GLFW, OpenGL and C++.\n\n\nN-Body gravity simulation using Newton's law of universal gravitation.\n\n\n[Download](https://github.com/ultraflame4/GravSim/releases)\n\n\n[itch.io](https://notlivingstudios.itch.io/gravsim)\n\n",
             "skillsUsed": [
