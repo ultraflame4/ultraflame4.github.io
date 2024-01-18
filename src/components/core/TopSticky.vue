@@ -41,7 +41,6 @@
 .ctn[stuck] > .item {
     font-size: 0.95rem;
     //background: var(--bg-1);
-    backdrop-filter: blur(8px);
     border-color: var(--active-color);
     z-index: 100;
     pointer-events: all;
