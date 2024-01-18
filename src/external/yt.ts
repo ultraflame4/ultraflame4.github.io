@@ -19,7 +19,7 @@ declare global {
 
 export function createEmbed(src: string, targetElementId: string) {
     if (!ytIsLoaded.value) return console.error("Youtube embed api script not loaded!!");
-    console.log(window.YT)
+    // console.log(window.YT)
     const player = new window.YT.Player(targetElementId, {
         width: null,
         height: null,
@@ -34,7 +34,7 @@ export function createEmbed(src: string, targetElementId: string) {
 
 export function isYoutubeUrl(url: string) {
     var p = / ^(?:http)|(?:https):\/\/(?:www.)*(?:youtube.com)|(?:youtu\.be)/;
-    console.log(url, !!url.match(p))
+    // console.log(url, !!url.match(p))
     return !!url.match(p);
 }
 
