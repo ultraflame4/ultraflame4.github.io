@@ -14,7 +14,7 @@
 </template>
 <script setup lang="ts">
 // import yt from "https://www.youtube.com/iframe_api?js"
-import {createEmbed, getYTVideoId, ytIsLoaded} from "@/external";
+import {createEmbed, getYTVideoId, ytIsLoaded} from "@/external/yt";
 import {onMounted, onUpdated, ref, watch} from "vue";
 
 const id = ref()

@@ -17,11 +17,11 @@ export const createApp = ViteSSG(
     // vue-router options
     routerOptions,
     // function to have custom setups
-    ({app, router, isClient,onSSRAppRendered}) => {
+    ({app, router, isClient, onSSRAppRendered}) => {
         if (!import.meta.env.SSR) {
             console.log("Fetching data...")
-            LoadAllSkills();
-            LoadAllProjects();
+            Promise.all([LoadAllSkills(), LoadAllProjects()])
+                .then(value => console.log("Loaded data."))
         }
         app.use(vyue42);
         setupRouter(router)

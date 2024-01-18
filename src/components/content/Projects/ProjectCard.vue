@@ -46,7 +46,7 @@ import {Icon} from "@iconify/vue";
 import MarkdownView from "@/components/utils/MarkdownView.vue";
 import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
 import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
-import {isYoutubeUrl} from "@/external";
+import {isYoutubeUrl} from "@/external/yt";
 const isYTUrl = isYoutubeUrl;
 
 const props = defineProps<{ item: proj_entry }>()
