@@ -7,7 +7,7 @@
             <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
-                <li v-for="(p, index) in searchResults" :key="index">
+                <li v-for="(p, index) in searchResults" :key="p.item">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
                                   class="proj-header">
                         {{ p.item.title }}
