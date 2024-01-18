@@ -6,7 +6,7 @@
     <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="" class="scrollable">
         <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
         <div id="page-content">
-            <RouterView />
+            <RouterView  />
         </div>
         <hr/>
        <Footer/>
@@ -20,18 +20,20 @@ import {ref} from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
 import {useRouter} from "vue-router";
+import {timeout} from "@/utils";
 
 const router = useRouter();
 const menuOpen = ref(false);
 const isClosing = ref(false);
 const isTransitioning = ref(false);
 
-router.beforeEach((to, from) =>{
+router.beforeEach(async (to, from) =>{
     if (to.path == from.path) return;
     if (isTransitioning.value) return true;
     isTransitioning.value= true;
-    setTimeout(()=>{router.push(to)}, 100)
-    return false;
+    await timeout(100)
+
+    return true;
 })
 
 router.afterEach((to, from) => {
