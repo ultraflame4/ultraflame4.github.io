@@ -75,7 +75,9 @@
   ],
   "node_modules/@unhead/shared/dist/index.mjs": [
   ],
-  "node_modules/@unhead/vue/dist/shared/vue.505b826e.mjs": [
+  "node_modules/@unhead/vue/dist/shared/vue.cf295fb1.mjs": [
+  ],
+  "node_modules/@unhead/vue/dist/shared/vue.f36acd1f.mjs": [
   ],
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
   ],
@@ -87,7 +89,7 @@
   ],
   "node_modules/@vueuse/head/dist/index.mjs": [
   ],
-  "node_modules/dompurify/dist/purify.es.js": [
+  "node_modules/dompurify/dist/purify.es.mjs": [
   ],
   "node_modules/fuse.js/dist/fuse.esm.js": [
   ],
