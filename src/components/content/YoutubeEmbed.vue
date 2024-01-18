@@ -15,7 +15,7 @@
 <script setup lang="ts">
 // import yt from "https://www.youtube.com/iframe_api?js"
 import {createEmbed, getYTVideoId, ytIsLoaded} from "@/external";
-import {ref, watch} from "vue";
+import {onMounted, onUpdated, ref, watch} from "vue";
 
 const id = ref()
 function getId() {
@@ -26,10 +26,13 @@ interface iprops{
 }
 const props = defineProps<iprops>()
 
-watch([getId, ytIsLoaded, props], (value, oldValue) => {
-    console.log("re")
+function refreshEmbed() {
+    if (!ytIsLoaded.value) return;
+    console.log("Refreshing youtube url:" + props.src)
     createEmbed(getYTVideoId(props.src), getId())
-},{
+}
+onMounted(refreshEmbed)
+watch(ytIsLoaded, refreshEmbed,{
     flush: "post",
 })
 
