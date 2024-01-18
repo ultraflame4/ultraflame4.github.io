@@ -4,7 +4,7 @@
         <hr/>
         <h1>Index</h1>
         <ul id="index-pages">
-            <li v-for="link in router.options.routes" :key="link">
+            <li v-for="link in router.options.routes" :key="hashCode(link)">
 
                 <NavLink v-if="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-open">{{ link.name }}</NavLink>
                 <NavLink v-else="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-outline">{{ link.name }}</NavLink>
@@ -15,7 +15,7 @@
 
         <h1>Here</h1>
         <ul id="page-index">
-            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="link">
+            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="hashCode(link)">
                 <NavLink :hash="router.resolve(link.to).hash"
                          :noicon="link.level>1">
                     {{ shortenName(link.name, 32) }}
@@ -43,6 +43,7 @@ import {Icon} from "@iconify/vue";
 import {useRouter} from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
 import SocialLinks from "@/components/content/SocialLinks.vue";
+import {hashCode} from "@/utils";
 
 const router = useRouter()
 

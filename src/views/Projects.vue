@@ -7,7 +7,7 @@
             <SearchBar id="searchbar" v-model:search-term="searchTerm"/>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
-                <li v-for="(p, index) in searchResults" :key="p.item">
+                <li v-for="(p, index) in searchResults" :key="hashCode(p.item)">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
                                   class="proj-header">
                         {{ p.item.title }}
@@ -31,6 +31,7 @@ import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {proj_entry} from "@/assets/projects";
 import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
+import {hashCode} from "@/utils";
 
 const searchTerm = ref("")
 
