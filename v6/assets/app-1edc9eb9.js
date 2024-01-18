@@ -161,7 +161,7 @@ Features include:
 
 Through this project I learned about the android ecosystem and gained an insight into one of the ways android apps are created and developed.
 
-`,bannerImgIsVideo:!0,skillsUsed:["java","android","android studio"],featured:!0,links:[]},{title:"WebDevCreate",source:"https://github.com/ultraflame4/WebDevCreate",bannerSrc:"https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",desc:`
+`,bannerImgIsVideo:!0,skillsUsed:["java","android","android studio","firebase"],featured:!0,links:[]},{title:"WebDevCreate",source:"https://github.com/ultraflame4/WebDevCreate",bannerSrc:"https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",desc:`
 Disclaimer: This project has since been abandoned
 
 
