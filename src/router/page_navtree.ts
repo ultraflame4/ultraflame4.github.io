@@ -45,4 +45,5 @@ export class PageNavTree_ {
     }
 }
 
-export const PageNavTree = new PageNavTree_()
+export const PageNavTree = new PageNavTree_();
+(window as any).internals_PageNavTree = PageNavTree;
