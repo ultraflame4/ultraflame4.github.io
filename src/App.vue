@@ -37,7 +37,7 @@ function updateHead() {
     useSeoMeta({
         title: "ultr42 - " + router.currentRoute.value.name?.toString()??"unnamed",
         description: "Personal website & portfolio of ultr42",
-        ogTitle: router.currentRoute.value?.toString??"unnamed",
+        ogTitle: router.currentRoute.value?.toString()??"unnamed",
         ogType: "profile",
         author: "ultraflame4@gmail.com",
         generator: "null",
