@@ -5,28 +5,45 @@
 
     <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="" class="scrollable">
         <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
-        <div id="page-content" >
-            <RouterView  v-slot="{Component}">
+        <div id="page-content">
+            <RouterView v-slot="{Component}">
                 <PageView :component="Component"/>
             </RouterView>
         </div>
         <hr/>
-       <Footer/>
+        <Footer/>
     </div>
 
 
 </template>
 <script setup lang="ts">
 import TopNav from "@/components/page/TopNav.vue";
-import {onBeforeMount, ref} from "vue";
+import {onBeforeMount, onMounted, ref, watch} from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
-// import { useHead } from '@unhead/vue'
+import {useSeoMeta} from '@unhead/vue'
 import PageView from "@/components/core/PageView.vue";
 import {PageNavTree} from "@/router/page_navtree";
+import {useRouter} from "vue-router";
 
+const router = useRouter();
 const menuOpen = ref(false);
 const isClosing = ref(false);
+
+onMounted(updateHead)
+router.afterEach(updateHead)
+
+function updateHead() {
+    useSeoMeta({
+        title: "ultr42 - " + router.currentRoute.value.name?.toString()??"unnamed",
+        description: "Personal website & portfolio of ultr42",
+        ogTitle: router.currentRoute.value?.toString??"unnamed",
+        ogType: "profile",
+        author: "ultraflame4@gmail.com",
+        generator: "null",
+        themeColor: "#1a1a1a"
+    })
+}
 
 function returnToPage() {
     if (menuOpen.value) {
@@ -45,10 +62,11 @@ function menuToggle() {
 
 onBeforeMount(() => PageNavTree.clear())
 
+
 </script>
 
 <style lang="scss" scoped>
-:global(:root){
+:global(:root) {
     --navtree-width: min(50vw, 24rem);
 }
 
@@ -94,7 +112,6 @@ onBeforeMount(() => PageNavTree.clear())
 
     margin-left: 0;
     transform: translateX(calc(0px - var(--navtree-width))) translateY(2rem);
-
 
 
 }
