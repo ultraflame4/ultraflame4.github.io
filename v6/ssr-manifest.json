@@ -75,6 +75,8 @@
   ],
   "node_modules/@unhead/shared/dist/index.mjs": [
   ],
+  "node_modules/@unhead/vue/dist/index.mjs": [
+  ],
   "node_modules/@unhead/vue/dist/shared/vue.cf295fb1.mjs": [
   ],
   "node_modules/@unhead/vue/dist/shared/vue.f36acd1f.mjs": [
@@ -149,7 +151,7 @@
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/App.vue?vue&type=style&index=0&scoped=ee554b73&lang.scss": [
+  "src/App.vue?vue&type=style&index=0&scoped=b3e7bba3&lang.scss": [
   ],
   "src/assets/projects.json": [
   ],
