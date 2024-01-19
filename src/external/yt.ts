@@ -1,21 +1,21 @@
 import {ref} from "vue";
 
+declare global {
+    interface Window {
+        YT: any;
+    }
+}
 export let ytIsLoaded = ref(false);
 // @ts-ignore
 window.onYouTubeIframeAPIReady = () => {
     setTimeout(() => ytIsLoaded.value = true, 0)
 }
 
-
 let tag = document.createElement('script');
+tag.async=true;
 tag.src = "https://www.youtube.com/iframe_api";
 document.head.appendChild(tag);
 
-declare global {
-    interface Window {
-        YT: any;
-    }
-}
 
 export function createEmbed(src: string, targetElementId: string) {
     if (!ytIsLoaded.value) return console.error("Youtube embed api script not loaded!!");

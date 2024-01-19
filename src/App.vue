@@ -21,7 +21,7 @@ import TopNav from "@/components/page/TopNav.vue";
 import {onBeforeMount, onMounted, ref, watch} from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
-import {useSeoMeta} from '@unhead/vue'
+import {useSeoMeta, useHead} from '@unhead/vue'
 import PageView from "@/components/core/PageView.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
@@ -41,7 +41,7 @@ function updateHead() {
         ogType: "profile",
         author: "ultraflame4@gmail.com",
         generator: "null",
-        themeColor: "#1a1a1a"
+        themeColor: "#1a1a1a",
     })
 }
 
