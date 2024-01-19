@@ -18,30 +18,15 @@
 </template>
 <script setup lang="ts">
 import TopNav from "@/components/page/TopNav.vue";
-import {ref} from "vue";
+import {onBeforeMount, ref} from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
-import {useRouter} from "vue-router";
-import {timeout} from "@/utils";
+// import { useHead } from '@unhead/vue'
 import PageView from "@/components/core/PageView.vue";
+import {PageNavTree} from "@/router/page_navtree";
 
 const menuOpen = ref(false);
 const isClosing = ref(false);
-// const isTransitioning = ref(false);
-// const router = useRouter();
-//
-// router.beforeEach(async (to, from) =>{
-//     if (to.path == from.path) return;
-//     if (isTransitioning.value) return true;
-//     isTransitioning.value= true;
-//     await timeout(100)
-//
-//     return true;
-// })
-//
-// router.afterEach((to, from) => {
-//     setTimeout(()=>{isTransitioning.value= false}, 300)
-// })
 
 function returnToPage() {
     if (menuOpen.value) {
@@ -58,6 +43,7 @@ function menuToggle() {
     menuOpen.value = !isClosing.value
 }
 
+onBeforeMount(() => PageNavTree.clear())
 
 </script>
 
