@@ -2,17 +2,25 @@
     "$schema": "/public/schema-projects.json",
     "items": [
         {
-            "title": "SeaSharkMC",
-            "source": "https://github.com/ultraflame4/SeaSharkMC/tree/main",
-            "bannerSrc": null,
-            "desc": "\nMy attempt at a minecraft server written in C#.\n\n\nThis project has allowed me to see how some multiplayer games such as minecraft implement their networking protocols and how in general multiplayer games can work.\n\n",
+            "title": "Trapped In A Dungeon",
+            "source": "https://github.com/ultraflame4/TrappedInADungeon",
+            "bannerSrc": "https://youtu.be/ZPBI4oVjePA",
+            "bannerImgIsVideo": true,
+            "featured": true,
+            "desc": "This was done as part of a school project.\nYou fell down a random hole into a very deep dungeon and some how miraculously survived. However you are now surrounded by monsters that seem to find you very delicious and enticing, in other words, they want to eat you. Your objective is to now survive the seemingly infinite waves of monster, and find a way out. Luckily the monsters drop random skills and items you can use. Killing the monsters also for whatever reason seem to strengthen your body.\n\nHow far will you go before you die?",
             "skillsUsed": [
-                "WIP",
-                "csharp"
+                "unity",
+                "csharp",
+                "json"
             ],
-            "featured": false,
-            "links": []
+            "links": [
+                {
+                    "name": "itch.io",
+                    "url": "https://notlivingstudios.itch.io/trappedinadungeon"
+                }
+            ]
         },
+
         {
             "title": "GravSim",
             "source": "https://github.com/ultraflame4/GravSim",
@@ -36,6 +44,18 @@
 
                 }
             ]
+        },
+        {
+            "title": "SeaSharkMC",
+            "source": "https://github.com/ultraflame4/SeaSharkMC/tree/main",
+            "bannerSrc": null,
+            "desc": "\nMy attempt at a minecraft server written in C#.\n\n\nThis project has allowed me to see how some multiplayer games such as minecraft implement their networking protocols and how in general multiplayer games can work.\n\n",
+            "skillsUsed": [
+                "WIP",
+                "csharp"
+            ],
+            "featured": false,
+            "links": []
         },
         {
             "title": "Site Version Picker",
@@ -85,28 +105,6 @@
             ]
         },
         {
-            "title": "Better Console",
-            "source": "https://github.com/ultraflame4/Better-Console-python",
-            "bannerSrc": "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
-            "desc": "\nI forgot why I created this, though I know it was partly inspired by minecraft’s server console\n\n\n\nThis library provides a better console with the following features:\n\n- Log box - See log messages\n- Log filters - Filter log messages by level\n- Input - Enter in commands and stuff\n\nThis library is also non-blocking, thus, it won’t block the regular code execution flow of the program, allowing for easy integration.\n\n",
-            "skillsUsed": [
-                "python"
-            ],
-            "featured": false,
-            "links": []
-        },
-        {
-            "title": " PythonQtBrowser",
-            "source": "https://github.com/ultraflame4/PythonQtBrowser",
-            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png",
-            "desc": "\nThis was my attempt at creating a browser using python (and initially pygame). However i very quickly realised that I underestimated this huge task, and promptly decided to use the WebView component from the Qt library to do the heavy lifting (rendering the actual page)\n\n",
-            "skillsUsed": [
-                "python"
-            ],
-            "featured": false,
-            "links": []
-        },
-        {
             "title": "Online Tic Tac Toe",
             "source": "https://github.com/ultraflame4/OnlineTicTacToe",
             "bannerSrc": "https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png",
@@ -138,25 +136,6 @@
             ],
             "featured": true,
             "links": []
-        },
-        {
-            "title": "WebDevCreate",
-            "source": "https://github.com/ultraflame4/WebDevCreate",
-            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",
-            "desc": "\nDisclaimer: This project has since been abandoned\n\n\nA website builder I made for myself to eventually build websites with.\nIt is designed for people who already know HTML and CSS.\nFor those who want a more simple and lightweight tool to make websites with.\n\n\nThroughout this process, I’ve learned a lot more about various aspects of web development and tools used.\n\n\n[Webapp](https://ultraflame4.github.io/WebDevCreate)\n\n",
-            "skillsUsed": [
-                "typescript",
-                "scss",
-                "html",
-                "python"
-            ],
-            "featured": false,
-            "links": [
-                {
-                    "name": "Webapp",
-                    "url": "https://ultraflame4.github.io/WebDevCreate"
-                }
-            ]
         },
         {
             "title": "TilImg (TiledImage)",
@@ -203,6 +182,47 @@
                 "numpy"
             ],
             "featured": true,
+            "links": []
+        },
+        {
+            "title": "WebDevCreate",
+            "source": "https://github.com/ultraflame4/WebDevCreate",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208923192-e1c40736-54e0-46a4-895f-8b0a30bd89bc.png",
+            "desc": "\nDisclaimer: This project has since been abandoned\n\n\nA website builder I made for myself to eventually build websites with.\nIt is designed for people who already know HTML and CSS.\nFor those who want a more simple and lightweight tool to make websites with.\n\n\nThroughout this process, I’ve learned a lot more about various aspects of web development and tools used.\n\n\n[Webapp](https://ultraflame4.github.io/WebDevCreate)\n\n",
+            "skillsUsed": [
+                "typescript",
+                "scss",
+                "html",
+                "python"
+            ],
+            "featured": false,
+            "links": [
+                {
+                    "name": "Webapp",
+                    "url": "https://ultraflame4.github.io/WebDevCreate"
+                }
+            ]
+        },
+        {
+            "title": "Better Console",
+            "source": "https://github.com/ultraflame4/Better-Console-python",
+            "bannerSrc": "https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif",
+            "desc": "\nI forgot why I created this, though I know it was partly inspired by minecraft’s server console\n\n\n\nThis library provides a better console with the following features:\n\n- Log box - See log messages\n- Log filters - Filter log messages by level\n- Input - Enter in commands and stuff\n\nThis library is also non-blocking, thus, it won’t block the regular code execution flow of the program, allowing for easy integration.\n\n",
+            "skillsUsed": [
+                "python"
+            ],
+            "featured": false,
+            "links": []
+        },
+        {
+            "title": " PythonQtBrowser",
+            "source": "https://github.com/ultraflame4/PythonQtBrowser",
+            "bannerSrc": "https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png",
+            "desc": "\nThis was my attempt at creating a browser using python (and initially pygame). However i very quickly realised that I underestimated this huge task, and promptly decided to use the WebView component from the Qt library to do the heavy lifting (rendering the actual page)\n\n",
+            "skillsUsed": [
+                "python"
+            ],
+            "featured": false,
             "links": []
         }
     ]
