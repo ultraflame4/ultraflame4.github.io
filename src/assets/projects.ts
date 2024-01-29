@@ -131,8 +131,6 @@ function importProjectsFromJson(){
         allProjects.push(normalise_oldFormat(x))
     })
 }
-
-// importProjectsFromJson()
 function importProjectsFromDataDir(){
     const data_projects_import= import.meta.glob('/data/projects/*' , {eager: true, as: "raw"})
     const project_data_filepaths = Object.keys(data_projects_import)
@@ -144,7 +142,7 @@ function importProjectsFromDataDir(){
         allProjects.push(normalise_FrontmatterProjectData(x.attributes,x.body))
     })
 }
-
+importProjectsFromJson()
 importProjectsFromDataDir()
 
 console.log(allProjects)
