@@ -33,7 +33,7 @@ export interface FrontmatterProjectDataSchema{
     video?:string,
     featured?: boolean,
     source?: string | { label:string, url: string },
-    links?: Array<string | proj_entry_link>,
+    links?: Array<string | { [name: string] : string }>,
     skills?: string[],
     flags: Array<"featured" >
 }
@@ -102,7 +102,13 @@ export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSch
                 })
                 return;
             }
-            obj.links?.push(x)
+            Object.entries(x).map(([name,url])=>{
+                obj.links?.push({
+                    name,
+                    url
+                })
+            })
+
         })
     }
 
@@ -126,7 +132,7 @@ function importProjectsFromJson(){
     })
 }
 
-importProjectsFromJson()
+// importProjectsFromJson()
 function importProjectsFromDataDir(){
     const data_projects_import= import.meta.glob('/data/projects/*' , {eager: true, as: "raw"})
     const project_data_filepaths = Object.keys(data_projects_import)
