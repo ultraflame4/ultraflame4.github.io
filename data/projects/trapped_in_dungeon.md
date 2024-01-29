@@ -1,8 +1,7 @@
 ---
 $ref: "/public/schema-attributes"
 title: Trapped In A Dungeon
-banner:
-  youtube: "https://youtu.be/ZPBI4oVjePA"
+video: "https://youtu.be/ZPBI4oVjePA"
 skills: [
   "unity",
   "csharp",
@@ -10,8 +9,10 @@ skills: [
 ]
 source: "https://github.com/ultraflame4/TrappedInADungeon"
 links:
-  "itch.io": "https://notlivingstudios.itch.io/trappedinadungeon"
-meta: [featured]
+  - "itch.io": "https://notlivingstudios.itch.io/trappedinadungeon"
+  - "www.google.com"
+
+flags: [ featured ]
 ---
 
 This was done as part of a school project.

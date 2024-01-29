@@ -35,6 +35,7 @@ export interface FrontmatterProjectDataSchema{
     source?: string | { label:string, url: string },
     links?: Array<string | proj_entry_link>,
     skills?: string[],
+    flags: Array<"featured" >
 }
 
 export interface NormalisedProjectData{
@@ -46,7 +47,7 @@ export interface NormalisedProjectData{
     }[],
     featured: boolean,
     source?: { label:string, url: string },
-    links?: proj_entry_link[],
+    links: proj_entry_link[],
     skills?: string[],
 }
 
@@ -54,7 +55,7 @@ import fm from "front-matter"
 
 
 export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData{
-    let obj: NormalisedProjectData = {body: data.desc??"", media: [] , title: data.title, featured: !!data.featured}
+    let obj: NormalisedProjectData = {links: data.links??[], body: data.desc??"", media: [] , title: data.title, featured: !!data.featured}
     if (data.bannerSrc){
         obj.media.push({
             url: data.bannerSrc,
@@ -67,13 +68,12 @@ export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProje
             url : data.source
         }
     }
-    obj.links = data.links
     obj.skills = data.skillsUsed
     return obj
 }
 
 export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string): NormalisedProjectData{
-    let obj: NormalisedProjectData = {body: body, media: [] , title: data.title, featured: !!data.featured}
+    let obj: NormalisedProjectData = {links: [], body: body, media: [] , title: data.title, featured: !!data.featured}
     if (data.video) obj.media.push({url:data.video,type:"video"})
     if (data.image) obj.media.push({url:data.image,type:"img"})
     obj.featured = !!data.featured
@@ -132,11 +132,11 @@ function importProjectsFromDataDir(){
     const project_data_filepaths = Object.keys(data_projects_import)
     console.log("Found project data files: ", project_data_filepaths)
 
-    const parsedContent : object[] = []
-    for (let f of project_data_filepaths) {
-        parsedContent.push(fm(data_projects_import[f]))
-    }
-    console.log(parsedContent)
+    const frontmatter = project_data_filepaths.map(x=>fm<FrontmatterProjectDataSchema>(data_projects_import[x]))
+    console.log(frontmatter)
+    frontmatter.forEach(x=>{
+        allProjects.push(normalise_FrontmatterProjectData(x.attributes,x.body))
+    })
 }
 
 importProjectsFromDataDir()
