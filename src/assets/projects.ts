@@ -24,5 +24,23 @@ export interface proj_entry {
 }
 
 import * as _allProjects from "./projects.json"
+import fm from "front-matter"
+
 
 export const allProjects: proj_entry[] = <proj_entry[]>_allProjects.items
+
+
+function importProjectsFromDataDir(){
+    const data_projects_import= import.meta.glob('/data/projects/*' , {eager: true, as: "raw"})
+    const project_data_filepaths = Object.keys(data_projects_import)
+    console.log("Found project data files: ", project_data_filepaths)
+
+    const parsedContent : object[] = []
+    for (let f of project_data_filepaths) {
+        parsedContent.push(fm(data_projects_import[f]))
+    }
+    console.log(parsedContent)
+}
+
+importProjectsFromDataDir()
+
