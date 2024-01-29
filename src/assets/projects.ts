@@ -53,7 +53,7 @@ export interface NormalisedProjectData{
 import fm from "front-matter"
 
 
-function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData{
+export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData{
     let obj: NormalisedProjectData = {body: data.desc??"", media: [] , title: data.title, featured: !!data.featured}
     if (data.bannerSrc){
         obj.media.push({
@@ -66,7 +66,7 @@ function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData{
     return obj
 }
 
-function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string): NormalisedProjectData{
+export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string): NormalisedProjectData{
     let obj: NormalisedProjectData = {body: body, media: [] , title: data.title, featured: !!data.featured}
     if (data.video) obj.media.push({url:data.video,type:"video"})
     if (data.image) obj.media.push({url:data.image,type:"img"})
@@ -105,6 +105,22 @@ function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, bo
     }
     return obj
 }
+
+
+
+
+
+
+import * as _allProjects from "./projects.json"
+export const allProjects: NormalisedProjectData[] = []
+function importProjectsFromJson(){
+    console.log("Converting project json data");
+    (_allProjects.items as oldFormat.proj_entry[]).forEach(x=>{
+        allProjects.push(normalise_oldFormat(x))
+    })
+}
+
+importProjectsFromJson()
 function importProjectsFromDataDir(){
     const data_projects_import= import.meta.glob('/data/projects/*' , {eager: true, as: "raw"})
     const project_data_filepaths = Object.keys(data_projects_import)
@@ -117,11 +133,6 @@ function importProjectsFromDataDir(){
     console.log(parsedContent)
 }
 
-
-
-
-import * as _allProjects from "./projects.json"
-export const allProjects: oldFormat.proj_entry[] = <oldFormat.proj_entry[]>_allProjects.items
-
 importProjectsFromDataDir()
 
+console.log(allProjects)
