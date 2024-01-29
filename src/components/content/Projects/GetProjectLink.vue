@@ -1,6 +1,6 @@
 <template>
 
-    <ProjectReIconLink v-if="value.url?.match(/https:\/\/github.com\/.*\/releases($|\/.*)/g)"
+    <ProjectReIconLink v-if="value.url?.match(/https:\/\/github\.com\/.*\/releases($|\/.*)/g)"
                        icon="ph:archive-box-fill"/>
     <ProjectReIconLink v-else-if="value.url?.match(/https:\/\/.*\.itch\.io\/.*/g)" icon="simple-icons:itchdotio"/>
     <ProjectDefaultLink v-else/>

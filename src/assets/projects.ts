@@ -1,3 +1,5 @@
+import {identifyLinkName} from "@/tools/url-utils";
+
 export namespace oldFormat{
     export interface proj_entry_link {
         name: string,
@@ -27,36 +29,82 @@ export namespace oldFormat{
 export type proj_entry_link = oldFormat.proj_entry_link;
 export interface FrontmatterProjectDataSchema{
     title: string,
-    banner?:string
+    image?:string,
+    video?:string,
     featured?: boolean,
     source?: string | { label:string, url: string },
-    links?: proj_entry_link,
+    links?: Array<string | proj_entry_link>,
     skills?: string[],
 }
 
 export interface NormalisedProjectData{
     title: string,
     body: string,
-    banner: {
+    media: {
         url: string,
         type: "img" | "video"
-    }
-    featured?: boolean,
+    }[],
+    featured: boolean,
     source?: { label:string, url: string },
-    links?: proj_entry_link,
+    links?: proj_entry_link[],
     skills?: string[],
 }
 
-
-
-
-import * as _allProjects from "./projects.json"
 import fm from "front-matter"
 
 
-export const allProjects: oldFormat.proj_entry[] = <oldFormat.proj_entry[]>_allProjects.items
+function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData{
+    let obj: NormalisedProjectData = {body: data.desc??"", media: [] , title: data.title, featured: !!data.featured}
+    if (data.bannerSrc){
+        obj.media.push({
+            url: data.bannerSrc,
+            type: data.bannerImgIsVideo?"video": "img"
+        })
+    }
+    obj.links = data.links
+    obj.skills = data.skillsUsed
+    return obj
+}
 
+function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string): NormalisedProjectData{
+    let obj: NormalisedProjectData = {body: body, media: [] , title: data.title, featured: !!data.featured}
+    if (data.video) obj.media.push({url:data.video,type:"video"})
+    if (data.image) obj.media.push({url:data.image,type:"img"})
+    obj.featured = !!data.featured
+    if (data.source){
+        if (typeof data.source == "string"){
+            obj.source = {
+                label: "github",
+                url: data.source
+            }
+        }
+        else if (data.source.url && data.source.label){
+            obj.source = {
+                label:  data.source.label,
+                url: data.source.url
+            }
+        }
+    }
+    if (data.links)
+    {
+        obj.links = []
+        data.links.forEach((x) => {
+            if (typeof x == "string"){
+                obj.links?.push({
+                    name: identifyLinkName(x),
+                    url: x
+                })
+                return;
+            }
+            obj.links?.push(x)
+        })
+    }
 
+    if (data.skills){
+        obj.skills = data.skills;
+    }
+    return obj
+}
 function importProjectsFromDataDir(){
     const data_projects_import= import.meta.glob('/data/projects/*' , {eager: true, as: "raw"})
     const project_data_filepaths = Object.keys(data_projects_import)
@@ -68,6 +116,12 @@ function importProjectsFromDataDir(){
     }
     console.log(parsedContent)
 }
+
+
+
+
+import * as _allProjects from "./projects.json"
+export const allProjects: oldFormat.proj_entry[] = <oldFormat.proj_entry[]>_allProjects.items
 
 importProjectsFromDataDir()
 
