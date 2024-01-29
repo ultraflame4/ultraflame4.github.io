@@ -28,22 +28,23 @@ import SearchBar from "@/components/content/SearchBar.vue";
 import {type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
-import type {oldFormat} from "@/assets/projects";
+import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
 import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import {hashCode} from "@/utils";
+import {normalise_oldFormat} from "@/assets/projects";
 
 const searchTerm = ref("")
 
-let allProjectsResults: Fuse.FuseResult<oldFormat.proj_entry>[] = []
-const fuse = new Fuse<oldFormat.proj_entry>([], {
+let allProjectsResults: Fuse.FuseResult<NormalisedProjectData>[] = []
+const fuse = new Fuse<NormalisedProjectData>([], {
     includeScore: true,
     useExtendedSearch: true,
     shouldSort: true,
     keys: [
         {name: "title", weight: 0.5},
-        {name: "desc", weight: 0.2},
-        {name: "skillsUsed", weight: 0.3}
+        {name: "body", weight: 0.2},
+        {name: "skills", weight: 0.3}
     ],
     findAllMatches: true
 
@@ -51,7 +52,7 @@ const fuse = new Fuse<oldFormat.proj_entry>([], {
 
 refreshProjectList(AllProjects.value)
 
-function refreshProjectList(project_list: oldFormat.proj_entry[]) {
+function refreshProjectList(project_list: NormalisedProjectData[]) {
     allProjectsResults = project_list.map((value, index) => {
         return {
             item: value,
@@ -63,7 +64,7 @@ function refreshProjectList(project_list: oldFormat.proj_entry[]) {
     fuse.setCollection(project_list)
 }
 
-const searchResults: Ref<Fuse.FuseResult<oldFormat.proj_entry>[]> = ref(allProjectsResults)
+const searchResults: Ref<Fuse.FuseResult<NormalisedProjectData>[]> = ref(allProjectsResults)
 
 watch(AllProjects, value => refreshProjectList(value))
 

@@ -61,6 +61,12 @@ export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProje
             type: data.bannerImgIsVideo?"video": "img"
         })
     }
+    if (data.source){
+        obj.source = {
+            label: data.sourceLabel ?? "Source",
+            url : data.source
+        }
+    }
     obj.links = data.links
     obj.skills = data.skillsUsed
     return obj

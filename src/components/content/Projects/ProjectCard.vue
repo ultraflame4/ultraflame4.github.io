@@ -2,12 +2,12 @@
     <li class="project-item">
         <div class="project-details">
             <h3>{{ props.item.title }}</h3>
-            <MarkdownView class="project-details-desc" v-if="props.item.desc!==undefined" :content="props.item.desc" :remove_link="true"/>
+            <MarkdownView class="project-details-desc" :content="props.item.body" :remove_link="true"/>
             <ul class="project-links">
                 <li v-if="props.item.source">
                     <GetProjectLink :value="{
-                        name: props.item.sourceLabel ?? 'Source',
-                        url: props.item.source,
+                        name: props.item.source.label,
+                        url: props.item.source.url,
                         icon: 'humbleicons:code'
                     }"/>
 
@@ -22,17 +22,17 @@
         </div>
 
         <div class="project-image">
-            <template v-if="props.item.bannerImgIsVideo && props.item.bannerSrc">
-                <YoutubeEmbed v-if="isYTUrl(props.item.bannerSrc)" :src="props.item.bannerSrc"/>
+            <template v-if="props.item.media[0] && props.item.media[0].type == 'video'">
+                <YoutubeEmbed v-if="isYTUrl(props.item.media[0].url)" :src="props.item.media[0].url"/>
                 <video v-else controls>
-                    <source :src="props.item.bannerSrc"/>
+                    <source :src="props.item.media[0].url"/>
                 </video>
             </template>
-            <img v-else-if="props.item.bannerSrc" :src="props.item.bannerSrc" alt=""/>
+            <img v-else-if="props.item.media[0]" :src="props.item.media[0].url" alt=""/>
         </div>
 
         <ul class="project-skills">
-            <li v-for="(value,index) in props.item.skillsUsed" :key="index">
+            <li v-for="(value,index) in props.item.skills" :key="index">
                 {{ value.toLowerCase() }}
             </li>
 
@@ -41,15 +41,14 @@
 </template>
 
 <script lang="ts" setup>
-import type {oldFormat} from "@/assets/projects";
-import {Icon} from "@iconify/vue";
 import MarkdownView from "@/components/utils/MarkdownView.vue";
 import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
 import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 import {isYoutubeUrl} from "@/external/yt";
+import type {NormalisedProjectData} from "@/assets/projects";
 const isYTUrl = isYoutubeUrl;
 
-const props = defineProps<{ item: oldFormat.proj_entry }>()
+const props = defineProps<{ item: NormalisedProjectData }>()
 
 </script>
 
