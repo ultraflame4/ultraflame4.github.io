@@ -55,7 +55,7 @@ import fm from "front-matter"
 
 
 export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData{
-    let obj: NormalisedProjectData = {links: data.links??[], body: data.desc??"", media: [] , title: data.title, featured: !!data.featured}
+    let obj: NormalisedProjectData = {links: data.links??[], body: data.desc?.replace("\n","\n\n")??"", media: [] , title: data.title, featured: !!data.featured}
     if (data.bannerSrc){
         obj.media.push({
             url: data.bannerSrc,
@@ -139,7 +139,7 @@ function importProjectsFromDataDir(){
     const frontmatter = project_data_filepaths.map(x=>fm<FrontmatterProjectDataSchema>(data_projects_import[x]))
     console.log(frontmatter)
     frontmatter.forEach(x=>{
-        allProjects.push(normalise_FrontmatterProjectData(x.attributes,x.body))
+        allProjects.push(normalise_FrontmatterProjectData(x.attributes,x.body.replace("\r","")))
     })
 }
 importProjectsFromJson()
