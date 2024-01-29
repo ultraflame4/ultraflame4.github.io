@@ -35,6 +35,8 @@ export interface FrontmatterProjectDataSchema{
     source?: string | { label:string, url: string },
     links?: Array<string | { [name: string] : string }>,
     skills?: string[],
+    start?: string,
+    end?: string,
     flags: Array<"featured" >
 }
 
