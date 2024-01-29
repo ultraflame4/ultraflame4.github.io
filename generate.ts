@@ -19,7 +19,7 @@ const program = TJS.getProgramFromFiles(
 );
 
 const schema_skills = TJS.generateSchema(program, "SkillListJsonConfig", settings)
-const schema_proj = TJS.generateSchema(program, "proj_entry", settings)
+const schema_proj = TJS.generateSchema(program, "oldFormat.proj_entry", settings)
 const json_skills = JSON.stringify(schema_skills,undefined,3)
 const json_proj = JSON.stringify(schema_proj,undefined,3)
 
