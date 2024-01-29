@@ -5,12 +5,18 @@ import * as fs from "fs";
 // optionally pass argument to schema generator
 const settings: TJS.PartialArgs = {
     required: true,
+    ignoreErrors: true
 };
 
 // optionally pass ts compiler options
 const compilerOptions: TJS.CompilerOptions = {
-    strictNullChecks: true,
-    resolveJsonModule: true,
+    strictNullChecks: false,
+    // noResolve: true,
+    // module: "esnext",
+    strict: false,
+    skipLibCheck: true,
+
+
 };
 
 const program = TJS.getProgramFromFiles(

@@ -1,1 +1,43 @@
-null
+{
+   "type": "object",
+   "properties": {
+      "$schema": {
+         "type": "string"
+      },
+      "skills": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/SkillItem"
+         }
+      }
+   },
+   "required": [
+      "$schema",
+      "skills"
+   ],
+   "definitions": {
+      "SkillItem": {
+         "type": "object",
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "image": {
+               "type": "string"
+            },
+            "level": {
+               "type": "number"
+            },
+            "invert": {
+               "type": "boolean"
+            }
+         },
+         "required": [
+            "image",
+            "level",
+            "name"
+         ]
+      }
+   },
+   "$schema": "http://json-schema.org/draft-07/schema#"
+}
