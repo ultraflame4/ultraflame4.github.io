@@ -1,4 +1,5 @@
 ---
+$ref: "/public/schema-attributes"
 title: Trapped In A Dungeon
 banner:
   youtube: "https://youtu.be/ZPBI4oVjePA"

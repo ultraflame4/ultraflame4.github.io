@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts" setup>
-import type {proj_entry} from "@/assets/projects";
+import type {oldFormat} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
 import MarkdownView from "@/components/utils/MarkdownView.vue";
 import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
@@ -49,7 +49,7 @@ import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 import {isYoutubeUrl} from "@/external/yt";
 const isYTUrl = isYoutubeUrl;
 
-const props = defineProps<{ item: proj_entry }>()
+const props = defineProps<{ item: oldFormat.proj_entry }>()
 
 </script>
 

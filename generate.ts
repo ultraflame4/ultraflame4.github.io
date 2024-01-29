@@ -24,10 +24,13 @@ const program = TJS.getProgramFromFiles(
     compilerOptions
 );
 
-const schema_skills = TJS.generateSchema(program, "SkillListJsonConfig", settings)
-const schema_proj = TJS.generateSchema(program, "oldFormat.proj_entry", settings)
-const json_skills = JSON.stringify(schema_skills,undefined,3)
-const json_proj = JSON.stringify(schema_proj,undefined,3)
 
-fs.writeFileSync(path.resolve("./public/schema-skills.json"), json_skills)
-fs.writeFileSync(path.resolve("./public/schema-projects.json"), json_proj)
+function writeSchema(typename: string,filename: string){
+    const schema = TJS.generateSchema(program,typename,settings)
+    fs.writeFileSync(path.resolve("./public/"+filename),JSON.stringify(schema,undefined,3))
+}
+
+writeSchema("SkillListJsonConfig","schema-skills.json");
+writeSchema("oldFormat.proj_entry","schema-projects.json");
+writeSchema("FrontmatterProjectDataSchema","schema-attributes.json");
+// const schema_proj = TJS.generateSchema(program, "FrontmatterProjectDataSchema", settings)

@@ -1,6 +1,4 @@
-import proj_entry = oldFormat.proj_entry;
-
-namespace oldFormat{
+export namespace oldFormat{
     export interface proj_entry_link {
         name: string,
         url?: string,
@@ -26,29 +24,37 @@ namespace oldFormat{
         bannerImgIsVideo?: boolean
     }
 }
-
+export type proj_entry_link = oldFormat.proj_entry_link;
 export interface FrontmatterProjectDataSchema{
     title: string,
-    body?: string,
     banner?:string
     featured?: boolean,
-    source?: string | { sourceLabel:string, url: string },
+    source?: string | { label:string, url: string },
     links?: proj_entry_link,
     skills?: string[],
 }
 
 export interface NormalisedProjectData{
-
+    title: string,
+    body: string,
+    banner: {
+        url: string,
+        type: "img" | "video"
+    }
+    featured?: boolean,
+    source?: { label:string, url: string },
+    links?: proj_entry_link,
+    skills?: string[],
 }
 
 
-export type proj_entry_link = oldFormat.proj_entry_link;
+
 
 import * as _allProjects from "./projects.json"
 import fm from "front-matter"
 
 
-export const allProjects: proj_entry[] = <proj_entry[]>_allProjects.items
+export const allProjects: oldFormat.proj_entry[] = <oldFormat.proj_entry[]>_allProjects.items
 
 
 function importProjectsFromDataDir(){

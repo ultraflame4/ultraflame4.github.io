@@ -1,4 +1,4 @@
-import {allProjects, type proj_entry} from "@/assets/projects";
+import {allProjects, type oldFormat} from "@/assets/projects";
 import {ref} from "vue";
 import type {GetDatabaseResponse, PageObjectResponse} from "@notionhq/client/build/src/api-endpoints";
 import type {MdStringObject} from "notion-to-md/build/types";
@@ -7,7 +7,7 @@ import {extractLinksFromMd} from "@/tools/markdown-tools";
 const apiServerDomain = import.meta.env.DEV ? (import.meta.env.LOCAL_API_SERVER ?? "http://localhost:3000") : (import.meta.env.PRODUCTION_API_SERVER ?? "https://ultraflame4-github-io-backendapi.vercel.app")
 console.log("Using api server at:", apiServerDomain)
 
-export const AllProjects = ref<proj_entry[]>([])
+export const AllProjects = ref<oldFormat.proj_entry[]>([])
 
 interface ProjectsApiJson{
     time_ms: string,
