@@ -1,3 +1,5 @@
+import proj_entry = oldFormat.proj_entry;
+
 namespace oldFormat{
     export interface proj_entry_link {
         name: string,
@@ -25,6 +27,19 @@ namespace oldFormat{
     }
 }
 
+export interface FrontmatterProjectDataSchema{
+    title: string,
+    body?: string,
+    banner?:string
+    featured?: boolean,
+    source?: string | { sourceLabel:string, url: string },
+    links?: proj_entry_link,
+    skills?: string[],
+}
+
+export interface NormalisedProjectData{
+
+}
 
 
 export type proj_entry_link = oldFormat.proj_entry_link;

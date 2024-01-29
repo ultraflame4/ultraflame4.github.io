@@ -10,7 +10,7 @@ const settings: TJS.PartialArgs = {
 // optionally pass ts compiler options
 const compilerOptions: TJS.CompilerOptions = {
     strictNullChecks: true,
-    resolveJsonModule: true
+    resolveJsonModule: true,
 };
 
 const program = TJS.getProgramFromFiles(

@@ -10,6 +10,7 @@ skills: [
 source: "https://github.com/ultraflame4/TrappedInADungeon"
 links:
   "itch.io": "https://notlivingstudios.itch.io/trappedinadungeon"
+meta: [featured]
 ---
 
 This was done as part of a school project.
