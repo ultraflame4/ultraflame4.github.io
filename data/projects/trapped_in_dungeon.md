@@ -1,5 +1,4 @@
 ---
-$ref: "/public/schema-attributes"
 title: Trapped In A Dungeon
 video: "https://youtu.be/ZPBI4oVjePA"
 skills: [
