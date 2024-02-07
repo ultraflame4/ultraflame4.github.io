@@ -32,7 +32,8 @@ import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
 import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import {hashCode} from "@/utils";
-import {normalise_oldFormat} from "@/assets/projects";
+
+import {normalise_oldFormat} from "@/assets/projects_utils";
 
 const searchTerm = ref("")
 

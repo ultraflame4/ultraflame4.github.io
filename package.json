@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
-    "schema": "tsx generate.ts",
+    "migrate": "tsx tools/migrate.ts",
+    "schema": "tsx tools/schema.ts",
     "preview": "vite preview",
     "build-only": "cross-env NODE_ENV=production vite-ssg build --mode production",
     "type-check": "vue-tsc --noEmit"
@@ -26,6 +27,7 @@
     "vyue42": "^0.0.2"
   },
   "devDependencies": {
+    "yaml": "^2.3.4",
     "@iconify/vue": "^4.1.0",
     "@notionhq/client": "^2.2.13",
     "@types/dompurify": "^3.0.2",

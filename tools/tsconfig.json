@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "esModuleInterop": true
+  },
+  "references": [
+    {
+      "path": "../tsconfig.node.json"
+    }
+  ]
+}
