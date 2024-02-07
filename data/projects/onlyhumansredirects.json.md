@@ -12,6 +12,7 @@ links:
   - link: http://links.ultr42.dev/
   - rickroll?: https://knowyourmeme.com/memes/rickroll
   - example: https://links.ultr42.dev/?q=MXd3dy5nb29nbGUuY29t7A
+index_hint: 300
 ---
 A fake human captcha design to automatically redirect to a website and sometimes rickroll a person.
 

@@ -7,6 +7,7 @@ skills:
   - python
   - numpy
   - numba
+index_hint: 600
 ---
 This program stitches or "Tiles" a set of images (called tiles) together into one large composite image with likeness to a reference image.
 This uses the python 'rich' library for fancy command-line (cli) interfaces

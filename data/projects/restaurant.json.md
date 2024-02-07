@@ -12,6 +12,7 @@ skills:
   - mysql
 links:
   - Project Site: https://github.com/ultraflame4/CDEVRestaurantReview
+index_hint: 700
 ---
 A website listing various restaurants and reviews for them.
 Restaurants are dynamically loaded as the user scrolls and can be sorted & filtered

@@ -3,6 +3,7 @@ title: Better Console
 image: https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif
 skills:
   - python
+index_hint: 1000
 ---
 I forgot why I created this, though I know it was partly inspired by minecraft’s server console
 

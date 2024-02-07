@@ -3,6 +3,7 @@ title: SeaSharkMC
 skills:
   - WIP
   - csharp
+index_hint: 100
 ---
 My attempt at a minecraft server written in C#.
 

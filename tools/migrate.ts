@@ -6,7 +6,7 @@ import {normalise_oldFormat} from "../src/assets/projects_utils";
 import path from "path";
 
 
-function normalised2Frontmatter(normalised: NormalisedProjectData) :FrontmatterProjectDataSchema{
+function normalised2Frontmatter(normalised: NormalisedProjectData, index: number ) :FrontmatterProjectDataSchema{
 
     let flags: FrontmatterProjectDataSchema["flags"] = []
     if (normalised.featured) flags.push("featured")
@@ -28,6 +28,7 @@ function normalised2Frontmatter(normalised: NormalisedProjectData) :FrontmatterP
         }) : undefined,
         start: normalised.start_date,
         end: normalised.end_date,
+        index_hint: index * 100
     }
 
 
@@ -35,8 +36,8 @@ function normalised2Frontmatter(normalised: NormalisedProjectData) :FrontmatterP
     return obj
 }
 
-function writeFrontmatterMarkdown(normalised: NormalisedProjectData){
-    const converted = normalised2Frontmatter(normalised);
+function writeFrontmatterMarkdown(normalised: NormalisedProjectData, index: number){
+    const converted = normalised2Frontmatter(normalised, index);
 
     const yaml = stringify(converted)
     const content = `---\n${yaml.trim()}\n---\n${normalised.body.trim()}`
@@ -51,5 +52,5 @@ function readJsonProjects(): NormalisedProjectData[]{
 }
 
 const jsonProjects = readJsonProjects();
-jsonProjects.forEach(value => writeFrontmatterMarkdown(value))
+jsonProjects.forEach((value, i) => writeFrontmatterMarkdown(value,i))
 

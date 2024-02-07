@@ -7,6 +7,7 @@ skills:
   - js
 links:
   - Game: https://ultraflame4.github.io/OnlineTicTacToe
+index_hint: 400
 ---
 This is a simple multiplayer Tic Tac Toe game playable on the browser. 
 

@@ -8,6 +8,7 @@ skills:
   - android
   - android studio
   - firebase
+index_hint: 500
 ---
 This is an android music app created using android studio (and other tools) for a school project.
 

@@ -8,6 +8,7 @@ skills:
   - python
 links:
   - Webapp: https://ultraflame4.github.io/WebDevCreate
+index_hint: 900
 ---
 Disclaimer: This project has since been abandoned
 

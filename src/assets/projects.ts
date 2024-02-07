@@ -38,6 +38,7 @@ export interface FrontmatterProjectDataSchema{
     skills?: string[],
     start?: string,
     end?: string,
+    index_hint?: number
     flags: Array<"featured" >
 }
 
@@ -71,6 +72,11 @@ function importProjectsFromDataDir(){
 
     const frontmatter = project_data_filepaths.map(x=>fm<FrontmatterProjectDataSchema>(data_projects_import[x]))
     console.log(frontmatter)
+    frontmatter.sort((a,b)=>{
+        const aHint =a.attributes.index_hint ?? -1;
+        const bHint =b.attributes.index_hint ?? -1;
+        return aHint > bHint ? 1 : -1
+    })
     frontmatter.forEach(x=>{
         allProjects.push(normalise_FrontmatterProjectData(x.attributes,x.body.replace("\r","")))
     })
