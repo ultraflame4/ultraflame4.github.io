@@ -53,8 +53,8 @@ export interface NormalisedProjectData{
     links: proj_entry_link[],
     source?: { label:string, url: string },
     skills?: string[],
-    start_date?: string
-    end_date?: string
+    start_date?: Date
+    end_date?: Date
 }
 
 

@@ -71,5 +71,7 @@ export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSch
     if (data.skills) {
         obj.skills = data.skills;
     }
+    if (data.start) obj.start_date = new Date(data.start)
+    if (data.end) obj.end_date = new Date(data.end)
     return obj
 }

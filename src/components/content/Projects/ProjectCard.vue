@@ -2,6 +2,15 @@
     <li class="project-item">
         <div class="project-details">
             <h3>{{ props.item.title }}</h3>
+            <sub>
+                <template v-if="props.item.start_date||props.item.end_date">
+                    <Icon inline icon="mdi:calendar-month" class="icon"/>
+                    {{ props.item.start_date ? datetimeformat.format(props.item.start_date) : "unknown" }}
+                    <Icon inline icon="material-symbols:arrow-range-rounded" class="icon"/>
+                    {{ props.item.end_date ?datetimeformat.format(props.item.end_date) : "current" }}
+                </template>
+            </sub>
+
             <MarkdownView class="project-details-desc" :content="props.item.body" :remove_link="true"/>
             <ul class="project-links">
                 <li v-if="props.item.source">
@@ -12,12 +21,12 @@
                     }"/>
 
                 </li>
-<!--                <template v-for="i in 10">-->
+                <!--                <template v-for="i in 10">-->
                 <li v-if="props.item.links" v-for="(value,key,index) in props.item.links" :key="index">
                     <GetProjectLink :value="value"/>
 
                 </li>
-<!--                </template>-->
+                <!--                </template>-->
             </ul>
         </div>
 
@@ -46,6 +55,10 @@ import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
 import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 import {isYoutubeUrl} from "@/external/yt";
 import type {NormalisedProjectData} from "@/assets/projects";
+import {Icon} from "@iconify/vue";
+
+const datetimeformat= new Intl.DateTimeFormat('en-sg', {month:'short', year: "numeric", day: "2-digit"})
+
 const isYTUrl = isYoutubeUrl;
 
 const props = defineProps<{ item: NormalisedProjectData }>()
@@ -64,7 +77,7 @@ const props = defineProps<{ item: NormalisedProjectData }>()
     height: var(--height);
     display: grid;
     grid-template-columns: 5fr 4fr;
-    grid-template-rows: minmax(0,1fr) auto;
+    grid-template-rows: minmax(0, 1fr) auto;
     box-sizing: border-box;
     grid-gap: 1rem;
     overflow: hidden;
@@ -93,27 +106,42 @@ const props = defineProps<{ item: NormalisedProjectData }>()
 
 }
 
-.project-details-desc::v-deep(p), .project-details-desc::v-deep(li){
+.project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
     font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";
 }
+
 .project-details {
     grid-column: 1/1;
     grid-row: 1/1;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    //gap: 1rem;
     height: 100%;
     overflow: hidden;
+
+
+    & > sub {
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.215rem;
+
+        .icon {
+            font-size: 1.3em;
+        }
+    }
 
     & > h3 {
         margin: 0;
         font-size: 1.35rem;
         flex-shrink: 0;
     }
-    .project-details-desc{
+
+    .project-details-desc {
         flex-shrink: 1;
         flex-grow: 1;
         overflow-y: scroll;
@@ -127,7 +155,7 @@ const props = defineProps<{ item: NormalisedProjectData }>()
         gap: 1rem;
         flex-wrap: wrap;
 
-        &>li{
+        & > li {
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -135,7 +163,6 @@ const props = defineProps<{ item: NormalisedProjectData }>()
 
 
         }
-
 
 
     }
