@@ -4,9 +4,9 @@
             <h3>{{ props.item.title }}</h3>
             <sub>
                 <template v-if="props.item.start_date||props.item.end_date">
-                    <Icon inline icon="mdi:calendar-month" class="icon"/>
+                    <Icon inline icon="mdi:calendar-month" class="search-icon"/>
                     {{ props.item.start_date ? datetimeformat.format(props.item.start_date) : "unknown" }}
-                    <Icon inline icon="material-symbols:arrow-range-rounded" class="icon"/>
+                    <Icon inline icon="material-symbols:arrow-range-rounded" class="search-icon"/>
                     {{ props.item.end_date ?datetimeformat.format(props.item.end_date) : "current" }}
                 </template>
             </sub>
@@ -137,7 +137,7 @@ const props = defineProps<{ item: NormalisedProjectData }>()
         align-items: center;
         gap: 0.215rem;
 
-        .icon {
+        .search-icon {
             font-size: 1.3em;
         }
     }

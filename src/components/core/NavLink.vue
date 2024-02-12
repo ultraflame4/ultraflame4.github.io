@@ -2,7 +2,7 @@
 
     <a v-if="props.to?.startsWith('http')" :href="props.to" class="no-hover no-deco"
        :target="newtab?'_blank':undefined">
-        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'" class="icon"/>
+        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'" class="search-icon"/>
         <slot name="prefix"></slot>
         <div :class="`parent_hover-underline ${noicon?'':'add-align'}`">
             <slot>
@@ -12,7 +12,7 @@
         <slot name="suffix"></slot>
     </a>
     <RouterLink v-else :to="fullpath.fullPath" class="no-hover no-deco" :target="newtab?'_blank':undefined">
-        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'" class="icon"/>
+        <Icon v-if="!noicon" :icon="props.icon??'vaadin:hash'" class="search-icon"/>
         <div :class="`parent_hover-underline add-align`">
             <slot>
 
@@ -112,7 +112,7 @@ a:hover {
 }
 
 
-.icon {
+.search-icon {
     color: var(--accent);
     height: 100%;
     position: relative;

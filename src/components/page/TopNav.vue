@@ -5,7 +5,7 @@
         <div id="header-left" class="floater-shadow header-item">
             <h1>ultr42</h1>
             <ul id="topnav-quick">
-                <Icon icon="vaadin:hash" class="icon"/>
+                <Icon icon="vaadin:hash" class="search-icon"/>
                 <template v-for="link in PageNavTree.links.value">
                     <li v-if="link.level<1">
                         <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{ link.name }}
@@ -193,7 +193,7 @@ header {
     height: 100%;
 
 
-    & > .icon {
+    & > .search-icon {
         font-weight: 600;
         font-size: 1rem;
         color: var(--accent);

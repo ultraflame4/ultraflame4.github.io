@@ -1,16 +1,22 @@
 <template>
-    <div>
-        <Icon icon="ph:magnifying-glass-bold" class="icon"/>
+    <div class="searchbar">
+        <Icon icon="ph:magnifying-glass-bold" class="search-icon icon"/>
         <input placeholder="Search for titles, description, skills" v-model="inputValue"/>
-<!--        {{ inputValue }}-->
+        <slot name="other-items"/>
+
+
+        <!--        {{ inputValue }}-->
     </div>
 </template>
 
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
 import {computed, ref} from "vue";
+import Modal from "@/components/core/Modal.vue";
+import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 
 const props = defineProps<{ searchTerm: string }>()
+
 const emit = defineEmits<{ (e: 'update:searchTerm', value: string): void }>()
 const inputValue = computed({
     get() {
@@ -26,21 +32,22 @@ const inputValue = computed({
 </script>
 
 <style lang="scss" scoped>
-div {
+.searchbar {
     position: sticky;
     bottom: 1rem;
     height: 2.75rem;
-    padding: 0 1rem;
+    padding: 0 0.8rem;
     background: var(--bg-0);
     color: white;
-    border-radius: 1rem;
+    border-radius: 0.9rem;
     border: 2px solid var(--bg-2);
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    overflow: visible;
 
     &:focus-within {
-        & > .icon {
+        & > .search-icon {
             color: var(--accent);
         }
 
@@ -52,6 +59,8 @@ div {
     }
 }
 
+
+
 input {
     width: 100%;
     height: 100%;
@@ -62,7 +71,7 @@ input {
     background: inherit;
 
     transition: transform 200ms ease;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.05em;
     font-size: 0.9rem;
     font-family: "Montserrat";
@@ -73,7 +82,7 @@ input {
 
 }
 
-.icon {
+.searchbar:deep(.icon) {
     color: var(--bg-3);
     font-size: 1.35rem;
 

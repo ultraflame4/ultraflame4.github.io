@@ -7,7 +7,7 @@
        :data-filled="value.filled">
         {{ value.name }}
     </a>
-    <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
+    <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="search-icon" />
 </template>
 <script setup lang="ts">
 import {Icon} from "@iconify/vue";
@@ -18,12 +18,12 @@ const value = inject("link") as proj_entry_link
 
 </script>
 <style scoped lang="scss">
-.icon{
+.search-icon{
     font-size: 1.1em;
     color: var(--accent);
 }
 
-:has(>.icon):hover>.icon{
+:has(>.search-icon):hover>.search-icon{
     color: white;
 }
 
