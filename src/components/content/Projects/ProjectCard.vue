@@ -68,8 +68,9 @@ const props = defineProps<{ item: NormalisedProjectData }>()
 <style lang="scss" scoped>
 
 .project-item {
-    --move-dist: 0.4rem;
-    --allow-space: 0.5rem;
+    --move-dist-x: 0.8rem;
+    --move-dist-y: 0.9rem;
+    --allow-space: 0.6rem;
     --width: min(40rem, 80vw);
     --height: 24rem;
 
@@ -85,23 +86,29 @@ const props = defineProps<{ item: NormalisedProjectData }>()
     max-height: 100%;
     max-width: 100%;
     border: 2px solid var(--bg-2);
-
+    position: relative;
+    right: 0;
+    bottom: 0;
     border-radius: 1rem;
     padding: 1rem 1rem 0.65rem;
-    margin: var(--allow-space);
+    margin: var(--allow-space) ;
+    transition: all 100ms ease;
 
     &:hover, &:focus-within {
-        margin-left: calc(var(--allow-space) - var(--move-dist) + 0.01px); // 0.01px is a weirdly specific value that stops the other cards from jiggling/moving when hovered
-        margin-top: calc(var(--allow-space) - var(--move-dist) - 1px);
-        width: calc(var(--width) + var(--move-dist));
-        height: calc(var(--height) + var(--move-dist));
 
-        border-width: var(--move-dist);
-        border-left-width: 1px;
-        border-top-width: 1px;
+        right:  calc(var(--move-dist-x) / 2);
+        bottom: calc(var(--move-dist-y) / 2);
 
+        //width: calc(var(--width) + var(--move-dist));
+        //height: calc(var(--height) + var(--move-dist));
+
+        //border-width: var(--move-dist);
+        box-shadow: var(--move-dist-x) var(--move-dist-y) color-mix(in oklab, var(--accent) 40%, var(--bg-0));
+        //
         border-style: solid;
         border-color: var(--accent);
+
+
     }
 
 }
