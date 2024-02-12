@@ -1,5 +1,5 @@
 <template>
-    <div class="skill-card">
+    <div class="skill-card"  @click="searchProjects">
         <img v-if="props.invert" :src="props.image"
              :alt="props.name" :title="props.name" style="filter: invert();">
         <img v-else :src="props.image" :alt="props.name"
@@ -10,6 +10,8 @@
 </template>
 
 <script lang="ts" setup>
+import {useRouter} from "vue-router";
+
 interface props {
     name: string,
     image: string,
@@ -18,6 +20,15 @@ interface props {
 }
 
 const props = defineProps<props>()
+const router = useRouter()
+function searchProjects(){
+    router.push({
+        path: "projects",
+        query: {
+            q: "="+props.name
+        }
+    })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +45,7 @@ const props = defineProps<props>()
     box-sizing: border-box;
     transition: all 200ms;
     filter: saturate(5%) brightness(90%);
+    cursor: pointer;
     &:hover{
         filter: saturate(100%) brightness(120%);
     }
