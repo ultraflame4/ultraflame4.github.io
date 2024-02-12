@@ -188,10 +188,25 @@ function repeatArray<T>(array: T[], count: number): T[] {
 
         justify-content: center;
         align-items: center;
-        gap: 4rem;
+        gap: 2rem;
 
+        // Mobile
+        @media only screen and (max-aspect-ratio: 10/9) {
+            flex-direction: column;
+            gap: 0;
+            padding: 0 4rem;
+
+            #skills-txt{
+                //padding: 0 2rem;
+
+            }
+            #skills-ctn{
+                min-width: 100%;
+            }
+        }
 
         #skills-txt {
+
             h1 {
                 margin-left: 0;
                 margin-right: 0;
@@ -208,7 +223,8 @@ function repeatArray<T>(array: T[], count: number): T[] {
             align-items: center;
             justify-content: center;
             //min-width: fit-content;
-            max-width: 40%;
+            //max-width: 35%;
+            width: min(70%, 37rem);
             gap: 0.5em;
             //height: 25rem;
         }
