@@ -40,7 +40,7 @@ div {
     gap: 0.5rem;
 
     &:focus-within {
-        .icon {
+        & > .icon {
             color: var(--accent);
         }
 
