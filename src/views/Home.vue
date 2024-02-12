@@ -45,14 +45,20 @@
                     </p>
                 </div>
                 <div id="skills-ctn">
-                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*700+1000*i" :offset="i*1.5"
-                                     class="scrolling-skills">
-                        <ul id="skills-list">
-                            <li v-for="i in repeatArray(shuffleArray(AllSkills), 2)">
-                                <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
-                            </li>
-                        </ul>
-                    </ScrollingColumn>
+
+                    <ul id="skills-list">
+                        <li v-for="i in AllSkills">
+                            <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
+                        </li>
+                    </ul>
+<!--                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*700+1000*i" :offset="i*1.5"-->
+<!--                                     class="scrolling-skills">-->
+<!--                        <ul id="skills-list">-->
+<!--                            <li v-for="i in repeatArray(shuffleArray(AllSkills), 2)">-->
+<!--                                <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </ScrollingColumn>-->
                 </div>
             </div>
         </section>
@@ -198,18 +204,25 @@ function repeatArray<T>(array: T[], count: number): T[] {
 
         #skills-ctn {
             display: flex;
-            justify-content: flex-start;
-            min-width: fit-content;
+
+            align-items: center;
+            justify-content: center;
+            //min-width: fit-content;
             max-width: 40%;
             gap: 0.5em;
-            height: 35rem;
-
+            //height: 25rem;
         }
 
         #skills-list {
             display: flex;
-            flex-direction: column;
+            //flex-direction: column;
+            flex-wrap: wrap;
+
+            align-items: center;
+            justify-content: center;
+            //width: 100%;
             gap: 0.5em;
+            height: fit-content;
             padding: 0;
             list-style-type: none;
         }

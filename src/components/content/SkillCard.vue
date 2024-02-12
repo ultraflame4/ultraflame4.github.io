@@ -31,8 +31,13 @@ const props = defineProps<props>()
     border-radius: 0.75em;
     aspect-ratio: 6/9;
     height: 10em;
-    //filter: grayscale(100%);
     box-sizing: border-box;
+    transition: all 200ms;
+    filter: saturate(5%) brightness(90%);
+    &:hover{
+        filter: saturate(100%) brightness(120%);
+    }
+
     &>p,h5{
         margin: 0;
     }
