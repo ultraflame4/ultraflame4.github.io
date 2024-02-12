@@ -25,7 +25,7 @@
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SearchBar from "@/components/content/SearchBar.vue";
-import {type Ref, ref, watch} from "vue";
+import {onMounted, type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
@@ -34,8 +34,11 @@ import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue"
 import {hashCode} from "@/utils";
 
 import {normalise_oldFormat} from "@/assets/projects_utils";
+import {useRoute} from "vue-router";
 
-const searchTerm = ref("")
+const route = useRoute()
+const searchTerm = ref(route.query.q as string ?? "")
+
 
 let allProjectsResults: Fuse.FuseResult<NormalisedProjectData>[] = []
 const fuse = new Fuse<NormalisedProjectData>([], {
@@ -69,14 +72,22 @@ const searchResults: Ref<Fuse.FuseResult<NormalisedProjectData>[]> = ref(allProj
 
 watch(AllProjects, value => refreshProjectList(value))
 
+onMounted(() => {
+    processSearch(searchTerm.value)
+})
+
 watch([searchTerm, AllProjects], ([search_term, _]) => {
+    processSearch(search_term)
+})
+
+function processSearch(search_term: string){
 
     if (search_term.trim().length > 0) {
         searchResults.value = fuse.search(search_term)
         return
     }
     searchResults.value = allProjectsResults;
-})
+}
 
 </script>
 
