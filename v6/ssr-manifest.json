@@ -11,6 +11,16 @@
   ],
   "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/@supercharge/strings/dist/string-replacer.js?commonjs-exports": [
   ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/front-matter/index.js?commonjs-module": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/js-yaml/lib/js-yaml.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/js-yaml/lib/js-yaml/common.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/js-yaml/lib/js-yaml/dumper.js?commonjs-exports": [
+  ],
+  "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/js-yaml/lib/js-yaml/loader.js?commonjs-exports": [
+  ],
   "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/index.js?commonjs-exports": [
   ],
   "\u0000/home/runner/work/ultraflame4.github.io/ultraflame4.github.io/node_modules/uuid/dist/commonjs-browser/md5.js?commonjs-exports": [
@@ -45,6 +55,8 @@
   ],
   "\u0000__vite-browser-external?commonjs-proxy": [
   ],
+  "\u0000commonjs-dynamic-modules": [
+  ],
   "\u0000commonjsHelpers.js": [
   ],
   "\u0000plugin-vue:export-helper": [
@@ -54,6 +66,32 @@
   "../../../../../moon.webm": [
   ],
   "__vite-browser-external": [
+  ],
+  "data/projects/better_console.json.md?raw": [
+  ],
+  "data/projects/clirenderer.json.md?raw": [
+  ],
+  "data/projects/gravsim.json.md?raw": [
+  ],
+  "data/projects/moosic_app_electric_boogalo.json.md?raw": [
+  ],
+  "data/projects/online_tic_tac_toe.json.md?raw": [
+  ],
+  "data/projects/onlyhumansredirects.json.md?raw": [
+  ],
+  "data/projects/pythonqtbrowser.json.md?raw": [
+  ],
+  "data/projects/restaurant.json.md?raw": [
+  ],
+  "data/projects/seasharkmc.json.md?raw": [
+  ],
+  "data/projects/site_version_picker.json.md?raw": [
+  ],
+  "data/projects/tilimg__tiledimage_.json.md?raw": [
+  ],
+  "data/projects/trapped_in_dungeon.md?raw": [
+  ],
+  "data/projects/webdevcreate.json.md?raw": [
   ],
   "index.html": [
   ],
@@ -93,9 +131,71 @@
   ],
   "node_modules/dompurify/dist/purify.es.mjs": [
   ],
+  "node_modules/front-matter/index.js": [
+  ],
   "node_modules/fuse.js/dist/fuse.esm.js": [
   ],
   "node_modules/hookable/dist/index.mjs": [
+  ],
+  "node_modules/js-yaml/index.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/common.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/dumper.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/exception.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/loader.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/mark.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/schema.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/schema/core.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/schema/default_full.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/schema/default_safe.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/schema/failsafe.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/schema/json.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/binary.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/bool.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/float.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/int.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/js/function.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/js/regexp.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/js/undefined.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/map.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/merge.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/null.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/omap.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/pairs.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/seq.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/set.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/str.js": [
+  ],
+  "node_modules/js-yaml/lib/js-yaml/type/timestamp.js": [
   ],
   "node_modules/marked/lib/marked.esm.js": [
   ],
@@ -157,6 +257,8 @@
   ],
   "src/assets/projects.ts": [
   ],
+  "src/assets/projects_utils.ts": [
+  ],
   "src/assets/reset.css": [
   ],
   "src/assets/theme.scss": [
@@ -167,13 +269,13 @@
   ],
   "src/components/content/Projects/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=d593d2a3&lang.scss": [
+  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=313f21ea&lang.scss": [
   ],
   "src/components/content/Projects/ProjectDefaultLink.vue": [
   ],
   "src/components/content/Projects/ProjectDefaultLink.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/Projects/ProjectDefaultLink.vue?vue&type=style&index=0&scoped=ade09890&lang.scss": [
+  "src/components/content/Projects/ProjectDefaultLink.vue?vue&type=style&index=0&scoped=e9161f8e&lang.scss": [
   ],
   "src/components/content/Projects/ProjectReIconLink.vue": [
   ],
@@ -185,13 +287,13 @@
   ],
   "src/components/content/SearchBar.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/SearchBar.vue?vue&type=style&index=0&scoped=0fcb5cf3&lang.scss": [
+  "src/components/content/SearchBar.vue?vue&type=style&index=0&scoped=a7bde313&lang.scss": [
   ],
   "src/components/content/SkillCard.vue": [
   ],
   "src/components/content/SkillCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/SkillCard.vue?vue&type=style&index=0&scoped=81b6719d&lang.scss": [
+  "src/components/content/SkillCard.vue?vue&type=style&index=0&scoped=b16ffd32&lang.scss": [
   ],
   "src/components/content/SocialLinks.vue": [
   ],
@@ -205,11 +307,23 @@
   ],
   "src/components/content/YoutubeEmbed.vue?vue&type=style&index=0&scoped=137fda57&lang.scss": [
   ],
+  "src/components/core/ChildPopupMenu.vue": [
+  ],
+  "src/components/core/ChildPopupMenu.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/core/ChildPopupMenu.vue?vue&type=style&index=0&scoped=2e928dc9&lang.scss": [
+  ],
+  "src/components/core/Modal.vue": [
+  ],
+  "src/components/core/Modal.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/core/Modal.vue?vue&type=style&index=0&scoped=3aa4b164&lang.scss": [
+  ],
   "src/components/core/NavLink.vue": [
   ],
   "src/components/core/NavLink.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/NavLink.vue?vue&type=style&index=0&scoped=964687e9&lang.scss": [
+  "src/components/core/NavLink.vue?vue&type=style&index=0&scoped=3c108d6e&lang.scss": [
   ],
   "src/components/core/NavigationTree.vue": [
   ],
@@ -243,7 +357,7 @@
   ],
   "src/components/page/TopNav.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=bcd7fda7&lang.scss": [
+  "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=f76e5d2d&lang.scss": [
   ],
   "src/components/utils/LoadingSpinner.vue": [
   ],
@@ -253,17 +367,13 @@
   ],
   "src/components/utils/MarkdownView.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=8a38a3cb&lang.scss": [
+  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=92129f89&lang.scss": [
   ],
   "src/components/utils/ProjectDataStatusView.vue": [
   ],
   "src/components/utils/ProjectDataStatusView.vue?vue&type=script&setup=true&lang.ts": [
   ],
   "src/components/utils/ProjectDataStatusView.vue?vue&type=style&index=0&scoped=dc14a998&lang.scss": [
-  ],
-  "src/components/utils/ScrollingColumn.vue": [
-  ],
-  "src/components/utils/ScrollingColumn.vue?vue&type=script&setup=true&lang.ts": [
   ],
   "src/components/utils/ScrollingColumn.vue?vue&type=style&index=0&scoped=8cd903ff&lang.scss": [
   ],
@@ -281,18 +391,20 @@
   ],
   "src/tools/skills.ts": [
   ],
+  "src/tools/url-utils.ts": [
+  ],
   "src/utils.ts": [
   ],
   "src/views/Home.vue": [
   ],
   "src/views/Home.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Home.vue?vue&type=style&index=0&scoped=1ab3e337&lang.scss": [
+  "src/views/Home.vue?vue&type=style&index=0&scoped=02d5073b&lang.scss": [
   ],
   "src/views/Projects.vue": [
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=06dc1259&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=3d18db78&lang.scss": [
   ]
 }

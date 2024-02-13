@@ -1,0 +1,81 @@
+{
+   "type": "object",
+   "properties": {
+      "title": {
+         "type": "string"
+      },
+      "image": {
+         "type": "string"
+      },
+      "video": {
+         "type": "string"
+      },
+      "source": {
+         "anyOf": [
+            {
+               "type": "object",
+               "properties": {
+                  "label": {
+                     "type": "string"
+                  },
+                  "url": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "label",
+                  "url"
+               ]
+            },
+            {
+               "type": "string"
+            }
+         ]
+      },
+      "links": {
+         "type": "array",
+         "items": {
+            "anyOf": [
+               {
+                  "type": "object",
+                  "additionalProperties": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "type": "string"
+               }
+            ]
+         }
+      },
+      "skills": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      },
+      "start": {
+         "type": "string"
+      },
+      "end": {
+         "type": "string"
+      },
+      "index_hint": {
+         "type": "number"
+      },
+      "flags": {
+         "type": "array",
+         "items": {
+            "type": "string",
+            "enum": [
+               "featured"
+            ]
+         }
+      }
+   },
+   "required": [
+      "flags",
+      "title"
+   ],
+   "$schema": "http://json-schema.org/draft-07/schema#"
+}

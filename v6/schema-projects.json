@@ -13,30 +13,7 @@
       "links": {
          "type": "array",
          "items": {
-            "type": "object",
-            "properties": {
-               "name": {
-                  "type": "string"
-               },
-               "url": {
-                  "type": "string"
-               },
-               "icon": {
-                  "type": "string"
-               },
-               "fillColor": {
-                  "type": "string"
-               },
-               "filledTextColor": {
-                  "type": "string"
-               },
-               "filled": {
-                  "type": "boolean"
-               }
-            },
-            "required": [
-               "name"
-            ]
+            "$ref": "#/definitions/oldFormat.proj_entry_link"
          }
       },
       "title": {
@@ -62,5 +39,33 @@
       "skillsUsed",
       "title"
    ],
+   "definitions": {
+      "oldFormat.proj_entry_link": {
+         "type": "object",
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "url": {
+               "type": "string"
+            },
+            "icon": {
+               "type": "string"
+            },
+            "fillColor": {
+               "type": "string"
+            },
+            "filledTextColor": {
+               "type": "string"
+            },
+            "filled": {
+               "type": "boolean"
+            }
+         },
+         "required": [
+            "name"
+         ]
+      }
+   },
    "$schema": "http://json-schema.org/draft-07/schema#"
 }
