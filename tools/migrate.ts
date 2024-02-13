@@ -17,7 +17,7 @@ function normalised2Frontmatter(normalised: NormalisedProjectData, index: number
         title: normalised.title,
 
         flags: flags.length > 0 ? flags : undefined,
-        source: undefined,
+        source: normalised.source,
         image: normalised.media.find(x=>x.type=="img")?.url,
         video: normalised.media.find(x=>x.type=="video")?.url,
         skills: normalised.skills.length > 0 ? normalised.skills : undefined,
@@ -26,8 +26,8 @@ function normalised2Frontmatter(normalised: NormalisedProjectData, index: number
             o[x.name] = x.url
             return o
         }) : undefined,
-        start: normalised.start_date,
-        end: normalised.end_date,
+        start: normalised.start_date.toString(),
+        end: normalised.end_date.toString(),
         index_hint: index * 100
     }
 
