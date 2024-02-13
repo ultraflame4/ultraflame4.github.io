@@ -12,14 +12,18 @@
     </div>
 
 </template>
+<script lang="ts">
+let instance_id= 0
+</script>
 <script setup lang="ts">
 // import yt from "https://www.youtube.com/iframe_api?js"
 import {createEmbed, getYTVideoId, ytIsLoaded} from "@/external/yt";
 import {onMounted, onUpdated, ref, watch} from "vue";
 
-const id = ref()
+
+const unique_id = instance_id++
 function getId() {
-    return 'ytplayer-' + props.src;
+    return `ytplayer-${unique_id}`;
 }
 interface iprops{
     src:string
