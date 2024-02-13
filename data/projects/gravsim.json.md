@@ -19,12 +19,9 @@ end: dec 4 2023
 ---
 I started this project on a whim, after thinking about gravitational attraction all night.
 
-
 The core part of this project was completed in 3 days.
 
-
 This project uses technologies such as GLFW, OpenGL and C++.
-
 
 N-Body gravity simulation using Newton's law of universal gravitation.
 

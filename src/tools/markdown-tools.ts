@@ -1,8 +1,6 @@
 import {Marked} from "marked";
 
-export const mdRenderer = new Marked({
-gfm: true
-})
+export const mdRenderer = new Marked()
 
 
 export const link_expression = /\[(.*)\]\(([^#].*\..*)\)/g
