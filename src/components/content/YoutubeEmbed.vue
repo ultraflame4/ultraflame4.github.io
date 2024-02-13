@@ -6,7 +6,7 @@
     <div class="ytplayer-ctn">
         <template v-if="!should_load">
             <div class="lazy-load-cover" @mouseover="load">
-                <img :src="`https://img.youtube.com/vi/${getYTVideoId(props.src)}/0.jpg`"/>
+                <img :src="`https://img.youtube.com/vi/${getYTVideoId(props.src)}/0.jpg`" :alt="`Thumbnail for youtube video ${props.src}`"/>
                 <div class="blur"/>
 
 
