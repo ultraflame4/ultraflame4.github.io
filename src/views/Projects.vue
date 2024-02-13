@@ -5,7 +5,7 @@
                 All Projects
             </SectionTitle>
             <SearchBar id="searchbar" v-model:search-term="searchTerm">
-                <template v-slot:other-items>
+                <template v-slot:other-items v-if="isDev">
                     <button class="reset-btn"  @click="filterMenuActive=!filterMenuActive">
                         <Icon icon="material-symbols:filter-alt" class="filter-icon icon" role="button" :data-active="filterMenuActive"/>
                         <ChildPopupMenu v-model:active="filterMenuActive">
@@ -49,6 +49,7 @@ import {useRoute} from "vue-router";
 import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 import {Icon} from "@iconify/vue";
 
+const isDev = import.meta.env.DEV
 const route = useRoute()
 const searchTerm = ref(route.query.q as string ?? "")
 const filterMenuActive = ref(false)
