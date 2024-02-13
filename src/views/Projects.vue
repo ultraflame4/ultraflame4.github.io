@@ -134,8 +134,8 @@ function processSearch(search_term: string){
 }
 
 .proj-item {
-    --width: min(55rem, 90vw);
-    //--height: min(30rem, 100vw);
+    --width: min(56rem, 90vw);
+    --height: min(28rem, 50vw);
 
 }
 
