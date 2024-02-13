@@ -2,6 +2,9 @@
 title: Moosic App Electric Boogalo
 flags:
   - featured
+source:
+  label: Source
+  url: https://github.com/ultraflame4/MoosicElectricBoogaloo
 video: https://youtu.be/ZH3NGH3OK_U
 skills:
   - java

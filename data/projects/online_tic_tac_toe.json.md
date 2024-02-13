@@ -1,5 +1,8 @@
 ---
 title: Online Tic Tac Toe
+source:
+  label: Source
+  url: https://github.com/ultraflame4/OnlineTicTacToe
 image: https://user-images.githubusercontent.com/34125174/147404403-baa8daaf-3ec9-4cf7-bcf1-711ba28dca27.png
 skills:
   - html

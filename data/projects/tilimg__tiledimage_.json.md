@@ -2,6 +2,9 @@
 title: TilImg (TiledImage)
 flags:
   - featured
+source:
+  label: Source
+  url: https://github.com/ultraflame4/TiledImage
 image: https://user-images.githubusercontent.com/34125174/208235487-44f5e641-e6eb-453a-a9db-25d93a093782.png
 skills:
   - python

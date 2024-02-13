@@ -1,5 +1,8 @@
 ---
 title: Site Version Picker
+source:
+  label: Source
+  url: https://github.com/ultraflame4/SiteVersionPicker
 image: https://user-images.githubusercontent.com/34125174/275385527-38153af3-03ed-41e4-9659-d86c5b41a141.png
 skills:
   - vue

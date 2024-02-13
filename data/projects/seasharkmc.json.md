@@ -1,5 +1,8 @@
 ---
 title: SeaSharkMC
+source:
+  label: Source
+  url: https://github.com/ultraflame4/SeaSharkMC/tree/main
 skills:
   - WIP
   - csharp

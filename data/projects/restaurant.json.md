@@ -2,6 +2,9 @@
 title: RestauRant
 flags:
   - featured
+source:
+  label: Source
+  url: https://github.com/ultraflame4/CDEVRestaurantReview
 video: https://www.youtube.com/watch?v=dnfZHMKeGaM
 skills:
   - express.js

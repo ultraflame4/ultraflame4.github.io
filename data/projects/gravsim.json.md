@@ -2,8 +2,10 @@
 title: GravSim
 flags:
   - featured
+source:
+  label: Source
+  url: https://github.com/ultraflame4/GravSim
 video: https://www.youtube.com/watch?v=ec8uOtU8HOU
-source: https://github.com/ultraflame4/GravSim
 skills:
   - c++
   - imgui

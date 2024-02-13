@@ -2,6 +2,9 @@
 title: OnlyHumansRedirects
 flags:
   - featured
+source:
+  label: Source
+  url: https://github.com/ultraflame4/OnlyHumansRedirects
 image: https://github.com/ultraflame4/OnlyHumansRedirects/assets/34125174/7ed88872-f77e-4e62-a478-e0b59bdb7c2c
 skills:
   - js

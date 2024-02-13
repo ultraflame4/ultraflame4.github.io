@@ -1,5 +1,8 @@
 ---
 title: Better Console
+source:
+  label: Source
+  url: https://github.com/ultraflame4/Better-Console-python
 image: https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgif-3-e5e15d50dcf7.gif
 skills:
   - python

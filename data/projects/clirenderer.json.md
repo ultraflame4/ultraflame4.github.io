@@ -2,6 +2,9 @@
 title: CliRenderer
 flags:
   - featured
+source:
+  label: Source
+  url: https://github.com/ultraflame4/CliR
 image: https://github.com/ultraflame4/CliR/raw/main/resources/img.png
 skills:
   - python

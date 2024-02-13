@@ -1,5 +1,8 @@
 ---
 title: " PythonQtBrowser"
+source:
+  label: Source
+  url: https://github.com/ultraflame4/PythonQtBrowser
 image: https://user-images.githubusercontent.com/34125174/208937208-571d4934-cb2b-455d-879b-f8422ef2aa62.png
 skills:
   - python
