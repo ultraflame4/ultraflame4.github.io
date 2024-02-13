@@ -93,15 +93,16 @@ onMounted(() => {
 
 watch([searchTerm, AllProjects], ([search_term, _]) => {
     processSearch(search_term)
-
-})
-
-function processSearch(search_term: string){
     router.push({
+        replace: true,
         query: {
             q: search_term
         }
     })
+})
+
+function processSearch(search_term: string){
+
     if (search_term.trim().length > 0) {
         searchResults.value = fuse.search(search_term)
         return

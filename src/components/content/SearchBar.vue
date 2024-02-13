@@ -1,7 +1,7 @@
 <template>
     <div class="searchbar">
         <Icon icon="ph:magnifying-glass-bold" class="search-icon icon"/>
-        <input placeholder="Search for titles, description, skills" v-model="inputValue"/>
+        <input placeholder="Search for titles, description, skills" type="search" v-model="inputValue"/>
         <slot name="other-items"/>
 
 
