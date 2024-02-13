@@ -23,7 +23,7 @@
                                   class="proj-header">
                         {{ p.item.title }}
                     </SectionTitle>
-                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item"/>
+                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`"/>
                 </li>
             </ul>
 

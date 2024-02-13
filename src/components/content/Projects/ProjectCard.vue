@@ -2,7 +2,9 @@
     <li class="project-item-ctn">
         <div class="project-item">
             <div class="project-details">
-                <h3>{{ props.item.title }}</h3>
+                <h3>{{ props.item.title }}
+                    <a v-if="props.anchor" :href="'#'+props.anchor"  class="no-deco anchor"><Icon icon="ph:link-bold" /></a>
+                </h3>
                 <sub>
                     <template v-if="props.item.start_date||props.item.end_date">
                         <Icon inline icon="mdi:calendar-month" class="search-icon"/>
@@ -63,13 +65,29 @@ import {Icon} from "@iconify/vue";
 const datetimeformat= new Intl.DateTimeFormat('en-sg', {month:'short', year: "numeric", day: "2-digit"})
 
 const isYTUrl = isYoutubeUrl;
-
-const props = defineProps<{ item: NormalisedProjectData }>()
+interface props{
+    item: NormalisedProjectData,
+    anchor?:string
+}
+const props = defineProps<props>()
 
 </script>
 
 <style lang="scss" scoped>
-
+.anchor{
+    opacity: 0;
+    color: var(--accent);
+    transition: all 100ms ease !important;
+    font-size: 1.5rem;
+    position: relative;
+    top: 0.2rem;
+    &:hover{
+        color: var(--accent);
+    }
+    &:active{
+        color: white;
+    }
+}
 .project-item-ctn{
     --move-dist-x: 1rem;
     --move-dist-y: 1.25rem;
@@ -84,6 +102,9 @@ const props = defineProps<{ item: NormalisedProjectData }>()
     margin: var(--allow-space);
 
     &:hover, &:focus-within{
+        .anchor{
+            opacity: 1;
+        }
         .project-item{
             right:  calc(var(--move-dist-x) / 2);
             bottom: calc(var(--move-dist-y) / 2);
