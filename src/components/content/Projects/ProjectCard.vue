@@ -68,9 +68,9 @@ const props = defineProps<{ item: NormalisedProjectData }>()
 <style lang="scss" scoped>
 
 .project-item {
-    --move-dist-x: 0.8rem;
-    --move-dist-y: 0.9rem;
-    --allow-space: 0.6rem;
+    --move-dist-x: 1rem;
+    --move-dist-y: 1.25rem;
+    --allow-space: 0.65rem;
     --width: min(40rem, 80vw);
     --height: 24rem;
 

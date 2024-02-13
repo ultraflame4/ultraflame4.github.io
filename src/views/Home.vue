@@ -264,9 +264,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
         list-style-type: none;
         justify-content: center;
         flex-wrap: wrap;
-
         padding: 0;
-        gap: 1rem;
     }
 
     #btn-allprojects {
