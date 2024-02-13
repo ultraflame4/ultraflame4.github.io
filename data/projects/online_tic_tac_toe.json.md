@@ -11,6 +11,8 @@ skills:
 links:
   - Game: https://ultraflame4.github.io/OnlineTicTacToe
 index_hint: 400
+start: dec 31 2020
+end: dec 26 2021
 ---
 This is a simple multiplayer Tic Tac Toe game playable on the browser. 
 

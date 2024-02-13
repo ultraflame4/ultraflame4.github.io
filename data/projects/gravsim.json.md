@@ -14,6 +14,8 @@ links:
   - Releases: https://github.com/ultraflame4/GravSim/releases
   - itch.io: https://notlivingstudios.itch.io/gravsim
 index_hint: 0
+start: oct 20 2023
+end: dec 4 2023
 ---
 I started this project on a whim, after thinking about gravitational attraction all night.
 
