@@ -60,7 +60,7 @@ export interface NormalisedProjectData{
 
 export const allProjects: NormalisedProjectData[] = []
 function importProjectsFromJson(){
-    console.log("Converting project json data");
+    console.log("Importing project json data");
     (_allProjects.items as oldFormat.proj_entry[]).forEach(x=>{
         allProjects.push(normalise_oldFormat(x))
     })
@@ -68,10 +68,11 @@ function importProjectsFromJson(){
 function importProjectsFromDataDir(){
     const data_projects_import= import.meta.glob('/data/projects/*' , {eager: true, as: "raw"})
     const project_data_filepaths = Object.keys(data_projects_import)
+    console.log("Importing project frontmatter files");
     console.log("Found project data files: ", project_data_filepaths)
 
     const frontmatter = project_data_filepaths.map(x=>fm<FrontmatterProjectDataSchema>(data_projects_import[x]))
-    console.log(frontmatter)
+    // console.log(frontmatter)
     frontmatter.sort((a,b)=>{
         const aHint =a.attributes.index_hint ?? -1;
         const bHint =b.attributes.index_hint ?? -1;
@@ -84,4 +85,4 @@ function importProjectsFromDataDir(){
 importProjectsFromJson()
 importProjectsFromDataDir()
 
-console.log(allProjects)
+console.log("Loaded projects: ",allProjects)
