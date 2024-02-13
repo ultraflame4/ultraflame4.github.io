@@ -26,8 +26,8 @@ function normalised2Frontmatter(normalised: NormalisedProjectData, index: number
             o[x.name] = x.url
             return o
         }) : undefined,
-        start: normalised.start_date.toString(),
-        end: normalised.end_date.toString(),
+        start: normalised.start_date?.toString(),
+        end: normalised.end_date?.toString(),
         index_hint: index * 100
     }
 
