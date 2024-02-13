@@ -10,9 +10,6 @@
       "video": {
          "type": "string"
       },
-      "featured": {
-         "type": "boolean"
-      },
       "source": {
          "anyOf": [
             {
@@ -62,6 +59,9 @@
       },
       "end": {
          "type": "string"
+      },
+      "index_hint": {
+         "type": "number"
       },
       "flags": {
          "type": "array",

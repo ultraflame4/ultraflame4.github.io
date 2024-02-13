@@ -48,7 +48,7 @@
 
                     <ul id="skills-list">
                         <li v-for="i in AllSkills">
-                            <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
+                            <SkillCard :id="i.id" :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>
                         </li>
                     </ul>
 <!--                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*700+1000*i" :offset="i*1.5"-->
@@ -191,17 +191,17 @@ function repeatArray<T>(array: T[], count: number): T[] {
         gap: 2rem;
 
         // Mobile
-        @media only screen and (max-aspect-ratio: 10/9) {
+        @media only screen and (max-aspect-ratio: 11/9) {
             flex-direction: column;
             gap: 0;
-            padding: 0 4rem;
+            padding: 0 5rem;
 
             #skills-txt{
                 //padding: 0 2rem;
 
             }
             #skills-ctn{
-                min-width: 100%;
+                min-width: min(100%, 45rem);
             }
         }
 
@@ -224,7 +224,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
             justify-content: center;
             //min-width: fit-content;
             //max-width: 35%;
-            width: min(70%, 37rem);
+            width: min(40%, 45rem);
             gap: 0.5em;
             //height: 25rem;
         }
@@ -237,7 +237,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
             align-items: center;
             justify-content: center;
             //width: 100%;
-            gap: 0.5em;
+            gap: 0.45em;
             height: fit-content;
             padding: 0;
             list-style-type: none;

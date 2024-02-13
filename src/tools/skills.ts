@@ -4,6 +4,7 @@ import {ref} from "vue";
 export interface SkillItem{
     name:string,
     image:string,
+    id: string,
     level:number,
     invert?:boolean
 }

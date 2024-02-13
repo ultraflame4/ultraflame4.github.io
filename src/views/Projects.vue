@@ -45,12 +45,13 @@ import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue"
 import {hashCode} from "@/utils";
 
 import {normalise_oldFormat} from "@/assets/projects_utils";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 import {Icon} from "@iconify/vue";
 
 const isDev = import.meta.env.DEV
 const route = useRoute()
+const router = useRouter()
 const searchTerm = ref(route.query.q as string ?? "")
 const filterMenuActive = ref(false)
 
@@ -92,15 +93,21 @@ onMounted(() => {
 
 watch([searchTerm, AllProjects], ([search_term, _]) => {
     processSearch(search_term)
+
 })
 
 function processSearch(search_term: string){
-
+    router.push({
+        query: {
+            q: search_term
+        }
+    })
     if (search_term.trim().length > 0) {
         searchResults.value = fuse.search(search_term)
         return
     }
     searchResults.value = allProjectsResults;
+
 }
 
 </script>
