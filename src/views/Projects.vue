@@ -16,10 +16,10 @@
                     </button>
                 </template>
             </SearchBar>
-            <TabBar :items="tabs"/>
+            <TabBar :items="tabs" v-model:value="active_tab"/>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
-                <li v-for="(p, index) in searchResults" :key="hashCode(p.item)">
+                <li v-for="(p, index) in project_list" :key="hashCode(p.item)">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
                                   class="proj-header">
                         {{ p.item.title }}
@@ -37,7 +37,7 @@
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SearchBar from "@/components/content/SearchBar.vue";
-import {onMounted, type Ref, ref, watch} from "vue";
+import {computed, onMounted, type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
@@ -54,9 +54,23 @@ import TabBar, {type TabItem} from "@/components/core/TabBar.vue";
 const isDev = import.meta.env.DEV
 const route = useRoute()
 const router = useRouter()
+const fuse = new Fuse<NormalisedProjectData>([], {
+    includeScore: true,
+    useExtendedSearch: true,
+    shouldSort: true,
+    keys: [
+        {name: "title", weight: 0.5},
+        {name: "body", weight: 0.2},
+        {name: "skills", weight: 0.3}
+    ],
+    findAllMatches: true
+
+})
+
+
 const searchTerm = ref(route.query.q as string ?? "")
 const filterMenuActive = ref(false)
-
+const active_tab = ref(route.query.t as string ?? "All")
 const tabs: TabItem[] = [
     {
         icon: "bi:stars",
@@ -80,61 +94,33 @@ const tabs: TabItem[] = [
     }
 ]
 
-let allProjectsResults: Fuse.FuseResult<NormalisedProjectData>[] = []
-const fuse = new Fuse<NormalisedProjectData>([], {
-    includeScore: true,
-    useExtendedSearch: true,
-    shouldSort: true,
-    keys: [
-        {name: "title", weight: 0.5},
-        {name: "body", weight: 0.2},
-        {name: "skills", weight: 0.3}
-    ],
-    findAllMatches: true
-
+const projects_as_results = computed<Fuse.FuseResult<NormalisedProjectData>[]>(()=>AllProjects.value.map((value) => {
+    return {
+        item: value,
+        matches: [],
+        refIndex: 0,
+        score: 0
+    }
+}))
+const project_list = computed<Fuse.FuseResult<NormalisedProjectData>[]>(() => {
+    fuse.setCollection(AllProjects.value)
+    if (searchTerm.value.trim().length > 0) {
+        return fuse.search(searchTerm.value)
+    }
+    return projects_as_results.value
 })
 
-refreshProjectList(AllProjects.value)
 
-function refreshProjectList(project_list: NormalisedProjectData[]) {
-    allProjectsResults = project_list.map((value, index) => {
-        return {
-            item: value,
-            matches: [],
-            refIndex: 0,
-            score: 0
-        }
-    })
-    fuse.setCollection(project_list)
-}
-
-const searchResults: Ref<Fuse.FuseResult<NormalisedProjectData>[]> = ref(allProjectsResults)
-
-watch(AllProjects, value => refreshProjectList(value))
-
-onMounted(() => {
-    processSearch(searchTerm.value)
-})
-
-watch([searchTerm, AllProjects], ([search_term, _]) => {
-    processSearch(search_term)
+watch([searchTerm, AllProjects, active_tab], ([search_term, _, t]) => {
     router.push({
         replace: true,
         query: {
-            q: search_term
+            t: active_tab.value,
+            q: search_term == "" ? undefined : search_term
         }
     })
 })
 
-function processSearch(search_term: string){
-
-    if (search_term.trim().length > 0) {
-        searchResults.value = fuse.search(search_term)
-        return
-    }
-    searchResults.value = allProjectsResults;
-
-}
 
 </script>
 
