@@ -86,7 +86,6 @@
       }
    },
    "required": [
-      "status",
       "title"
    ],
    "definitions": {

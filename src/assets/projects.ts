@@ -104,7 +104,7 @@ export interface FrontmatterProjectDataSchema {
      * The current project status
      * @TJS-default in dev
      */
-    status: "completed" | "in dev" | "inactive"
+    status?: "completed" | "in dev" | "inactive"
 
     /**
      * Project flags
