@@ -3,8 +3,8 @@
         <NavigationTree id="navtree"/>
     </div>
 
-    <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="" class="scrollable">
-        <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()"/>
+    <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="site_ctn" class="scrollable">
+        <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()" @scroll-top="scrollTop()"/>
         <div id="page-content">
             <RouterView v-slot="{Component}">
                 <PageView :component="Component"/>
@@ -29,9 +29,14 @@ import {useRouter} from "vue-router";
 const router = useRouter();
 const menuOpen = ref(false);
 const isClosing = ref(false);
+const site_ctn = ref<HTMLElement|null>(null)
 
 onMounted(updateHead)
 router.afterEach(updateHead)
+
+function scrollTop(){
+    site_ctn.value?.scrollTo({top:0,behavior:"smooth"})
+}
 
 function updateHead() {
     useSeoMeta({

@@ -22,7 +22,7 @@ const bottom = ref(0)
 
 function updatePosition(){
     const rect = anchor.value?.getBoundingClientRect();
-    console.log("Update pos", rect)
+    // console.log("Update pos", rect)
     if (!rect) return
     top.value=rect.top;
     left.value=rect.left;

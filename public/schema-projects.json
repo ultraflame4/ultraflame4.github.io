@@ -50,6 +50,7 @@
                "type": "string"
             },
             "icon": {
+               "description": "icons from https://icones.js.org/collection/all?s=code",
                "type": "string"
             },
             "fillColor": {

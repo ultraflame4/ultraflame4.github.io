@@ -2,9 +2,9 @@
 
 
     <header v-stuck>
-        <div id="header-left" class="floater-shadow header-item">
+        <div class="header-left floater-shadow header-item">
             <h1>ultr42</h1>
-            <ul id="topnav-quick">
+            <ul class="topnav-quick">
                 <Icon icon="vaadin:hash" class="search-icon"/>
                 <template v-for="link in PageNavTree.links.value">
                     <li v-if="link.level<1">
@@ -28,10 +28,30 @@
 
             </template>
         </ul>
+        <div class="header-right floater-shadow  header-item">
+            <Tooltip>
+                <template v-slot:trigger="props">
+                    <button @click="emit('scroll-top')" class="scroll-top reset-btn" v-bind="props">
+                        <Icon icon="tabler:transition-top-filled"/>
+                    </button>
+                </template>
+                <template v-slot:content>
+                    Scroll to the top
+                </template>
+            </Tooltip>
 
-        <button id="menu-btn" @click="emit('menuToggle')" :data-open="menuOpen" class="floater-shadow header-item">
-            <Icon icon="svg-spinners:blocks-shuffle-3"/>
-        </button>
+            <Tooltip>
+                <template v-slot:trigger="props">
+                    <button @click="emit('menuToggle')" :data-open="menuOpen" class="menu-btn reset-btn" v-bind="props">
+                        <Icon icon="svg-spinners:blocks-shuffle-3"/>
+                    </button>
+                </template>
+                <template v-slot:content>
+                    Open navigation menu
+                </template>
+            </Tooltip>
+        </div>
+
     </header>
 
 </template>
@@ -40,12 +60,13 @@
 import {Icon} from "@iconify/vue";
 import {PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
-import NavLink from "@/components/core/NavLink.vue";
+import Tooltip from "@/components/core/Tooltip.vue";
 
 const router = useRouter()
 
 const emit = defineEmits<{
-    (e: 'menuToggle'): void
+    (e: 'menuToggle'): void,
+    (e: 'scroll-top'): void,
 }>()
 
 const props = defineProps<{
@@ -167,7 +188,7 @@ header {
 
 }
 
-#header-left {
+.header-left {
     [data-open="true"] & { // This css makes sure the logo stays on screen when in mobile mode (screen <1000)
         position: relative;
         transform: translateX(var(--navtree-width));
@@ -186,7 +207,43 @@ header {
     }
 }
 
-#topnav-quick {
+.header-right {
+    padding: 0;
+
+    button {
+        height: 100%;
+        aspect-ratio: 1;
+        color: white;
+        font-size: 1.5em;
+    }
+
+    button:hover, .menu-btn[data-open="true"] {
+        color: var(--accent);
+    }
+
+    button:active {
+        transition: transform 100ms ease;
+        transform: scale(0.8);
+    }
+
+    .scroll-top {
+        position: relative;
+        pointer-events: none;
+        min-width: 0;
+        max-width: 0;
+        opacity: 0;
+        transition: max-width 800ms ease, opacity 500ms ease;
+
+        [stuck] & {
+            pointer-events: auto;
+            opacity: 1;
+            max-width: 5rem;
+        }
+    }
+
+}
+
+.topnav-quick {
     padding: 0;
     margin-left: 0.5rem;
 
@@ -242,20 +299,6 @@ header {
 
 }
 
-#menu-btn {
-    aspect-ratio: 1;
-    color: white;
-    font-size: 1.5em;
-}
-
-#menu-btn:hover, #menu-btn[data-open="true"] {
-    color: var(--accent);
-}
-
-#menu-btn:active {
-    transition: transform 100ms ease;
-    transform: scale(0.8);
-}
 
 </style>
 

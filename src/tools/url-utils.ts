@@ -1,7 +1,7 @@
 export function getDomainName(url: string | undefined) {
     if (!url) return undefined
     try {
-        console.log(new URL(url),'fff')
+        // console.log(new URL(url),'fff')
         return new URL(url).host;
     } catch (e) {
         return new URL("https://" + url).host;

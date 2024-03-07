@@ -25,10 +25,8 @@ function render(): string {
 
 
 
-    text = text.replace("\\","\\\\")
-    text = text.replace("\n\n","<br/>")
-    text = text.replace("\n","<wbr/>")
     text = mdRenderer.parse(text) as string
+    text = text.replaceAll("\n","")
     text = DOMPurify.sanitize(text)
     return text;
 }

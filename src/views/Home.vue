@@ -71,6 +71,7 @@
             </ul>
             <RouterLink id="btn-allprojects" to="projects">all Projects</RouterLink>
         </section>
+
     </main>
 </template>
 
@@ -83,6 +84,8 @@ import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
+import Tooltip from "@/components/core/Tooltip.vue";
+import {Icon} from "@iconify/vue";
 
 const bannerIRatio = new iRatioObject({
     exit: false,
@@ -264,9 +267,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
         list-style-type: none;
         justify-content: center;
         flex-wrap: wrap;
-
         padding: 0;
-        gap: 1rem;
     }
 
     #btn-allprojects {

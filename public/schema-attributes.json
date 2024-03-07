@@ -2,30 +2,25 @@
    "type": "object",
    "properties": {
       "title": {
+         "format": "uri",
+         "description": "The title of the project",
          "type": "string"
       },
       "image": {
+         "format": "uri",
+         "description": "Relevant cover image of the project",
          "type": "string"
       },
       "video": {
+         "format": "uri",
+         "description": "Relevant cover image of the project",
          "type": "string"
       },
       "source": {
+         "description": "Relevant cover image of the project",
          "anyOf": [
             {
-               "type": "object",
-               "properties": {
-                  "label": {
-                     "type": "string"
-                  },
-                  "url": {
-                     "type": "string"
-                  }
-               },
-               "required": [
-                  "label",
-                  "url"
-               ]
+               "$ref": "#/definitions/SourceObj"
             },
             {
                "type": "string"
@@ -33,49 +28,83 @@
          ]
       },
       "links": {
-         "type": "array",
+         "description": "Relevant project links",
          "items": {
             "anyOf": [
                {
-                  "type": "object",
-                  "additionalProperties": {
-                     "type": "string"
-                  }
+                  "$ref": "#/definitions/LinkObject"
                },
                {
+                  "format": "tag",
                   "type": "string"
                }
             ]
-         }
+         },
+         "type": "array"
       },
       "skills": {
-         "type": "array",
+         "description": "Relevant skills used in the project",
          "items": {
-            "type": "string"
-         }
+            "format": "tag"
+         },
+         "type": "array"
       },
       "start": {
+         "description": "Start date of the project.",
+         "format": "date",
          "type": "string"
       },
       "end": {
+         "description": "Start date of the project.",
+         "format": "date",
          "type": "string"
       },
       "index_hint": {
+         "description": "Suggests the index / order of the project. May be superseded by other parameters",
+         "format": "date",
          "type": "number"
       },
+      "status": {
+         "description": "The current project status",
+         "default": "in dev",
+         "enum": [
+            "completed",
+            "in dev",
+            "inactive"
+         ],
+         "type": "string"
+      },
       "flags": {
-         "type": "array",
+         "description": "Project flags",
          "items": {
-            "type": "string",
+            "format": "tag",
             "enum": [
                "featured"
             ]
-         }
+         },
+         "type": "array"
       }
    },
    "required": [
-      "flags",
       "title"
    ],
+   "definitions": {
+      "SourceObj": {
+         "type": "object",
+         "properties": {
+            "label": {
+               "type": "string"
+            },
+            "url": {
+               "format": "uri",
+               "type": "string"
+            }
+         },
+         "required": [
+            "label",
+            "url"
+         ]
+      }
+   },
    "$schema": "http://json-schema.org/draft-07/schema#"
 }

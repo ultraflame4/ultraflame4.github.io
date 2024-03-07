@@ -16,14 +16,15 @@
                     </button>
                 </template>
             </SearchBar>
+            <TabBar :items="tabs" v-model:value="active_tab"/>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
-                <li v-for="(p, index) in searchResults" :key="hashCode(p.item)">
+                <li v-for="(p, index) in project_list" :key="hashCode(p.item)">
                     <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
                                   class="proj-header">
                         {{ p.item.title }}
                     </SectionTitle>
-                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item"/>
+                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`"/>
                 </li>
             </ul>
 
@@ -36,7 +37,7 @@
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SearchBar from "@/components/content/SearchBar.vue";
-import {onMounted, type Ref, ref, watch} from "vue";
+import {computed, onMounted, type Ref, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
@@ -48,14 +49,11 @@ import {normalise_oldFormat} from "@/assets/projects_utils";
 import {useRoute, useRouter} from "vue-router";
 import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 import {Icon} from "@iconify/vue";
+import TabBar, {type TabItem} from "@/components/core/TabBar.vue";
 
 const isDev = import.meta.env.DEV
 const route = useRoute()
 const router = useRouter()
-const searchTerm = ref(route.query.q as string ?? "")
-const filterMenuActive = ref(false)
-
-let allProjectsResults: Fuse.FuseResult<NormalisedProjectData>[] = []
 const fuse = new Fuse<NormalisedProjectData>([], {
     includeScore: true,
     useExtendedSearch: true,
@@ -69,47 +67,64 @@ const fuse = new Fuse<NormalisedProjectData>([], {
 
 })
 
-refreshProjectList(AllProjects.value)
 
-function refreshProjectList(project_list: NormalisedProjectData[]) {
-    allProjectsResults = project_list.map((value, index) => {
-        return {
-            item: value,
-            matches: [],
-            refIndex: 0,
-            score: 0
-        }
+const searchTerm = ref(route.query.q as string ?? "")
+const filterMenuActive = ref(false)
+const active_tab = ref(route.query.t as string ?? "All")
+const tabs: TabItem[] = [
+    {
+        icon: "bi:stars",
+        text: "Featured"
+    },
+    {
+        icon: "ic:outline-format-list-bulleted",
+        text: "All"
+    },
+    {
+        icon: "material-symbols:rocket-launch-rounded",
+        text: "Completed"
+    },
+    {
+        icon: "fluent-emoji-high-contrast:building-construction",
+        text: "In dev"
+    },
+    {
+        icon: "mingcute:sleep-line",
+        text: "Inactive"
+    }
+]
+
+const projects_as_results = computed<Fuse.FuseResult<NormalisedProjectData>[]>(()=>AllProjects.value.map((value) => {
+    return {
+        item: value,
+        matches: [],
+        refIndex: 0,
+        score: 0
+    }
+}))
+const project_list = computed<Fuse.FuseResult<NormalisedProjectData>[]>(() => {
+    fuse.setCollection(AllProjects.value)
+    let results = searchTerm.value.trim().length > 0?fuse.search(searchTerm.value):projects_as_results.value
+    results = results.filter(x=>{
+        let a =x.item.status.toLowerCase();
+        let b =active_tab.value.toLowerCase();
+        if (b=="featured") return x.item.featured
+        return a==b || b == "all"
     })
-    fuse.setCollection(project_list)
-}
-
-const searchResults: Ref<Fuse.FuseResult<NormalisedProjectData>[]> = ref(allProjectsResults)
-
-watch(AllProjects, value => refreshProjectList(value))
-
-onMounted(() => {
-    processSearch(searchTerm.value)
+    return results
 })
 
-watch([searchTerm, AllProjects], ([search_term, _]) => {
-    processSearch(search_term)
+
+watch([searchTerm, active_tab], ([search_term, t]) => {
     router.push({
         replace: true,
         query: {
-            q: search_term
+            t: active_tab.value,
+            q: search_term == "" ? undefined : search_term
         }
     })
 })
 
-function processSearch(search_term: string){
-
-    if (search_term.trim().length > 0) {
-        searchResults.value = fuse.search(search_term)
-        return
-    }
-    searchResults.value = allProjectsResults;
-
-}
 
 </script>
 
@@ -134,8 +149,8 @@ function processSearch(search_term: string){
 }
 
 .proj-item {
-    --width: min(55rem, 90vw);
-    //--height: min(30rem, 100vw);
+    --width: min(56rem, 90vw);
+    --height: min(28rem, 50vw);
 
 }
 
