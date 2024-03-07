@@ -1,7 +1,6 @@
 import fm from "front-matter"
 import * as _allProjects from "./projects.json"
 import {normalise_FrontmatterProjectData, normalise_oldFormat} from "@/assets/projects_utils";
-import * as console from "console";
 
 export namespace oldFormat {
     export interface proj_entry_link {
@@ -132,6 +131,7 @@ export const allProjects: NormalisedProjectData[] = []
 
 function importProjectsFromJson() {
     console.log("Importing project json data");
+
     (_allProjects.items as oldFormat.proj_entry[]).forEach(x => {
         allProjects.push(normalise_oldFormat(x))
     })
@@ -139,7 +139,7 @@ function importProjectsFromJson() {
 
 function importProjectsFromDataDir() {
     const data_projects_import = import.meta.glob('/data/projects/*', {eager: true, as: "raw"})
-    const project_data_filepaths = Object.keys(data_projects_import)
+    const project_data_filepaths = Object.keys(data_projects_import);
     console.log("Importing project frontmatter files");
     console.log("Found project data files: ", project_data_filepaths)
 
