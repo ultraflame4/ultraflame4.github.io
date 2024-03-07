@@ -81,7 +81,7 @@ const tabs: TabItem[] = [
         text: "All"
     },
     {
-        icon: "pajamas:rocket-launch",
+        icon: "material-symbols:rocket-launch-rounded",
         text: "Completed"
     },
     {

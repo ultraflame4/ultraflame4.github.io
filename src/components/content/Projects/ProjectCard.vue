@@ -1,16 +1,36 @@
 <template>
     <li class="project-item-ctn">
         <div class="project-item">
+            <ul class="badges">
+                <li v-if="props.item.featured" class="featured-badge">
+                    <Icon icon="mage:stars-a-fill" class="icon"/>
+                    featured
+                </li>
+                <li v-if="props.item.status=='completed'">
+                    <Icon icon="material-symbols:rocket-launch-rounded" class="icon" style="color: #8ec97d"/>
+                    completed
+                </li>
+                <li v-else-if="props.item.status=='in dev'" >
+                    <Icon icon="fluent-emoji:construction" class="icon"/>
+                    In development
+                </li>
+                <li v-else-if="props.item.status=='inactive'" >
+                    <Icon icon="mingcute:sleep-fill" class="icon" style="color: #9174c9"/>
+                    inactive
+                </li>
+            </ul>
             <div class="project-details">
                 <h3>{{ props.item.title }}
-                    <a v-if="props.anchor" :href="'#'+props.anchor"  class="no-deco anchor"><Icon icon="ph:link-bold" /></a>
+                    <a v-if="props.anchor" :href="'#'+props.anchor" class="no-deco anchor">
+                        <Icon icon="ph:link-bold"/>
+                    </a>
                 </h3>
                 <sub>
                     <template v-if="props.item.start_date||props.item.end_date">
                         <Icon inline icon="mdi:calendar-month" class="search-icon"/>
                         {{ props.item.start_date ? datetimeformat.format(props.item.start_date) : "unknown" }}
                         <Icon inline icon="material-symbols:arrow-range-rounded" class="search-icon"/>
-                        {{ props.item.end_date ?datetimeformat.format(props.item.end_date) : "current" }}
+                        {{ props.item.end_date ? datetimeformat.format(props.item.end_date) : "current" }}
                     </template>
                 </sub>
 
@@ -62,33 +82,38 @@ import {isYoutubeUrl} from "@/external/yt";
 import type {NormalisedProjectData} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
 
-const datetimeformat= new Intl.DateTimeFormat('en-sg', {month:'short', year: "numeric", day: "2-digit"})
+const datetimeformat = new Intl.DateTimeFormat('en-sg', {month: 'short', year: "numeric", day: "2-digit"})
 
 const isYTUrl = isYoutubeUrl;
-interface props{
+
+interface props {
     item: NormalisedProjectData,
-    anchor?:string
+    anchor?: string
 }
+
 const props = defineProps<props>()
 
 </script>
 
 <style lang="scss" scoped>
-.anchor{
+.anchor {
     opacity: 0;
     color: var(--accent);
     transition: all 100ms ease !important;
     font-size: 1.5rem;
     position: relative;
     top: 0.2rem;
-    &:hover{
+
+    &:hover {
         color: var(--accent);
     }
-    &:active{
+
+    &:active {
         color: white;
     }
 }
-.project-item-ctn{
+
+.project-item-ctn {
     --move-dist-x: 1rem;
     --move-dist-y: 1.25rem;
     --allow-space: 0.65rem;
@@ -97,16 +122,16 @@ const props = defineProps<props>()
     width: var(--width);
     height: var(--height);
 
-
     overflow: visible;
     margin: var(--allow-space);
 
-    &:hover, &:focus-within{
-        .anchor{
+    &:hover, &:focus-within {
+        .anchor {
             opacity: 1;
         }
-        .project-item{
-            right:  calc(var(--move-dist-x) / 2);
+
+        .project-item {
+            right: calc(var(--move-dist-x) / 2);
             bottom: calc(var(--move-dist-y) / 2);
 
             //width: calc(var(--width) + var(--move-dist));
@@ -136,8 +161,29 @@ const props = defineProps<props>()
     right: 0;
     bottom: 0;
     border-radius: 1rem;
-    padding:0.65rem 1rem ;
+    padding: 0.65rem 1rem;
     transition: all 100ms ease;
+    position: relative;
+
+
+    .badges {
+        display: flex;
+        gap: .5rem;
+        list-style-type: none;
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        z-index: 2;
+
+        & > li .icon {
+
+            font-size: 1.25em;
+            margin-right: 0.2rem;
+
+        }
+
+
+    }
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
