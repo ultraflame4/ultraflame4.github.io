@@ -23,7 +23,6 @@ const config: UserConfig = {
     mock: true,
     dirStyle: "flat",
     script: "async defer",
-
   },
   base:"/v6"
 }

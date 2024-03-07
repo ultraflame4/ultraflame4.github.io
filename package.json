@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
+    "build_preview": "run-p type-check build-only && vite preview",
     "migrate": "tsx tools/migrate.ts",
     "schema": "tsx tools/schema.ts",
     "preview": "vite preview",
@@ -13,10 +14,12 @@
   },
   "dependencies": {
     "@supercharge/strings": "^2.0.0",
+    "@types/object-hash": "^3.0.6",
     "dompurify": "^3.0.5",
     "front-matter": "^4.0.2",
     "fuse.js": "^6.6.2",
     "marked": "^12.0.0",
+    "object-hash": "^3.0.0",
     "sass": "^1.60.0",
     "threads": "^1.7.0",
     "tsx": "^3.12.7",

@@ -38,12 +38,12 @@
 
 <script lang="ts" setup>
 
-import {PageNavTree} from "@/router/page_navtree";
-import {Icon} from "@iconify/vue";
+import {type PageNavLink, PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
 import SocialLinks from "@/components/content/SocialLinks.vue";
 import {hashCode} from "@/utils";
+import {ref, watch} from "vue";
 
 const router = useRouter()
 

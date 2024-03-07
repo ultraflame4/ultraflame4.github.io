@@ -20,11 +20,15 @@
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
                 <li v-for="(p, index) in project_list" :key="hashCode(p.item)">
-                    <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
-                                  class="proj-header">
+                    <SectionTitle :section_id="`project-${index}`"
+                                  :key="`project-${index}`"
+                                  :name="p.item.title"
+                                  :heading="2"
+                                  class="proj-header"
+                    >
                         {{ p.item.title }}
                     </SectionTitle>
-                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`"/>
+                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`" />
                 </li>
             </ul>
 
@@ -37,7 +41,7 @@
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SearchBar from "@/components/content/SearchBar.vue";
-import {computed, onMounted, type Ref, ref, watch} from "vue";
+import {computed, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
@@ -45,7 +49,6 @@ import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import {hashCode} from "@/utils";
 
-import {normalise_oldFormat} from "@/assets/projects_utils";
 import {useRoute, useRouter} from "vue-router";
 import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 import {Icon} from "@iconify/vue";
@@ -119,7 +122,7 @@ watch([searchTerm, active_tab], ([search_term, t]) => {
     router.push({
         replace: true,
         query: {
-            t: active_tab.value,
+            t: t,
             q: search_term == "" ? undefined : search_term
         }
     })
