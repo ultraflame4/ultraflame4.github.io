@@ -4,7 +4,7 @@
             <SectionTitle section_id="all" name="Project List">
                 All Projects
             </SectionTitle>
-            <SearchBar id="searchbar" v-model:search-term="searchTerm" class="floater-shadow">
+            <SearchBar id="searchbar" v-model:search-term="searchTerm">
                 <template v-slot:other-items v-if="isDev">
                     <button class="reset-btn"  @click="filterMenuActive=!filterMenuActive">
                         <Icon icon="material-symbols:filter-alt" class="filter-icon icon" role="button" :data-active="filterMenuActive"/>
@@ -16,6 +16,7 @@
                     </button>
                 </template>
             </SearchBar>
+            <TabBar :items="tabs"/>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
                 <li v-for="(p, index) in searchResults" :key="hashCode(p.item)">
@@ -48,12 +49,31 @@ import {normalise_oldFormat} from "@/assets/projects_utils";
 import {useRoute, useRouter} from "vue-router";
 import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 import {Icon} from "@iconify/vue";
+import TabBar, {type TabItem} from "@/components/core/TabBar.vue";
 
 const isDev = import.meta.env.DEV
 const route = useRoute()
 const router = useRouter()
 const searchTerm = ref(route.query.q as string ?? "")
 const filterMenuActive = ref(false)
+
+const tabs: TabItem[] = [
+    {
+        text: "Featured"
+    },
+    {
+        text: "All"
+    },
+    {
+        text: "Completed"
+    },
+    {
+        text: "In dev"
+    },
+    {
+        text: "Inactive"
+    }
+]
 
 let allProjectsResults: Fuse.FuseResult<NormalisedProjectData>[] = []
 const fuse = new Fuse<NormalisedProjectData>([], {
