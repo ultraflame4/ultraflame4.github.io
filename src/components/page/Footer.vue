@@ -66,10 +66,11 @@
     </section>
     <br/>
     <div id="socials-float"><SocialLinks/></div>
-    <footer class="flex-center">
+    <footer >
+        <code>Site Version {{app_version}}</code>
         <small>© Copyright 2023, ultraflame4.github.io All rights reserved.</small>
-        <br/>
     </footer>
+    <br/>
 </template>
 <script setup lang="ts">
 
@@ -82,6 +83,8 @@ import {ref} from "vue";
 const router = useRouter()
 
 const catRef = ref<HTMLPreElement | null>(null)
+//@ts-ignore
+const app_version = __APP_VERSION__
 
 function cat_link() {
     if (catRef.value?.hasAttribute("angry")) {
@@ -99,6 +102,10 @@ function cat_link() {
 
 footer {
     height: fit-content;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
 
 }
 .social{
