@@ -174,6 +174,7 @@ const props = defineProps<props>()
         top: .5rem;
         right: .5rem;
         z-index: 2;
+        overflow: visible;
 
         & > li .icon {
 
