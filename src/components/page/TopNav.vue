@@ -29,13 +29,27 @@
             </template>
         </ul>
         <div class="header-right floater-shadow  header-item">
-            <button @click="emit('scroll-top') "class="scroll-top reset-btn">
-                <Icon icon="tabler:transition-top-filled"/>
-            </button>
-            <button @click="emit('menuToggle')" :data-open="menuOpen" class="menu-btn reset-btn">
-                <Icon icon="svg-spinners:blocks-shuffle-3"/>
-            </button>
+            <Tooltip>
+                <template v-slot:trigger="props">
+                    <button @click="emit('scroll-top')" class="scroll-top reset-btn" v-bind="props">
+                        <Icon icon="tabler:transition-top-filled"/>
+                    </button>
+                </template>
+                <template v-slot:content>
+                    Scroll to the top
+                </template>
+            </Tooltip>
 
+            <Tooltip>
+                <template v-slot:trigger="props">
+                    <button @click="emit('menuToggle')" :data-open="menuOpen" class="menu-btn reset-btn" v-bind="props">
+                        <Icon icon="svg-spinners:blocks-shuffle-3"/>
+                    </button>
+                </template>
+                <template v-slot:content>
+                    Open navigation menu
+                </template>
+            </Tooltip>
         </div>
 
     </header>
@@ -46,6 +60,7 @@
 import {Icon} from "@iconify/vue";
 import {PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
+import Tooltip from "@/components/core/Tooltip.vue";
 
 const router = useRouter()
 
@@ -192,7 +207,7 @@ header {
     }
 }
 
-.header-right{
+.header-right {
     padding: 0;
 
     button {
@@ -211,15 +226,15 @@ header {
         transform: scale(0.8);
     }
 
-    .scroll-top{
+    .scroll-top {
         position: relative;
         pointer-events: none;
         min-width: 0;
         max-width: 0;
         opacity: 0;
-        transition: max-width 800ms ease, opacity 500ms ease ;
+        transition: max-width 800ms ease, opacity 500ms ease;
 
-        [stuck] &{
+        [stuck] & {
             pointer-events: auto;
             opacity: 1;
             max-width: 5rem;
