@@ -23,8 +23,7 @@
                "$ref": "#/definitions/SourceObj"
             },
             {
-               "type": "string",
-               "format": "uri"
+               "type": "string"
             }
          ]
       },
@@ -65,6 +64,16 @@
          "format": "date",
          "type": "number"
       },
+      "status": {
+         "description": "The current project status",
+         "default": "in dev",
+         "enum": [
+            "completed",
+            "in dev",
+            "inactive"
+         ],
+         "type": "string"
+      },
       "flags": {
          "description": "Project flags",
          "items": {
@@ -78,6 +87,7 @@
    },
    "required": [
       "flags",
+      "status",
       "title"
    ],
    "definitions": {

@@ -99,6 +99,13 @@ export interface FrontmatterProjectDataSchema {
      * @TJS-format date
      */
     index_hint?: number
+
+    /**
+     * The current project status
+     * @TJS-default in dev
+     */
+    status: "completed" | "in dev" | "inactive"
+
     /**
      * Project flags
      * @items {
