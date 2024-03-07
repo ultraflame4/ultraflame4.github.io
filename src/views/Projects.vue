@@ -59,6 +59,7 @@ const filterMenuActive = ref(false)
 
 const tabs: TabItem[] = [
     {
+        icon: "bi:stars",
         text: "Featured"
     },
     {

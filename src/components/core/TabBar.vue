@@ -1,9 +1,12 @@
 <template>
-    <div class="ctn">
+    <div class="tabbar-ctn">
         <ul :style="list_style" class="no-vmar" ref="el_grid">
             <li v-for="(i, index) in props.items" :data-active="active_index == index">
-                <Icon v-if="i.icon" :icon="i.icon"/>
-                <button @click="model_activeitem=i.text" class="reset-btn">{{ i.text }}</button>
+
+                <button @click="model_activeitem=i.text" class="reset-btn">
+                    <Icon v-if="i.icon" :icon="i.icon" class="icon"/>
+                    <span>{{ i.text }}</span>
+                </button>
             </li>
         </ul>
         <div class="selector" :style="selector_style"/>
@@ -29,11 +32,10 @@ const list_style = computed(() => ({
 const active_index = computed(() => Math.max(props.items.findIndex(x => x.text === model_activeitem.value ?? ""), 0))
 
 
-
 const selector_style = computed(() => {
     let x = "0px"
     let w = "0px"
-    if (el_grid.value){
+    if (el_grid.value) {
         let item = el_grid.value.children[active_index.value]
         let p = el_grid.value.getBoundingClientRect()
         let c = item.getBoundingClientRect()
@@ -51,7 +53,7 @@ const selector_style = computed(() => {
 
 </script>
 <style scoped lang="scss">
-.ctn {
+.tabbar-ctn {
     position: relative;
     padding: .25rem;
     border-radius: .85rem;
@@ -81,7 +83,7 @@ const selector_style = computed(() => {
 
             & > button {
                 min-height: fit-content;
-                font-size: .9rem;
+                font-size: 1rem;
                 line-height: initial;
                 color: inherit;
                 font-weight: 700;
@@ -91,6 +93,13 @@ const selector_style = computed(() => {
                 padding: .25rem .75rem;
                 border-radius: .55rem;
                 transition: all 100ms linear;
+                display: flex;
+                align-items: center;
+
+                &>.icon{
+                    margin-right: 0.25rem;
+                    font-size: 1.25em;
+                }
 
                 &:hover {
                     background: var(--overlay);
