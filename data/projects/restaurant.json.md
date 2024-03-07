@@ -18,6 +18,8 @@ links:
   - Project Site: https://github.com/ultraflame4/CDEVRestaurantReview
 index_hint: 700
 status: completed
+start: oct 31 2022
+end: nov 29 2023
 ---
 A website listing various restaurants and reviews for them.
 Restaurants are dynamically loaded as the user scrolls and can be sorted & filtered

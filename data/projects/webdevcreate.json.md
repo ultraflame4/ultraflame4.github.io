@@ -14,6 +14,8 @@ links:
   - Webapp: https://ultraflame4.github.io/WebDevCreate
 index_hint: 900
 status: completed
+start: sep 19 2022
+end: dec 21 2022
 ---
 Disclaimer: This project has since been abandoned
 

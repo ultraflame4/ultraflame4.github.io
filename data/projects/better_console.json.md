@@ -9,6 +9,8 @@ skills:
   - python
 index_hint: 1000
 status: completed
+start: may 29 2020
+end: dec 27 2021
 ---
 
 This library provides a GUI console for logging with the following features:

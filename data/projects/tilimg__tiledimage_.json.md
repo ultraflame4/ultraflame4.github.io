@@ -13,6 +13,8 @@ skills:
   - numba
 index_hint: 600
 status: completed
+start: aug 4 2021
+end: dec 19 2022
 ---
 This program stitches or "Tiles" a set of images (called tiles) together into one large composite image with likeness to a reference image.
 This uses the python 'rich' library for fancy command-line (cli) interfaces

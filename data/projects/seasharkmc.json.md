@@ -9,6 +9,7 @@ skills:
   - csharp
 index_hint: 100
 status: inactive
+start: nov 21 2020
 ---
 My attempt at a minecraft server written in C#.
 

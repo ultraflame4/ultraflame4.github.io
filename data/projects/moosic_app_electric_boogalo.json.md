@@ -14,6 +14,8 @@ skills:
   - firebase
 index_hint: 500
 status: completed
+start: jun 29 2022
+end: dec 22 2022
 ---
 This is an android music app created using android studio (and other tools) for a school project.
 
