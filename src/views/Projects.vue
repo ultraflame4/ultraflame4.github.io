@@ -17,6 +17,22 @@
                 </template>
             </SearchBar>
             <TabBar :items="tabs" v-model:value="active_tab"/>
+            <p v-if="active_tab.toLowerCase()=='featured'">
+                The bests of my works
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='all'" style="text-align: center">
+                The entire list of my projects* <br/> <i>(more can be found on my <a href="https://github.com/ultraflame4?tab=repositories">github</a>)</i>
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='completed'" style="text-align: center">
+                Projects that I consider to be completed & released.
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='in dev'" style="text-align: center">
+                Projects that in active development or likely to have major changes in the future.
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='inactive'" style="text-align: center">
+                Incomplete projects that have been put on hold due to various reasons including but not limited to<br/>
+                1. lack of time, 2. loss of interest & motivation, 3. technical difficulties
+            </p>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
                 <li v-for="(p, index) in project_list" :key="hashCode(p.item, true)">
