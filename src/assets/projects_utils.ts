@@ -7,7 +7,8 @@ export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProje
         body: data.desc?.replace("\n", "\n\n") ?? "",
         media: [],
         title: data.title,
-        featured: !!data.featured
+        featured: !!data.featured,
+        status: "in dev"
     }
     if (data.bannerSrc) {
         obj.media.push({
@@ -30,6 +31,7 @@ export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSch
         links: [],
         body: body,
         media: [],
+        status: data.status ?? "in dev",
         title: data.title,
         featured: !!data.flags?.includes("featured")
     }

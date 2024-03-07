@@ -104,14 +104,18 @@ const projects_as_results = computed<Fuse.FuseResult<NormalisedProjectData>[]>((
 }))
 const project_list = computed<Fuse.FuseResult<NormalisedProjectData>[]>(() => {
     fuse.setCollection(AllProjects.value)
-    if (searchTerm.value.trim().length > 0) {
-        return fuse.search(searchTerm.value)
-    }
-    return projects_as_results.value
+    let results = searchTerm.value.trim().length > 0?fuse.search(searchTerm.value):projects_as_results.value
+    results = results.filter(x=>{
+        let a =x.item.status.toLowerCase();
+        let b =active_tab.value.toLowerCase();
+        if (b=="featured") return x.item.featured
+        return a==b || b == "all"
+    })
+    return results
 })
 
 
-watch([searchTerm, AllProjects, active_tab], ([search_term, _, t]) => {
+watch([searchTerm, active_tab], ([search_term, t]) => {
     router.push({
         replace: true,
         query: {

@@ -126,11 +126,13 @@ export interface NormalisedProjectData {
         type: "img" | "video"
     }[],
     featured: boolean,
+    status: "completed" | "in dev" | "inactive"
     links: proj_entry_link[],
     source?: { label: string, url: string },
     skills?: string[],
     start_date?: Date
     end_date?: Date
+
 }
 
 
