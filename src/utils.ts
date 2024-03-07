@@ -1,4 +1,4 @@
-import hash  from 'object-hash';
+import hash  from 'hash-it';
 export function timeout(ms: number) {
     return new Promise<void>((resolve) => setTimeout(resolve, ms));
 }

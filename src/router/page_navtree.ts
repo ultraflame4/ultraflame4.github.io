@@ -37,11 +37,10 @@ export class PageNavTree_ {
 
     public add(link: PageNavLink) {
         this.links.value.push(link)
-        return this.links.value.indexOf(link);
     }
 
-    public remove(index: number) {
-        this.links.value.splice(index, 1)
+    public remove(link: PageNavLink) {
+        this.links.value.splice(this.links.value.indexOf(link), 1)
     }
 }
 
