@@ -136,7 +136,7 @@ const props = defineProps<props>()
     right: 0;
     bottom: 0;
     border-radius: 1rem;
-    padding: 1rem 1rem 0.65rem;
+    padding:0.65rem 1rem ;
     transition: all 100ms ease;
 }
 
@@ -158,7 +158,7 @@ const props = defineProps<props>()
 
 
     & > sub {
-        margin-top: 0.2rem;
+        margin-top: 0.3rem;
         margin-bottom: 0.5rem;
         display: flex;
         align-items: center;

@@ -4,7 +4,7 @@
             <SectionTitle section_id="all" name="Project List">
                 All Projects
             </SectionTitle>
-            <SearchBar id="searchbar" v-model:search-term="searchTerm">
+            <SearchBar id="searchbar" v-model:search-term="searchTerm" class="floater-shadow">
                 <template v-slot:other-items v-if="isDev">
                     <button class="reset-btn"  @click="filterMenuActive=!filterMenuActive">
                         <Icon icon="material-symbols:filter-alt" class="filter-icon icon" role="button" :data-active="filterMenuActive"/>
