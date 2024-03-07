@@ -135,6 +135,8 @@
   ],
   "node_modules/fuse.js/dist/fuse.esm.js": [
   ],
+  "node_modules/hash-it/dist/esm/index.mjs": [
+  ],
   "node_modules/hookable/dist/index.mjs": [
   ],
   "node_modules/js-yaml/index.js": [
@@ -323,13 +325,13 @@
   ],
   "src/components/core/NavLink.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/NavLink.vue?vue&type=style&index=0&scoped=3c108d6e&lang.scss": [
+  "src/components/core/NavLink.vue?vue&type=style&index=0&scoped=42263c1e&lang.scss": [
   ],
   "src/components/core/NavigationTree.vue": [
   ],
   "src/components/core/NavigationTree.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/NavigationTree.vue?vue&type=style&index=0&scoped=0cb01e97&lang.scss": [
+  "src/components/core/NavigationTree.vue?vue&type=style&index=0&scoped=0cc0701a&lang.scss": [
   ],
   "src/components/core/PageView.vue": [
   ],
@@ -357,7 +359,7 @@
   ],
   "src/components/page/Footer.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=bb515078&lang.scss": [
+  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=db3a1685&lang.scss": [
   ],
   "src/components/page/SectionTitle.vue": [
   ],
@@ -417,6 +419,6 @@
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=63bd5de1&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=b88ba07c&lang.scss": [
   ]
 }
