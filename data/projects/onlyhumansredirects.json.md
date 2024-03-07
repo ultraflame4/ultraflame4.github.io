@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: OnlyHumansRedirects
 flags:
   - featured
@@ -16,6 +17,7 @@ links:
   - rickroll?: https://knowyourmeme.com/memes/rickroll
   - example: https://links.ultr42.dev/?q=MXd3dy5nb29nbGUuY29t7A
 index_hint: 300
+status: completed
 ---
 A fake human captcha design to automatically redirect to a website and sometimes rickroll a person.
 

@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: GravSim
 flags:
   - featured
@@ -16,6 +17,7 @@ links:
 index_hint: 0
 start: oct 20 2023
 end: dec 4 2023
+status: completed
 ---
 I started this project on a whim, after thinking about gravitational attraction all night.
 

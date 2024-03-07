@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: TilImg (TiledImage)
 flags:
   - featured
@@ -11,6 +12,7 @@ skills:
   - numpy
   - numba
 index_hint: 600
+status: completed
 ---
 This program stitches or "Tiles" a set of images (called tiles) together into one large composite image with likeness to a reference image.
 This uses the python 'rich' library for fancy command-line (cli) interfaces

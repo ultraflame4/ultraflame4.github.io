@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: SeaSharkMC
 source:
   label: Source
@@ -7,6 +8,7 @@ skills:
   - WIP
   - csharp
 index_hint: 100
+status: inactive
 ---
 My attempt at a minecraft server written in C#.
 

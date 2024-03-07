@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: Site Version Picker
 source:
   label: Source
@@ -13,6 +14,7 @@ skills:
 links:
   - website: https://ultr42.dev/SiteVersionPicker/
 index_hint: 200
+status: completed
 ---
 A simple website to redirect to the various different versions of my website.
 

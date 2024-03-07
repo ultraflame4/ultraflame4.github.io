@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: Trapped In A Dungeon
 video: "https://youtu.be/ZPBI4oVjePA"
 skills: [
@@ -14,6 +15,7 @@ links:
 flags: [ featured ]
 start: 2023-6-11
 end: 2023-8-11
+status: completed
 ---
 You fell down a random hole into a very deep dungeon, 
 miraculously surviving the fall. 

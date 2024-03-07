@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: WebDevCreate
 source:
   label: Source
@@ -12,6 +13,7 @@ skills:
 links:
   - Webapp: https://ultraflame4.github.io/WebDevCreate
 index_hint: 900
+status: completed
 ---
 Disclaimer: This project has since been abandoned
 

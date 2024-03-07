@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: Better Console
 source:
   label: Source
@@ -7,12 +8,10 @@ image: https://github.com/ultraflame4/Better-Console-python/raw/master/imgs/ezgi
 skills:
   - python
 index_hint: 1000
+status: completed
 ---
-I forgot why I created this, though I know it was partly inspired by minecraft’s server console
 
-
-
-This library provides a better console with the following features:
+This library provides a GUI console for logging with the following features:
 
 - Log box - See log messages
 - Log filters - Filter log messages by level

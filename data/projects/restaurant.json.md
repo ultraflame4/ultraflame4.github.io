@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: RestauRant
 flags:
   - featured
@@ -16,6 +17,7 @@ skills:
 links:
   - Project Site: https://github.com/ultraflame4/CDEVRestaurantReview
 index_hint: 700
+status: completed
 ---
 A website listing various restaurants and reviews for them.
 Restaurants are dynamically loaded as the user scrolls and can be sorted & filtered

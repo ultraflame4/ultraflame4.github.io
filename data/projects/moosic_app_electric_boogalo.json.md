@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: Moosic App Electric Boogalo
 flags:
   - featured
@@ -12,6 +13,7 @@ skills:
   - android studio
   - firebase
 index_hint: 500
+status: completed
 ---
 This is an android music app created using android studio (and other tools) for a school project.
 

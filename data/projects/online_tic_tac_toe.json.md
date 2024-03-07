@@ -1,4 +1,5 @@
 ---
+#yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: Online Tic Tac Toe
 source:
   label: Source
@@ -13,6 +14,7 @@ links:
 index_hint: 400
 start: dec 31 2020
 end: dec 26 2021
+status: completed
 ---
 This is a simple multiplayer Tic Tac Toe game playable on the browser. 
 
