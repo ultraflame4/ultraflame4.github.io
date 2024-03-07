@@ -6,12 +6,13 @@ export function timeout(ms: number) {
 
 
 export function hashCode(obj: any) {
+    // Sometimes there will be problem hashing objects, causing a bunch of other things to fail
     try{
         let h =  hash(obj).toString()
         return h
     }
     catch (e) {
-        console.log("Error while hashing", e)
+        console.log("Error while hashing object:",obj, e)
         return undefined
     }
 }
