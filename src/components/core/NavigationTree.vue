@@ -4,7 +4,7 @@
         <hr/>
         <h1>Index</h1>
         <ul id="index-pages">
-            <li v-for="link in router.options.routes" :key="hashCode(link)">
+            <li v-for="link in router.options.routes" :key="hashCode([link.name,link.path.toString()])">
 
                 <NavLink v-if="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-open">{{ link.name }}</NavLink>
                 <NavLink v-else="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-outline">{{ link.name }}</NavLink>
@@ -15,7 +15,7 @@
 
         <h1>Here</h1>
         <ul id="page-index">
-            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="hashCode(link)">
+            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="hashCode([link.name,link.to.toString()])">
                 <NavLink :hash="router.resolve(link.to).hash"
                          :noicon="link.level>1">
                     {{ shortenName(link.name, 32) }}

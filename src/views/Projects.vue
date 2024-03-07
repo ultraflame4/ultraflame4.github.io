@@ -19,7 +19,7 @@
             <TabBar :items="tabs" v-model:value="active_tab"/>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
-                <li v-for="(p, index) in project_list" :key="hashCode(p.item)">
+                <li v-for="(p, index) in project_list" :key="hashCode(p.item, true)">
                     <SectionTitle :section_id="`project-${index}`"
                                   :key="`project-${index}`"
                                   :name="p.item.title"
