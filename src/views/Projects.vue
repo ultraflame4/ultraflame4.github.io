@@ -17,14 +17,34 @@
                 </template>
             </SearchBar>
             <TabBar :items="tabs" v-model:value="active_tab"/>
+            <p v-if="active_tab.toLowerCase()=='featured'">
+                The bests of my works
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='all'" style="text-align: center">
+                The entire list of my projects* <br/> <i>(more can be found on my <a href="https://github.com/ultraflame4?tab=repositories">github</a>)</i>
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='completed'" style="text-align: center">
+                Projects that I consider to be completed & released.
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='in dev'" style="text-align: center">
+                Projects that in active development or likely to have major changes in the future.
+            </p>
+            <p v-else-if="active_tab.toLowerCase()=='inactive'" style="text-align: center">
+                Incomplete projects that have been put on hold due to various reasons including but not limited to<br/>
+                1. lack of time, 2. loss of interest & motivation, 3. technical difficulties
+            </p>
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
-                <li v-for="(p, index) in project_list" :key="hashCode(p.item)">
-                    <SectionTitle :section_id="`project-${index}`" :name="p.item.title" :heading="2"
-                                  class="proj-header">
+                <li v-for="(p, index) in project_list" :key="hashCode(p.item, true)">
+                    <SectionTitle :section_id="`project-${index}`"
+                                  :key="`project-${index}`"
+                                  :name="p.item.title"
+                                  :heading="2"
+                                  class="proj-header"
+                    >
                         {{ p.item.title }}
                     </SectionTitle>
-                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`"/>
+                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`" />
                 </li>
             </ul>
 
@@ -37,7 +57,7 @@
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SearchBar from "@/components/content/SearchBar.vue";
-import {computed, onMounted, type Ref, ref, watch} from "vue";
+import {computed, ref, watch} from "vue";
 import Fuse from "fuse.js";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import type {NormalisedProjectData, oldFormat} from "@/assets/projects";
@@ -45,7 +65,6 @@ import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import {hashCode} from "@/utils";
 
-import {normalise_oldFormat} from "@/assets/projects_utils";
 import {useRoute, useRouter} from "vue-router";
 import ChildPopupMenu from "@/components/core/ChildPopupMenu.vue";
 import {Icon} from "@iconify/vue";
@@ -119,7 +138,7 @@ watch([searchTerm, active_tab], ([search_term, t]) => {
     router.push({
         replace: true,
         query: {
-            t: active_tab.value,
+            t: t,
             q: search_term == "" ? undefined : search_term
         }
     })

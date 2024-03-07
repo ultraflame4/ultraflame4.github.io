@@ -25,7 +25,7 @@
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
 import {useRouter} from "vue-router";
-import {PageNavTree} from "@/router/page_navtree";
+import {type PageNavLink, PageNavTree} from "@/router/page_navtree";
 import {Str} from "@supercharge/strings";
 import {onBeforeUnmount} from "vue";
 
@@ -69,18 +69,18 @@ if (props.hash) {
 
 const fullpath = router.resolve(`${props.to ?? router.currentRoute.value.path}${hash_}`);
 
-// console.log(fullpath, props)
-let index = -1;
+let link: PageNavLink|null = null
 if (props.heading !== undefined) {
-    index = PageNavTree.add({
+    link = {
         to: fullpath,
         level: props.heading,
         name: props.name ?? props.to ?? props.hash ?? "unnamed"
-    })
+    }
+    PageNavTree.add(link)
 }
 
 onBeforeUnmount(() => {
-        if (index > -1) PageNavTree.remove(index)
+        if (link) PageNavTree.remove(link)
     }
 )
 

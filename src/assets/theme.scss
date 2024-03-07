@@ -290,3 +290,11 @@ sub {
     --color: #f3e185 !important;
     color: black !important;;
 }
+
+code{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .75em;
+    padding: 0.2rem .5rem;
+    background: black;
+    border-radius: .55em;
+}
