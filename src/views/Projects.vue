@@ -63,15 +63,19 @@ const tabs: TabItem[] = [
         text: "Featured"
     },
     {
+        icon: "ic:outline-format-list-bulleted",
         text: "All"
     },
     {
+        icon: "pajamas:rocket-launch",
         text: "Completed"
     },
     {
+        icon: "fluent-emoji-high-contrast:building-construction",
         text: "In dev"
     },
     {
+        icon: "mingcute:sleep-line",
         text: "Inactive"
     }
 ]
