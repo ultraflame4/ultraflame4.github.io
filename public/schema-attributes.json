@@ -86,7 +86,6 @@
       }
    },
    "required": [
-      "flags",
       "status",
       "title"
    ],

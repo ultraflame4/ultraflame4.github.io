@@ -115,7 +115,7 @@ export interface FrontmatterProjectDataSchema {
      *     ]
      * }
      */
-    flags: Array<"featured">
+    flags?: Array<"featured">
 }
 
 export interface NormalisedProjectData {
