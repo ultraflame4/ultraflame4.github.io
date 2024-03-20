@@ -58,7 +58,7 @@ async function _LoadAllProjects(): Promise<void> {
                 url: x.url
             }))
         };
-    }).map(x=>normalise_oldFormat(x))
+    }).map((x,index)=>normalise_oldFormat(x, index))
 }
 
 export async function LoadAllProjects() {
