@@ -1,7 +1,5 @@
 import type {FrontmatterProjectDataSchema, NormalisedProjectData, oldFormat} from "@/assets/projects";
 import {identifyLinkName} from "@/tools/url-utils";
-import { toB62 } from "@/utils";
-import hash from 'hash-it';
 import path from "path";
 
 export function normalise_oldFormat(data: oldFormat.proj_entry, index: number): NormalisedProjectData {
