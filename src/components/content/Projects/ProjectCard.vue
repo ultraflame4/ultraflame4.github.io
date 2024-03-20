@@ -222,12 +222,21 @@ const props = defineProps<props>()
         flex-shrink: 0;
     }
 
-    .project-details-desc {
+    & > .project-details-desc {
         flex-shrink: 1;
         flex-grow: 1;
-        overflow-y: scroll;
+        overflow-y: auto;
+        padding-bottom: 0.75rem;
     }
 
+    & > .project-links::before{
+        content: "";
+        background: linear-gradient(to top, var(--bg-0) 0%, transparent 100%);
+        position: absolute;
+        bottom: 100%;
+        height: 1rem;
+        width: 100%;
+    }
     & > .project-links {
         padding: 0;
         list-style-type: none;
@@ -235,7 +244,9 @@ const props = defineProps<props>()
         margin-top: auto;
         gap: 1rem;
         flex-wrap: wrap;
-
+        flex-shrink: 0;
+        position: relative;
+        overflow: visible;
         & > li {
             flex-shrink: 0;
             display: flex;
