@@ -119,6 +119,7 @@ export interface FrontmatterProjectDataSchema {
 }
 
 export interface NormalisedProjectData {
+    anchor_id: string,
     title: string,
     body: string,
     media: {
@@ -141,8 +142,8 @@ export const allProjects: NormalisedProjectData[] = []
 function importProjectsFromJson() {
     console.log("Importing project json data");
 
-    (_allProjects.items as oldFormat.proj_entry[]).forEach(x => {
-        allProjects.push(normalise_oldFormat(x))
+    (_allProjects.items as oldFormat.proj_entry[]).forEach((x, index) => {
+        allProjects.push(normalise_oldFormat(x, index))
     })
 }
 
@@ -152,15 +153,16 @@ function importProjectsFromDataDir() {
     console.log("Importing project frontmatter files");
     console.log("Found project data files: ", project_data_filepaths)
 
-    const frontmatter = project_data_filepaths.map(x => fm<FrontmatterProjectDataSchema>(data_projects_import[x]))
+    const frontmatter = project_data_filepaths.map((x,index) => ({v:fm<FrontmatterProjectDataSchema>(data_projects_import[x]), k:x}))
     // console.log(frontmatter)
     frontmatter.sort((a, b) => {
-        const aHint = a.attributes.index_hint ?? -1;
-        const bHint = b.attributes.index_hint ?? -1;
+        
+        const aHint = a.v.attributes.index_hint ?? -1;
+        const bHint = b.v.attributes.index_hint ?? -1;
         return aHint > bHint ? 1 : -1
     })
-    frontmatter.forEach(x => {
-        allProjects.push(normalise_FrontmatterProjectData(x.attributes, x.body.replace("\r", "")))
+    frontmatter.forEach(({v, k}) => {
+        allProjects.push(normalise_FrontmatterProjectData(v.attributes, v.body.replace("\r", ""),k))
     })
 }
 

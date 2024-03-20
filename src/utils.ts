@@ -28,3 +28,4 @@ export function hashCode(obj: any, silent_warning?: boolean) {
 export function AutoLinkName(url: string) {
     return ""
 }
+

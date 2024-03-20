@@ -1,8 +1,10 @@
 import type {FrontmatterProjectDataSchema, NormalisedProjectData, oldFormat} from "@/assets/projects";
 import {identifyLinkName} from "@/tools/url-utils";
+import path from "path";
 
-export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProjectData {
+export function normalise_oldFormat(data: oldFormat.proj_entry, index: number): NormalisedProjectData {
     let obj: NormalisedProjectData = {
+        anchor_id: `oldformat-project-${index}`,
         links: data.links ?? [],
         body: data.desc?.replace("\n", "\n\n") ?? "",
         media: [],
@@ -26,8 +28,9 @@ export function normalise_oldFormat(data: oldFormat.proj_entry): NormalisedProje
     return obj
 }
 
-export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string): NormalisedProjectData {
+export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string, filepath:string): NormalisedProjectData {
     let obj: NormalisedProjectData = {
+        anchor_id: path.basename(filepath).split(".")[0],
         links: [],
         body: body,
         media: [],
