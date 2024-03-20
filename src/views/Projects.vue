@@ -168,8 +168,8 @@ watch([searchTerm, active_tab], ([search_term, t]) => {
 }
 
 .proj-item {
-    --width: min(50rem, 90vw);
-    --height: min(29rem, 50vw);
+    --width: min(64rem, 90vw);
+    --height: min(32rem, 50vw);
 
 }
 
