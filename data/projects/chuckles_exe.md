@@ -15,7 +15,7 @@ end: jan 29 2024
 flags: [featured]
 ---
 
-This game was completed as part of Global Game Jam 2024 (GGJ-2024) where the theme was "Make Me Laugh".
+This game was completed as part of Global Game Jam 2024 (GGJ-2024) with the theme was "Make Me Laugh".
 
 Teamed up with friends & created a horror game where you "laugh" into the microphone to attract a creepy clown so that you can take pictures of it.
 

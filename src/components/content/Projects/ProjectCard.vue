@@ -114,10 +114,10 @@ const props = defineProps<props>()
 }
 
 .project-item-ctn {
-    --move-dist-x: 1rem;
-    --move-dist-y: 1.25rem;
-    --allow-space: 0.65rem;
-    --width: min(60rem, 90vw);
+    --move-dist-x: 0.5rem;
+    --move-dist-y: 0.5rem;
+    --allow-space: 0.35rem;
+    --width: min(50rem, 90vw);
     --height: 30rem;
     width: var(--width);
     height: var(--height);
@@ -188,7 +188,7 @@ const props = defineProps<props>()
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";
