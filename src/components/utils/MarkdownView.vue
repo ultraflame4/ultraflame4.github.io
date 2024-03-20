@@ -1,5 +1,5 @@
 <template>
-    <div v-html="render()">
+    <div v-html="render()" class="mdroot">
     </div>
 </template>
 
@@ -44,15 +44,15 @@ function render(): string {
 }
 
 
-div::v-deep(ul > li > ul > li > ul) {
+.mdroot::v-deep(ul > li > ul > li > ul) {
     list-style-type: square;
 }
 
-div::v-deep(ul > li > ul) {
+.mdroot::v-deep(ul > li > ul) {
     list-style-type: circle;
 }
 
-div::v-deep(ul) {
+.mdroot::v-deep(ul) {
     list-style: initial;
 }
 
@@ -63,16 +63,50 @@ div::v-deep(ul) {
 }
 
 
-div::v-deep(li) {
+.mdroot::v-deep(li) {
     overflow: visible;
     margin: 0 0 0.25em;
     display: list-item;
     font-size: 1em;
 }
 
-div::v-deep(>*) {
+.mdroot::v-deep(>*) {
     margin-left: 0;
     margin-right: 0;
 }
 
+.mdroot::v-deep(a){
+
+    background: none;
+    -webkit-background-clip: initial;
+
+    &::after{
+        content: "";
+    }
+
+    
+    &:hover{
+        color: var(--accent);
+    }
+}
+
+
+.mdroot::v-deep(sub){
+    color: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    font-size: 0.8em;
+}
+
+.mdroot::v-deep(table){
+    margin: 0.75rem 0;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+
+    &, th, td{
+        border: 1px solid var(--line);
+        padding: 0.2rem;
+    }
+    
+}
 </style>
