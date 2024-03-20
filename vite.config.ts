@@ -10,6 +10,7 @@ const config: UserConfig = {
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
+            path: "path-browserify",
             // "vyue42": fileURLToPath(new URL('../vyue42', import.meta.url))
         }
     },

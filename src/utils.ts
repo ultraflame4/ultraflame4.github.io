@@ -28,3 +28,30 @@ export function hashCode(obj: any, silent_warning?: boolean) {
 export function AutoLinkName(url: string) {
     return ""
 }
+
+
+export function toB62(n: number){
+    if (n === 0) return 0
+    const charset =  '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    let s="";
+      while (n > 0) {
+        let c = base62.charset[n % 62]
+        s = c+s;
+        n = Math.floor(n / 62);
+      }
+      return s;
+}
+
+const base62 = {
+    charset: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      .split(''),
+    encode: integer => {
+      if (integer === 0) {
+        return 0;
+      }
+      
+    },
+    decode: chars => chars.split('').reverse().reduce((prev, curr, i) =>
+      prev + (base62.charset.indexOf(curr) * (62 ** i)), 0)
+  };

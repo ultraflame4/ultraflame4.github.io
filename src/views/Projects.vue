@@ -36,15 +36,15 @@
             <ProjectDataStatusView/>
             <ul v-if="!ProjectDataStatus.loading.value" id="projects-container">
                 <li v-for="(p, index) in project_list" :key="hashCode(p.item, true)">
-                    <SectionTitle :section_id="`project-${index}`"
-                                  :key="`project-${index}`"
+                    <SectionTitle :section_id="p.item.anchor_id"
+                                  :key="p.item.anchor_id"
                                   :name="p.item.title"
                                   :heading="2"
                                   class="proj-header"
                     >
                         {{ p.item.title }}
                     </SectionTitle>
-                    <ProjectCard :item="p.item" :id="`project-${index}`" class="proj-item" :anchor="`project-${index}`" />
+                    <ProjectCard :item="p.item" :id="p.item.anchor_id" class="proj-item" :anchor="p.item.anchor_id" />
                 </li>
             </ul>
 
