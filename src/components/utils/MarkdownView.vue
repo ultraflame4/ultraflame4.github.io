@@ -99,14 +99,31 @@ function render(): string {
 }
 
 .mdroot::v-deep(table){
-    margin: 0.75rem 0;
+    margin: 0.25rem 0;
     font-size: 0.8rem;
     border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+    
+    &::-webkit-scrollbar{
+        height: 3px;
+        width: 3px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: white;
+    }
 
-    &, th, td{
-        border: 1px solid var(--line);
+
+    th, td{
+        border: 1px solid var(--bg-2);
         padding: 0.2rem;
     }
+
     
+}
+
+.mdroot::v-deep(img){
+    max-width: 100%;
+    height: auto;
 }
 </style>

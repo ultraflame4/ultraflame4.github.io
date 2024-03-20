@@ -117,8 +117,8 @@ const props = defineProps<props>()
     --move-dist-x: 1rem;
     --move-dist-y: 1.25rem;
     --allow-space: 0.65rem;
-    --width: min(45rem, 80vw);
-    --height: 24rem;
+    --width: min(60rem, 90vw);
+    --height: 30rem;
     width: var(--width);
     height: var(--height);
 
