@@ -69,6 +69,8 @@
   ],
   "data/projects/better_console.json.md?raw": [
   ],
+  "data/projects/chuckles_exe.md?raw": [
+  ],
   "data/projects/clirenderer.json.md?raw": [
   ],
   "data/projects/gravsim.json.md?raw": [
@@ -201,6 +203,8 @@
   ],
   "node_modules/marked/lib/marked.esm.js": [
   ],
+  "node_modules/path-browserify/index.js": [
+  ],
   "node_modules/unhead/dist/index.mjs": [
   ],
   "node_modules/uuid/dist/commonjs-browser/index.js": [
@@ -271,7 +275,7 @@
   ],
   "src/components/content/Projects/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=b037d2c0&lang.scss": [
+  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=47706db5&lang.scss": [
   ],
   "src/components/content/Projects/ProjectDefaultLink.vue": [
   ],
@@ -381,7 +385,7 @@
   ],
   "src/components/utils/MarkdownView.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=5dbde28c&lang.scss": [
+  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=b36def59&lang.scss": [
   ],
   "src/components/utils/ProjectDataStatusView.vue": [
   ],
@@ -419,6 +423,6 @@
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=b88ba07c&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=8ff4ef98&lang.scss": [
   ]
 }
