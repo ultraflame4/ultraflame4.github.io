@@ -5,6 +5,7 @@ source: https://github.com/tingjs05/Chuckles
 links:
   - https://notlivingstudios.itch.io/chuckles-ggj-2024
 image: https://img.itch.zone/aW1hZ2UvMjQ5NTc1OS8xNDgzNjIyMi5wbmc=/347x500/WJ6vHk.png
+video: https://youtu.be/qjLplZZZR7g
 skills:
   - unity
   - csharp
@@ -31,7 +32,7 @@ Programmed the laugh mechanic & helped integrated various parts of the project t
         <style>
             td>a>img{
                 max-width: initial;
-                width:3rem
+                width:3.5rem
             }
         </style>
         <td><a href="https://github.com/TeeKaiQi"><img src="https://github.com/TeeKaiQi.png" /><br/><sub>TeeKaiQi</sub></a></td>
