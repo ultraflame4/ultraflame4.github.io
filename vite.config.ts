@@ -28,6 +28,6 @@ const config: UserConfig = {
         dirStyle: "flat",
         script: "async defer",
     },
-    base: "/v6"
+    base: "/v6" 
 }
 export default config
