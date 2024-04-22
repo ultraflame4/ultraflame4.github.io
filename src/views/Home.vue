@@ -63,8 +63,8 @@
 <!--                    </ScrollingColumn>-->
                 </div>
             </div>
-            <div class="section-bg-end "></div>
         </section>
+        <div class="section-bg-end"></div>
         <hr/>
         <section id="featured" class="flex-center">
             <SectionTitle section_id="featured">Featured Projects</SectionTitle>
