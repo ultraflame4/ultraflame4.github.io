@@ -242,7 +242,7 @@ const props = defineProps<props>()
         list-style-type: none;
         display: flex;
         margin-top: auto;
-        gap: 1rem;
+        gap: 0.5rem;
         flex-wrap: wrap;
         flex-shrink: 0;
         position: relative;
