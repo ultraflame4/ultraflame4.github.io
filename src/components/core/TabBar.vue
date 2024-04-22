@@ -59,7 +59,8 @@ const selector_style = computed(() => {
     border-radius: .85rem;
     border: 2px solid var(--bg-2);
     margin: 1rem 0;
-
+    background: var(--bg-0);
+    
     & > ul {
         display: grid;
         grid-template-columns: repeat(var(--col-count), auto);
@@ -95,7 +96,7 @@ const selector_style = computed(() => {
                 transition: all 100ms linear;
                 display: flex;
                 align-items: center;
-
+                z-index: 2;
                 &>.icon{
                     margin-right: 0.25rem;
                     font-size: 1.25em;
@@ -120,7 +121,7 @@ const selector_style = computed(() => {
         transition: all 200ms ease;
         background: var(--accent);
         width: var(--w);
-        z-index: -1;
+        z-index: 1;
         pointer-events: none;
     }
 }

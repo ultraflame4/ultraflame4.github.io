@@ -39,7 +39,7 @@ const props = defineProps<iProps>()
 
 <style lang="scss" scoped>
 h1 {
-    background-color: var(--bg-0);
+    // background-color: var(--bg-0);
     padding: 1rem;
 }
 

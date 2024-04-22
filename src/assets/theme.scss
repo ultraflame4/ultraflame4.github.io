@@ -298,3 +298,32 @@ code{
     background: black;
     border-radius: .55em;
 }
+
+.section-bg{
+    background:var(--bg-0);
+}
+
+.section-bg-end{
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    
+}
+.section-bg-end::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(180deg, var(--bg-0) 40% ,  transparent);
+    background-size: 100%;
+    z-index: -1;
+}
+.section-bg-hr{
+    background:var(--bg-0);
+    box-sizing: border-box;
+    display: flex;
+    hr{
+        width: 100%;
+    }
+}
