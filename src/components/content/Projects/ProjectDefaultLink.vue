@@ -8,9 +8,11 @@
     target="_blank"
     :data-filled="value.filled"
   >
+  
     <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
-    {{ value.name }}
     <div class="bg dots"></div>
+    <span>{{ value.name }}</span>
+    <!-- <div class="bg dots"></div> -->
   </a>
 </template>
 <script setup lang="ts">
@@ -28,7 +30,9 @@ const value = inject("link") as proj_entry_link;
   color: var(--accent);
   display: block;
 }
-
+span, .icon{
+  z-index: 1;
+}
 :has(> .icon):hover > .icon {
   color: white;
 }
@@ -40,7 +44,6 @@ const value = inject("link") as proj_entry_link;
   width: 100%;
   height: 100%;
 
-  //   z-index: -1;
   transition: all 200ms ease;
 }
 
@@ -75,7 +78,7 @@ const value = inject("link") as proj_entry_link;
       center / var(--dot-space) var(--dot-space),
     var(--dot-color);
 
-  z-index: -2;
+  z-index: 0;
 
   left: 50%;
   top: 50%;
@@ -98,7 +101,9 @@ a {
   border-radius: 0.5rem;
   padding: calc(0.3rem + 1px) calc(0.4rem + 1px);
 }
-
+span{
+  background: inherit;
+}
 a:hover {
   border-color: white;
   border-width: 2px;
@@ -106,6 +111,7 @@ a:hover {
 
   .icon {
     color: black;
+
   }
 
   .dots{
