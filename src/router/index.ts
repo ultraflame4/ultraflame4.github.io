@@ -29,7 +29,8 @@ export function setupRouter(router: Router) {
     setupRouterScroller(router, {
         selectors: {
             "#site-ctn": context => {
-                if (context.to.hash && context.type != "history") {
+                console.log(context)
+                if (context.to.hash) {
 
                     const timer = setInterval(() => {
                         let e = document.querySelector(context.to.hash);
@@ -41,7 +42,7 @@ export function setupRouter(router: Router) {
                                 behavior: "smooth"
                             })
                         }
-
+              
                     }, 100)
 
                     return false

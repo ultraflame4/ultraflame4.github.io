@@ -1,15 +1,15 @@
 <template>
-    <TopSticky>
+    <!-- <TopSticky> -->
         <h1 class="no-vmar section-title">
             <NavLink :hash="props.section_id" :name="props.name" :heading="no_heading?undefined:(props.heading??0)">
                 <slot></slot>
             </NavLink>
         </h1>
-    </TopSticky>
+    <!-- </TopSticky> -->
 </template>
 
 <script lang="ts" setup>
-import TopSticky from "@/components/core/TopSticky.vue";
+// import TopSticky from "@/components/core/TopSticky.vue";
 import NavLink from "@/components/core/NavLink.vue";
 
 interface iProps {

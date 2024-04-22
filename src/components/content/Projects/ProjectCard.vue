@@ -20,10 +20,20 @@
                 </li>
             </ul>
             <div class="project-details">
-                <h3>{{ props.item.title }}
-                    <a v-if="props.anchor" :href="'#'+props.anchor" class="no-deco anchor">
-                        <Icon icon="ph:link-bold"/>
-                    </a>
+                <h3>
+                    {{ props.item.title }}
+                    <Tooltip>
+                        <template v-slot:trigger="propsb">
+                            <a v-if="props.anchor" :href="hash_s" class="no-deco anchor" @click="anchor_clicked" v-bind="propsb">
+                                <Icon icon="ph:link-bold"/>
+                            </a>
+                        </template>
+                        <template v-slot:content>
+                            Copy direct link
+                        </template>
+                    </Tooltip>
+
+            
                 </h3>
                 <sub>
                     <template v-if="props.item.start_date||props.item.end_date">
@@ -81,9 +91,13 @@ import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 import {isYoutubeUrl} from "@/external/yt";
 import type {NormalisedProjectData} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
+import { useRouter, useRoute } from "vue-router";
+import { computed } from "vue";
+import Tooltip from "@/components/core/Tooltip.vue";
 
 const datetimeformat = new Intl.DateTimeFormat('en-sg', {month: 'short', year: "numeric", day: "2-digit"})
-
+const router = useRouter();
+const route = useRoute();
 const isYTUrl = isYoutubeUrl;
 
 interface props {
@@ -92,6 +106,21 @@ interface props {
 }
 
 const props = defineProps<props>()
+const hash_s = computed(()=>("#" + props.anchor??"").replace("##","#"))
+
+function anchor_clicked(e: MouseEvent){
+    e.preventDefault()
+    let el = (e.currentTarget as HTMLAnchorElement);
+    
+    const new_route = router.resolve({
+        path: route.path,
+        hash: hash_s.value,
+        replace: true
+    })
+
+    router.push(new_route)
+    navigator.clipboard.writeText(location.origin+new_route.href)
+}
 
 </script>
 
