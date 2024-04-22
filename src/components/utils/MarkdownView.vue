@@ -99,8 +99,8 @@ function render(): string {
 }
 
 .mdroot::v-deep(table){
-    margin: 0.25rem 0;
-    font-size: 0.8rem;
+    margin: 0.25em 0;
+    font-size: 0.8em;
     border-collapse: collapse;
     overflow-x: auto;
     display: block;
@@ -116,7 +116,7 @@ function render(): string {
 
     th, td{
         border: 1px solid var(--bg-2);
-        padding: 0.2rem;
+        padding: 0.25em;
     }
 
     

@@ -218,7 +218,7 @@ function anchor_clicked(e: MouseEvent){
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";
