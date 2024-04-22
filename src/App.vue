@@ -4,6 +4,9 @@
     </div>
 
     <div id="site-ctn" :data-open="menuOpen" @click.capture="returnToPage()" ref="site_ctn" class="scrollable">
+        <div class="background">
+            <Background/>
+        </div>
         <TopNav :menu-open="menuOpen" @menuToggle="menuToggle()" @scroll-top="scrollTop()"/>
         <div id="page-content">
             <RouterView v-slot="{Component}">
@@ -23,6 +26,7 @@ import NavigationTree from "@/components/core/NavigationTree.vue";
 import Footer from "@/components/page/Footer.vue";
 import {useSeoMeta, useHead} from '@unhead/vue'
 import PageView from "@/components/core/PageView.vue";
+import Background from "@/components/utils/Background.vue";
 import {PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
 
@@ -75,6 +79,18 @@ onBeforeMount(() => PageNavTree.clear())
     --navtree-width: min(50vw, 24rem);
 }
 
+
+.background{
+    top: 0%;
+    left: 0%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // pointer-events: none;
+    z-index: -1;
+    // background: white;
+}
+
 #site-back {
     display: flex;
 }
@@ -107,6 +123,7 @@ onBeforeMount(() => PageNavTree.clear())
     height: 100vh;
     overflow: auto;
     background: var(--bg-0);
+    // background: wheat;
 
 }
 
@@ -130,3 +147,4 @@ onBeforeMount(() => PageNavTree.clear())
 }
 
 </style>
+

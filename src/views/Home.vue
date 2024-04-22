@@ -12,7 +12,7 @@
         </div>
     </div>
     <main>
-        <section class="flex-center" id="about">
+        <section class="flex-center section-bg" id="about">
             <SectionTitle section_id="about">About</SectionTitle>
 
             <p class="text-center">
@@ -29,9 +29,11 @@
                 I've come a long way and have done a wide variety of projects<br><br><small>Hopefully I'll finish the
                 mountain of side projects someday... <small>maybe</small>...</small>
             </p>
-        </section>
-        <hr/>
-        <section class="flex-center" id="skills">
+        </section >
+        <div class="section-bg-hr">
+            <hr/>
+        </div>
+        <section class="flex-center section-bg" id="skills">
             <SectionTitle section_id="skills">Skills</SectionTitle>
             <div id="skills-section-layout">
                 <div id="skills-txt">
@@ -61,6 +63,7 @@
 <!--                    </ScrollingColumn>-->
                 </div>
             </div>
+            <div class="section-bg-end "></div>
         </section>
         <hr/>
         <section id="featured" class="flex-center">
@@ -78,14 +81,12 @@
 <script lang="ts" setup>
 import {iRatioObject} from "vyue42";
 import SkillCard from "@/components/content/SkillCard.vue";
-import ScrollingColumn from "@/components/utils/ScrollingColumn.vue";
 import {AllSkills} from "@/tools/skills";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
 import {AllProjects, ProjectDataStatus} from "@/tools/projects_api";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
-import Tooltip from "@/components/core/Tooltip.vue";
-import {Icon} from "@iconify/vue";
+
 
 const bannerIRatio = new iRatioObject({
     exit: false,
@@ -289,7 +290,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
 
 main {
     z-index: 3;
-    background: var(--bg-0);
+    // background: var(--bg-0);
 }
 
 @keyframes wave {

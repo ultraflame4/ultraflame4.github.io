@@ -124,6 +124,7 @@ const props = defineProps<props>()
 
     overflow: visible;
     margin: var(--allow-space);
+    
 
     &:hover, &:focus-within {
         .anchor {
@@ -164,7 +165,7 @@ const props = defineProps<props>()
     padding: 0.65rem 1rem;
     transition: all 100ms ease;
     position: relative;
-
+    background: var(--bg-0);
 
     .badges {
         display: flex;
@@ -242,7 +243,7 @@ const props = defineProps<props>()
         list-style-type: none;
         display: flex;
         margin-top: auto;
-        gap: 1rem;
+        gap: 0.5rem;
         flex-wrap: wrap;
         flex-shrink: 0;
         position: relative;

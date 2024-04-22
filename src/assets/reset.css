@@ -45,3 +45,7 @@ Special class for removing all styles from a button
     text-transform: none;
     -webkit-appearance: button;
 }
+
+section{
+    overflow: visible;
+}
