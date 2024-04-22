@@ -14,6 +14,7 @@
             </RouterView>
         </div>
         <hr/>
+        <div class="section-bg-start"></div>
         <Footer/>
     </div>
 
