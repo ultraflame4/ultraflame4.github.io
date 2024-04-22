@@ -1,5 +1,5 @@
 <template>
-    <section id="foot" class="flex-center">
+    <section id="foot" class="flex-center section-bg">
         <SectionTitle section_id="foot" no_heading>The End</SectionTitle>
         <pre id="cool-text" @click="cat_link()" ref="catRef">
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -62,10 +62,15 @@
             <SocialLinks class="social"/>
 
         </div>
-        <br/>
+        
+        
     </section>
+    <div class="section-bg-end" style="--height: 2.5rem;"></div>
     <br/>
-    <div id="socials-float"><SocialLinks/></div>
+    
+    <br/>
+    
+    <!-- <div id="socials-float"><SocialLinks/></div> -->
     <footer >
         <code>Site Version {{app_version}}</code>
         <small>© Copyright 2023, ultraflame4.github.io All rights reserved.</small>
