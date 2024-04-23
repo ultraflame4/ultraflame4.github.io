@@ -1,15 +1,19 @@
 <template>
 
-
+    
     <header v-stuck>
         <div class="header-left floater-shadow header-item">
             <h1>ultr42</h1>
             <ul class="topnav-quick">
                 <Icon icon="vaadin:hash" class="search-icon"/>
-                <template v-for="link in PageNavTree.links.value">
-                    <li v-if="link.level<1">
-                        <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{ link.name }}
-                        </RouterLink>
+                
+                <template v-for="link in current_page_sections">
+                    
+                    
+                    <li v-if=" link.level<1">
+                        
+                        <HashLink :hash="link.id" class="parent_hover-underline a" noicon eraseinner>{{ link.title }}
+                        </HashLink>
                     </li>
                 </template>
             </ul>
@@ -20,7 +24,7 @@
             <template v-for="link in router.options.routes">
                 <li>
                     <RouterLink :to="link.path"
-                                class="no-deco"
+                                class="no-deco a"
                                 active-class="active">
                         {{ link.name }}
                     </RouterLink>
@@ -58,9 +62,11 @@
 
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
-import {PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
 import Tooltip from "@/components/core/Tooltip.vue";
+import { injectNavCtx } from "../navigation/NavigationContext.vue";
+import { computed } from "vue";
+import HashLink from "../navigation/HashLink.vue";
 
 const router = useRouter()
 
@@ -73,6 +79,8 @@ const props = defineProps<{
     menuOpen: boolean
 }>()
 
+const nav_ctx = injectNavCtx();
+const current_page_sections = computed(()=>nav_ctx.current_page_sections.value)
 
 </script>
 
@@ -80,7 +88,7 @@ const props = defineProps<{
 
 header {
     width: auto;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0.5rem;
     box-sizing: content-box;
     height: 2.9rem;
     transition: all 500ms ease, padding 500ms ease;
@@ -171,15 +179,17 @@ header {
                 top: 1px; // Alignment
             }
 
-            & > a {
-                --underline-mult: 1.1;
+            & > .a {
+                // --underline-mult: 1.1 ;
                 letter-spacing: 0.075rem;
                 font-weight: 600;
                 font-family: "Poppins";
                 text-transform: uppercase;
+                
+                // height: initial;
             }
 
-            &:hover > a {
+            &:hover > .a {
                 color: #fff;
             }
         }
@@ -198,7 +208,7 @@ header {
         font-size: 1.1em;
     }
 
-    & li > a:not(:hover) {
+    & li > .a:not(:hover) {
         color: var(--txt-a-tinted);
     }
 
@@ -276,7 +286,7 @@ header {
         overflow: visible;
     }
 
-    & li > a {
+    & li > .a {
 
         font-family: "Montserrat", sans-serif;
         font-weight: 600;

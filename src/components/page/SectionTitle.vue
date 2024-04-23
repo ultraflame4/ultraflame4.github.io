@@ -1,9 +1,12 @@
 <template>
     <!-- <TopSticky> -->
-        <h1 class="no-vmar section-title">
-            <NavLink :hash="props.section_id" :name="props.name" :heading="no_heading?undefined:(props.heading??0)">
+        
+        <!-- {{ iratio.isVisible }} -->
+        <h1 class="no-vmar section-title" v-iratio="iratio">
+        
+            <HashLink :hash="props.section_id">
                 <slot></slot>
-            </NavLink>
+            </HashLink>
         </h1>
     <!-- </TopSticky> -->
 </template>
@@ -12,6 +15,15 @@
 // import TopSticky from "@/components/core/TopSticky.vue";
 import NavLink from "@/components/core/NavLink.vue";
 
+import {iRatioObject} from "vyue42";
+import {  injectPageSectionsCtx } from "@/components/navigation/PageContext.vue";
+import HashLink from "../navigation/HashLink.vue";
+const iratio = new iRatioObject({
+    exit: true,
+    invert: false,
+    thresholds: 1
+    
+})
 interface iProps {
     /**
      * The id of this section
@@ -33,6 +45,8 @@ interface iProps {
 }
 
 const props = defineProps<iProps>()
+const pageSections = injectPageSectionsCtx();
+pageSections?.addSection(props.name??props.section_id,props.section_id, props.heading??0)
 
 
 </script>
