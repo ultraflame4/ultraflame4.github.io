@@ -257,7 +257,7 @@
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/App.vue?vue&type=style&index=0&scoped=963f29b3&lang.scss": [
+  "src/App.vue?vue&type=style&index=0&scoped=3a5fdc88&lang.scss": [
   ],
   "src/assets/projects.json": [
   ],
@@ -275,13 +275,13 @@
   ],
   "src/components/content/Projects/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=1370000d&lang.scss": [
+  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=5c10af16&lang.scss": [
   ],
   "src/components/content/Projects/ProjectDefaultLink.vue": [
   ],
   "src/components/content/Projects/ProjectDefaultLink.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/Projects/ProjectDefaultLink.vue?vue&type=style&index=0&scoped=48b8d6ac&lang.scss": [
+  "src/components/content/Projects/ProjectDefaultLink.vue?vue&type=style&index=0&scoped=9735182c&lang.scss": [
   ],
   "src/components/content/Projects/ProjectReIconLink.vue": [
   ],
@@ -305,7 +305,7 @@
   ],
   "src/components/content/SocialLinks.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/SocialLinks.vue?vue&type=style&index=0&scoped=9f737a9e&lang.scss": [
+  "src/components/content/SocialLinks.vue?vue&type=style&index=0&scoped=fd9556b0&lang.scss": [
   ],
   "src/components/content/YoutubeEmbed.vue": [
   ],
@@ -335,7 +335,7 @@
   ],
   "src/components/core/NavigationTree.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/NavigationTree.vue?vue&type=style&index=0&scoped=0cc0701a&lang.scss": [
+  "src/components/core/NavigationTree.vue?vue&type=style&index=0&scoped=966e5858&lang.scss": [
   ],
   "src/components/core/PageView.vue": [
   ],
@@ -353,35 +353,45 @@
   ],
   "src/components/core/Tooltip.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/core/Tooltip.vue?vue&type=style&index=0&scoped=f8db5e84&lang.scss": [
+  "src/components/core/Tooltip.vue?vue&type=style&index=0&scoped=4ba14f07&lang.scss": [
   ],
-  "src/components/core/TopSticky.vue": [
+  "src/components/navigation/HashLink.vue": [
   ],
-  "src/components/core/TopSticky.vue?vue&type=style&index=0&scoped=122766cb&lang.scss": [
+  "src/components/navigation/HashLink.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/navigation/HashLink.vue?vue&type=style&index=0&scoped=907ca158&lang.scss": [
+  ],
+  "src/components/navigation/NavigationContext.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/navigation/PageContext.vue?vue&type=script&setup=true&lang.ts": [
   ],
   "src/components/page/Footer.vue": [
   ],
   "src/components/page/Footer.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=66c92e00&lang.scss": [
+  "src/components/page/Footer.vue?vue&type=style&index=0&scoped=37a25ad6&lang.scss": [
+  ],
+  "src/components/page/Section.vue": [
+  ],
+  "src/components/page/Section.vue?vue&type=script&setup=true&lang.ts": [
+  ],
+  "src/components/page/Section.vue?vue&type=style&index=0&scoped=7ef8a951&lang.scss": [
   ],
   "src/components/page/SectionTitle.vue": [
   ],
   "src/components/page/SectionTitle.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/SectionTitle.vue?vue&type=style&index=0&scoped=0dab18ad&lang.scss": [
+  "src/components/page/SectionTitle.vue?vue&type=style&index=0&scoped=abc326f8&lang.scss": [
   ],
   "src/components/page/TopNav.vue": [
   ],
   "src/components/page/TopNav.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=486cf362&lang.scss": [
+  "src/components/page/TopNav.vue?vue&type=style&index=0&scoped=f3924a13&lang.scss": [
   ],
   "src/components/utils/Background.vue": [
   ],
-  "src/components/utils/Background.vue?vue&type=script&setup=true&lang.ts": [
-  ],
-  "src/components/utils/Background.vue?vue&type=style&index=0&scoped=4c08cbf2&lang.scss": [
+  "src/components/utils/Background.vue?vue&type=style&index=0&scoped=61b08050&lang.scss": [
   ],
   "src/components/utils/LoadingSpinner.vue": [
   ],
@@ -391,7 +401,7 @@
   ],
   "src/components/utils/MarkdownView.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=b36def59&lang.scss": [
+  "src/components/utils/MarkdownView.vue?vue&type=style&index=0&scoped=606eb347&lang.scss": [
   ],
   "src/components/utils/ProjectDataStatusView.vue": [
   ],
@@ -421,12 +431,12 @@
   ],
   "src/views/Home.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Home.vue?vue&type=style&index=0&scoped=5552cb0b&lang.scss": [
+  "src/views/Home.vue?vue&type=style&index=0&scoped=2b28c9dc&lang.scss": [
   ],
   "src/views/Projects.vue": [
   ],
   "src/views/Projects.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Projects.vue?vue&type=style&index=0&scoped=8ff4ef98&lang.scss": [
+  "src/views/Projects.vue?vue&type=style&index=0&scoped=cd7f117a&lang.scss": [
   ]
 }
