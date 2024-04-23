@@ -1,17 +1,12 @@
 <template>
     <div id="pulse">
         <div class="gradient"></div>
+        <div class="gradient"></div>
     </div>
 
 
 </template>
 <script setup lang="ts">
-import {ref, watch} from "vue";
-
-const autoRedirectActive = ref(true)
-const counter = ref(3)
-const selected_version = ref("Select Version")
-
 
 </script>
 
@@ -30,16 +25,22 @@ const selected_version = ref("Select Version")
 }
 
 #pulse {
+    // When changing cell size, you may also need to adjust dot size
+    --cell-size: 8px;
+    --dot-size: 0.1px;
     position: absolute;
     inset: 0;
     display: flex;
     place-content: center;
     align-items: center;
     overflow: hidden;
-    background-image: radial-gradient(black 1px, transparent 0);
-    background-size: 25px 25px;
-    background-position: -20px -19px;
-    // transform: rotate(25de);
+    background-image: radial-gradient(circle at center, black var(--dot-size), transparent var(--dot-size));
+                      
+    background-size: var(--cell-size) var(--cell-size);
+    background-position: 0px 0px;
+    
+    // background-repeat: round;
+    // transform: rotate(25deg);
 
 }
 @keyframes rotate {
@@ -54,9 +55,10 @@ const selected_version = ref("Select Version")
 @keyframes pulsing {
     0%{
         opacity: 0.25;
+     
     }
     100%{
-        opacity: 0.75;
+        opacity: 1;
     }
 }
 
@@ -65,10 +67,20 @@ const selected_version = ref("Select Version")
     width: var(--size);
     height: var(--size);
     filter: blur(calc(var(--size) / 5));
+    position: absolute;
+    background-image: linear-gradient(20deg, rgb(255, 51, 126) 0%, rgb(188, 62, 255) 18%, rgba(9,9,121,1) 38%, rgba(8,49,121,1) 57%, rgba(5,175,120,1) 74%, rgba(0,212,255,1) 100%);
+    animation: rotate 14s linear infinite, pulsing 5s ease-in-out alternate infinite;
+    border-radius: 70% 30% 50% 30% / 30% 30% 40% 70%;
+    z-index: -1;
+}
 
-    background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57));
-    animation: rotate 10s linear infinite, pulsing 5s ease-in-out alternate infinite;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+.gradient:nth-child(2){
+    filter: blur(64px);
+    background: rgba(white, 10%);
+    border-radius: 10% / 40%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+    
 }
 
 .version_text {
