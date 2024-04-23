@@ -253,11 +253,16 @@ header {
 
 }
 
-.topnav-quick {
+ul.topnav-quick {
     padding: 0;
     margin-left: 0.5rem;
 
     height: 100%;
+
+
+    @media only screen and (max-width: 1000px) {
+        display: none;
+    }
 
 
     & > .search-icon {
@@ -267,15 +272,13 @@ header {
     }
 
 
-    @media only screen and (max-width: 1000px) {
-        display: none;
-    }
+
 }
 
 #index-pages {
-    @media only screen and (max-width: 1000px) {
-        display: none;
-    }
+    // @media only screen and (max-width: 1000px) {
+    //     display: none;
+    // }
 
 
     gap: 1.25rem;
