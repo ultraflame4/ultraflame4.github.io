@@ -71,14 +71,6 @@
                 />
               </li>
             </ul>
-            <!--                    <ScrollingColumn v-for="i in 3" :speed="AllSkills.length*700+1000*i" :offset="i*1.5"-->
-            <!--                                     class="scrolling-skills">-->
-            <!--                        <ul id="skills-list">-->
-            <!--                            <li v-for="i in repeatArray(shuffleArray(AllSkills), 2)">-->
-            <!--                                <SkillCard :image="i.image" :name="i.name" :invert="i.invert" :level="i.level"/>-->
-            <!--                            </li>-->
-            <!--                        </ul>-->
-            <!--                    </ScrollingColumn>-->
           </div>
         </div>
       </Section>
@@ -87,6 +79,7 @@
       <Section id="featured" class="flex-center">
         <SectionTitle section_id="featured">Featured Projects</SectionTitle>
         <ProjectDataStatusView />
+
         <ul id="projects-container">
           <ProjectCard
             :item="p"

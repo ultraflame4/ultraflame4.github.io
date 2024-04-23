@@ -113,7 +113,7 @@ watch([ytIsLoaded, should_load], refreshEmbed, {
 
     .hover-icon {
         font-size: 4em;
-        z-index: 1;
+        // z-index: 1;
         position: absolute;
         top: 50%;
         left: 50%;
