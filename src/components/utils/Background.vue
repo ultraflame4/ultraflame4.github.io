@@ -15,8 +15,8 @@
 
 #pulse {
     // When changing cell size, you may also need to adjust dot size
-    --cell-size: 8px;
-    --dot-size: 0.1px;
+    --cell-size: 9px;
+    --dot-size: 1px;
     
     height: 100vh;
     width: 100vw;
@@ -25,7 +25,7 @@
     place-content: center;
     align-items: center;
     overflow: hidden;
-    background-image: radial-gradient(circle at center, black var(--dot-size), transparent var(--dot-size));
+    background-image: radial-gradient(circle at center, black var(--dot-size), transparent 0);
                       
     background-size: var(--cell-size) var(--cell-size);
     background-position: 0px 0px;
