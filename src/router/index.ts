@@ -29,7 +29,6 @@ export function setupRouter(router: Router) {
     setupRouterScroller(router, {
         selectors: {
             "#site-ctn": context => {
-                console.log(context)
                 if (context.to.hash) {
 
                     const timer = setInterval(() => {
@@ -38,12 +37,12 @@ export function setupRouter(router: Router) {
                             clearInterval(timer)
                             let el_top = e.getBoundingClientRect().top
                             context.element.scrollBy({
-                                top: el_top - window.innerHeight / 4,
+                                top: el_top - window.innerHeight / 10,
                                 behavior: "smooth"
                             })
                         }
               
-                    }, 100)
+                    }, 500)
 
                     return false
                 }

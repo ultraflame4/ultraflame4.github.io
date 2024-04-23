@@ -166,7 +166,7 @@ hr {
 }
 
 
-*:hover > .parent_hover-underline::after {
+*:hover > .parent_hover-underline::after, .hover > .parent_hover-underline::after {
     left: 0;
     right: auto;
     width: 100%;

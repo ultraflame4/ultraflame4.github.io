@@ -1,5 +1,5 @@
 <template>
-
+    
     
     <header v-stuck>
         <div class="header-left floater-shadow header-item">
@@ -10,7 +10,7 @@
                 <template v-for="link in current_page_sections">
                     
                     
-                    <li v-if=" link.level<1">
+                    <li v-if=" link.level<1" :class="nav_ctx.active_section_id() == link.id? 'hover' : ''">
                         
                         <HashLink :hash="link.id" class="parent_hover-underline a" noicon eraseinner>{{ link.title }}
                         </HashLink>

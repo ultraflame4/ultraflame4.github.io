@@ -20,7 +20,7 @@
       </div>
     </div>
     <main>
-      <section class="flex-center section-bg" id="about">
+      <Section class="flex-center section-bg" id="about">
         <SectionTitle section_id="about">About</SectionTitle>
 
         <p class="text-center">
@@ -42,11 +42,11 @@
             <small>maybe</small>...</small
           >
         </p>
-      </section>
+      </Section>
       <div class="section-bg-hr">
         <hr />
       </div>
-      <section class="flex-center section-bg" id="skills">
+      <Section class="flex-center section-bg" id="skills">
         <SectionTitle section_id="skills">Skills</SectionTitle>
         <div id="skills-section-layout">
           <div id="skills-txt">
@@ -81,10 +81,10 @@
             <!--                    </ScrollingColumn>-->
           </div>
         </div>
-      </section>
+      </Section>
       <div class="section-bg-end"></div>
       <hr />
-      <section id="featured" class="flex-center">
+      <Section id="featured" class="flex-center">
         <SectionTitle section_id="featured">Featured Projects</SectionTitle>
         <ProjectDataStatusView />
         <ul id="projects-container">
@@ -94,7 +94,7 @@
           />
         </ul>
         <RouterLink id="btn-allprojects" to="projects">all Projects</RouterLink>
-      </section>
+      </Section>
     </main>
   </PageContext>
 </template>
@@ -105,6 +105,7 @@ import SkillCard from "@/components/content/SkillCard.vue";
 import { AllSkills } from "@/tools/skills";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SectionTitle from "@/components/page/SectionTitle.vue";
+import Section from "@/components/page/Section.vue";
 import { AllProjects, ProjectDataStatus } from "@/tools/projects_api";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import PageContext from "@/components/navigation/PageContext.vue";

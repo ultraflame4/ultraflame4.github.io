@@ -1,14 +1,7 @@
 <template>
-    <!-- <TopSticky> -->
-        
-        <!-- {{ iratio.isVisible }} -->
-        <h1 class="no-vmar section-title" v-iratio="iratio">
-        
-            <HashLink :hash="section_id">
-                <slot></slot>
-            </HashLink>
-        </h1>
-    <!-- </TopSticky> -->
+    <section v-iratio="iratio" :id="props.id">
+        <slot></slot>
+    </section>
 </template>
 
 <script lang="ts" setup>
@@ -18,36 +11,30 @@ import NavLink from "@/components/core/NavLink.vue";
 import {iRatioObject} from "vyue42";
 import {  injectPageSectionsCtx } from "@/components/navigation/PageContext.vue";
 import HashLink from "../navigation/HashLink.vue";
-import { inject, watch } from "vue";
+import { provide, watch } from "vue";
 
 const iratio = new iRatioObject({
     exit: true,
     invert: false,
-    thresholds: 1
+    thresholds: 0.1
     
 })
 interface iProps {
     /**
-     * This will be the name displayed in the nav tree if this is a heading
+     * The id of this section
      */
-    name?: string
-    /**
-     * The heading number passed to HashLink. Defaults to 0.
-     * If dont want to use heading, set no-heading to false
-     */
-    heading?: number
-    /**
-     * If do not want to use heading, set this to false
-     */
-    no_heading?: boolean
+    id: string
 }
 
 const props = defineProps<iProps>()
 const pageSections = injectPageSectionsCtx();
+// pageSections?.addSection(props.name??props.id,props.id, props.heading??0)
+watch([iratio.isVisible], ([v])=>{
+    pageSections?.setSectionActive(props.id, v)
+})
 
-const section_id = inject<string>("section_id") ?? "no_section_id"
+provide("section_id", props.id)
 
-pageSections?.addSection(props.name??section_id,section_id, props.heading??0)
 
 </script>
 
