@@ -18,11 +18,12 @@ import {Icon} from "@iconify/vue";
 
 }
 a {
+    display: flex;
     font-size: 2.75em;
-    transition: color 200ms ease !important;
-
+    transition: color 200ms ease !important;    
     &::after{
         content: "" !important;
+        display: none;
     }
     color: var(--txt-a-tinted);
     &:hover{

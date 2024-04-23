@@ -19,6 +19,9 @@
         @menuToggle="menuToggle()"
         @scroll-top="scrollTop()"
       />
+      <div id="contact-floater" class="floater-shadow" >
+        <SocialLinks class="links"/>
+      </div>
       <div id="page-content">
         <RouterView v-slot="{ Component }">
           <PageView :component="Component" />
@@ -41,6 +44,7 @@ import PageView from "@/components/core/PageView.vue";
 import Background from "@/components/utils/Background.vue";
 import { PageNavTree } from "@/router/page_navtree";
 import { useRouter } from "vue-router";
+import SocialLinks from "./components/content/SocialLinks.vue";
 
 const router = useRouter();
 const menuOpen = ref(false);
@@ -133,7 +137,27 @@ onBeforeMount(() => PageNavTree.clear());
   overflow-x: hidden;
   overflow-y: auto;
   background: var(--bg-0);
-  // background: wheat;
+
+  #contact-floater {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.75rem;
+    padding:  0.5rem;
+    border: 2px solid var(--accent);
+    border-radius: 0.9rem;
+    height: 3rem;
+    background: transparent;
+    filter: drop-shadow(1px 1px 2px var(--bg-0-5));
+    backdrop-filter: blur(24px) brightness(1.1) contrast(0.9);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    .links{
+      margin: 0;
+      padding: 0;
+      font-size: 0.75em;
+    }
+  }
 }
 
 #site-ctn[data-open="true"] {
