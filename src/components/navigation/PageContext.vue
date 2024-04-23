@@ -30,6 +30,8 @@ const sections = ref<PageSection[]>([]);
 const active_section_ids = ref<string[]>([]);
 
 const nav_ctx = injectNavCtx();
+nav_ctx?.updatePageSections([]);
+nav_ctx?.updateActiveSectionIds([])
 
 function addSection(title: string, id: string, level: number) {
   sections.value.push({
