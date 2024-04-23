@@ -91,13 +91,14 @@ onBeforeMount(() => PageNavTree.clear());
 }
 
 .background {
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   position: fixed;
   width: 100%;
   height: 100%;
   // pointer-events: none;
   z-index: -1;
+  overflow: hidden;
   // background: white;
 }
 
@@ -129,7 +130,8 @@ onBeforeMount(() => PageNavTree.clear());
   border: 2px solid transparent;
   width: 100%;
   height: 100vh;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: var(--bg-0);
   // background: wheat;
 }
@@ -149,5 +151,6 @@ onBeforeMount(() => PageNavTree.clear());
 
 #page-content {
   padding-top: 1rem;
+  overflow-x: hidden;
 }
 </style>

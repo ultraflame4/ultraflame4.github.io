@@ -111,6 +111,8 @@ footer {
     align-items: center;
     display: flex;
     gap: 1rem;
+    width: 100vw;
+    overflow-x: hidden;
 
 }
 .social{
@@ -139,6 +141,7 @@ footer {
     h1 {
         text-transform: uppercase;
         font-weight: 800;
+        font-size: .95rem;
         letter-spacing: 0.1rem;
         grid-row: 1;
         margin: 0;
