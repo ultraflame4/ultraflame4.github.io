@@ -15,11 +15,11 @@
 
         <h1>Here</h1>
         <ul id="page-index">
-            <li v-for="link in PageNavTree.links.value" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="hashCode([link.name,link.to.toString()])">
-                <NavLink :hash="router.resolve(link.to).hash"
-                         :noicon="link.level>1">
-                    {{ shortenName(link.name, 32) }}
-                </NavLink>
+            <li v-for="link in current_page_sections" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="hashCode([link.id.toString()])">
+                <HashLink :hash="link.id"
+                        :noicon="link.level>1">
+                    {{ shortenName(link.title, 32) }}
+                </HashLink>
             </li>
         </ul>
         <br/>
@@ -43,7 +43,9 @@ import {useRouter} from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
 import SocialLinks from "@/components/content/SocialLinks.vue";
 import {hashCode} from "@/utils";
-import {ref, watch} from "vue";
+import {computed} from "vue";
+import { injectNavCtx } from "../navigation/NavigationContext.vue";
+import HashLink from "../navigation/HashLink.vue";
 
 const router = useRouter()
 
@@ -56,6 +58,9 @@ function shortenName(name: string, maxChars: number) {
     }
     return name
 }
+
+const nav_ctx = injectNavCtx();
+const current_page_sections = computed(()=>nav_ctx.current_page_sections.value)
 
 </script>
 

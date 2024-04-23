@@ -20,10 +20,20 @@
                 </li>
             </ul>
             <div class="project-details">
-                <h3>{{ props.item.title }}
-                    <a v-if="props.anchor" :href="'#'+props.anchor" class="no-deco anchor">
-                        <Icon icon="ph:link-bold"/>
-                    </a>
+                <h3>
+                    {{ props.item.title }}
+                    <Tooltip>
+                        <template v-slot:trigger="propsb">
+                            <a v-if="props.anchor" :href="hash_s" class="no-deco anchor" @click="anchor_clicked" v-bind="propsb">
+                                <Icon icon="ph:link-bold"/>
+                            </a>
+                        </template>
+                        <template v-slot:content>
+                            Copy direct link
+                        </template>
+                    </Tooltip>
+
+            
                 </h3>
                 <sub>
                     <template v-if="props.item.start_date||props.item.end_date">
@@ -67,7 +77,6 @@
                 <li v-for="(value,index) in props.item.skills" :key="index">
                     {{ value.toLowerCase() }}
                 </li>
-
             </ul>
         </div>
 
@@ -81,9 +90,13 @@ import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 import {isYoutubeUrl} from "@/external/yt";
 import type {NormalisedProjectData} from "@/assets/projects";
 import {Icon} from "@iconify/vue";
+import { useRouter, useRoute } from "vue-router";
+import { computed } from "vue";
+import Tooltip from "@/components/core/Tooltip.vue";
 
 const datetimeformat = new Intl.DateTimeFormat('en-sg', {month: 'short', year: "numeric", day: "2-digit"})
-
+const router = useRouter();
+const route = useRoute();
 const isYTUrl = isYoutubeUrl;
 
 interface props {
@@ -92,6 +105,21 @@ interface props {
 }
 
 const props = defineProps<props>()
+const hash_s = computed(()=>("#" + props.anchor??"").replace("##","#"))
+
+function anchor_clicked(e: MouseEvent){
+    e.preventDefault()
+    let el = (e.currentTarget as HTMLAnchorElement);
+    
+    const new_route = router.resolve({
+        path: route.path,
+        hash: hash_s.value,
+        replace: true
+    })
+
+    router.push(new_route)
+    navigator.clipboard.writeText(location.origin+new_route.href)
+}
 
 </script>
 
@@ -114,11 +142,11 @@ const props = defineProps<props>()
 }
 
 .project-item-ctn {
-    --move-dist-x: 0.5rem;
-    --move-dist-y: 0.5rem;
-    --allow-space: 0.35rem;
-    --width: min(50rem, 90vw);
-    --height: 30rem;
+    --move-dist-x: 0.5em;
+    --move-dist-y: 0.5em;
+    --allow-space: 0.35em;
+    --width: min(50em, 90vw);
+    --height: 30em;
     width: var(--width);
     height: var(--height);
 
@@ -156,13 +184,13 @@ const props = defineProps<props>()
     grid-template-columns: 5fr 4fr;
     grid-template-rows: minmax(0, 1fr) auto;
     box-sizing: border-box;
-    grid-gap: 1rem;
+    grid-gap: 0.75rem;
     border: 2px solid var(--bg-2);
     position: relative;
     right: 0;
     bottom: 0;
     border-radius: 1rem;
-    padding: 0.65rem 1rem;
+    padding: 0.65em 1em;
     transition: all 100ms ease;
     position: relative;
     background: var(--bg-0);
@@ -189,7 +217,7 @@ const props = defineProps<props>()
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
-    font-size: 0.85rem;
+    font-size: 0.9em;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";
@@ -219,7 +247,7 @@ const props = defineProps<props>()
 
     & > h3 {
         margin: 0;
-        font-size: 1.35rem;
+        font-size: 1.35em;
         flex-shrink: 0;
     }
 

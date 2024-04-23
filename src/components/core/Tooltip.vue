@@ -2,7 +2,7 @@
     <slot name="trigger" @mouseenter="mouse_enter" @mouseleave="active=false" />
     <Teleport to="body" >
         <div class="tooltip-content" :style="css_var" :data-open="active">
-            <slot name="content"/>
+            <slot name="content" />
         </div>
     </Teleport>
 </template>
@@ -19,23 +19,27 @@ function mouse_enter(e: MouseEvent){
     position.value ={left:"auto",top:"auto", right: "auto", "bottom":"auto"}
     let center_x = rect.left + rect.width/2
     let center_y =  rect.top + rect.height/2
-    console.log(rect)
+
+    let x_t = ""
+    let y_t = ""
+
     if (center_y < window.innerHeight / 2){
         position.value["top"] =  rect.bottom + 'px'
     }
     else{
         position.value["top"] =  rect.top  + 'px'
-        position.value["transform"] =  `translateY(-100%)`
+        y_t =  `translateY(-100%)`
     }
 
     if (center_x > window.innerWidth / 2){
         position.value["left"] =  rect.right - 2 + 'px'
-        position.value["transform"] =  `translateX(-100% )`
+        x_t =  `translateX(-100% )`
 
     }
     else{
         position.value["left"] =  rect.left + 2 + 'px'
     }
+    position.value["transform"] = `${x_t} ${y_t}`
 
 }
 
@@ -45,23 +49,22 @@ function mouse_enter(e: MouseEvent){
     position: fixed;
 
     color: black;
-    font-weight: 900;
+    font-weight: 700;
     font-family: "JetBrains Mono";
-    font-size: .85rem;
+    letter-spacing: -0.2px;
+    font-size: .75rem;
     background: rgb(246, 242, 226);
     border-radius: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    
     z-index: 2000;
 
-    padding: 0.25rem 0.5rem;
+    padding: 0.2rem 0.25rem;
     margin: 0;
     pointer-events: none;
-    min-width: 10rem;
-    min-height: 2rem;
-    width: fit-content;
-    height: fit-content;
+
+    max-width: 8rem;
+    width: max-content;
+    
 
     opacity: 0;
     transition: opacity 200ms ease;

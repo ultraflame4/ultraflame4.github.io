@@ -1,15 +1,19 @@
 <template>
-
-
+    
+    
     <header v-stuck>
         <div class="header-left floater-shadow header-item">
             <h1>ultr42</h1>
             <ul class="topnav-quick">
-                <Icon icon="vaadin:hash" class="search-icon"/>
-                <template v-for="link in PageNavTree.links.value">
-                    <li v-if="link.level<1">
-                        <RouterLink :to="link.to" class="parent_hover-underline no-hover no-deco">{{ link.name }}
-                        </RouterLink>
+                <Icon icon="vaadin:hash" class="hash-icon"/>
+                
+                <template v-for="link in current_page_sections">
+                    
+                    
+                    <li v-if=" link.level<1" :class="nav_ctx.active_section_id() == link.id? 'hover' : ''">
+                        
+                        <HashLink :hash="link.id" class="parent_hover-underline a" noicon eraseinner>{{ link.title }}
+                        </HashLink>
                     </li>
                 </template>
             </ul>
@@ -20,7 +24,7 @@
             <template v-for="link in router.options.routes">
                 <li>
                     <RouterLink :to="link.path"
-                                class="no-deco"
+                                class="no-deco a"
                                 active-class="active">
                         {{ link.name }}
                     </RouterLink>
@@ -58,9 +62,11 @@
 
 <script lang="ts" setup>
 import {Icon} from "@iconify/vue";
-import {PageNavTree} from "@/router/page_navtree";
 import {useRouter} from "vue-router";
 import Tooltip from "@/components/core/Tooltip.vue";
+import { injectNavCtx } from "../navigation/NavigationContext.vue";
+import { computed } from "vue";
+import HashLink from "../navigation/HashLink.vue";
 
 const router = useRouter()
 
@@ -73,6 +79,8 @@ const props = defineProps<{
     menuOpen: boolean
 }>()
 
+const nav_ctx = injectNavCtx();
+const current_page_sections = computed(()=>nav_ctx.current_page_sections.value)
 
 </script>
 
@@ -80,9 +88,9 @@ const props = defineProps<{
 
 header {
     width: auto;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0.5rem;
     box-sizing: content-box;
-    height: 2.9rem;
+    height: 2.75rem;
     transition: all 500ms ease, padding 500ms ease;
     display: flex;
     align-items: center;
@@ -94,11 +102,6 @@ header {
     pointer-events: none;
     gap: 0.5rem;
 
-    @media only screen and (max-width: 650px) {
-        font-size: 2rem;
-        height: 3.5rem;
-    }
-
     & > * {
         margin: 0;
         pointer-events: auto;
@@ -106,9 +109,7 @@ header {
 
     &[stuck] {
         font-size: 0.95rem;
-        @media only screen and (max-width: 650px) {
-            font-size: 1.5rem;
-        }
+        
 
         & .header-item {
             //background: var(--bg-1);
@@ -143,7 +144,7 @@ header {
         font-weight: 700;
         font-size: 1em;
         letter-spacing: 0.1rem;
-        margin: 0 0.25rem 0 0.5rem;
+        margin: 0;
         @media only screen and (max-width: 1000px) {
             margin: 0 auto;
         }
@@ -158,7 +159,7 @@ header {
     list-style-type: none;
 
     & li {
-        font-size: 0.9em;
+        font-size: 0.85em;
         display: flex;
         align-items: center;
 
@@ -171,15 +172,17 @@ header {
                 top: 1px; // Alignment
             }
 
-            & > a {
-                --underline-mult: 1.1;
+            & > .a {
+                // --underline-mult: 1.1 ;
                 letter-spacing: 0.075rem;
                 font-weight: 600;
                 font-family: "Poppins";
                 text-transform: uppercase;
+                
+                // height: initial;
             }
 
-            &:hover > a {
+            &:hover > .a {
                 color: #fff;
             }
         }
@@ -194,11 +197,7 @@ header {
         transform: translateX(var(--navtree-width));
     }
 
-    h1 {
-        font-size: 1.1em;
-    }
-
-    & li > a:not(:hover) {
+    & li > .a:not(:hover) {
         color: var(--txt-a-tinted);
     }
 
@@ -243,29 +242,32 @@ header {
 
 }
 
-.topnav-quick {
+ul.topnav-quick {
     padding: 0;
     margin-left: 0.5rem;
 
     height: 100%;
 
 
-    & > .search-icon {
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+
+
+    & > .hash-icon {
         font-weight: 600;
         font-size: 1rem;
         color: var(--accent);
     }
 
 
-    @media only screen and (max-width: 1000px) {
-        display: none;
-    }
+
 }
 
 #index-pages {
-    @media only screen and (max-width: 1000px) {
-        display: none;
-    }
+    // @media only screen and (max-width: 1000px) {
+    //     display: none;
+    // }
 
 
     gap: 1.25rem;
@@ -276,7 +278,7 @@ header {
         overflow: visible;
     }
 
-    & li > a {
+    & li > .a {
 
         font-family: "Montserrat", sans-serif;
         font-weight: 600;

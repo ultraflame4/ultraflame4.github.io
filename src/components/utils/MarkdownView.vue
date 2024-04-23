@@ -1,129 +1,129 @@
 <template>
-    <div v-html="render()" class="mdroot">
-    </div>
+  <div v-html="render()" class="mdroot"></div>
 </template>
 
-<script setup lang="ts">/**
+<script setup lang="ts">
+/**
  * This component is an extremely simple markdown renderer design for putting content in the <p> html element
  */
-import {link_expression, mdRenderer} from "@/tools/markdown-tools";
+import { link_expression, mdRenderer } from "@/tools/markdown-tools";
 import DOMPurify from "dompurify";
 
 interface _props {
-    /** A string containing markdown content to render*/
-    content: string,
-    remove_link?: boolean
+  /** A string containing markdown content to render*/
+  content: string;
+  remove_link?: boolean;
 }
 
-const props = defineProps<_props>()
+const props = defineProps<_props>();
 
 function render(): string {
-    let text = props.content
-    if (props.remove_link) {
-        text = text.replace(link_expression, "")
-    }
+  let text = props.content;
+  if (props.remove_link) {
+    text = text.replace(link_expression, "");
+  }
 
-
-
-    text = mdRenderer.parse(text) as string
-    text = text.replaceAll("\n","")
-    text = DOMPurify.sanitize(text)
-    return text;
+  text = mdRenderer.parse(text) as string;
+  text = text.replaceAll("\n", "");
+  text = DOMPurify.sanitize(text);
+  return text;
 }
-
 </script>
 
 <style scoped lang="scss">
 ::v-deep(p):first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 ::v-deep(p) {
-    margin: 0.75em 0 0.1em;
-    white-space: pre-wrap;
+  margin: 0.75em 0 0.1em;
+  white-space: pre-wrap;
 }
 
-
 .mdroot::v-deep(ul > li > ul > li > ul) {
-    list-style-type: square;
+  list-style-type: square;
 }
 
 .mdroot::v-deep(ul > li > ul) {
-    list-style-type: circle;
+  list-style-type: circle;
 }
 
 .mdroot::v-deep(ul) {
-    list-style: initial;
+  list-style: initial;
 }
 
-::v-deep(ul), ::v-deep(ol) {
-    overflow: visible;
-    margin: 0 0 0.5em;
-    padding-left: 1.25rem;
+::v-deep(ul),
+::v-deep(ol) {
+  overflow: visible;
+  margin: 0 0 0.5em;
+  padding-left: 1.25rem;
 }
-
 
 .mdroot::v-deep(li) {
-    overflow: visible;
-    margin: 0 0 0.25em;
-    display: list-item;
-    font-size: 1em;
+  overflow: visible;
+  margin: 0 0 0.25em;
+  display: list-item;
+  font-size: 1em;
 }
 
-.mdroot::v-deep(>*) {
-    margin-left: 0;
-    margin-right: 0;
+.mdroot::v-deep(> *) {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.mdroot::v-deep(a){
+.mdroot::v-deep(a) {
+  background: none;
+  -webkit-background-clip: initial;
 
-    background: none;
-    -webkit-background-clip: initial;
+  &::after {
+    content: "";
+  }
 
-    &::after{
-        content: "";
-    }
-
-    
-    &:hover{
-        color: var(--accent);
-    }
+  &:hover {
+    color: var(--accent);
+  }
 }
 
-
-.mdroot::v-deep(sub){
-    color: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    font-size: 0.8em;
+.mdroot::v-deep(sub) {
+  color: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  font-size: 0.8em;
 }
 
-.mdroot::v-deep(table){
-    margin: 0.25rem 0;
-    font-size: 0.8rem;
-    border-collapse: collapse;
-    overflow-x: auto;
-    display: block;
-    
-    &::-webkit-scrollbar{
-        height: 3px;
-        width: 3px;
-    }
-    &::-webkit-scrollbar-thumb{
-        background: white;
-    }
+.mdroot::v-deep(table) {
+  // margin: 0.25em 0;
+  font-size: 0.8em;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
 
+  &::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: white;
+  }
 
-    th, td{
-        border: 1px solid var(--bg-2);
-        padding: 0.2rem;
-    }
-
-    
+  th,
+  td {
+    border: 1px solid var(--bg-2);
+    padding: 0.25em;
+  }
 }
 
-.mdroot::v-deep(img){
-    max-width: 100%;
-    height: auto;
+.mdroot::v-deep(img) {
+  max-width: 100%;
+  height: auto;
+}
+
+.mdroot::v-deep(h1),
+.mdroot::v-deep(h2),
+.mdroot::v-deep(h3),
+.mdroot::v-deep(h4),
+.mdroot::v-deep(h5),
+.mdroot::v-deep(h6){
+  margin: 0.4em 0;
 }
 </style>

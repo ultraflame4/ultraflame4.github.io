@@ -9,8 +9,9 @@
     :data-filled="value.filled"
   >
     <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
-    {{ value.name }}
     <div class="bg dots"></div>
+    <span>{{ value.name }}</span>
+    <!-- <div class="bg dots"></div> -->
   </a>
 </template>
 <script setup lang="ts">
@@ -21,14 +22,16 @@ import { inject } from "vue";
 const value = inject("link") as proj_entry_link;
 </script>
 <style scoped lang="scss">
-
 .icon {
   font-size: 1.4em;
   margin-right: 0.25em;
   color: var(--accent);
   display: block;
 }
-
+span,
+.icon {
+  z-index: 1;
+}
 :has(> .icon):hover > .icon {
   color: white;
 }
@@ -40,55 +43,31 @@ const value = inject("link") as proj_entry_link;
   width: 100%;
   height: 100%;
 
-  //   z-index: -1;
   transition: all 200ms ease;
 }
 
-
-@keyframes spin{
-    0%{
-        transform: rotateZ(20deg) translateX(-50%) translateY(-50%);
-    }
-    50%{
-        transform: rotateZ(200deg) translateX(-50%) translateY(-50%);
-    }
-    100%{
-        transform: rotateZ(380deg) translateX(-50%) translateY(-50%);
-    }
-}
-
 .dots {
-  --dot-bg: var(--bg-0);
-  --dot-color: #FFF;
-  --dot-size: 1px;
-  --dot-space: 10px;
-  background: linear-gradient(
-        90deg,
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    linear-gradient(
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    var(--dot-color);
+  --cell-size: 4px;
+  --dot-size: 0.1px;
+  background: radial-gradient(
+      circle at center,
+      var(--bg-3) var(--dot-size),
+      transparent var(--dot-size)
+    ),
+    radial-gradient(
+      circle at center,
+      var(--bg-3) var(--dot-size),
+      transparent var(--dot-size)
+    );
+  background-size: var(--cell-size) var(--cell-size);
+  background-position: 10px 0px, 20px 10px;
 
-  z-index: -2;
+  z-index: 0;
 
-  left: 50%;
-  top: 50%;
-  width: 125%;
   height: auto;
   aspect-ratio: 1 / 1;
-  
-  transform-origin: 0% 0%;
-  animation: spin 3s linear infinite;
   animation-play-state: paused;
-
 }
-
 
 a {
   position: relative;
@@ -97,6 +76,29 @@ a {
   border: 1px solid var(--bg-3);
   border-radius: 0.5rem;
   padding: calc(0.3rem + 1px) calc(0.4rem + 1px);
+}
+span {
+  background: inherit;
+}
+
+@keyframes shake-x {
+  0%,
+  100% {
+    background-position-x: 10px, 20px;
+  }
+  50% {
+    background-position-x: 13px, 17px;
+  }
+}
+
+@keyframes shake-y {
+  0%,
+  100% {
+    background-position-y: 20px, 10px;
+  }
+  50% {
+    background-position-y: 23px, 17px;
+  }
 }
 
 a:hover {
@@ -108,10 +110,11 @@ a:hover {
     color: black;
   }
 
-  .dots{
-    animation-play-state: running;
-    --dot-space: 8px;
-    transition: all 200ms linear;
+  .dots {
+    // animation-play-state: running;
+    --bg-3: white;
+    --dot-size: 0.5px;
+    animation: shake-x 150ms linear infinite, shake-y 210ms linear infinite;
   }
 }
 

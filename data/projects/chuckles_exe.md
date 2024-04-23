@@ -17,11 +17,11 @@ flags: [featured]
 
 This game was completed as part of Global Game Jam 2024 (GGJ-2024) with the theme was "Make Me Laugh".
 
-Teamed up with friends & created a horror game where you "laugh" into the microphone to attract a creepy clown so that you can take pictures of it.
+Teamed up with a group of friends & created a horror game where you "laugh" into the microphone to attract a creepy clown so that you can take pictures of it.
 
 Programmed the laugh mechanic & helped integrated various parts of the project together.
 
-**Contributors**
+#### Contributors
 <table>
     <tr>
         <td><b>Sprites</b></td>
