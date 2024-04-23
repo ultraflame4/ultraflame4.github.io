@@ -5,7 +5,7 @@
         <div class="header-left floater-shadow header-item">
             <h1>ultr42</h1>
             <ul class="topnav-quick">
-                <Icon icon="vaadin:hash" class="search-icon"/>
+                <Icon icon="vaadin:hash" class="hash-icon"/>
                 
                 <template v-for="link in current_page_sections">
                     
@@ -90,7 +90,7 @@ header {
     width: auto;
     padding: 0.75rem 0.5rem;
     box-sizing: content-box;
-    height: 2.9rem;
+    height: 2.75rem;
     transition: all 500ms ease, padding 500ms ease;
     display: flex;
     align-items: center;
@@ -102,11 +102,6 @@ header {
     pointer-events: none;
     gap: 0.5rem;
 
-    @media only screen and (max-width: 650px) {
-        font-size: 2rem;
-        height: 3.5rem;
-    }
-
     & > * {
         margin: 0;
         pointer-events: auto;
@@ -114,9 +109,7 @@ header {
 
     &[stuck] {
         font-size: 0.95rem;
-        @media only screen and (max-width: 650px) {
-            font-size: 1.5rem;
-        }
+        
 
         & .header-item {
             //background: var(--bg-1);
@@ -166,7 +159,7 @@ header {
     list-style-type: none;
 
     & li {
-        font-size: 0.9em;
+        font-size: 0.85em;
         display: flex;
         align-items: center;
 
@@ -205,7 +198,7 @@ header {
     }
 
     h1 {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     & li > .a:not(:hover) {
@@ -260,12 +253,12 @@ ul.topnav-quick {
     height: 100%;
 
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 600px) {
         display: none;
     }
 
 
-    & > .search-icon {
+    & > .hash-icon {
         font-weight: 600;
         font-size: 1rem;
         color: var(--accent);
