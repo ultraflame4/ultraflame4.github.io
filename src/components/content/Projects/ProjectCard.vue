@@ -184,7 +184,7 @@ function anchor_clicked(e: MouseEvent){
     grid-template-columns: 5fr 4fr;
     grid-template-rows: minmax(0, 1fr) auto;
     box-sizing: border-box;
-    grid-gap: 1rem;
+    grid-gap: 0.75rem;
     border: 2px solid var(--bg-2);
     position: relative;
     right: 0;
@@ -217,7 +217,7 @@ function anchor_clicked(e: MouseEvent){
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";

@@ -90,6 +90,7 @@
         <ul id="projects-container">
           <ProjectCard
             :item="p"
+            class="featured-project-carditem"
             v-for="p in AllProjects.filter((x) => x.featured)"
           />
         </ul>
@@ -285,7 +286,10 @@ function repeatArray<T>(array: T[], count: number): T[] {
     justify-content: center;
     flex-wrap: wrap;
     padding: 0;
-    font-size: 0.84em;
+    font-size: 0.85em;
+    .featured-project-carditem{
+      --height: 31.5em;
+    }
   }
 
   #btn-allprojects {
