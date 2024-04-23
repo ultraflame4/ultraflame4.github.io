@@ -12,24 +12,15 @@
 
 <style scoped lang="scss">
 
-#content, #pulse {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: inherit;
-}
 
 #pulse {
     // When changing cell size, you may also need to adjust dot size
     --cell-size: 8px;
     --dot-size: 0.1px;
-    position: absolute;
-    inset: 0;
+    
+    height: 100vh;
+    width: 100vw;
+
     display: flex;
     place-content: center;
     align-items: center;

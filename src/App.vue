@@ -128,7 +128,6 @@ onBeforeMount(() => PageNavTree.clear());
 
 #site-ctn {
   position: fixed;
-  z-index: 1;
   margin: 0;
   transition: all 500ms ease;
   border: 2px solid transparent;
@@ -137,7 +136,7 @@ onBeforeMount(() => PageNavTree.clear());
   overflow-x: hidden;
   overflow-y: auto;
   background: var(--bg-0);
-
+  z-index: 1;
   #contact-floater {
     position: fixed;
     right: 0.5rem;
@@ -175,6 +174,6 @@ onBeforeMount(() => PageNavTree.clear());
 
 #page-content {
   padding-top: 1rem;
-  overflow-x: hidden;
+  // overflow-x: hidden; MUST NOT BE UNCOMMENTED. WILL CAUSE STICKY ELEMENTS TO NOT WORK
 }
 </style>
