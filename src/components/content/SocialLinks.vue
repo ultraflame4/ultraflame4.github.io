@@ -2,6 +2,7 @@
     <ul>
         <li><a href="https://github.com/ultraflame4" target="_blank"><Icon icon="mdi:github"/></a></li>
         <li><a href="https://www.linkedin.com/in/chester-lai-yu-heng/" target="_blank"><Icon icon="mdi:linkedin"/></a></li>
+        <li><a href="https://notlivingstudios.itch.io/chuckles-ggj-2024" target="_blank"><Icon icon="fa6-brands:itch-io"/></a></li>
     </ul>
 </template>
 
