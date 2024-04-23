@@ -17,7 +17,10 @@ export const PROVIDE_NAVCTX = "navigation-data-context";
 export function injectNavCtx(): NavigationContext {
   return inject(PROVIDE_NAVCTX, {
     current_page_sections: ref([]),
+    active_section_ids: ref([]),
+    active_section_id: ()=> undefined,
     updatePageSections: () => {},
+    updateActiveSectionIds: () => {}
   });
 }
 </script>
