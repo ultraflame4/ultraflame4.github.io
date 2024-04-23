@@ -257,7 +257,7 @@
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/App.vue?vue&type=style&index=0&scoped=3a5fdc88&lang.scss": [
+  "src/App.vue?vue&type=style&index=0&scoped=fd670739&lang.scss": [
   ],
   "src/assets/projects.json": [
   ],
@@ -275,7 +275,7 @@
   ],
   "src/components/content/Projects/ProjectCard.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=5c10af16&lang.scss": [
+  "src/components/content/Projects/ProjectCard.vue?vue&type=style&index=0&scoped=f7b922ac&lang.scss": [
   ],
   "src/components/content/Projects/ProjectDefaultLink.vue": [
   ],
@@ -311,7 +311,7 @@
   ],
   "src/components/content/YoutubeEmbed.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/components/content/YoutubeEmbed.vue?vue&type=style&index=0&scoped=1fc60eca&lang.scss": [
+  "src/components/content/YoutubeEmbed.vue?vue&type=style&index=0&scoped=98437faa&lang.scss": [
   ],
   "src/components/core/ChildPopupMenu.vue": [
   ],
@@ -391,7 +391,7 @@
   ],
   "src/components/utils/Background.vue": [
   ],
-  "src/components/utils/Background.vue?vue&type=style&index=0&scoped=61b08050&lang.scss": [
+  "src/components/utils/Background.vue?vue&type=style&index=0&scoped=135049e7&lang.scss": [
   ],
   "src/components/utils/LoadingSpinner.vue": [
   ],
@@ -431,7 +431,7 @@
   ],
   "src/views/Home.vue?vue&type=script&setup=true&lang.ts": [
   ],
-  "src/views/Home.vue?vue&type=style&index=0&scoped=2b28c9dc&lang.scss": [
+  "src/views/Home.vue?vue&type=style&index=0&scoped=aa168e7f&lang.scss": [
   ],
   "src/views/Projects.vue": [
   ],
