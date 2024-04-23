@@ -50,12 +50,17 @@ span,
   --cell-size: 4px;
   --dot-size: 0.1px;
   background: radial-gradient(
-    circle at center,
-    var(--bg-3) var(--dot-size),
-    transparent var(--dot-size)
-  );
+      circle at center,
+      var(--bg-3) var(--dot-size),
+      transparent var(--dot-size)
+    ),
+    radial-gradient(
+      circle at center,
+      var(--bg-3) var(--dot-size),
+      transparent var(--dot-size)
+    );
   background-size: var(--cell-size) var(--cell-size);
-  background-position: 10px 0px;
+  background-position: 10px 0px, 20px 10px;
 
   z-index: 0;
 
@@ -79,20 +84,20 @@ span {
 @keyframes shake-x {
   0%,
   100% {
-    background-position-x: 10px;
+    background-position-x: 10px, 20px;
   }
   50% {
-    background-position-x: 13px;
+    background-position-x: 13px, 17px;
   }
 }
 
 @keyframes shake-y {
   0%,
   100% {
-    background-position-y: 20px;
+    background-position-y: 20px, 10px;
   }
   50% {
-    background-position-y: 23px;
+    background-position-y: 23px, 17px;
   }
 }
 
@@ -107,8 +112,9 @@ a:hover {
 
   .dots {
     // animation-play-state: running;
-    
-    animation: shake-x 100ms linear infinite, shake-y 140ms linear infinite;
+    --bg-3: white;
+    --dot-size: 0.5px;
+    animation: shake-x 150ms linear infinite, shake-y 210ms linear infinite;
   }
 }
 
