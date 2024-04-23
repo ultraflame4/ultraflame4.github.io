@@ -269,6 +269,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
         justify-content: center;
         flex-wrap: wrap;
         padding: 0;
+        font-size: .84em;
     }
 
     #btn-allprojects {

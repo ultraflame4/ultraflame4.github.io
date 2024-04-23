@@ -77,7 +77,6 @@
                 <li v-for="(value,index) in props.item.skills" :key="index">
                     {{ value.toLowerCase() }}
                 </li>
-
             </ul>
         </div>
 
@@ -143,11 +142,11 @@ function anchor_clicked(e: MouseEvent){
 }
 
 .project-item-ctn {
-    --move-dist-x: 0.5rem;
-    --move-dist-y: 0.5rem;
-    --allow-space: 0.35rem;
-    --width: min(50rem, 90vw);
-    --height: 30rem;
+    --move-dist-x: 0.5em;
+    --move-dist-y: 0.5em;
+    --allow-space: 0.35em;
+    --width: min(50em, 90vw);
+    --height: 30em;
     width: var(--width);
     height: var(--height);
 
@@ -191,7 +190,7 @@ function anchor_clicked(e: MouseEvent){
     right: 0;
     bottom: 0;
     border-radius: 1rem;
-    padding: 0.65rem 1rem;
+    padding: 0.65em 1em;
     transition: all 100ms ease;
     position: relative;
     background: var(--bg-0);
@@ -218,7 +217,7 @@ function anchor_clicked(e: MouseEvent){
 }
 
 .project-details-desc::v-deep(p), .project-details-desc::v-deep(li) {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: "Open sans";
@@ -248,7 +247,7 @@ function anchor_clicked(e: MouseEvent){
 
     & > h3 {
         margin: 0;
-        font-size: 1.35rem;
+        font-size: 1.35em;
         flex-shrink: 0;
     }
 
