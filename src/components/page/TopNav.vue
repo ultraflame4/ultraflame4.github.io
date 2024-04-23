@@ -144,7 +144,7 @@ header {
         font-weight: 700;
         font-size: 1em;
         letter-spacing: 0.1rem;
-        margin: 0 0.25rem 0 0.5rem;
+        margin: 0;
         @media only screen and (max-width: 1000px) {
             margin: 0 auto;
         }
@@ -195,10 +195,6 @@ header {
     [data-open="true"] & { // This css makes sure the logo stays on screen when in mobile mode (screen <1000)
         position: relative;
         transform: translateX(var(--navtree-width));
-    }
-
-    h1 {
-        font-size: 1em;
     }
 
     & li > .a:not(:hover) {

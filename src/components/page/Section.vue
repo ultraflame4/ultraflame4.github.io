@@ -16,7 +16,7 @@ import { provide, watch } from "vue";
 const iratio = new iRatioObject({
     exit: true,
     invert: false,
-    thresholds: 0.1
+    thresholds: 0.2
     
 })
 interface iProps {
