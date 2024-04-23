@@ -16,7 +16,9 @@
     --txt-warn: #ffe56e;
     --txt-danger: #ff6368;
     --overlay: rgba(255, 255, 255, 0.07);
-    font-size: 1rem; // dont worry if scaling is bigger, it will for whatever reason shrink in the build version
+    font-size: 1rem; 
+    // d̶o̶n̶t̶ w̶o̶r̶r̶y̶ i̶f̶ s̶c̶a̶l̶i̶n̶g̶ i̶s̶ b̶i̶g̶g̶e̶r̶, i̶t̶ w̶i̶l̶l̶ f̶o̶r̶ w̶h̶a̶t̶e̶v̶e̶r̶ r̶e̶a̶s̶o̶n̶ s̶h̶r̶i̶n̶k̶ i̶n̶ t̶h̶e̶ b̶u̶i̶l̶d̶ v̶e̶r̶s̶i̶o̶n̶
+    // This is wrong, i was just zoomed in godammit
     @media only screen and (max-width: 700px) {
         font-size: 0.85rem;
     }
