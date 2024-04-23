@@ -47,20 +47,20 @@ span,
 }
 
 .dots {
-  --cell-size: 4px;
-  --dot-size: 0.1px;
+  --cell-size: 7px;
+  --dot-size: 1px;
   background: radial-gradient(
       circle at center,
       var(--bg-3) var(--dot-size),
-      transparent var(--dot-size)
+      transparent 0
     ),
     radial-gradient(
       circle at center,
       var(--bg-3) var(--dot-size),
-      transparent var(--dot-size)
+      transparent 0
     );
   background-size: var(--cell-size) var(--cell-size);
-  background-position: 10px 0px, 20px 10px;
+  background-position: 10px 0px, 13.5px 3px;
 
   z-index: 0;
 
@@ -113,8 +113,8 @@ a:hover {
   .dots {
     // animation-play-state: running;
     --bg-3: white;
-    --dot-size: 0.5px;
-    animation: shake-x 150ms linear infinite, shake-y 210ms linear infinite;
+    --dot-size: 1px;
+    animation: shake-x 180ms linear infinite, shake-y 100ms linear infinite;
   }
 }
 
