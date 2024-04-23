@@ -1,24 +1,7 @@
 <template>
     <li class="project-item-ctn">
         <div class="project-item">
-            <ul class="badges">
-                <li v-if="props.item.featured" class="featured-badge">
-                    <Icon icon="mage:stars-a-fill" class="icon"/>
-                    featured
-                </li>
-                <li v-if="props.item.status=='completed'">
-                    <Icon icon="material-symbols:rocket-launch-rounded" class="icon" style="color: #8ec97d"/>
-                    completed
-                </li>
-                <li v-else-if="props.item.status=='in dev'" >
-                    <Icon icon="fluent-emoji:construction" class="icon"/>
-                    In development
-                </li>
-                <li v-else-if="props.item.status=='inactive'" >
-                    <Icon icon="mingcute:sleep-fill" class="icon" style="color: #9174c9"/>
-                    inactive
-                </li>
-            </ul>
+           
             <div class="project-details">
                 <h3>
                     {{ props.item.title }}
@@ -63,7 +46,7 @@
                 </ul>
             </div>
 
-            <div class="project-image">
+            <div class="project-media">
                 <template v-if="props.item.media[0] && props.item.media[0].type == 'video'">
                     <YoutubeEmbed v-if="isYTUrl(props.item.media[0].url)" :src="props.item.media[0].url"/>
                     <video v-else controls>
@@ -76,6 +59,26 @@
             <ul class="project-skills">
                 <li v-for="(value,index) in props.item.skills" :key="index">
                     {{ value.toLowerCase() }}
+                </li>
+            </ul>
+
+
+            <ul class="badges">
+                <li v-if="props.item.featured" class="featured-badge">
+                    <Icon icon="mage:stars-a-fill" class="icon"/>
+                    featured
+                </li>
+                <li v-if="props.item.status=='completed'">
+                    <Icon icon="material-symbols:rocket-launch-rounded" class="icon" style="color: #8ec97d"/>
+                    completed
+                </li>
+                <li v-else-if="props.item.status=='in dev'" >
+                    <Icon icon="fluent-emoji:construction" class="icon"/>
+                    In development
+                </li>
+                <li v-else-if="props.item.status=='inactive'" >
+                    <Icon icon="mingcute:sleep-fill" class="icon" style="color: #9174c9"/>
+                    inactive
                 </li>
             </ul>
         </div>
@@ -150,7 +153,7 @@ function anchor_clicked(e: MouseEvent){
     width: var(--width);
     height: var(--height);
 
-    overflow: visible;
+    overflow: initial;
     margin: var(--allow-space);
     
 
@@ -202,7 +205,7 @@ function anchor_clicked(e: MouseEvent){
         position: absolute;
         top: .5rem;
         right: .5rem;
-        z-index: 2;
+        // z-index: 2;
         overflow: visible;
 
         & > li .icon {
@@ -289,7 +292,7 @@ function anchor_clicked(e: MouseEvent){
     }
 }
 
-.project-image {
+.project-media {
     grid-column: 2/2;
     grid-row: 1/-1;
     height: 100%;
@@ -301,18 +304,18 @@ function anchor_clicked(e: MouseEvent){
     margin-left: auto;
 }
 
-.project-image > img {
+.project-media > img {
     transition: transform 200ms ease;
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.project-image:hover > img {
+.project-media:hover > img {
     transform: scale(1.1);
 }
 
-.project-image > video {
+.project-media > video {
     object-fit: contain;
     width: 100%;
     height: 100%;
