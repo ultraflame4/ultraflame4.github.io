@@ -16,7 +16,7 @@
     --txt-warn: #ffe56e;
     --txt-danger: #ff6368;
     --overlay: rgba(255, 255, 255, 0.07);
-    font-size: 0.95rem; // dont worry if scaling is bigger, it will for whatever reason shrink in the build version
+    font-size: 1em; // dont worry if scaling is bigger, it will for whatever reason shrink in the build version
     @media only screen and (max-width: 700px) {
         font-size: 0.85rem;
     }
