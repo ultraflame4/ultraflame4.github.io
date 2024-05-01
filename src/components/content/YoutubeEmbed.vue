@@ -49,7 +49,7 @@ interface iprops {
 }
 
 const props = defineProps<iprops>()
-const is_lazy = () => !props.nolazy ?? true;
+const is_lazy = () => !props.nolazy;
 const should_load = ref(!is_lazy())
 
 function load() {
