@@ -16,7 +16,7 @@
     "@supercharge/strings": "^2.0.0",
     "dompurify": "^3.1.2",
     "front-matter": "^4.0.2",
-    "fuse.js": "^6.6.2",
+    "fuse.js": "^7.0.0",
     "hash-it": "^6.0.0",
     "marked": "^12.0.2",
     "path-browserify": "^1.0.1",
