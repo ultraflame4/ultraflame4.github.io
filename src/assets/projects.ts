@@ -148,7 +148,7 @@ function importProjectsFromJson() {
 }
 
 function importProjectsFromDataDir() {
-    const data_projects_import = import.meta.glob('/data/projects/*', {eager: true, as: "raw"})
+    const data_projects_import = import.meta.glob('/data/projects/*', {eager: true,  query: "raw", import: "default"})
     const project_data_filepaths = Object.keys(data_projects_import);
     console.log("Importing project frontmatter files");
     console.log("Found project data files: ", project_data_filepaths)
