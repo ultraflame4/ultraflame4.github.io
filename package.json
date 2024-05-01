@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@supercharge/strings": "^2.0.0",
-    "@types/object-hash": "^3.0.6",
     "dompurify": "^3.1.2",
     "front-matter": "^4.0.2",
     "fuse.js": "^6.6.2",
@@ -32,7 +31,6 @@
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.2",
-    "@notionhq/client": "^2.2.15",
     "@types/dompurify": "^3.0.5",
     "@types/marked": "^6.0.0",
     "@types/node": "^20.12.7",
@@ -40,7 +38,6 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/tsconfig": "^0.5.1",
     "cross-env": "^7.0.3",
-    "notion-to-md": "^3.1.1",
     "npm-run-all": "^4.1.5",
     "typescript": "~5.4.5",
     "typescript-json-schema": "^0.63.0",
