@@ -1,4 +1,4 @@
-import App from './App.vue'
+import Index from './Index.vue'
 import {routerOptions, setupRouter} from './router'
 
 import './assets/reset.css'
@@ -13,7 +13,7 @@ import {LoadAllProjects} from "@/tools/projects_api";
 // `export const createApp` is required instead of the original `createApp(App).mount('#app')`
 export const createApp = ViteSSG(
     // the root component
-    App,
+    Index,
     // vue-router options
     routerOptions,
     // function to have custom setups
