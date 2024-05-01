@@ -1,31 +1,34 @@
-import fm from "front-matter"
-import * as _allProjects from "./projects.json"
-import {normalise_FrontmatterProjectData, normalise_oldFormat} from "@/assets/projects_utils";
+import fm from "front-matter";
+import * as _allProjects from "./projects.json";
+import {
+    normalise_FrontmatterProjectData,
+    normalise_oldFormat,
+} from "@/assets/projects_utils";
 
 export namespace oldFormat {
     export interface proj_entry_link {
-        name: string,
-        url?: string,
+        name: string;
+        url?: string;
         /** icons from https://icones.js.org/collection/all?s=code */
-        icon?: string,
+        icon?: string;
 
-        fillColor?: string,
-        filledTextColor?: string,
+        fillColor?: string;
+        filledTextColor?: string;
 
-        filled?: boolean
+        filled?: boolean;
     }
 
     export interface proj_entry {
-        featured?: boolean,
-        source?: string, // most commonly the github repo
-        sourceLabel?: string, // defaults to github
-        links?: proj_entry_link[]
-        title: string,
-        desc?: string,
-        skillsUsed: string[],
-        bannerSrc?: string
+        featured?: boolean;
+        source?: string; // most commonly the github repo
+        sourceLabel?: string; // defaults to github
+        links?: proj_entry_link[];
+        title: string;
+        desc?: string;
+        skillsUsed: string[];
+        bannerSrc?: string;
         /*Uses video tag instead of img tag*/
-        bannerImgIsVideo?: boolean
+        bannerImgIsVideo?: boolean;
     }
 }
 export type proj_entry_link = oldFormat.proj_entry_link;
@@ -33,37 +36,37 @@ export type proj_entry_link = oldFormat.proj_entry_link;
 /**
  * @TJS-format uri
  */
-export type URIStringType = string
+export type URIStringType = string;
 
 export interface SourceObj {
-    label: string,
-    url: URIStringType
+    label: string;
+    url: URIStringType;
 }
 
 /**
  * @maxItems 1
  */
 export interface LinkObject {
-    [name: string]: URIStringType
+    [name: string]: URIStringType;
 }
 
 export interface FrontmatterProjectDataSchema {
     /**
      * The title of the project
      */
-    title: URIStringType,
+    title: URIStringType;
     /**
      * Relevant cover image of the project
      */
-    image?: URIStringType,
+    image?: URIStringType;
     /**
      * Relevant cover image of the project
      */
-    video?: URIStringType,
+    video?: URIStringType;
     /**
      * Relevant cover image of the project
      */
-    source?: URIStringType | SourceObj,
+    source?: URIStringType | SourceObj;
     /**
      * Relevant project links
      * @items {
@@ -78,33 +81,33 @@ export interface FrontmatterProjectDataSchema {
      *     ]
      * }
      */
-    links?: Array<URIStringType | LinkObject>,
+    links?: Array<URIStringType | LinkObject>;
     /**
      * Relevant skills used in the project
      * @items.format tag
      */
-    skills?: string[],
+    skills?: string[];
     /**
      * Start date of the project.
      * @TJS-format date
      */
-    start?: string,
+    start?: string;
     /**
      * Start date of the project.
      * @TJS-format date
      */
-    end?: string,
+    end?: string;
     /**
      * Suggests the index / order of the project. May be superseded by other parameters
      * @TJS-format date
      */
-    index_hint?: number
+    index_hint?: number;
 
     /**
      * The current project status
      * @TJS-default in dev
      */
-    status?: "completed" | "in dev" | "inactive"
+    status?: "completed" | "in dev" | "inactive";
 
     /**
      * Project flags
@@ -115,58 +118,67 @@ export interface FrontmatterProjectDataSchema {
      *     ]
      * }
      */
-    flags?: Array<"featured">
+    flags?: Array<"featured">;
 }
 
 export interface NormalisedProjectData {
-    anchor_id: string,
-    title: string,
-    body: string,
+    anchor_id: string;
+    title: string;
+    body: string;
     media: {
-        url: string,
-        type: "img" | "video"
-    }[],
-    featured: boolean,
-    status: "completed" | "in dev" | "inactive"
-    links: proj_entry_link[],
-    source?: { label: string, url: string },
-    skills?: string[],
-    start_date?: Date
-    end_date?: Date
-
+        url: string;
+        type: "img" | "video";
+    }[];
+    featured: boolean;
+    status: "completed" | "in dev" | "inactive";
+    links: proj_entry_link[];
+    source?: { label: string; url: string };
+    skills?: string[];
+    start_date?: Date;
+    end_date?: Date;
 }
 
-
-export const allProjects: NormalisedProjectData[] = []
+export const allProjects: NormalisedProjectData[] = [];
 
 function importProjectsFromJson() {
     console.log("Importing project json data");
 
     (_allProjects.items as oldFormat.proj_entry[]).forEach((x, index) => {
-        allProjects.push(normalise_oldFormat(x, index))
-    })
+        allProjects.push(normalise_oldFormat(x, index));
+    });
 }
 
 function importProjectsFromDataDir() {
-    const data_projects_import: {[key:string]:string} = import.meta.glob('/data/projects/*', {eager: true,  query: "raw", import: "default"})
+    const data_projects_import: { [key: string]: string } = import.meta.glob(
+        "/data/projects/*",
+        { eager: true, query: "raw", import: "default" }
+    );
     const project_data_filepaths = Object.keys(data_projects_import);
     console.log("Importing project frontmatter files");
-    console.log("Found project data files: ", project_data_filepaths)
+    console.log("Found project data files: ", project_data_filepaths);
 
-    const frontmatter = project_data_filepaths.map((x,index) => ({v:fm<FrontmatterProjectDataSchema>(data_projects_import[x]), k:x}))
+    const frontmatter = project_data_filepaths.map((x, index) => ({
+        v: fm<FrontmatterProjectDataSchema>(data_projects_import[x]),
+        k: x,
+    }));
     // console.log(frontmatter)
     frontmatter.sort((a, b) => {
-        
         const aHint = a.v.attributes.index_hint ?? -1;
         const bHint = b.v.attributes.index_hint ?? -1;
-        return aHint > bHint ? 1 : -1
-    })
-    frontmatter.forEach(({v, k}) => {
-        allProjects.push(normalise_FrontmatterProjectData(v.attributes, v.body.replace("\r", ""),k))
-    })
+        return aHint > bHint ? 1 : -1;
+    });
+    frontmatter.forEach(({ v, k }) => {
+        allProjects.push(
+            normalise_FrontmatterProjectData(
+                v.attributes,
+                v.body.replace("\r", ""),
+                k
+            )
+        );
+    });
 }
 
-importProjectsFromJson()
-importProjectsFromDataDir()
+importProjectsFromJson();
+importProjectsFromDataDir();
 
-console.log("Loaded projects: ", allProjects)
+console.log("Loaded projects: ", allProjects);
