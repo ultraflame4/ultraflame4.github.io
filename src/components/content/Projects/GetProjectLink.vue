@@ -12,7 +12,6 @@ import {type InjectionKey, provide} from "vue";
 import ProjectDefaultLink from "@/components/content/Projects/ProjectDefaultLink.vue";
 import ProjectReIconLink from "@/components/content/Projects/ProjectReIconLink.vue";
 import {isGithubRelease, isItchio} from "@/tools/url-utils";
-import * as url from "url";
 
 const props = defineProps<{ value: proj_entry_link }>()
 const key = Symbol() as InjectionKey<string>

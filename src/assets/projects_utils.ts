@@ -1,5 +1,6 @@
 import type {FrontmatterProjectDataSchema, NormalisedProjectData, oldFormat} from "@/assets/projects";
 import {identifyLinkName} from "@/tools/url-utils";
+//@ts-ignore path does exist as polyfill
 import path from "path";
 
 export function normalise_oldFormat(data: oldFormat.proj_entry, index: number): NormalisedProjectData {
