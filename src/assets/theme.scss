@@ -350,3 +350,16 @@ code{
         width: 100%;
     }
 }
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	40% {
+		transform: translatey(50%);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}

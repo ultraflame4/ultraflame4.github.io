@@ -16,7 +16,9 @@
         <h2>I'm Chester</h2>
         <p>Welcome to my little corner of the internet!</p>
         <br />
-        <p>Look around</p>
+        <p style="font-weight: 300;">Look around</p>
+        <Icon style="font-size: 4rem; animation: float 1.5s ease infinite;" icon="ph:arrow-down-thin"/>
+      
       </div>
     </div>
     <main>
@@ -103,6 +105,7 @@ import Section from "@/components/page/Section.vue";
 import { AllProjects, ProjectDataStatus } from "@/tools/projects_api";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import PageContext from "@/components/navigation/PageContext.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const bannerIRatio = new iRatioObject({
   exit: false,
@@ -140,7 +143,7 @@ const bannerIRatio = new iRatioObject({
     height: 100%;
     width: 100%;
     position: absolute;
-    top: -2.75rem;
+    top: -1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
