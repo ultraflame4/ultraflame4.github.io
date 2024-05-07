@@ -109,26 +109,6 @@ const bannerIRatio = new iRatioObject({
   invert: false,
 });
 
-/* Randomize array in-place using Durstenfeld shuffle algorithm */
-function shuffleArray<T>(array_: T[]): T[] {
-  let array = [...array_];
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
-function repeatArray<T>(array: T[], count: number): T[] {
-  let a: T[] = [];
-  for (let i = 0; i < count; i++) {
-    a = a.concat(array);
-  }
-
-  return a;
-}
 </script>
 
 <style lang="scss" scoped>
@@ -160,7 +140,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
+    top: -2.75rem;
     display: flex;
     align-items: center;
     flex-direction: column;
