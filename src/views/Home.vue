@@ -276,6 +276,7 @@ const bannerIRatio = new iRatioObject({
     position: sticky;
     bottom: 1rem;
     background-clip: border-box;
+    z-index: 1;
     --passive-color: var(--bg-0);
     font-size: 1em;
 
