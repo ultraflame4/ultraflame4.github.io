@@ -49,3 +49,7 @@ Special class for removing all styles from a button
 section{
     overflow: visible;
 }
+
+*{
+    z-index: 1;
+}
