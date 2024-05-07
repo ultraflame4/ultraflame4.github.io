@@ -16,7 +16,9 @@
         <h2>I'm Chester</h2>
         <p>Welcome to my little corner of the internet!</p>
         <br />
-        <p>Look around</p>
+        <p style="font-weight: 300;">Look around</p>
+        <Icon style="font-size: 4rem; animation: float 1.5s ease infinite;" icon="ph:arrow-down-thin"/>
+      
       </div>
     </div>
     <main>
@@ -103,32 +105,13 @@ import Section from "@/components/page/Section.vue";
 import { AllProjects, ProjectDataStatus } from "@/tools/projects_api";
 import ProjectDataStatusView from "@/components/utils/ProjectDataStatusView.vue";
 import PageContext from "@/components/navigation/PageContext.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const bannerIRatio = new iRatioObject({
   exit: false,
   invert: false,
 });
 
-/* Randomize array in-place using Durstenfeld shuffle algorithm */
-function shuffleArray<T>(array_: T[]): T[] {
-  let array = [...array_];
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
-function repeatArray<T>(array: T[], count: number): T[] {
-  let a: T[] = [];
-  for (let i = 0; i < count; i++) {
-    a = a.concat(array);
-  }
-
-  return a;
-}
 </script>
 
 <style lang="scss" scoped>
@@ -160,7 +143,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
+    top: -1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -293,6 +276,7 @@ function repeatArray<T>(array: T[], count: number): T[] {
     position: sticky;
     bottom: 1rem;
     background-clip: border-box;
+    z-index: 1;
     --passive-color: var(--bg-0);
     font-size: 1em;
 

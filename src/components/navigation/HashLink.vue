@@ -24,9 +24,7 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 import { useRoute, useRouter } from "vue-router";
-import { type PageNavLink, PageNavTree } from "@/router/page_navtree";
-import { Str } from "@supercharge/strings";
-import { computed, onBeforeUnmount } from "vue";
+import { computed } from "vue";
 
 interface iprops {
   /**

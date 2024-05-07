@@ -62,7 +62,7 @@ function mouse_enter(e: MouseEvent){
     margin: 0;
     pointer-events: none;
 
-    max-width: 8rem;
+    max-width: 22rem;
     width: max-content;
     
 

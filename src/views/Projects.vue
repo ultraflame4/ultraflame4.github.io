@@ -92,7 +92,7 @@ import SectionTitle from "@/components/page/SectionTitle.vue";
 import ProjectCard from "@/components/content/Projects/ProjectCard.vue";
 import SearchBar from "@/components/content/SearchBar.vue";
 import { computed, ref, watch } from "vue";
-import Fuse from "fuse.js";
+import Fuse, {type FuseResult} from "fuse.js";
 import { AllProjects, ProjectDataStatus } from "@/tools/projects_api";
 import type { NormalisedProjectData, oldFormat } from "@/assets/projects";
 import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
@@ -145,8 +145,7 @@ const tabs: TabItem[] = [
     text: "Inactive",
   },
 ];
-
-const projects_as_results = computed<Fuse.FuseResult<NormalisedProjectData>[]>(
+const projects_as_results = computed<FuseResult<NormalisedProjectData>[]>(
   () =>
     AllProjects.value.map((value) => {
       return {
@@ -157,7 +156,7 @@ const projects_as_results = computed<Fuse.FuseResult<NormalisedProjectData>[]>(
       };
     })
 );
-const project_list = computed<Fuse.FuseResult<NormalisedProjectData>[]>(() => {
+const project_list = computed<FuseResult<NormalisedProjectData>[]>(() => {
   fuse.setCollection(AllProjects.value);
   let results =
     searchTerm.value.trim().length > 0

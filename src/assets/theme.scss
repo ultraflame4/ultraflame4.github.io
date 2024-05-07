@@ -195,7 +195,7 @@ hr {
 /// Parallax effect for iratio
 .iratio-parallax {
     transition: transform 1s cubic-bezier(0.09, 0.81, 0.29, 1.04);
-    transform: translateY(calc(var(--iratio) * -500px + 470px));
+    transform: translateY(calc(var(--iratio) * -900px + 870px));
 }
 
 .flex-center {
@@ -349,4 +349,17 @@ code{
     hr{
         width: 100%;
     }
+}
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	40% {
+		transform: translatey(50%);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
