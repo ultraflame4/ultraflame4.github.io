@@ -1,0 +1,1 @@
+The resources in this folder here may contain my original assets and hence be copyrighted. You are not allowed to use any of my original assets such as logov200.png, moon.webm and under_construction.svg unless explicit written permission is given.
