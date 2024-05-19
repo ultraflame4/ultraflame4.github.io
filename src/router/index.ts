@@ -27,9 +27,10 @@ function scrollToElement(root: Element | Window, el: Element){
 
     // Amount to scroll to center element at its top.
     let top_scrollby= view_dist.top - window.innerHeight / 2;
+    // Scroll by such that the center of element is in center of screen.
     let center_scrollby = top_scrollby + view_dist.height / 2;
 
-
+    // If element is bigger than viewport, scroll to the top of element. Such that the top of element is near the top of viewport.
     if (view_dist.height >  window.innerHeight){
         center_scrollby = view_dist.top - window.innerHeight / 20;
     }
