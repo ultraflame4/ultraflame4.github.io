@@ -40,14 +40,24 @@ interface iProps {
      * If do not want to use heading, set this to false
      */
     no_heading?: boolean
+
+    /**
+     * Section id of section. Will override data provided by provide("section_id")
+     */
+    section_id?: string
 }
 
 const props = defineProps<iProps>()
 const pageSections = injectPageSectionsCtx();
 
-const section_id = inject<string>("section_id") ?? "no_section_id"
 
-pageSections?.addSection(props.name??section_id,section_id, props.heading??0)
+const section_id = props.section_id ?? inject<string>("section_id")
+if (section_id){
+    pageSections?.addSection(props.name??section_id,section_id, props.heading??0)
+}
+else{
+    console.error(`Could not identify section id for section title: ${props.name}, heading: ${props.heading}!`)
+}
 
 </script>
 

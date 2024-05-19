@@ -1,49 +1,51 @@
 <template>
     <div>
         <h1 style="margin: 0">Sitemap</h1>
-        <hr/>
+        <hr />
         <h1>Index</h1>
         <ul id="index-pages">
-            <li v-for="link in router.options.routes" :key="hashCode([link.name,link.path.toString()])">
+            <li v-for="link in router.options.routes" :key="hashCode([link.name, link.path.toString()])">
 
-                <NavLink v-if="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-open">{{ link.name }}</NavLink>
-                <NavLink v-else="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-outline">{{ link.name }}</NavLink>
+                <NavLink v-if="router.currentRoute.value.name == link.name" :to="link.path" icon="mdi:gift-open">{{
+                    link.name }}</NavLink>
+                <NavLink v-else="router.currentRoute.value.name==link.name" :to="link.path" icon="mdi:gift-outline">{{
+                    link.name }}</NavLink>
             </li>
         </ul>
 
-        <hr/>
+        <hr />
 
         <h1>Here</h1>
         <ul id="page-index">
-            <li v-for="link in current_page_sections" :style="`--level:${link.level}`" :data-ischild="link.level>1" :key="hashCode([link.id.toString()])">
-                <HashLink :hash="link.id"
-                        :noicon="link.level>1">
+            <li v-for="link in current_page_sections" :style="`--level:${link.level}`" :data-ischild="link.level > 1"
+                :key="hashCode([link.id.toString()])">
+                <HashLink :hash="link.id" :data-hash="link.id" :noicon="link.level > 1">
                     {{ shortenName(link.title, 32) }}
                 </HashLink>
             </li>
         </ul>
-        <br/>
-        <hr/>
+        <br />
+        <hr />
         <h1>Others</h1>
         <ul>
             <li>
                 <NavLink to="https://ultraflame4.github.io/SiteVersionPicker">Version Picker</NavLink>
             </li>
         </ul>
-        <hr/>
-        <SocialLinks/>
+        <hr />
+        <SocialLinks />
 
     </div>
 </template>
 
 <script lang="ts" setup>
 
-import {type PageNavLink, PageNavTree} from "@/router/page_navtree";
-import {useRouter} from "vue-router";
+import { type PageNavLink, PageNavTree } from "@/router/page_navtree";
+import { useRouter } from "vue-router";
 import NavLink from "@/components/core/NavLink.vue";
 import SocialLinks from "@/components/content/SocialLinks.vue";
-import {hashCode} from "@/utils";
-import {computed} from "vue";
+import { hashCode } from "@/utils";
+import { computed } from "vue";
 import { injectNavCtx } from "../navigation/NavigationContext.vue";
 import HashLink from "../navigation/HashLink.vue";
 
@@ -60,7 +62,10 @@ function shortenName(name: string, maxChars: number) {
 }
 
 const nav_ctx = injectNavCtx();
-const current_page_sections = computed(()=>nav_ctx.current_page_sections.value)
+const current_page_sections = computed(() => {
+    console.log(nav_ctx.current_page_sections.value);
+    return nav_ctx.current_page_sections.value;
+})
 
 </script>
 
@@ -70,7 +75,8 @@ div {
     display: flex;
     flex-direction: column;
     font-size: 0.95rem;
-    & > *{
+
+    &>* {
         flex-shrink: 0;
     }
 }
@@ -97,7 +103,7 @@ ul {
     margin: 0;
     width: 100%;
 
-    & > li {
+    &>li {
 
         font-size: 1.1em;
         margin-left: calc(var(--level) * 0.2rem);
@@ -127,5 +133,4 @@ ul {
     margin-top: auto;
     flex-shrink: 1;
 }
-
 </style>
