@@ -21,9 +21,16 @@ status: completed
 start: oct 31 2022
 end: nov 29 2023
 ---
-A website listing various restaurants and reviews for them.
-Restaurants are dynamically loaded as the user scrolls and can be sorted & filtered
+A website listing various restaurants and reviews for them. 
+Features include:
+- Sorting, Filtering by price, distance & ratings.
+- Dynamically content fetched from database.
+- Infinite scroll.
+- Account system. (Login, logout, delete, password reset)
+- Retaurant reviews - posting, deleting etc.
 
+The backend was created with MySQL, Express.js. 
+Frontend is powered by Vue.js
 
 This was done as part of a school final project (for the year).
 

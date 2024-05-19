@@ -17,13 +17,10 @@ status: completed
 start: sep 19 2022
 end: dec 21 2022
 ---
-Disclaimer: This project has since been abandoned
 
+Disclaimer: There are currently no plans to continue with this project.
 
 A website builder I made for myself to eventually build websites with.
-It is designed for people who already know HTML and CSS.
-For those who want a more simple and lightweight tool to make websites with.
-
 
 Throughout this process, I’ve learned a lot more about various aspects of web development and tools used.
 
