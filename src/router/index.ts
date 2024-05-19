@@ -20,6 +20,27 @@ export const routerOptions: RouterOptions = {
     ]
 }
 
+function scrollToElement(root: Element | Window, el: Element){
+    
+    // Element rect relative to viewport
+    let view_dist = el.getBoundingClientRect();
+
+    // Amount to scroll to center element at its top.
+    let top_scrollby= view_dist.top - window.innerHeight / 2;
+    let center_scrollby = top_scrollby + view_dist.height / 2;
+
+
+    if (view_dist.height >  window.innerHeight){
+        center_scrollby = view_dist.top - window.innerHeight / 20;
+    }
+
+
+    root.scrollBy({
+        top: center_scrollby,
+        behavior: "smooth"
+    })
+}
+
 
 export function setupRouter(router: Router) {
     router.beforeEach((to, from) => {
@@ -40,13 +61,11 @@ export function setupRouter(router: Router) {
 
                     const timer = setInterval(() => {
                         let e = document.querySelector(context.to.hash);
+                        
                         if (e) {
                             clearInterval(timer)
-                            let el_top = e.getBoundingClientRect().top
-                            context.element.scrollBy({
-                                top: el_top - window.innerHeight / 10,
-                                behavior: "smooth"
-                            })
+                            scrollToElement(context.element, e);
+                            
                         }
               
                     }, 500)
