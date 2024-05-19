@@ -29,6 +29,8 @@ interface iProps {
 const props = defineProps<iProps>()
 const pageSections = injectPageSectionsCtx();
 // pageSections?.addSection(props.name??props.id,props.id, props.heading??0)
+// TODO: in future, change the metric used for this from iratio to "how close this element is to the center." && if element is visible at all.
+// Aka, filter all non visible sections, and pick the one closest to center of viewport.
 watch([iratio.isVisible], ([v])=>{
     pageSections?.setSectionActive(props.id, v)
 })
