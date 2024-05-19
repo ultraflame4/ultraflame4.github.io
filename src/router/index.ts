@@ -26,6 +26,13 @@ export function setupRouter(router: Router) {
         if (from.path !== to.path) PageNavTree.clear()
     })
 
+    // router.afterEach((to,from)=>{
+    //     //@ts-expect-error
+    //     if (window.IsDev){
+    //         console.log(`IsDev only! After each from ${from.fullPath} to ${to.fullPath}`)
+    //     }
+    // })
+
     setupRouterScroller(router, {
         selectors: {
             "#site-ctn": context => {
