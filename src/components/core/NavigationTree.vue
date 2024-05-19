@@ -62,10 +62,7 @@ function shortenName(name: string, maxChars: number) {
 }
 
 const nav_ctx = injectNavCtx();
-const current_page_sections = computed(() => {
-    console.log(nav_ctx.current_page_sections.value);
-    return nav_ctx.current_page_sections.value;
-})
+const current_page_sections = computed(() => nav_ctx.current_page_sections.value);
 
 </script>
 
