@@ -20,11 +20,40 @@ export const routerOptions: RouterOptions = {
     ]
 }
 
+function scrollToElement(root: Element | Window, el: Element){
+    
+    // Element rect relative to viewport
+    let view_dist = el.getBoundingClientRect();
+
+    // Amount to scroll to center element at its top.
+    let top_scrollby= view_dist.top - window.innerHeight / 2;
+    // Scroll by such that the center of element is in center of screen.
+    let center_scrollby = top_scrollby + view_dist.height / 2;
+
+    // If element is bigger than viewport, scroll to the top of element. Such that the top of element is near the top of viewport.
+    if (view_dist.height >  window.innerHeight){
+        center_scrollby = view_dist.top - window.innerHeight / 20;
+    }
+
+
+    root.scrollBy({
+        top: center_scrollby,
+        behavior: "smooth"
+    })
+}
+
 
 export function setupRouter(router: Router) {
     router.beforeEach((to, from) => {
         if (from.path !== to.path) PageNavTree.clear()
     })
+
+    // router.afterEach((to,from)=>{
+    //     //@ts-expect-error
+    //     if (window.IsDev){
+    //         console.log(`IsDev only! After each from ${from.fullPath} to ${to.fullPath}`)
+    //     }
+    // })
 
     setupRouterScroller(router, {
         selectors: {
@@ -33,13 +62,11 @@ export function setupRouter(router: Router) {
 
                     const timer = setInterval(() => {
                         let e = document.querySelector(context.to.hash);
+                        
                         if (e) {
                             clearInterval(timer)
-                            let el_top = e.getBoundingClientRect().top
-                            context.element.scrollBy({
-                                top: el_top - window.innerHeight / 10,
-                                behavior: "smooth"
-                            })
+                            scrollToElement(context.element, e);
+                            
                         }
               
                     }, 500)
