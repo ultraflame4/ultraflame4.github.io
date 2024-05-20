@@ -10,6 +10,7 @@
       @click.capture="returnToPage()"
       ref="site_ctn"
       class="scrollable"
+      @scroll="onScroll()"
     >
       <div class="background">
         <Background />
@@ -29,13 +30,27 @@
       </div>
       <hr />
       <div class="section-bg-start"></div>
-      <Footer />
+      <Footer/>
     </div>
   </NavigationContext>
 </template>
+
+<script lang="ts">
+export interface ProvideAppContext{
+  scroll_y: Ref<number>
+}
+
+const PROVIDE_APPCTX = "app_34y789"
+
+export function injectAppCtx(): ProvideAppContext | undefined{
+  return inject<ProvideAppContext>(PROVIDE_APPCTX)
+}
+
+</script>
+
 <script setup lang="ts">
 import TopNav from "@/components/page/TopNav.vue";
-import { onBeforeMount, onMounted, ref, watch } from "vue";
+import { computed, inject, onBeforeMount, onMounted, provide, ref, watch, type Ref } from "vue";
 import NavigationTree from "@/components/core/NavigationTree.vue";
 import NavigationContext from "@/components/navigation/NavigationContext.vue";
 import Footer from "@/components/page/Footer.vue";
@@ -50,6 +65,18 @@ const router = useRouter();
 const menuOpen = ref(false);
 const isClosing = ref(false);
 const site_ctn = ref<HTMLElement | null>(null);
+const scroll_y = ref(0)
+
+function onScroll(){
+  scroll_y.value = site_ctn.value?.scrollTop ?? 0
+}
+
+
+provide<ProvideAppContext>(PROVIDE_APPCTX, {
+  scroll_y
+})
+
+
 
 onMounted(updateHead);
 router.afterEach(updateHead);
