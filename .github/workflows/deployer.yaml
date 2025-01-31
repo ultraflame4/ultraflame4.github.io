@@ -2,7 +2,7 @@ name: build-push-deploy
 run-name: ${{ github.actor }} is building this vite app and pushing it to the builds branch
 on:
   push:
-    branches: [ "v6" ]
+    branches: [ "v7" ]
 
   workflow_dispatch:
 

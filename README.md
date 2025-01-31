@@ -1,7 +1,5 @@
 # ultraflame4.github.io
 
-Version 6 of the website
+Version 7 of the website built ontop of Astro.js
 
-This branch uses ssg generation :>
-
-[ultraflame4.github.io/v6](ultraflame4.github.io/v6)
+[ultraflame4.github.io/v7](ultraflame4.github.io/v7)

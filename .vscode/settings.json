@@ -1,0 +1,11 @@
+{
+    "frontMatter.framework.id": "other",
+    "frontMatter.content.publicFolder": "",
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "projects",
+            "path": "[[workspace]]/data/projects"
+        }
+    ],
+    "editor.indentSize": "tabSize"
+}
