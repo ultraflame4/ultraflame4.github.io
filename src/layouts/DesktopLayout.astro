@@ -1,0 +1,15 @@
+---
+import NavDock from "@components/NavDock.astro";
+import DesktopWindow from "@components/Desktop/Window.vue";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <div class="p-1.5 grid gap-2 h-full" style="grid-template-rows: 1fr auto;">
+        <DesktopWindow client:only>
+            <slot />
+        </DesktopWindow>
+        <!-- TODO MIGRATE NavDock TO VUE ALSO -->
+        <NavDock />
+    </div>
+</BaseLayout>

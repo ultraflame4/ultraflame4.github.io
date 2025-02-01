@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./rainbow.css";
-@import "@fontsource/tiny5";
+@import "@fontsource/silkscreen";
 
 @theme {
     
@@ -21,21 +21,24 @@
     --color-fg: #cdd6f4;
     --color-fg-sub1: #bac2de;
     --color-fg-sub: #a6adc8;
-    --color-bg-overlay2: #9399b2;
-    --color-bg-overlay1: #7f849c;
-    --color-bg-overlay: #6c7086;
-    --color-bg-surf2: #585b70;
-    --color-bg-surf1: #45475a;
-    --color-bg-surf0: #313244;
+    
+    --color-surf5: #9399b2;
+    --color-surf4: #7f849c;
+    --color-surf3: #6c7086;
+    --color-surf2: #585b70;
+    --color-surf1: #45475a;
+    --color-surf0: #313244;
     --color-base: #1e1e2e;
     --color-mantle: #181825;
     --color-crust: #11111b;
 
-
+    --color-inactive: var(--color-bg-surf2);
     --color-primary: var(--color-rosewater);
     --color-accent: var(--color-rosewater);
     --color-secondary: var(--color-crust);
-    --font-fancy: "Tiny5"
+    --color-bright: var(--color-white);
+    --color-dimmed: var(--color-crust);
+    --font-fancy: "Silkscreen"
     
 }
 
@@ -49,6 +52,12 @@
     body{
         @apply bg-base
     }
+
 }
 
 
+@layer utilities{
+    .font-fancy{
+        letter-spacing: -1.5px;
+    }
+}
