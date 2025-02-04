@@ -12,7 +12,7 @@ const greeting = [
     "Hello There,",
     "Hello There,\nI am Chester,",
     20,
-    
+
     `Hello There,\nI am Chester,\n I am a <span style='color:#FDE68A'>Learner</span>`,
     20,
     `Hello There,\nI am Chester,\n I am a <span style='color:#86EFAC'>Gamer</span>`,
@@ -29,24 +29,85 @@ const greeting = [
 
 <Layout>
     <section>
-        <div class="w-full p-16 h-dvh flex relative" id="banner">
-            <div class="noise"></div>
-
-            <div class="w-full h-full" style="z-index: 1;">
-                <LandingPageTerminal client:only />
-            </div>
+        <div class="w-full h-dvh flex" id="banner">
             <div
-                class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-overlay"
-                style="z-index: 1;"
+                class="flex items-center justify-center bg-overlay flex-col relative"
+                id="greetings"
             >
-                <h1 class="font-fancy text-3xl p-2 rounded-lg" id="greetings">
+                <div class="noise"></div>
+                <h1 class="font-fancy text-4xl p-2 rounded-lg w-md">
                     <TypedTextEffect texts={greeting} client:only />
                 </h1>
             </div>
+            <div id="terminal" class="w-full h-full p-16">
+                <LandingPageTerminal client:only />
+            </div>
         </div>
+        <style>
+            #banner {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+            }
+
+            .noise {
+                position: absolute;
+                inset: 0;
+                background: url("/noise.svg");
+                background-size: 100px;
+                /* filter: contrast(400%) brightness(100%) invert(1) grayscale(1); */
+                opacity: 0.1;
+                mix-blend-mode: screen;
+            }
+
+            #greetings h1 {
+                filter: drop-shadow(0 0 48px #fff);
+            }
+
+            #banner {
+                background-color: #4158d0;
+                background-image: linear-gradient(
+                    43deg,
+                    #4158d0 0%,
+                    #c850c0 46%,
+                    #ffcc70 100%
+                );
+            }
+            #terminal {
+                position: sticky;
+                top: 1px;
+            }
+        </style>
     </section>
     <section>
         <h1>About</h1>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
     </section>
 </Layout>
 <style>
@@ -57,46 +118,6 @@ const greeting = [
     }
 
     section {
-        @apply flex items-center justify-center;
-    }
-
-    .noise {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-
-        z-index: 0;
-        background: url("/noise.svg");
-        filter: contrast(100%) brightness(100%);
-        background-size: 100px;
-        mix-blend-mode: screen;
-    }
-    #banner {
-        background-color: #4158d0;
-        background-image: linear-gradient(
-            43deg,
-            #4158d0 0%,
-            #c850c0 46%,
-            #ffcc70 100%
-        );
-    }
-
-    #greetings {
-        filter: drop-shadow(0 0 48px #fff);
-    }
-
-    #greetings :global(.human) {
-        @apply text-emerald-300;
-    }
-    #greetings :global(.student) {
-        @apply text-amber-300;
-    }
-    #greetings :global(.programmer) {
-        @apply text-blue-300;
-    }
-    #greetings :global(.software) {
-        @apply text-violet-300;
+        @apply flex items-center justify-center flex-col;
     }
 </style>

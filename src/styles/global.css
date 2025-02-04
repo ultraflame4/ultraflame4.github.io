@@ -10,12 +10,12 @@
     --color-fg-sub: var(--color-stone-400);
     --color-fg-dim: var(--color-stone-500);
     
-    --color-surf5: var(--color-slate-500);
-    --color-surf4: var(--color-slate-600);
-    --color-surf3: var(--color-slate-700);
-    --color-surf2: var(--color-slate-800);
-    --color-surf1: var(--color-slate-900);
-    --color-surf0: var(--color-slate-950);
+    --color-surf5: var(--color-neutral-500);
+    --color-surf4: var(--color-neutral-600);
+    --color-surf3: var(--color-neutral-700);
+    --color-surf2: var(--color-neutral-800);
+    --color-surf1: var(--color-neutral-900);
+    --color-surf0: var(--color-neutral-950);
 
     --color-overlay: rgba(0,0,0,0.7);
     /* --color-overlay: rgba(0,0,0,0.2); */
