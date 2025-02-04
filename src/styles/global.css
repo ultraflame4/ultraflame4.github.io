@@ -5,32 +5,20 @@
 @theme {
     
     --color-rosewater: #f5e0dc;
-    --color-flamingo: #f2cdcd;
-    --color-pink: #f5c2e7;
-    --color-mauve: #cba6f7;
-    --color-red: #f38ba8;
-    --color-maroon: #eba0ac;
-    --color-peach: #fab387;
-    --color-yellow: #f9e2af;
-    --color-green: #a6e3a1;
-    --color-teal: #94e2d5;
-    --color-sky: #89dceb;
-    --color-sapphire: #74c7ec;
-    --color-blue: #89b4fa;
-    --color-lavender: #b4befe;
-    --color-fg: #cdd6f4;
-    --color-fg-sub1: #bac2de;
-    --color-fg-sub: #a6adc8;
+
+    --color-fg: var(--color-stone-300);
+    --color-fg-sub: var(--color-stone-400);
+    --color-fg-dim: var(--color-stone-500);
     
-    --color-surf5: #9399b2;
-    --color-surf4: #7f849c;
-    --color-surf3: #6c7086;
-    --color-surf2: #585b70;
-    --color-surf1: #45475a;
-    --color-surf0: #313244;
-    --color-base: #1e1e2e;
-    --color-mantle: #181825;
-    --color-crust: #11111b;
+    --color-surf5: var(--color-slate-500);
+    --color-surf4: var(--color-slate-600);
+    --color-surf3: var(--color-slate-700);
+    --color-surf2: var(--color-slate-800);
+    --color-surf1: var(--color-slate-900);
+    --color-surf0: var(--color-slate-950);
+
+    --color-base: var(--color-surf0);
+    --color-crust: #111111;
 
     --color-inactive: var(--color-bg-surf2);
     --color-primary: var(--color-rosewater);
@@ -38,6 +26,7 @@
     --color-secondary: var(--color-crust);
     --color-bright: var(--color-white);
     --color-dimmed: var(--color-crust);
+
     --font-fancy: "Silkscreen"
     
 }
@@ -50,7 +39,7 @@
     }
 
     body{
-        @apply bg-base
+        @apply bg-base;
     }
 
 }
