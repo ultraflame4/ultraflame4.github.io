@@ -1,62 +1,134 @@
+<script lang="ts">
+
+export interface TerminalTextInstructionConfig {
+
+    next_index?: number | ((current_index: number) => number) // Sets the next instruction index to go to. When undefined, goes to next instruction
+    body?: string | (() => string),
+    delay?: number // How many cycles to wait for before next instruction
+    flags?: Array<"typed" | "clear" | "inline">
+}
+
+export type TerminalTextInstruction = TerminalTextInstructionConfig | string | TerminalTextInstructionConfig[]
+
+export function tti(body: string = "", inline = false, typed = false, delay = 0, clear = false): TerminalTextInstructionConfig {
+    const flags: TerminalTextInstructionConfig["flags"] = []
+    if (typed) flags.push("typed")
+    if (clear) flags.push("clear")
+    if (inline) flags.push("inline")
+
+    return {
+        body,
+        delay,
+        flags
+    }
+}
+
+export function tti_clear(): TerminalTextInstructionConfig {
+    return { flags: ["clear"] }
+}
+
+export function tti_delay(delay: number): TerminalTextInstructionConfig {
+    return { delay: delay, flags: ['inline'] }
+}
+export function lerp(start: number, end: number, t: number): number {
+    return start + t * (end - start);
+}
+export function tti_prompt(prompt?: string, ans?: string, opts?: { end?: string, ans_delay?: number }) {
+    return [
+        tti(prompt),
+        tti_delay(opts?.ans_delay ?? Math.round(lerp(10, 15, Math.random()))),
+        tti(ans, true, true),
+    ]
+}
+
+</script>
 <script lang="ts" setup>
 import { computed, onMounted, ref } from 'vue';
 
 
-interface TerminalTextInstruction {
-    instant?: boolean,
-    clear?: boolean,
-    nonewline?: boolean,
-    
-    body: string
-}
+const props = defineProps<{
+    sequence: TerminalTextInstruction[]
+}>()
 
 
-
-const textSequence: TerminalTextInstruction[] = [
-    {
-        body: "Login: powew\nPassword: ********\nWelcome world!"
-    },
-    {
-        body: "Test"
-    }
-]
-
-
-const next_counter = ref(0)
-function loadNextInstruction(){
-    const next = textSequence[next_counter.value]
-    if (next){
-        if (next.clear){
-            textToType.value = ""
+const next_instruction = ref(0)
+const normalised_instructions = computed<TerminalTextInstructionConfig[]>(() =>
+    props.sequence.flatMap((x) => {
+        if (typeof x == "string") {
+            return [{ body: x }]
         }
-        if (!next.nonewline && next_counter.value > 0){
+
+        if (Array.isArray(x)) {
+            return x
+        }
+
+        return [x]
+    })
+)
+
+function loadNextInstruction() {
+    let next = normalised_instructions.value[next_instruction.value]
+    if (next != undefined) {
+        typeInstant = false
+
+        if (typeof next == "string") {
+            next = { body: next }
+        }
+
+        if (next.flags?.includes("clear")) {
+            textToType.value = ""
+            terminalBuffer.value = ""
+        }
+        if (!next.flags?.includes("inline") && next_instruction.value > 0) {
             textToType.value = textToType.value + "\n"
         }
-        textToType.value = textToType.value + next.body
-        next_counter.value+=1
+        if (typeof next.body == "function") {
+            textToType.value = textToType.value + next.body()
+        }
+        else {
+            textToType.value = textToType.value + (next.body ?? "")
+        }
+
+        if (next.next_index != undefined) {
+            next_instruction.value = typeof next.next_index == "function" ? next.next_index(next_instruction.value) : next.next_index
+        }
+        else {
+            next_instruction.value += 1
+        }
+
+        if (!next.flags?.includes("typed")) {
+            typeInstant = true
+        }
+
+        wait_counter = next.delay ?? 0
     }
 }
 
 const textToType = ref("")
-const terminalText = ref("")
-const transformedText = computed(()=>terminalText.value.replaceAll("\n","<br>"))
+const terminalBuffer = ref("")
+const transformedText = computed(() => terminalBuffer.value
+    .replaceAll("\n", "<br>")
+    .replaceAll(" ", "&nbsp;")
+)
+let typeInstant = false;
+let wait_counter = 0;
 onMounted(() => {
     const id = setInterval(() => {
-
-        const typedText = textToType.value.slice(0, terminalText.value.length)
-        if (typedText != terminalText.value) {
-            terminalText.value = ""
-            return
+        if (wait_counter > 0) {
+            wait_counter -= 1
+            return;
         }
+        const nextChar = textToType.value[terminalBuffer.value.length]
 
-        const nextChar = textToType.value[terminalText.value.length]
         if (nextChar == undefined) {
             loadNextInstruction()
             return
         }
 
-
-        terminalText.value = terminalText.value + nextChar
+        terminalBuffer.value = terminalBuffer.value + nextChar
+        if (typeInstant) {
+            terminalBuffer.value = textToType.value
+        }
     }, 30)
 })
 
@@ -74,7 +146,9 @@ onMounted(() => {
     aspect-ratio: 16/9;
 }
 
-.content{
+.content {
+    font-kerning: none;
+
     /* display: inline;
     width: fit-content; */
 }
@@ -82,7 +156,8 @@ onMounted(() => {
 .content::after {
     content: "";
     display: inline-block;
-    width:6px;
+
+    width: 6px;
     height: 1em;
     position: relative;
     top: 0.15em;
