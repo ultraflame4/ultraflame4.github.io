@@ -1,10 +1,13 @@
 ---
+import FakeTerminal from '@/components/effects/FakeTerminal.vue';
 import Layout from '@layouts/Layout.astro';
 
 
 ---
 
 <Layout>
-
-    
+    <div class="w-full p-8 h-dvh flex ">
+        <FakeTerminal client:only></FakeTerminal>
+    </div>
+    Hello There
 </Layout>
