@@ -1,9 +1,9 @@
 ---
-
-import TypedTextEffect, { tte_goto } from '@components/effects/TypedTextEffect.vue';
-import LandingPageTerminal from '@components/effects/LandingPageTerminal.vue';
-import Layout from '@layouts/Layout.astro';
-
+import TypedTextEffect, {
+    tte_goto,
+} from "@components/effects/TypedTextEffect.vue";
+import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
+import Layout from "@layouts/Layout.astro";
 
 const greeting = [
     10,
@@ -18,39 +18,49 @@ const greeting = [
     20,
     "Hello There,\nI am Chester,\n I am a <span class='software'>Software Developer</span>",
     40,
-    tte_goto(3)
-]
-
+    tte_goto(3),
+];
 ---
 
 <Layout>
-    <div class="w-full p-16 h-dvh flex relative">
-        <LandingPageTerminal client:only></LandingPageTerminal>
-        <div class="absolute top-0 left-0 w-full h-full bg-overlay flex items-center justify-center">
-            <h1 class="font-fancy text-3xl min-w-lg" id="greetings">
-                <TypedTextEffect texts={greeting}  client:only/>
+    <div class="w-full p-16 h-dvh flex relative" id="banner">
+        <LandingPageTerminal client:only />
+        <div
+            class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-overlay"
+        >
+            <h1
+                class="font-fancy text-3xl min-w-lg p-2 rounded-lg"
+                id="greetings"
+            >
+                <TypedTextEffect texts={greeting} client:only />
             </h1>
-
-            
         </div>
     </div>
-    
-    
 </Layout>
 <style>
     @import "@styles/global.css";
 
+    #banner {
+        background: #0F2027;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        filter: brightness(110%);
+    }
 
-    #greetings :global(.human){
+    #greetings {
+        filter: drop-shadow(0 0 64px #fff);
+    }
+
+    #greetings :global(.human) {
         @apply text-emerald-300;
     }
-    #greetings :global(.student){
-        @apply text-amber-300
+    #greetings :global(.student) {
+        @apply text-amber-300;
     }
-    #greetings :global(.programmer){
-        @apply text-blue-300
+    #greetings :global(.programmer) {
+        @apply text-blue-300;
     }
-    #greetings :global(.software){
-        @apply text-violet-300
+    #greetings :global(.software) {
+        @apply text-violet-300;
     }
 </style>

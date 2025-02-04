@@ -40,7 +40,13 @@ const terminalInstructions: TerminalTextInstruction[] = [
     tti("Starting in ...0"),
     tti_delay(10),
     tti("Starting super awesome program! Prepare for awesomeness. 🎉🎉🎉🎉🎉"),
-    tti(helloWorld)
+    tti(helloWorld),
+    tti_delay(100),
+    tti("Ok now, you can scroll down."),
+    tti_delay(50),
+    tti("Come on, scroll down, theres more stuff below."),
+
+    
 ]
 
 </script>

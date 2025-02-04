@@ -43,7 +43,7 @@ export function tti_prompt(prompt?: string, ans?: string, opts?: { end?: string,
 
 </script>
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, useTemplateRef } from 'vue';
 
 
 const props = defineProps<{
@@ -115,6 +115,9 @@ const transformedText = computed(() => terminalBuffer.value
 )
 let typeInstant = false;
 let wait_counter = 0;
+
+const el = useTemplateRef('terminal')
+
 onMounted(() => {
     const id = setInterval(() => {
         if (wait_counter > 0) {
@@ -132,6 +135,7 @@ onMounted(() => {
         if (typeInstant) {
             terminalBuffer.value = textToType.value
         }
+        el.value?.scrollTo(0,el.value.scrollHeight)
     }, 30)
     return ()=>{
         clearInterval(id)
@@ -140,8 +144,8 @@ onMounted(() => {
 
 </script>
 <template>
-    <div class="terminal border-2 border-stone-900 bg-stone-950 rounded-lg font-mono p-2">
-        <div v-html="transformedText" class="content"></div>
+    <div class="terminal border-2 border-stone-900 bg-stone-950 rounded-lg font-mono p-2 overflow-auto">
+        <div v-html="transformedText" class="content" ref="terminal"></div>
     </div>
 
 </template>

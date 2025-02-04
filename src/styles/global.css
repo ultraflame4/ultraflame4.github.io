@@ -17,7 +17,7 @@
     --color-surf1: var(--color-slate-900);
     --color-surf0: var(--color-slate-950);
 
-    --color-overlay: rgba(0,0,0,0.65);
+    --color-overlay: rgba(0,0,0,0.2);
 
     --color-base: var(--color-surf0);
     --color-crust: #111111;
