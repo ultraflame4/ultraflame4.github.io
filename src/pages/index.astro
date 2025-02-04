@@ -23,28 +23,60 @@ const greeting = [
 ---
 
 <Layout>
-    <div class="w-full p-16 h-dvh flex relative" id="banner">
-        <LandingPageTerminal client:only />
-        <div
-            class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-overlay"
-        >
-            <h1
-                class="font-fancy text-3xl min-w-lg p-2 rounded-lg"
-                id="greetings"
+    <section>
+        <div class="w-full p-16 h-dvh flex relative" id="banner">
+            <div class="noise "></div>
+            
+            <div class="w-full h-full" style="z-index: 1;">
+                <LandingPageTerminal client:only />
+            </div>
+            <div
+                class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-overlay"
+                style="z-index: 1;"
             >
-                <TypedTextEffect texts={greeting} client:only />
-            </h1>
+                <h1 class="font-fancy text-3xl p-2 rounded-lg" id="greetings">
+                    <TypedTextEffect texts={greeting} client:only />
+                </h1>
+            </div>
         </div>
-    </div>
+    </section>
+    <section>
+        <h1>About</h1>
+    </section>
 </Layout>
 <style>
     @import "@styles/global.css";
 
+    section > h1 {
+        @apply font-fancy text-3xl m-4;
+    }
+
+    section {
+        @apply flex items-center justify-center;
+    }
+
+
+    .noise {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        
+        z-index: 0;
+        background: url("/noise.svg") ;
+        filter: contrast(100%) brightness(100%) ;
+        background-size: 100px;
+        mix-blend-mode: screen;
+    }
     #banner {
-        background: #0F2027;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        filter: brightness(110%);
+        background-color: #4158d0;
+        background-image: linear-gradient(
+            43deg,
+            #4158d0 0%,
+            #c850c0 46%,
+            #ffcc70 100%
+        );
     }
 
     #greetings {

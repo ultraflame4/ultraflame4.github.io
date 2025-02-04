@@ -152,7 +152,7 @@ onMounted(() => {
 <style lang="css" scoped>
 .terminal {
     width: 100%;
-    aspect-ratio: 16/9;
+    height: 100%;
 }
 
 
