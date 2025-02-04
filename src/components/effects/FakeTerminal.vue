@@ -144,7 +144,7 @@ onMounted(() => {
 
 </script>
 <template>
-    <div class="terminal border-2 border-stone-900 bg-stone-950 rounded-lg font-mono p-2 overflow-auto">
+    <div class="terminal border-2 border-indigo-500 bg-stone-950 rounded-xl font-mono p-2 overflow-auto">
         <div v-html="transformedText" class="content" ref="terminal"></div>
     </div>
 

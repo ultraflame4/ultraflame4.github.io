@@ -28,6 +28,12 @@ const greeting = [
 ---
 
 <Layout>
+    <div class="absolute top-0 w-full banner-bg" style="height: 180vh; z-index: -1;">
+        <div class="p-16 top-0 sticky h-dvh w-2/3 ml-auto text-sm">
+            <LandingPageTerminal client:only />
+        </div>
+    </div>
+
     <section>
         <div class="w-full h-dvh flex" id="banner">
             <div
@@ -38,9 +44,6 @@ const greeting = [
                 <h1 class="font-fancy text-4xl p-2 rounded-lg w-md">
                     <TypedTextEffect texts={greeting} client:only />
                 </h1>
-            </div>
-            <div id="terminal" class="w-full h-full p-16">
-                <LandingPageTerminal client:only />
             </div>
         </div>
         <style>
@@ -63,7 +66,7 @@ const greeting = [
                 filter: drop-shadow(0 0 48px #fff);
             }
 
-            #banner {
+            .banner-bg {
                 background-color: #4158d0;
                 background-image: linear-gradient(
                     43deg,
@@ -72,14 +75,38 @@ const greeting = [
                     #ffcc70 100%
                 );
             }
-            #terminal {
-                position: sticky;
-                top: 1px;
-            }
         </style>
     </section>
-    <section>
+    <section class="bg-surf0">
         <h1>About</h1>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
+        <div>Test</div>
         <div>Test</div>
         <div>Test</div>
         <div>Test</div>
@@ -118,6 +145,6 @@ const greeting = [
     }
 
     section {
-        @apply flex items-center justify-center flex-col;
+        @apply flex items-center justify-center flex-col
     }
 </style>
