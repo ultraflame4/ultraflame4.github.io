@@ -5,18 +5,23 @@ import TypedTextEffect, {
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 
+let rand_color = 1;
+
 const greeting = [
     10,
     "Hello There,",
     "Hello There,\nI am Chester,",
     20,
-    "Hello There,\nI am Chester,\n I am a <span class='human'>Living Human</span>",
+    
+    `Hello There,\nI am Chester,\n I am a <span style='color:#FDE68A'>Learner</span>`,
     20,
-    "Hello There,\nI am Chester,\n I am a <span class='student'>Student</span>",
+    `Hello There,\nI am Chester,\n I am a <span style='color:#86EFAC'>Gamer</span>`,
     20,
-    "Hello There,\nI am Chester,\n I am a <span class='programmer'>Programmer</span>",
+    `Hello There,\nI am Chester,\n I am a <span style='color:#A78BFA'>Programmer</span>`,
     20,
-    "Hello There,\nI am Chester,\n I am a <span class='software'>Software Developer</span>",
+    `Hello There,\nI am Chester,\n I am a <span style='color:#FACC15'>Worker</span>`,
+    20,
+    `Hello There,\nI am Chester,\n I am <span style='color:#A5F3FC'>Chester</span>`,
     40,
     tte_goto(3),
 ];
@@ -25,8 +30,8 @@ const greeting = [
 <Layout>
     <section>
         <div class="w-full p-16 h-dvh flex relative" id="banner">
-            <div class="noise "></div>
-            
+            <div class="noise"></div>
+
             <div class="w-full h-full" style="z-index: 1;">
                 <LandingPageTerminal client:only />
             </div>
@@ -55,17 +60,16 @@ const greeting = [
         @apply flex items-center justify-center;
     }
 
-
     .noise {
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-        
+
         z-index: 0;
-        background: url("/noise.svg") ;
-        filter: contrast(100%) brightness(100%) ;
+        background: url("/noise.svg");
+        filter: contrast(100%) brightness(100%);
         background-size: 100px;
         mix-blend-mode: screen;
     }
@@ -80,7 +84,7 @@ const greeting = [
     }
 
     #greetings {
-        filter: drop-shadow(0 0 64px #fff);
+        filter: drop-shadow(0 0 48px #fff);
     }
 
     #greetings :global(.human) {
