@@ -1,14 +1,56 @@
 ---
 
+import TypedTextEffect, { tte_goto } from '@components/effects/TypedTextEffect.vue';
 import LandingPageTerminal from '@components/effects/LandingPageTerminal.vue';
 import Layout from '@layouts/Layout.astro';
 
 
+const greeting = [
+    10,
+    "Hello There,",
+    "Hello There,\nI am Chester,",
+    20,
+    "Hello There,\nI am Chester,\n I am a <span class='human'>Living Human</span>",
+    20,
+    "Hello There,\nI am Chester,\n I am a <span class='student'>Student</span>",
+    20,
+    "Hello There,\nI am Chester,\n I am a <span class='programmer'>Programmer</span>",
+    20,
+    "Hello There,\nI am Chester,\n I am a <span class='software'>Software Developer</span>",
+    40,
+    tte_goto(3)
+]
+
 ---
 
 <Layout>
-    <div class="w-full p-8 h-dvh flex ">
+    <div class="w-full p-16 h-dvh flex relative">
         <LandingPageTerminal client:only></LandingPageTerminal>
+        <div class="absolute top-0 left-0 w-full h-full bg-overlay flex items-center justify-center">
+            <h1 class="font-fancy text-3xl min-w-lg" id="greetings">
+                <TypedTextEffect texts={greeting}  client:only/>
+            </h1>
+
+            
+        </div>
     </div>
-    Hello There
+    
+    
 </Layout>
+<style>
+    @import "@styles/global.css";
+
+
+    #greetings :global(.human){
+        @apply text-emerald-300;
+    }
+    #greetings :global(.student){
+        @apply text-amber-300
+    }
+    #greetings :global(.programmer){
+        @apply text-blue-300
+    }
+    #greetings :global(.software){
+        @apply text-violet-300
+    }
+</style>

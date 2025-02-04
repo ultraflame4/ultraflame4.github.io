@@ -5,7 +5,7 @@ export interface TerminalTextInstructionConfig {
     next_index?: number | ((current_index: number) => number) // Sets the next instruction index to go to. When undefined, goes to next instruction
     body?: string | (() => string),
     delay?: number // How many cycles to wait for before next instruction
-    flags?: Array<"typed" | "clear" | "inline">
+    flags?: Array<"typed" | "clear" | "inline" | "html">
 }
 
 export type TerminalTextInstruction = TerminalTextInstructionConfig | string | TerminalTextInstructionConfig[]
@@ -89,6 +89,10 @@ function loadNextInstruction() {
             textToType.value = textToType.value + (next.body ?? "")
         }
 
+        if (!next.flags?.includes("html")){
+            textToType.value = textToType.value.replaceAll(" ", "&nbsp;")
+        }
+
         if (next.next_index != undefined) {
             next_instruction.value = typeof next.next_index == "function" ? next.next_index(next_instruction.value) : next.next_index
         }
@@ -108,7 +112,6 @@ const textToType = ref("")
 const terminalBuffer = ref("")
 const transformedText = computed(() => terminalBuffer.value
     .replaceAll("\n", "<br>")
-    .replaceAll(" ", "&nbsp;")
 )
 let typeInstant = false;
 let wait_counter = 0;
@@ -130,13 +133,15 @@ onMounted(() => {
             terminalBuffer.value = textToType.value
         }
     }, 30)
+    return ()=>{
+        clearInterval(id)
+    }
 })
 
 </script>
 <template>
-    <div class="terminal border-2 border-emerald-200 bg-stone-950 rounded-lg font-mono p-2">
+    <div class="terminal border-2 border-stone-900 bg-stone-950 rounded-lg font-mono p-2">
         <div v-html="transformedText" class="content"></div>
-        <!-- <div class="blinkingCursor"></div> -->
     </div>
 
 </template>
@@ -146,12 +151,6 @@ onMounted(() => {
     aspect-ratio: 16/9;
 }
 
-.content {
-    font-kerning: none;
-
-    /* display: inline;
-    width: fit-content; */
-}
 
 .content::after {
     content: "";
