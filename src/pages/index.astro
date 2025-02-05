@@ -28,24 +28,35 @@ const greeting = [
 ---
 
 <Layout>
-    <div class="absolute top-0 w-full banner-bg" style="height: 180vh; z-index: -1;">
+    <div
+        class="absolute top-0 w-full banner-bg"
+        style="height: 210vh; z-index: -1;"
+    >
+        <div class="noise"></div>
         <div class="p-16 top-0 sticky h-dvh w-2/3 ml-auto text-sm">
             <LandingPageTerminal client:only />
         </div>
+
     </div>
 
     <section>
-        <div class="w-full h-dvh flex" id="banner">
+        <div class="w-full flex relative" id="banner" style="height: calc(100vh + calc(var(--spacing) * 16));">
             <div
-                class="flex items-center justify-center bg-overlay flex-col relative"
+                class="
+                flex items-center justify-cente flex-col relative
+                bg-overlay
+                "
                 id="greetings"
             >
-                <div class="noise"></div>
-                <h1 class="font-fancy text-4xl p-2 rounded-lg w-md">
+                <h1
+                    class="font-fancy text-4xl p-2 rounded-lg w-md sticky top-1/2 -translate-y-1/2 glow"
+                >
                     <TypedTextEffect texts={greeting} client:only />
                 </h1>
             </div>
+  
         </div>
+
         <style>
             #banner {
                 display: grid;
@@ -57,13 +68,9 @@ const greeting = [
                 inset: 0;
                 background: url("/noise.svg");
                 background-size: 100px;
-                /* filter: contrast(400%) brightness(100%) invert(1) grayscale(1); */
-                opacity: 0.1;
-                mix-blend-mode: screen;
-            }
+                filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
 
-            #greetings h1 {
-                filter: drop-shadow(0 0 48px #fff);
+                mix-blend-mode: multiply;
             }
 
             .banner-bg {
@@ -77,7 +84,10 @@ const greeting = [
             }
         </style>
     </section>
-    <section class="bg-surf0">
+    <div class="relative w-full h-0">
+        <div class="absolute bottom-0 w-full h-16 bg-linear-0 from-surf1 to-transparent "></div>
+    </div>
+    <section class="bg-surf1">
         <h1>About</h1>
         <div>Test</div>
         <div>Test</div>
@@ -141,10 +151,11 @@ const greeting = [
     @import "@styles/global.css";
 
     section > h1 {
-        @apply font-fancy text-3xl m-4;
+        @apply font-fancy text-3xl;
+        margin: 6rem 0 3rem;
     }
 
     section {
-        @apply flex items-center justify-center flex-col
+        @apply flex items-center justify-center flex-col;
     }
 </style>
