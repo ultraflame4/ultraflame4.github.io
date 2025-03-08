@@ -2,6 +2,7 @@
 
 export interface OtherInstruction {
     type: "goto",
+    
     _goto_index?: number
 }
 
@@ -18,7 +19,7 @@ import { computed, onMounted, ref } from 'vue';
 
 
 
-const props = defineProps<{ texts: TextInstruction[], speed?: number, interval?: number }>()
+const props = defineProps<{ texts: TextInstruction[], speed?: number, interval?: number, hideCursor?: boolean }>()
 
 
 const textToType = ref("")
@@ -26,6 +27,7 @@ const typedText = ref("");
 const transformed = computed(() => typedText.value.replaceAll('\n', "<br>"))
 let wait_counter = 0;
 let current = 0
+const is_typing = ref(false)
 function loadNext() {
     if (current < props.texts.length) {
         const next = props.texts[current]
@@ -51,7 +53,7 @@ function loadNext() {
 
 onMounted(() => {
     const id = setInterval(() => {
-
+        is_typing.value=false
         if (wait_counter > 0) {
             wait_counter -= 1
             return
@@ -100,7 +102,7 @@ onMounted(() => {
             return
         }
 
-
+        is_typing.value=true
         typedText.value = typedText.value + nextChar
         
     }, props.speed ?? 15)
@@ -111,21 +113,26 @@ onMounted(() => {
 
 </script>
 <template>
-    <span v-html="transformed" class="content">
+    
+    <span v-html="transformed" class="content" :data-hidecursor="(!is_typing)&&props.hideCursor">
 
     </span>
 </template>
 <style scoped>
+
 .content::after {
     content: "";
     display: inline-block;
-
+    
     width: 6px;
     height: 1em;
     position: relative;
     top: 0.15em;
     background-color: white;
     animation: blink 1s step-start infinite;
+}
+.content[data-hidecursor="true"]::after{
+    display: none;
 }
 
 @keyframes blink {

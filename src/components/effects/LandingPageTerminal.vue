@@ -43,9 +43,14 @@ const terminalInstructions: TerminalTextInstruction[] = [
     tti(helloWorld),
     tti_delay(100),
     tti("Ok now, you can scroll down."),
-    tti_delay(50),
+    tti_delay(200),
     tti("Come on, scroll down, theres more stuff below."),
-
+    tti_delay(300),
+    tti("Why are you still here, scroll down, please."),
+    tti_delay(400),
+    tti("Seriously theres, scroll down."),
+    tti_delay(500),
+    tti("Ok whatever you can stay here if you like...."),
     
 ]
 

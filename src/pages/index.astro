@@ -4,6 +4,7 @@ import TypedTextEffect, {
 } from "@components/effects/TypedTextEffect.vue";
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
+import NavDock from "@/components/NavDock.astro";
 
 let rand_color = 1;
 
@@ -13,56 +14,70 @@ const greeting = [
     "Hello There,\nI am Chester,",
     20,
 
-    `Hello There,\nI am Chester,\n I am a <span style='color:#FDE68A'>Learner</span>`,
+    `Hello There,\nI am Chester,\n I make <span style='color:#86EFAC'>Games</span>`,
     20,
-    `Hello There,\nI am Chester,\n I am a <span style='color:#86EFAC'>Gamer</span>`,
+    `Hello There,\nI am Chester,\n I make <span style='color:#FDE68A'>Websites</span>`,
     20,
-    `Hello There,\nI am Chester,\n I am a <span style='color:#A78BFA'>Programmer</span>`,
+    `Hello There,\nI am Chester,\n I make <span style='color:#A78BFA'>Software</span>`,
     20,
-    `Hello There,\nI am Chester,\n I am a <span style='color:#FACC15'>Worker</span>`,
-    20,
-    `Hello There,\nI am Chester,\n I am <span style='color:#A5F3FC'>Chester</span>`,
-    40,
-    tte_goto(3),
+    `Hello There,\nI am Chester,\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 ];
+
+const greeting_sub = [400, "Welcome to my little corner of the internet."];
 ---
 
 <Layout>
+    
     <div
         class="absolute top-0 w-full banner-bg"
         style="height: 210vh; z-index: -1;"
     >
         <div class="noise"></div>
-        <div class="p-16 top-0 sticky h-dvh w-2/3 ml-auto text-sm">
+        <div
+            class="p-16 h-dvh top-0 sticky w-2/3 m-auto text-sm"
+            style="aspect-ratio: 5/4;"
+        >
             <LandingPageTerminal client:only />
         </div>
+        <div class="bg-overlay absolute h-full w-full top-0 left-0">
 
+        </div>
     </div>
 
+    <style>
+        :root{
+            --navbar-height: 2rem
+        }
+        .navbar-ctn{
+            height: var(--navbar-height);
+        }
+    </style>
     <section>
-        <div class="w-full flex relative" id="banner" style="height: calc(100vh + calc(var(--spacing) * 16));">
+        <div
+            class="w-full grid relative"
+
+            style="height: 90vh;"
+        >
             <div
-                class="
-                flex items-center justify-cente flex-col relative
-                bg-overlay
-                "
+                class="flex items-center justify-center flex-col relative"
                 id="greetings"
             >
-                <h1
-                    class="font-fancy text-4xl p-2 rounded-lg w-md sticky top-1/2 -translate-y-1/2 glow"
-                >
-                    <TypedTextEffect texts={greeting} client:only />
-                </h1>
+                <div class="sticky top-1/2 flex items-center justify-center flex-col" style="transform: translateY(-25%);" >
+                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24" style="grid-row: 2;">
+                        <TypedTextEffect texts={greeting} client:only />
+                    </h1>
+                    <p class="top-3/4 glow mb-8">
+                        <TypedTextEffect
+                            texts={greeting_sub}
+                            client:only
+                            hideCursor
+                        />
+                    </p>
+                </div>
             </div>
-  
         </div>
 
         <style>
-            #banner {
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-            }
-
             .noise {
                 position: absolute;
                 inset: 0;
@@ -84,9 +99,14 @@ const greeting = [
             }
         </style>
     </section>
+    <NavDock></NavDock>
     <div class="relative w-full h-0">
-        <div class="absolute bottom-0 w-full h-16 bg-linear-0 from-surf1 to-transparent "></div>
+        <div
+            class="absolute bottom-0 w-full h-16 bg-linear-0 from-surf1 to-transparent"
+        >
+        </div>
     </div>
+
     <section class="bg-surf1">
         <h1>About</h1>
         <div>Test</div>
