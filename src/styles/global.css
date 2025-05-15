@@ -45,6 +45,30 @@
         @apply bg-base;
     }
 
+    @media screen and (max-width: 555px) {
+        :root {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media screen and (max-width: 520px) {
+        :root {
+            font-size: 0.75rem;
+        }
+    }
+
+    @media screen and (max-width: 510px) {
+        :root {
+            font-size: 0.7rem;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        :root {
+            font-size: 0.65rem;
+        }
+    }
+
 }
 
 
@@ -55,15 +79,23 @@
 
     .glow {
         filter: drop-shadow(0 0 48px #fff);
-    }.glow-dark {
+    }
+
+    .glow-dark {
         filter: drop-shadow(0 0 48px #000);
     }
-    .acrylic{
-        background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-        backdrop-filter: blur(10px); /* Blurs the background */
-        -webkit-backdrop-filter: blur(10px); /* For Safari support */
-        border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-        
+
+    .acrylic {
+        background: rgba(255, 255, 255, 0.1);
+        /* Semi-transparent white */
+        backdrop-filter: blur(10px);
+        /* Blurs the background */
+        -webkit-backdrop-filter: blur(10px);
+        /* For Safari support */
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        /* Subtle border */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Soft shadow for depth */
+
     }
 }

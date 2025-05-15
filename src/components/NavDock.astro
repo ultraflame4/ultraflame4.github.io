@@ -1,5 +1,4 @@
 ---
-
 const { class: className, ...rest } = Astro.props;
 const links = {
     about: "/about",
@@ -8,22 +7,22 @@ const links = {
 };
 ---
 
-<div class="p-4 w-full sticky top-0 z-10" >
-    <div
-        class="flex items-center justify-center h-12 rounded-2xl drop-shadow-xl acrylic px-4 py-2 w-fit m-auto"
-    >
-
+<div class="p-4 w-full sticky top-0 z-10">
+    <div class="flex items-center justify-center h-12 rounded-2xl drop-shadow-xl acrylic px-2 py-2 w-fit m-auto">
         <nav class="h-full">
-            <ul class="list-none flex gap-2.5 font-fancy uppercase h-full text-dimmed items-center justify-center">
+            <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
                 <li class="h-full">
                     <a href="/" class="nav-brand" data-active={Astro.url.pathname == "/"}>
-                        <img src="/logov300.png" class="h-full"  />
+                        <img src="/logov200.png" class="h-full" />
                     </a>
                 </li>
                 {
-                    Object.entries(links).map(([k, v]) => (
-                        <li class="navlink hover:text-accent cursor-pointer " data-active={Astro.url.pathname == v}>
-                            <a href={v}>{k}</a>
+                    Object.entries(links).map(([k, v], index) => (
+                        <li class="navlink hover:text-accent cursor-pointer flex items-center gap-1" data-active={Astro.url.pathname == v}>
+                            <span class="navlink-key acrylic">{index}</span>
+                            <a href={v} class="font-fancy ">
+                                {k}
+                            </a>
                         </li>
                     ))
                 }
@@ -34,15 +33,24 @@ const links = {
 
 <style>
     @reference "@styles/global.css";
-    
-    .nav-brand > img, nav li{
+
+    .nav-brand > img,
+    nav li {
         transition: all 200ms ease;
-        @apply text-bright
+        @apply text-bright;
     }
 
-    .nav-brand[data-active="true"] > img, nav li[data-active="true"]{
-        filter: drop-shadow( 0px 0px 2px var(--color-rainbow));
-        @apply text-crust
+    .nav-brand[data-active="true"] > img,
+    nav li[data-active="true"] {
+        filter: drop-shadow(0px 0px 2px var(--color-rainbow));
+        @apply text-crust;
     }
-
+    .navlink-key{
+        @apply font-mono font-extrabold rounded-sm w-4.5 h-4.5 text-sm flex items-center justify-center box-content bg-surf1 border-surf2;
+        border: 0.1rem solid black;
+    
+    }
+    .navlink:last-child{
+        @apply mr-2
+    }
 </style>

@@ -1,7 +1,5 @@
 ---
-import TypedTextEffect, {
-    tte_goto,
-} from "@components/effects/TypedTextEffect.vue";
+import TypedTextEffect, { tte_goto } from "@components/effects/TypedTextEffect.vue";
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
@@ -10,68 +8,52 @@ let rand_color = 1;
 
 const greeting = [
     10,
-    "Hello There,",
-    "Hello There,\nI am Chester,",
+    "Hello,",
+    "Hello,I'm <span class='greeting-name'>Chester</span>,",
     20,
-
-    `Hello There,\nI am Chester,\n I make <span style='color:#86EFAC'>Games</span>`,
+    `Hello,I'm <span class='greeting-name'>Chester</span>,\n I make <span style='color:#86EFAC'>Games</span>`,
     20,
-    `Hello There,\nI am Chester,\n I make <span style='color:#FDE68A'>Websites</span>`,
+    `Hello,I'm <span class='greeting-name'>Chester</span>,\n I make <span style='color:#FDE68A'>Websites</span>`,
     20,
-    `Hello There,\nI am Chester,\n I make <span style='color:#A78BFA'>Software</span>`,
+    `Hello,I'm <span class='greeting-name'>Chester</span>,\n I make <span style='color:#A78BFA'>Software</span>`,
     20,
-    `Hello There,\nI am Chester,\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
+    `Hello,I'm <span class='greeting-name'>Chester</span>,\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 ];
 
 const greeting_sub = [400, "Welcome to my little corner of the internet."];
 ---
 
 <Layout>
-    
-    <div
-        class="absolute top-0 w-full banner-bg"
-        style="height: 210vh; z-index: -1;"
-    >
+    <div class="absolute top-0 w-full banner-bg" style="height: 210vh; z-index: -1;">
         <div class="noise"></div>
-        <div
-            class="p-16 h-dvh top-0 sticky w-2/3 m-auto text-sm"
-            style="aspect-ratio: 5/4;"
-        >
+        <div class="top-1/2 sticky m-auto text-sm" style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%)">
             <LandingPageTerminal client:only />
         </div>
-        <div class="bg-overlay absolute h-full w-full top-0 left-0">
-
-        </div>
+        <div class="bg-overlay absolute h-full w-full top-0 left-0"></div>
     </div>
 
     <style>
-        :root{
-            --navbar-height: 2rem
+        :root {
+            --navbar-height: 2rem;
         }
-        .navbar-ctn{
+        .navbar-ctn {
             height: var(--navbar-height);
         }
     </style>
     <section>
-        <div
-            class="w-full grid relative"
-
-            style="height: 90vh;"
-        >
-            <div
-                class="flex items-center justify-center flex-col relative"
-                id="greetings"
-            >
-                <div class="sticky top-1/2 flex items-center justify-center flex-col" style="transform: translateY(-25%);" >
+        <div class="w-full grid relative" style="height: 90vh;">
+            <div class="flex items-center justify-center flex-col relative" id="greetings">
+                <style>
+                    .greeting-name {
+                        font-family: "Courier New", Courier, monospace;
+                    }
+                </style>
+                <div class="sticky top-1/2 flex items-center justify-center flex-col" style="transform: translateY(-25%);">
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24" style="grid-row: 2;">
                         <TypedTextEffect texts={greeting} client:only />
                     </h1>
                     <p class="top-3/4 glow mb-8">
-                        <TypedTextEffect
-                            texts={greeting_sub}
-                            client:only
-                            hideCursor
-                        />
+                        <TypedTextEffect texts={greeting_sub} client:only hideCursor />
                     </p>
                 </div>
             </div>
@@ -90,21 +72,13 @@ const greeting_sub = [400, "Welcome to my little corner of the internet."];
 
             .banner-bg {
                 background-color: #4158d0;
-                background-image: linear-gradient(
-                    43deg,
-                    #4158d0 0%,
-                    #c850c0 46%,
-                    #ffcc70 100%
-                );
+                background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
             }
         </style>
     </section>
-    <NavDock></NavDock>
+    <NavDock />
     <div class="relative w-full h-0">
-        <div
-            class="absolute bottom-0 w-full h-16 bg-linear-0 from-surf1 to-transparent"
-        >
-        </div>
+        <div class="absolute bottom-0 w-full h-16 bg-linear-0 from-surf1 to-transparent"></div>
     </div>
 
     <section class="bg-surf1">

@@ -11,3 +11,5 @@ Version 7 of the website built ontop of Astro.js
 **Inspiration**
 Windows 11 Like Website - https://www.vovacodes.ca/
 Windows 98 Inspired Website - https://janoskocs.com/
+Code Editor like - https://www.fmgono.dev/projects
+Minimal - https://www.thomas-sanlis.com/
