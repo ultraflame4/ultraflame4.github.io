@@ -105,7 +105,7 @@ onMounted(() => {
         is_typing.value=true
         typedText.value = typedText.value + nextChar
         
-    }, props.speed ?? 15)
+    }, props.speed ?? 1)
     return () => {
         clearInterval(id)
     }

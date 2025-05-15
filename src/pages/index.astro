@@ -3,8 +3,7 @@ import TypedTextEffect, { tte_goto } from "@components/effects/TypedTextEffect.v
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
-
-let rand_color = 1;
+import OpacityFadeIn from "@/components/effects/OpacityFadeIn.vue";
 
 const greeting = [
     10,
@@ -12,21 +11,24 @@ const greeting = [
     "Hello, I'm <span class='greeting-name'>Chester</span>",
     20,
     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#86EFAC'>Games</span>`,
-    20,
+    10,
     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FDE68A'>Websites</span>`,
-    20,
+    10,
     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#A78BFA'>Software</span>`,
-    20,
+    10,
     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 ];
 
-const greeting_sub = [400, "Welcome to my little corner of the internet."];
+const greeting_sub = [350, "Welcome to my li'l corner ヾ( ˃ᴗ˂ )◞ • *"];
 ---
 
 <Layout>
     <div class="absolute top-0 w-full banner-bg" style="height: 210vh; z-index: -1;">
         <div class="noise"></div>
-        <div class="top-1/2 sticky m-auto text-sm" style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%)">
+        <div
+            class="top-1/2 sticky m-auto text-sm"
+            style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%)"
+        >
             <LandingPageTerminal client:only />
         </div>
         <div class="bg-overlay absolute h-full w-full top-0 left-0"></div>
@@ -41,15 +43,18 @@ const greeting_sub = [400, "Welcome to my little corner of the internet."];
         }
     </style>
     <section>
-        <div class="w-full grid relative" style="height: 90vh;">
+        <div class="w-full grid relative" style="height: calc(100vh - var(--nav-total-h-units) );">
             <div class="flex items-center justify-center flex-col relative" id="greetings">
                 <style>
                     .greeting-name {
                         font-family: "Courier New", Courier, monospace;
                     }
                 </style>
-                <div class="sticky top-1/2 flex items-center justify-center flex-col" style="transform: translateY(-25%);">
-                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24" style="grid-row: 2;">
+                <div
+                    class="sticky top-1/2 flex items-center justify-center flex-col"
+                    style="transform: translateY(-25%); z-index: 1"
+                >
+                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
                         <TypedTextEffect texts={greeting} client:only />
                     </h1>
                     <p class="top-3/4 glow mb-8">
@@ -77,11 +82,13 @@ const greeting_sub = [400, "Welcome to my little corner of the internet."];
         </style>
     </section>
     <NavDock />
-    <div class="relative w-full h-0">
-        <div class="absolute bottom-0 w-full h-16 bg-linear-0 from-surf1 to-transparent"></div>
-    </div>
 
-    <section class="bg-surf1">
+    <OpacityFadeIn class="relative w-full h-0" client:only>
+        <div class="banner-trans h-dvh"></div>
+        <div class="banner-trans2 h-16 bg-linear-0 from-surf0 to-transparent"></div>
+    </OpacityFadeIn>
+
+    <section class="bg-surf0">
         <h1>About</h1>
         <div>Test</div>
         <div>Test</div>
@@ -146,10 +153,20 @@ const greeting_sub = [400, "Welcome to my little corner of the internet."];
 
     section > h1 {
         @apply font-fancy text-3xl;
-        margin: 6rem 0 3rem;
+        margin: var(--nav-total-h-units) 0 3rem;
     }
 
     section {
         @apply flex items-center justify-center flex-col;
+    }
+
+    .banner-trans2 {
+        @apply absolute bottom-0 w-full;
+        opacity: calc(var(--ratio) * 100);
+    }
+    .banner-trans {
+        @apply absolute bottom-0 w-full bg-surf0;
+        /* background-position-y: calc(var(--ratio) * 100%); */
+        opacity: calc(var(--ratio) * 2);
     }
 </style>

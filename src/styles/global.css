@@ -2,7 +2,14 @@
 @import "./rainbow.css";
 @import "@fontsource/silkscreen";
 
-@theme {
+:root {
+    --nav-height: 12;
+    --nav-offset: 2;
+    
+}
+
+@theme inline {
+
 
     --color-rosewater: #f5e0dc;
 
@@ -30,7 +37,11 @@
     --color-bright: var(--color-white);
     --color-dimmed: var(--color-crust);
 
-    --font-fancy: "Silkscreen"
+    --font-fancy: "Silkscreen";
+
+    --nav-height-units: calc(var(--nav-height) * var(--spacing));
+    --nav-offset-units: calc(var(--nav-offset) * var(--spacing));
+    --nav-total-h-units: calc(var(--nav-height-units) + calc(var(--nav-offset-units) * 2) );
 
 }
 
