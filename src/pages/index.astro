@@ -19,7 +19,7 @@ const greeting = [
     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 ];
 
-const greeting_sub = [350, "Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"];
+const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  "];
 ---
 
 <Layout>
@@ -57,7 +57,7 @@ const greeting_sub = [350, "Welcome to my li'l corner of the internet. ヾ( ˃�
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
                         <TypedTextEffect texts={greeting} client:only />
                     </h1>
-                    <p class="top-3/4 glow mb-8">
+                    <p class="top-3/4 mb-8 bg-surf0">
                         <TypedTextEffect texts={greeting_sub} client:only hideCursor />
                     </p>
                 </div>
@@ -167,6 +167,6 @@ const greeting_sub = [350, "Welcome to my li'l corner of the internet. ヾ( ˃�
     .banner-trans {
         @apply absolute bottom-0 w-full bg-surf0;
         /* background-position-y: calc(var(--ratio) * 100%); */
-        opacity: calc(calc(var(--ratio) * 1.5) + 0.35);
+        opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
     }
 </style>
