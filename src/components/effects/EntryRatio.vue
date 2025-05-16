@@ -1,5 +1,6 @@
+
 <template>
-    <div  ref="target" :style="style">
+    <div ref="target" :style="style">
         <slot></slot>
     </div>
 

@@ -3,7 +3,7 @@ import TypedTextEffect, { tte_goto } from "@components/effects/TypedTextEffect.v
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
-import OpacityFadeIn from "@/components/effects/OpacityFadeIn.vue";
+import { WindowEntryRatio } from "@/components/effects";
 
 const greeting = [
     10,
@@ -19,19 +19,19 @@ const greeting = [
     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 ];
 
-const greeting_sub = [350, "Welcome to my li'l corner ヾ( ˃ᴗ˂ )◞ • *"];
+const greeting_sub = [350, "Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"];
 ---
 
 <Layout>
     <div class="absolute top-0 w-full banner-bg" style="height: 210vh; z-index: -1;">
         <div class="noise"></div>
         <div
-            class="top-1/2 sticky m-auto text-sm"
-            style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%)"
+            class="top-1/2 sticky m-auto text-sm glow"
+            style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%); "
         >
-            <LandingPageTerminal client:only />
+            <LandingPageTerminal client:only/>
         </div>
-        <div class="bg-overlay absolute h-full w-full top-0 left-0"></div>
+        <div class=" absolute h-full w-full top-0 left-0"></div>
     </div>
 
     <style>
@@ -83,10 +83,10 @@ const greeting_sub = [350, "Welcome to my li'l corner ヾ( ˃ᴗ˂ )◞ • *"];
     </section>
     <NavDock />
 
-    <OpacityFadeIn class="relative w-full h-0" client:only>
+    <WindowEntryRatio class="relative w-full h-0" client:only>
         <div class="banner-trans h-dvh"></div>
         <div class="banner-trans2 h-16 bg-linear-0 from-surf0 to-transparent"></div>
-    </OpacityFadeIn>
+    </WindowEntryRatio>
 
     <section class="bg-surf0">
         <h1>About</h1>
@@ -167,6 +167,6 @@ const greeting_sub = [350, "Welcome to my li'l corner ヾ( ˃ᴗ˂ )◞ • *"];
     .banner-trans {
         @apply absolute bottom-0 w-full bg-surf0;
         /* background-position-y: calc(var(--ratio) * 100%); */
-        opacity: calc(var(--ratio) * 2);
+        opacity: calc(calc(var(--ratio) * 1.5) + 0.35);
     }
 </style>
