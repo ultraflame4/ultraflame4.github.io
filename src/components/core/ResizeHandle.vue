@@ -21,26 +21,26 @@ const emits = defineEmits<{
     reset: []
 }>()
 
-onMounted(() => {
-    useEventListener(document, 'mousemove', (e) => {
-        if (!active.value) return
-        emits("resize", e.movementX, e.movementY)
 
-    })
-    useEventListener(document, 'mouseup', (e) => {
-        active.value = false
-    })
+useEventListener('mousemove', (e) => {
+    if (!active.value) return
+    emits("resize", e.movementX, e.movementY)
 
-    useEventListener(document, 'blur', (e) => {
-        active.value = false
-    })
-
-    watchEffect(() => {
-        if (!active.value) {
-            emits("reset")
-        }
-    })
 })
+useEventListener('mouseup', (e) => {
+    active.value = false
+})
+
+useEventListener('blur', (e) => {
+    active.value = false
+})
+
+watchEffect(() => {
+    if (!active.value) {
+        emits("reset")
+    }
+})
+
 
 
 

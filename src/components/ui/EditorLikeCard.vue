@@ -7,16 +7,16 @@
             class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary">
             <Icon icon="material-symbols-light:close" class="text-inherit" />
         </button>
-        <div class="col-span-3 flex">
-            <div v-if="props.sidebar" class="min-w-32 transition-none flex flex-col  bg-background" ref="sidebar"
-                :style="sidebar_style">
+        <div class="col-span-3 flex min-h-full">
+            <div v-if="props.sidebar" class="min-w-32 transition-none flex flex-col bg-background mobile-collapse"
+                ref="sidebar" :style="sidebar_style">
 
                 <slot name="sidebar"></slot>
 
             </div>
-            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[1px] h-full" @resize="(x, y) => sidebar_size += x"
-                @reset="sidebar_clamp_size()" />
-            <div class="content p-2 bg-background h-full grow">
+            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[1px] h-full mobile-collapse"
+                @resize="(x, y) => sidebar_size += x" @reset="sidebar_clamp_size()" />
+            <div class="content p-2 bg-background h-full grow" :data-disable-scroll="!!props.disable_editor_scroll">
                 <slot></slot>
             </div>
         </div>
@@ -29,7 +29,7 @@ import { computed, ref, shallowRef, useTemplateRef, type CSSProperties } from 'v
 import { Icon } from "@iconify/vue";
 import ResizeHandle from '../core/ResizeHandle.vue';
 
-const props = defineProps<{ title: string, sidebar?: boolean }>()
+const props = defineProps<{ title: string, sidebar?: boolean, disable_editor_scroll?: boolean }>()
 const target = useTemplateRef('target')
 const mouse = useMouseInElement(target)
 
@@ -67,5 +67,13 @@ const css_vars = computed<CSSProperties>(() => ({
 
 ul>li[data-active="true"] {
     background: var(--color-highlight);
+}
+
+[data-disable-scroll="true"] {
+    @apply overflow-hidden;
+}
+
+[data-disable-scroll="false"] {
+    @apply overflow-auto;
 }
 </style>

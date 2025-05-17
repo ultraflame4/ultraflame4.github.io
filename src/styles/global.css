@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./rainbow.css";
+@import "./markdown.scss";
 @import "@fontsource/silkscreen";
 
 :root {
@@ -20,7 +21,7 @@
     --background: var(--color-neutral-950);
     --background-highlight: var(--color-neutral-800);
     --background-hover: var(--color-neutral-900);
-    
+
     --active: var(--color-neutral-800);
 
     /* Color for panels / card */
@@ -113,6 +114,15 @@
 
 
 @layer utilities {
+
+    /* 
+     * "Collapse" this element in mobile / vertical mode.
+     */
+    @media screen and (max-width: 700px) {
+        *.mobile-collapse[class] {
+            display: none ;
+        }
+    }
 
     /*
     * Total height of the nav header. Useful for applying to spacers
