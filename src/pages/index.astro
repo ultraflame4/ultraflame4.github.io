@@ -90,11 +90,10 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
     </WindowEntryRatio>
 
     <section class="bg-background h-dvh p-4 pt-(--header-spacing)">
-        <EdCard title="About" sidebar={{
-            entries: {
-                "background": "#background"
-            }
-        }} client:visible>
+        <EdCard title="About" sidebar client:visible>
+            <ul slot="sidebar" class="list-none">
+                test
+            </ul>
             <div>Test</div>
             <div>Test</div>
             <div>Test</div>

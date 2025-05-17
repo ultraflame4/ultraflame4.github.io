@@ -8,10 +8,14 @@
             <Icon icon="material-symbols-light:close" class="text-inherit" />
         </button>
         <div class="col-span-3 flex">
-            <div v-if="props.sidebar" class="min-w-32 bg-background transition-none" ref="sidebar" :style="sidebar_style">
+            <div v-if="props.sidebar" class="min-w-32 transition-none flex flex-col  bg-background" ref="sidebar"
+                :style="sidebar_style">
+
+                <slot name="sidebar"></slot>
 
             </div>
-            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[1px] h-full" @resize="(x,y)=> sidebar_size += x" @reset="sidebar_clamp_size()"/>
+            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[1px] h-full" @resize="(x, y) => sidebar_size += x"
+                @reset="sidebar_clamp_size()" />
             <div class="content p-2 bg-background h-full grow">
                 <slot></slot>
             </div>
@@ -25,16 +29,7 @@ import { computed, ref, shallowRef, useTemplateRef, type CSSProperties } from 'v
 import { Icon } from "@iconify/vue";
 import ResizeHandle from '../core/ResizeHandle.vue';
 
-export interface SidebarOptions{
-    /**
-     * Entries in the sidebar. When click will scroll to item in sidebar into view.
-     * `name` - Name of the item in the sidebar
-     * `value` - Anchor / id of element
-     */
-    entries: {[name: string]: string}
-}
-
-const props = defineProps<{ title: string, sidebar?: SidebarOptions}>()
+const props = defineProps<{ title: string, sidebar?: boolean }>()
 const target = useTemplateRef('target')
 const mouse = useMouseInElement(target)
 
@@ -66,6 +61,11 @@ const css_vars = computed<CSSProperties>(() => ({
     gap: 1px;
     padding: 1px;
 
-    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) 50%);
+    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) 20%);
+}
+
+
+ul>li[data-active="true"] {
+    background: var(--color-highlight);
 }
 </style>

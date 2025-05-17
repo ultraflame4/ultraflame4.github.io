@@ -18,6 +18,10 @@
 
     /* Background color */
     --background: var(--color-neutral-950);
+    --background-highlight: var(--color-neutral-800);
+    --background-hover: var(--color-neutral-900);
+    
+    --active: var(--color-neutral-800);
 
     /* Color for panels / card */
     --panel: var(--color-neutral-900);
@@ -36,7 +40,7 @@
     --accent: var(--color-rosewater);
     --bright: var(--color-white);
     --danger: var(--color-red-500);
-    --border-color: var(--color-gray-800);
+    --border-color: var(--color-neutral-800);
 }
 
 @theme inline {
@@ -52,6 +56,8 @@
 
     /* Background color */
     --color-background: var(--background);
+    --color-highlight: var(--background-highlight);
+    --color-hover: var(--background-hover);
     --color-panel: var(--panel);
     --color-fg: var(--fore);
     --color-sub: var(--sub);
