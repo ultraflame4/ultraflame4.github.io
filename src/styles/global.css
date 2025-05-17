@@ -11,8 +11,8 @@
     --nav-offset-units: calc(var(--nav-offset) * var(--spacing));
     --nav-total-h-units: calc(var(--nav-height-units) + calc(var(--nav-offset-units) * 2));
 
-
-
+    /* Alias for --nav-total-h-units*/
+    --header-spacing: var(--nav-total-h-units);
 
     /* ----- Theme Colors ----- */
 
@@ -35,7 +35,7 @@
     --primary: var(--color-rosewater);
     --accent: var(--color-rosewater);
     --bright: var(--color-white);
-
+    --danger: var(--color-red-500)
 }
 
 @theme inline {
@@ -46,7 +46,7 @@
     --font-fancy: "Silkscreen";
 
 
-    
+
     /* ----- Theme Colors ----- */
 
     /* Background color */
@@ -59,11 +59,16 @@
     --color-primary: var(--primary);
     --color-accent: var(--accent);
     --color-bright: var(--bright);
+    --color-danger: var(--danger);
 }
 
 
 
 @layer base {
+    * {
+        transition: all 200ms ease
+    }
+
     html {
         @apply text-fg;
     }
@@ -100,6 +105,14 @@
 
 
 @layer utilities {
+
+    /*
+    * Total height of the nav header. Useful for applying to spacers
+    */
+    .nav-h {
+        height: var(--nav-total-h-units);
+    }
+
     .font-fancy {
         letter-spacing: -1.5px;
     }

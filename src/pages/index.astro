@@ -4,6 +4,7 @@ import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import { WindowEntryRatio } from "@/components/effects";
+import { EdCard } from "@/components/ui";
 
 const greeting = [
     10,
@@ -29,9 +30,9 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
             class="top-1/2 sticky m-auto text-sm glow"
             style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%); "
         >
-            <LandingPageTerminal client:only/>
+            <LandingPageTerminal client:only />
         </div>
-        <div class=" absolute h-full w-full top-0 left-0"></div>
+        <div class="absolute h-full w-full top-0 left-0"></div>
     </div>
 
     <style>
@@ -57,7 +58,7 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
                         <TypedTextEffect texts={greeting} client:only />
                     </h1>
-                    <p class="top-3/4 mb-8 bg-surf0">
+                    <p class="top-3/4 mb-8 bg-background">
                         <TypedTextEffect texts={greeting_sub} client:only hideCursor />
                     </p>
                 </div>
@@ -83,69 +84,21 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
     </section>
     <NavDock />
 
-    <WindowEntryRatio class="relative w-full h-0" client:only>
+    <WindowEntryRatio class="relative w-full h-0" client:load>
         <div class="banner-trans h-dvh"></div>
-        <div class="banner-trans2 h-16 bg-linear-0 from-surf0 to-transparent"></div>
+        <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
     </WindowEntryRatio>
 
-    <section class="bg-surf0">
-        <h1>About</h1>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
+    <section class="bg-background h-dvh p-4 pt-(--header-spacing)">
+        <EdCard title="About" client:visible>
+            <div>Test</div>
+            <div>Test</div>
+            <div>Test</div>
+            <div>Test</div>
+            <div>Test</div>
+            <div>Test</div>
+    
+        </EdCard>
     </section>
 </Layout>
 <style>
@@ -165,7 +118,7 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
         opacity: calc(var(--ratio) * 100);
     }
     .banner-trans {
-        @apply absolute bottom-0 w-full bg-surf0;
+        @apply absolute bottom-0 w-full bg-background;
         /* background-position-y: calc(var(--ratio) * 100%); */
         opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
     }
