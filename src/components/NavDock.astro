@@ -2,7 +2,7 @@
 
 const { class: className, ...rest } = Astro.props;
 const links = {
-    about: "/about",
+    about: "/#about",
     skills: "/skills",
     gallery: "/gallery",
 };
@@ -44,10 +44,10 @@ const links = {
     .nav-brand[data-active="true"] > img,
     nav li[data-active="true"] {
         filter: drop-shadow(0px 0px 2px var(--color-rainbow));
-        @apply text-crust;
+        @apply text-dimmed;
     }
     .navlink-key{
-        @apply font-mono font-extrabold rounded-sm w-4.5 h-4.5 text-sm flex items-center justify-center box-content bg-surf1 border-surf2;
+        @apply font-mono font-extrabold rounded-sm w-4.5 h-4.5 text-sm flex items-center justify-center box-content bg-background border-panel;
         border: 0.1rem solid black;
     
     }
