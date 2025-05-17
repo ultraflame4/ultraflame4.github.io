@@ -50,7 +50,6 @@ onMounted(() => {
 
     // Account for initial page load! (and maybe scroll ourselves into view)
     let target = self.value?.querySelector(location.hash)
-    console.log("Scrolling to:", target)
     if (target) {
         if (props.root) {
             document.querySelector(props.root)?.scrollIntoView()
