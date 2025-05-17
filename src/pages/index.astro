@@ -89,19 +89,16 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
         <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
     </WindowEntryRatio>
 
-    <section class="bg-background h-dvh p-4 pt-(--header-spacing)">
-        <EdCard title="About" sidebar client:visible>
-            <ul slot="sidebar" class="list-none">
-                test
-            </ul>
-            <div>Test</div>
-            <div>Test</div>
-            <div>Test</div>
-            <div>Test</div>
-            <div>Test</div>
-            <div>Test</div>
-    
-        </EdCard>
+    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: min(100vw, 100dvh);">
+        <div class="max-w-7xl w-full h-full">
+            <EdCard title="About" sidebar client:visible>
+                <ul slot="sidebar" class="list-none">test</ul>
+                <div>
+                    <h1>Background</h1>
+                    
+                </div>
+            </EdCard>
+        </div>
     </section>
 </Layout>
 <style>
