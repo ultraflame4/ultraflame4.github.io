@@ -3,23 +3,53 @@
         <div class="titlebar flex justify-center items-center col-span-2 bg-background">
             <h1 class="font-bold font-fancy">{{ title }}</h1>
         </div>
-        <button class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary">
-            <Icon icon="material-symbols-light:close" class="text-inherit"/>
+        <button
+            class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary">
+            <Icon icon="material-symbols-light:close" class="text-inherit" />
         </button>
-        <div class="content p-2 col-span-3 bg-background">
-            <slot></slot>
+        <div class="col-span-3 flex">
+            <div v-if="props.sidebar" class="min-w-32 bg-background transition-none" ref="sidebar" :style="sidebar_style">
+
+            </div>
+            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[1px] h-full" @resize="(x,y)=> sidebar_size += x" @reset="sidebar_clamp_size()"/>
+            <div class="content p-2 bg-background h-full grow">
+                <slot></slot>
+            </div>
         </div>
 
     </div>
 </template>
 <script lang="ts" setup>
 import { useMouseInElement } from '@vueuse/core';
-import { computed, useTemplateRef, type CSSProperties } from 'vue';
+import { computed, ref, shallowRef, useTemplateRef, type CSSProperties } from 'vue';
 import { Icon } from "@iconify/vue";
+import ResizeHandle from '../core/ResizeHandle.vue';
 
-const props = defineProps<{ title: string }>()
+export interface SidebarOptions{
+    /**
+     * Entries in the sidebar. When click will scroll to item in sidebar into view.
+     * `name` - Name of the item in the sidebar
+     * `value` - Anchor / id of element
+     */
+    entries: {[name: string]: string}
+}
+
+const props = defineProps<{ title: string, sidebar?: SidebarOptions}>()
 const target = useTemplateRef('target')
 const mouse = useMouseInElement(target)
+
+const sidebar = useTemplateRef("sidebar")
+const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClientRect().width)
+const sidebar_size = ref<number>(64)
+const sidebar_style = computed<CSSProperties>(() => ({
+    width: `min(max(${sidebar_size.value}px, 64px), 95vw)`
+}))
+
+function sidebar_clamp_size() {
+    sidebar_size.value = Math.min(Math.max(sidebar_size.value, 64), sidebar_size.value ?? 0)
+}
+
+
 
 const css_vars = computed<CSSProperties>(() => ({
     "--x-percent": `${Math.round(mouse.elementX.value / mouse.elementWidth.value * 100)}%`,
@@ -36,7 +66,6 @@ const css_vars = computed<CSSProperties>(() => ({
     gap: 1px;
     padding: 1px;
 
-    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent) , var(--color-crust) 90%);
+    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) 50%);
 }
-
 </style>

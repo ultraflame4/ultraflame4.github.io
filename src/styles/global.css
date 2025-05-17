@@ -35,7 +35,8 @@
     --primary: var(--color-rosewater);
     --accent: var(--color-rosewater);
     --bright: var(--color-white);
-    --danger: var(--color-red-500)
+    --danger: var(--color-red-500);
+    --border-color: var(--color-gray-800);
 }
 
 @theme inline {
@@ -60,6 +61,7 @@
     --color-accent: var(--accent);
     --color-bright: var(--bright);
     --color-danger: var(--danger);
+    --color-border: var(--border-color);
 }
 
 
