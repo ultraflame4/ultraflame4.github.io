@@ -44,7 +44,7 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
             class="top-1/2 sticky m-auto text-sm glow"
             style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%); "
         >
-            <LandingPageTerminal client:only />
+            <LandingPageTerminal client:only="vue" />
         </div>
         <div class="absolute h-full w-full top-0 left-0"></div>
     </div>
@@ -70,10 +70,10 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
-                        <TypedTextEffect texts={greeting} client:only />
+                        <TypedTextEffect texts={greeting} client:only="vue" />
                     </h1>
                     <p class="top-3/4 mb-8 bg-background">
-                        <TypedTextEffect texts={greeting_sub} client:only hideCursor />
+                        <TypedTextEffect texts={greeting_sub} client:only="vue" hideCursor />
                     </p>
                 </div>
             </div>
