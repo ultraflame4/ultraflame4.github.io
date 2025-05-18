@@ -8,13 +8,13 @@
             <Icon icon="material-symbols-light:close" class="text-inherit" />
         </button>
         <div class="col-span-3 flex min-h-full">
-            <div v-if="props.sidebar" class="min-w-32 transition-none flex flex-col bg-background mobile-collapse"
+            <div v-if="props.sidebar" class="min-w-[150px] transition-none flex flex-col bg-background mobile-collapse"
                 ref="sidebar" :style="sidebar_style">
 
                 <slot name="sidebar"></slot>
 
             </div>
-            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[1px] h-full mobile-collapse"
+            <ResizeHandle v-if="props.sidebar" axis="x" class="w-[2px] h-full mobile-collapse"
                 @resize="(x, y) => sidebar_size += x" @reset="sidebar_clamp_size()" />
             <div class="content p-2 bg-background h-full grow" :data-disable-scroll="!!props.disable_editor_scroll">
                 <slot></slot>
@@ -35,13 +35,14 @@ const mouse = useMouseInElement(target)
 
 const sidebar = useTemplateRef("sidebar")
 const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClientRect().width)
-const sidebar_size = ref<number>(64)
+
+const sidebar_size = ref<number>(150)
 const sidebar_style = computed<CSSProperties>(() => ({
-    width: `min(max(${sidebar_size.value}px, 64px), 95vw)`
+    width: `min(max(${sidebar_size.value}px, 150px), 50vw)`
 }))
 
 function sidebar_clamp_size() {
-    sidebar_size.value = Math.min(Math.max(sidebar_size.value, 64), sidebar_size.value ?? 0)
+    sidebar_size.value = Math.min(Math.max(sidebar_size.value, 150), sidebar_size.value ?? 0)
 }
 
 
@@ -58,7 +59,7 @@ const css_vars = computed<CSSProperties>(() => ({
     display: grid;
     grid-template-columns: calc(var(--spacing) * 9) auto calc(var(--spacing) * 9);
     grid-template-rows: calc(var(--spacing) * 9) auto;
-    gap: 1px;
+    gap: 2px;
     padding: 1px;
 
     background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) 20%);
