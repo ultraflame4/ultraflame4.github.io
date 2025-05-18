@@ -1,14 +1,19 @@
 <template>
     <div class="ctn w-full h-full" ref="target" :style="css_vars">
-        <div class="titlebar flex justify-center items-center col-span-2 bg-background">
-            <h1 class="font-bold font-fancy">{{ title }}</h1>
+
+        <div class="titlebar col-span-4 bg-background grid grid-cols-subgrid">
+            <!-- filler -->
+            <div class="col-span-2"></div>
+            <!-- title -->
+            <h1 class="font-bold font-fancy flex justify-center items-center">{{ title }}</h1>
         </div>
         <button
             class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary">
             <Icon icon="material-symbols-light:close" class="text-inherit" />
         </button>
-        <div class="col-span-3 flex min-h-full">
-            <div v-if="props.sidebar" class="min-w-[150px] transition-none flex flex-col bg-background mobile-collapse"
+        <div class="col-span-full flex min-h-full">
+            <slot></slot>
+            <!-- <div v-if="props.sidebar" class="min-w-[150px] transition-none flex flex-col bg-background mobile-collapse"
                 ref="sidebar" :style="sidebar_style">
 
                 <slot name="sidebar"></slot>
@@ -18,7 +23,7 @@
                 @resize="(x, y) => sidebar_size += x" @reset="sidebar_clamp_size()" />
             <div class="content p-2 bg-background h-full grow" :data-disable-scroll="!!props.disable_editor_scroll">
                 <slot></slot>
-            </div>
+            </div> -->
         </div>
 
     </div>
@@ -33,17 +38,17 @@ const props = defineProps<{ title: string, sidebar?: boolean, disable_editor_scr
 const target = useTemplateRef('target')
 const mouse = useMouseInElement(target)
 
-const sidebar = useTemplateRef("sidebar")
-const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClientRect().width)
+// const sidebar = useTemplateRef("sidebar")
+// const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClientRect().width)
 
-const sidebar_size = ref<number>(150)
-const sidebar_style = computed<CSSProperties>(() => ({
-    width: `min(max(${sidebar_size.value}px, 150px), 50vw)`
-}))
+// const sidebar_size = ref<number>(150)
+// const sidebar_style = computed<CSSProperties>(() => ({
+//     width: `min(max(${sidebar_size.value}px, 150px), 50vw)`
+// }))
 
-function sidebar_clamp_size() {
-    sidebar_size.value = Math.min(Math.max(sidebar_size.value, 150), sidebar_size.value ?? 0)
-}
+// function sidebar_clamp_size() {
+//     sidebar_size.value = Math.min(Math.max(sidebar_size.value, 150), sidebar_size.value ?? 0)
+// }
 
 
 
@@ -57,7 +62,8 @@ const css_vars = computed<CSSProperties>(() => ({
 .ctn {
     position: relative;
     display: grid;
-    grid-template-columns: calc(var(--spacing) * 9) auto calc(var(--spacing) * 9);
+    --side-cols: repeat(2, calc(var(--spacing) * 9));
+    grid-template-columns: var(--side-cols) auto var(--side-cols);
     grid-template-rows: calc(var(--spacing) * 9) auto;
     gap: 2px;
     padding: 1px;

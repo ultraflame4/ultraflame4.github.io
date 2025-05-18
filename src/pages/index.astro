@@ -4,7 +4,7 @@ import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import { WindowEntryRatio } from "@/components/effects";
-import { EdCard } from "@/components/ui";
+import { WindowCard, WindowCardBody } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import { HiddenAnchorCarousell, RouteAnchor } from "@/components/core";
@@ -106,7 +106,7 @@ const url = Astro.url;
 
     <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: min(100vw, 100dvh);" id="about-section">
         <div class="max-w-7xl w-full h-full">
-            <EdCard title="About" sidebar client:visible>
+            <WindowCard title="About" sidebar client:visible>
                 <ul slot="sidebar" class="list-none" id="about-sidebar">
                     {
                         about_story_rendered.map((x) => (
@@ -123,21 +123,23 @@ const url = Astro.url;
                     }
                 </ul>
 
-                <HiddenAnchorCarousell
-                    class="h-full overflow-hidden"
-                    anchor_container="#about-sidebar"
-                    root="#about-section"
-                    client:load
-                >
-                    {
-                        about_story_rendered.map((x) => (
-                            <div class="h-full markdown px-4 py-2" id={`about-${x.title}`}>
-                                <x.content />
-                            </div>
-                        ))
-                    }
-                </HiddenAnchorCarousell>
-            </EdCard>
+                <WindowCardBody>
+                    <HiddenAnchorCarousell
+                        class="h-full overflow-hidden"
+                        anchor_container="#about-sidebar"
+                        root="#about-section"
+                        client:load
+                    >
+                        {
+                            about_story_rendered.map((x) => (
+                                <div class="h-full markdown px-4 py-2" id={`about-${x.title}`}>
+                                    <x.content />
+                                </div>
+                            ))
+                        }
+                    </HiddenAnchorCarousell>
+                </WindowCardBody>
+            </WindowCard>
         </div>
     </section>
 </Layout>
