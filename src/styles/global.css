@@ -2,6 +2,7 @@
 @import "./rainbow.css";
 @import "./markdown.scss";
 @import "@fontsource/silkscreen";
+@plugin '@tailwindcss/typography';
 
 :root {
     --nav-height: 12;

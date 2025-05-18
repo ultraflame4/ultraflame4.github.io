@@ -1,106 +1,108 @@
+
 /**
 * This file contains the styles for markdown
 */
 
 .markdown {
-    h1,
-    h2,
-    h3,
-    h4 {
-        @apply text-4xl font-bold mb-3 mt-4;
-    }
-    h2 {
-        @apply text-3xl;
-    }
-    h3 {
-        @apply text-2xl;
-    }
-    h4 {
-        @apply text-xl;
-    }
+    @apply prose;
+    // h1,
+    // h2,
+    // h3,
+    // h4 {
+    //     @apply text-4xl font-bold mb-3 mt-4;
+    // }
+    // h2 {
+    //     @apply text-3xl;
+    // }
+    // h3 {
+    //     @apply text-2xl;
+    // }
+    // h4 {
+    //     @apply text-xl;
+    // }
 
-    * {
-        vertical-align: center;
-        box-sizing: border-box;
-    }
+    // * {
+    //     vertical-align: center;
+    //     box-sizing: border-box;
+    // }
 
-    p {
-        @apply my-2;
-        line-height: 1.6em;
-        letter-spacing: 0.01em;
-    }
-    a {
-        @apply text-mdlink underline;
-    }
-    ul,
-    ol {
-        @apply mt-2 mb-3;
-        padding-left: 1rem;
-    }
+    // p {
+    //     @apply my-2;
+    //     line-height: 1.6em;
+    //     letter-spacing: 0.01em;
+    // }
+    // a {
+    //     @apply text-mdlink underline;
+    // }
+    // ul,
+    // ol {
+    //     @apply mt-2 mb-3;
+    //     padding-left: 1rem;
+    // }
 
-    ul {
-        list-style-type: disc;
-        ul {
-            list-style-type: circle;
-            ul {
-                list-style-type: square;
-            }
-        }
-    }
+    // ul {
+    //     list-style-type: disc;
+    //     ul {
+    //         list-style-type: circle;
+    //         ul {
+    //             list-style-type: square;
+    //         }
+    //     }
+    // }
 
-    ol {
-        list-style-type: decimal;
-        ol {
-            list-style-type: lower-alpha;
-            ol {
-                list-style-type: lower-roman;
-            }
-        }
+    // ol {
+    //     list-style-type: decimal;
+    //     ol {
+    //         list-style-type: lower-alpha;
+    //         ol {
+    //             list-style-type: lower-roman;
+    //         }
+    //     }
 
-        ul {
-            list-style-type: circle;
-        }
-    }
+    //     ul {
+    //         list-style-type: circle;
+    //     }
+    // }
 
-    pre,
-    code {
-        @apply rounded-md !bg-mdcode;
-        border-radius: 0.2rem;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        overflow: hidden;
-    }
+    // pre,
+    // code {
+    //     @apply rounded-md !bg-mdcode;
+    //     border-radius: 0.2rem;
+    //     border: 1px solid rgba(255, 255, 255, 0.05);
+    //     overflow: hidden;
+    // }
 
-    code {
-        @apply px-1 py-[0.15em] relative  text-center inline;
-        font-size: 0.85em;
-    }
+    // code {
+    //     @apply px-1 py-[0.15em] relative  text-center inline;
+    //     font-size: 0.85em;
+    // }
 
-    pre {
-        @apply p-2 my-2;
-        & > code {
-            @apply bg-inherit p-0;
-            height: fit-content;
-            border: none;
-            display: inline;
-        }
-    }
+    // pre {
+    //     @apply p-2 my-2;
+    //     & > code {
+    //         @apply bg-inherit p-0;
+    //         height: fit-content;
+    //         border: none;
+    //         display: inline;
+    //     }
+    // }
 
-    table {
-        @apply w-fit border-collapse my-4;
+    // table {
+    //     @apply w-fit border-collapse my-4;
 
-        th,
-        td {
-            @apply px-2 py-1;
-            border: 1px solid var(--color-border);
-        }
+    //     th,
+    //     td {
+    //         @apply px-2 py-1;
+    //         border: 1px solid var(--color-border);
+    //     }
 
-        th {
-            font-weight: bold;
-            vertical-align: bottom;
-        }
+    //     th {
+    //         font-weight: bold;
+    //         vertical-align: bottom;
+    //     }
 
-        tr + tr {
-            border-top: 1px solid #ccc;
-        }
-    }
+    //     tr + tr {
+    //         border-top: 1px solid #ccc;
+    //     }
+    // }
 }
