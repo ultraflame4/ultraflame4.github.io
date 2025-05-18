@@ -37,7 +37,7 @@ function hijack_anchors() {
         console.log("Hijacking click for anchors with hash", hash, anchors)
         anchors.forEach((_x) => {
             let anchor = _x as HTMLAnchorElement;
-
+            anchor.dataset["hijacked"]="true"
             anchor.addEventListener("click", (e) => {
                 current_element.value = ele;
 
@@ -46,6 +46,7 @@ function hijack_anchors() {
 
                 history.replaceState(null, '', hash)
             });
+            
             // }
             // }
         });

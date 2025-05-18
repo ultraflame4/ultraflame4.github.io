@@ -1,31 +1,10 @@
 <template>
-    <a :href="to" :data-active="active">
+    <a :href="to" :data-active="active" @click.prevent="on_click">
         <slot></slot>
     </a>
 </template>
-<script lang="ts">
-var initiated = false
-export function init_route_anchor() {
-    if (initiated) return
-    console.log("Init Route Anchor!")
-    initiated = true
 
-    let prev_path: string | null = null
-    const event = new CustomEvent("pathchanged");
-
-    setInterval(() => {
-        let current = location.pathname + location.hash
-        if (current != prev_path) {
-            console.log("Path changed detected:", prev_path, "->", current)
-            prev_path = current
-            document.dispatchEvent(event)
-        }
-    }, 200)
-
-}
-</script>
 <script lang="ts" setup>
-import { useEventListener } from '@vueuse/core';
 import { type AnchorHTMLAttributes, onMounted, ref } from 'vue';
 
 export interface RouteAnchorProps extends /* @vue-ignore */ AnchorHTMLAttributes {
@@ -36,7 +15,6 @@ export interface RouteAnchorProps extends /* @vue-ignore */ AnchorHTMLAttributes
 const active = ref(false)
 
 onMounted(() => {
-    init_route_anchor();
     const listener = () => {
         let x = props.to;
         if (x.startsWith("#")) {
@@ -54,6 +32,16 @@ onMounted(() => {
 
 const props = defineProps<RouteAnchorProps>()
 
+
+function on_click(e: MouseEvent) {
+    if ((e.currentTarget as HTMLAnchorElement).dataset["hijacked"]) {
+        return
+    }
+    window.history.replaceState(null, '', props.to)
+    if (location.hash.length > 0) {
+        document.querySelector(location.hash)?.scrollIntoView({ behavior: "smooth" })
+    }
+}
 // useEventListener("locat")
 
 </script>

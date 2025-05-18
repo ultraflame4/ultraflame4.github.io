@@ -13,8 +13,26 @@ import { ClientRouter } from "astro:transitions";
         <meta name="generator" content={Astro.generator} />
         <title>ᓚ₍ ^. .^₎</title>
         <ClientRouter />
+        <script>
+            import { init_pathchange_detection } from "@/components/core";
+
+            init_pathchange_detection();
+            // window.scrollTo({ top: 0 });
+            // document.addEventListener("pathchanged", () => {
+            //     // ----- Hash scrolling ------
+            //     // Skip if no hash
+            //     if (location.hash.length < 1) return;
+            //     // If window has been scrolled, DO NOT continue with default scroll behaviour
+            //     if (window.scrollY > 0) return;
+            //     const target = document.querySelector(location.hash);
+            //     if (!target) return;
+            //     target.scrollIntoView({
+            //         behavior: "smooth",
+            //     });
+            // });
+        </script>
     </head>
-    <body>
+    <body id="top">
         <slot />
     </body>
 </html>

@@ -1,6 +1,29 @@
 import AnchorCarousell_ from "./HiddenAnchorCarousell.vue";
 import RouteAnchor_ from "./RouteAnchor.vue";
 
+var initiated = false
+export function init_pathchange_detection() {
+    if (initiated) return
+    console.log("Init Route Anchor!")
+    initiated = true
+
+    let prev_path: string | null = null
+    const event = new CustomEvent("pathchanged");
+
+    setInterval(() => {
+        let current = location.pathname + location.hash
+        if (current != prev_path) {
+            console.log("Path changed detected:", prev_path, "->", current)
+            prev_path = current
+            
+
+            document.dispatchEvent(event)
+        }
+    }, 200)
+
+}
+
+
 /**
  * A carousell that works based on anchors and hidden overflows.
  * To bring an element into view, simply have its id in the url hash.
@@ -19,7 +42,8 @@ export const HiddenAnchorCarousell = AnchorCarousell_;
 
 /**
  * Similar to router link, this is just a wrapper around the <a/> tag.
- * You can use this with `client:load` or `client:visible`. `client:only` is not needed
+ * You can use this with `client:load` or `client:visible`. `client:only` is not needed. \
+ * Also provides smooth scrolling to locaiton hashes
  * **Params**:
  * 1. `to` - Url for the anchor's href.
  */

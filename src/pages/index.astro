@@ -1,14 +1,13 @@
 ---
-import TypedTextEffect, { tte_goto } from "@components/effects/TypedTextEffect.vue";
+import TypedTextEffect from "@components/effects/TypedTextEffect.vue";
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import { WindowEntryRatio } from "@/components/effects";
-import { WindowBook, WindowBookPage, WindowCard, WindowCardBody } from "@/components/ui";
+import { WindowBook, WindowBookPage } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-import { HiddenAnchorCarousell, RouteAnchor } from "@/components/core";
-import { array, undefined } from "astro:schema";
+
 
 const about_story = await getCollection("about_story");
 
@@ -120,6 +119,7 @@ const url = Astro.url;
             >
                 {
                     about_story_rendered.map((x, idx, arr) => {
+                        
                         let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
                         let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
        

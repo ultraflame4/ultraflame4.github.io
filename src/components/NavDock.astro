@@ -1,8 +1,7 @@
 ---
-
 const { class: className, ...rest } = Astro.props;
 const links = {
-    about: "/#about",
+    about: "/#about-section",
     skills: "/skills",
     gallery: "/gallery",
 };
@@ -13,7 +12,7 @@ const links = {
         <nav class="h-full">
             <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
                 <li class="h-full">
-                    <a href="/" class="nav-brand" data-active={Astro.url.pathname == "/"}>
+                    <a href="/#top" class="nav-brand" data-active={Astro.url.pathname == "/"}>
                         <img src="/logov200.png" class="h-full" />
                     </a>
                 </li>
