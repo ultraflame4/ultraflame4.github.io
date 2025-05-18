@@ -24,7 +24,7 @@
                         @reset="sidebar_clamp_size()"></ResizeHandle>
                 </template>
 
-                <div class="min-h-full p-2 bg-background h-full grow grid" style="grid-template-rows: auto 1fr;">
+                <div class="min-h-full h-full grow">
                     <HiddenAnchorCarousell client:load class="h-full overflow-hidden" :anchor_container="`#${props.id}`"
                         :root="props.root">
                         <slot></slot>

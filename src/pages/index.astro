@@ -8,6 +8,7 @@ import { WindowBook, WindowBookPage, WindowCard, WindowCardBody } from "@/compon
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import { HiddenAnchorCarousell, RouteAnchor } from "@/components/core";
+import { array, undefined } from "astro:schema";
 
 const about_story = await getCollection("about_story");
 
@@ -108,7 +109,8 @@ const url = Astro.url;
         <div class="max-w-7xl w-full h-full">
             <WindowBook
                 client:load
-                id="about-window",
+                id="about-window"
+                ,
                 root="#about-section"
                 sections={about_story_rendered.map((x) => ({
                     title: `${x.title}.md`,
@@ -117,11 +119,16 @@ const url = Astro.url;
                 }))}
             >
                 {
-                    about_story_rendered.map((x) => (
-                        <WindowBookPage id={`about-${x.title}`}>
-                            <x.content />
-                        </WindowBookPage>
-                    ))
+                    about_story_rendered.map((x, idx, arr) => {
+                        let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
+                        let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
+       
+                        return (
+                            <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
+                                <x.content />
+                            </WindowBookPage>
+                        );
+                    })
                 }
             </WindowBook>
         </div>

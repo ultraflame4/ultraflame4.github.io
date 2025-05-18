@@ -1,14 +1,28 @@
 <template>
 
-    <div class="h-full markdown px-4 py-2" :id="props.id">
-        <slot></slot>
+    <div class="flex flex-col gap-[2px] h-full " :id="props.id">
+        <div class="grow markdown px-4 py-2 bg-background">
+            <slot></slot>
+        </div>
+        <div v-if="props.prev_id !== undefined || props.next_id !== undefined" class="h-16 flex gap-[2px] page-nav">
+            <a v-if="props.prev_id !== undefined" :href="'#' + props.prev_id">Prev</a>
+            <a v-if="props.next_id !== undefined" :href="'#' + props.next_id">Next</a>
+        </div>
     </div>
 </template>
 <script lang="ts" setup>
-export interface WindowBookPageProps{
-    id: string
+export interface WindowBookPageProps {
+    id: string,
+    prev_id?: string
+    next_id?: string
 }
 const props = defineProps<WindowBookPageProps>()
 
 </script>
-<style></style>
+<style scoped>
+@reference "@/styles/global.css";
+
+.page-nav>a {
+    @apply bg-background grow flex items-center justify-center font-fancy hover:bg-hover active:bg-accent active:text-crust select-none;
+}
+</style>
