@@ -42,7 +42,7 @@
     --bright: var(--color-white);
     --danger: var(--color-red-500);
     --border-color: var(--color-neutral-700);
-    
+
     --mdcode: var(--color-crust);
 }
 
@@ -120,12 +120,77 @@
 
 @layer utilities {
 
+    /**
+    * Styles for markdown. Apply this class to the parent element containing the rendered html code for markdown.
+    * This class uses tailwind's typography prose class as a base.
+    * Changes:
+    *  1. All margins are reduced
+    *  2. <code> blocks & inline have their quotes removed + Changes to background
+    */
+    .markdown {
+        @apply prose prose-invert max-w-none;
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 0.5em;
+
+        }
+
+        :not(pre)>code,
+        pre {
+            @apply rounded-sm !bg-mdcode;
+            outline: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        :not(pre)>code {
+            padding: 0.1rem 0.25rem;
+        }
+
+        code::before,
+        code::after {
+            content: "";
+        }
+
+        p {
+            margin: 0.4em 0;
+        }
+
+        p+p {
+            margin: 0.8em 0;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        li {
+            margin: 0 !important;
+        }
+
+        ol,
+        ul {
+            margin: 1em 0;
+        }
+
+        li>p,
+        li>ul,
+        li>ol {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    }
+
     /* 
      * "Collapse" this element in mobile / vertical mode.
      */
     @media screen and (max-width: 700px) {
         *.mobile-collapse[class] {
-            display: none ;
+            display: none;
         }
     }
 

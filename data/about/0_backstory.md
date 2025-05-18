@@ -17,3 +17,10 @@ That is it. I can't think of anymore words to fill up this section.
 
 Please move on. 🥺
 
+```
+         *       ✧                ⋆
+ ˗ˏˋ ♡ ˎˊ˗       	 ╱|、⋆
+           meow~   (˚ˎ 。7    𖥔
+ 	｡ 	    		|、˜〵          
+ 	  ✧            じしˍ,)ノ
+```
