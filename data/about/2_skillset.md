@@ -11,12 +11,13 @@ My favourite languages / technologies to work with.
 1. **C++** - *Spends 1+ day(s) configuring Cmake everytime I start a new C++ project.*
 2. **Rust** - *King*
 
-# Skills
+# Known Skills
 
 1. \***Python**
 2. **Javascript**
 3. **Typescript**
 4. **Vue.js**
-5. \***React.js** 
+5. **CSharp** 
+6. \***React.js** 
 
 *\*It has been a while since I last touched it.*
