@@ -1,4 +1,5 @@
 import AnchorCarousell_ from "./HiddenAnchorCarousell.vue";
+import RouteAnchor_ from "./RouteAnchor.vue";
 
 /**
  * A carousell that works based on anchors and hidden overflows.
@@ -15,3 +16,11 @@ import AnchorCarousell_ from "./HiddenAnchorCarousell.vue";
  * change url such that the path ends with "#hello-world"
  */
 export const HiddenAnchorCarousell = AnchorCarousell_;
+
+/**
+ * Similar to router link, this is just a wrapper around the <a/> tag.
+ * You can use this with `client:load` or `client:visible`. `client:only` is not needed
+ * **Params**:
+ * 1. `to` - Url for the anchor's href.
+ */
+export const RouteAnchor = RouteAnchor_

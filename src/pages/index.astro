@@ -7,7 +7,7 @@ import { WindowEntryRatio } from "@/components/effects";
 import { EdCard } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-import { HiddenAnchorCarousell } from "@/components/core";
+import { HiddenAnchorCarousell, RouteAnchor } from "@/components/core";
 
 const about_story = await getCollection("about_story");
 
@@ -18,7 +18,7 @@ const about_story_rendered = await Promise.all(
             content: r.Content,
         }))
     )
-);
+).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
 
 const greeting = [
     10,
@@ -35,6 +35,7 @@ const greeting = [
 ];
 
 const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  "];
+const url = Astro.url;
 ---
 
 <Layout>
@@ -109,16 +110,25 @@ const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃
                 <ul slot="sidebar" class="list-none" id="about-sidebar">
                     {
                         about_story_rendered.map((x) => (
-                            <li>
-                                <a class="about-story-sidebar-item cursor-pointer" href={`#about-${x.title}`}>
-                                    {x.title}
-                                </a>
+                            <li class="h-8">
+                                <RouteAnchor
+                                    class="about-story-sidebar-item cursor-pointer h-full w-full px-2  flex items-center hover:bg-hover data-[active=true]:bg-highlight font-mono"
+                                    to={`#about-${x.title}`}
+                                    client:visible
+                                >
+                                    {x.title}.md
+                                </RouteAnchor>
                             </li>
                         ))
                     }
                 </ul>
 
-                <HiddenAnchorCarousell class="h-full overflow-hidden" anchor_container="#about-sidebar" root="#about-section" client:load>
+                <HiddenAnchorCarousell
+                    class="h-full overflow-hidden"
+                    anchor_container="#about-sidebar"
+                    root="#about-section"
+                    client:load
+                >
                     {
                         about_story_rendered.map((x) => (
                             <div class="h-full markdown px-4 py-2" id={`about-${x.title}`}>
