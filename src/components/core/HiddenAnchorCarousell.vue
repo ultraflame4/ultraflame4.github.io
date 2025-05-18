@@ -4,9 +4,11 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, useTemplateRef } from 'vue';
+import { useEventListener } from '@vueuse/core';
+import { onMounted, ref, useTemplateRef } from 'vue';
 
 const props = defineProps<{ class?: string, anchor_container?: string, root?: string }>()
+const current_element = ref<Element>()
 const self = useTemplateRef("target")
 
 
@@ -14,6 +16,7 @@ function scroll_element_into_view(ele: Element) {
     if (!self.value) {
         return
     }
+    current_element.value = ele
     const eleRect = ele.getBoundingClientRect()
     const parentRect = self.value.getBoundingClientRect()
     self.value.scrollBy({ top: eleRect.top - parentRect.top, behavior: "smooth" });
@@ -29,13 +32,14 @@ function hijack_anchors() {
 
     for (const ele of target_elements) {
         const hash = "#" + ele.id
+
         let anchors = anchor_ctn.querySelectorAll(`a[href="${hash}"]`) ?? []
         console.log("Hijacking click for anchors with hash", hash, anchors)
         anchors.forEach((_x) => {
             let anchor = _x as HTMLAnchorElement;
 
             anchor.addEventListener("click", (e) => {
-
+                current_element.value = ele;
 
                 e.preventDefault()
                 scroll_element_into_view(ele)
@@ -61,6 +65,16 @@ onMounted(() => {
         }
         console.log("Hash detected:", location.hash, "Scrolling to element:", target)
         scroll_element_into_view(target)
+    }
+
+
+})
+useEventListener("resize", () => {
+    if (location.hash.slice(1) === current_element.value?.id) {
+        scroll_element_into_view(current_element.value)
+    }
+    else {
+        current_element.value = undefined;
     }
 })
 
