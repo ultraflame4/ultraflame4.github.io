@@ -6,7 +6,7 @@
 <script lang="ts" setup>
 import { onMounted, useTemplateRef } from 'vue';
 
-const props = defineProps<{ class: string, anchor_container?: string, root?: string }>()
+const props = defineProps<{ class?: string, anchor_container?: string, root?: string }>()
 const self = useTemplateRef("target")
 
 
@@ -20,9 +20,9 @@ function scroll_element_into_view(ele: Element) {
 
 }
 
-onMounted(() => {
-
+function hijack_anchors() {
     let anchor_ctn = props.anchor_container ? document.querySelector(props.anchor_container) : document
+    console.log(anchor_ctn)
     if (!anchor_ctn) return
 
     let target_elements = self.value?.querySelectorAll("[id]").entries().map(x => x[1]) ?? []
@@ -47,6 +47,11 @@ onMounted(() => {
         });
 
     }
+}
+
+onMounted(() => {
+
+    hijack_anchors()
 
     // Account for initial page load! (and maybe scroll ourselves into view)
     let target = self.value?.querySelector(location.hash)
@@ -54,6 +59,7 @@ onMounted(() => {
         if (props.root) {
             document.querySelector(props.root)?.scrollIntoView()
         }
+        console.log("Hash detected:", location.hash, "Scrolling to element:", target)
         scroll_element_into_view(target)
     }
 })

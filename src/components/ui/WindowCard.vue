@@ -11,7 +11,7 @@
             class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary">
             <Icon icon="material-symbols-light:close" class="text-inherit" />
         </button>
-        <div class="col-span-full flex min-h-full">
+        <div class="col-span-full min-h-full">
             <slot></slot>
             <!-- <div v-if="props.sidebar" class="min-w-[150px] transition-none flex flex-col bg-background mobile-collapse"
                 ref="sidebar" :style="sidebar_style">
@@ -34,21 +34,10 @@ import { computed, ref, shallowRef, useTemplateRef, type CSSProperties } from 'v
 import { Icon } from "@iconify/vue";
 import ResizeHandle from '../core/ResizeHandle.vue';
 
-const props = defineProps<{ title: string, sidebar?: boolean, disable_editor_scroll?: boolean }>()
+const props = defineProps<{ title: string }>()
 const target = useTemplateRef('target')
 const mouse = useMouseInElement(target)
 
-// const sidebar = useTemplateRef("sidebar")
-// const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClientRect().width)
-
-// const sidebar_size = ref<number>(150)
-// const sidebar_style = computed<CSSProperties>(() => ({
-//     width: `min(max(${sidebar_size.value}px, 150px), 50vw)`
-// }))
-
-// function sidebar_clamp_size() {
-//     sidebar_size.value = Math.min(Math.max(sidebar_size.value, 150), sidebar_size.value ?? 0)
-// }
 
 
 

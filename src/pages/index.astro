@@ -4,7 +4,7 @@ import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import { WindowEntryRatio } from "@/components/effects";
-import { WindowCard, WindowCardBody } from "@/components/ui";
+import { WindowBook, WindowBookPage, WindowCard, WindowCardBody } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import { HiddenAnchorCarousell, RouteAnchor } from "@/components/core";
@@ -104,9 +104,28 @@ const url = Astro.url;
         <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
     </WindowEntryRatio>
 
-    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: min(100vw, 100dvh);" id="about-section">
+    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100dvh;" id="about-section">
         <div class="max-w-7xl w-full h-full">
-            <WindowCard title="About" sidebar client:visible>
+            <WindowBook
+                client:load
+                id="about-window",
+                root="#about-section"
+                sections={about_story_rendered.map((x) => ({
+                    title: `${x.title}.md`,
+                    icon: "streamline:markdown-document-programming-solid",
+                    href: `#about-${x.title}`,
+                }))}
+            >
+                {
+                    about_story_rendered.map((x) => (
+                        <WindowBookPage id={`about-${x.title}`}>
+                            <x.content />
+                        </WindowBookPage>
+                    ))
+                }
+            </WindowBook>
+        </div>
+        <!-- <WindowCard title="About" sidebar client:visible>
                 <ul slot="sidebar" class="list-none" id="about-sidebar">
                     {
                         about_story_rendered.map((x) => (
@@ -139,10 +158,10 @@ const url = Astro.url;
                         }
                     </HiddenAnchorCarousell>
                 </WindowCardBody>
-            </WindowCard>
-        </div>
+            </WindowCard> -->
     </section>
 </Layout>
+
 <style>
     @import "@styles/global.css";
 
