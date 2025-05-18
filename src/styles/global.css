@@ -42,6 +42,8 @@
     --bright: var(--color-white);
     --danger: var(--color-red-500);
     --border-color: var(--color-neutral-700);
+    
+    --mdcode: var(--color-crust);
 }
 
 @theme inline {
@@ -69,6 +71,8 @@
     --color-bright: var(--bright);
     --color-danger: var(--danger);
     --color-border: var(--border-color);
+    --color-mdcode: var(--mdcode);
+    --color-mdlink: var(--color-accent);
 }
 
 
