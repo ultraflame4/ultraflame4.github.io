@@ -3,9 +3,9 @@
     <div class="flex flex-col gap-[2px] h-full" :id="props.id">
         <div class="grow markdown  bg-background overflow-hidden">
             <div class="h-full overflow-auto px-4 py-2">
-                <div class="prose prose-invert">
+                <article class="prose prose-invert">
                     <slot></slot>
-                </div>
+                </article>
             </div>
 
         </div>
