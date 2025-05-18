@@ -62,16 +62,6 @@
         }
     }
 
-    img {
-        display: inline;
-    }
-
-    li {
-        & a>img {
-            @apply h-[1em] mx-[0.3em] inline-block;
-        }
-    }
-
     pre,
     code {
         @apply rounded-md !bg-mdcode;
