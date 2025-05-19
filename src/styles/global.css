@@ -183,6 +183,26 @@
             margin-top: 0.5em;
             margin-bottom: 0.5em;
         }
+
+        *:has(>.icon.remark-icon-directive) {
+            display: inline;
+        }
+
+        .icon.remark-icon-directive {
+            display: inline-block;
+            width: 1em;
+            height: 100%;
+            margin: 0;
+        }
+
+
+        .icon.remark-icon-directive>img {
+            display: inline-block;
+            margin: 0;
+            position: relative;
+            bottom: 0.035em;
+            width: 100%;
+        }
     }
 
     /* 

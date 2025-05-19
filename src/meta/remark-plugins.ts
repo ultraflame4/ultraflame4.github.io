@@ -23,7 +23,7 @@ export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
                 node.children = [
                     {
                         type: 'html',
-                        value: `<span class="icon"><image src="https://api.iconify.design/${value}.svg"></span>`,
+                        value: `<span class="icon remark-icon-directive"><image src="https://api.iconify.design/${value}.svg"></span>`
                     },
                 ]
             }
