@@ -5,7 +5,9 @@
         "**/*"
     ],
     "exclude": [
-        "dist"
+        "dist",
+        "astro.config.ts",
+        "src/meta",
     ],
     "compilerOptions": {
         "baseUrl": ".",

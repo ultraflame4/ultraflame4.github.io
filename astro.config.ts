@@ -5,10 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 import vue from '@astrojs/vue';
 import remarkDirective from 'remark-directive';
-import { remarkIconDirective } from '@/meta/remark-plugins';
-
-
-
+import { remarkIconDirective } from './src/meta/remark-plugins';
 
 
 // https://astro.build/config
