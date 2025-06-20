@@ -108,8 +108,8 @@ const url = Astro.url;
         <div class="max-w-7xl w-full h-full">
             <WindowBook
                 client:load
-                id="about-window"
-                ,
+                title="Overview"
+                id="about-summary"
                 root="#about-section"
                 sections={about_story_rendered.map((x) => ({
                     title: `${x.title}.md`,
@@ -132,40 +132,12 @@ const url = Astro.url;
                 }
             </WindowBook>
         </div>
-        <!-- <WindowCard title="About" sidebar client:visible>
-                <ul slot="sidebar" class="list-none" id="about-sidebar">
-                    {
-                        about_story_rendered.map((x) => (
-                            <li class="h-8">
-                                <RouteAnchor
-                                    class="about-story-sidebar-item cursor-pointer h-full w-full px-2  flex items-center hover:bg-hover data-[active=true]:bg-highlight font-mono"
-                                    to={`#about-${x.title}`}
-                                    client:visible
-                                >
-                                    {x.title}.md
-                                </RouteAnchor>
-                            </li>
-                        ))
-                    }
-                </ul>
-
-                <WindowCardBody>
-                    <HiddenAnchorCarousell
-                        class="h-full overflow-hidden"
-                        anchor_container="#about-sidebar"
-                        root="#about-section"
-                        client:load
-                    >
-                        {
-                            about_story_rendered.map((x) => (
-                                <div class="h-full markdown px-4 py-2" id={`about-${x.title}`}>
-                                    <x.content />
-                                </div>
-                            ))
-                        }
-                    </HiddenAnchorCarousell>
-                </WindowCardBody>
-            </WindowCard> -->
+    </section>
+    <section class="bg-background">
+        <h1>Recent Projects</h1>
+    </section>
+    <section class="bg-background">
+        <h1>Recent Projects</h1>
     </section>
 </Layout>
 

@@ -3,7 +3,7 @@
     <!-- Sidebar contains tabs to each chapter -->
     <!-- Content of window should render markdown -->
 
-    <WindowCard title="About" :id="props.id">
+    <WindowCard :title="props.title ?? 'Unnamed'" :id="props.id">
 
         <WindowCardPanel asChild>
             <div class="w-full h-full flex">
@@ -45,6 +45,7 @@ import RouteAnchor from '../core/RouteAnchor.vue';
 import { Icon } from '@iconify/vue';
 
 export interface WindowBookProps {
+    title?: string,
     id?: string,
     /**
      * Selector of Parent element to scroll to on page load if location hash points to one of the pages (or element) in WindowBook
