@@ -88,8 +88,8 @@
 // import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 // import {isYoutubeUrl} from "@/external/yt";
 import { Icon } from "@iconify/vue";
-import { YoutubeEmbed } from "..";
-import { GetProjectLink } from ".";
+import { YoutubeEmbed } from "@/components/ui";
+import GetProjectLink from "./GetProjectLink.vue";
 import type { NormalisedProjectData } from "@/lib/project_utils";
 import { isYoutubeUrl as isYTUrl } from "@/lib/external/yt";
 

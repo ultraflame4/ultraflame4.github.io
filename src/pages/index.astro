@@ -7,7 +7,7 @@ import { WindowEntryRatio } from "@/components/effects";
 import { WindowBook, WindowBookPage } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-import ProjectCard from "@/components/ui/project/ProjectCard.vue";
+import { ProjectCard } from "@/components/ui/project";
 import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
 import { date } from "astro:schema";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
@@ -21,14 +21,14 @@ const projects_rendered = await Promise.all(
             data: normalise_FrontmatterProjectData(x.data, x.body ?? "", x.filePath),
             og: x,
         }))
-        .filter(x => x.data.end_date || x.data.start_date) // filter out if neither date exists
+        .filter((x) => x.data.end_date || x.data.start_date) // filter out if neither date exists
         .toSorted((a, b) => {
             // Sort by end_date (desc), then start_date (desc)
             const aEnd = (a.data.end_date ?? a.data.start_date)!.getTime();
             const bEnd = (b.data.end_date ?? b.data.start_date)!.getTime();
             return bEnd - aEnd;
         })
-        .filter((x,index) => index < 3)
+        .filter((x, index) => index < 3)
         .map((x) =>
             render(x.og).then((r) => ({
                 data: x.data,
