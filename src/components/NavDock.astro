@@ -2,7 +2,7 @@
 const { class: className, ...rest } = Astro.props;
 const links = {
     about: "/#about-section",
-    skills: "/skills",
+    blog: "/blog",
     gallery: "/gallery",
 };
 ---
@@ -26,7 +26,7 @@ const links = {
                         >
                             <a href={v} class="font-fancy flex items-center gap-1">
                                 <span class="navlink-key acrylic">{index}</span>
-                                {k}
+                                <span class="navlink-title">{k}</span>
                             </a>
                         </li>
                     ))
@@ -46,9 +46,9 @@ const links = {
     }
 
     .nav-brand[data-active="true"] > img,
-    nav li[data-active="true"] {
+    nav li[data-active="true"] .navlink-title{
         filter: drop-shadow(0px 0px 2px var(--color-rainbow));
-        @apply text-dimmed;
+        /* @apply text-dimmed; */
     }
     .navlink-key {
         @apply font-mono font-extrabold rounded-sm w-4.5 h-4.5 text-sm flex items-center justify-center box-content bg-background border-panel;
