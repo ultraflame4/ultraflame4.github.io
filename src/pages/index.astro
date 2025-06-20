@@ -7,10 +7,10 @@ import { WindowEntryRatio } from "@/components/effects";
 import { WindowBook, WindowBookPage } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-import ProjectCard from "@/components/ui/ProjectCard.vue";
+import ProjectCard from "@/components/ui/project/ProjectCard.vue";
 import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
 import { date } from "astro:schema";
-import SpotlightBackground from "@/components/ui/SpotlightBackground.vue";
+import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));

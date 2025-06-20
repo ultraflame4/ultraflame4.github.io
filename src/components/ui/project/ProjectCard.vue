@@ -29,7 +29,7 @@
                 <slot></slot>
             </div>
             <ul class="project-links">
-                <!-- <li v-if="props.data.source">
+                <li v-if="props.data.source">
                     <GetProjectLink :value="{
                         name: props.data.source.label,
                         url: props.data.source.url,
@@ -40,7 +40,7 @@
                 <li v-if="props.data.links" v-for="(value, index) in props.data.links" :key="index">
                     <GetProjectLink :value="value" />
 
-                </li> -->
+                </li>
             </ul>
         </div>
 
@@ -88,7 +88,8 @@
 // import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 // import {isYoutubeUrl} from "@/external/yt";
 import { Icon } from "@iconify/vue";
-import { YoutubeEmbed } from ".";
+import { YoutubeEmbed } from "..";
+import { GetProjectLink } from ".";
 import type { NormalisedProjectData } from "@/lib/project_utils";
 import { isYoutubeUrl as isYTUrl } from "@/lib/external/yt";
 

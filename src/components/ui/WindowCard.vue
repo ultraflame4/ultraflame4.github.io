@@ -33,7 +33,7 @@ import { useMouseInElement } from '@vueuse/core';
 import { computed, ref, shallowRef, useTemplateRef, type CSSProperties } from 'vue';
 import { Icon } from "@iconify/vue";
 import ResizeHandle from '../core/ResizeHandle.vue';
-import SpotlightBackground from './SpotlightBackground.vue';
+import SpotlightBackground from '../effects/SpotlightBackground.vue';
 
 const props = defineProps<{ title: string }>()
 
