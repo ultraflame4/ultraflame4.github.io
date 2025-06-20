@@ -44,7 +44,7 @@
             </ul>
         </div>
 
-        <div class="project-media">
+        <div class="project-media w-full min-w-0  overflow-scroll ">
             <template v-if="props.data.media[0] && props.data.media[0].type == 'video'">
                 <YoutubeEmbed v-if="isYTUrl(props.data.media[0].url)" :src="props.data.media[0].url" />
                 <video v-else controls>
@@ -108,8 +108,10 @@ const props = defineProps<props>()
 .project-item {
     width: 100%;
     height: 100%;
+    min-width: 0;
     overflow: hidden;
     display: grid;
+    overflow: hidden;
     grid-template-columns: 5fr 4fr;
     grid-template-rows: minmax(0, 1fr) auto;
     box-sizing: border-box;
@@ -127,6 +129,10 @@ const props = defineProps<props>()
         // z-index: 2;
         overflow: visible;
         // font and color moved to Tailwind
+    }
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -202,6 +208,12 @@ const props = defineProps<props>()
     border-radius: 0.5rem;
     aspect-ratio: 1/1;
     margin-left: auto;
+
+
+    @media screen and (max-width: 900px) {
+        grid-column: 1/1;
+        grid-row: auto;
+    }
 }
 
 .project-media>img {
@@ -225,7 +237,7 @@ const props = defineProps<props>()
     display: flex;
     gap: 0.5rem;
     grid-column: 1/2;
-    grid-row: 2;
+    grid-row: -1;
     padding: 0;
     height: fit-content;
     // font-weight and font-size moved to Tailwind
