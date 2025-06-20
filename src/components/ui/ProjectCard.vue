@@ -1,9 +1,9 @@
 <template>
 
-    <div class="project-item bg-background p-3">
+    <div class="project-item bg-background p-4 pt-3">
 
         <div class="project-details">
-            <h3 class="text-lg font-semibold font-poppins">
+            <h3 class="text-xl font-semibold font-poppins">
                 {{ props.data.title }}
                 <!-- <Tooltip>
                         <template v-slot:trigger="propsb">
@@ -25,7 +25,7 @@
                     {{ props.data.end_date ? datetimeformat.format(props.data.end_date) : "current" }}
                 </template>
             </sub>
-            <div class="project-details-desc">
+            <div class="project-details-desc markdown">
                 <slot></slot>
             </div>
             <ul class="project-links">

@@ -205,6 +205,23 @@
             height: 100%;
             width: 100%;
         }
+
+        table {
+            margin-bottom: 1em;
+        }
+
+        td{
+            padding: 0.55em;
+        }
+
+        a>br{
+            display: block;
+            margin-top: 0.5em;
+        }
+
+        a>img {
+            margin: 0;
+        }
     }
 
 

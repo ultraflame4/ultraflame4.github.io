@@ -21,6 +21,14 @@ const projects_rendered = await Promise.all(
             data: normalise_FrontmatterProjectData(x.data, x.body ?? "", x.filePath),
             og: x,
         }))
+        .filter(x => x.data.end_date || x.data.start_date) // filter out if neither date exists
+        .toSorted((a, b) => {
+            // Sort by end_date (desc), then start_date (desc)
+            const aEnd = (a.data.end_date ?? a.data.start_date)!.getTime();
+            const bEnd = (b.data.end_date ?? b.data.start_date)!.getTime();
+            return bEnd - aEnd;
+        })
+        .filter((x,index) => index < 3)
         .map((x) =>
             render(x.og).then((r) => ({
                 data: x.data,
@@ -152,12 +160,12 @@ const url = Astro.url;
     </section>
     <section class="bg-background">
         <h1 id="about-recent-works">Recent Works</h1>
-        <div class="w-full px-8 py-2">
-            <SpotlightBackground class="w-full gap-[1.5px] p-[1.2px] project-grid" client:only>
+        <div class="w-full px-8 py-2 flex">
+            <SpotlightBackground class="m-auto gap-[1.5px] p-[1.2px] project-grid" client:only>
                 {
                     projects_rendered.map((x) => {
                         return (
-                            <ProjectCard class:list={"w-[48rem]"} data={x.data} client:load>
+                            <ProjectCard data={x.data} client:load>
                                 <x.content />
                             </ProjectCard>
                         );
@@ -196,6 +204,7 @@ const url = Astro.url;
 
     .project-grid {
         display: grid;
+        width: min(100%, 120rem);
         grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
     }
 </style>
