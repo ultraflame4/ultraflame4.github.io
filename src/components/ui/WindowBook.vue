@@ -6,7 +6,7 @@
     <WindowCard :title="props.title ?? 'Unnamed'" :id="props.id">
 
         <WindowCardPanel asChild>
-            <div class="w-full h-full flex">
+            <div class="w-full h-full flex min-w-0 overflow-hidden">
                 <template v-if="props.sections">
                     <div class="min-w-[150px] h-full transition-none flex flex-col bg-background mobile-collapse"
                         ref="sidebar" :style="sidebar_style">
@@ -24,7 +24,7 @@
                         @reset="sidebar_clamp_size()"></ResizeHandle>
                 </template>
 
-                <div class="min-h-full h-full grow">
+                <div class="min-h-full h-full grow min-w-0">
                     <HiddenAnchorCarousell client:load class="h-full overflow-hidden" :anchor_container="`#${props.id}`"
                         :root="props.root">
                         <slot></slot>

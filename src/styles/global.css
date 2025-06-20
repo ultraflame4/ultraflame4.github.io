@@ -92,7 +92,13 @@
         @apply bg-background;
     }
 
-    @media screen and (max-width: 555px) {
+
+    @media screen and (max-width: 870px) {
+        :root {
+            font-size: 0.95rem;
+        }
+    }
+    @media screen and (max-width: 750) {
         :root {
             font-size: 0.9rem;
         }
@@ -210,11 +216,11 @@
             margin-bottom: 1em;
         }
 
-        td{
+        td {
             padding: 0.55em;
         }
 
-        a>br{
+        a>br {
             display: block;
             margin-top: 0.5em;
         }
@@ -228,7 +234,7 @@
     /* 
      * "Collapse" this element in mobile / vertical mode.
      */
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 750px) {
         *.mobile-collapse[class] {
             display: none;
         }
