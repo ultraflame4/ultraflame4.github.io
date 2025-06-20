@@ -1,6 +1,6 @@
 <template>
 
-    <div class="project-item bg-panel p-3">
+    <div class="project-item bg-background p-3">
 
         <div class="project-details">
             <h3 class="text-lg font-semibold font-poppins">
@@ -62,19 +62,19 @@
 
 
         <ul class="badges">
-            <li v-if="props.data.featured" class="featured-badge">
+            <li v-if="props.data.featured" class="featured-badge badge">
                 <Icon icon="mage:stars-a-fill" class="icon text-lg" />
                 featured
             </li>
-            <li v-if="props.data.status == 'completed'">
+            <li v-if="props.data.status == 'completed'" class="badge">
                 <Icon icon="material-symbols:rocket-launch-rounded" class="icon text-lg text-green-400" />
                 completed
             </li>
-            <li v-else-if="props.data.status == 'in dev'">
+            <li v-else-if="props.data.status == 'in dev'" class="badge">
                 <Icon icon="fluent-emoji:construction" class="icon text-lg" />
                 In development
             </li>
-            <li v-else-if="props.data.status == 'inactive'">
+            <li v-else-if="props.data.status == 'inactive'" class="badge">
                 <Icon icon="mingcute:sleep-fill" class="icon text-lg text-purple-400" />
                 inactive
             </li>
@@ -114,7 +114,8 @@ const props = defineProps<props>()
 <style lang="scss" scoped>
 
 .project-item {
-    aspect-ratio: 9/6;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     display: grid;
     grid-template-columns: 5fr 4fr;
@@ -122,13 +123,8 @@ const props = defineProps<props>()
     box-sizing: border-box;
     grid-gap: 0.75rem;
     position: relative;
-    right: 0;
-    bottom: 0;
-    border-radius: 1rem;
     transition: all 100ms ease;
-    position: relative;
-    border: 1px solid;
-
+    
     .badges {
         display: flex;
         gap: .5rem;

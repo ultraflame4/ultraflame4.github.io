@@ -10,17 +10,23 @@ import { render } from "astro:content";
 import ProjectCard from "@/components/ui/ProjectCard.vue";
 import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
 import { date } from "astro:schema";
+import SpotlightBackground from "@/components/ui/SpotlightBackground.vue";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
 
 const projects_rendered = await Promise.all(
-    _projects.map((x) =>
-        render(x).then((r) => ({
+    _projects
+        .map((x) => ({
             data: normalise_FrontmatterProjectData(x.data, x.body ?? "", x.filePath),
-            content: r.Content,
+            og: x,
         }))
-    )
+        .map((x) =>
+            render(x.og).then((r) => ({
+                data: x.data,
+                content: r.Content,
+            }))
+        )
 );
 
 const about_story_rendered = await Promise.all(
@@ -146,17 +152,19 @@ const url = Astro.url;
     </section>
     <section class="bg-background">
         <h1 id="about-recent-works">Recent Works</h1>
-        <div class="w-full flex gap-4 align-center flex-wrap justify-center items-center">
-            {
-                projects_rendered.map((x) => {
-
-                    return (
-                        <ProjectCard class:list={"w-[48rem]"} data={x.data}>
-                            <x.content />
-                        </ProjectCard>
-                    );
-                })
-            }
+        <div class="w-full px-8 py-2">
+            <SpotlightBackground class="w-full gap-[1.5px] p-[1.2px] project-grid" client:only>
+                {
+                    projects_rendered.map((x) => {
+                        return (
+                            <ProjectCard class:list={"w-[48rem]"} data={x.data} client:load>
+                                <x.content />
+                            </ProjectCard>
+                        );
+                    })
+                }
+                {projects_rendered.length % 2 !== 0 ? <div class="bg-background" /> : ""}
+            </SpotlightBackground>
         </div>
     </section>
     <section class="bg-background">
@@ -184,5 +192,10 @@ const url = Astro.url;
         @apply absolute bottom-0 w-full bg-background;
         /* background-position-y: calc(var(--ratio) * 100%); */
         opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
     }
 </style>
