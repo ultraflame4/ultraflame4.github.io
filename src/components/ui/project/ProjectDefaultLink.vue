@@ -1,10 +1,7 @@
 <template>
-    <a :href="value.url" :style="{
-        '--color': value.fillColor ?? 'var(--accent-color)',
-        '--fill-text-color': value.filledTextColor ?? 'white',
-    }" target="_blank" :data-filled="value.filled">
+    <a :href="value.url" target=" _blank" :data-filled="value.filled">
         <Icon :icon="value.icon ?? 'eva:external-link-fill'" class="icon" />
-        <span>{{ value.name }}</span>
+        <span class="font-fancy">{{ value.name }}</span>
         <!-- <div class="bg dots"></div> -->
     </a>
 </template>
@@ -33,15 +30,21 @@ a {
 }
 
 span {
-    background: inherit;
+    background: transparent;
 }
 
-
 a:hover {
-    border-color: white;
+    border-color: var(--color-accent);
+
+}
+
+a:active {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: black;
 
     .icon {
-        color: black;
+        color: inherit;
     }
 
 }
