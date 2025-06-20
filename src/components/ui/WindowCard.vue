@@ -1,5 +1,5 @@
 <template>
-    <div class="ctn w-full h-full" ref="target" :style="css_vars">
+    <SpotlightBackground class="ctn w-full h-full">
 
         <div class="titlebar col-span-4 bg-background grid grid-cols-subgrid">
             <!-- filler -->
@@ -26,25 +26,17 @@
             </div> -->
         </div>
 
-    </div>
+    </SpotlightBackground>
 </template>
 <script lang="ts" setup>
 import { useMouseInElement } from '@vueuse/core';
 import { computed, ref, shallowRef, useTemplateRef, type CSSProperties } from 'vue';
 import { Icon } from "@iconify/vue";
 import ResizeHandle from '../core/ResizeHandle.vue';
+import SpotlightBackground from './SpotlightBackground.vue';
 
 const props = defineProps<{ title: string }>()
-const target = useTemplateRef('target')
-const mouse = useMouseInElement(target)
 
-
-
-
-const css_vars = computed<CSSProperties>(() => ({
-    "--x-percent": `${Math.round(mouse.elementX.value / mouse.elementWidth.value * 100)}%`,
-    "--y-percent": `${Math.round(mouse.elementY.value / mouse.elementHeight.value * 100)}%`,
-}))
 
 </script>
 <style scoped>
@@ -56,8 +48,6 @@ const css_vars = computed<CSSProperties>(() => ({
     grid-template-rows: calc(var(--spacing) * 9) auto;
     gap: 2px;
     padding: 1px;
-
-    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) 20%);
 }
 
 

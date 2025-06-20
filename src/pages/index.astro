@@ -7,12 +7,24 @@ import { WindowEntryRatio } from "@/components/effects";
 import { WindowBook, WindowBookPage } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
+import ProjectCard from "@/components/ui/ProjectCard.vue";
+import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
+import { date } from "astro:schema";
 
+const _about_story = await getCollection("about_story");
+const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
 
-const about_story = await getCollection("about_story");
+const projects_rendered = await Promise.all(
+    _projects.map((x) =>
+        render(x).then((r) => ({
+            data: normalise_FrontmatterProjectData(x.data, x.body ?? "", x.filePath),
+            content: r.Content,
+        }))
+    )
+);
 
 const about_story_rendered = await Promise.all(
-    about_story.map((x) =>
+    _about_story.map((x) =>
         render(x).then((r) => ({
             title: x.id,
             content: r.Content,
@@ -119,10 +131,9 @@ const url = Astro.url;
             >
                 {
                     about_story_rendered.map((x, idx, arr) => {
-                        
                         let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
                         let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
-       
+
                         return (
                             <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
                                 <x.content />
@@ -134,7 +145,19 @@ const url = Astro.url;
         </div>
     </section>
     <section class="bg-background">
-        <h1>Recent Works</h1>
+        <h1 id="about-recent-works">Recent Works</h1>
+        <div class="w-full flex gap-4 align-center flex-wrap justify-center items-center">
+            {
+                projects_rendered.map((x) => {
+
+                    return (
+                        <ProjectCard class:list={"w-[48rem]"} data={x.data}>
+                            <x.content />
+                        </ProjectCard>
+                    );
+                })
+            }
+        </div>
     </section>
     <section class="bg-background">
         <h1>Life Lately</h1>

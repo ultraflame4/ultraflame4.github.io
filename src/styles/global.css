@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./rainbow.css";
-@import "@fontsource/silkscreen";
+@import "./fonts.css";
 @plugin '@tailwindcss/typography';
 
 :root {
@@ -52,6 +52,7 @@
     --color-crust: #111;
 
     --font-fancy: "Silkscreen";
+    --font-poppins: "Poppins";
 
 
 
