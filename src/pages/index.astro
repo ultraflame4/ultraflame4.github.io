@@ -165,7 +165,7 @@ const url = Astro.url;
                 {
                     projects_rendered.map((x) => {
                         return (
-                            <ProjectCard data={x.data} client:load>
+                            <ProjectCard data={x.data} client:only>
                                 <x.content />
                             </ProjectCard>
                         );

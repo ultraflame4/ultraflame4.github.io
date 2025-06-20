@@ -15,8 +15,10 @@ import { ClientRouter } from "astro:transitions";
         <ClientRouter />
         <script>
             import { init_pathchange_detection } from "@/components/core";
+            import { initYoutubeApi } from "@/lib/external/yt";
 
             init_pathchange_detection();
+            initYoutubeApi();
             // window.scrollTo({ top: 0 });
             // document.addEventListener("pathchanged", () => {
             //     // ----- Hash scrolling ------

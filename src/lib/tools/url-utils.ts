@@ -30,8 +30,3 @@ export function isGithubRelease(url: string | undefined): boolean {
     return !!url?.match(/https:\/\/github\.com\/.*\/releases($|\/.*)/g)
 }
 
-export function isYoutubeUrl(url: string) {
-    var p = / ^(?:http)|(?:https):\/\/(?:www.)*(?:youtube.com)|(?:youtu\.be)/;
-    // console.log(url, !!url.match(p))
-    return !!url.match(p);
-}

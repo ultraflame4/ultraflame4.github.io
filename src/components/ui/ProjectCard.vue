@@ -60,7 +60,6 @@
             </li>
         </ul>
 
-
         <ul class="badges">
             <li v-if="props.data.featured" class="featured-badge badge">
                 <Icon icon="mage:stars-a-fill" class="icon text-lg" />
@@ -89,16 +88,11 @@
 // import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
 // import {isYoutubeUrl} from "@/external/yt";
 import { Icon } from "@iconify/vue";
-
-import { computed } from "vue";
-
+import { YoutubeEmbed } from ".";
 import type { NormalisedProjectData } from "@/lib/project_utils";
-import { isYoutubeUrl as isYTUrl } from "@/lib/tools/url-utils";
+import { isYoutubeUrl as isYTUrl } from "@/lib/external/yt";
 
 const datetimeformat = new Intl.DateTimeFormat('en-sg', { month: 'short', year: "numeric", day: "2-digit" })
-// const router = useRouter();
-// const route = useRoute();
-// const isYTUrl = isYoutubeUrl;
 
 interface props {
     data: NormalisedProjectData,
@@ -106,13 +100,10 @@ interface props {
 }
 
 const props = defineProps<props>()
-// const hash_s = computed(()=>("#" + props.anchor??"").replace("##","#"))
-
 
 </script>
 
 <style lang="scss" scoped>
-
 .project-item {
     width: 100%;
     height: 100%;
@@ -124,7 +115,7 @@ const props = defineProps<props>()
     grid-gap: 0.75rem;
     position: relative;
     transition: all 100ms ease;
-    
+
     .badges {
         display: flex;
         gap: .5rem;
@@ -190,6 +181,7 @@ const props = defineProps<props>()
         flex-shrink: 0;
         position: relative;
         overflow: visible;
+
         &>li {
             flex-shrink: 0;
             display: flex;
