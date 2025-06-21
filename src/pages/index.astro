@@ -107,11 +107,11 @@ const url = Astro.url;
             </div>
         </div>
 
-        <style>
+        <style define:vars={{ noise_url: `url("${import.meta.env.BASE_URL}/noise.svg")` }}>
             .noise {
                 position: absolute;
                 inset: 0;
-                background: url("/noise.svg");
+                background: var(--noise_url);
                 background-size: 100px;
                 filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
 
