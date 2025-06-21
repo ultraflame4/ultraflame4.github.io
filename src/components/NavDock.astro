@@ -14,7 +14,7 @@ const links = {
         <nav class="h-full">
             <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
                 <li class="h-full">
-                    <a href="/#top" class="nav-brand" data-active={Astro.url.pathname == "/"}>
+                    <a href="/#top" class="nav-brand" data-active={Astro.url.pathname == import.meta.env.BASE_URL}>
                         <img src="/logov200.png" class="h-full" />
                     </a>
                 </li>
