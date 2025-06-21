@@ -84,9 +84,6 @@
 </template>
 
 <script lang="ts" setup>
-// import GetProjectLink from "@/components/content/Projects/GetProjectLink.vue";
-// import YoutubeEmbed from "@/components/content/YoutubeEmbed.vue";
-// import {isYoutubeUrl} from "@/external/yt";
 import { Icon } from "@iconify/vue";
 import { YoutubeEmbed } from "@/components/ui";
 import GetProjectLink from "./GetProjectLink.vue";
