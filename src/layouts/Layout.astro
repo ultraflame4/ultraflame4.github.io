@@ -1,4 +1,5 @@
 ---
+import { PulseRotatingBg } from "@/components/effects";
 import NavDock from "@/components/NavDock.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
@@ -7,27 +8,22 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     <slot />
 
     <footer class="mt-32 pt-8 relative overflow-hidden">
-        <div class="h-10 flex items-center justify-center text-sm gap-1">
-            <code class="bg-black px-1.5 rounded-md">
+        <div class="h-10 flex items-center justify-center text-sm gap-1 relative site-meta">
+            <code class="bg-black px-1.5 rounded-md block">
                 <pre>Site Version 7.0.0-dev</pre>
             </code>
-            © Copyright 2025, ultraflame4.github.io All rights reserved.
+            <span> © Copyright 2025, ultraflame4.github.io All rights reserved. </span>
+            <PulseRotatingBg class:list={["opacity-60"]} />
         </div>
-        <div class="rainbow-bar h-8"></div>
 
-        <style>
+        <style id="bottom">
+            @reference "@/styles/global.css";
             footer {
                 border-top: 1px solid var(--color-panel);
             }
 
-            .rainbow-bar {
-                background: black;
-                filter: drop-shadow(0px -2px 6px var(--color-rainbow));
-                position: absolute;
-                top: 100%;
-                left: -10%;
-                right: -10%;
-                z-index: -1;
+            .site-meta {
+                background: linear-gradient(180deg, var(--color-background) 0%, transparent 100%);
             }
         </style>
     </footer>

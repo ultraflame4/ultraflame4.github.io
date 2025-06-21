@@ -1,5 +1,6 @@
 
 import EntryRatio from "./EntryRatio.vue";
+import PulseRotatingBg_ from "./PulseRotatingBg.vue";
 import SpotlightBackground_ from "./SpotlightBackground.vue";
 
 
@@ -15,4 +16,11 @@ export const WindowEntryRatio = EntryRatio
 export const SpotlightBackground = SpotlightBackground_
 
 
-
+/**
+ * Use this component as the child of the target to get the background.
+ * 
+ * Target must have position relative, or similar,
+ * 
+ * This component will use position absolute to position itself automatically
+ */
+export const PulseRotatingBg = PulseRotatingBg_;
