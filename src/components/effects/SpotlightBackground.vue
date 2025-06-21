@@ -19,7 +19,7 @@ const css_vars = computed<CSSProperties>(() => ({
 </script>
 <style scoped>
 .ctn {
-    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) 20%);
+    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(10%, 8rem));
 }
 
 </style>
