@@ -15,31 +15,39 @@ end: jan 29 2024
 flags: [featured]
 ---
 
+There is a serial clown on the loose! It is up to you to gather evidence of it.
+"Laugh" into your mic to attract the clown to take pictures of it
+
+<small>
 This game was completed as part of Global Game Jam 2024 (GGJ-2024) with the theme was "Make Me Laugh".
 
-Teamed up with a group of friends & created a horror game where you "laugh" into the microphone to attract a creepy clown so that you can take pictures of it.
-
 Programmed the laugh mechanic & helped integrated various parts of the project together.
+</small>
 
-#### Contributors
+<details>
+    <summary>
+<b>Contributors</b>
+    </summary>
 <table>
-    <tr>
-        <td><b>Sprites</b></td>
-        <td><b>3D Models</b></td>
-        <td colspan="4"><b>Programmers / Others</b></td>
-    </tr>
-    <tr>
-        <style>
-            td>a>img{
-                max-width: initial;
-                width:3.5rem
-            }
-        </style>
-        <td><a href="https://github.com/TeeKaiQi"><img src="https://github.com/TeeKaiQi.png" /><br/><sub>TeeKaiQi</sub></a></td>
-        <td><a href="https://github.com/OrekiPotato"><img src="https://github.com/OrekiPotato.png" /><br/><sub>OrekiPotato</sub></a></td>
-        <td><a href="https://github.com/sirpotatosalad"><img src="https://github.com/sirpotatosalad.png"/><br/><sub>sirpotatosalad</sub></a></td>
-        <td><a href="https://github.com/glenn-chann"><img src="https://github.com/glenn-chann.png" /><br/><sub>glenn-chann</sub></a></td>
-        <td><a href="https://github.com/tingjs05"><img src="https://github.com/tingjs05.png" /><br/><sub>tingjs05</sub></a></td>
-        <td><a href="https://github.com/ultraflame4"><img src="https://github.com/ultraflame4.png"/><br/><sub>ultr42</sub></a></td>
-    </tr>
+<tr>
+    <td><b>Sprites</b></td>
+    <td><b>3D Models</b></td>
+    <td colspan="4"><b>Programmers / Others</b></td>
+</tr>
+<tr>
+    <style>
+        td>a>img{
+            max-width: initial;
+            width:3.5rem
+        }
+    </style>
+    <td><a href="https://github.com/TeeKaiQi"><img src="https://github.com/TeeKaiQi.png" /><br/><sub>TeeKaiQi</sub></a></td>
+    <td><a href="https://github.com/OrekiPotato"><img src="https://github.com/OrekiPotato.png" /><br/><sub>OrekiPotato</sub></a></td>
+    <td><a href="https://github.com/sirpotatosalad"><img src="https://github.com/sirpotatosalad.png"/><br/><sub>sirpotatosalad</sub></a></td>
+    <td><a href="https://github.com/glenn-chann"><img src="https://github.com/glenn-chann.png" /><br/><sub>glenn-chann</sub></a></td>
+    <td><a href="https://github.com/tingjs05"><img src="https://github.com/tingjs05.png" /><br/><sub>tingjs05</sub></a></td>
+    <td><a href="https://github.com/ultraflame4"><img src="https://github.com/ultraflame4.png"/><br/><sub>ultr42</sub></a></td>
+</tr>
 </table>
+
+</details>
