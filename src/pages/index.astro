@@ -11,6 +11,7 @@ import { ProjectCard } from "@/components/ui/project";
 import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
 import { date } from "astro:schema";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
+import BackToTop from "@/components/BackToTop.astro";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -161,7 +162,7 @@ const url = Astro.url;
     <section class="bg-background">
         <h1 id="about-recent-works">Recent Works</h1>
         <div class="w-full px-4 py-2 flex min-w-0">
-            <SpotlightBackground class="m-auto gap-[1.5px] p-[1.2px] project-grid min-w-0" client:only>
+            <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:only>
                 {
                     projects_rendered.map((x) => {
                         return (
@@ -182,6 +183,7 @@ const url = Astro.url;
             </SpotlightBackground>
         </div>
     </section>
+    <BackToTop />
 </Layout>
 
 <style>
