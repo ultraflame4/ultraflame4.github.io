@@ -1,49 +1,33 @@
 {
-  "name": "ultraflame4.github.io",
-  "version": "6.1.3",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check build-only",
-    "build_preview": "run-p type-check build-only && vite preview",
-    "migrate": "tsx tools/migrate.ts",
-    "schema": "tsx tools/schema.ts",
-    "preview": "vite preview",
-    "build-only": "cross-env NODE_ENV=production vite-ssg build --mode production",
-    "type-check": "vue-tsc --noEmit"
-  },
-  "dependencies": {
-    "@supercharge/strings": "^2.0.0",
-    "dompurify": "^3.1.3",
-    "front-matter": "^4.0.2",
-    "fuse.js": "^7.0.0",
-    "hash-it": "^6.0.0",
-    "marked": "^12.0.2",
-    "path-browserify": "^1.0.1",
-    "sass": "^1.77.2",
-    "threads": "^1.7.0",
-    "tsx": "^4.10.5",
-    "vite-ssg": "^0.23.7",
-    "vue": "^3.4.27",
-    "vue-gtag": "^2.0.1",
-    "vue-router": "^4.3.2",
-    "vue-router-better-scroller": "^0.0.0",
-    "vyue42": "^0.0.2"
-  },
-  "devDependencies": {
-    "@iconify/vue": "^4.1.2",
-    "@types/dompurify": "^3.0.5",
-    "@types/marked": "^6.0.0",
-    "@types/node": "^20.12.12",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue/tsconfig": "^0.5.1",
-    "cross-env": "^7.0.3",
-    "npm-run-all": "^4.1.5",
-    "typescript": "~5.4.5",
-    "typescript-json-schema": "^0.63.0",
-    "vite": "^5.2.11",
-    "vue-tsc": "^2.0.19",
-    "yaml": "^2.4.2"
-  }
+    "name": "clyh.me",
+    "type": "module",
+    "version": "7.0.0",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/vue": "^5.1.0",
+        "@fontsource/poppins": "^5.2.6",
+        "@fontsource/silkscreen": "^5.2.6",
+        "@tailwindcss/postcss": "^4.1.10",
+        "@tailwindcss/vite": "^4.1.10",
+        "@types/mdast": "^4.0.4",
+        "@vueuse/core": "^13.4.0",
+        "astro": "^5.10.0",
+        "postcss": "^8.5.6",
+        "sass": "^1.89.2",
+        "tailwindcss": "^4.1.10",
+        "unist-util-visit": "^5.0.0",
+        "vue": "^3.5.17"
+    },
+    "devDependencies": {
+        "@iconify/vue": "^5.0.0",
+        "@tailwindcss/typography": "^0.5.16",
+        "remark": "^15.0.1",
+        "remark-directive": "^4.0.0",
+        "unified": "^11.0.5"
+    }
 }

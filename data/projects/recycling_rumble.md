@@ -15,9 +15,13 @@ end: sep 13 2024
 flags: [featured]
 ---
 
-This game was completed as part of my Major Project for Singapore Municipal Office (MSO).
+Trash is piling up and recycling's gone wrong.
+Clean, sort, and launch recyclables into the right bins to save the day!
 
-This theme was "Recycling Right" and aims to promote correct recycling practices through repetition and consequences.
+<small>
+Completed as my Major Project for Singapore Municipal Office (MSO) under the theme "Recycling Right" to 
+promote correct recycling practices through repetition and consequences.
+</small>
 
 #### Contributors
 <table>

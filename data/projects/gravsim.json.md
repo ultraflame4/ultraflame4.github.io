@@ -19,14 +19,9 @@ start: oct 20 2023
 end: dec 4 2023
 status: completed
 ---
-I started this project on a whim, after thinking about gravitational attraction all night.
+2D N-Body gravity simulation of 2D Circles using Newton's law of universal gravitation.
 
-The core part of this project was completed in 3 days.
-
-This project uses technologies such as GLFW, OpenGL and C++.
-
-N-Body gravity simulation using Newton's law of universal gravitation.
-
+This project was made with using GLFW, OpenGL, C++ and others.
 
 [Download](https://github.com/ultraflame4/GravSim/releases)
 

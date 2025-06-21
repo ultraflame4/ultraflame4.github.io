@@ -23,3 +23,7 @@ But now, you are now surrounded by monsters that seem to find you very delicious
 they want to gobble you up.
 
 Survive the seemingly infinite waves of monster, and find a way out. How far will you go before you die?
+
+<small>
+Completed as part of final project for the Game Development (GADV) module in the Game Design and Development course in Temasek Polytechnic.
+</small>

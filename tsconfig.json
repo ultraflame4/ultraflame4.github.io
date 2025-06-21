@@ -1,18 +1,39 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "lib": ["esnext", "dom"],
-    "paths": {
-      "@/*": ["./src/*"]
-//      "vyue42": ["../../vyue42"]
+    "extends": "astro/tsconfigs/strict",
+    "include": [
+        ".astro/types.d.ts",
+        "**/*"
+    ],
+    "exclude": [
+        "dist",
+        "astro.config.ts",
+        "src/meta",
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "@data/*": [
+                "data/*"
+            ],
+            "@assets/*": [
+                "src/assets/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@layouts/*": [
+                "src/layouts/*"
+            ],
+            "@pages/*": [
+                "src/pages/*"
+            ]
+        },
+        "jsx": "preserve"
     }
-  },
-
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
 }

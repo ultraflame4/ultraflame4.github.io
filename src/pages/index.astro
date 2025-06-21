@@ -1,0 +1,216 @@
+---
+import TypedTextEffect from "@components/effects/TypedTextEffect.vue";
+import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
+import Layout from "@layouts/Layout.astro";
+import NavDock from "@/components/NavDock.astro";
+import { WindowEntryRatio } from "@/components/effects";
+import { WindowBook, WindowBookPage } from "@/components/ui";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+import { ProjectCard } from "@/components/ui/project";
+import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
+import { date } from "astro:schema";
+import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
+import BackToTop from "@/components/BackToTop.astro";
+
+const _about_story = await getCollection("about_story");
+const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
+
+const projects_rendered = await Promise.all(
+    _projects
+        .map((x) => ({
+            data: normalise_FrontmatterProjectData(x.data, x.body ?? "", x.filePath),
+            og: x,
+        }))
+        .filter((x) => x.data.end_date || x.data.start_date) // filter out if neither date exists
+        .toSorted((a, b) => {
+            // Sort by end_date (desc), then start_date (desc)
+            const aEnd = (a.data.end_date ?? a.data.start_date)!.getTime();
+            const bEnd = (b.data.end_date ?? b.data.start_date)!.getTime();
+            return bEnd - aEnd;
+        })
+        .filter((x, index) => index < 3)
+        .map((x) =>
+            render(x.og).then((r) => ({
+                data: x.data,
+                content: r.Content,
+            }))
+        )
+);
+
+const about_story_rendered = await Promise.all(
+    _about_story.map((x) =>
+        render(x).then((r) => ({
+            title: x.id,
+            content: r.Content,
+        }))
+    )
+).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
+
+const greeting = [
+    10,
+    "Hello, ",
+    "Hello, I'm <span class='greeting-name'>Chester</span>",
+    20,
+    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#86EFAC'>Games</span>`,
+    10,
+    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FDE68A'>Websites</span>`,
+    10,
+    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#A78BFA'>Software</span>`,
+    10,
+    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
+];
+
+const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  "];
+const url = Astro.url;
+---
+
+<Layout>
+    <div class="absolute top-0 w-full banner-bg" style="height: 200vh; z-index: -1;">
+        <div class="noise"></div>
+        <div
+            class="top-1/2 sticky m-auto text-sm glow"
+            style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%); "
+        >
+            <LandingPageTerminal client:only="vue" />
+        </div>
+        <div class="absolute h-full w-full top-0 left-0"></div>
+    </div>
+
+    <style>
+        :root {
+            --navbar-height: 2rem;
+        }
+        .navbar-ctn {
+            height: var(--navbar-height);
+        }
+    </style>
+    <section>
+        <div class="w-full grid relative" style="height: calc(100vh - var(--nav-total-h-units) );">
+            <div class="flex items-center justify-center flex-col relative" id="greetings">
+                <style>
+                    .greeting-name {
+                        font-family: "Courier New", Courier, monospace;
+                    }
+                </style>
+                <div
+                    class="sticky top-1/2 flex items-center justify-center flex-col"
+                    style="transform: translateY(-25%); z-index: 1"
+                >
+                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
+                        <TypedTextEffect texts={greeting} client:only="vue" />
+                    </h1>
+                    <p class="top-3/4 mb-8 bg-background">
+                        <TypedTextEffect texts={greeting_sub} client:only="vue" hideCursor />
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <style define:vars={{ noise_url: `url("${import.meta.env.BASE_URL}/noise.svg")` }}>
+            .noise {
+                position: absolute;
+                inset: 0;
+                background: var(--noise_url);
+                background-size: 100px;
+                filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
+
+                mix-blend-mode: multiply;
+            }
+
+            .banner-bg {
+                background-color: #4158d0;
+                background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+            }
+        </style>
+    </section>
+    <NavDock />
+
+    <WindowEntryRatio class="relative w-full h-0" client:load>
+        <div class="banner-trans h-dvh"></div>
+        <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
+    </WindowEntryRatio>
+
+    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100dvh;" id="about-section">
+        <div class="max-w-7xl w-full h-full">
+            <WindowBook
+                client:load
+                title="My Profile"
+                id="about-summary"
+                root="#about-section"
+                sections={about_story_rendered.map((x) => ({
+                    title: `${x.title}.md`,
+                    icon: "streamline:markdown-document-programming-solid",
+                    href: `#about-${x.title}`,
+                }))}
+            >
+                {
+                    about_story_rendered.map((x, idx, arr) => {
+                        let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
+                        let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
+
+                        return (
+                            <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
+                                <x.content />
+                            </WindowBookPage>
+                        );
+                    })
+                }
+            </WindowBook>
+        </div>
+    </section>
+    <section class="bg-background" id="recent-works">
+        <h1>Recent Works</h1>
+        <div class="w-full px-4 py-2 flex min-w-0">
+            <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:only>
+                {
+                    projects_rendered.map((x) => {
+                        return (
+                            <ProjectCard data={x.data} client:only>
+                                <x.content />
+                            </ProjectCard>
+                        );
+                    })
+                }
+                <div class="bg-background min-h-32">
+                    <a
+                        class="flex items-center justify-center w-full h-full hover:bg-hover active:text-black active:bg-accent font-fancy text-xl"
+                        href="/gallery"
+                    >
+                        Go to Gallery
+                    </a>
+                </div>
+            </SpotlightBackground>
+        </div>
+    </section>
+    <BackToTop />
+</Layout>
+
+<style>
+    @import "@styles/global.css";
+
+    section > h1 {
+        @apply font-fancy text-3xl;
+        margin: var(--nav-total-h-units) 0 3rem;
+    }
+
+    section {
+        @apply flex items-center justify-center flex-col;
+    }
+
+    .banner-trans2 {
+        @apply absolute bottom-0 w-full;
+        opacity: calc(var(--ratio) * 100);
+    }
+    .banner-trans {
+        @apply absolute bottom-0 w-full bg-background;
+        /* background-position-y: calc(var(--ratio) * 100%); */
+        opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
+    }
+
+    .project-grid {
+        display: grid;
+        width: min(100%, 96rem);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr));
+    }
+</style>

@@ -1,0 +1,60 @@
+---
+const { class: className, ...rest } = Astro.props;
+const links = {
+    about: "/#about-section",
+    blog: "/blog",
+    gallery: "/gallery",
+};
+---
+
+<div class="p-(--nav-offset-units) w-full sticky top-0 z-10">
+    <div
+        class="flex items-center justify-center h-(--nav-height-units) rounded-2xl drop-shadow-xl acrylic px-2 py-2 w-fit m-auto"
+    >
+        <nav class="h-full">
+            <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
+                <li class="h-full">
+                    <a href="/#top" class="nav-brand" data-active={Astro.url.pathname == "/"}>
+                        <img src="/logov200.png" class="h-full" />
+                    </a>
+                </li>
+                {
+                    Object.entries(links).map(([k, v], index) => (
+                        <li
+                            class="navlink hover:text-accent cursor-pointer"
+                            data-active={Astro.url.pathname == v}
+                        >
+                            <a href={import.meta.env.BASE_URL + v} class="font-fancy flex items-center gap-1">
+                                <span class="navlink-key acrylic">{index}</span>
+                                <span class="navlink-title">{k}</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<style>
+    @reference "@styles/global.css";
+
+    .nav-brand > img,
+    nav li {
+        transition: all 200ms ease;
+        @apply text-bright;
+    }
+
+    .nav-brand[data-active="true"] > img,
+    nav li[data-active="true"] .navlink-title{
+        filter: drop-shadow(0px 0px 2px var(--color-rainbow));
+        /* @apply text-dimmed; */
+    }
+    .navlink-key {
+        @apply font-mono font-extrabold rounded-sm w-4.5 h-4.5 text-sm flex items-center justify-center box-content bg-background border-panel;
+        border: 0.1rem solid black;
+    }
+    .navlink:last-child {
+        @apply mr-1.5;
+    }
+</style>

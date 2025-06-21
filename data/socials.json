@@ -1,0 +1,17 @@
+[
+    {
+        "title": "github",
+        "iconify": "simple-icons:github",
+        "url": "https://github.com/ultraflame4"
+    },
+    {
+        "title": "linkedin",
+        "iconify": "devicon:linkedin",
+        "url": "https://www.linkedin.com/in/chester-lai-yu-heng/"
+    },
+    {
+        "title": "itch.io",
+        "iconify": "simple-icons:itchdotio",
+        "url": "https://notlivingstudios.itch.io"
+    }
+]

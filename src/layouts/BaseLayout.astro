@@ -1,0 +1,35 @@
+---
+import NavDock from "@/components/NavDock.astro";
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/logov200.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>ᓚ₍ ^. .^₎</title>
+        <ClientRouter />
+        <script>
+            import { init_pathchange_detection } from "@/components/core";
+            import { initYoutubeApi } from "@/lib/external/yt";
+
+            init_pathchange_detection();
+            initYoutubeApi();
+        </script>
+    </head>
+    <body id="top">
+        <slot />
+    </body>
+</html>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+    }
+</style>
