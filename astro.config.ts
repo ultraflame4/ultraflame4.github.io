@@ -13,7 +13,8 @@ let commitHash = ""
 try {
     commitHash = childProcess
         .execSync('git rev-parse --short HEAD')
-        .toString();
+        .toString()
+        .replaceAll('\n','');
     console.log("App at commit hash:", commitHash)
 }
 catch (e) {

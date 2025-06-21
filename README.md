@@ -18,7 +18,7 @@ So I wont be listing every single folder here except notable ones.
       1. `core/` - Simple core components like anchors, carousells etc. Styling usually isnt used, rather components here wraps around existing html element to introduce additional functionality or behaviour
       2. `effects/` - Components used for various effects like text with typing animation.
       3. `ui/` - Ui Building blocks. i.e Panels, Cards etc.
-      4. `.` - Components, that "complete" and act more as widgets are not put into folders. i.e NavDock (aka Navbar header)
+      4. `.` - Components, that "complete" and act more as widgets / ui blocks are not put into folders. i.e NavDock (aka Navbar header). These components can straight away be used in pages with extremely little adjustments.
          1. Can also be thought of Page building blocks
    2. `meta/` - Usually contains code used for the build system itself. i.e Custom plugins
       1. `remark-plugin.ts` - Contains plugins for remark

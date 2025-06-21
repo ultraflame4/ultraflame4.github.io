@@ -1,6 +1,8 @@
 ---
 import { PulseRotatingBg } from "@/components/effects";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import socials from "@data/socials.json";
+import { Icon } from "@iconify/vue";
 
 const version = import.meta.env.__APP_VERSION__;
 const commit_hash = import.meta.env.__COMMIT_HASH__;
@@ -10,25 +12,52 @@ const mode_s = import.meta.env.MODE;
 <BaseLayout>
     <slot />
 
-    <footer class="mt-4 pt-8 relative overflow-hidden" id="bottom">
-        <div class="h-10 flex items-center justify-center text-sm gap-1 relative site-meta">
-            <code class="bg-black px-1.5 rounded-md block">
+    <footer class="mt-4 pt-2 relative overflow-hidden" id="bottom">
+        <div class="min-h-12.5 pt-2 px-4 flex items-center justify-center text-sm gap-2 relative site-meta">
+            <code class="bg-black px-1.5 rounded-md block w-fit site-version">
                 <!-- <pre>Site Version { version } </pre> -->
-                <pre>Site Version { version } {mode_s}{commit_hash ? "#"+commit_hash :""}</pre>
+                <pre>Site Version { version } {commit_hash ? `${commit_hash}` :""}</pre>
             </code>
-            <span> © Copyright 2025, All rights reserved. </span>
+            <div class="flex items-center gap-2 justify-center bar-center">
+                <span> Made with ❤️ by ultr42 </span>
+                <span>|</span>
+                <span> © Copyright 2025</span>
+            </div>
+            <div class="flex items-center justify-end social-list h-full gap-2 px-2">
+                {
+                    socials.map((x) => (
+                        <a title={x.title} href={x.url} class="hover:text-accent">
+                            <Icon icon={x.iconify} class="text-2xl" client:load/>
+                        </a>
+                    ))
+                }
+            </div>
             <PulseRotatingBg class:list={["opacity-60"]} />
         </div>
-
-        <style>
-            @reference "@/styles/global.css";
-            footer {
-                border-top: 1px solid var(--color-panel);
-            }
-
-            .site-meta {
-                background: linear-gradient(180deg, var(--color-background) 0%, transparent 100%);
-            }
-        </style>
     </footer>
 </BaseLayout>
+
+<style>
+    @reference "@/styles/global.css";
+    footer {
+        border-top: 1px solid var(--color-panel);
+    }
+
+    .site-meta {
+        background: linear-gradient(180deg, var(--color-background) 0%, transparent 100%);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        @apply pb-2;
+    }
+
+    @media screen and (max-width: 850px) {
+        .site-meta {
+            @apply w-full pb-2;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+        .social-list, .site-version {
+            @apply mx-auto
+        }
+    }
+</style>
