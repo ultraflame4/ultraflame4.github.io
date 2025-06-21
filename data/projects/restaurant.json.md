@@ -14,25 +14,21 @@ skills:
   - html
   - css
   - mysql
-links:
-  - Project Site: https://github.com/ultraflame4/CDEVRestaurantReview
+
 index_hint: 700
 status: completed
 start: oct 31 2022
 end: nov 29 2023
 ---
-A website listing various restaurants and reviews for them. 
-Features include:
-- Sorting, Filtering by price, distance & ratings.
-- Dynamically content fetched from database.
-- Infinite scroll.
-- Account system. (Login, logout, delete, password reset)
-- Retaurant reviews - posting, deleting etc.
+A restaurant reviews website. Features include:
+- Sorting & Filtering by price, distance & ratings.
+- Dynamically content fetched from database whiles scrolling (Infinite scroll).
+- User account system. (Login, logout, delete, password reset)
+- CRUD operation for reviews on restaurants
 
-The backend was created with MySQL, Express.js. 
-Frontend is powered by Vue.js
+Backend: MySQL, Express.js. 
+Frontend: Vue.js
 
-This was done as part of a school final project (for the year).
-
-
-[Project Site](https://github.com/ultraflame4/CDEVRestaurantReview)
+<small>
+This was done as final project for the modules "Database Application Development (DBAV)" and "Coding and Development Project (CDEV)" under the "Game Design and Development" course in Temasek Polytechnic.
+</small>

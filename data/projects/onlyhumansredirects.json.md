@@ -1,8 +1,6 @@
 ---
 #yaml-language-server: $schema=https://raw.githubusercontent.com/ultraflame4/ultraflame4.github.io/v6-dev/public/schema-attributes.json
 title: OnlyHumansRedirects
-flags:
-  - featured
 source:
   label: Source
   url: https://github.com/ultraflame4/OnlyHumansRedirects

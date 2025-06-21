@@ -7,7 +7,7 @@ import { getCollection, render } from "astro:content";
 import { SpotlightBackground } from "@/components/effects";
 import { ProjectCard } from "@/components/ui/project";
 
-const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
+const _projects = await getCollection("projects");
 
 const projects_rendered = await Promise.all(
     _projects

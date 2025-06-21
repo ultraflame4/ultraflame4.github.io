@@ -17,13 +17,15 @@ status: completed
 start: jun 29 2022
 end: dec 22 2022
 ---
-This is an android music app created using android studio (and other tools) for a school project.
-
+An android music app created using android studio.
 
 Features include:
-
 - Account system using firebase
 - Playlists, Shuffle, etc.
 - Playing of local music files
 
 Through this project I learned about the android ecosystem and gained an insight into one of the ways android apps are created and developed.
+
+<small>
+Completed as part of final project for the "Computational Thinking (COMT)" module under the Game Design and Development course in Temasek Polytechnic.
+</small>
