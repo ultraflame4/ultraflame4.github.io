@@ -2,6 +2,8 @@
 import { visit } from 'unist-util-visit';
 import type * as unified from 'unified';
 import type * as mdast from 'mdast';
+// Needed for typesscript support
+import type * as _ from 'remark-directive'
 
 
 export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
