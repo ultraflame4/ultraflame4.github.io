@@ -5,6 +5,10 @@ const links = {
     blog: "/blog",
     gallery: "/gallery",
 };
+
+const current_url = Astro.url.pathname.endsWith("/")
+    ? Astro.url.pathname.slice(0, Astro.url.pathname.length - 1)
+    : Astro.url.pathname;
 ---
 
 <div class="p-(--nav-offset-units) w-full sticky top-0 z-10">
@@ -14,22 +18,22 @@ const links = {
         <nav class="h-full">
             <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
                 <li class="h-full">
-                    <a href="/#top" class="nav-brand" data-active={Astro.url.pathname == "/"}>
+                    <a href="/#top" class="nav-brand" data-active={current_url == import.meta.env.BASE_URL}>
                         <img src="/logov200.png" class="h-full" />
                     </a>
                 </li>
                 {
-                    Object.entries(links).map(([k, v], index) => (
-                        <li
-                            class="navlink hover:text-accent cursor-pointer"
-                            data-active={Astro.url.pathname == v}
-                        >
-                            <a href={import.meta.env.BASE_URL + v} class="font-fancy flex items-center gap-1">
-                                <span class="navlink-key acrylic">{index}</span>
-                                <span class="navlink-title">{k}</span>
-                            </a>
-                        </li>
-                    ))
+                    Object.entries(links).map(([k, v], index) => {
+                        const url = import.meta.env.BASE_URL + v;
+                        return (
+                            <li class="navlink hover:text-accent cursor-pointer" data-active={current_url == url}>
+                                <a href={url} class="font-fancy flex items-center gap-1">
+                                    <span class="navlink-key acrylic">{index}</span>
+                                    <span class="navlink-title">{k}</span>
+                                </a>
+                            </li>
+                        );
+                    })
                 }
             </ul>
         </nav>
@@ -46,7 +50,7 @@ const links = {
     }
 
     .nav-brand[data-active="true"] > img,
-    nav li[data-active="true"] .navlink-title{
+    nav li[data-active="true"] .navlink-title {
         filter: drop-shadow(0px 0px 2px var(--color-rainbow));
         /* @apply text-dimmed; */
     }
