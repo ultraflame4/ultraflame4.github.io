@@ -115,6 +115,7 @@ const props = defineProps<props>()
     grid-gap: 0.75rem;
     position: relative;
     transition: all 100ms ease;
+    
 
     .badges {
         display: flex;
@@ -163,7 +164,8 @@ const props = defineProps<props>()
         flex-shrink: 1;
         flex-grow: 1;
         overflow-y: auto;
-        padding-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.9rem;
     }
 
     &>.project-links::before {
