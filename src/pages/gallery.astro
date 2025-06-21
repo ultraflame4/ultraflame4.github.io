@@ -6,6 +6,7 @@ import { type FrontmatterProjectDataSchema, normalise_FrontmatterProjectData } f
 import { getCollection, render } from "astro:content";
 import { SpotlightBackground } from "@/components/effects";
 import { ProjectCard } from "@/components/ui/project";
+import BackToTop from "@/components/BackToTop.astro";
 
 const _projects = await getCollection("projects");
 
@@ -53,6 +54,7 @@ const projects_rendered = await Promise.all(
         </div>
     </section>
     <UnderConstruction />
+    <BackToTop/>
 </Layout>
 <style>
     @import "@styles/global.css";
