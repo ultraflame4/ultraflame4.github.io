@@ -104,7 +104,7 @@ const props = defineProps<props>()
 <style lang="scss" scoped>
 .project-item {
     width: 100%;
-    height: 100%;
+    max-height: 32rem;
     min-width: 0;
     overflow: hidden;
     display: grid;
@@ -198,7 +198,6 @@ const props = defineProps<props>()
 .project-media {
     grid-column: 2/2;
     grid-row: 1/-1;
-    height: 100%;
     width: 100%;
     //background: var(--bg-0-5);
     overflow: hidden;
@@ -211,6 +210,8 @@ const props = defineProps<props>()
         grid-column: 1/1;
         grid-row: auto;
     }
+
+
 }
 
 .project-media>img {

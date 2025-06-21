@@ -2,9 +2,73 @@
 import Layout from "@/layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import UnderConstruction from "@/components/UnderConstruction.astro";
+import { type FrontmatterProjectDataSchema, normalise_FrontmatterProjectData } from "@/lib/project_utils";
+import { getCollection, render } from "astro:content";
+import { SpotlightBackground } from "@/components/effects";
+import { ProjectCard } from "@/components/ui/project";
+
+const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
+
+const projects_rendered = await Promise.all(
+    _projects
+        .map((x) => ({
+            data: normalise_FrontmatterProjectData(x.data, x.body ?? "", x.filePath),
+            og: x,
+        }))
+
+        .toSorted((a, b) => {
+            // Sort by end_date (desc), then start_date (desc)
+            const aEnd = (a.data.end_date ?? a.data.start_date)?.getTime();
+            const bEnd = (b.data.end_date ?? b.data.start_date)?.getTime();
+            return (bEnd ?? 0) - (aEnd ?? 0);
+        })
+        .map((x) =>
+            render(x.og).then((r) => ({
+                data: x.data,
+                content: r.Content,
+            }))
+        )
+);
 ---
 
 <Layout>
     <NavDock />
-    <UnderConstruction/>
+    <section>
+        <h1>Project Gallery</h1>
+        <div class="w-full px-4 py-2 flex min-w-0">
+            <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:only>
+                {
+                    projects_rendered.map((x) => {
+                        return (
+                            <ProjectCard data={x.data} client:only>
+                                <x.content />
+                            </ProjectCard>
+                        );
+                    })
+                }
+                <div class="bg-background min-h-32">
+
+                </div>
+            </SpotlightBackground>
+        </div>
+    </section>
+    <UnderConstruction />
 </Layout>
+<style>
+    @import "@styles/global.css";
+
+    section > h1 {
+        @apply font-fancy text-3xl mb-3;
+    }
+
+    section {
+        @apply flex items-center justify-center flex-col;
+    }
+
+    .project-grid {
+        display: grid;
+        width: min(100%, 160rem);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr));
+    }
+    
+</style>
