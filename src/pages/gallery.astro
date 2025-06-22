@@ -47,14 +47,12 @@ const projects_rendered = await Promise.all(
                         );
                     })
                 }
-                <div class="bg-background min-h-32">
-
-                </div>
+                <div class="bg-background min-h-32 mobile-collapse"></div>
             </SpotlightBackground>
         </div>
     </section>
     <UnderConstruction />
-    <BackToTop/>
+    <BackToTop />
 </Layout>
 <style>
     @import "@styles/global.css";
@@ -72,5 +70,15 @@ const projects_rendered = await Promise.all(
         width: min(100%, 160rem);
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr));
     }
-    
+
+    @media screen and (max-width: 1380px) {
+        .mobile-collapse {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 2053px) {
+        .mobile-collapse {
+            display: none;
+        }
+    }
 </style>
