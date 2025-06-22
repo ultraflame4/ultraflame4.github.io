@@ -115,7 +115,7 @@ const props = defineProps<props>()
     grid-gap: 0.75rem;
     position: relative;
     transition: all 100ms ease;
-    
+
 
     .badges {
         display: flex;
@@ -131,6 +131,7 @@ const props = defineProps<props>()
 
     @media screen and (max-width: 900px) {
         grid-template-columns: 1fr;
+        max-height: fit-content;
     }
 }
 
@@ -209,7 +210,7 @@ const props = defineProps<props>()
 
 
     @media screen and (max-width: 900px) {
-        grid-column: 1/1;
+        grid-column: 1;
         grid-row: auto;
     }
 
