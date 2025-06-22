@@ -98,27 +98,30 @@
             font-size: 0.95rem;
         }
     }
-    @media screen and (max-width: 750) {
+
+    @media screen and (max-width: 750px) {
         :root {
             font-size: 0.9rem;
         }
     }
 
-    @media screen and (max-width: 520px) {
+    @media screen and (max-width: 620px) {
         :root {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
         }
     }
 
     @media screen and (max-width: 510px) {
         :root {
-            font-size: 0.7rem;
+            --nav-height: 14 !important;
+            font-size: 0.8rem;
         }
     }
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 410px) {
         :root {
-            font-size: 0.65rem;
+            --nav-height: 14 !important;
+            font-size: 0.75rem;
         }
     }
 
@@ -212,7 +215,7 @@
             width: 100%;
         }
 
-        details > table{
+        details>table {
             margin-top: 0.5em;
         }
 
