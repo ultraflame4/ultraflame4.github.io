@@ -47,9 +47,34 @@ const projects_rendered = await Promise.all(
                         );
                     })
                 }
-                <div class="bg-background min-h-32 mobile-collapse"></div>
+
+                <div class="bg-background min-h-32 grid-filler"></div>
             </SpotlightBackground>
         </div>
+        <script is:inline  define:vars={{ project_count: projects_rendered.length }}>
+            function updateCols() {
+                const grid = document.querySelector(".project-grid");
+                const filler = document.querySelector(".grid-filler");
+                if (!grid) return;
+                if (!filler) return;
+                const computedStyle = getComputedStyle(grid);
+                const columnCount = computedStyle.gridTemplateColumns.split(" ").length;
+
+                const remainder = project_count % columnCount
+                
+                if (remainder > 0) {
+                    const col_span = columnCount - remainder;
+                    filler.style.gridColumn = `span ${col_span}`;
+                    filler.style.display = "block";
+                } else {
+                    filler.style.display = "none";
+                }
+            }
+
+            window.addEventListener("resize", updateCols);
+            window.addEventListener("load", updateCols)
+            
+        </script>
     </section>
     <UnderConstruction />
     <BackToTop />
@@ -69,16 +94,5 @@ const projects_rendered = await Promise.all(
         display: grid;
         width: min(100%, 160rem);
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr));
-    }
-
-    @media screen and (max-width: 1380px) {
-        .mobile-collapse {
-            display: none;
-        }
-    }
-    @media screen and (min-width: 2053px) {
-        .mobile-collapse {
-            display: none;
-        }
     }
 </style>

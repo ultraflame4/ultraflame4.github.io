@@ -1,4 +1,4 @@
-# Chapter 1
+# Backstory
 
 Hello, I am Chester.
 
@@ -14,8 +14,6 @@ It lit a fire 🔥 in my heart, kickstarting my journey into the world of comput
 
 That is it. I can't think of anymore words to fill up this section. 
 
-
-Please move on. 🥺
 
 ```
          *       ✧                ⋆
