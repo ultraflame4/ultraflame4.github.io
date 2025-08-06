@@ -8,17 +8,23 @@
         <WindowCardPanel asChild>
             <div class="w-full h-full flex min-w-0 overflow-hidden">
                 <template v-if="props.sections">
-                    <div class="min-w-[150px] h-full transition-none flex flex-col bg-background mobile-collapse"
-                        ref="sidebar" :style="sidebar_style">
-                        <ul class="w-full">
-                            <li v-for="entry in props.sections" class="h-8 w-full">
+                    <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse" ref="sidebar"
+                        :style="sidebar_style">
+                        <ul class="w-full shrink-0">
+                            <li class="w-full bg-background mb-[1px] px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed" v-if="props.sidebar_heading">
+                                <span>{{ props.sidebar_heading }}</span>
+                            </li>
+                            <li v-for="entry in props.sections" class="h-8 w-full  bg-background ">
                                 <RouteAnchor :to="entry.href"
-                                    class="flex gap-1 text-sm items-center font-mono px-2 h-full hover:bg-hover data-[active=true]:bg-highlight w-full">
+                                    class="flex gap-1.5 text-sm items-center font-mono px-1.5 h-full w-full border-[1px] border-transparent hover:bg-highlight data-[active=true]:bg-highlight data-[active=true]:border-primary ">
                                     <Icon v-if="entry.icon" :icon="entry.icon" />
                                     <span>{{ entry.title }}</span>
                                 </RouteAnchor>
                             </li>
                         </ul>
+                        <div class="bg-background grow">
+
+                        </div>
                     </div>
                     <ResizeHandle axis="x" class="w-[2px]" @resize="(x, y) => sidebar_size += x"
                         @reset="sidebar_clamp_size()"></ResizeHandle>
@@ -51,6 +57,7 @@ export interface WindowBookProps {
      * Selector of Parent element to scroll to on page load if location hash points to one of the pages (or element) in WindowBook
      */
     root?: string,
+    sidebar_heading?: boolean,
     sections?: {
         title: string,
         icon?: string,
