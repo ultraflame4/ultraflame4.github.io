@@ -18,16 +18,28 @@ const current_url = Astro.url.pathname.endsWith("/")
         <nav class="h-full">
             <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
                 <li class="h-full">
-                    <a href="/#top" class="nav-brand" data-active={current_url == import.meta.env.BASE_URL}>
+                    <a
+                        href="/#top"
+                        class="nav-brand"
+                        data-active={current_url == import.meta.env.BASE_URL}
+                        data-shortcutkey="0"
+                        accesskey="0"
+                    >
                         <img src="/logov200.png" class="h-full" />
                     </a>
                 </li>
                 {
-                    Object.entries(links).map(([k, v], index) => {
+                    Object.entries(links).map(([k, v], _index) => {
                         const url = import.meta.env.BASE_URL + v;
+                        const index = _index + 1;
                         return (
                             <li class="navlink hover:text-accent cursor-pointer" data-active={current_url == url}>
-                                <a href={url} class="font-fancy flex items-center gap-1">
+                                <a
+                                    href={url}
+                                    class="font-fancy flex items-center gap-1"
+                                    accesskey={`${index}`}
+                                    data-shortcutkey={`${index}`}
+                                >
                                     <span class="navlink-key acrylic">{index}</span>
                                     <span class="navlink-title">{k}</span>
                                 </a>
@@ -36,6 +48,17 @@ const current_url = Astro.url.pathname.endsWith("/")
                     })
                 }
             </ul>
+            <script>
+                document.addEventListener("keydown", (e) => {
+                    // Ignore typing in input fields
+                    if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName ?? "")) return;
+
+                    const link = document.querySelector(`a[data-shortcutkey="${e.key.toLowerCase()}"]`) as HTMLAnchorElement;
+                    if (link) {
+                        window.location.href = link.href;
+                    }
+                });
+            </script>
         </nav>
     </div>
 </div>
