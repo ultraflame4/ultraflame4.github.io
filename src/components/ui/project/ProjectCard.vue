@@ -119,7 +119,7 @@ const props = defineProps<props>()
 
     .badges {
         display: flex;
-        gap: .5rem;
+        gap: .4rem;
         list-style-type: none;
         position: absolute;
         top: .5rem;
