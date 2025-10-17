@@ -51,17 +51,18 @@ const projects_rendered = await Promise.all(
                 <div class="bg-background min-h-32 grid-filler"></div>
             </SpotlightBackground>
         </div>
-        <script is:inline  define:vars={{ project_count: projects_rendered.length }}>
+        <script is:inline define:vars={{ project_count: projects_rendered.length }}>
             function updateCols() {
                 const grid = document.querySelector(".project-grid");
                 const filler = document.querySelector(".grid-filler");
+                console.log("eles", grid, filler);
                 if (!grid) return;
                 if (!filler) return;
                 const computedStyle = getComputedStyle(grid);
                 const columnCount = computedStyle.gridTemplateColumns.split(" ").length;
 
-                const remainder = project_count % columnCount
-                
+                const remainder = project_count % columnCount;
+
                 if (remainder > 0) {
                     const col_span = columnCount - remainder;
                     filler.style.gridColumn = `span ${col_span}`;
@@ -72,7 +73,7 @@ const projects_rendered = await Promise.all(
             }
 
             window.addEventListener("resize", updateCols);
-            window.addEventListener("load", updateCols)
+            document.addEventListener("pathchanged", updateCols);
             
         </script>
     </section>

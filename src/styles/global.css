@@ -274,11 +274,11 @@
     }
 
     .badge {
-        @apply flex items-center justify-center font-mono font-semibold bg-panel;
+        @apply flex items-center justify-center font-mono text-sm bg-panel py-0.5;
         box-sizing: border-box;
         text-align: center;
         vertical-align: middle;
-        border: 2px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 0.5rem;
         padding-left: 0.25rem;
         padding-right: 0.4rem;

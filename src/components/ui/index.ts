@@ -3,6 +3,7 @@ import WindowCardBody_ from "./WindowCardBody.vue";
 import WindowBook_ from "./WindowBook.vue";
 import WindowBookPage_ from "./WindowBookPage.vue";
 import YoutubeEmbed_ from "./YoutubeEmbed.vue";
+import RSSFeedViewer_ from "./RSSFeed/RSSFeedViewer.vue";
 
 /**
  * A Card / Section that inspired by an editor
@@ -20,3 +21,4 @@ export const WindowBookPage = WindowBookPage_;
  * Embed youtube player
  */
 export const YoutubeEmbed = YoutubeEmbed_;
+export const RSSFeedViewer = RSSFeedViewer_;

@@ -57,7 +57,7 @@ export interface WindowBookProps {
      * Selector of Parent element to scroll to on page load if location hash points to one of the pages (or element) in WindowBook
      */
     root?: string,
-    sidebar_heading?: boolean,
+    sidebar_heading?: string,
     sections?: {
         title: string,
         icon?: string,

@@ -2,9 +2,29 @@
 import Layout from "@/layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import UnderConstruction from "@/components/UnderConstruction.astro";
+import { RSSFeedViewer } from "@/components/ui";
 ---
 
 <Layout>
     <NavDock />
-    <UnderConstruction/>
+    <section>
+        <h1>Recent Posts</h1>
+        <p class="text-dimmed font-mono">View all posts at <a href="https://dev.to/clyh">dev.to/clyh</a></p>
+        <div class="max-w-256 mx-auto">
+            <RSSFeedViewer feedurl="https://dev.to/feed/clyh" client:only />
+        </div>
+    </section>
 </Layout>
+<style>
+    @import "@styles/global.css";
+
+    section > h1 {
+        @apply font-fancy text-3xl mb-3;
+    }
+    section a {
+        @apply underline hover:text-primary;
+    }
+    section {
+        @apply flex items-center justify-center flex-col;
+    }
+</style>
