@@ -50,9 +50,7 @@ const current_url = Astro.url.pathname.endsWith("/")
             </ul>
             <script>
                 document.addEventListener("keydown", (e) => {
-                    // Ignore typing in input fields
-                    if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName ?? "")) return;
-
+                    if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName?.toLocaleUpperCase() ?? "")) return;
                     const link = document.querySelector(`a[data-shortcutkey="${e.key.toLowerCase()}"]`) as HTMLAnchorElement;
                     if (link) {
                         window.location.href = link.href;
