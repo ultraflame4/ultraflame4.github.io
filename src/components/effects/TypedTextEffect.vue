@@ -35,13 +35,19 @@ export class TTIBuilder {
     private word_lens: TypeTextInstruction[] = [];
     private instructs: TextInstruction[] = [];
 
-    seq(text: string): this {
-        const x = tti_type(text)
+    /**
+     * Types out the characters in sequence 
+     */
+    seq(chars: string): this {
+        const x = tti_type(chars)
         this.word_lens.push(x);
         this.instructs.push(x);
         return this;
     }
 
+    /**
+     * Inserts the text immediately. Useful for things like html.
+     */
     ins(text: string): this {
         const x = tti_insert(text)
         this.word_lens.push(x);
@@ -67,17 +73,18 @@ export class TTIBuilder {
         return this;
     }
 
-    deln(n: number, instant = false): this {
-        this.instructs.push(tti_del(n, instant));
-        return this;
-    }
-
+    /**
+     * Wait abit before continuing to the next instruction
+     * @param n 
+     */
     wait(n: number): this {
         this.instructs.push(tti_wait(n));
         return this
     }
 
-
+    /**
+     * Returns the final text instructions
+     */
     build(): TextInstruction[] {
         return this.instructs;
     }
