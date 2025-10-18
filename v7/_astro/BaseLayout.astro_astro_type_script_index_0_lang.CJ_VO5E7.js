@@ -1,0 +1,1 @@
+import{i}from"./yt.B04riI2T.js";import"./reactivity.esm-bundler.D7AIp9Qf.js";var n=!1;function a(){if(n)return;console.log("Init Route Anchor!"),n=!0;let t=null;const o=new CustomEvent("pathchanged");setInterval(()=>{let e=location.pathname+location.hash;e!=t&&(console.log("Path changed detected:",t,"->",e),t=e,document.dispatchEvent(o))},200)}a();i();
