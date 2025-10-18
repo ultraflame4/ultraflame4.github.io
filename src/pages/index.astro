@@ -1,5 +1,5 @@
 ---
-import TypedTextEffect, { tti_type } from "@components/effects/TypedTextEffect.vue";
+import TypedTextEffect, { TTIBuilder } from "@components/effects/TypedTextEffect.vue";
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
@@ -63,23 +63,36 @@ const about_story_rendered = await Promise.all(
 //     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 // ];
 
+const greeting = new TTIBuilder()
+    .wait(10)
+    .seq("Hello, ")
+    .seq("I'm ")
+    .ins("<span class='greeting-name'>")
+    .seq("Chester")
+    .ins("</span><br>")
+    .wait(20)
+    .seq("I make ")
+    .ins("<span style='color:#86EFAC'>")
+    .seq("Games")
+    .ins("</span>")
+    .wait(30)
+    .autoprev(3)
+    .ins("<span style='color:#FDE68A'>")
+    .seq("Websites")
+    .ins("</span>")
+    .wait(30)
+    .autoprev(3)
+    .ins("<span style='color:#A78BFA'>")
+    .seq("Software")
+    .ins("</span>")
+    .wait(30)
+    .autoprev(3)
+    .ins("<span style='color:#FACC15'>")
+    .seq("Cool Stuff")
+    .ins("</span>")
+    .build();
 
-const greeting = [
-    tti_type("Hello, "),
-    tti_type("I'm "),
-    tti_insert("<span class='greeting-name'>"),
-    tti_type("Chester"),
-    tti_insert("</span><br>"),
-    tti_type("I make "),
-    tti_insert("<span style='color:#86EFAC'>"),
-    tti_type("Games"),
-    tti_insert("</span>"),
-    tti_del("</span>".length, true),
-    tti_del("Games".length),
-
-]
-
-const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  "];
+const greeting_sub = new TTIBuilder().wait(350).seq("  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  ").build();
 const url = Astro.url;
 ---
 
@@ -119,7 +132,7 @@ const url = Astro.url;
                         <TypedTextEffect instructions={greeting} client:only="vue" />
                     </h1>
                     <p class="top-3/4 mb-8 bg-background">
-                        <!-- <TypedTextEffect texts={greeting_sub} client:only="vue" hideCursor /> -->
+                        <TypedTextEffect instructions={greeting_sub} client:only="vue" hideCursor />
                     </p>
                 </div>
             </div>

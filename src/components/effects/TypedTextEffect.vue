@@ -23,13 +23,65 @@ export type TextInstruction = TypeTextInstruction | DeleteTextInstruction | {
 }
 
 export const tti_type = (characters: string) => ({ ty: "type", value: characters } as TypeTextInstruction)
-export const tti_insert = (word: string) => ({ ty: "type", value: word, noanim: true } as TextInstruction)
+export const tti_insert = (word: string) => ({ ty: "type", value: word, noanim: true } as TypeTextInstruction)
 export const tti_del = (n: number, noanim?: boolean) => ({ ty: "del", value: n, noanim } as TextInstruction)
 export const tti_wait = (n: number) => ({ ty: "wait", value: n } as TextInstruction)
 export const tti_goto = (step_index: number) => ({ ty: "goto", value: step_index } as TextInstruction)
 
 
 
+
+export class TTIBuilder {
+    private word_lens: TypeTextInstruction[] = [];
+    private instructs: TextInstruction[] = [];
+
+    seq(text: string): this {
+        const x = tti_type(text)
+        this.word_lens.push(x);
+        this.instructs.push(x);
+        return this;
+    }
+
+    ins(text: string): this {
+        const x = tti_insert(text)
+        this.word_lens.push(x);
+        this.instructs.push(x);
+        return this;
+    }
+
+    /**Deletes the previous seq or ins.*/
+    prev(instant = false): this {
+        const last = this.word_lens.pop()
+        if (!last) return this;
+        this.instructs.push(tti_del(last.value.length, instant));
+        return this;
+    }
+
+    /**Deletes the n previous seq or ins. If ins, deletes words instantly*/
+    autoprev(n: number): this {
+        for (let index = 0; index < n; index++) {
+            const last = this.word_lens.pop()
+            if (!last) return this;
+            this.instructs.push(tti_del(last.value.length, last.noanim));
+        }
+        return this;
+    }
+
+    deln(n: number, instant = false): this {
+        this.instructs.push(tti_del(n, instant));
+        return this;
+    }
+
+    wait(n: number): this {
+        this.instructs.push(tti_wait(n));
+        return this
+    }
+
+
+    build(): TextInstruction[] {
+        return this.instructs;
+    }
+}
 </script>
 
 <script lang="ts" setup>
@@ -51,10 +103,8 @@ const current_sub_instruct = ref<DeleteTextInstruction | TypeTextInstruction | f
 function loadNext() {
     // End of instructions. Do nothing!
     if (current >= props.instructions.length) return;
-    console.log(`next! ${current}`);
     const next = props.instructions[current]
     current += 1
-    wait_counter = props?.interval ?? 30
 
     if (next.ty == "wait") {
         wait_counter = next.value
@@ -77,6 +127,11 @@ function loadNext() {
 
 onMounted(() => {
     const id = setInterval(() => {
+
+        if (wait_counter > 0) {
+            wait_counter -= 1;
+            return;
+        }
 
         const typing_instruct = current_sub_instruct.value
         // Load next instruction if no text to type.
