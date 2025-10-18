@@ -1,6 +1,6 @@
 <template>
-    <div class="p-4">
-        <div class="bg-highlight p-[1px] flex flex-col gap-[1px]">
+    <div class="p-4 overflow-hidden w-full">
+        <div class="bg-highlight p-[1px] flex flex-col gap-[1px] ">
             <p v-if="loading" class="p-4 bg-background">Loading...</p>
             <FeedItem v-for="item in items" :item="item"></FeedItem>
         </div>
