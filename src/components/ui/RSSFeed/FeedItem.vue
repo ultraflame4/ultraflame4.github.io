@@ -1,5 +1,5 @@
 <template>
-    <a class="bg-background relative hover:outline-primary outline-1 outline-transparent group overflow-hidden"
+    <a class="bg-background relative hover:outline-primary outline-1 outline-transparent group overflow-hidden block"
         :id="item.id" :href="item.link">
 
         <article class="p-3 overflow-hidden ">
@@ -7,7 +7,7 @@
             <div class="text-xs text-dimmed font-mono my-1">
                 <span>Published {{ item.pubDate?.toLocaleDateString() ?? 'Unknown' }}</span>
             </div>
-            <div class="preview prose prose-invert min-h-32 max-h-48 max-w-none" v-html="item.description">
+            <div class="preview prose prose-invert min-h-32 max-h-48 max-w-full" v-html="item.description">
 
             </div>
         </article>

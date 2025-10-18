@@ -10,8 +10,8 @@ import { RSSFeedViewer } from "@/components/ui";
     <section>
         <h1>Recent Posts</h1>
         <p class="text-dimmed font-mono">View all posts at <a href="https://dev.to/clyh">dev.to/clyh</a></p>
-        <div class="max-w-256 mx-auto">
-            <RSSFeedViewer feedurl="https://dev.to/feed/clyh" client:only />
+        <div class="max-w-full mx-auto">
+            <RSSFeedViewer class:list={'max-w-256'} feedurl="https://dev.to/feed/clyh" client:only />
         </div>
     </section>
 </Layout>

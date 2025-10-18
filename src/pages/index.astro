@@ -1,5 +1,5 @@
 ---
-import TypedTextEffect from "@components/effects/TypedTextEffect.vue";
+import TypedTextEffect, { TTIBuilder } from "@components/effects/TypedTextEffect.vue";
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
@@ -12,6 +12,8 @@ import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } f
 import { date } from "astro:schema";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 import BackToTop from "@/components/BackToTop.astro";
+import { tti_insert } from "@components/effects/TypedTextEffect.vue";
+import { tti_del } from "@components/effects/TypedTextEffect.vue";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -47,21 +49,50 @@ const about_story_rendered = await Promise.all(
     )
 ).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
 
-const greeting = [
-    10,
-    "Hello, ",
-    "Hello, I'm <span class='greeting-name'>Chester</span>",
-    20,
-    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#86EFAC'>Games</span>`,
-    10,
-    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FDE68A'>Websites</span>`,
-    10,
-    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#A78BFA'>Software</span>`,
-    10,
-    `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
-];
+// const greeting = [
+//     10,
+//     "Hello, ",
+//     "Hello, I'm <span class='greeting-name'>Chester</span>",
+//     20,
+//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#86EFAC'>Games</span>`,
+//     10,
+//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FDE68A'>Websites</span>`,
+//     10,
+//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#A78BFA'>Software</span>`,
+//     10,
+//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
+// ];
 
-const greeting_sub = [350, "  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  "];
+const greeting = new TTIBuilder()
+    .wait(10)
+    .seq("Hello, ")
+    .seq("I'm ")
+    .ins("<span class='greeting-name'>")
+    .seq("Chester")
+    .ins("</span><br>")
+    .wait(20)
+    .seq("I make ")
+    .ins("<span style='color:#86EFAC'>")
+    .seq("Games")
+    .ins("</span>")
+    .wait(30)
+    .autoprev(3)
+    .ins("<span style='color:#FDE68A'>")
+    .seq("Websites")
+    .ins("</span>")
+    .wait(30)
+    .autoprev(3)
+    .ins("<span style='color:#A78BFA'>")
+    .seq("Software")
+    .ins("</span>")
+    .wait(30)
+    .autoprev(3)
+    .ins("<span style='color:#FACC15'>")
+    .seq("Cool Stuff")
+    .ins("</span>")
+    .build();
+
+const greeting_sub = new TTIBuilder().wait(350).seq("  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  ").build();
 const url = Astro.url;
 ---
 
@@ -98,10 +129,10 @@ const url = Astro.url;
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
-                        <TypedTextEffect texts={greeting} client:only="vue" />
+                        <TypedTextEffect instructions={greeting} client:only="vue" />
                     </h1>
                     <p class="top-3/4 mb-8 bg-background">
-                        <TypedTextEffect texts={greeting_sub} client:only="vue" hideCursor />
+                        <TypedTextEffect instructions={greeting_sub} client:only="vue" hideCursor />
                     </p>
                 </div>
             </div>
