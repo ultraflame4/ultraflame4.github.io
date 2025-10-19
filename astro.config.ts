@@ -7,7 +7,7 @@ import remarkDirective from 'remark-directive';
 import { remarkIconDirective } from './src/meta/remark-plugins';
 import { prefixWithBaseUrl } from './src/meta/auto-base';
 import { version } from "./package.json"
-
+import icon from "astro-icon";
 import * as childProcess from "child_process";
 
 let commitHash = ""
@@ -40,5 +40,5 @@ export default defineConfig({
     },
     site: "https://ultraflame4.github.io",
     base: '/v7',
-    integrations: [prefixWithBaseUrl(), vue()]
+    integrations: [prefixWithBaseUrl(), icon(), vue()]
 });

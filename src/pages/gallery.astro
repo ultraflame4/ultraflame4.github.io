@@ -7,6 +7,7 @@ import { getCollection, render } from "astro:content";
 import { SpotlightBackground } from "@/components/effects";
 import { ProjectCard } from "@/components/ui/project";
 import BackToTop from "@/components/BackToTop.astro";
+import ProjectCardStatic from "@/components/ui/project/ProjectCardStatic.astro";
 
 const _projects = await getCollection("projects");
 
@@ -37,7 +38,18 @@ const projects_rendered = await Promise.all(
     <section>
         <h1>Project Gallery</h1>
         <div class="w-full px-4 py-2 flex min-w-0">
-            <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:only>
+            <div class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0">
+                {
+                    projects_rendered.map((x) => {
+                        return (
+                            <ProjectCardStatic data={x.data}>
+                                <x.content />
+                            </ProjectCardStatic>
+                        );
+                    })
+                }
+            </div>
+            <!-- <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:only>
                 {
                     projects_rendered.map((x) => {
                         return (
@@ -49,7 +61,7 @@ const projects_rendered = await Promise.all(
                 }
 
                 <div class="bg-background min-h-32 grid-filler"></div>
-            </SpotlightBackground>
+            </SpotlightBackground> -->
         </div>
         <script is:inline define:vars={{ project_count: projects_rendered.length }}>
             function updateCols() {
@@ -74,7 +86,6 @@ const projects_rendered = await Promise.all(
 
             window.addEventListener("resize", updateCols);
             document.addEventListener("pathchanged", updateCols);
-            
         </script>
     </section>
     <UnderConstruction />

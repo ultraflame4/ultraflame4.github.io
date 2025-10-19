@@ -7,9 +7,11 @@ import ProjectDefaultLink_ from "./ProjectDefaultLink.vue";
 import ProjectReIconLink_ from "./ProjectReIconLink.vue";
 import GetProjectLink_ from "./GetProjectLink.vue";
 import ProjectCard_ from "./ProjectCard.vue";
+import ProjectCardStatic_ from "./ProjectCardStatic.astro";
 
 
 export const ProjectDefaultLink = ProjectDefaultLink_;
 export const ProjectReIconLink = ProjectReIconLink_;
 export const GetProjectLink = GetProjectLink_;
 export const ProjectCard = ProjectCard_;
+export const ProjectCardStatic = ProjectCardStatic_;
