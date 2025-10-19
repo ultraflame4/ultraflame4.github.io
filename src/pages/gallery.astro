@@ -2,10 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import UnderConstruction from "@/components/UnderConstruction.astro";
-import { type FrontmatterProjectDataSchema, normalise_FrontmatterProjectData } from "@/lib/project_utils";
+import { normalise_FrontmatterProjectData } from "@/lib/project_utils";
 import { getCollection, render } from "astro:content";
 import { SpotlightBackground } from "@/components/effects";
-import { ProjectCard } from "@/components/ui/project";
 import BackToTop from "@/components/BackToTop.astro";
 import ProjectCardStatic from "@/components/ui/project/ProjectCardStatic.astro";
 
@@ -38,7 +37,7 @@ const projects_rendered = await Promise.all(
     <section>
         <h1>Project Gallery</h1>
         <div class="w-full px-4 py-2 flex min-w-0">
-            <div class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0">
+            <div class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0 relative">
                 {
                     projects_rendered.map((x) => {
                         return (
@@ -48,20 +47,11 @@ const projects_rendered = await Promise.all(
                         );
                     })
                 }
-            </div>
-            <!-- <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:only>
-                {
-                    projects_rendered.map((x) => {
-                        return (
-                            <ProjectCard data={x.data} client:only>
-                                <x.content />
-                            </ProjectCard>
-                        );
-                    })
-                }
-
                 <div class="bg-background min-h-32 grid-filler"></div>
-            </SpotlightBackground> -->
+                <!-- Need this here to act as the base background. Setting it on the parent element will fuck up the spotlight bg due to the z index -->
+                <div class="absolute inset-0 -z-10 bg-highlight"></div>
+                <SpotlightBackground client:only class="absolute inset-0 -z-10" />
+            </div>
         </div>
         <script is:inline define:vars={{ project_count: projects_rendered.length }}>
             function updateCols() {

@@ -12,7 +12,6 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
 ---
 
 <div class="project-item bg-background p-4 pt-3">
-    <script>debugger</script>
     <div class="project-details">
         <h3 class="text-xl font-semibold font-poppins">
             {data.title}
@@ -54,18 +53,20 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
 
     <div class="project-media w-full min-w-0 overflow-scroll">
         {
-            data.media[0] &&
-                data.media[0].type == "video" &&
-                (isYTUrl(data.media[0].url) ? (
-                    <YoutubeEmbed src={data.media[0].url} />
-                ) : (
-                    <video v-else controls>
-                        <source src={data.media[0].url} />
-                    </video>
-                ))
+            (function () {
+                if (data.media[0] && data.media[0].type == "video") {
+                    return isYTUrl(data.media[0].url) ? (
+                        <YoutubeEmbed src={data.media[0].url} client:only="vue" />
+                    ) : (
+                        <video v-else controls>
+                            <source src={data.media[0].url} />
+                        </video>
+                    );
+                } else if (data.media[0]) {
+                    return <img src={data.media[0].url} alt="" />;
+                }
+            })()
         }
-
-        <img v-else-if="props.data.media[0]" :src="props.data.media[0].url" alt="" />
     </div>
 
     <ul class="project-skills">
