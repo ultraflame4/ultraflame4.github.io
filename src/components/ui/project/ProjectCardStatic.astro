@@ -3,7 +3,6 @@ import type { NormalisedProjectData } from "@/lib/project_utils";
 import { YoutubeEmbed } from "@/components/ui";
 import { isYoutubeUrl as isYTUrl } from "@/lib/external/yt";
 import GetProjectLink from "./GetProjectLink.vue";
-import { Icon } from "astro-icon/components";
 
 interface Props {
     data: NormalisedProjectData;
@@ -13,15 +12,16 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
 ---
 
 <div class="project-item bg-background p-4 pt-3">
+    <script>debugger</script>
     <div class="project-details">
         <h3 class="text-xl font-semibold font-poppins">
             {data.title}
         </h3>
         <sub>
             <template v-if="props.data.start_date || props.data.end_date">
-                <Icon name="mdi:calendar-month" class="search-icon text-lg" />
+                <iconify-icon ssr inline icon="mdi:calendar-month" class="search-icon text-lg"></iconify-icon>
                 {data.start_date ? datetimeformat.format(data.start_date) : "unknown"}
-                <Icon name="material-symbols:arrow-range-rounded" class="search-icon text-lg" />
+                <iconify-icon ssr inline icon="material-symbols:arrow-range-rounded" class="search-icon text-lg"></iconify-icon>
                 {data.end_date ? datetimeformat.format(data.end_date) : "current"}
             </template>
         </sub>
@@ -76,7 +76,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
         {
             data.featured && (
                 <li class="featured-badge badge">
-                    <Icon name="mage:stars-a-fill" class="icon text-lg" />
+                    <iconify-icon icon="mage:stars-a-fill" class="icon text-lg" />
                     featured
                 </li>
             )
@@ -85,7 +85,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
         {
             data.status == "completed" && (
                 <li class="badge">
-                    <Icon name="material-symbols:rocket-launch-rounded" class="icon text-lg text-green-400" />
+                    <iconify-icon icon="material-symbols:rocket-launch-rounded" class="icon text-lg text-green-400" />
                     completed
                 </li>
             )
@@ -94,7 +94,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
         {
             data.status == "in dev" && (
                 <li class="badge">
-                    <Icon name="fluent-emoji:construction" class="icon text-lg" />
+                    <iconify-icon icon="fluent-emoji:construction" class="icon text-lg" />
                     In development
                 </li>
             )
@@ -103,7 +103,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
         {
             data.status == "inactive" && (
                 <li class="badge">
-                    <Icon name="mingcute:sleep-fill" class="icon text-lg text-purple-400" />
+                    <iconify-icon icon="mingcute:sleep-fill" class="icon text-lg text-purple-400" />
                     inactive
                 </li>
             )
