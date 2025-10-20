@@ -37,6 +37,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
                                 url: data.source.url,
                                 icon: "humbleicons:code",
                             }}
+                            client:only
                         />
                     </li>
                 )
@@ -44,7 +45,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
             {
                 data.links.map((x) => (
                     <li>
-                        <GetProjectLink value={x} />
+                        <GetProjectLink value={x} client:only />
                     </li>
                 ))
             }
