@@ -7,7 +7,6 @@ source:
 image: https://github.com/ultraflame4/CliR/raw/main/resources/img.png
 skills:
   - rust
-index_hint: 0
 flags: [ featured ]
 index_hint: 0
 start: may 4 2024

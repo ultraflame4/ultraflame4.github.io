@@ -17,12 +17,17 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
             {data.title}
         </h3>
         <sub>
-            <template v-if="props.data.start_date || props.data.end_date">
-                <iconify-icon ssr inline icon="mdi:calendar-month" class="search-icon text-lg"></iconify-icon>
-                {data.start_date ? datetimeformat.format(data.start_date) : "unknown"}
-                <iconify-icon ssr inline icon="material-symbols:arrow-range-rounded" class="search-icon text-lg"></iconify-icon>
-                {data.end_date ? datetimeformat.format(data.end_date) : "current"}
-            </template>
+            {
+                (data.start_date || data.end_date) && (
+                    <>
+                        <iconify-icon ssr inline icon="mdi:calendar-month" class="search-icon text-lg" />
+                        {data.start_date ? datetimeformat.format(data.start_date) : "unknown"}
+                        <iconify-icon ssr inline icon="material-symbols:arrow-range-rounded" class="search-icon text-lg" />
+                        {data.end_date ? datetimeformat.format(data.end_date) : "current"}
+                    </>
+                )
+            }
+            <template v-if=""> </template>
         </sub>
         <div class="project-details-desc markdown">
             <slot />
