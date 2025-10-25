@@ -92,7 +92,7 @@ const greeting = new TTIBuilder()
     .ins("</span>")
     .build();
 
-const greeting_sub = new TTIBuilder().wait(350).seq("  Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *  ").build();
+const greeting_sub = new TTIBuilder().wait(350).seq("Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *").build();
 const url = Astro.url;
 ---
 
@@ -129,10 +129,19 @@ const url = Astro.url;
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
-                        <TypedTextEffect instructions={greeting} client:only="vue" />
+                        <TypedTextEffect
+                            instructions={greeting}
+                            fallback="Hello, I'm <span class='greeting-name'>Chester</span><br/>I make <span style='color:#FACC15'>Cool Stuff</span>"
+                            client:load
+                        />
                     </h1>
                     <p class="top-3/4 mb-8 bg-background">
-                        <TypedTextEffect instructions={greeting_sub} client:only="vue" hideCursor />
+                        <TypedTextEffect
+                            instructions={greeting_sub}
+                            fallback="Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"
+                            client:load
+                            hideCursor
+                        />
                     </p>
                 </div>
             </div>
