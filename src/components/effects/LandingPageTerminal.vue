@@ -24,7 +24,7 @@ const terminalInstructions: TerminalTextInstruction[] = [
     tti_delay(25),
     tti(`Logged in as user clyh`),
     tti_delay(10),
-    tti(`Current system time, ${new Date()}`),
+    tti(`Current system time: ${new Date()}`),
     tti_delay(10),
     tti(`\n[Notice!] 1 failed login attempt since last login!\n`),
     tti_prompt("~ $ ", "cd clyh.me/"),

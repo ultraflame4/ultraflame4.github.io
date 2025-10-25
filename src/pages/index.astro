@@ -7,13 +7,11 @@ import { WindowEntryRatio } from "@/components/effects";
 import { WindowBook, WindowBookPage } from "@/components/ui";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-import { ProjectCard, ProjectCardStatic } from "@/components/ui/project";
+import { ProjectCardStatic } from "@/components/ui/project";
 import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
-import { date } from "astro:schema";
+import socials from "@data/socials.json";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 import BackToTop from "@/components/BackToTop.astro";
-import { tti_insert } from "@components/effects/TypedTextEffect.vue";
-import { tti_del } from "@components/effects/TypedTextEffect.vue";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -128,14 +126,14 @@ const url = Astro.url;
                     class="sticky top-1/2 flex items-center justify-center flex-col"
                     style="transform: translateY(-25%); z-index: 1"
                 >
-                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-24">
+                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
                         <TypedTextEffect
                             instructions={greeting}
                             fallback="Hello, I'm <span class='greeting-name'>Chester</span><br/>I make <span style='color:#FACC15'>Cool Stuff</span>"
                             client:load
                         />
                     </h1>
-                    <p class="top-3/4 mb-8 bg-background">
+                    <p class="top-3/4 mb-8 bg-background min-h-[1.5em]">
                         <TypedTextEffect
                             instructions={greeting_sub}
                             fallback="Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"
@@ -143,115 +141,124 @@ const url = Astro.url;
                             hideCursor
                         />
                     </p>
+                    <div class="flex items-center justify-end social-list h-full gap-2 px-2">
+                        {
+                            socials.map((x) => (
+                                <a title={x.title} href={x.url} class="hover:text-accent">
+                                    <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
+                                </a>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <style define:vars={{ noise_url: `url("${import.meta.env.BASE_URL}/noise.svg")` }}>
-            .noise {
-                position: absolute;
-                inset: 0;
-                background: var(--noise_url);
-                background-size: 100px;
-                filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
+            <style define:vars={{ noise_url: `url("${import.meta.env.BASE_URL}/noise.svg")` }}>
+                .noise {
+                    position: absolute;
+                    inset: 0;
+                    background: var(--noise_url);
+                    background-size: 100px;
+                    filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
 
-                mix-blend-mode: multiply;
-            }
-
-            .banner-bg {
-                background-color: #4158d0;
-                background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
-            }
-        </style>
-    </section>
-    <NavDock />
-
-    <WindowEntryRatio class="relative w-full h-0" client:load>
-        <div class="banner-trans h-svh"></div>
-        <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
-    </WindowEntryRatio>
-
-    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
-        <div class="max-w-7xl w-full h-full">
-            <WindowBook
-                client:load
-                title="My Profile"
-                id="about-summary"
-                root="#about-section"
-                sections={about_story_rendered.map((x) => ({
-                    title: `${x.title}.md`,
-                    icon: "streamline:markdown-document-programming-solid",
-                    href: `#about-${x.title}`,
-                }))}
-                sidebar_heading="files"
-            >
-                {
-                    about_story_rendered.map((x, idx, arr) => {
-                        let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
-                        let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
-
-                        return (
-                            <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
-                                <x.content />
-                            </WindowBookPage>
-                        );
-                    })
+                    mix-blend-mode: multiply;
                 }
-            </WindowBook>
-        </div>
-    </section>
-    <section class="bg-background" id="recent-works">
-        <h1>Recent Works</h1>
-        <div class="w-full px-4 py-2 flex min-w-0">
-            <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:load>
-                {
-                    projects_rendered.map((x) => {
-                        return (
-                            <ProjectCardStatic data={x.data}>
-                                <x.content />
-                            </ProjectCardStatic>
-                        );
-                    })
+
+                .banner-bg {
+                    background-color: #4158d0;
+                    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
                 }
-                <div class="bg-background min-h-32">
-                    <a
-                        class="flex items-center justify-center w-full h-full hover:bg-hover active:text-black active:bg-accent font-fancy text-xl"
-                        href="/gallery"
-                    >
-                        Go to Gallery
-                    </a>
-                </div>
-            </SpotlightBackground>
+            </style>
         </div>
+        <NavDock />
+
+        <WindowEntryRatio class="relative w-full h-0" client:load>
+            <div class="banner-trans h-svh"></div>
+            <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
+        </WindowEntryRatio>
+
+        <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
+            <div class="max-w-7xl w-full h-full">
+                <WindowBook
+                    client:load
+                    title="My Profile"
+                    id="about-summary"
+                    root="#about-section"
+                    sections={about_story_rendered.map((x) => ({
+                        title: `${x.title}.md`,
+                        icon: "streamline:markdown-document-programming-solid",
+                        href: `#about-${x.title}`,
+                    }))}
+                    sidebar_heading="files"
+                >
+                    {
+                        about_story_rendered.map((x, idx, arr) => {
+                            let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
+                            let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
+
+                            return (
+                                <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
+                                    <x.content />
+                                </WindowBookPage>
+                            );
+                        })
+                    }
+                </WindowBook>
+            </div>
+        </section>
+        <section class="bg-background" id="recent-works">
+            <h1>Recent Works</h1>
+            <div class="w-full px-4 py-2 flex min-w-0">
+                <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:load>
+                    {
+                        projects_rendered.map((x) => {
+                            return (
+                                <ProjectCardStatic data={x.data}>
+                                    <x.content />
+                                </ProjectCardStatic>
+                            );
+                        })
+                    }
+                    <div class="bg-background min-h-32">
+                        <a
+                            class="flex items-center justify-center w-full h-full hover:bg-hover active:text-black active:bg-accent font-fancy text-xl"
+                            href="/gallery"
+                        >
+                            Go to Gallery
+                        </a>
+                    </div>
+                </SpotlightBackground>
+            </div>
+        </section>
+        <BackToTop />
     </section>
-    <BackToTop />
+
+    <style>
+        @import "@styles/global.css";
+
+        section > h1 {
+            @apply font-fancy text-3xl;
+            margin: var(--nav-total-h-units) 0 3rem;
+        }
+
+        section {
+            @apply flex items-center justify-center flex-col;
+        }
+
+        .banner-trans2 {
+            @apply absolute bottom-0 w-full;
+            opacity: calc(var(--ratio) * 100);
+        }
+        .banner-trans {
+            @apply absolute bottom-0 w-full bg-background;
+            /* background-position-y: calc(var(--ratio) * 100%); */
+            opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
+        }
+
+        .project-grid {
+            display: grid;
+            width: min(100%, 96rem);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr));
+        }
+    </style>
 </Layout>
-
-<style>
-    @import "@styles/global.css";
-
-    section > h1 {
-        @apply font-fancy text-3xl;
-        margin: var(--nav-total-h-units) 0 3rem;
-    }
-
-    section {
-        @apply flex items-center justify-center flex-col;
-    }
-
-    .banner-trans2 {
-        @apply absolute bottom-0 w-full;
-        opacity: calc(var(--ratio) * 100);
-    }
-    .banner-trans {
-        @apply absolute bottom-0 w-full bg-background;
-        /* background-position-y: calc(var(--ratio) * 100%); */
-        opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
-    }
-
-    .project-grid {
-        display: grid;
-        width: min(100%, 96rem);
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr));
-    }
-</style>

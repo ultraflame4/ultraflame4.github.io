@@ -29,7 +29,7 @@ const mode_s = import.meta.env.MODE;
                 {
                     socials.map((x) => (
                         <a title={x.title} href={x.url} class="hover:text-accent">
-                            <Icon icon={x.iconify} class="text-2xl" client:load />
+                            <iconify-icon ssr icon={x.iconify} class="text-2xl" />
                         </a>
                     ))
                 }
