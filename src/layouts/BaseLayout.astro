@@ -12,6 +12,7 @@ import { ClientRouter } from "astro:transitions";
         <link rel="icon" type="image/svg+xml" href="/logov200.png" />
         <meta name="generator" content={Astro.generator} />
         <title>clyh's place</title>
+        <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
         <ClientRouter />
         <script>
             import { init_pathchange_detection } from "@/components/core";
@@ -22,6 +23,14 @@ import { ClientRouter } from "astro:transitions";
         </script>
     </head>
     <body id="top" class="min-h-[100dvh] flex flex-col">
+        <noscript>
+            <p class="fixed top-0 bg-danger text-white z-40 w-full text-center text-sm font-mono p-2">
+                Warning, javascript disabled! Certain functions will be broken! <a
+                    class="underline"
+                    href="https://www.enable-javascript.com/">Enable Javascript</a
+                >
+            </p>
+        </noscript>
         <slot />
     </body>
 </html>

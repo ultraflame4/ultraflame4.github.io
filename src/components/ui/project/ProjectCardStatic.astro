@@ -1,0 +1,257 @@
+---
+import type { NormalisedProjectData } from "@/lib/project_utils";
+import { YoutubeEmbed } from "@/components/ui";
+import { isYoutubeUrl as isYTUrl } from "@/lib/external/yt";
+import GetProjectLink from "./GetProjectLink.vue";
+
+interface Props {
+    data: NormalisedProjectData;
+}
+const { data } = Astro.props as Props;
+const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: "numeric", day: "2-digit" });
+---
+
+<div class="project-item bg-background p-4 pt-3">
+    <div class="project-details">
+        <h3 class="text-xl font-semibold font-poppins">
+            {data.title}
+        </h3>
+        <sub>
+            {
+                (data.start_date || data.end_date) && (
+                    <>
+                        <iconify-icon ssr inline icon="mdi:calendar-month" class="search-icon text-lg" />
+                        {data.start_date ? datetimeformat.format(data.start_date) : "unknown"}
+                        <iconify-icon ssr inline icon="material-symbols:arrow-range-rounded" class="search-icon text-lg" />
+                        {data.end_date ? datetimeformat.format(data.end_date) : "current"}
+                    </>
+                )
+            }
+        </sub>
+        <div class="project-details-desc markdown">
+            <slot />
+        </div>
+        <ul class="project-links">
+            {
+                data.source && (
+                    <li>
+                        <GetProjectLink
+                            value={{
+                                name: data.source.label,
+                                url: data.source.url,
+                                icon: "humbleicons:code",
+                            }}
+                            client:only
+                        />
+                    </li>
+                )
+            }
+            {
+                data.links.map((x) => (
+                    <li>
+                        <GetProjectLink value={x} client:only />
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+
+    <div class="project-media w-full min-w-0 overflow-scroll">
+        {
+            (function () {
+                if (data.media[0] && data.media[0].type == "video") {
+                    return isYTUrl(data.media[0].url) ? (
+                        <YoutubeEmbed src={data.media[0].url} client:visible />
+                    ) : (
+                        <video v-else controls>
+                            <source src={data.media[0].url} />
+                        </video>
+                    );
+                } else if (data.media[0]) {
+                    return <img src={data.media[0].url} alt="" />;
+                }
+            })()
+        }
+    </div>
+
+    <ul class="project-skills">
+        {(data.skills ?? []).map((x) => <li class="font-semibold text-sm">{x.toLowerCase()}</li>)}
+    </ul>
+
+    <ul class="badges">
+        {
+            data.featured && (
+                <li class="featured-badge badge">
+                    <iconify-icon icon="mage:stars-a-fill" class="icon text-lg" />
+                    featured
+                </li>
+            )
+        }
+
+        {
+            data.status == "completed" && (
+                <li class="badge">
+                    <iconify-icon icon="material-symbols:rocket-launch-rounded" class="icon text-lg text-green-400" />
+                    completed
+                </li>
+            )
+        }
+
+        {
+            data.status == "in dev" && (
+                <li class="badge">
+                    <iconify-icon icon="fluent-emoji:construction" class="icon text-lg" />
+                    In development
+                </li>
+            )
+        }
+
+        {
+            data.status == "inactive" && (
+                <li class="badge">
+                    <iconify-icon icon="mingcute:sleep-fill" class="icon text-lg text-purple-400" />
+                    inactive
+                </li>
+            )
+        }
+    </ul>
+</div>
+
+<style lang="scss" scoped>
+    .project-item {
+        width: 100%;
+        max-height: 32rem;
+        min-width: 0;
+        overflow: hidden;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 5fr 4fr;
+        grid-template-rows: minmax(0, 1fr) auto;
+        box-sizing: border-box;
+        grid-gap: 0.75rem;
+        position: relative;
+        transition: all 100ms ease;
+
+        .badges {
+            display: flex;
+            gap: 0.4rem;
+            list-style-type: none;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            // z-index: 2;
+            overflow: visible;
+            // font and color moved to Tailwind
+        }
+
+        @media screen and (max-width: 900px) {
+            grid-template-columns: 1fr;
+            max-height: fit-content;
+        }
+    }
+
+    .project-details {
+        grid-column: 1/1;
+        grid-row: 1/1;
+        display: flex;
+        flex-direction: column;
+        //gap: 1rem;
+        height: 100%;
+        overflow: hidden;
+
+        & > sub {
+            margin-top: 0.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.215rem;
+            // font-size moved to Tailwind
+        }
+
+        & > h3 {
+            margin: 0;
+            /* font-size moved to Tailwind */
+            flex-shrink: 0;
+        }
+
+        & > .project-details-desc {
+            flex-shrink: 1;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        & > .project-links::before {
+            content: "";
+            background: linear-gradient(to top, var(--bg-0) 0%, transparent 100%);
+            position: absolute;
+            bottom: 100%;
+            height: 1rem;
+            width: 100%;
+        }
+
+        & > .project-links {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            margin-top: auto;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+            position: relative;
+            overflow: visible;
+
+            & > li {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+            }
+        }
+    }
+
+    .project-media {
+        grid-column: 2/2;
+        grid-row: 1/-1;
+        width: 100%;
+        max-height: 100%;
+        //background: var(--bg-0-5);
+        overflow: hidden;
+        border-radius: 0.5rem;
+        aspect-ratio: 1/1;
+        margin-left: auto;
+
+        @media screen and (max-width: 900px) {
+            grid-column: 1;
+            grid-row: auto;
+        }
+    }
+
+    .project-media > img {
+        transition: transform 200ms ease;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-media:hover > img {
+        transform: scale(1.1);
+    }
+
+    .project-media > video {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-skills {
+        display: flex;
+        gap: 0.5rem;
+        grid-column: 1/2;
+        grid-row: -1;
+        padding: 0;
+        height: fit-content;
+        // font-weight and font-size moved to Tailwind
+    }
+</style>

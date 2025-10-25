@@ -95,12 +95,18 @@ export class TTIBuilder {
 import { computed, onMounted, ref } from 'vue';
 
 
+interface iprops {
+    instructions: TextInstruction[],
+    speed?: number,
+    interval?: number,
+    hideCursor?: boolean,
+    fallback: string
+}
+const props = defineProps<iprops>()
 
-const props = defineProps<{ instructions: TextInstruction[], speed?: number, interval?: number, hideCursor?: boolean }>()
 
 
-
-const typed_text = ref("");
+const typed_text = ref(`<noscript>${props.fallback}</noscript>`);
 
 let wait_counter = 0;
 let current = 0

@@ -7,7 +7,6 @@ import remarkDirective from 'remark-directive';
 import { remarkIconDirective } from './src/meta/remark-plugins';
 import { prefixWithBaseUrl } from './src/meta/auto-base';
 import { version } from "./package.json"
-
 import * as childProcess from "child_process";
 
 let commitHash = ""

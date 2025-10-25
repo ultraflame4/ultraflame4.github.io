@@ -6,7 +6,7 @@ const links = {
     gallery: "/gallery",
 };
 
-const current_url = Astro.url.pathname.endsWith("/")
+const current_path = Astro.url.pathname.endsWith("/")
     ? Astro.url.pathname.slice(0, Astro.url.pathname.length - 1)
     : Astro.url.pathname;
 ---
@@ -21,19 +21,20 @@ const current_url = Astro.url.pathname.endsWith("/")
                     <a
                         href="/#top"
                         class="nav-brand"
-                        data-active={current_url == import.meta.env.BASE_URL}
+                        data-active={current_path == import.meta.env.BASE_URL}
                         data-shortcutkey="0"
                         accesskey="0"
                     >
                         <img src="/logov200.png" class="h-full" />
                     </a>
                 </li>
+
                 {
                     Object.entries(links).map(([k, v], _index) => {
                         const url = import.meta.env.BASE_URL + v;
                         const index = _index + 1;
                         return (
-                            <li class="navlink hover:text-accent cursor-pointer" data-active={current_url == url}>
+                            <li class="navlink hover:text-accent cursor-pointer" data-active={current_path == url}>
                                 <a
                                     href={url}
                                     class="font-fancy flex items-center gap-1"
