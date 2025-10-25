@@ -27,7 +27,6 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
                     </>
                 )
             }
-            <template v-if=""> </template>
         </sub>
         <div class="project-details-desc markdown">
             <slot />
@@ -62,7 +61,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
             (function () {
                 if (data.media[0] && data.media[0].type == "video") {
                     return isYTUrl(data.media[0].url) ? (
-                        <YoutubeEmbed src={data.media[0].url} client:only="vue" />
+                        <YoutubeEmbed src={data.media[0].url} client:visible />
                     ) : (
                         <video v-else controls>
                             <source src={data.media[0].url} />
@@ -216,6 +215,7 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
         grid-column: 2/2;
         grid-row: 1/-1;
         width: 100%;
+        max-height: 100%;
         //background: var(--bg-0-5);
         overflow: hidden;
         border-radius: 0.5rem;

@@ -5,7 +5,7 @@
     <!--            allowfullscreen></iframe>-->
     <div class="ytplayer-ctn">
         <template v-if="!should_load">
-            <div class="lazy-load-cover" @mouseenter="load">
+            <div class="lazy-load-cover relative" @mouseenter="load">
                 <img :src="`https://img.youtube.com/vi/${getYTVideoId(props.src)}/0.jpg`"
                     :alt="`Thumbnail for youtube video ${props.src}`" />
                 <div class="blur" />
@@ -13,10 +13,21 @@
 
                 <Icon icon="lucide:mouse-pointer-square" class=" hover-icon" />
                 <p>
-                    <Icon icon="logos:youtube-icon" class=" yt" />
-                    {{ props.lazy_preview_title ?? "youtube.com - hover to load" }}
-
+                    <template v-if="!noscript">
+                        <Icon icon="logos:youtube-icon" class=" yt" />
+                        {{ props.lazy_preview_title ?? "youtube.com - hover to load" }}
+                    </template>
                 </p>
+                <noscript>
+                    <a :href="props.src" class="font-mono font-bold underline cursor-pointer absolute left-1/2 top-1/2 -translate-1/2 uppercase bg-background">
+                        Click here for link to video
+                    </a>
+ 
+                    <small class="absolute bottom-4 font-mono left-0 right-0 text-center">
+                        <i>Javascript disabled, cannot autoload video.</i>
+                    </small>
+                </noscript>
+
             </div>
         </template>
         <template v-if="ytIsLoaded">
@@ -52,6 +63,7 @@ interface iprops {
 const props = defineProps<iprops>()
 const is_lazy = () => !props.nolazy;
 const should_load = ref(!is_lazy())
+const noscript = ref(true)
 
 function load() {
     if (should_load.value) return
@@ -66,6 +78,7 @@ function refreshEmbed() {
 }
 
 onMounted(refreshEmbed)
+onMounted(() => noscript.value = false);
 watch([ytIsLoaded, should_load], refreshEmbed, {
     flush: "post",
 })
