@@ -20,6 +20,9 @@ export type TextInstruction = TypeTextInstruction | DeleteTextInstruction | {
 } | {
     ty: "wait",
     value: number
+} | {
+    ty: "fallback"
+    value: string
 }
 
 export const tti_type = (characters: string) => ({ ty: "type", value: characters } as TypeTextInstruction)
@@ -35,6 +38,8 @@ export class TextTyper {
     private word_lens: TypeTextInstruction[] = [];
     private instructs: TextInstruction[] = [];
 
+    private fallback: string = ""
+
     /**
      * Types out the characters in sequence 
      */
@@ -42,6 +47,7 @@ export class TextTyper {
         const x = tti_type(chars)
         this.word_lens.push(x);
         this.instructs.push(x);
+        this.fallback += chars
         return this;
     }
 
@@ -52,6 +58,7 @@ export class TextTyper {
         const x = tti_insert(text)
         this.word_lens.push(x);
         this.instructs.push(x);
+        this.fallback += text
         return this;
     }
 
@@ -60,6 +67,7 @@ export class TextTyper {
         const last = this.word_lens.pop()
         if (!last) return this;
         this.instructs.push(tti_del(last.value.length, instant));
+        this.fallback = this.fallback.slice(0, this.fallback.length - last.value.length)
         return this;
     }
 
@@ -69,6 +77,7 @@ export class TextTyper {
             const last = this.word_lens.pop()
             if (!last) return this;
             this.instructs.push(tti_del(last.value.length, last.noanim));
+            this.fallback = this.fallback.slice(0, this.fallback.length - last.value.length)
         }
         return this;
     }
@@ -83,10 +92,12 @@ export class TextTyper {
     }
 
     /**
-     * Returns the final text instructions
+     * Returns the final text instructions.
+     * 
+     * This will return the both instructions and a fallback string if javascript is not enabled
      */
-    build(): TextInstruction[] {
-        return this.instructs;
+    build(): { instructs: TextInstruction[], fallback: string } {
+        return { instructs: this.instructs, fallback: this.fallback };
     }
 }
 </script>

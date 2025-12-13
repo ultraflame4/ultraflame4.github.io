@@ -26,5 +26,16 @@ export const SpotlightBackground = SpotlightBackground_
  */
 export const PulseRotatingBg = PulseRotatingBg_;
 
+/**
+ * Provides a typewriter / typed text effect.
+ * 
+ * It takes in a array of TextInstructions, and executes each step one by one to provide various effects.
+ * Use the `TypedText` class to create the instructions for the Typewriter.
+ * 
+ * **For astro:** use `client:load` to ensure component is loaded properly*
+ */
 export const Typewriter = TypedText_
+/**
+ * An instruction builder for TypeWriter. Use this to create the instructions needed for the Typewriter component to type out text.
+ */
 export const TypedText = TTI

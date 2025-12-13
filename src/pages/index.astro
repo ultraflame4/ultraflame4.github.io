@@ -127,15 +127,11 @@ const url = Astro.url;
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
-                        <Typewriter
-                            instructions={greeting}
-                            fallback="Hello, I'm <span class='greeting-name'>Chester</span><br/>I make <span style='color:#FACC15'>Cool Stuff</span>"
-                            client:load
-                        />
+                        <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} client:load />
                     </h1>
                     <p class="top-3/4 mb-8 bg-background min-h-[1.5em]">
                         <Typewriter
-                            instructions={greeting_sub}
+                            instructions={greeting_sub.instructs}
                             fallback="Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"
                             client:load
                             hideCursor
