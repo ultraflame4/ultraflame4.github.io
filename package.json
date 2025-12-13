@@ -16,7 +16,7 @@
         "@tailwindcss/vite": "^4.1.17",
         "@types/mdast": "^4.0.4",
         "@vueuse/core": "^13.9.0",
-        "astro": "^5.16.0",
+        "astro": "^5.16.5",
         "htmlparser2": "^10.0.0",
         "iconify-icon": "^3.0.2",
         "postcss": "^8.5.6",

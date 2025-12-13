@@ -132,7 +132,7 @@ const url = Astro.url;
                     <p class="top-3/4 mb-8 bg-background min-h-[1.5em]">
                         <Typewriter
                             instructions={greeting_sub.instructs}
-                            fallback="Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"
+                            fallback={greeting_sub.fallback}
                             client:load
                             hideCursor
                         />
