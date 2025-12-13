@@ -1,5 +1,5 @@
 ---
-import TypedTextEffect, { TTIBuilder } from "@components/effects/TypedTextEffect.vue";
+import { Typewriter, TypedText } from "@/components/effects";
 import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
@@ -61,7 +61,7 @@ const about_story_rendered = await Promise.all(
 //     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
 // ];
 
-const greeting = new TTIBuilder()
+const greeting = new TypedText()
     .wait(10)
     .seq("Hello, ")
     .seq("I'm ")
@@ -90,7 +90,7 @@ const greeting = new TTIBuilder()
     .ins("</span>")
     .build();
 
-const greeting_sub = new TTIBuilder().wait(350).seq("Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *").build();
+const greeting_sub = new TypedText().wait(350).seq("Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *").build();
 const url = Astro.url;
 ---
 
@@ -127,14 +127,14 @@ const url = Astro.url;
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
-                        <TypedTextEffect
+                        <Typewriter
                             instructions={greeting}
                             fallback="Hello, I'm <span class='greeting-name'>Chester</span><br/>I make <span style='color:#FACC15'>Cool Stuff</span>"
                             client:load
                         />
                     </h1>
                     <p class="top-3/4 mb-8 bg-background min-h-[1.5em]">
-                        <TypedTextEffect
+                        <Typewriter
                             instructions={greeting_sub}
                             fallback="Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"
                             client:load

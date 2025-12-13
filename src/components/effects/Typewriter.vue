@@ -31,7 +31,7 @@ export const tti_goto = (step_index: number) => ({ ty: "goto", value: step_index
 
 
 
-export class TTIBuilder {
+export class TextTyper {
     private word_lens: TypeTextInstruction[] = [];
     private instructs: TextInstruction[] = [];
 

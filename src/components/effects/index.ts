@@ -2,6 +2,7 @@
 import EntryRatio from "./EntryRatio.vue";
 import PulseRotatingBg_ from "./PulseRotatingBg.vue";
 import SpotlightBackground_ from "./SpotlightBackground.vue";
+import TypedText_, {TextTyper as TTI} from "./Typewriter.vue";
 
 
 /**
@@ -24,3 +25,6 @@ export const SpotlightBackground = SpotlightBackground_
  * This component will use position absolute to position itself automatically
  */
 export const PulseRotatingBg = PulseRotatingBg_;
+
+export const Typewriter = TypedText_
+export const TypedText = TTI
