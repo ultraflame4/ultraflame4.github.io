@@ -9,7 +9,7 @@ const helloWorld =`
 ██╔══██║██╔══╝  ██║     ██║     ██║   ██║    ██║███╗██║██║   ██║██╔══██╗██║     ██║  ██║╚═╝
 ██║  ██║███████╗███████╗███████╗╚██████╔╝    ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝██╗
 ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝
-                                                                                           
+
 `
 
 const terminalInstructions: TerminalTextInstruction[] = [
@@ -17,7 +17,7 @@ const terminalInstructions: TerminalTextInstruction[] = [
     `${window.navigator.userAgent}\n`,
     tti_prompt("Login: ", "clyh"),
     tti_prompt("Password: ", "*****\n"),
-    tti_delay(25),
+    tti_delay(10),
     tti("Password incorrect!"),
     tti_delay(25),
     tti_prompt("Password: ", "********\n"),
@@ -51,7 +51,7 @@ const terminalInstructions: TerminalTextInstruction[] = [
     tti("Seriously theres, scroll down."),
     tti_delay(400),
     tti("Ok whatever, you can stay here if you like...."),
-    
+
 ]
 
 </script>
