@@ -52,6 +52,7 @@
     --color-crust: #111;
 
     --font-fancy: "Silkscreen";
+    --font-cursive: 'Dancing Script Variable', cursive;
     --font-poppins: "Poppins";
 
 
@@ -256,6 +257,10 @@
 
     .font-fancy {
         letter-spacing: -1.5px;
+    }
+
+    .font-cursive{
+        font-weight: 700;
     }
 
     .glow {

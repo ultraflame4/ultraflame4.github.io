@@ -4,7 +4,12 @@ export type TypeTextInstruction = {
     ty: "type",
     value: string,
     noanim?: boolean
+    // When deleting this text, how many extra instructions (before this) to also delete
+    delete_extra?: number
 }
+
+
+
 export type DeleteTextInstruction = {
     ty: "del",
     value: number,
@@ -71,11 +76,34 @@ export class TextTyper {
         return this;
     }
 
+    /**
+     * Styled seq. Note that this inserts 3 instructions. Hence autoprev should use 3 as the parameter
+     */
+    styled_seq(text: string, opts?: { class?: string, style?: string }): this {
+
+        let attrs_s = "";
+
+        if (opts?.class !== undefined) {
+            attrs_s += `class=\"${opts.class}\" `
+        }
+        if (opts?.style !== undefined) {
+            attrs_s += `style=\"${opts.style}\" `
+        }
+        this.ins(`<span ${attrs_s}>`).seq(text).ins("</span>")
+        this.word_lens[this.word_lens.length - 1].delete_extra = 2 // Also deloete the 2 prev text blocks
+        return this
+    }
+
     /**Deletes the n previous seq or ins. If ins, deletes words instantly*/
-    autoprev(n: number): this {
-        for (let index = 0; index < n; index++) {
+    autoprev(n: number = 1): this {
+        for (let _index = 0; _index < n; _index++) {
             const last = this.word_lens.pop()
             if (!last) return this;
+
+            if (last.delete_extra){
+                _index -= last.delete_extra;
+            }
+
             this.instructs.push(tti_del(last.value.length, last.noanim));
             this.fallback = this.fallback.slice(0, this.fallback.length - last.value.length)
         }
