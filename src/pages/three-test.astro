@@ -6,8 +6,9 @@
     <script>
         import * as THREE from "three";
 
+        const clock = new THREE.Clock();
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, .4, 1000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.4, 1000);
 
         const renderer = new THREE.WebGLRenderer();
 
@@ -30,10 +31,10 @@
 
         const cubes: THREE.Mesh[] = [];
 
-        for (let index = 0; index < Math.pow(8, 3); index++) {
+        for (let index = 0; index < Math.pow(6, 3); index++) {
             const mat = material.clone();
             mat.color.setRGB(Math.random(), Math.random(), Math.random());
-            
+
             const cube = new THREE.Mesh(geometry, mat);
             parent.add(cube);
             cubes.push(cube);
@@ -48,11 +49,13 @@
 
         let counter = 0;
 
+        const gaps = [0.05, 0.3, 1.0, 1.5];
+
         function animate() {
-            const SPEED = 0.005;
-            parent.rotation.x += SPEED;
-            parent.rotation.y += SPEED;
-            set_layout_grid((Math.sin(counter) + 1) * 2.5 + 0.1, 0.01);
+            const delta = clock.getDelta();
+            parent.rotation.x += 0.5 * delta;
+            parent.rotation.y += 0.1 * delta;
+            set_layout_grid(gaps[counter % gaps.length], 10 * delta);
             renderer.render(scene, camera);
         }
 
@@ -76,15 +79,14 @@
                         const py = (y - n / 2 + 0.5) * (1 + gap);
                         const pz = (z - n / 2 + 0.5) * (1 + gap);
 
-                        const tx = THREE.MathUtils.lerp(cube.position.x, px, t);
-                        const ty = THREE.MathUtils.lerp(cube.position.y, py, t);
-                        const tz = THREE.MathUtils.lerp(cube.position.z, pz, t);
+                        const rt = t;
+                        const tx = THREE.MathUtils.lerp(cube.position.x, px, rt);
+                        const ty = THREE.MathUtils.lerp(cube.position.y, py, rt);
+                        const tz = THREE.MathUtils.lerp(cube.position.z, pz, rt);
 
                         cube.position.setX(tx);
                         cube.position.setY(ty);
                         cube.position.setZ(tz);
-
-                        
                     }
                 }
             }
