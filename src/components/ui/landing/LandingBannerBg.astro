@@ -1,0 +1,130 @@
+<div style="margin: 0;" id="landingbanner-bg">
+    <script>
+        import { Exception } from "sass";
+        import * as THREE from "three";
+        import { AsciiEffect } from "three/addons/effects/AsciiEffect.js";
+        const SPEED = 0.5;
+        const ele = document.getElementById("landingbanner-bg")!;
+
+        const clock = new THREE.Clock();
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.4, 1000);
+
+        // const renderer = new THREE.WebGLRenderer();
+        const webglRenderer = new THREE.WebGLRenderer();
+        const renderer = new AsciiEffect(webglRenderer, undefined, {
+            invert: true,
+        });
+
+        ele.appendChild(renderer.domElement);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        window.addEventListener("resize", () => resize_camera(window.innerWidth, window.innerHeight));
+
+        function resize_camera(w: number, h: number) {
+            console.log("adjusting renderer size... [w,h]", [w, h]);
+            renderer.setSize(w, h);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+        }
+
+        const geometry = new THREE.BoxGeometry(1, 1, 1);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+
+        const parent = new THREE.Group();
+
+        const cubes: THREE.Mesh[] = [];
+
+        for (let index = 0; index < Math.pow(6, 3); index++) {
+            const mat = material.clone();
+            mat.color.setRGB(Math.random(), Math.random(), Math.random());
+
+            const cube = new THREE.Mesh(geometry, mat);
+            parent.add(cube);
+            cubes.push(cube);
+        }
+        parent.scale.setScalar(0.5);
+
+        scene.add(parent);
+
+        camera.position.z = 5;
+
+        webglRenderer.setAnimationLoop(animate);
+
+        let counter = 0;
+
+        function animate() {
+            const delta = clock.getDelta();
+            parent.rotation.x += 0.5 * delta * SPEED;
+            parent.rotation.y += 0.1 * delta * SPEED;
+
+            const mode = counter % 4;
+            switch (mode) {
+                case 1:
+                    apply_layout_cube_grid(0.3, 10 * delta);
+                    apply_individual_cube_rot(10 * delta);
+                    break;
+                case 2:
+                    apply_layout_cube_grid(1.0, 10 * delta);
+                    break;
+                case 3:
+                    apply_layout_cube_grid(1.5, 10 * delta);
+                    apply_individual_cube_rot(10 * delta);
+                    break;
+                default:
+                    apply_layout_cube_grid(0.1, 10 * delta);
+                    reset_individual_cube_rot();
+                    break;
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        setInterval(() => (counter += 1), (3 * 1000) / SPEED);
+
+        function apply_layout_cube_grid(gap = 0.1, t = 1) {
+            const n = Math.ceil(Math.pow(cubes.length, 1 / 3));
+
+            for (let x = 0; x < n; x++) {
+                for (let y = 0; y < n; y++) {
+                    const xy = x * n + y;
+                    for (let z = 0; z < n; z++) {
+                        const index = xy * n + z;
+
+                        if (index > cubes.length - 1) return;
+
+                        const cube = cubes[index];
+                        const px = (x - n / 2 + 0.5) * (1 + gap);
+                        const py = (y - n / 2 + 0.5) * (1 + gap);
+                        const pz = (z - n / 2 + 0.5) * (1 + gap);
+
+                        const delay = (index / cubes.length) * 0.2;
+                        const rt = t * 0.2 + delay * 0.8;
+                        const tx = THREE.MathUtils.lerp(cube.position.x, px, rt);
+                        const ty = THREE.MathUtils.lerp(cube.position.y, py, rt);
+                        const tz = THREE.MathUtils.lerp(cube.position.z, pz, rt);
+
+                        cube.position.setX(tx);
+                        cube.position.setY(ty);
+                        cube.position.setZ(tz);
+                    }
+                }
+            }
+        }
+
+        function apply_individual_cube_rot(t = 1) {
+            for (let index = 0; index < cubes.length; index++) {
+                const cube = cubes[index];
+                cube.rotation.x += Math.tan(index) * .05 * t * SPEED;
+                cube.rotation.y += Math.cos(index * 100) * .05 * t * SPEED;
+            }
+        }
+
+        function reset_individual_cube_rot(t = 1) {
+            for (let index = 0; index < cubes.length; index++) {
+                const cube = cubes[index];
+                cube.quaternion.slerp(new THREE.Quaternion(), t);
+            }
+        }
+    </script>
+</div>
