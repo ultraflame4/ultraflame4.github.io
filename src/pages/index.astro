@@ -70,8 +70,9 @@ const greeting = new TypedText()
     .wait(200)
     .autoprev()
     .styled_seq("maker", { style: "color: var(--color-rainbow)" })
-    .wait(500)
-    .restart()
+    .wait(8000)
+    .autoprev()
+    .tti_goto(10) // Magic value: found through repeated tries. Cannot just count because some steps contains more than one tti!
     .build();
 
 const greeting_sub = new TypedText()

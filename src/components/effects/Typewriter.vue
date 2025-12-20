@@ -119,8 +119,15 @@ export class TextTyper {
         return this
     }
 
-    restart(): this {
-        this.instructs.push(tti_goto(0));
+    /**
+     * Inserts a raw tti_goto instruction
+     * 
+     * Not recommended. You should do repeated tests and tries to get the value you need as some methods in this class inserts multiple instructions.
+     * 
+     * @param n 
+     */
+    tti_goto(n: number): this {
+        this.instructs.push(tti_goto(n));
         return this;
     }
 
