@@ -5,7 +5,6 @@
         import * as THREE from "three";
 
         const SPEED = 0.5;
-        const ele = document.getElementById("landingbanner-bg")!;
 
         const clock = new THREE.Clock();
         const scene = new THREE.Scene();
@@ -25,13 +24,16 @@
         });
         const composer = new EffectComposer(renderer);
         const renderPass = new RenderPass(scene, camera);
-        
+
         const effectPass = new EffectPass(camera, effect);
 
         composer.addPass(renderPass);
         composer.addPass(effectPass);
 
-        ele.appendChild(renderer.domElement);
+        document.addEventListener("astro:page-load", () => {
+            document.getElementById("landingbanner-bg")?.appendChild(renderer.domElement);
+        });
+
         composer.setSize(window.innerWidth, window.innerHeight);
 
         window.addEventListener("resize", () => resize_camera(window.innerWidth, window.innerHeight));
