@@ -49,32 +49,31 @@ const about_story_rendered = await Promise.all(
 
 
 const greeting = new TypedText()
-    .wait(30)
+    .wait(300)
     .seq("Hello, ")
-    .wait(50)
+    .wait(500)
     .seq("I'm ")
     .styled_seq("Chester", { class: "greeting-name" })
     .ins("<br/>")
-    .wait(40)
+    .wait(400)
     .seq("I'm a ")
     .styled_seq("Self-taught", { style: "color:#86EFAC" })
-    .wait(40)
+    .wait(400)
     .autoprev()
     .styled_seq("Programmer", { style: "color:#4f39f6" })
-    .wait(30)
+    .wait(400)
     .autoprev()
     .styled_seq("builder", { style: "color:#ff8904" })
-    .wait(30)
+    .wait(400)
     .autoprev()
-    .wait(5)
     .styled_seq("tinkerer", { style: "color:#FACC15" })
-    .wait(30)
+    .wait(400)
     .autoprev()
     .styled_seq("maker", { style: "color: var(--color-rainbow)" })
     .build();
 
 const greeting_sub = new TypedText()
-    .wait(350)
+    .wait(5000)
     .seq("Welcome to my ")
     .styled_seq("li'l", { class: "font-cursive" })
     .seq(" corner of the internet. ヾ( ˃ᴗ˂ )◞ • *")
@@ -110,7 +109,7 @@ const url = Astro.url;
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
-                        <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} client:load />
+                        <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load/>
                     </h1>
                     <p class="top-3/4 mb-8 bg-background min-h-[1.5em]">
                         <Typewriter

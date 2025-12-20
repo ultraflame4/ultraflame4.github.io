@@ -100,7 +100,7 @@ export class TextTyper {
             const last = this.word_lens.pop()
             if (!last) return this;
 
-            if (last.delete_extra){
+            if (last.delete_extra) {
                 _index -= last.delete_extra;
             }
 
@@ -136,7 +136,6 @@ import { computed, onMounted, ref } from 'vue';
 
 interface iprops {
     instructions: TextInstruction[],
-    speed?: number,
     interval?: number,
     hideCursor?: boolean,
     fallback: string
@@ -150,12 +149,14 @@ const typed_text = ref(`<noscript>${props.fallback}</noscript>`);
 let wait_counter = 0;
 let current = 0
 
+const interval = computed(() => props.interval ?? 1)
 const current_sub_instruct = ref<DeleteTextInstruction | TypeTextInstruction | false>(false)
 
 function loadNext() {
     // End of instructions. Do nothing!
     if (current >= props.instructions.length) return;
     const next = props.instructions[current]
+    console.log("LOAD NEXT", next)
     current += 1
 
     if (next.ty == "wait") {
@@ -176,58 +177,66 @@ function loadNext() {
     }
 }
 
+const loop = ref()
 
-onMounted(() => {
-    const id = setInterval(() => {
 
-        if (wait_counter > 0) {
-            wait_counter -= 1;
-            return;
-        }
+function tick() {
 
-        const typing_instruct = current_sub_instruct.value
-        // Load next instruction if no text to type.
-        if (!typing_instruct) {
-            loadNext()
-            return
+    if (wait_counter > 0) {
+        console.log("WAIT", wait_counter * interval.value, "ms")
+        loop.value = setTimeout(tick, wait_counter)
+        wait_counter = 0
+        return;
+    }
+
+    const typing_instruct = current_sub_instruct.value
+    // Load next instruction if no text to type.
+    if (!typing_instruct) {
+        loadNext()
+        loop.value = setTimeout(tick, interval.value)
+        return
+    }
+    console.log("NOW INSTRUCT", typing_instruct)
+    if (typing_instruct.noanim) {
+        if (typing_instruct.ty == "del") {
+            typed_text.value = typed_text.value.slice(0, typed_text.value.length - typing_instruct.value)
+            current_sub_instruct.value = false;
         }
-        if (typing_instruct.noanim) {
-            if (typing_instruct.ty == "del") {
-                typed_text.value = typed_text.value.slice(0, typed_text.value.length - typing_instruct.value)
-                current_sub_instruct.value = false;
-                return;
-            }
-            if (typing_instruct.ty == "type") {
-                typed_text.value = typed_text.value + typing_instruct.value;
-                current_sub_instruct.value = false;
-                return;
-            }
-            return;
+        if (typing_instruct.ty == "type") {
+            typed_text.value = typed_text.value + typing_instruct.value;
+            current_sub_instruct.value = false;
         }
+    }
+    else {
         if (typing_instruct.ty == "del") {
             // On finish del, clear instruction
             if (typing_instruct.value == 0) {
                 current_sub_instruct.value = false;
-                return
             }
-            typed_text.value = typed_text.value.slice(0, typed_text.value.length - 1)
-            typing_instruct.value -= 1;
-            return;
+            else {
+                typed_text.value = typed_text.value.slice(0, typed_text.value.length - 1)
+                typing_instruct.value -= 1;
+            }
         }
         if (typing_instruct.ty == "type") {
             // On finish type, clear instruction
             if (typing_instruct.value.length == 0) {
                 current_sub_instruct.value = false;
-                return
             }
-            typed_text.value = typed_text.value + typing_instruct.value.slice(0, 1);
-            typing_instruct.value = typing_instruct.value.slice(1, typing_instruct.value.length);
-            return;
+            else {
+                typed_text.value = typed_text.value + typing_instruct.value.slice(0, 1);
+                typing_instruct.value = typing_instruct.value.slice(1, typing_instruct.value.length);
+            }
         }
+    }
 
-    }, props.speed ?? 1)
+    loop.value = setTimeout(tick, interval.value)
+}
+
+onMounted(() => {
+    loop.value = setTimeout(tick, interval.value)
     return () => {
-        clearInterval(id)
+        if (loop.value) clearTimeout(loop.value)
     }
 })
 
