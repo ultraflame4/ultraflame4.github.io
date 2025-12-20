@@ -16,7 +16,7 @@ const value = inject("link") as proj_entry_link;
 .icon {
     font-size: 1.4em;
     margin-right: 0.25em;
-    color: var(--accent);
+    color: var(--color-border);
     display: block;
 }
 
@@ -24,7 +24,7 @@ a {
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid var(--color-panel);
+    border: 1px solid var(--color-border);
     border-radius: 0.5rem;
     padding: calc(0.3rem + 1px) calc(0.4rem + 1px);
 }
@@ -32,7 +32,9 @@ a {
 span {
     background: transparent;
 }
-
+a:hover>.icon{
+    color: var(--color-accent);
+}
 a:hover {
     border-color: var(--color-accent);
 
