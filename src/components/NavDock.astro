@@ -1,4 +1,6 @@
 ---
+import { WindowEntryRatio } from "./effects";
+
 const { class: className, ...rest } = Astro.props;
 const links = {
     about: "/#about-section",
@@ -12,63 +14,95 @@ const current_path = Astro.url.pathname.endsWith("/")
 ---
 
 <div class="p-(--nav-offset-units) w-full sticky top-0 z-10">
-    <div
-        class="flex items-center justify-center h-(--nav-height-units) rounded-2xl drop-shadow-xl acrylic px-2 py-2 w-fit m-auto"
-    >
-        <nav class="h-full">
-            <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center justify-center">
-                <li class="h-full">
-                    <a
-                        href="/#top"
-                        class="nav-brand"
-                        data-active={current_path == import.meta.env.BASE_URL}
-                        data-shortcutkey="0"
-                        accesskey="0"
-                    >
-                        <img src="/logov200.png" class="h-full" />
-                    </a>
-                </li>
+    <WindowEntryRatio threshold={0.9} client:load>
+        <div
+            class="nav-container flex items-center justify-center h-(--nav-height-units) rounded-2xl drop-shadow-xl acrylic px-2 py-2 w-fit m-auto"
+        >
+            <nav class="h-full w-full">
+                <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center">
+                    <li class="h-full">
+                        <a
+                            href="/#top"
+                            class="nav-brand flex items-center h-full group"
+                            data-active={current_path == import.meta.env.BASE_URL}
+                            data-shortcutkey="0"
+                            accesskey="0"
+                        >
+                            <img src="/logov200.png" class="h-full" />
+                            <span class="extra font-fancy mx-2 group-hover:text-rainbow tracking-wider">/clyh.me</span>
+                        </a>
+                    </li>
 
-                {
-                    Object.entries(links).map(([k, v], _index) => {
-                        const url = import.meta.env.BASE_URL + v;
-                        const index = _index + 1;
-                        return (
-                            <li class="navlink hover:text-accent cursor-pointer" data-active={current_path == url}>
-                                <a
-                                    href={url}
-                                    class="font-fancy flex items-center gap-1"
-                                    accesskey={`${index}`}
-                                    data-shortcutkey={`${index}`}
-                                >
-                                    <span class="navlink-key acrylic">{index}</span>
-                                    <span class="navlink-title">{k}</span>
-                                </a>
-                            </li>
-                        );
-                    })
-                }
-            </ul>
-            <script>
-                document.addEventListener("keydown", (e) => {
-                    if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName?.toLocaleUpperCase() ?? "")) return;
-                    const link = document.querySelector(`a[data-shortcutkey="${e.key.toLowerCase()}"]`) as HTMLAnchorElement;
-                    if (link) {
-                        window.location.href = link.href;
+                    {
+                        Object.entries(links).map(([k, v], _index) => {
+                            const url = import.meta.env.BASE_URL + v;
+                            const index = _index + 1;
+                            return (
+                                <li class="navlink hover:text-accent cursor-pointer" data-active={current_path == url}>
+                                    <a
+                                        href={url}
+                                        class="font-fancy flex items-center gap-1"
+                                        accesskey={`${index}`}
+                                        data-shortcutkey={`${index}`}
+                                    >
+                                        <span class="navlink-key acrylic">{index}</span>
+                                        <span class="navlink-title">{k}</span>
+                                    </a>
+                                </li>
+                            );
+                        })
                     }
-                });
-            </script>
-        </nav>
-    </div>
+                </ul>
+                <script>
+                    document.addEventListener("keydown", (e) => {
+                        if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName?.toLocaleUpperCase() ?? "")) return;
+                        const link = document.querySelector(
+                            `a[data-shortcutkey="${e.key.toLowerCase()}"]`
+                        ) as HTMLAnchorElement;
+                        if (link) {
+                            window.location.href = link.href;
+                        }
+                    });
+                </script>
+            </nav>
+        </div>
+    </WindowEntryRatio>
 </div>
 
 <style>
     @reference "@styles/global.css";
-
+    .nav-brand > img {
+        display: inline;
+    }
     .nav-brand > img,
     nav li {
         transition: all 200ms ease;
         @apply text-bright;
+    }
+    nav > ul {
+        justify-content: space-between;
+    }
+    .ratio-t nav > ul {
+        justify-content: start;
+    }
+    .ratio-t ul > li:first-child {
+        margin-right: auto;
+    }
+    .ratio-t ul > li:last-child {
+        margin-right: calc(2 * var(--spacing));
+    }
+    .nav-brand .extra {
+        display: none;
+    }
+    .ratio-t .extra {
+        display: inline;
+    }
+    .nav-container {
+        transition: 200ms ease;
+        width: calc(86 * var(--spacing));
+    }
+    .ratio-t .nav-container {
+        width: 100%;
     }
 
     .nav-brand[data-active="true"] > img,

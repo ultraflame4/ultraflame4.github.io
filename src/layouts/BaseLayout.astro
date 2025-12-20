@@ -21,6 +21,17 @@ import { ClientRouter } from "astro:transitions";
             init_pathchange_detection();
             initYoutubeApi();
         </script>
+        <style define:vars={{ noise_url: `url("${import.meta.env.BASE_URL}/noise.svg")` }}>
+            .noise {
+                position: absolute;
+                inset: 0;
+                background: var(--noise_url);
+                background-size: 100px;
+                filter: contrast(400%) brightness(50%);
+
+                mix-blend-mode: multiply;
+            }
+        </style>
     </head>
     <body id="top" class="min-h-[100dvh] flex flex-col">
         <noscript>

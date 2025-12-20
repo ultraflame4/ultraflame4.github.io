@@ -1,6 +1,5 @@
 ---
-import TypedTextEffect, { TTIBuilder } from "@components/effects/TypedTextEffect.vue";
-import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
+import { Typewriter, TypedText } from "@/components/effects";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import { WindowEntryRatio } from "@/components/effects";
@@ -12,6 +11,7 @@ import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } f
 import socials from "@data/socials.json";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 import BackToTop from "@/components/BackToTop.astro";
+import LandingBannerBg from "@/components/ui/landing/LandingBannerBg.astro";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -47,62 +47,46 @@ const about_story_rendered = await Promise.all(
     )
 ).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
 
-// const greeting = [
-//     10,
-//     "Hello, ",
-//     "Hello, I'm <span class='greeting-name'>Chester</span>",
-//     20,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#86EFAC'>Games</span>`,
-//     10,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FDE68A'>Websites</span>`,
-//     10,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#A78BFA'>Software</span>`,
-//     10,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
-// ];
-
-const greeting = new TTIBuilder()
-    .wait(10)
+const greeting = new TypedText()
+    .wait(200)
     .seq("Hello, ")
+    .wait(300)
     .seq("I'm ")
-    .ins("<span class='greeting-name'>")
-    .seq("Chester")
-    .ins("</span><br>")
-    .wait(20)
-    .seq("I make ")
-    .ins("<span style='color:#86EFAC'>")
-    .seq("Games")
-    .ins("</span>")
-    .wait(30)
-    .autoprev(3)
-    .ins("<span style='color:#FDE68A'>")
-    .seq("Websites")
-    .ins("</span>")
-    .wait(30)
-    .autoprev(3)
-    .ins("<span style='color:#A78BFA'>")
-    .seq("Software")
-    .ins("</span>")
-    .wait(30)
-    .autoprev(3)
-    .ins("<span style='color:#FACC15'>")
-    .seq("Cool Stuff")
-    .ins("</span>")
+    .styled_seq("Chester", { class: "greeting-name" })
+    .ins("<br/>")
+    .wait(300)
+    .seq("I'm a ")
+    .styled_seq("Self-taught", { style: "color:#86EFAC" })
+    .wait(200)
+    .autoprev()
+    .styled_seq("Programmer", { style: "color:#4f39f6" })
+    .wait(200)
+    .autoprev()
+    .styled_seq("builder", { style: "color:#ff8904" })
+    .wait(200)
+    .autoprev()
+    .styled_seq("tinkerer", { style: "color:#FACC15" })
+    .wait(200)
+    .autoprev()
+    .styled_seq("maker", { style: "color: var(--color-rainbow)" })
+    .wait(8000)
+    .autoprev()
+    .tti_goto(10) // Magic value: found through repeated tries. Cannot just count because some steps contains more than one tti!
     .build();
 
-const greeting_sub = new TTIBuilder().wait(350).seq("Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *").build();
+const greeting_sub = new TypedText()
+    .wait(5000)
+    .seq("Welcome to my ")
+    .styled_seq("little corner", { class: "font-cursive" })
+    .seq(" of the internet.")
+    .build();
 const url = Astro.url;
 ---
 
 <Layout>
-    <div class="absolute top-0 w-full banner-bg" style="height: 200svh; z-index: -1;">
+    <div class="absolute top-0 w-full bg-black" style="height: 200svh; z-index: -1;">
         <div class="noise"></div>
-        <div
-            class="top-1/2 sticky m-auto text-sm glow"
-            style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%); "
-        >
-            <LandingPageTerminal client:only="vue" />
-        </div>
+        <LandingBannerBg />
         <div class="absolute h-full w-full top-0 left-0"></div>
     </div>
 
@@ -117,34 +101,25 @@ const url = Astro.url;
     <section>
         <div class="w-full grid relative" style="height: calc(100svh - var(--nav-total-h-units) );">
             <div class="flex items-center justify-center flex-col relative" id="greetings">
-                <style>
-                    .greeting-name {
-                        font-family: "Courier New", Courier, monospace;
-                    }
-                </style>
                 <div
                     class="sticky top-1/2 flex items-center justify-center flex-col"
                     style="transform: translateY(-25%); z-index: 1"
                 >
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
-                        <TypedTextEffect
-                            instructions={greeting}
-                            fallback="Hello, I'm <span class='greeting-name'>Chester</span><br/>I make <span style='color:#FACC15'>Cool Stuff</span>"
-                            client:load
-                        />
+                        <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load />
                     </h1>
-                    <p class="top-3/4 mb-8 bg-background min-h-[1.5em]">
-                        <TypedTextEffect
-                            instructions={greeting_sub}
-                            fallback="Welcome to my li'l corner of the internet. ヾ( ˃ᴗ˂ )◞ • *"
+                    <p class="top-3/4 mb-8 min-h-[1.5em] text-lg">
+                        <Typewriter
+                            instructions={greeting_sub.instructs}
+                            fallback={greeting_sub.fallback}
                             client:load
                             hideCursor
                         />
                     </p>
-                    <div class="flex items-center justify-end social-list h-full gap-2 px-2">
+                    <div class="flex items-center justify-end social-list h-full gap-2 px-2 fade-in">
                         {
                             socials.map((x) => (
-                                <a title={x.title} href={x.url} class="hover:text-accent">
+                                <a title={x.title} href={x.url} class="hover:text-accent ">
                                     <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
                                 </a>
                             ))
@@ -152,23 +127,6 @@ const url = Astro.url;
                     </div>
                 </div>
             </div>
-
-            <style define:vars={{ noise_url: `url("${import.meta.env.BASE_URL}/noise.svg")` }}>
-                .noise {
-                    position: absolute;
-                    inset: 0;
-                    background: var(--noise_url);
-                    background-size: 100px;
-                    filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
-
-                    mix-blend-mode: multiply;
-                }
-
-                .banner-bg {
-                    background-color: #4158d0;
-                    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
-                }
-            </style>
         </div>
         <NavDock />
 
@@ -244,7 +202,6 @@ const url = Astro.url;
         section {
             @apply flex items-center justify-center flex-col;
         }
-
         .banner-trans2 {
             @apply absolute bottom-0 w-full;
             opacity: calc(var(--ratio) * 100);
@@ -252,7 +209,7 @@ const url = Astro.url;
         .banner-trans {
             @apply absolute bottom-0 w-full bg-background;
             /* background-position-y: calc(var(--ratio) * 100%); */
-            opacity: calc(calc(var(--ratio) * 1.5) + 0.3);
+            opacity: min(calc(calc(var(--ratio) * 1.5) + 0.3), 0.9);
         }
 
         .project-grid {
