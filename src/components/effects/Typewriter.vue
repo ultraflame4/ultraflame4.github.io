@@ -168,7 +168,7 @@ function loadNext() {
     // End of instructions. Do nothing!
     if (current >= props.instructions.length) return;
     const next = props.instructions[current]
-    console.log("LOAD NEXT", next)
+    // console.trace("LOAD NEXT", next)
     current += 1
 
     if (next.ty == "wait") {
@@ -195,7 +195,7 @@ const loop = ref()
 function tick() {
 
     if (wait_counter > 0) {
-        console.log("WAIT", wait_counter * interval.value, "ms")
+        // console.trace("WAIT", wait_counter * interval.value, "ms")
         loop.value = setTimeout(tick, wait_counter)
         wait_counter = 0
         return;
@@ -208,7 +208,7 @@ function tick() {
         loop.value = setTimeout(tick, interval.value)
         return
     }
-    console.log("NOW INSTRUCT", typing_instruct)
+    // console.trace("NOW INSTRUCT", typing_instruct)
     if (typing_instruct.noanim) {
         if (typing_instruct.ty == "del") {
             typed_text.value = typed_text.value.slice(0, typed_text.value.length - typing_instruct.value)
