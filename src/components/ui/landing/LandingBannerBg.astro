@@ -1,8 +1,9 @@
 <div style="margin: 0;" id="landingbanner-bg">
     <script>
-        import { Exception } from "sass";
+        import { ASCIIEffect, ASCIITexture, EffectComposer, EffectPass, RenderPass } from "postprocessing";
+
         import * as THREE from "three";
-        import { AsciiEffect } from "three/addons/effects/AsciiEffect.js";
+
         const SPEED = 0.5;
         const ele = document.getElementById("landingbanner-bg")!;
 
@@ -11,20 +12,33 @@
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.4, 1000);
 
         // const renderer = new THREE.WebGLRenderer();
-        const webglRenderer = new THREE.WebGLRenderer();
-        const renderer = new AsciiEffect(webglRenderer, " ·:░▒▓█", {
-            invert: true,
-            resolution: 0.2,
+        const renderer = new THREE.WebGLRenderer();
+        const effect = new ASCIIEffect({
+            asciiTexture: new ASCIITexture({
+                characters: " .#░▒▓█",
+                font: "Arial",
+                fontSize: 96,
+            }),
+
+            color: "white",
+            cellSize: 6,
         });
+        const composer = new EffectComposer(renderer);
+        const renderPass = new RenderPass(scene, camera);
+        
+        const effectPass = new EffectPass(camera, effect);
+
+        composer.addPass(renderPass);
+        composer.addPass(effectPass);
 
         ele.appendChild(renderer.domElement);
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        composer.setSize(window.innerWidth, window.innerHeight);
 
         window.addEventListener("resize", () => resize_camera(window.innerWidth, window.innerHeight));
 
         function resize_camera(w: number, h: number) {
             console.log("adjusting renderer size... [w,h]", [w, h]);
-            renderer.setSize(w, h);
+            composer.setSize(w, h);
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
         }
@@ -38,8 +52,10 @@
 
         for (let index = 0; index < Math.pow(6, 3); index++) {
             const mat = material.clone();
-            const l = (Math.sin(index * 10) + 1) * 0.5 
-            mat.color.setRGB(l, l, l);
+            const r = (Math.sin(index * 10) + 1) * 0.5;
+            const g = (Math.sin(index * 20) + 1) * 0.5;
+            const b = (Math.cos(index * 10) + 1) * 0.5;
+            mat.color.setRGB(r, g, b);
 
             const cube = new THREE.Mesh(geometry, mat);
             parent.add(cube);
@@ -51,7 +67,7 @@
 
         camera.position.z = 5;
 
-        webglRenderer.setAnimationLoop(animate);
+        renderer.setAnimationLoop(animate);
 
         let counter = 0;
 
@@ -79,7 +95,7 @@
                     break;
             }
 
-            renderer.render(scene, camera);
+            composer.render();
         }
 
         setInterval(() => (counter += 1), (2 * 1000) / SPEED);
