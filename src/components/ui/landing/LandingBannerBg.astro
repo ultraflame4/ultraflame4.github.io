@@ -12,8 +12,9 @@
 
         // const renderer = new THREE.WebGLRenderer();
         const webglRenderer = new THREE.WebGLRenderer();
-        const renderer = new AsciiEffect(webglRenderer, undefined, {
+        const renderer = new AsciiEffect(webglRenderer, " ·:░▒▓█", {
             invert: true,
+            resolution: 0.2
         });
 
         ele.appendChild(renderer.domElement);
@@ -65,10 +66,10 @@
                     apply_individual_cube_rot(10 * delta);
                     break;
                 case 2:
-                    apply_layout_cube_grid(1.0, 10 * delta);
+                    apply_layout_cube_grid(2.3, 10 * delta);
                     break;
                 case 3:
-                    apply_layout_cube_grid(1.5, 10 * delta);
+                    apply_layout_cube_grid(2.5, 10 * delta);
                     apply_individual_cube_rot(10 * delta);
                     break;
                 default:

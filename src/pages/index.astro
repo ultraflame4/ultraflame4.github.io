@@ -1,6 +1,5 @@
 ---
 import { Typewriter, TypedText } from "@/components/effects";
-import LandingPageTerminal from "@components/effects/LandingPageTerminal.vue";
 import Layout from "@layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import { WindowEntryRatio } from "@/components/effects";
@@ -12,6 +11,7 @@ import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } f
 import socials from "@data/socials.json";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 import BackToTop from "@/components/BackToTop.astro";
+import LandingBannerBg from "@/components/ui/landing/LandingBannerBg.astro";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -47,19 +47,6 @@ const about_story_rendered = await Promise.all(
     )
 ).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
 
-// const greeting = [
-//     10,
-//     "Hello, ",
-//     "Hello, I'm <span class='greeting-name'>Chester</span>",
-//     20,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#86EFAC'>Games</span>`,
-//     10,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FDE68A'>Websites</span>`,
-//     10,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#A78BFA'>Software</span>`,
-//     10,
-//     `Hello, I'm <span class='greeting-name'>Chester</span>\n I make <span style='color:#FACC15'>Cool Stuff</span>`,
-// ];
 
 const greeting = new TypedText()
     .wait(30)
@@ -69,11 +56,10 @@ const greeting = new TypedText()
     .styled_seq("Chester", { class: "greeting-name" })
     .ins("<br/>")
     .wait(40)
-    .seq("I'm ")
+    .seq("I'm a ")
     .styled_seq("Self-taught", { style: "color:#86EFAC" })
     .wait(30)
     .autoprev()
-    .seq("a ")
     .styled_seq("Programmer", { style: "color:#4f39f6" })
     .wait(30)
     .autoprev()
@@ -97,14 +83,9 @@ const url = Astro.url;
 ---
 
 <Layout>
-    <div class="absolute top-0 w-full banner-bg" style="height: 200svh; z-index: -1;">
+    <div class="absolute top-0 w-full bg-black" style="height: 200svh; z-index: -1;">
         <div class="noise"></div>
-        <div
-            class="top-1/2 sticky m-auto text-sm glow"
-            style="aspect-ratio: 5/4; max-width: min(95vw, 72rem); transform: translateY(-50%); "
-        >
-            <LandingPageTerminal client:only="vue" />
-        </div>
+        <LandingBannerBg />
         <div class="absolute h-full w-full top-0 left-0"></div>
     </div>
 
@@ -139,10 +120,10 @@ const url = Astro.url;
                             hideCursor
                         />
                     </p>
-                    <div class="flex items-center justify-end social-list h-full gap-2 px-2">
+                    <div class="flex items-center justify-end social-list h-full gap-2 px-2 fade-in">
                         {
                             socials.map((x) => (
-                                <a title={x.title} href={x.url} class="hover:text-accent">
+                                <a title={x.title} href={x.url} class="hover:text-accent ">
                                     <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
                                 </a>
                             ))
@@ -160,11 +141,6 @@ const url = Astro.url;
                     filter: contrast(400%) brightness(50%) invert(1) grayscale(1);
 
                     mix-blend-mode: multiply;
-                }
-
-                .banner-bg {
-                    background-color: black;
-                    /* background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%); */
                 }
             </style>
         </div>
