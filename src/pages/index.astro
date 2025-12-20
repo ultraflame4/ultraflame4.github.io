@@ -77,8 +77,8 @@ const greeting = new TypedText()
 const greeting_sub = new TypedText()
     .wait(5000)
     .seq("Welcome to my ")
-    .styled_seq("li'l", { class: "font-cursive" })
-    .seq(" corner of the internet. ヾ( ˃ᴗ˂ )◞ • *")
+    .styled_seq("little corner", { class: "font-cursive" })
+    .seq(" of the internet.")
     .build();
 const url = Astro.url;
 ---
@@ -101,11 +101,6 @@ const url = Astro.url;
     <section>
         <div class="w-full grid relative" style="height: calc(100svh - var(--nav-total-h-units) );">
             <div class="flex items-center justify-center flex-col relative" id="greetings">
-                <style>
-                    .greeting-name {
-                        font-family: "Courier New", Courier, monospace;
-                    }
-                </style>
                 <div
                     class="sticky top-1/2 flex items-center justify-center flex-col"
                     style="transform: translateY(-25%); z-index: 1"
@@ -113,7 +108,7 @@ const url = Astro.url;
                     <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
                         <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load />
                     </h1>
-                    <p class="top-3/4 mb-8 min-h-[1.5em]">
+                    <p class="top-3/4 mb-8 min-h-[1.5em] text-lg">
                         <Typewriter
                             instructions={greeting_sub.instructs}
                             fallback={greeting_sub.fallback}
@@ -207,11 +202,16 @@ const url = Astro.url;
         section {
             @apply flex items-center justify-center flex-col;
         }
-
+        .banner-trans2 {
+            @apply absolute bottom-0 w-full;
+            opacity: calc(var(--ratio) * 100);
+        }
         .banner-trans {
             @apply absolute bottom-0 w-full bg-background;
+            /* background-position-y: calc(var(--ratio) * 100%); */
             opacity: min(calc(calc(var(--ratio) * 1.5) + 0.3), 0.9);
         }
+
         .project-grid {
             display: grid;
             width: min(100%, 96rem);

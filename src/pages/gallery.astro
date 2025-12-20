@@ -65,9 +65,14 @@ const subtitle = new TypedText().wait(1500).seq("Collection of all my projects")
 
         <WindowEntryRatio class="relative w-full h-0" client:load>
             <div class="banner-trans h-svh"></div>
+            <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
         </WindowEntryRatio>
         <style>
             @import "@styles/global.css";
+            .banner-trans2 {
+                @apply absolute bottom-0 w-full;
+                opacity: calc(var(--ratio) * 100);
+            }
             .banner-trans {
                 @apply absolute bottom-0 w-full bg-background;
                 opacity: min(calc(calc(var(--ratio) * 1.5) + 0.3), 0.9);
