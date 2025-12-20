@@ -1,1 +1,0 @@
-import{SpotlightBackground as a}from"./effects.YUaP6aMW.js";import"./reactivity.esm-bundler.tafNOKMZ.js";import"./SpotlightBackground.BdZwcuAX.js";import"./runtime-core.esm-bundler.CebOeQSt.js";/* empty css                         */import"./_plugin-vue_export-helper.DlAUqK2U.js";export{a as SpotlightBackground};
