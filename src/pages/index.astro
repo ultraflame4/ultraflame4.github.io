@@ -70,6 +70,8 @@ const greeting = new TypedText()
     .wait(200)
     .autoprev()
     .styled_seq("maker", { style: "color: var(--color-rainbow)" })
+    .wait(500)
+    .restart()
     .build();
 
 const greeting_sub = new TypedText()

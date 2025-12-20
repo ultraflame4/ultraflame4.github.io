@@ -119,6 +119,11 @@ export class TextTyper {
         return this
     }
 
+    restart(): this {
+        this.instructs.push(tti_goto(0));
+        return this;
+    }
+
     /**
      * Returns the final text instructions.
      * 
