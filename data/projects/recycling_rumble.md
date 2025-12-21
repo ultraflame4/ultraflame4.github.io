@@ -3,8 +3,7 @@
 title: Recycling Rumble
 source: https://github.com/ultraflame4/MSO_RecycleRight
 links:
-  - Game Demo: mso-recycleright-build-ultr42-public-archives-f23d677a87aabe276.gitlab.io/
-image: https://img.itch.zone/aW1hZ2UvMjQ5NTc1OS8xNDgzNjIyMi5wbmc=/347x500/WJ6vHk.png
+  - Game Demo: https://ultr42.gitlab.io/public-archives/mso_recycleright_build/
 video: https://youtu.be/h30tunHIJFk
 skills:
   - unity
