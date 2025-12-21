@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "./rainbow.css";
-@import "./fonts.css";
 @plugin '@tailwindcss/typography';
 
 :root {
