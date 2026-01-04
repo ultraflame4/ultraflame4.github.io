@@ -6,7 +6,8 @@ import { getCollection, render } from "astro:content";
 import { SpotlightBackground, TypedText, Typewriter, WindowEntryRatio } from "@/components/effects";
 import BackToTop from "@/components/BackToTop.astro";
 import ProjectCardStatic from "@/components/ui/project/ProjectCardStatic.astro";
-import LandingBannerBg from "@/components/ui/landing/LandingBannerBg.astro";
+import SphereBannerBg from "@/components/ui/landing/SphereBannerBg.astro";
+
 
 const _projects = await getCollection("projects");
 
@@ -38,7 +39,7 @@ const subtitle = new TypedText().wait(1500).seq("Collection of all my projects")
 <Layout>
     <div class="absolute top-0 w-full bg-black" style="height: 100svh; z-index: -1;">
         <div class="noise"></div>
-        <LandingBannerBg />
+        <SphereBannerBg />
         <div class="absolute h-full w-full top-0 left-0"></div>
     </div>
 

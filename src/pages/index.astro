@@ -11,7 +11,7 @@ import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } f
 import socials from "@data/socials.json";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 import BackToTop from "@/components/BackToTop.astro";
-import LandingBannerBg from "@/components/ui/landing/LandingBannerBg.astro";
+import CubeBannerBg from "@/components/ui/landing/CubeBannerBg.astro";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -47,6 +47,8 @@ const about_story_rendered = await Promise.all(
     )
 ).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
 
+const delay = 400;
+
 const greeting = new TypedText()
     .wait(200)
     .seq("Hello, ")
@@ -56,17 +58,18 @@ const greeting = new TypedText()
     .ins("<br/>")
     .wait(300)
     .seq("I'm a ")
-    .styled_seq("Self-taught", { style: "color:#86EFAC" })
     .wait(200)
+    .styled_seq("Self-taught", { style: "color:#86EFAC" })
+    .wait(delay)
     .autoprev()
     .styled_seq("Programmer", { style: "color:#4f39f6" })
-    .wait(200)
+    .wait(delay)
     .autoprev()
     .styled_seq("builder", { style: "color:#ff8904" })
-    .wait(200)
+    .wait(delay)
     .autoprev()
     .styled_seq("tinkerer", { style: "color:#FACC15" })
-    .wait(200)
+    .wait(delay)
     .autoprev()
     .styled_seq("maker", { style: "color: var(--color-rainbow)" })
     .wait(8000)
@@ -86,8 +89,7 @@ const url = Astro.url;
 <Layout>
     <div class="absolute top-0 w-full bg-black" style="height: 200svh; z-index: -1;">
         <div class="noise"></div>
-        <LandingBannerBg />
-        <div class="absolute h-full w-full top-0 left-0"></div>
+        <CubeBannerBg />
     </div>
 
     <style>

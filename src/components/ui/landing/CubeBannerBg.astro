@@ -1,4 +1,4 @@
-<div style="margin: 0;" id="landingbanner-bg">
+<div style="margin: 0;" id="cubelandingbanner-bg">
     <script>
         import { ASCIIEffect, ASCIITexture, EffectComposer, EffectPass, RenderPass } from "postprocessing";
 
@@ -31,7 +31,7 @@
         composer.addPass(effectPass);
 
         document.addEventListener("astro:page-load", () => {
-            document.getElementById("landingbanner-bg")?.appendChild(renderer.domElement);
+            document.getElementById("cubelandingbanner-bg")?.appendChild(renderer.domElement);
         });
 
         composer.setSize(window.innerWidth, window.innerHeight);
@@ -143,7 +143,7 @@
 
                 const [px, py, pz] = positions[index];
                 const delay = (index / cubes.length) * 0.2;
-                const rt = t * 0.2 + delay * 0.8;
+                const rt = t;
                 const tx = THREE.MathUtils.lerp(cube.position.x, px, rt);
                 const ty = THREE.MathUtils.lerp(cube.position.y, py, rt);
                 const tz = THREE.MathUtils.lerp(cube.position.z, pz, rt);
