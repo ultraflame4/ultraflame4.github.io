@@ -8,7 +8,6 @@ import BackToTop from "@/components/BackToTop.astro";
 import ProjectCardStatic from "@/components/ui/project/ProjectCardStatic.astro";
 import SphereBannerBg from "@/components/ui/landing/SphereBannerBg.astro";
 
-
 const _projects = await getCollection("projects");
 
 const projects_rendered = await Promise.all(
@@ -28,8 +27,8 @@ const projects_rendered = await Promise.all(
             render(x.og).then((r) => ({
                 data: x.data,
                 content: r.Content,
-            }))
-        )
+            })),
+        ),
 );
 
 const title = new TypedText().wait(500).seq("The ").styled_seq("Gallery", { class: "text-rainbow" }).build();
@@ -79,7 +78,7 @@ const subtitle = new TypedText().wait(1500).seq("Collection of all my projects")
                 opacity: min(calc(calc(var(--ratio) * 1.5) + 0.3), 0.9);
             }
         </style>
-
+        <div class="my-4"></div>
         <div class="w-full px-4 py-2 flex min-w-0">
             <div class="m-auto gap-px p-[1.2px] project-grid min-w-0 relative">
                 {

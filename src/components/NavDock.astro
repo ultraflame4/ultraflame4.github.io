@@ -13,10 +13,10 @@ const current_path = Astro.url.pathname.endsWith("/")
     : Astro.url.pathname;
 ---
 
-<div class="p-(--nav-offset-units) w-full sticky top-0 z-10">
+<div class="p-(--nav-offset-units) w-full sticky top-0 z-20">
     <WindowEntryRatio threshold={0.9} client:load>
         <div
-            class="nav-container flex items-center justify-center h-(--nav-height-units) rounded-2xl drop-shadow-xl acrylic px-2 py-2 w-fit m-auto"
+            class="nav-container h-(--nav-height-units) rounded-2xl flex items-center justify-center acrylic px-2 py-2 w-fit m-auto"
         >
             <nav class="h-full w-full">
                 <ul class="list-none flex gap-4 uppercase h-full text-dimmed items-center">
@@ -57,7 +57,7 @@ const current_path = Astro.url.pathname.endsWith("/")
                     document.addEventListener("keydown", (e) => {
                         if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName?.toLocaleUpperCase() ?? "")) return;
                         const link = document.querySelector(
-                            `a[data-shortcutkey="${e.key.toLowerCase()}"]`
+                            `a[data-shortcutkey="${e.key.toLowerCase()}"]`,
                         ) as HTMLAnchorElement;
                         if (link) {
                             window.location.href = link.href;
