@@ -13,7 +13,7 @@ const current_path = Astro.url.pathname.endsWith("/")
     : Astro.url.pathname;
 ---
 
-<div class="p-(--nav-offset-units) w-full sticky top-0 z-10">
+<div class="p-(--nav-offset-units) w-full sticky top-0 z-20">
     <WindowEntryRatio threshold={0.9} client:load>
         <div
             class="nav-container h-(--nav-height-units) rounded-2xl flex items-center justify-center acrylic px-2 py-2 w-fit m-auto"

@@ -34,8 +34,8 @@ const projects_rendered = await Promise.all(
             render(x.og).then((r) => ({
                 data: x.data,
                 content: r.Content,
-            }))
-        )
+            })),
+        ),
 );
 
 const about_story_rendered = await Promise.all(
@@ -43,8 +43,8 @@ const about_story_rendered = await Promise.all(
         render(x).then((r) => ({
             title: x.id,
             content: r.Content,
-        }))
-    )
+        })),
+    ),
 ).then((x) => x.sort((a, b) => a.title.localeCompare(b.title)));
 
 const delay = 400;
@@ -87,7 +87,7 @@ const url = Astro.url;
 ---
 
 <Layout>
-    <div class="absolute top-0 w-full bg-black" style="height: 200svh; z-index: -1;">
+    <div class="absolute top-0 w-full bg-background" style="height: 200svh; z-index: -1;">
         <div class="noise"></div>
         <CubeBannerBg />
     </div>
@@ -100,98 +100,92 @@ const url = Astro.url;
             height: var(--navbar-height);
         }
     </style>
-    <section>
-        <div class="w-full grid relative" style="height: calc(100svh - var(--nav-total-h-units) );">
-            <div class="flex items-center justify-center flex-col relative" id="greetings">
-                <div
-                    class="sticky top-1/2 flex items-center justify-center flex-col"
-                    style="transform: translateY(-25%); z-index: 1"
-                >
-                    <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
-                        <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load />
-                    </h1>
-                    <p class="top-3/4 mb-8 min-h-[1.5em] text-lg">
-                        <Typewriter
-                            instructions={greeting_sub.instructs}
-                            fallback={greeting_sub.fallback}
-                            client:load
-                            hideCursor
-                        />
-                    </p>
-                    <div class="flex items-center justify-end social-list h-full gap-2 px-2 fade-in">
-                        {
-                            socials.map((x) => (
-                                <a title={x.title} href={x.url} class="hover:text-accent ">
-                                    <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
-                                </a>
-                            ))
-                        }
-                    </div>
+
+    <div class="w-full grid relative" style="height: calc(100svh - var(--nav-total-h-units) );">
+        <div class="flex items-center justify-center flex-col relative" id="greetings">
+            <div
+                class="sticky top-1/2 flex items-center justify-center flex-col"
+                style="transform: translateY(-25%); z-index: 1"
+            >
+                <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
+                    <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load />
+                </h1>
+                <p class="top-3/4 mb-8 min-h-[1.5em] text-lg">
+                    <Typewriter instructions={greeting_sub.instructs} fallback={greeting_sub.fallback} client:load hideCursor />
+                </p>
+                <div class="flex items-center justify-end social-list h-full gap-2 px-2 fade-in">
+                    {
+                        socials.map((x) => (
+                            <a title={x.title} href={x.url} class="hover:text-accent ">
+                                <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
+                            </a>
+                        ))
+                    }
                 </div>
             </div>
         </div>
-        <NavDock />
+    </div>
+    <NavDock />
 
-        <WindowEntryRatio class="relative w-full h-0" client:load>
-            <div class="banner-trans h-svh"></div>
-            <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
-        </WindowEntryRatio>
+    <WindowEntryRatio class="relative w-full h-0" client:load>
+        <div class="banner-trans h-svh"></div>
+        <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
+    </WindowEntryRatio>
 
-        <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
-            <div class="max-w-7xl w-full h-full">
-                <WindowBook
-                    client:load
-                    title="My Profile"
-                    id="about-summary"
-                    root="#about-section"
-                    sections={about_story_rendered.map((x) => ({
-                        title: `${x.title}.md`,
-                        icon: "streamline:markdown-document-programming-solid",
-                        href: `#about-${x.title}`,
-                    }))}
-                    sidebar_heading="files"
-                >
-                    {
-                        about_story_rendered.map((x, idx, arr) => {
-                            let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
-                            let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
+    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
+        <div class="max-w-7xl w-full h-full">
+            <WindowBook
+                client:load
+                title="My Profile"
+                id="about-summary"
+                root="#about-section"
+                sections={about_story_rendered.map((x) => ({
+                    title: `${x.title}.md`,
+                    icon: "streamline:markdown-document-programming-solid",
+                    href: `#about-${x.title}`,
+                }))}
+                sidebar_heading="files"
+            >
+                {
+                    about_story_rendered.map((x, idx, arr) => {
+                        let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
+                        let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
 
-                            return (
-                                <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
-                                    <x.content />
-                                </WindowBookPage>
-                            );
-                        })
-                    }
-                </WindowBook>
-            </div>
-        </section>
-        <section class="bg-background" id="recent-works">
-            <h1>Recent Works</h1>
-            <div class="w-full px-4 py-2 flex min-w-0">
-                <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:load>
-                    {
-                        projects_rendered.map((x) => {
-                            return (
-                                <ProjectCardStatic data={x.data}>
-                                    <x.content />
-                                </ProjectCardStatic>
-                            );
-                        })
-                    }
-                    <div class="bg-background min-h-32">
-                        <a
-                            class="flex items-center justify-center w-full h-full hover:bg-hover active:text-black active:bg-accent font-fancy text-xl"
-                            href="/gallery"
-                        >
-                            Go to Gallery
-                        </a>
-                    </div>
-                </SpotlightBackground>
-            </div>
-        </section>
-        <BackToTop />
+                        return (
+                            <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
+                                <x.content />
+                            </WindowBookPage>
+                        );
+                    })
+                }
+            </WindowBook>
+        </div>
     </section>
+    <section class="bg-background" id="recent-works">
+        <h1>Recent Works</h1>
+        <div class="w-full px-4 py-2 flex min-w-0">
+            <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:load>
+                {
+                    projects_rendered.map((x) => {
+                        return (
+                            <ProjectCardStatic data={x.data}>
+                                <x.content />
+                            </ProjectCardStatic>
+                        );
+                    })
+                }
+                <div class="bg-background min-h-32">
+                    <a
+                        class="flex items-center justify-center w-full h-full hover:bg-hover active:text-black active:bg-accent font-fancy text-xl"
+                        href="/gallery"
+                    >
+                        Go to Gallery
+                    </a>
+                </div>
+            </SpotlightBackground>
+        </div>
+    </section>
+    <BackToTop />
 
     <style>
         @import "@styles/global.css";
