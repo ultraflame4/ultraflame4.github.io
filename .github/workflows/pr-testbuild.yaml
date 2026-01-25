@@ -2,15 +2,16 @@ name: PR Test Build
 run-name: ${{ github.actor }} is testing this vite app\
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [ "v7" ]
-
+    
 concurrency:
   group: 'pages-testbuild'
   cancel-in-progress: true
   
 jobs:
-  build:
+  test-pr-build:
     runs-on: ubuntu-latest
 
     steps:
