@@ -12,6 +12,7 @@ import socials from "@data/socials.json";
 import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 import BackToTop from "@/components/BackToTop.astro";
 import CubeBannerBg from "@/components/ui/landing/CubeBannerBg.astro";
+import PageHeader from "@/components/PageHeader.astro";
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -87,50 +88,30 @@ const url = Astro.url;
 ---
 
 <Layout>
-    <div class="absolute top-0 w-full bg-background" style="height: 200svh; z-index: -1;">
-        <div class="noise"></div>
-        <CubeBannerBg />
-    </div>
+    <PageHeader>
+        <CubeBannerBg slot="background" />
 
-    <style>
-        :root {
-            --navbar-height: 2rem;
-        }
-        .navbar-ctn {
-            height: var(--navbar-height);
-        }
-    </style>
-
-    <div class="w-full grid relative" style="height: calc(100svh - var(--nav-total-h-units) );">
-        <div class="flex items-center justify-center flex-col relative" id="greetings">
-            <div
-                class="sticky top-1/2 flex items-center justify-center flex-col"
-                style="transform: translateY(-25%); z-index: 1"
-            >
-                <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
-                    <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load />
-                </h1>
-                <p class="top-3/4 mb-8 min-h-[1.5em] text-lg">
-                    <Typewriter instructions={greeting_sub.instructs} fallback={greeting_sub.fallback} client:load hideCursor />
-                </p>
-                <div class="flex items-center justify-end social-list h-full gap-2 px-2 fade-in">
-                    {
-                        socials.map((x) => (
-                            <a title={x.title} href={x.url} class="hover:text-accent ">
-                                <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
-                            </a>
-                        ))
-                    }
-                </div>
+        <div class="flex items-center justify-center flex-col relative top-10">
+            <h1 class="font-fancy text-4xl p-2 rounded-lg glow mb-8 min-h-[3em]">
+                <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} interval={20} client:load />
+            </h1>
+            <p class="top-3/4 mb-8 min-h-[1.5em] text-lg">
+                <Typewriter instructions={greeting_sub.instructs} fallback={greeting_sub.fallback} client:load hideCursor />
+            </p>
+            <div class="flex items-center justify-end social-list h-full gap-2 px-2 fade-in">
+                {
+                    socials.map((x) => (
+                        <a title={x.title} href={x.url} class="hover:text-accent ">
+                            <iconify-icon ssr inline icon={x.iconify} class="text-3xl" />
+                        </a>
+                    ))
+                }
             </div>
         </div>
-    </div>
-    <NavDock />
+        <NavDock slot="navbar" />
+    </PageHeader>
 
-    <WindowEntryRatio class="relative w-full h-0" client:load>
-        <div class="banner-trans h-svh"></div>
-        <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
-    </WindowEntryRatio>
+
 
     <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
         <div class="max-w-7xl w-full h-full">

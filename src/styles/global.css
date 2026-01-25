@@ -14,6 +14,8 @@
     /* Alias for --nav-total-h-units*/
     --header-spacing: var(--nav-total-h-units);
 
+
+
     /* ----- Theme Colors ----- */
 
     /* Background color */
@@ -144,8 +146,6 @@
         animation: fadeIn 500ms ease forwards;
         animation-delay: 1s
     }
-
-
 
     /**
     * Styles for markdown. Apply this class to the parent element containing the rendered html code for markdown.
@@ -291,8 +291,9 @@
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border: 2px solid rgba(255, 255, 255, 0.05);
-        
-        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */ /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
+
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+        /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
     }
 
     .badge {
