@@ -36,6 +36,8 @@
 
         composer.setSize(window.innerWidth, window.innerHeight);
 
+        // WARNING: This works like dvh. e.g on ios, this will be called when the url bar shrinks, thereby increasing innerHeight. it counts as a resize
+        // Parent element should use overflow-hidden to prevent weird behaviour
         window.addEventListener("resize", () => resize_camera(window.innerWidth, window.innerHeight));
 
         function resize_camera(w: number, h: number) {

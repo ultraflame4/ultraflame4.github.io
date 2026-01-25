@@ -36,13 +36,11 @@ const subtitle = new TypedText().wait(1500).seq("Collection of all my projects")
 ---
 
 <Layout>
-    <div class="absolute top-0 w-full bg-background" style="height: 100svh; z-index: -1;">
-        <div class="noise"></div>
+    <div class="absolute top-0 w-full bg-background h-svh overflow-hidden" >
+        <!-- <div class="noise"></div> -->
         <SphereBannerBg />
-        <div class="absolute h-full w-full top-0 left-0"></div>
     </div>
 
-    
     <div class="header-banner flex flex-col items-center justify-center">
         <h1 class="font-fancy text-6xl p-2 rounded-lg glow mb-2 min-h-[1.5em]">
             <Typewriter instructions={title.instructs} fallback={title.fallback} interval={50} client:load />
@@ -57,8 +55,8 @@ const subtitle = new TypedText().wait(1500).seq("Collection of all my projects")
     <!-- <WindowEntryRatio class="relative w-full h-0" client:load>
         <div class="banner-trans h-svh"></div>
         <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
-    </WindowEntryRatio> -->
-    <!-- <style>
+    </WindowEntryRatio>
+    <style>
         @import "@styles/global.css";
         .banner-trans2 {
             @apply absolute bottom-0 w-full;
