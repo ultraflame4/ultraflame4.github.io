@@ -4,6 +4,8 @@ run-name: ${{ github.actor }} is testing this vite app\
 on:
   pull_request:
     branches: [ "v7" ]
+  workflow_dispatch:
+    
 
 concurrency:
   group: 'pages-testbuild'
