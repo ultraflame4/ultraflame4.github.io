@@ -147,12 +147,6 @@
         animation-delay: 1s
     }
 
-    .header-banner {
-        --header-banner-h: calc(100svh - var(--nav-total-h-units));
-        height: var(--header-banner-h);
-        padding-top: calc(var(--nav-total-h-units))
-    }
-
     /**
     * Styles for markdown. Apply this class to the parent element containing the rendered html code for markdown.
     * This class uses tailwind's typography prose class as a base.

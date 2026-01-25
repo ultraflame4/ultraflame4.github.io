@@ -1,0 +1,39 @@
+---
+import { WindowEntryRatio } from "./effects";
+---
+
+<div class="absolute top-0 w-full bg-background h-svh overflow-hidden" style="z-index: -1;">
+    <div class="noise"></div>
+    <slot name="background" />
+</div>
+
+<div class="header-items-ctn">
+    <div class="sticky top-1/2 z-10" style="transform: translateY(-50%)">
+        <slot />
+    </div>
+</div>
+<style>
+    .header-items-ctn {
+        --header-banner-h: calc(100svh - var(--nav-total-h-units));
+        height: var(--header-banner-h);
+        padding-top: calc(var(--nav-total-h-units));
+    }
+</style>
+
+<slot name="navbar" />
+<WindowEntryRatio class="relative w-full h-0" client:load>
+    <div class="banner-trans h-svh"></div>
+    <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
+</WindowEntryRatio>
+
+<style>
+    @import "@styles/global.css";
+    .banner-trans2 {
+        @apply absolute bottom-0 w-full;
+        opacity: calc(var(--ratio) * 100);
+    }
+    .banner-trans {
+        @apply absolute bottom-0 w-full bg-background;
+        opacity: min(calc(calc(var(--ratio) * 1.5) + 0.3), 0.9);
+    }
+</style>
