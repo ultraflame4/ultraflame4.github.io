@@ -2,7 +2,7 @@
 import { WindowEntryRatio } from "./effects";
 ---
 
-<div class="absolute top-0 w-full bg-background h-svh overflow-hidden" style="z-index: -1;">
+<div class="absolute top-0 w-full bg-white h-svh overflow-hidden" style="z-index: -1;">
     <div class="noise"></div>
     <slot name="background" />
 </div>
@@ -21,11 +21,15 @@ import { WindowEntryRatio } from "./effects";
 </style>
 
 <slot name="navbar" />
+<div class="banner-trans2 h-8 bg-linear-0 from-background to-transparent"></div>
 <WindowEntryRatio class="relative w-full h-0" client:load>
+    <!-- Complete overlay -->
     <div class="banner-trans h-svh"></div>
-    <div class="banner-trans2 h-16 bg-linear-0 from-background to-transparent"></div>
+    <!-- Transition gradient -->
+    <div class="banner-trans2 h-32 bg-linear-0 from-background to-transparent"></div>
 </WindowEntryRatio>
-
+<!-- Mandatory spacing -->
+<div class="h-8"></div>
 <style>
     @import "@styles/global.css";
     .banner-trans2 {
