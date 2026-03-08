@@ -3,17 +3,27 @@ import Layout from "@/layouts/Layout.astro";
 import NavDock from "@/components/NavDock.astro";
 import UnderConstruction from "@/components/UnderConstruction.astro";
 import { RSSFeedViewer } from "@/components/ui";
+import UserArticles from "@/components/ui/DevTo/UserArticles.vue";
+import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 ---
 
 <Layout>
     <NavDock />
-    <section>
-        <h1>Recent Posts</h1>
-        <p class="text-dimmed font-mono">View all posts at <a href="https://dev.to/clyh">dev.to/clyh</a></p>
-        <div class="max-w-full mx-auto">
+    <section class="px-4">
+        <h1>All Posts</h1>
+        <SpotlightBackground client:only>
+            <UserArticles username="clyh" client:load />
+        </SpotlightBackground>
+        <p class="text-dimmed text-xs font-mono font lowercase mt-4">
+            view all posts at <a href="https://dev.to/clyh">dev.to/clyh</a>
+        </p>
+    </section>
+    <!-- <section>
+        <h1>Recent Posts</h1> -->
+    <!-- <div class="max-w-full mx-auto">
             <RSSFeedViewer class:list={'max-w-256'} feedurl="https://dev.to/feed/clyh" client:only />
         </div>
-    </section>
+    </section> -->
 </Layout>
 <style>
     @import "@styles/global.css";
