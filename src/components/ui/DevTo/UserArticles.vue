@@ -1,8 +1,6 @@
 <template>
     <div v-for="article in articles" class="w-full lg:w-4xl block bg-background" :href="article.canonical_url">
-        <SpotlightBackground class="p-px">
-            <UserArticleContent :article_brief="article" />
-        </SpotlightBackground>
+        <UserArticleContent :article_brief="article" />
     </div>
 </template>
 <script lang="ts" setup>
