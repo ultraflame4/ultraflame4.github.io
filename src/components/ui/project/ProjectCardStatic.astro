@@ -64,11 +64,11 @@ const datetimeformat = new Intl.DateTimeFormat("en-sg", { month: "short", year: 
                         <YoutubeEmbed src={data.media[0].url} client:visible />
                     ) : (
                         <video v-else controls>
-                            <source src={data.media[0].url} />
+                            <source src={data.media[0].url}/>
                         </video>
                     );
                 } else if (data.media[0]) {
-                    return <img src={data.media[0].url} alt="" />;
+                    return <img src={data.media[0].url} alt="" loading="lazy"/>;
                 }
             })()
         }

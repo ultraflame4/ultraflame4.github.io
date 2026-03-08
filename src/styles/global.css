@@ -35,14 +35,14 @@
     --sub: var(--color-stone-400);
 
     /* Dimmed color for text*/
-    --dimmed: var(--color-stone-500);
+    --dimmed: var(--color-neutral-400);
 
     --inactive: var(--color-neutral-800);
     --primary: var(--color-rosewater);
     --accent: var(--color-rosewater);
     --bright: var(--color-white);
     --danger: var(--color-red-500);
-    --border-color: var(--color-neutral-700);
+    --border-color: var(--color-neutral-800);
 
     --mdcode: var(--color-crust);
 }
@@ -316,3 +316,4 @@
 
     }
 }
+

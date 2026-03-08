@@ -17,9 +17,24 @@ const css_vars = computed<CSSProperties>(() => ({
 }))
 
 </script>
+<style>
+@property --spotlight-radius {
+    syntax: '<percentage>';
+    /* Specifies the data type */
+    initial-value: 0%;
+    /* Sets the starting value */
+    inherits: false;
+    /* Determines if the value is inherited */
+}
+</style>
 <style scoped>
 .ctn {
-    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(10%, 8rem));
+    --spotlight-radius: 10%;
+    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(var(--spotlight-radius), 3rem));
+    transition: --spotlight-radius 200ms ease-out;
 }
 
+.ctn:hover {
+    --spotlight-radius: 40%;
+}
 </style>
