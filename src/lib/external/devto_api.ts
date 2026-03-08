@@ -85,8 +85,8 @@ export namespace devto {
             }))
         }
 
-        export function fetch_detailed(article_id: string, opts?: { page?: number, per_page?: number, tag?: string, }): Promise<Article> {
-            return api_fetch(`/articles/${article_id}?`)
+        export function fetch_detailed(article_id: number): Promise<Article> {
+            return api_fetch(`/articles/${article_id}`)
         }
     }
 }

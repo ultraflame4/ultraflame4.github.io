@@ -7,10 +7,14 @@
             <!-- title -->
             <h1 class="font-bold font-fancy flex justify-center items-center">{{ title }}</h1>
         </div>
-        <button
-            class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary">
-            <Icon icon="material-symbols-light:close" class="text-inherit" />
+        <button v-if="!hideCloseBtn" :data-alt="altCloseBtn || undefined"
+            class="bg-background hover:bg-danger flex items-center justify-center text-2xl text-accent hover:text-crust active:bg-primary group data-alt:text-dimmed data-alt:hover:text-accent data-alt:bg-background"
+            @click="$emit('closePressed')">
+            <Icon icon="material-symbols:close" class="text-inherit group-data-alt:rotate-45"/>
         </button>
+        <div v-else class="bg-background">
+
+        </div>
         <div class="col-span-full min-h-full min-w-0">
             <slot></slot>
             <!-- <div v-if="props.sidebar" class="min-w-[150px] transition-none flex flex-col bg-background mobile-collapse"
@@ -35,8 +39,16 @@ import { Icon } from "@iconify/vue";
 import ResizeHandle from '../core/ResizeHandle.vue';
 import SpotlightBackground from '../effects/SpotlightBackground.vue';
 
-const props = defineProps<{ title: string }>()
+const props = defineProps<{
+    title: string,
+    /** hides the X button */
+    hideCloseBtn?: boolean,
+    /** Alterantive appearance of the X button*/
+    altCloseBtn?: boolean
+}>()
 
+
+const emit = defineEmits(["closePressed"])
 
 </script>
 <style scoped>
