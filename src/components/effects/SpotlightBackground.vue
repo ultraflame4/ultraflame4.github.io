@@ -36,12 +36,13 @@ watch([mouse.elementX, mouse.elementY, mouse.elementWidth, mouse.elementHeight],
 </style>
 <style scoped>
 .ctn {
-    --spotlight-radius: 10%;
-    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(var(--spotlight-radius), 3rem));
+    --spotlight-radius: 0%;
+    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(var(--spotlight-radius), 4rem));
     transition: --spotlight-radius 200ms ease-out;
 }
 
 .ctn:hover {
-    --spotlight-radius: 40%;
+    --spotlight-radius: 50%;
+    background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(var(--spotlight-radius), 6rem));
 }
 </style>
