@@ -1,0 +1,1 @@
+import{S as a}from"./SpotlightBackground.Be8pArxD.js";import"./runtime-core.esm-bundler.Cw8uZRcm.js";import"./reactivity.esm-bundler.BmP1jxOU.js";/* empty css                         */import"./_plugin-vue_export-helper.DlAUqK2U.js";export{a as default};
