@@ -1,20 +1,27 @@
 <template>
+    <!-- The visible optimisation -->
     <div class="ctn" ref="target" :style="css_vars">
         <slot></slot>
     </div>
 </template>
 <script lang="ts" setup>
-import { useMouseInElement } from '@vueuse/core';
-import { computed, useTemplateRef, type CSSProperties } from 'vue';
+import { useElementVisibility, useMouseInElement } from '@vueuse/core';
+import { computed, ref, useTemplateRef, watch, type CSSProperties } from 'vue';
 
 const target = useTemplateRef('target')
 const mouse = useMouseInElement(target)
+const visible = useElementVisibility(target)
+const css_vars = ref<CSSProperties>({
 
-
-const css_vars = computed<CSSProperties>(() => ({
-    "--x-percent": `${Math.round(mouse.elementX.value / mouse.elementWidth.value * 100)}%`,
-    "--y-percent": `${Math.round(mouse.elementY.value / mouse.elementHeight.value * 100)}%`,
-}))
+})
+watch([mouse.elementX, mouse.elementY, mouse.elementWidth, mouse.elementHeight], ([x, y, w, h]) => {
+    // Skip updating the css variables if not visible
+    if (!visible.value) return;
+    css_vars.value = {
+        "--x-percent": `${Math.round(x / w * 100)}%`,
+        "--y-percent": `${Math.round(y / h * 100)}%`,
+    }
+})
 
 </script>
 <style>

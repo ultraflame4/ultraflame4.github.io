@@ -4,7 +4,6 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { SpotlightBackground } from '@/components/effects';
 import { devto } from '@/lib/external/devto_api';
 import UserArticleContent from './UserArticleContent.vue';
 
