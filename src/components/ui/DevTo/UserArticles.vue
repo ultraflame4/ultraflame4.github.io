@@ -1,5 +1,5 @@
 <template>
-    <a v-for="article in articles" class="w-full md:w-3xl block m-px bg-background">
+    <a v-for="article in articles" class="w-full md:w-3xl block m-px bg-background" :href="article.canonical_url">
         <article class="p-4">
             <header>
                 <h1 class="text-2xl font-fancy">{{ article.title }}</h1>

@@ -10,7 +10,7 @@ import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
 <Layout>
     <NavDock />
     <section class="px-4">
-        <h1>All Posts</h1>
+        <h1>Recent Posts</h1>
         <SpotlightBackground client:only>
             <UserArticles username="clyh" client:load />
         </SpotlightBackground>
@@ -18,12 +18,6 @@ import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
             view all posts at <a href="https://dev.to/clyh">dev.to/clyh</a>
         </p>
     </section>
-    <!-- <section>
-        <h1>Recent Posts</h1> -->
-    <!-- <div class="max-w-full mx-auto">
-            <RSSFeedViewer class:list={'max-w-256'} feedurl="https://dev.to/feed/clyh" client:only />
-        </div>
-    </section> -->
 </Layout>
 <style>
     @import "@styles/global.css";

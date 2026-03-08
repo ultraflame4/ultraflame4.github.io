@@ -42,7 +42,7 @@
     --accent: var(--color-rosewater);
     --bright: var(--color-white);
     --danger: var(--color-red-500);
-    --border-color: var(--color-neutral-700);
+    --border-color: var(--color-neutral-800);
 
     --mdcode: var(--color-crust);
 }
@@ -316,3 +316,4 @@
 
     }
 }
+
