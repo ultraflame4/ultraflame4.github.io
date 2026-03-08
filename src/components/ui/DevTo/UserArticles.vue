@@ -1,6 +1,6 @@
 <template>
-    <a v-for="article in articles" class="w-full md:w-3xl block m-px bg-background" :href="article.canonical_url">
-        <article class="p-4">
+    <a v-for="article in articles" class="w-full block my-px bg-background" :href="article.canonical_url">
+        <article class="p-4 h-48 flex flex-col">
             <header>
                 <h1 class="text-2xl font-fancy">{{ article.title }}</h1>
 
@@ -12,7 +12,7 @@
             <div class="my-2">
                 {{ article.description }}
             </div>
-            <footer class="text-dimmed text-xs">
+            <footer class="text-dimmed text-xs mt-auto">
                 <span>
                     Created: {{ new Date(article.created_at).toLocaleDateString() }}
                 </span>
