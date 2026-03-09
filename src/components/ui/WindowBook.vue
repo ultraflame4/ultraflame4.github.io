@@ -11,14 +11,14 @@
                     <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse" ref="sidebar"
                         :style="sidebar_style">
                         <ul class="w-full shrink-0">
-                            <li class="w-full bg-background mb-[1px] px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed" v-if="props.sidebar_heading">
+                            <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed" v-if="props.sidebar_heading">
                                 <span>{{ props.sidebar_heading }}</span>
                             </li>
                             <li v-for="entry in props.sections" class="h-8 w-full  bg-background ">
                                 <RouteAnchor :to="entry.href"
-                                    class="flex gap-1.5 text-sm items-center font-mono px-1.5 h-full w-full border-[1px] border-transparent hover:bg-highlight data-[active=true]:bg-highlight data-[active=true]:border-primary ">
+                                    class="flex gap-1.5 text-xs items-center font-mono px-1.5 h-full w-full border border-transparent hover:bg-highlight data-[active=true]:bg-highlight data-[active=true]:border-primary ">
                                     <Icon v-if="entry.icon" :icon="entry.icon" />
-                                    <span>{{ entry.title }}</span>
+                                    <span class="w-full text-ellipsis overflow-hidden">{{ entry.title }}</span>
                                 </RouteAnchor>
                             </li>
                         </ul>
@@ -26,7 +26,7 @@
 
                         </div>
                     </div>
-                    <ResizeHandle axis="x" class="w-[2px]" @resize="(x, y) => sidebar_size += x"
+                    <ResizeHandle axis="x" class="w-0.5" @resize="(x, y) => sidebar_size += x"
                         @reset="sidebar_clamp_size()"></ResizeHandle>
                 </template>
 
@@ -72,7 +72,7 @@ const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClie
 
 const sidebar_size = ref<number>(150)
 const sidebar_style = computed<CSSProperties>(() => ({
-    width: `min(max(${sidebar_size.value}px, 150px), 50vw)`
+    width: `min(max(${sidebar_size.value}px, calc(var(--spacing) * 90)), 50vw)`
 }))
 
 function sidebar_clamp_size() {

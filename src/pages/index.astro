@@ -9,7 +9,7 @@ import { render } from "astro:content";
 import { ProjectCardStatic } from "@/components/ui/project";
 import { normalise_FrontmatterProjectData, type FrontmatterProjectDataSchema } from "@/lib/project_utils";
 import socials from "@data/socials.json";
-import SpotlightBackground from "@/components/effects/SpotlightBackground.vue";
+import { SpotlightBackground } from "@/components/effects";
 import BackToTop from "@/components/BackToTop.astro";
 import CubeBannerBg from "@/components/ui/landing/CubeBannerBg.astro";
 import PageHeader from "@/components/PageHeader.astro";
@@ -110,8 +110,6 @@ const url = Astro.url;
         </div>
         <NavDock slot="navbar" />
     </PageHeader>
-
-
 
     <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
         <div class="max-w-7xl w-full h-full">
