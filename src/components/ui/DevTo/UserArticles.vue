@@ -1,5 +1,5 @@
 <template>
-    <div v-for="article in articles" class="w-full lg:w-4xl block bg-background" :href="article.canonical_url">
+    <div v-for="article in articles" class="w-full lg:w-4xl block bg-background mb-4" :href="article.canonical_url">
         <UserArticleContent :article_brief="article" />
     </div>
 </template>

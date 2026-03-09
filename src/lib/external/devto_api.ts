@@ -81,6 +81,7 @@ export namespace devto {
         export function search(username: string, opts?: { page?: number, per_page?: number, tag?: string, }): Promise<Article[]> {
             return api_fetch(`/articles?` + dictToSearchParams({
                 username,
+                state: "all",
                 ...opts
             }))
         }
