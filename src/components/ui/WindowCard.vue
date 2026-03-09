@@ -1,5 +1,5 @@
 <template>
-    <SpotlightBackground class="ctn w-full h-full">
+    <SpotlightBackground class="ctn w-full h-full -spotlight-background">
 
         <div class="titlebar col-span-4 bg-background grid grid-cols-subgrid">
             <!-- filler -->
@@ -15,7 +15,7 @@
         <div v-else class="bg-background">
 
         </div>
-        <div class="col-span-full min-h-full min-w-0">
+        <div class="col-span-full min-h-0 min-w-0">
             <slot></slot>
             <!-- <div v-if="props.sidebar" class="min-w-[150px] transition-none flex flex-col bg-background mobile-collapse"
                 ref="sidebar" :style="sidebar_style">
