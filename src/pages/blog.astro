@@ -26,10 +26,10 @@ const subtitle2 = new TypedText()
     <PageHeader>
         <CubeBannerBg slot="background" />
         <div class="w-full h-full flex flex-col items-center justify-center">
-            <h1 class="font-fancy text-6xl p-2 rounded-lg glow mb-2 min-h-[1.5em]">
+            <h1 class="font-fancy text-6xl p-2 rounded-lg glow mb-2 min-h-[1.5em] animate-float [animation-delay:2s]">
                 <Typewriter instructions={title.instructs} fallback={title.fallback} interval={50} client:load />
             </h1>
-            <p class="mb-8 min-h-[1.5em] font-black text-lg font-mono">
+            <p class="mb-8 min-h-[1.5em] font-black text-lg font-mono animate-float [animation-delay:2s]">
                 <Typewriter
                     instructions={subtitle.instructs}
                     fallback={subtitle.fallback}
