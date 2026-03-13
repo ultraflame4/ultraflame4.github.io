@@ -59,7 +59,7 @@ onMounted(() => {
     hijack_anchors()
 
     // Account for initial page load! (and maybe scroll ourselves into view)
-    let target = self.value?.querySelector(location.hash)
+    let target = location.hash ? self.value?.querySelector(location.hash) : null
     if (target) {
         if (props.root) {
             document.querySelector(props.root)?.scrollIntoView()

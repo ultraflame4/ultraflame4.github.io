@@ -11,7 +11,7 @@ export function init_pathchange_detection() {
     const event = new CustomEvent("pathchanged");
 
     setInterval(() => {
-        let current = location.pathname + location.hash
+        let current = location.pathname + location.search + location.hash
         if (current != prev_path) {
             console.log("Path changed detected:", prev_path, "->", current)
             prev_path = current

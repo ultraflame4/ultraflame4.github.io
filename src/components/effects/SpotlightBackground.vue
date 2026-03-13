@@ -1,6 +1,5 @@
 <template>
-    <!-- The visible optimisation -->
-    <div class="ctn" ref="target" :style="css_vars">
+    <div class="ctn" ref="target" :style="css_vars" :data-hover="(!mouse.isOutside.value) || undefined">
         <slot></slot>
     </div>
 </template>
@@ -41,7 +40,7 @@ watch([mouse.elementX, mouse.elementY, mouse.elementWidth, mouse.elementHeight],
     transition: --spotlight-radius 200ms ease-out;
 }
 
-.ctn:hover {
+.ctn:hover, .ctn[data-hover] {
     --spotlight-radius: 50%;
     background: radial-gradient(circle at var(--x-percent) var(--y-percent), var(--color-accent), var(--color-border) max(var(--spotlight-radius), 6rem));
 }
