@@ -8,7 +8,7 @@
         <WindowCardPanel asChild>
             <div class="w-full h-full flex min-w-0 overflow-hidden">
                 <template v-if="props.sections">
-                    <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse wbook-sizebar-size"
+                    <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse wbook-sidebar-size shrink-0"
                         ref="sidebar" :style="sidebar_style">
                         <ul class="w-full shrink-0">
                             <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed"
@@ -71,9 +71,8 @@ export interface WindowBookProps {
 
 const props = defineProps<WindowBookProps>()
 
-const max_size = ref<number>(100000)
 const sidebar = useTemplateRef("sidebar")
-const sidebar_size = ref<number>(150)
+const sidebar_size = ref<number>(50)
 const sidebar_style = computed<CSSProperties>(() => ({
     "--sidebar-size": `${sidebar_size.value}`
 
@@ -92,9 +91,9 @@ function sidebar_clamp_size() {
 
 </script>
 <style scoped>
-.wbook-sizebar-size {
+.wbook-sidebar-size {
     --minsize: calc(var(--spacing) * 90);
-    width: calc(var(--sidebar-size) * 1px);
+    width: min(calc(var(--sidebar-size) * 1px), 50%);
     min-width: fit-content;
 }
 </style>
