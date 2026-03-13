@@ -11,7 +11,8 @@
                     <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse" ref="sidebar"
                         :style="sidebar_style">
                         <ul class="w-full shrink-0">
-                            <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed" v-if="props.sidebar_heading">
+                            <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed"
+                                v-if="props.sidebar_heading">
                                 <span>{{ props.sidebar_heading }}</span>
                             </li>
                             <li v-for="entry in props.sections" class="h-8 w-full  bg-background ">
@@ -50,6 +51,13 @@ import HiddenAnchorCarousell from '../core/HiddenAnchorCarousell.vue';
 import RouteAnchor from '../core/RouteAnchor.vue';
 import { Icon } from '@iconify/vue';
 
+export interface WindowBookSection {
+    title: string,
+    icon?: string,
+    href: string
+
+}
+
 export interface WindowBookProps {
     title?: string,
     id?: string,
@@ -58,11 +66,7 @@ export interface WindowBookProps {
      */
     root?: string,
     sidebar_heading?: string,
-    sections?: {
-        title: string,
-        icon?: string,
-        href: string
-    }[]
+    sections?: WindowBookSection[]
 }
 
 const props = defineProps<WindowBookProps>()

@@ -1,5 +1,5 @@
 <template>
-    <a :href="to" :data-active="active" @click.prevent="on_click">
+    <a :href="to" :data-active="active || undefined" @click.prevent="on_click">
         <slot></slot>
     </a>
 </template>
@@ -8,12 +8,14 @@
 import { type AnchorHTMLAttributes, onMounted, ref } from 'vue';
 
 export interface RouteAnchorProps extends /* @vue-ignore */ AnchorHTMLAttributes {
-
     to: string
 }
 
 const active = ref(false)
 
+const props = defineProps<RouteAnchorProps>()
+
+// Applies data-active attribute when location is active
 onMounted(() => {
     const listener = () => {
         let x = props.to;
@@ -29,8 +31,6 @@ onMounted(() => {
     }
 
 })
-
-const props = defineProps<RouteAnchorProps>()
 
 
 function on_click(e: MouseEvent) {
