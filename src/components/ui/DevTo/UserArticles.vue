@@ -5,7 +5,7 @@
 
     <section class="bg-background w-full p-4 pt-(--header-spacing) h-svh" id="blog-posts">
         <div class="max-w-7xl w-full h-full">
-            <WindowBook :sections="book_sections" title="Posts" sidebar_heading="files">
+            <WindowBook :sections="book_sections" title="Recent Posts" sidebar_heading="files">
                 <WindowCardPanel>
                     tes
                 </WindowCardPanel>
@@ -26,7 +26,13 @@ const props = defineProps<{
 }>()
 
 const articles = await devto.articles.search(props.username)
-const book_sections = articles.map(x => ({ title: x.title, href: `?post=${x.id}` }) satisfies WindowBookSection)
+const book_sections = articles.map(x => {
+
+    const created_at = new Date(x.created_at);
+    const MAX_BRIEF_LEN = 48    ;
+    const brief = x.title.length > MAX_BRIEF_LEN ? x.title.slice(0, MAX_BRIEF_LEN - 3) + "..." : x.title
+    return { title: `${created_at.toLocaleDateString()} - ${brief}`, href: `?post=${x.id}` } satisfies WindowBookSection
+})
 
 </script>
 <style></style>
