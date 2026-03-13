@@ -8,16 +8,16 @@
         <WindowCardPanel asChild>
             <div class="w-full h-full flex min-w-0 overflow-hidden">
                 <template v-if="props.sections">
-                    <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse wbook-sidebar-size shrink-0"
+                    <div :class="'h-full transition-none flex flex-col mobile-collapse wbook-sidebar-size shrink-0 ' + props.sidebar_class"
                         ref="sidebar" :style="sidebar_style">
                         <ul class="w-full shrink-0">
                             <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed"
                                 v-if="props.sidebar_heading">
                                 <span>{{ props.sidebar_heading }}</span>
                             </li>
-                            <li v-for="entry in props.sections" class="h-8 w-full  bg-background ">
-                                <RouteAnchor :to="entry.href"
-                                    class="flex gap-1.5 text-xs items-center font-mono px-1.5 h-full w-full border border-transparent hover:bg-highlight data-[active=true]:bg-highlight data-[active=true]:border-primary ">
+                            <li v-for="entry in props.sections" class="h-8 w-full bg-background ">
+                                <RouteAnchor :to="entry.href" @click="$emit('section-change')"
+                                    class="flex gap-1.5 text-xs items-center font-mono px-1.5 h-full w-full border border-transparent hover:bg-highlight data-active:bg-highlight data-[active=true]:border-primary ">
                                     <Icon v-if="entry.icon" :icon="entry.icon" />
                                     <span class="w-full text-ellipsis overflow-hidden">{{ entry.title }}</span>
                                 </RouteAnchor>
@@ -67,6 +67,7 @@ export interface WindowBookProps {
     root?: string,
     sidebar_heading?: string,
     sections?: WindowBookSection[]
+    sidebar_class?: string
 }
 
 const props = defineProps<WindowBookProps>()
@@ -83,17 +84,17 @@ function sidebar_clamp_size() {
     if (sidebar.value === null) return;
     // If current css width doesn't match the expected width. Change expected width to the one being shown.
     const curr_width = sidebar.value.getBoundingClientRect().width;
-    if (sidebar_size.value != curr_width){
+    if (sidebar_size.value != curr_width) {
         sidebar_size.value = curr_width
     }
 }
 
+const emits = defineEmits(['section-change'])
 
 </script>
 <style scoped>
 .wbook-sidebar-size {
     --minsize: calc(var(--spacing) * 90);
     width: min(calc(var(--sidebar-size) * 1px), 50%);
-    min-width: fit-content;
 }
 </style>

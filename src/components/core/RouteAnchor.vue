@@ -14,20 +14,28 @@ export interface RouteAnchorProps extends /* @vue-ignore */ AnchorHTMLAttributes
 const active = ref(false)
 
 const props = defineProps<RouteAnchorProps>()
+const emits = defineEmits(["click"]);
 
 // Applies data-active attribute when location is active
-onMounted(() => {
-    const listener = () => {
-        let x = props.to;
-        if (x.startsWith("#")) {
-            x = location.pathname + x
-        }
-        active.value = x == location.pathname + location.hash
+
+function check_active() {
+    if (props.to.startsWith("#")) {
+        active.value = props.to == location.hash
+        return
     }
-    document.addEventListener("pathchanged", listener)
+    let full = props.to
+    if (full.startsWith("?")) {
+        full = location.pathname + full
+    }
+    active.value = full == location.pathname + location.search + location.hash
+}
+
+onMounted(() => {
+    
+    document.addEventListener("pathchanged", check_active)
 
     return () => {
-        document.removeEventListener("pathchanged", listener)
+        document.removeEventListener("pathchanged", check_active)
     }
 
 })
@@ -41,6 +49,7 @@ function on_click(e: MouseEvent) {
     if (location.hash.length > 0) {
         document.querySelector(location.hash)?.scrollIntoView({ behavior: "smooth" })
     }
+    emits('click')
 }
 // useEventListener("locat")
 

@@ -4,10 +4,13 @@
     </div> -->
 
     <section class="bg-background w-full p-4 pt-(--header-spacing) h-svh" id="blog-posts">
-        <div class="max-w-7xl w-full h-full">
-            <WindowBook :sections="book_sections" title="Recent Posts" sidebar_heading="files">
-                <WindowCardPanel>
-                    tes
+        <div class="max-w-400 w-full h-full">
+            <WindowBook :sections="book_sections" title="Recent Posts" sidebar_heading="Log Entries"
+                sidebar_class="min-w-64" @section-change="update_article()">
+                <WindowCardPanel class="overflow-auto">
+                    <UserArticleContent :article_brief="selected_article" should_load class="w-full">
+
+                    </UserArticleContent>
                 </WindowCardPanel>
 
             </WindowBook>
@@ -20,19 +23,32 @@ import UserArticleContent from './UserArticleContent.vue';
 import WindowBook, { type WindowBookSection } from '../WindowBook.vue';
 import WindowBookPage from '../WindowBookPage.vue';
 import { WindowCardPanel } from '..';
+import { computed, ref, watch } from 'vue';
+import { useUrlSearchParams } from '@vueuse/core';
 
 const props = defineProps<{
     username: string
 }>()
 
+
 const articles = await devto.articles.search(props.username)
+const selected_article_index = ref(0)
+const selected_article = computed(() => articles[selected_article_index.value])
 const book_sections = articles.map(x => {
 
     const created_at = new Date(x.created_at);
-    const MAX_BRIEF_LEN = 48    ;
-    const brief = x.title.length > MAX_BRIEF_LEN ? x.title.slice(0, MAX_BRIEF_LEN - 3) + "..." : x.title
-    return { title: `${created_at.toLocaleDateString()} - ${brief}`, href: `?post=${x.id}` } satisfies WindowBookSection
+    return { title: `${created_at.toLocaleDateString()} - ${x.title}`, href: `?post=${x.id}` } satisfies WindowBookSection
 })
+
+function update_article() {
+
+    const params = new URLSearchParams(location.search)
+    selected_article_index.value = Math.max(articles.findIndex(x => x.id == +params.get('post')!), 0)
+
+    setTimeout(() => {
+        console.log("TESTT", selected_article.value.id, selected_article_index.value, params)
+    }, 2)
+}
 
 </script>
 <style></style>
