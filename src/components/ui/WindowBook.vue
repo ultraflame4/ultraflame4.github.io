@@ -17,9 +17,9 @@
                             </li>
                             <li v-for="entry in props.sections" class="h-8 w-full bg-background ">
                                 <RouteAnchor :to="entry.href" @click="$emit('section-change')"
-                                    class="flex gap-1.5 text-xs items-center font-mono px-1.5 h-full w-full border border-transparent hover:bg-highlight data-active:bg-highlight data-[active=true]:border-primary ">
+                                    class="flex gap-1.5 text-xs items-center font-mono px-1.5 h-full w-full border border-transparent hover:bg-highlight data-active:bg-highlight data-[active=true]:border-primary tracking-tighter ">
                                     <Icon v-if="entry.icon" :icon="entry.icon" />
-                                    <span class="w-full text-ellipsis overflow-hidden">{{ entry.title }}</span>
+                                    <span class="w-full text-ellipsis overflow-hidden text-nowrap whitespace-nowrap">{{ entry.title }}</span>
                                 </RouteAnchor>
                             </li>
                         </ul>

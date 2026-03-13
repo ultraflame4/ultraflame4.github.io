@@ -4,7 +4,7 @@
     </div> -->
 
     <section class="bg-background w-full p-4 pt-(--header-spacing) h-svh" id="blog-posts">
-        <div class="max-w-400 w-full h-full">
+        <div class="max-w-350 w-full h-full py-4">
             <WindowBook :sections="book_sections" title="Recent Posts" sidebar_heading="Log Entries"
                 sidebar_class="min-w-64" @section-change="update_article()">
                 <WindowCardPanel class="overflow-auto">
@@ -45,9 +45,6 @@ function update_article() {
     const params = new URLSearchParams(location.search)
     selected_article_index.value = Math.max(articles.findIndex(x => x.id == +params.get('post')!), 0)
 
-    setTimeout(() => {
-        console.log("TESTT", selected_article.value.id, selected_article_index.value, params)
-    }, 2)
 }
 
 </script>
