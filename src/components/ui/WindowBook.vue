@@ -8,8 +8,8 @@
         <WindowCardPanel asChild>
             <div class="w-full h-full flex min-w-0 overflow-hidden">
                 <template v-if="props.sections">
-                    <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse" ref="sidebar"
-                        :style="sidebar_style">
+                    <div class="min-w-[150px] h-full transition-none flex flex-col mobile-collapse wbook-sizebar-size"
+                        ref="sidebar" :style="sidebar_style">
                         <ul class="w-full shrink-0">
                             <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed"
                                 v-if="props.sidebar_heading">
@@ -71,18 +71,30 @@ export interface WindowBookProps {
 
 const props = defineProps<WindowBookProps>()
 
+const max_size = ref<number>(100000)
 const sidebar = useTemplateRef("sidebar")
-const sidebar_max = computed(() => sidebar.value?.parentElement?.getBoundingClientRect().width)
-
 const sidebar_size = ref<number>(150)
 const sidebar_style = computed<CSSProperties>(() => ({
-    width: `min(max(${sidebar_size.value}px, calc(var(--spacing) * 90)), 50vw)`
+    "--sidebar-size": `${sidebar_size.value}`
+
 }))
 
 function sidebar_clamp_size() {
-    sidebar_size.value = Math.min(Math.max(sidebar_size.value, 150), sidebar_size.value ?? 0)
+    if (typeof window === "undefined") return;
+    if (sidebar.value === null) return;
+    // If current css width doesn't match the expected width. Change expected width to the one being shown.
+    const curr_width = sidebar.value.getBoundingClientRect().width;
+    if (sidebar_size.value != curr_width){
+        sidebar_size.value = curr_width
+    }
 }
 
 
 </script>
-<style></style>
+<style scoped>
+.wbook-sizebar-size {
+    --minsize: calc(var(--spacing) * 90);
+    width: calc(var(--sidebar-size) * 1px);
+    min-width: fit-content;
+}
+</style>
