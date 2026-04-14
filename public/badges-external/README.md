@@ -14,4 +14,7 @@ I do not claim ownership of any copyrights, trademarks, or other intellectual pr
 Known sources for these badges
 
 - https://github.com/privatedev11/webbadges
-- 
+- https://anlucas.neocities.org/got_html.gif
+- https://trink3tz.neocities.org/
+- https://kopawz.neocities.org/buttonhoard/buttonhoard
+- https://kopawz.neocities.org/stamphoard/stamphoard

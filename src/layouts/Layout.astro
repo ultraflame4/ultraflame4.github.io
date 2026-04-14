@@ -16,9 +16,37 @@ const mode_s = import.meta.env.MODE;
 
     <footer class="mt-4 pt-2 relative overflow-hidden" id="bottom">
         <div class="min-h-12.5 pt-2 px-4 items-center justify-center text-sm relative site-meta">
-            <div class="col-span-3 animate-marquee h-8">
-                99% human made
+            <div class=" col-span-3 mb-2">
+                <style>
+                    img {
+                        margin-right: calc(1 * var(--spacing))
+                    }
+                </style>
+                <ul class="h-8 flex items-center overflow-y-hidden w-max animate-marquee">
+                    {
+                        [0,1].map(()=>(
+                        <img src="/badges-external/88x31pinkmarble.gif" alt="badge" />
+                        <img src="/badges-external/97x31_wwwbutton.gif" alt="badge" />
+                        <img src="/badges-external/affection.gif" alt="badge" />
+                        <img src="/badges-external/css.gif" alt="badge" />
+                        <img src="/badges-external/danckity.gif" alt="badge" />
+                        <img src="/badges-external/dootdoot.gif" alt="badge" />
+                        <img src="/badges-external/got_html.gif" alt="badge" />
+                        <img src="/badges-external/pensioner.gif" alt="badge" />
+                        <img src="/badges-external/site_best_viewed_with_monitor.gif" alt="badge" />
+                        <img src="/badges-external/yeah.gif" alt="badge" />
+                        <img src="/badges-external/milkteaNOW.jpg" alt="badge" />
+                        <img src="/badges-external/100percenthuman.png" alt="badge" />
+                        <img src="/badges-external/ilikecomputer.png" alt="badge" />
+                        <img src="/badges-external/myown2paws.png" alt="badge" />
+                        <img src="/badges-external/game_over.webp" alt="badge" />
+                        <img src="/badges-external/nyan_cat.webp" alt="badge" />
+                        ))
+                    }
+
+                </ul>
             </div>
+
             <code class="bg-black px-1.5 rounded-md block w-fit site-version">
                 <!-- <pre>Site Version { version } </pre> -->
                 <pre>Site Version { version } {commit_hash ? `${commit_hash}` :""}</pre>
@@ -37,7 +65,7 @@ const mode_s = import.meta.env.MODE;
                     ))
                 }
             </div>
-            
+
             <PulseRotatingBg class:list={["opacity-60"]} />
         </div>
     </footer>
