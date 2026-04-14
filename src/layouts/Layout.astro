@@ -15,7 +15,10 @@ const mode_s = import.meta.env.MODE;
     </main>
 
     <footer class="mt-4 pt-2 relative overflow-hidden" id="bottom">
-        <div class="min-h-12.5 pt-2 px-4 flex items-center justify-center text-sm gap-2 relative site-meta">
+        <div class="min-h-12.5 pt-2 px-4 items-center justify-center text-sm relative site-meta">
+            <div class="col-span-3 animate-marquee h-8">
+                99% human made
+            </div>
             <code class="bg-black px-1.5 rounded-md block w-fit site-version">
                 <!-- <pre>Site Version { version } </pre> -->
                 <pre>Site Version { version } {commit_hash ? `${commit_hash}` :""}</pre>
@@ -34,6 +37,7 @@ const mode_s = import.meta.env.MODE;
                     ))
                 }
             </div>
+            
             <PulseRotatingBg class:list={["opacity-60"]} />
         </div>
     </footer>
