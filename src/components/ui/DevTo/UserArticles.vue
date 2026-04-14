@@ -3,9 +3,9 @@
         <UserArticleContent :article_brief="article" />
     </div> -->
 
-    <section class="bg-background w-full p-4 pt-(--header-spacing) h-svh" id="blog-posts">
+    <section class="bg-background w-full p-4 pt-(--header-spacing) min-h-svh" id="blog-posts">
         <div class="max-w-350 w-full h-full py-4">
-            <WindowBook :sections="book_sections" title="Recent Posts" sidebar_heading="Log Entries"
+            <WindowBook :sections="book_sections" title="Recent Posts" sidebar_heading="Log Entries" sticky_sidebar
                 sidebar_class="min-w-64" @section-change="update_article()">
                 <WindowCardPanel class="overflow-auto">
                     <UserArticleContent :article_brief="selected_article" should_load class="w-full">
