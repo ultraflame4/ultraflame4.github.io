@@ -6,11 +6,11 @@
     <WindowCard :title="props.title ?? 'Unnamed'" :id="props.id">
 
         <WindowCardPanel asChild>
-            <div class="w-full h-full flex min-w-0 overflow-hidden">
+            <div class="w-full h-full flex min-w-0 ">
                 <template v-if="props.sections">
                     <div :class="'h-full transition-none flex flex-col mobile-collapse wbook-sidebar-size shrink-0 ' + props.sidebar_class"
-                        ref="sidebar" :style="sidebar_style">
-                        <ul class="w-full shrink-0">
+                        ref="sidebar" :style="sidebar_style" :data-sticky-sidebar="props.sticky_sidebar || undefined">
+                        <ul class="w-full shrink-0 top-0 ">
                             <li class="w-full bg-background mb-px px-2 p-1.5 font-mono font-bold uppercase text-xs tracking-wider text-dimmed"
                                 v-if="props.sidebar_heading">
                                 <span>{{ props.sidebar_heading }}</span>
@@ -19,11 +19,13 @@
                                 <RouteAnchor :to="entry.href" @click="$emit('section-change')"
                                     class="flex gap-1.5 text-xs items-center font-mono px-1.5 h-full w-full border border-transparent hover:bg-highlight data-active:bg-highlight data-[active=true]:border-primary tracking-tighter ">
                                     <Icon v-if="entry.icon" :icon="entry.icon" />
-                                    <span class="w-full text-ellipsis overflow-hidden text-nowrap whitespace-nowrap">{{ entry.title }}</span>
+                                    <span class="w-full text-ellipsis overflow-hidden text-nowrap whitespace-nowrap">
+                                        {{ entry.title }}
+                                    </span>
                                 </RouteAnchor>
                             </li>
                         </ul>
-                        <div class="bg-background grow">
+                        <div class="grow bg-background filler">
 
                         </div>
                     </div>
@@ -66,6 +68,7 @@ export interface WindowBookProps {
      */
     root?: string,
     sidebar_heading?: string,
+    sticky_sidebar?: boolean,
     sections?: WindowBookSection[]
     sidebar_class?: string
 }
@@ -96,5 +99,25 @@ const emits = defineEmits(['section-change'])
 .wbook-sidebar-size {
     --minsize: calc(var(--spacing) * 90);
     width: min(calc(var(--sidebar-size) * 1px), 50%);
+}
+
+[data-sticky-sidebar]>ul {
+    position: sticky;
+    top: var(--header-spacing);
+
+}
+
+[data-sticky-sidebar] .filler {
+    background: none;
+}
+
+[data-sticky-sidebar] {
+    /* background-color: transparent; */
+    /* background-color: var(--color-background); */
+    /* opacity: 0.8; */
+
+    background: repeating-linear-gradient(24deg, transparent, transparent 1px, var(--color-background) 1px, var(--color-background) 8px);
+
+
 }
 </style>
