@@ -110,38 +110,35 @@ const url = Astro.url;
         </div>
         <NavDock slot="navbar" />
     </PageHeader>
-
-    <section class="bg-background w-full p-4 pt-(--header-spacing)" style="height: 100svh;" id="about-section">
-        <div class="max-w-7xl w-full h-full">
-            <WindowBook
-                client:load
-                title="My Profile"
-                id="about-summary"
-                root="#about-section"
-                sections={about_story_rendered.map((x) => ({
-                    title: `${x.title}.md`,
-                    icon: "streamline:markdown-document-programming-solid",
-                    href: `#about-${x.title}`,
-                }))}
-                sidebar_heading="files"
-                sidebar_class="min-w-fit"
-            >
-                {
-                    about_story_rendered.map((x, idx, arr) => {
-                        let next_id = arr[idx + 1] ? `about-${arr[idx + 1].title}` : undefined;
-                        let prev_id = arr[idx - 1] ? `about-${arr[idx - 1].title}` : undefined;
-
-                        return (
-                            <WindowBookPage id={`about-${x.title}`} next_id={next_id} prev_id={prev_id}>
-                                <x.content />
-                            </WindowBookPage>
-                        );
-                    })
+    <section class="lg:grid px-4 pb-64" style="grid-template-columns: 2fr 5fr;">
+        <div class="hidden lg:block">
+            <nav class="left-0 top-1/4 sticky flex flex-col mt-16 ">
+                {       
+                    about_story_rendered.map(x=> (
+                        <a href={`#about-${x.title}`} class="font-fancy sm:text-xl lg:text-3xl">{x.title}</a>
+                    ))
                 }
-            </WindowBook>
+            </nav>
+        </div>
+        <div class="flex flex-col gap-4 ">
+            {       
+                about_story_rendered.map(x=> (
+            
+                    <article class="markdown w-full" id={`about-${x.title}`}>
+                        <SpotlightBackground class="p-[1px] rounded-2xl translate-y-32" client:load>
+                            <div class="p-4 bg-background w-full rounded-2xl markdown">
+                                <x.content />
+                            </div>
+                        </SpotlightBackground>
+                    </article>
+                        
+                ))
+            }
         </div>
     </section>
-    <section class="bg-background" id="recent-works">
+
+ 
+    <section class="bg-background flex flex-col items-center" id="recent-works">
         <h1>Recent Works</h1>
         <div class="w-full px-4 py-2 flex min-w-0">
             <SpotlightBackground class="m-auto gap-[1px] p-[1.2px] project-grid min-w-0" client:load>
@@ -175,9 +172,7 @@ const url = Astro.url;
             margin: var(--nav-total-h-units) 0 3rem;
         }
 
-        section {
-            @apply flex items-center justify-center flex-col;
-        }
+
         .banner-trans2 {
             @apply absolute bottom-0 w-full;
             opacity: calc(var(--ratio) * 100);
