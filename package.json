@@ -1,39 +1,26 @@
 {
-    "name": "clyh.me",
-    "type": "module",
-    "version": "7.2.0",
-    "scripts": {
-        "dev": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro"
-    },
-    "dependencies": {
-        "@astrojs/vue": "^5.1.4",
-        "@fontsource-variable/dancing-script": "^5.2.8",
-        "@fontsource/poppins": "^5.2.7",
-        "@fontsource/silkscreen": "^5.2.8",
-        "@tailwindcss/postcss": "4.1.17",
-        "@tailwindcss/vite": "4.1.17",
-        "@types/mdast": "^4.0.4",
-        "@vueuse/core": "^13.9.0",
-        "astro": "^5.18.1",
-        "htmlparser2": "^10.1.0",
-        "iconify-icon": "^3.0.2",
-        "postcss": "^8.5.8",
-        "postprocessing": "^6.38.3",
-        "sass": "^1.98.0",
-        "tailwindcss": "4.1.17",
-        "three": "^0.182.0",
-        "unist-util-visit": "^5.1.0",
-        "vue": "^3.5.26"
-    },
-    "devDependencies": {
-        "@iconify/vue": "^5.0.0",
-        "@tailwindcss/typography": "^0.5.19",
-        "@types/three": "^0.182.0",
-        "remark": "^15.0.1",
-        "remark-directive": "^4.0.0",
-        "unified": "^11.0.5"
-    }
+	"name": "ultraflame4.github.io",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.63.0",
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/vite": "^4.3.0",
+		"svelte": "^5.56.1",
+		"svelte-check": "^4.6.0",
+		"tailwindcss": "^4.3.0",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.16"
+	}
 }
