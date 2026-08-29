@@ -262,7 +262,7 @@
     .acrylic {
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.05);
+        border: 1.5px solid rgba(255, 255, 255, 0.05);
 
         /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
         /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
