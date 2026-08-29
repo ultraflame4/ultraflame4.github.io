@@ -12,6 +12,7 @@
 
         // const renderer = new THREE.WebGLRenderer();
         const renderer = new THREE.WebGLRenderer();
+        
         const effect = new ASCIIEffect({
             asciiTexture: new ASCIITexture({
                 characters: " .#░▒▓█",
@@ -69,10 +70,23 @@
 
         camera.position.z = 5;
 
-        renderer.setAnimationLoop(animate);
+
+
+        const MaxFps = 35
+        const frameDuration = 1 / MaxFps * 1000; // Time per frame in ms
+        let lastFrameTime = performance.now();
+        renderer.setAnimationLoop(() => {
+            const currentTime = performance.now();
+            const elapsed = currentTime - lastFrameTime;
+            if (elapsed < frameDuration) return
+            lastFrameTime = currentTime
+            animate()
+        });
 
         let counter = 0;
 
+
+  
         function animate() {
             const delta = clock.getDelta();
             parent.rotation.x += 0.5 * delta * SPEED;
