@@ -112,11 +112,12 @@ const url = Astro.url;
         <NavDock slot="navbar" />
     </PageHeader>
     <section class="lg:grid px-4 pb-64" style="grid-template-columns: 2fr 5fr;">
-        <div class="hidden lg:block">
-            <nav class="left-0 top-1/4 sticky flex flex-col mt-16">
+        <div class="hidden lg:block px-4">
+            <nav class="left-0 top-1/4 sticky flex flex-col mt-16 text-right w-full">
                 {       
                     about_story_rendered.map(x=> (
-                        <a href={`#about-${x.title}`} class="font-fancy sm:text-xl lg:text-3xl text-dimmed  origin-left hover:text-bright data-[active]:text-bright data-[active]:scale-125">{x.title}</a>
+                        <a href={`#about-${x.title}`} class="font-fancy sm:text-xl lg:text-3xl text-border origin-right hover:text-bright data-[active]:text-bright data-[active]:scale-130">{x.title}</a>
+                        
                     ))
                 }
             </nav>
