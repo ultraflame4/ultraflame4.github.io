@@ -13,6 +13,7 @@ import { SpotlightBackground } from "@/components/effects";
 import BackToTop from "@/components/BackToTop.astro";
 import CubeBannerBg from "@/components/ui/landing/CubeBannerBg.astro";
 import PageHeader from "@/components/PageHeader.astro";
+import WArticle from "@/components/core/wArticle.astro"
 
 const _about_story = await getCollection("about_story");
 const _projects = await getCollection("projects", (x) => (x.data as FrontmatterProjectDataSchema).flags?.includes("featured"));
@@ -112,10 +113,10 @@ const url = Astro.url;
     </PageHeader>
     <section class="lg:grid px-4 pb-64" style="grid-template-columns: 2fr 5fr;">
         <div class="hidden lg:block">
-            <nav class="left-0 top-1/4 sticky flex flex-col mt-16 ">
+            <nav class="left-0 top-1/4 sticky flex flex-col mt-16">
                 {       
                     about_story_rendered.map(x=> (
-                        <a href={`#about-${x.title}`} class="font-fancy sm:text-xl lg:text-3xl">{x.title}</a>
+                        <a href={`#about-${x.title}`} class="font-fancy sm:text-xl lg:text-3xl text-dimmed  origin-left hover:text-bright data-[active]:text-bright data-[active]:scale-125">{x.title}</a>
                     ))
                 }
             </nav>
@@ -124,13 +125,13 @@ const url = Astro.url;
             {       
                 about_story_rendered.map(x=> (
             
-                    <article class="markdown w-full" id={`about-${x.title}`}>
+                    <WArticle class="markdown w-full" id={`about-${x.title}`}>
                         <SpotlightBackground class="p-[1px] rounded-2xl translate-y-32" client:load>
                             <div class="p-4 bg-background w-full rounded-2xl markdown">
                                 <x.content />
                             </div>
                         </SpotlightBackground>
-                    </article>
+                    </WArticle>
                         
                 ))
             }
