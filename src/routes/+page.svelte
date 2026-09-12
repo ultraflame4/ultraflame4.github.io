@@ -14,7 +14,6 @@
         .ins("<br/>")
         .wait(300)
         .seq("I'm a ")
-        .wait(200)
         .styled_seq("Self-taught", { style: "color:#86EFAC" })
         .wait(delay)
         .autoprev()
@@ -37,7 +36,12 @@
 <StartBanner>
     {#snippet children()}
         <div class="size-full flex flex-col items-center justify-center">
-            <Typewriter instructions={greeting.instructs} fallback={greeting.fallback} />
+            <p class="w-100 h-32 border p-4 font-fancy text-3xl">
+                <Typewriter
+                    instructions={greeting.instructs}
+                    fallback={greeting.fallback}
+                />
+            </p>
         </div>
     {/snippet}
 </StartBanner>

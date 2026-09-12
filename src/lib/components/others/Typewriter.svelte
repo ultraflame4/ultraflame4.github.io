@@ -20,7 +20,7 @@
     let wait_counter = 0;
     let current = 0;
 
-    const interval = $derived(props.interval ?? 100);
+    const interval = $derived(props.interval ?? 40);
     let current_sub_instruct = $state<
         DeleteTextInstruction | TypeTextInstruction | false
     >(false);
