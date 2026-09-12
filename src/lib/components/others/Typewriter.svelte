@@ -7,6 +7,7 @@
         TypewriterInputs,
     } from "./typewriter";
     import { LoopOperations } from "./typewriter";
+    import { text } from "@sveltejs/kit";
 
     interface Props {
         inputs: TypewriterInputs;
@@ -17,6 +18,7 @@
     let props: Props = $props();
 
     let output = $state(`<noscript>${props.inputs.fallback}</noscript>`);
+    let is_typing = $state(false);
 
     let wait_until = 0;
     let step_counter = 0;
@@ -28,15 +30,22 @@
     // - `LoadNextOp` - Special ops to control the animation loop
     function loadNext(): DeleteTextOp | TypeTextOp | LoopOperations {
         // End of instructions. Do nothing!
-        if (step_counter >= props.inputs.instructs.length)
+        if (step_counter >= props.inputs.instructs.length) {
+            is_typing = false;
             return LoopOperations.Exit;
+        }
         const next = props.inputs.instructs[step_counter];
         step_counter += 1;
 
         if (next.ty == "wait") {
+            if (next.value > 3000) {
+                is_typing = false;
+            }
             wait_until = Date.now() + next.value;
             return LoopOperations.Skip;
         }
+        is_typing = true;
+        console.log("Test", is_typing);
         if (next.ty == "type") {
             return { ...next }; // Clone object
         }
@@ -73,6 +82,7 @@
             return;
         }
         const text_op = currentTextOperation;
+
         // Work on the current text operation
         if (text_op.noanim) {
             if (text_op.ty == "del") {
@@ -114,10 +124,10 @@
         requestAnimationFrame(tick);
     });
 
-    const hideCursorClass = $derived(props.hideCursor);
+    const hideCursorClass = $derived(props.hideCursor || !is_typing);
 </script>
 
-<span class="content" data-hidecursor={hideCursorClass}>
+<span class="content" data-cursor={!hideCursorClass || undefined}>
     {@html output}
 </span>
 
@@ -131,16 +141,11 @@
         position: relative;
         top: 0.15em;
         background-color: white;
-        animation: blink 1s step-start infinite;
+        opacity: 0;
+        /*animation: blink 1s step-start infinite;*/
     }
 
-    .content[data-hidecursor="true"]::after {
-        display: none;
-    }
-
-    @keyframes blink {
-        50% {
-            opacity: 0;
-        }
+    .content[data-cursor]::after {
+        opacity: 1;
     }
 </style>

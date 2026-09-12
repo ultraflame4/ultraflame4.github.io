@@ -16,7 +16,7 @@
     <div class="content z-0 pointer-events-none">
         {@render background?.()}
     </div>
-    <div class="content">
+    <div class="content ">
         {@render children()}
     </div>
     <div class="content pointer-events-none">

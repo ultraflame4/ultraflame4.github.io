@@ -28,15 +28,23 @@
         .autoprev()
         .tti_goto(10) // Magic value: found through repeated tries. Cannot just count because some steps contains more than one tti!
         .build();
+
+    const sub_greeting = new TextTyper()
+        .wait(5500)
+        .seq("Welcome to my little corner of the internet.")
+        .build();
 </script>
 
 <StartBanner>
     {#snippet children()}
-        <div class="size-full flex justify-center">
-            <div class="top-0 my-auto sticky py-8">
-                <p class="w-100 h-32 border p-4 font-fancy text-3xl bg-background">
+        <div class="size-full flex justify-center items-center">
+            <div
+                class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2"
+            >
+                <p class="font-fancy text-3xl h-24">
                     <Typewriter inputs={greeting} />
                 </p>
+                <p><Typewriter inputs={sub_greeting} /></p>
             </div>
         </div>
     {/snippet}
