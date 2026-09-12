@@ -4,25 +4,24 @@
     interface Props {
         children: Snippet;
         background?: Snippet;
-        foreground?: Snippet;
+        overlay?: Snippet;
     }
-    
-    const { children, background, foreground }: Props = $props();
+
+    const { children, background, overlay }: Props = $props();
 
     $inspect(background);
 </script>
 
 <div class="banner relative">
-    <div class="content z-0">
-        {@render foreground?.()}
+    <div class="content z-0 pointer-events-none">
+        {@render background?.()}
     </div>
     <div class="content">
         {@render children()}
     </div>
-    <div class="content z-0">
-        {@render background?.()}
+    <div class="content pointer-events-none">
+        {@render overlay?.()}
     </div>
-
 </div>
 
 <style>
@@ -30,7 +29,7 @@
     .banner {
         height: calc(100svh - var(--nav-total-h-units));
     }
-    .content{
+    .content {
         height: 100svh;
         @apply absolute top-0 left-0 right-0 bottom-0;
     }

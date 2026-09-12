@@ -19,3 +19,4 @@
         {@render nav_link('Gallery', resolve('/gallery'), 2)}
     </nav>
 </header>
+
