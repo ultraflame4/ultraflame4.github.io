@@ -8,6 +8,7 @@
     } from "./typewriter";
     import { LoopOperations } from "./typewriter";
     import { text } from "@sveltejs/kit";
+    import _ from "lodash";
 
     interface Props {
         inputs: TypewriterInputs;
@@ -20,6 +21,10 @@
     let output = $state(`<noscript>${props.inputs.fallback}</noscript>`);
     let is_typing = $state(false);
 
+    const setTyping = _.debounce((value) => (is_typing = value), 400, {
+        trailing: true, // only set to false after full delay
+    });
+
     let wait_until = 0;
     let step_counter = 0;
 
@@ -31,21 +36,21 @@
     function loadNext(): DeleteTextOp | TypeTextOp | LoopOperations {
         // End of instructions. Do nothing!
         if (step_counter >= props.inputs.instructs.length) {
-            is_typing = false;
+            setTyping(false);
             return LoopOperations.Exit;
         }
         const next = props.inputs.instructs[step_counter];
         step_counter += 1;
 
         if (next.ty == "wait") {
-            if (next.value > 3000) {
-                is_typing = false;
-            }
+            setTyping(false);
             wait_until = Date.now() + next.value;
             return LoopOperations.Skip;
         }
+        // Immediately set true
         is_typing = true;
-        console.log("Test", is_typing);
+        // Stop any debounce func that might set it to false
+        setTyping(true);
         if (next.ty == "type") {
             return { ...next }; // Clone object
         }
