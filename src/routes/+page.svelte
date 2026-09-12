@@ -32,15 +32,113 @@
 
 <StartBanner>
     {#snippet children()}
-        <div class="size-full flex flex-col items-center justify-center">
-            <p class="w-100 h-32 border p-4 font-fancy text-3xl">
-                <Typewriter inputs={greeting} />
-            </p>
+        <div class="size-full flex justify-center">
+            <div class="top-0 my-auto sticky py-8">
+                <p class="w-100 h-32 border p-4 font-fancy text-3xl bg-background">
+                    <Typewriter inputs={greeting} />
+                </p>
+            </div>
         </div>
     {/snippet}
 </StartBanner>
 <Navbar />
 <h1>Welcome to SvelteKit</h1>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
+<p>
+    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
+    documentation
+</p>
 <p>
     Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
     documentation
