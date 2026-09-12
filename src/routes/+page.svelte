@@ -23,9 +23,6 @@
         .styled_seq("builder", { style: "color:#ff8904" })
         .wait(delay)
         .autoprev()
-        .styled_seq("tinkerer", { style: "color:#FACC15" })
-        .wait(delay)
-        .autoprev()
         .styled_seq("maker", { style: "color: var(--color-rainbow)" })
         .wait(8000)
         .autoprev()
@@ -37,10 +34,7 @@
     {#snippet children()}
         <div class="size-full flex flex-col items-center justify-center">
             <p class="w-100 h-32 border p-4 font-fancy text-3xl">
-                <Typewriter
-                    instructions={greeting.instructs}
-                    fallback={greeting.fallback}
-                />
+                <Typewriter inputs={greeting} />
             </p>
         </div>
     {/snippet}

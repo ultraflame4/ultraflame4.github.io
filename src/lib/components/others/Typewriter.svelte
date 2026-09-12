@@ -1,123 +1,124 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import type {
-        TextInstruction,
-        TypeTextInstruction,
-        DeleteTextInstruction,
+        TextOp,
+        TypeTextOp,
+        DeleteTextOp,
+        TypewriterInputs,
     } from "./typewriter";
+    import { LoopOperations } from "./typewriter";
 
     interface Props {
-        instructions: TextInstruction[];
+        inputs: TypewriterInputs;
         interval?: number;
         hideCursor?: boolean;
-        fallback: string;
     }
 
     let props: Props = $props();
 
-    let typed_text = $state(`<noscript>${props.fallback}</noscript>`);
+    let output = $state(`<noscript>${props.inputs.fallback}</noscript>`);
 
-    let wait_counter = 0;
-    let current = 0;
+    let wait_until = 0;
+    let step_counter = 0;
 
-    const interval = $derived(props.interval ?? 40);
-    let current_sub_instruct = $state<
-        DeleteTextInstruction | TypeTextInstruction | false
-    >(false);
-
-    let loop: ReturnType<typeof setTimeout> | undefined;
-
-    function loadNext() {
+    // Loads the next instruction.
+    //
+    // Returns possible values
+    // - TextOp - Text operation to carry out
+    // - `LoadNextOp` - Special ops to control the animation loop
+    function loadNext(): DeleteTextOp | TypeTextOp | LoopOperations {
         // End of instructions. Do nothing!
-        if (current >= props.instructions.length) return;
-        const next = props.instructions[current];
-        current += 1;
+        if (step_counter >= props.inputs.instructs.length)
+            return LoopOperations.Exit;
+        const next = props.inputs.instructs[step_counter];
+        step_counter += 1;
 
         if (next.ty == "wait") {
-            wait_counter = next.value;
-            return;
+            wait_until = Date.now() + next.value;
+            return LoopOperations.Skip;
         }
         if (next.ty == "type") {
-            current_sub_instruct = { ...next }; // Clone object
-            return;
+            return { ...next }; // Clone object
         }
         if (next.ty == "del") {
-            current_sub_instruct = { ...next }; // Clone object
-            return;
+            return { ...next }; // Clone object
         }
         if (next.ty == "goto") {
-            current = next.value;
-            return;
+            step_counter = next.value;
+            return LoopOperations.LoadNext;
         }
+        throw "Unknown operation type: " + next.ty;
     }
 
+    let currentTextOperation: DeleteTextOp | TypeTextOp | LoopOperations =
+        LoopOperations.LoadNext;
     function tick() {
-        if (wait_counter > 0) {
-            loop = setTimeout(tick, wait_counter);
-            wait_counter = 0;
+        if (Date.now() < wait_until) {
+            requestAnimationFrame(tick);
             return;
         }
 
-        const typing_instruct = current_sub_instruct;
-        // Load next instruction if no text to type.
-        if (!typing_instruct) {
-            loadNext();
-            loop = setTimeout(tick, interval);
-            return;
+        // If text_op is false, fetch next instruction
+        while (currentTextOperation === LoopOperations.LoadNext) {
+            currentTextOperation = loadNext();
         }
 
-        if (typing_instruct.noanim) {
-            if (typing_instruct.ty == "del") {
-                typed_text = typed_text.slice(
-                    0,
-                    typed_text.length - typing_instruct.value,
-                );
-                current_sub_instruct = false;
+        // text_op is true. No more instructions. Early return to exit
+        if (currentTextOperation === LoopOperations.Exit) {
+            return;
+        }
+        if (currentTextOperation === LoopOperations.Skip) {
+            currentTextOperation = LoopOperations.LoadNext;
+            requestAnimationFrame(tick);
+            return;
+        }
+        const text_op = currentTextOperation;
+        // Work on the current text operation
+        if (text_op.noanim) {
+            if (text_op.ty == "del") {
+                output = output.slice(0, output.length - text_op.value);
+                currentTextOperation = LoopOperations.LoadNext;
             }
-            if (typing_instruct.ty == "type") {
-                typed_text = typed_text + typing_instruct.value;
-                current_sub_instruct = false;
+            if (text_op.ty == "type") {
+                output = output + text_op.value;
+                currentTextOperation = LoopOperations.LoadNext;
             }
         } else {
-            if (typing_instruct.ty == "del") {
+            wait_until = Date.now() + (props.interval ?? 30);
+            if (text_op.ty == "del") {
                 // On finish del, clear instruction
-                if (typing_instruct.value == 0) {
-                    current_sub_instruct = false;
+                if (text_op.value == 0) {
+                    currentTextOperation = LoopOperations.LoadNext;
                 } else {
-                    typed_text = typed_text.slice(0, typed_text.length - 1);
-                    typing_instruct.value -= 1;
+                    output = output.slice(0, output.length - 1);
+                    text_op.value -= 1;
                 }
             }
-            if (typing_instruct.ty == "type") {
+            if (text_op.ty == "type") {
                 // On finish type, clear instruction
-                if (typing_instruct.value.length == 0) {
-                    current_sub_instruct = false;
+                if (text_op.value.length == 0) {
+                    currentTextOperation = LoopOperations.LoadNext;
                 } else {
-                    typed_text = typed_text + typing_instruct.value.slice(0, 1);
-                    typing_instruct.value = typing_instruct.value.slice(
+                    output = output + text_op.value.slice(0, 1);
+                    text_op.value = text_op.value.slice(
                         1,
-                        typing_instruct.value.length,
+                        text_op.value.length,
                     );
                 }
             }
         }
-
-        loop = setTimeout(tick, interval);
+        requestAnimationFrame(tick);
     }
 
     onMount(() => {
-        loop = setTimeout(tick, interval);
-
-        return () => {
-            if (loop) clearTimeout(loop);
-        };
+        requestAnimationFrame(tick);
     });
 
-    const hideCursorClass = $derived(!current_sub_instruct && props.hideCursor);
+    const hideCursorClass = $derived(props.hideCursor);
 </script>
 
 <span class="content" data-hidecursor={hideCursorClass}>
-    {@html typed_text}
+    {@html output}
 </span>
 
 <style>
