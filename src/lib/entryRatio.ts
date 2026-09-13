@@ -45,7 +45,7 @@ export function entryRatio(
             node.style.setProperty('--ratio', "1.1");
         }
         else {
-            node.style.setProperty('--ratio', String(Math.round(ratio * 100) / 100));
+            node.style.setProperty('--ratio', String(Math.round(ratio * 1000) / 1000));
         }
         if (is_visible) {
             node.setAttribute('data-visible', "")

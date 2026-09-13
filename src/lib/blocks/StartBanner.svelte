@@ -11,9 +11,11 @@
     const { children, background, overlay }: Props = $props();
 </script>
 
-<div class="bg-red-200 h-700"></div>
 <div class="banner relative" use:entryRatio>
-    <div class="content z-0 pointer-events-none overflow-hidden">
+    <div
+        class="content z-0 pointer-events-none overflow-hidden"
+        style="opacity: calc(pow(var(--ratio), 5));"
+    >
         {@render background?.()}
     </div>
     <div class="content">
