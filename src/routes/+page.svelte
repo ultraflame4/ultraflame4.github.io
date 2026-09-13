@@ -7,6 +7,8 @@
     import CubeBanner from "./CubeBanner.svelte";
     const delay = 400;
 
+    const { data } = $props();
+
     const greeting = new TextTyper()
         .wait(200)
         .seq("Hello, ")
@@ -56,5 +58,18 @@
 </StartBanner>
 <Navbar />
 <BgFadeDiv class="h-64" />
-<h1>Welcome to SvelteKit</h1>
-<div class="h-10000"></div>
+<section>
+    <ul>
+        {#each data.about_story as [key, story]}
+            <li>
+                {key}
+            </li>
+        {/each}
+    </ul>
+    <div>
+        {#each data.about_story as [key, story]}
+            <article>{story}</article>
+        {/each}
+    </div>
+</section>
+<div class="h-1000"></div>
