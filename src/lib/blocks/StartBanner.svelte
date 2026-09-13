@@ -1,8 +1,6 @@
 <script lang="ts">
+    import { entryRatio } from "$lib/entryRatio";
     import type { Snippet } from "svelte";
-    import IntersectionObserver, {
-        createIntersectionObserver,
-    } from "svelte-intersection-observer";
 
     interface Props {
         children: Snippet;
@@ -11,11 +9,10 @@
     }
 
     const { children, background, overlay }: Props = $props();
-    const observer = createIntersectionObserver(() => ({ threshold: 1 }));
-    
 </script>
 
-<div class="banner relative" {@attach observer.attach}>
+<div class="bg-red-200 h-700"></div>
+<div class="banner relative" use:entryRatio>
     <div class="content z-0 pointer-events-none overflow-hidden">
         {@render background?.()}
     </div>
@@ -26,7 +23,7 @@
         {@render overlay?.()}
     </div>
 </div>
-{observer.entry?.intersectionRatio ?? 'nil'}
+
 <style>
     @reference "tailwindcss";
     .banner {
