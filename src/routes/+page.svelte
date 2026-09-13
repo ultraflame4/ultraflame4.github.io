@@ -68,7 +68,7 @@
     </ul>
     <div>
         {#each data.about_story as [key, story]}
-            <article class="prose dark">
+            <article class="prose prose-invert">
                 {@html story}
             </article>
         {/each}

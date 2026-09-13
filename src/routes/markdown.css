@@ -1,0 +1,20 @@
+*:has(>.icon.remark-icon-directive) {
+    display: inline;
+}
+
+.icon.remark-icon-directive {
+    display: inline-block;
+    width: 1em;
+    height: 100%;
+    margin: 0 0.2em;
+}
+
+
+.icon.remark-icon-directive>img {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    bottom: 0.05em;
+    height: 100%;
+    width: 100%;
+}
