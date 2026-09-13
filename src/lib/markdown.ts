@@ -12,7 +12,6 @@ import remarkDirective from 'remark-directive';
 
 
 export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
-    console.log("TEST")
     return (tree) => {
         visit(tree, (node) => {
             if (
