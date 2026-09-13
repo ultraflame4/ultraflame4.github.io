@@ -1,8 +1,10 @@
 <script lang="ts">
+
     import Navbar from "$lib/blocks/Navbar.svelte";
     import StartBanner from "$lib/blocks/StartBanner.svelte";
     import { TextTyper } from "$lib/components/others/typewriter";
     import Typewriter from "$lib/components/others/Typewriter.svelte";
+    import CubeBanner from "./CubeBanner.svelte";
     const delay = 400;
 
     const greeting = new TextTyper()
@@ -33,9 +35,14 @@
         .wait(5500)
         .seq("Welcome to my little corner of the internet.")
         .build();
+
+
 </script>
 
 <StartBanner>
+    {#snippet background()}
+        <CubeBanner/>
+    {/snippet}
     {#snippet children()}
         <div class="size-full flex justify-center items-center">
             <div

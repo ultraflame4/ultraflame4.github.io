@@ -13,7 +13,7 @@
 </script>
 
 <div class="banner relative">
-    <div class="content z-0 pointer-events-none">
+    <div class="content z-0 pointer-events-none overflow-hidden">
         {@render background?.()}
     </div>
     <div class="content ">
