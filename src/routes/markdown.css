@@ -18,3 +18,7 @@
     height: 100%;
     width: 100%;
 }
+
+.prose h1 {
+    @apply font-fancy font-light text-3xl tracking-tight
+}
