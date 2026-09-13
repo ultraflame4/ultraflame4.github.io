@@ -66,25 +66,20 @@
 </StartBanner>
 <Navbar />
 <BgFadeDiv class="h-64" />
-<section class="grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
-    <ul
-        class="ml-auto text-right h-fit sticky top-1/4 font-fancy text-2xl xl:text-3xl"
-    >
+<section class="lg:grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
+    <ul class="story-keys">
         {#each data.about_story as [key, story]}
-            <li
-                class="text-bright opacity-30 hover:opacity-80 origin-right data-active:opacity-100 data-active:scale-120"
-                data-active={about_loc == key || undefined}
-            >
+            <li class="story-key" data-active={about_loc == key || undefined}>
                 <a href="#{key}">{key}</a>
             </li>
         {/each}
     </ul>
     <!-- -space-y is required to reduce spacing cause by pt-32 -->
-    <div class="-space-y-24">
+    <div>
         {#each data.about_story as [key, story]}
             <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <article
-                class="pt-32"
+                class="lg:pt-32 lg:-mt-24 pt-64 -mt-56"
                 id={key}
                 {@attach entryRatio({
                     coverage: 0.6,
@@ -92,7 +87,9 @@
                 })}
             >
                 <SpotlightBackground class="rounded-3xl p-px">
-                    <div class="prose prose-invert rounded-3xl bg-background  p-5 min-w-full">
+                    <div
+                        class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
+                    >
                         {@html story}
                     </div>
                 </SpotlightBackground>
@@ -101,3 +98,23 @@
     </div>
 </section>
 <div class="h-1000"></div>
+
+<style>
+    @reference "./layout.css";
+    .story-keys {
+        /*background: black;*/
+        /*Positioning*/
+        @apply ml-auto top-1/3 text-right sticky h-fit;
+        /*Styling*/
+        @apply mt-16 rounded-3xl font-fancy text-2xl;
+        /*Mobile specific*/
+        @media (width < 64rem) {
+            @apply acrylic px-4 py-2 top-25 h-fit w-fit;
+        }
+    }
+
+    .story-key {
+        @apply text-bright opacity-30 origin-right hover:opacity-80;
+        @apply data-active:opacity-100 lg:data-active:scale-120;
+    }
+</style>

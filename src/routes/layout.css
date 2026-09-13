@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'markdown.css';
 @plugin '@tailwindcss/typography';
+
 :root {
     --nav-height: 12;
     --nav-offset: 2;
@@ -226,6 +227,14 @@
 
 }
 
+@utility acrylic {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.05);
+
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
+}
 @layer utilities {
 
     /* 
@@ -260,14 +269,6 @@
         filter: drop-shadow(0 0 48px #000);
     }
 
-    .acrylic {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1.5px solid rgba(255, 255, 255, 0.05);
-
-        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-        /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
-    }
 
     .badge {
         @apply flex items-center justify-center font-mono text-sm bg-panel py-0.5;
