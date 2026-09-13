@@ -4,6 +4,7 @@
     import StartBanner from "$lib/blocks/StartBanner.svelte";
     import { TextTyper } from "$lib/components/others/typewriter";
     import Typewriter from "$lib/components/others/Typewriter.svelte";
+    import SpotlightBackground from "$lib/components/SpotlightBackground.svelte";
     import { entryRatio } from "$lib/entryRatio.js";
     import CubeBanner from "./CubeBanner.svelte";
     const delay = 400;
@@ -90,11 +91,11 @@
                     visibleChanged: (v) => updateAboutVis(v ? key : undefined),
                 })}
             >
-                <div
-                    class="prose prose-invert border rounded-3xl p-4 min-w-full"
-                >
-                    {@html story}
-                </div>
+                <SpotlightBackground class="rounded-3xl p-px">
+                    <div class="prose prose-invert rounded-3xl bg-background  p-4 min-w-full">
+                        {@html story}
+                    </div>
+                </SpotlightBackground>
             </article>
         {/each}
     </div>

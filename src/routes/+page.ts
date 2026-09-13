@@ -9,7 +9,7 @@ export const load: PageLoad = async (e) => {
         ...parent,
         about_story: Object.entries(about_story).map(([k, v]) => {
             const i = k.lastIndexOf('/')
-            return [k.slice(i + 1), render_md((v as any).default)]
+            return [k.slice(i + 1), render_md((v as any).default)] as [string, any]
         })
     }
 }
