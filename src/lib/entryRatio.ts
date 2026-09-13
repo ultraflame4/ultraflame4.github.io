@@ -9,7 +9,9 @@ export interface EntryRatioOptions {
      */
     coverage?: number
     /**
-     * Fire the visibility change event continously every scroll instead of just when it actually changes
+     * Fire the visibility change event continously every scroll instead of just when it actually changes.
+     * 
+     * This can improve responsiveness.
      */
     continousVisibility?: boolean
     visibleChanged?: (visible: boolean) => void

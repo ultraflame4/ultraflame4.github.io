@@ -1,5 +1,4 @@
 <script lang="ts">
- 
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import Navbar from "$lib/blocks/Navbar.svelte";
     import StartBanner from "$lib/blocks/StartBanner.svelte";
@@ -40,10 +39,10 @@
         .seq("Welcome to my little corner of the internet.")
         .build();
 
-    let page_hash = $state('');
-    function setHash(hash?: string) {
-        if (!hash) return;
-        page_hash = hash;
+    let about_loc = $state("");
+    function updateAboutVis(loc?: string) {
+        if (!loc) return;
+        about_loc = loc;
     }
 </script>
 
@@ -67,29 +66,32 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 <section class="grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
-    <ul class="ml-auto text-right h-fit sticky top-1/4 font-fancy text-2xl">
+    <ul class="ml-auto text-right h-fit sticky top-1/4 font-fancy text-2xl xl:text-3xl">
         {#each data.about_story as [key, story]}
             <li
-                class="text-bright opacity-30 hover:opacity-80 origin-right data-active:opacity-100 data-active:scale-110"
-                data-active={page_hash == key || undefined}
-        
+                class="text-bright opacity-30 hover:opacity-80 origin-right data-active:opacity-100 data-active:scale-120"
+                data-active={about_loc == key || undefined}
             >
                 <a href="#{key}">{key}</a>
             </li>
         {/each}
     </ul>
-    <div class="space-y-4">
+    <!-- -space-y is required to reduce spacing cause by pt-32 -->
+    <div class="-space-y-24">
         {#each data.about_story as [key, story]}
+            <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <article
-                class="prose prose-invert border rounded-3xl p-4 min-w-full"
+                class="pt-32"
                 id={key}
                 {@attach entryRatio({
-                    coverage: 0.2,
+                    coverage: 0.6,
                     continousVisibility: true,
-                    visibleChanged: (v) => setHash(v ? key : undefined),
+                    visibleChanged: (v) => updateAboutVis(v ? key : undefined),
                 })}
             >
-                {@html story}
+                <div class="prose prose-invert border rounded-3xl p-4 min-w-full">
+                    {@html story}
+                </div>
             </article>
         {/each}
     </div>
