@@ -11,7 +11,7 @@
     let { children, class: class_ }: Props = $props();
 
     let target = $state<HTMLDivElement>();
-    let isOutside = $state(true);
+
     let isVisible = $state(false);
 
     const mouse = useMouseRelative(() => target);
@@ -30,23 +30,20 @@
         return () => observer.disconnect();
     });
 
-    function handleMouseEnter() {
-        isOutside = false;
-    }
-
-    function handleMouseLeave() {
-        isOutside = true;
-    }
+    let inside = $derived(
+        mouse.xPercent > 0 &&
+            mouse.xPercent < 100 &&
+            mouse.yPercent > 0 &&
+            mouse.yPercent < 100,
+    );
 </script>
 
 <div
-    class={cn("ctn", class_)}
+    class={cn("ctn pointer-events-auto", class_)}
     role="none"
     bind:this={target}
     style={cssVars}
-    data-hover={!isOutside || undefined}
-    onmouseenter={handleMouseEnter}
-    onmouseleave={handleMouseLeave}
+    data-hover={inside || undefined}
 >
     {@render children?.()}
 </div>
@@ -57,7 +54,16 @@
         initial-value: 0%;
         inherits: false;
     }
-
+    @property --y-percent {
+        syntax: "<percentage>";
+        initial-value: 0%;
+        inherits: false;
+    }
+    @property --x-percent {
+        syntax: "<percentage>";
+        initial-value: 0%;
+        inherits: false;
+    }
     .ctn {
         --spotlight-radius: 0%;
         background: radial-gradient(
@@ -65,16 +71,17 @@
             var(--color-accent),
             var(--color-border) max(var(--spotlight-radius), 4rem)
         );
-        transition: --spotlight-radius 200ms ease-out;
+        transition:
+            --spotlight-radius 1000ms linear,
+            --y-percent 400ms ease,
+            --x-percent 400ms ease;
     }
 
-    .ctn:hover,
+    /*.ctn:hover,*/
     .ctn[data-hover] {
         --spotlight-radius: 50%;
-        background: radial-gradient(
-            circle at var(--x-percent) var(--y-percent),
-            var(--color-accent),
-            var(--color-border) max(var(--spotlight-radius), 6rem)
-        );
+        transition:
+            --spotlight-radius 400ms ease-out
+            ;
     }
 </style>
