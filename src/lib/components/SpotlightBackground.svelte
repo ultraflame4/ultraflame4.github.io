@@ -1,6 +1,7 @@
 <script lang="ts">
     import { cn } from "cn";
     import type { Snippet } from "svelte";
+    import { useMouseRelative } from "$lib";
 
     interface Props {
         children?: Snippet;
@@ -12,7 +13,13 @@
     let target = $state<HTMLDivElement>();
     let isOutside = $state(true);
     let isVisible = $state(false);
-    let cssVars = $state("");
+
+    const mouse = useMouseRelative(() => target);
+    let cssVars = $derived(
+        isVisible
+            ? `--x-percent: ${mouse.xPercent}%; --y-percent: ${mouse.yPercent}%`
+            : "",
+    );
 
     $effect(() => {
         if (!target) return;
@@ -22,14 +29,6 @@
         observer.observe(target);
         return () => observer.disconnect();
     });
-
-    function handleMouseMove(e: MouseEvent) {
-        if (!target || !isVisible) return;
-        const rect = target.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        cssVars = `--x-percent: ${Math.round((x / rect.width) * 100)}%; --y-percent: ${Math.round((y / rect.height) * 100)}%`;
-    }
 
     function handleMouseEnter() {
         isOutside = false;
@@ -46,7 +45,6 @@
     bind:this={target}
     style={cssVars}
     data-hover={!isOutside || undefined}
-    onmousemove={handleMouseMove}
     onmouseenter={handleMouseEnter}
     onmouseleave={handleMouseLeave}
 >
