@@ -7,7 +7,13 @@ export interface EntryRatioOptions {
      * 
      * Defaults to 10% (0.1)
      */
-    visibility_t?: number
+    coverage?: number
+    visibleChanged?: (visible: boolean) => void
+}
+
+
+export function entryRatio(options: EntryRatioOptions = {}) {
+    return (node: HTMLElement) => _entryRatio_attachment(node, options)
 }
 /**
  * Measures how much of the element has exited (top) of viewport.
@@ -25,7 +31,7 @@ export interface EntryRatioOptions {
  * @param options 
  * @returns 
  */
-export function entryRatio(
+export function _entryRatio_attachment(
     node: HTMLElement,
     options: EntryRatioOptions = {}
 ) {
@@ -38,7 +44,7 @@ export function entryRatio(
         const rect = node.getBoundingClientRect();
 
         const ratio = 1 - clamp((-rect.top + offset) / rect.height);
-        const visibility_threshold = winHeight * (options.visibility_t ?? 0.1)
+        const visibility_threshold = winHeight * (options.coverage ?? 0.1)
         const is_visible = Math.abs(rect.top) < (rect.height - visibility_threshold)
 
         if (rect.top > 0) {
@@ -47,6 +53,11 @@ export function entryRatio(
         else {
             node.style.setProperty('--ratio', String(Math.round(ratio * 1000) / 1000));
         }
+
+        if (is_visible != node.hasAttribute('data-visible')) {
+            options.visibleChanged?.(is_visible)
+        }
+
         if (is_visible) {
             node.setAttribute('data-visible', "")
         }
@@ -66,14 +77,10 @@ export function entryRatio(
     window.addEventListener('resize', onResize);
     requestAnimationFrame(update);
 
-    return {
-        update(newOptions: EntryRatioOptions = {}) {
-            offset = newOptions.offset ?? 0;
-            update();
-        },
-        destroy() {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
-        }
+    return () => {
+
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onResize);
+
     };
 }

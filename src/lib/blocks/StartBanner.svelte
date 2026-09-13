@@ -11,7 +11,7 @@
     const { children, background, overlay }: Props = $props();
 </script>
 
-<div class="banner relative" use:entryRatio>
+<div class="banner relative" {@attach entryRatio()}>
     <div
         class="content z-0 pointer-events-none overflow-hidden"
         style="opacity: calc(pow(var(--ratio), 5));"

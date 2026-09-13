@@ -1,4 +1,4 @@
 // place files you want to import through the `$lib` alias in this folder.
 
 export { cn } from 'cn'
-export { entryRatio } from './entryRatio'
+export { _entryRatio_attachment as entryRatio } from './entryRatio'
