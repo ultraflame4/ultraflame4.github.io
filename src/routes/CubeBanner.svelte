@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { CubeBannerScene } from "./cube_banner";
-
+    import _ from "lodash";
 
     onMount(() => {
         const scene = new CubeBannerScene(
@@ -9,12 +9,20 @@
             window.innerHeight,
         );
         scene.attach(document.getElementById("cubelandingbanner-bg")!);
+
+        const on_resize = _.debounce(
+            () => scene.resize(window.innerWidth, window.innerHeight),
+            200,
+        );
+        window.addEventListener("resize", on_resize);
+
         setTimeout(() => {
             scene.start();
         }, 1000);
 
         return () => {
             scene.dispose();
+            window.removeEventListener("resize", on_resize);
         };
     });
 </script>

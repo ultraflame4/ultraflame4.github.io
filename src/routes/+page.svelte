@@ -66,7 +66,9 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 <section class="grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
-    <ul class="ml-auto text-right h-fit sticky top-1/4 font-fancy text-2xl xl:text-3xl">
+    <ul
+        class="ml-auto text-right h-fit sticky top-1/4 font-fancy text-2xl xl:text-3xl"
+    >
         {#each data.about_story as [key, story]}
             <li
                 class="text-bright opacity-30 hover:opacity-80 origin-right data-active:opacity-100 data-active:scale-120"
@@ -85,11 +87,12 @@
                 id={key}
                 {@attach entryRatio({
                     coverage: 0.6,
-                    continousVisibility: true,
                     visibleChanged: (v) => updateAboutVis(v ? key : undefined),
                 })}
             >
-                <div class="prose prose-invert border rounded-3xl p-4 min-w-full">
+                <div
+                    class="prose prose-invert border rounded-3xl p-4 min-w-full"
+                >
                     {@html story}
                 </div>
             </article>

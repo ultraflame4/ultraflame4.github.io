@@ -1,11 +1,18 @@
+import _ from "lodash";
+
 export interface EntryRatioOptions {
     offset?: number;
     /**
-     * How much % of the viewport should the element cover before it is considered "visible"
+     * How much % of the viewport the element should "cover" before it is considered "visible"
      * 
-     * Set this to 0 for instant visibility 
+     * Set this to 0 for instant visibility .
      * 
      * Defaults to 10% (0.1)
+     * 
+     * Note: This is based on the element's rect top. This means that even if the element height is not bigger than window innerHeight,
+     * it can still achieves 100% "cover" when it is at the very top of the viewport.
+     * 
+     * However once the top goes pass the viewport, "cover" is then calculated via the rect's bottom.
      */
     coverage?: number
     /**
@@ -46,12 +53,15 @@ export function _entryRatio_attachment(
 
     const clamp = (v: number) => Math.min(1, Math.max(0, v))
 
+    const visibleChanged = (visible: boolean) => opts.visibleChanged?.(visible)
+
+    const t_visible_coverage = opts.coverage ?? 0.1
+
     function update() {
         const rect = node.getBoundingClientRect();
 
         const ratio = 1 - clamp((-rect.top + offset) / rect.height);
-        const visibility_threshold = winHeight * (opts.coverage ?? 0.1)
-        const is_visible = Math.abs(rect.top) < (rect.height - visibility_threshold)
+
 
         if (rect.top > 0) {
             node.style.setProperty('--ratio', "1.1");
@@ -60,8 +70,11 @@ export function _entryRatio_attachment(
             node.style.setProperty('--ratio', String(Math.round(ratio * 1000) / 1000));
         }
 
+        const coverage_ratio = rect.top > 0 ? (1 - Math.min(rect.top, winHeight) / winHeight) : (Math.min(rect.bottom, winHeight) / winHeight)
+        const is_visible = coverage_ratio > t_visible_coverage
+
         if (is_visible != node.hasAttribute('data-visible') || opts.continousVisibility) {
-            opts.visibleChanged?.(is_visible)
+            visibleChanged(is_visible)
         }
 
         if (is_visible) {
