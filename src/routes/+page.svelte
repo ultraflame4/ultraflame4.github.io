@@ -1,5 +1,5 @@
 <script lang="ts">
-
+    import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import Navbar from "$lib/blocks/Navbar.svelte";
     import StartBanner from "$lib/blocks/StartBanner.svelte";
     import { TextTyper } from "$lib/components/others/typewriter";
@@ -35,18 +35,16 @@
         .wait(5500)
         .seq("Welcome to my little corner of the internet.")
         .build();
-
-
 </script>
 
 <StartBanner>
     {#snippet background()}
-        <CubeBanner/>
+        <CubeBanner />
     {/snippet}
     {#snippet children()}
         <div class="size-full flex justify-center items-center">
             <div
-                class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2"
+                class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2 z-10"
             >
                 <p class="font-fancy text-3xl h-24">
                     <Typewriter inputs={greeting} />
@@ -57,6 +55,7 @@
     {/snippet}
 </StartBanner>
 <Navbar />
+<BgFadeDiv class="h-64" />
 <h1>Welcome to SvelteKit</h1>
 <p>
     Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the

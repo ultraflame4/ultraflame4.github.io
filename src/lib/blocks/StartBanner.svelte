@@ -1,5 +1,8 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
+    import IntersectionObserver, {
+        createIntersectionObserver,
+    } from "svelte-intersection-observer";
 
     interface Props {
         children: Snippet;
@@ -8,22 +11,22 @@
     }
 
     const { children, background, overlay }: Props = $props();
-
-    $inspect(background);
+    const observer = createIntersectionObserver(() => ({ threshold: 1 }));
+    
 </script>
 
-<div class="banner relative">
+<div class="banner relative" {@attach observer.attach}>
     <div class="content z-0 pointer-events-none overflow-hidden">
         {@render background?.()}
     </div>
-    <div class="content ">
+    <div class="content">
         {@render children()}
     </div>
     <div class="content pointer-events-none">
         {@render overlay?.()}
     </div>
 </div>
-
+{observer.entry?.intersectionRatio ?? 'nil'}
 <style>
     @reference "tailwindcss";
     .banner {

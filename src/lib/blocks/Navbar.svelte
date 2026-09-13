@@ -11,7 +11,7 @@
 	</a>
 {/snippet}
 
-<header class="p-(--nav-offset-units) w-full flex items-center justify-center sticky top-0">
+<header class="p-(--nav-offset-units) w-full flex items-center justify-center sticky top-0 z-20">
     <nav class="acrylic h-(--nav-height-units) rounded-2xl min-w-32 w-fit p-2 flex gap-3">
         <a href={import.meta.env.BASE_URL} class="h-full glow"><img class="h-full" src={asset('/brand.png')} alt="clyh.me" /></a>
         {@render nav_link('About', resolve('/#about'), 0)}
