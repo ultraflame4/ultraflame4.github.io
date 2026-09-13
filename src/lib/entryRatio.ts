@@ -8,6 +8,10 @@ export interface EntryRatioOptions {
      * Defaults to 10% (0.1)
      */
     coverage?: number
+    /**
+     * Fire the visibility change event continously every scroll instead of just when it actually changes
+     */
+    continousVisibility?: boolean
     visibleChanged?: (visible: boolean) => void
 }
 
@@ -28,14 +32,14 @@ export function entryRatio(options: EntryRatioOptions = {}) {
  * Also adds a [data-visible] attribute if element can be seen in the viewport.
  * 
  * @param node 
- * @param options 
+ * @param opts 
  * @returns 
  */
 export function _entryRatio_attachment(
     node: HTMLElement,
-    options: EntryRatioOptions = {}
+    opts: EntryRatioOptions = {}
 ) {
-    let { offset = 0 } = options;
+    let { offset = 0 } = opts;
     let winHeight = window.innerHeight;
 
     const clamp = (v: number) => Math.min(1, Math.max(0, v))
@@ -44,7 +48,7 @@ export function _entryRatio_attachment(
         const rect = node.getBoundingClientRect();
 
         const ratio = 1 - clamp((-rect.top + offset) / rect.height);
-        const visibility_threshold = winHeight * (options.coverage ?? 0.1)
+        const visibility_threshold = winHeight * (opts.coverage ?? 0.1)
         const is_visible = Math.abs(rect.top) < (rect.height - visibility_threshold)
 
         if (rect.top > 0) {
@@ -54,8 +58,8 @@ export function _entryRatio_attachment(
             node.style.setProperty('--ratio', String(Math.round(ratio * 1000) / 1000));
         }
 
-        if (is_visible != node.hasAttribute('data-visible')) {
-            options.visibleChanged?.(is_visible)
+        if (is_visible != node.hasAttribute('data-visible') || opts.continousVisibility) {
+            opts.visibleChanged?.(is_visible)
         }
 
         if (is_visible) {

@@ -1,9 +1,11 @@
 <script lang="ts">
+ 
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import Navbar from "$lib/blocks/Navbar.svelte";
     import StartBanner from "$lib/blocks/StartBanner.svelte";
     import { TextTyper } from "$lib/components/others/typewriter";
     import Typewriter from "$lib/components/others/Typewriter.svelte";
+    import { entryRatio } from "$lib/entryRatio.js";
     import CubeBanner from "./CubeBanner.svelte";
     const delay = 400;
 
@@ -37,6 +39,12 @@
         .wait(5500)
         .seq("Welcome to my little corner of the internet.")
         .build();
+
+    let page_hash = $state('');
+    function setHash(hash?: string) {
+        if (!hash) return;
+        page_hash = hash;
+    }
 </script>
 
 <StartBanner>
@@ -58,17 +66,29 @@
 </StartBanner>
 <Navbar />
 <BgFadeDiv class="h-64" />
-<section>
-    <ul>
+<section class="grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
+    <ul class="ml-auto text-right h-fit sticky top-1/4 font-fancy text-2xl">
         {#each data.about_story as [key, story]}
-            <li>
-                {key}
+            <li
+                class="text-bright opacity-30 hover:opacity-80 origin-right data-active:opacity-100 data-active:scale-110"
+                data-active={page_hash == key || undefined}
+        
+            >
+                <a href="#{key}">{key}</a>
             </li>
         {/each}
     </ul>
-    <div>
+    <div class="space-y-4">
         {#each data.about_story as [key, story]}
-            <article class="prose prose-invert">
+            <article
+                class="prose prose-invert border rounded-3xl p-4 min-w-full"
+                id={key}
+                {@attach entryRatio({
+                    coverage: 0.2,
+                    continousVisibility: true,
+                    visibleChanged: (v) => setHash(v ? key : undefined),
+                })}
+            >
                 {@html story}
             </article>
         {/each}
