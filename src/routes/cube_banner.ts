@@ -44,7 +44,7 @@ const DEFAULT_OPTIONS: CubeBannerOptions = {
     gridGap: 0.1,
     sphereRadius: 16,
     asciiCellSize: 6,
-    asciiCharacters: " .#░▒▓█",
+    asciiCharacters: " .*+#░▒▓█",
     asciiColor: "white",
     cameraFov: 75,
     cameraNear: 0.4,
