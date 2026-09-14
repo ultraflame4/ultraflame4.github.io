@@ -102,8 +102,8 @@
     </div>
 </section>
 <section>
-    <div class="grid grid-cols-3 p-32">
-        <SpotlightBackground class="col-span-3 p-px">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-8">
+        <SpotlightBackground class="col-span-full p-px">
             <h2 class="font-fancy bg-background text-2xl text-center py-4">
                 Recent Works
             </h2>
@@ -117,19 +117,48 @@
                 >
                     {#if meta.media[0]}
                         <div class="h-96 m-4 border-2 border-border">
-                            <MediaEmbed media={meta.media[0]} class="size-full brightness-70 hover:brightness-100" />
+                            <MediaEmbed
+                                media={meta.media[0]}
+                                class="size-full brightness-70 hover:brightness-100"
+                            />
                         </div>
                     {/if}
-                    <ul class="px-4 flex gap-1 mb-2">
+                    <ul class="px-4 flex gap-1">
                         {#each meta.skills as skill}
-                            <li class="font-mono text-dimmed uppercase font-thin text-[0.6rem] border border-border py-1 px-2">{skill}</li>
+                            <li
+                                class="font-mono text-dimmed uppercase font-thin text-[0.6rem] border border-border py-1 px-2"
+                            >
+                                {skill}
+                            </li>
                         {/each}
                     </ul>
-                    <h1 class="px-4 font-fancy text-2xl">{meta.title ?? key}</h1>
-                    <div class="prose prose-invert p-4 tracking-tight text-sub h-64">
+                    <h1 class="px-4 font-fancy text-2xl my-2">
+                        {meta.title ?? key}
+                    </h1>
+                    <ul class="px-4 items-center flex gap-1 bg-background">
+                        {#each meta.links as link}
+                            <li
+                                class="font-mono text-dimmed uppercase font-bold text-sm"
+                            >
+                                [<a
+                                    class="text-bright hover:underline"
+                                    href={link.url}>{link.name}</a
+                                >]
+                            </li>
+                        {/each}
+                    </ul>
+                    <div
+                        class="prose prose-invert px-4 mt-2 tracking-tight text-sub h-56 overflow-hidden"
+                    >
                         {@html content}
                     </div>
-                    <BgFadeDiv/>
+                    <BgFadeDiv class="h-32" />
+
+                    <footer class="flex px-4 mb-4">
+                        <span class="font-semibold text-xs ml-auto text-dimmed">
+                            {(meta.end_date ?? meta.start_date)?.toLocaleDateString()}
+                        </span>
+                    </footer>
                 </article>
             </SpotlightBackground>
         {/each}
