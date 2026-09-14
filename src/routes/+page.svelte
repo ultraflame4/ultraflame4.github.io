@@ -2,6 +2,7 @@
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import Navbar from "$lib/blocks/Navbar.svelte";
     import StartBanner from "$lib/blocks/StartBanner.svelte";
+    import MediaViewer from "$lib/components/MediaViewer.svelte";
     import { TextTyper } from "$lib/components/others/typewriter";
     import Typewriter from "$lib/components/others/Typewriter.svelte";
     import SpotlightBackground from "$lib/components/SpotlightBackground.svelte";
@@ -110,8 +111,13 @@
         {#each data.recent_works as [key, content, meta]}
             <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <SpotlightBackground class="p-px min-h-128">
-                <article class="size-full bg-background overflow-hidden" id={key}>
-                    {JSON.stringify(meta)}
+                <article
+                    class="size-full bg-background overflow-hidden"
+                    id={key}
+                >
+                    {#if meta.media[0]}
+                        <MediaViewer media={meta.media[0]} />
+                    {/if}
                     <div class="prose prose-invert p-4">
                         {@html content}
                     </div>

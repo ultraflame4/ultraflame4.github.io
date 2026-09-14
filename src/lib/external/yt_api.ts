@@ -4,14 +4,17 @@ declare global {
         ytLoaded?: boolean;
     }
 }
-window.ytLoaded = false;
+// window.ytLoaded = false;
 export function initYoutubeApi() {
     if (window.ytLoaded){
         return
     }
     // @ts-ignore
     window.onYouTubeIframeAPIReady = () => {
-        setTimeout(() => window.ytLoaded = true, 0)
+        setTimeout(() => {
+            window.ytLoaded = true;
+            window.dispatchEvent(new CustomEvent("yt-loaded"));
+        }, 0);
     }
 
     let tag = document.createElement('script');
