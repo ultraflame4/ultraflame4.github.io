@@ -1,9 +1,13 @@
+import projectSchema from "../../data/projects/schema.json";
+import {type FromSchema} from "json-schema-to-ts"
 import { minimatch } from "minimatch";
 
 const full_data = import.meta.glob("../../data/**/*", {
     query: "?raw",
     eager: true
 });
+
+type ProjectEntry =FromSchema<typeof projectSchema>
 
 export function readContent(
     folder: string,
