@@ -13,11 +13,11 @@
       },
       "video": {
          "format": "uri",
-         "description": "Relevant cover image of the project",
+         "description": "Relevant video of the project",
          "type": "string"
       },
       "source": {
-         "description": "Relevant cover image of the project",
+         "description": "Source code or repository link for the project",
          "anyOf": [
             {
                "$ref": "#/definitions/SourceObj"
@@ -45,7 +45,8 @@
       "skills": {
          "description": "Relevant skills used in the project",
          "items": {
-            "format": "tag"
+            "format": "tag",
+            "type": "string"
          },
          "type": "array"
       },
@@ -55,13 +56,12 @@
          "type": "string"
       },
       "end": {
-         "description": "Start date of the project.",
+         "description": "End date of the project.",
          "format": "date",
          "type": "string"
       },
       "index_hint": {
          "description": "Suggests the index / order of the project. May be superseded by other parameters",
-         "format": "date",
          "type": "number"
       },
       "status": {
@@ -78,6 +78,7 @@
          "description": "Project flags",
          "items": {
             "format": "tag",
+            "type": "string",
             "enum": [
                "featured"
             ]
@@ -90,6 +91,22 @@
    ],
    "definitions": {
       "SourceObj": {
+         "type": "object",
+         "properties": {
+            "label": {
+               "type": "string"
+            },
+            "url": {
+               "format": "uri",
+               "type": "string"
+            }
+         },
+         "required": [
+            "label",
+            "url"
+         ]
+      },
+      "LinkObject": {
          "type": "object",
          "properties": {
             "label": {
