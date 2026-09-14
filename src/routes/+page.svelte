@@ -52,7 +52,10 @@
         <CubeBanner />
     {/snippet}
     {#snippet children()}
-        <div class="size-full flex justify-center items-start" style="height: 200%;">
+        <div
+            class="size-full flex justify-center items-start"
+            style="height: 200%;"
+        >
             <div
                 class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2 -z-10"
             >
@@ -94,6 +97,26 @@
                     </div>
                 </SpotlightBackground>
             </article>
+        {/each}
+    </div>
+</section>
+<section>
+    <div class="grid grid-cols-3 p-32">
+        <SpotlightBackground class="col-span-3 p-px">
+            <h2 class="font-fancy bg-background text-2xl text-center py-4">
+                Recent Works
+            </h2>
+        </SpotlightBackground>
+        {#each data.recent_works as [key, content]}
+            <!-- pt-32 offsets the actual content such that it sits below nav header -->
+            <SpotlightBackground class="p-px min-h-128">
+                <article class="size-full bg-background" id={key}>
+
+                    <div class="prose prose-invert p-4">
+                        {@html content}
+                    </div>
+                </article>
+            </SpotlightBackground>
         {/each}
     </div>
 </section>
