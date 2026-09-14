@@ -1,7 +1,7 @@
 {
 	"name": "ultraflame4.github.io",
 	"private": true,
-  "version": "8.0.0",
+	"version": "8.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -30,6 +30,7 @@
 		"cn": "^0.3.0",
 		"lodash": "^4.0.8",
 		"mdast": "^2.3.2",
+		"minimatch": "^10.2.6",
 		"postprocessing": "^6.39.5",
 		"rehype-stringify": "^10.0.1",
 		"remark-directive": "^4.0.0",

@@ -44,5 +44,5 @@ export function render_md(content: string) {
         .use(remarkIconDirective)
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(rehypeStringify, { allowDangerousHtml: true })
-    return processor.processSync(content);
+    return processor.processSync(content).value;
 }
