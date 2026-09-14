@@ -12,6 +12,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 
 
 
+
 export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
     return (tree) => {
         visit(tree, (node) => {
@@ -38,13 +39,15 @@ export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
     }
 }
 
+
 export function render_md(content: string) {
     const processor = unified.unified()
         .use(remarkParse)
         .use(remarkFrontmatter, ['yaml', 'toml'])
+    // .use(() => )
         .use(remarkDirective)
         .use(remarkIconDirective)
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(rehypeStringify, { allowDangerousHtml: true })
-    return processor.processSync(content).value;
+    return processor.processSync(content);
 }

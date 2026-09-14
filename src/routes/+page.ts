@@ -7,11 +7,12 @@ const projects_content = readContent("projects")
 export const load: PageLoad = async (e) => {
     const parent = await e.parent()
     const about_story = Object.entries(about_content).map(([k, v]) => {
-        return [k, render_md(v)] as [string,string]
+        return [k, render_md(v).value] as [string,string]
     })
 
     const recent_works = Object.entries(projects_content).slice(0, 4).map(([k, v]) => {
-        return [k, render_md(v)] as [string,string]
+        const rendered = render_md(v)
+        return [k, rendered.value] as [string,string]
     })
 
 
