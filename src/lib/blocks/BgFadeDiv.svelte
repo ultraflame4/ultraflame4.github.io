@@ -3,7 +3,7 @@
     interface Props {
         /**
          * Html class. Note that this affects the *inner* element.
-         * 
+         *
          * You can use this to, for example, make the fade div bigger.
          */
         class?: string;
@@ -11,7 +11,7 @@
     const { class: _class }: Props = $props();
 </script>
 
-<div class="h-0 overflow-visible">
+<div class="h-0 overflow-visible pointer-events-none">
     <div
         class={cn(
             "h-32 -translate-y-full bg-linear-0 from-background to-transparent",

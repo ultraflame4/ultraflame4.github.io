@@ -2,7 +2,7 @@
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import Navbar from "$lib/blocks/Navbar.svelte";
     import StartBanner from "$lib/blocks/StartBanner.svelte";
-    import MediaViewer from "$lib/components/MediaViewer.svelte";
+    import MediaEmbed from "$lib/components/MediaEmbed.svelte";
     import { TextTyper } from "$lib/components/others/typewriter";
     import Typewriter from "$lib/components/others/Typewriter.svelte";
     import SpotlightBackground from "$lib/components/SpotlightBackground.svelte";
@@ -116,11 +116,20 @@
                     id={key}
                 >
                     {#if meta.media[0]}
-                        <MediaViewer media={meta.media[0]} />
+                        <div class="h-96 m-4 border-2 border-border">
+                            <MediaEmbed media={meta.media[0]} class="size-full brightness-70 hover:brightness-100" />
+                        </div>
                     {/if}
-                    <div class="prose prose-invert p-4">
+                    <ul class="px-4 flex gap-1 mb-2">
+                        {#each meta.skills as skill}
+                            <li class="font-mono text-dimmed uppercase font-thin text-[0.6rem] border border-border py-1 px-2">{skill}</li>
+                        {/each}
+                    </ul>
+                    <h1 class="px-4 font-fancy text-2xl">{meta.title ?? key}</h1>
+                    <div class="prose prose-invert p-4 tracking-tight text-sub h-64">
                         {@html content}
                     </div>
+                    <BgFadeDiv/>
                 </article>
             </SpotlightBackground>
         {/each}
