@@ -135,13 +135,15 @@ export interface proj_entry_link {
 }
 
 
+export type NormalisedProjectMetaMedia = {
+    url: string;
+    type: "img" | "video";
+}
+
 export interface NormalisedProjectMeta {
     // anchor_id: string;
     title: string;
-    media: {
-        url: string;
-        type: "img" | "video";
-    }[];
+    media: NormalisedProjectMetaMedia[];
     featured: boolean;
     status: "completed" | "in dev" | "inactive";
     links: proj_entry_link[];
