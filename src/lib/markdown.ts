@@ -9,6 +9,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
+import { matter } from 'vfile-matter';
 
 
 
@@ -40,11 +41,17 @@ export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
 }
 
 
+export const remarkExtractFrontmatter: unified.Plugin<void[], mdast.Root> = () => {
+    return (_tree, file) => {
+        matter(file, { strip: true })
+    }
+}
+
 export function render_md(content: string) {
     const processor = unified.unified()
         .use(remarkParse)
         .use(remarkFrontmatter, ['yaml', 'toml'])
-    // .use(() => )
+        .use(remarkExtractFrontmatter)
         .use(remarkDirective)
         .use(remarkIconDirective)
         .use(remarkRehype, { allowDangerousHtml: true })
