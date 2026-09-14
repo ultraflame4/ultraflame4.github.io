@@ -7,7 +7,6 @@ const full_data = import.meta.glob("../../data/**/*", {
     eager: true
 });
 
-export type ProjectEntry =FromSchema<typeof projectSchema>
 
 export function readContent(
     folder: string,

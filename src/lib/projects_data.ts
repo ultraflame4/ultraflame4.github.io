@@ -150,7 +150,7 @@ export interface NormalisedProjectData {
 }
 
 
-export function normalise_FrontmatterProjectData(data: FrontmatterProjectDataSchema, body: string, filepath?:string): NormalisedProjectData {
+export function normaliseProjectData(data: FrontmatterProjectDataSchema, body: string, filepath?:string): NormalisedProjectData {
     let obj: NormalisedProjectData = {
         // anchor_id: path.basename(filepath).split(".")[0],
         links: [],
