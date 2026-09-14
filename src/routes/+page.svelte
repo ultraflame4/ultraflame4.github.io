@@ -52,9 +52,9 @@
         <CubeBanner />
     {/snippet}
     {#snippet children()}
-        <div class="size-full flex justify-center items-center">
+        <div class="size-full flex justify-center items-start" style="height: 200%;">
             <div
-                class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2 z-10"
+                class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2 -z-10"
             >
                 <p class="font-fancy text-3xl h-24">
                     <Typewriter inputs={greeting} />

@@ -13,7 +13,7 @@
 
 <div class="banner relative" {@attach entryRatio()}>
     <div
-        class="content z-0 pointer-events-none overflow-hidden"
+        class="content pointer-events-none overflow-hidden -z-10"
         style="opacity: calc(pow(var(--ratio), 5));"
     >
         {@render background?.()}

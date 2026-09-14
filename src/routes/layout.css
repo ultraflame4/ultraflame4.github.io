@@ -88,7 +88,7 @@
         @apply text-fg;
     }
 
-    body {
+    body, section {
         @apply bg-background;
     }
 
@@ -241,7 +241,7 @@
 
 @layer utilities {
 
-    /* 
+    /*
      * "Collapse" this element in mobile / vertical mode.
      */
     @media screen and (max-width: 750px) {
