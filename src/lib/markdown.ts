@@ -8,6 +8,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import remarkDirective from 'remark-directive';
+import remarkFrontmatter from 'remark-frontmatter';
 
 
 
@@ -40,6 +41,7 @@ export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
 export function render_md(content: string) {
     const processor = unified.unified()
         .use(remarkParse)
+        .use(remarkFrontmatter, ['yaml', 'toml'])
         .use(remarkDirective)
         .use(remarkIconDirective)
         .use(remarkRehype, { allowDangerousHtml: true })
