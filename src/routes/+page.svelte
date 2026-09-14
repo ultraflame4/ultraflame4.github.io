@@ -107,11 +107,11 @@
                 Recent Works
             </h2>
         </SpotlightBackground>
-        {#each data.recent_works as [key, content]}
+        {#each data.recent_works as [key, content, meta]}
             <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <SpotlightBackground class="p-px min-h-128">
-                <article class="size-full bg-background" id={key}>
-
+                <article class="size-full bg-background overflow-hidden" id={key}>
+                    {JSON.stringify(meta)}
                     <div class="prose prose-invert p-4">
                         {@html content}
                     </div>

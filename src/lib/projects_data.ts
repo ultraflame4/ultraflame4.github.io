@@ -1,3 +1,6 @@
+import { readContent } from "./data";
+import { render_md } from "./markdown";
+
 export function getDomainName(url: string | undefined) {
     if (!url) return undefined
     try {
@@ -132,10 +135,9 @@ export interface proj_entry_link {
 }
 
 
-export interface NormalisedProjectData {
+export interface NormalisedProjectMeta {
     // anchor_id: string;
     title: string;
-    body: string;
     media: {
         url: string;
         type: "img" | "video";
@@ -150,43 +152,41 @@ export interface NormalisedProjectData {
 }
 
 
-export function normaliseProjectData(data: FrontmatterProjectDataSchema, body: string, filepath?:string): NormalisedProjectData {
-    let obj: NormalisedProjectData = {
-        // anchor_id: path.basename(filepath).split(".")[0],
+export function normaliseProjectData(data: FrontmatterProjectDataSchema): NormalisedProjectMeta {
+    let meta: NormalisedProjectMeta = {
         links: [],
-        body: body,
         media: [],
         status: data.status ?? "in dev",
         title: data.title,
         featured: !!data.flags?.includes("featured")
     }
-    if (data.video) obj.media.push({url: data.video, type: "video"})
-    if (data.image) obj.media.push({url: data.image, type: "img"})
+    if (data.video) meta.media.push({url: data.video, type: "video"})
+    if (data.image) meta.media.push({url: data.image, type: "img"})
     if (data.source) {
         if (typeof data.source == "string") {
-            obj.source = {
+            meta.source = {
                 label: "github",
                 url: data.source
             }
         } else if (data.source.url && data.source.label) {
-            obj.source = {
+            meta.source = {
                 label: data.source.label,
                 url: data.source.url
             }
         }
     }
     if (data.links) {
-        obj.links = []
+        meta.links = []
         data.links.forEach((x) => {
             if (typeof x == "string") {
-                obj.links?.push({
+                meta.links?.push({
                     name: identifyLinkName(x),
                     url: x
                 })
                 return;
             }
             Object.entries(x).map(([name, url]) => {
-                obj.links?.push({
+                meta.links?.push({
                     name,
                     url
                 })
@@ -196,9 +196,25 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema, body: s
     }
 
     if (data.skills) {
-        obj.skills = data.skills;
+        meta.skills = data.skills;
     }
-    if (data.start) obj.start_date = new Date(data.start)
-    if (data.end) obj.end_date = new Date(data.end)
-    return obj
+    if (data.start) meta.start_date = new Date(data.start)
+    if (data.end) meta.end_date = new Date(data.end)
+    return meta
+}
+
+/**
+ * Read the projects (frontmatter) in the data/projects folder.
+ *
+ * @param limit Limit the number of results. //TODO sort by date
+ * @returns
+ */
+export function readProjectsData(limit?: number) {
+    const projects_content = readContent("projects")
+
+    return Object.entries(projects_content).slice(0, limit).map(([k, v]) => {
+        const rendered = render_md(v)
+        const meta = normaliseProjectData(rendered.data.matter as any)
+        return [k, rendered.value, meta] as [string,string, NormalisedProjectMeta]
+    })
 }
