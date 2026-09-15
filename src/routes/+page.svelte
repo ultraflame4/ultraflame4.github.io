@@ -43,10 +43,9 @@
         .seq("Welcome to my little corner of the internet.")
         .build();
 
-    let about_loc = $state("");
-    function updateAboutVis(loc?: string) {
-        if (!loc) return;
-        about_loc = loc;
+    let section_loc: string | undefined  = $state(undefined);
+    function update_loc(loc?: string) {
+        section_loc = loc;
     }
 </script>
 
@@ -70,12 +69,12 @@
         </div>
     {/snippet}
 </StartBanner>
-<Navbar />
+<Navbar current_section={section_loc} />
 <BgFadeDiv class="h-64" />
 <section class="lg:grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
     <ul class="story-keys">
         {#each data.about_story as [key, story]}
-            <li class="story-key" data-active={about_loc == key || undefined}>
+            <li class="story-key" data-active={section_loc == key || undefined}>
                 <a href="#{key}">{key}</a>
             </li>
         {/each}
@@ -88,8 +87,8 @@
                 class="lg:pt-32 lg:-mt-24 pt-64 -mt-56"
                 id={key}
                 {@attach entryRatio({
-                    coverage: 0.6,
-                    visibleChanged: (v) => updateAboutVis(v ? key : undefined),
+                    visibilityRatio: 0.6,
+                    onVisible: () => update_loc(key),
                 })}
             >
                 <SpotlightBackground class="rounded-3xl p-px">
@@ -103,9 +102,11 @@
         {/each}
     </div>
 </section>
-<section>
+<section id="recent-works" {@attach entryRatio({
+    onVisible: ()=>update_loc("Recent")
+})}>
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-8">
-        <SpotlightBackground class="col-span-full p-px sticky top-20">
+        <SpotlightBackground class="col-span-full p-px">
             <h2 class="font-fancy bg-background text-2xl text-center py-4">
                 Recent Works
             </h2>
@@ -202,6 +203,9 @@
         Back to top
     </button>
 </SpotlightBackground>
+<section class="h-lvh" {@attach entryRatio({onVisible: ()=>update_loc()})}>
+
+</section>
 <div class="h-1000"></div>
 
 <style>

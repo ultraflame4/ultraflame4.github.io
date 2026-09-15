@@ -1,6 +1,11 @@
 <script lang="ts">
     import { asset, resolve } from "$app/paths";
 
+    interface Props{
+        current_section?: string
+    }
+    const props : Props = $props()
+
 </script>
 
 
@@ -12,11 +17,14 @@
 {/snippet}
 
 <header class="p-(--nav-offset-units) w-full flex items-center justify-center sticky top-0 z-20">
-    <nav class="acrylic h-(--nav-height-units) rounded-2xl min-w-32 w-fit p-2 flex gap-3">
+
+    <nav class="acrylic h-(--nav-height-units) rounded-2xl min-w-32 w-fit p-2 flex items-center gap-3">
         <a href={import.meta.env.BASE_URL} class="h-full glow"><img class="h-full" src={asset('/brand.png')} alt="clyh.me" /></a>
+        {#if props.current_section !== undefined}
+            <span class="font-fancy text-sm">/{props.current_section}</span>
+        {/if}
         {@render nav_link('About', resolve('/#about'), 0)}
         {@render nav_link('Blog', resolve('/blog'), 1)}
         {@render nav_link('Gallery', resolve('/gallery'), 2)}
     </nav>
 </header>
-
