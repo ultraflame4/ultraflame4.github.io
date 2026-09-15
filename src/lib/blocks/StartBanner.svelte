@@ -3,7 +3,7 @@
     import type { Snippet } from "svelte";
 
     interface Props {
-        children: Snippet;
+        children?: Snippet;
         background?: Snippet;
         overlay?: Snippet;
     }
@@ -19,7 +19,7 @@
         {@render background?.()}
     </div>
     <div class="content">
-        {@render children()}
+        {@render children?.()}
     </div>
     <div class="content pointer-events-none">
         {@render overlay?.()}
