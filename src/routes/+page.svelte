@@ -43,9 +43,9 @@
         .seq("Welcome to my little corner of the internet.")
         .build();
 
-    let section_loc: string | undefined  = $state(undefined);
-    function update_loc(loc?: string) {
-        section_loc = loc;
+    let about_loc: string | undefined = $state(undefined);
+    function updateAboutLoc(loc?: string) {
+        about_loc = loc;
     }
 </script>
 
@@ -69,12 +69,12 @@
         </div>
     {/snippet}
 </StartBanner>
-<Navbar current_section={section_loc} />
+<Navbar />
 <BgFadeDiv class="h-64" />
 <section class="lg:grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
     <ul class="story-keys">
         {#each data.about_story as [key, story]}
-            <li class="story-key" data-active={section_loc == key || undefined}>
+            <li class="story-key" data-active={about_loc == key || undefined}>
                 <a href="#{key}">{key}</a>
             </li>
         {/each}
@@ -87,8 +87,8 @@
                 class="lg:pt-32 lg:-mt-24 pt-64 -mt-56"
                 id={key}
                 {@attach entryRatio({
-                    visibilityRatio: 0.6,
-                    onVisible: () => update_loc(key),
+                    coverageRatio: 0.8,
+                    onVisible: () => updateAboutLoc(key),
                 })}
             >
                 <SpotlightBackground class="rounded-3xl p-px">
@@ -102,10 +102,8 @@
         {/each}
     </div>
 </section>
-<section id="recent-works" {@attach entryRatio({
-    onVisible: ()=>update_loc("Recent")
-})}>
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-8">
+<section id="recent-works">
+    <div class="grid grid-cols-2 lg:grid-cols-3 p-8 xl:p-32">
         <SpotlightBackground class="col-span-full p-px">
             <h2 class="font-fancy bg-background text-2xl text-center py-4">
                 Recent Works
@@ -120,7 +118,7 @@
                 >
                     {#if meta.media[0]}
                         <div
-                            class="h-96 m-4 border-2 border-border hover:border-accent"
+                            class="h-64 m-4 border border-border hover:border-accent"
                         >
                             <MediaEmbed
                                 media={meta.media[0]}
@@ -138,7 +136,7 @@
                         {/each}
                     </ul>
                     <h1
-                        class="px-4 font-fancy text-2xl my-2"
+                        class="px-4 font-fancy text-xl my-2"
                         style="letter-spacing: -3px;"
                     >
                         {meta.title ?? key}
@@ -146,7 +144,7 @@
                     <ul class="px-4 items-center flex gap-1 bg-background">
                         {#each meta.links as link}
                             <li
-                                class="font-mono text-dimmed uppercase font-bold text-sm"
+                                class="font-mono text-dimmed uppercase font-bold text-xs"
                             >
                                 [<a
                                     class="text-bright hover:underline"
@@ -156,7 +154,7 @@
                         {/each}
                     </ul>
                     <div
-                        class="prose prose-invert px-4 mt-2 tracking-tight text-sub h-48 overflow-hidden"
+                        class="prose prose-invert px-4 mt-2 tracking-tight text-sub h-32 overflow-hidden text-sm"
                     >
                         {@html content}
                     </div>
@@ -186,7 +184,7 @@
         {/each}
         <SpotlightBackground class="col-span-full p-px">
             <a
-                class="block py-4 font-fancy size-full bg-background text-xl text-center hover:underline"
+                class="block py-4 font-fancy size-full bg-background text-xl text-center hover:underline hover:bg-accent hover:text-background"
                 href={resolve("/gallery")}
             >
                 See More At Gallery
@@ -203,9 +201,7 @@
         Back to top
     </button>
 </SpotlightBackground>
-<section class="h-lvh" {@attach entryRatio({onVisible: ()=>update_loc()})}>
 
-</section>
 <div class="h-1000"></div>
 
 <style>

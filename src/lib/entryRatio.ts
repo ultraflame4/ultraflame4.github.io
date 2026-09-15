@@ -14,7 +14,7 @@ export interface EntryRatioOptions {
      *
      * However once the top goes pass the viewport, "cover" is then calculated via the rect's bottom.
      */
-    visibilityRatio?: number
+    coverageRatio?: number
     /**
      * Fire the visibility change event continously every scroll instead of just when it actually changes.
      *
@@ -57,7 +57,7 @@ export function _entryRatio_attachment(
 
     const visibleChanged = (visible: boolean) => opts.visibleChanged?.(visible)
 
-    const t_visible_coverage = opts.visibilityRatio ?? 0.1
+    const t_visible_coverage = opts.coverageRatio ?? 0.1
 
 
     function update() {
