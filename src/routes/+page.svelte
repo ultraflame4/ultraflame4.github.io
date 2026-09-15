@@ -159,11 +159,19 @@
                     <BgFadeDiv class="h-32" />
                     <!-- Spacer -->
                     <div class="h-13"></div>
-                    <footer class="absolute bottom-4 w-full flex px-4 items-center">
-                        <a class="font-fancy group" href={resolve('/gallery/' + key)}>
-                            [<span class="group-hover:underline">READ MORE</span>]
+                    <footer
+                        class="absolute bottom-4 w-full flex px-4 items-center"
+                    >
+                        <a
+                            class="font-fancy group"
+                            href={resolve("/gallery/" + key)}
+                        >
+                            [<span class="group-hover:underline">READ MORE</span
+                            >]
                         </a>
-                        <span class="font-thin font-mono text-xs ml-auto text-sub opacity-60">
+                        <span
+                            class="font-thin font-mono text-xs ml-auto text-sub opacity-60"
+                        >
                             Updated {(
                                 meta.end_date ?? meta.start_date
                             )?.toLocaleDateString()}
@@ -174,6 +182,15 @@
         {/each}
     </div>
 </section>
+
+<SpotlightBackground class="p-px size-fit mx-auto">
+    <button
+        class="bg-background px-8 py-4 font-fancy text-xl cursor-pointer"
+        onclick={() => window.scrollTo({ top: 0 })}
+    >
+        Back to top
+    </button>
+</SpotlightBackground>
 <div class="h-1000"></div>
 
 <style>
