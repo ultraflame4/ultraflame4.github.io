@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
     import { resolve } from "$app/paths";
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import Navbar from "$lib/blocks/Navbar.svelte";
@@ -104,7 +105,7 @@
 </section>
 <section>
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 p-8">
-        <SpotlightBackground class="col-span-full p-px">
+        <SpotlightBackground class="col-span-full p-px sticky top-20">
             <h2 class="font-fancy bg-background text-2xl text-center py-4">
                 Recent Works
             </h2>
@@ -180,12 +181,17 @@
                 </article>
             </SpotlightBackground>
         {/each}
+        <SpotlightBackground class="col-span-full p-px">
+            <a class="block py-4 font-fancy size-full bg-background text-xl text-center hover:underline" href={resolve("/gallery")}>
+                See More At Gallery
+            </a>
+        </SpotlightBackground>
     </div>
 </section>
 
 <SpotlightBackground class="p-px size-fit mx-auto">
     <button
-        class="bg-background px-8 py-4 font-fancy text-xl cursor-pointer"
+        class="bg-background px-8 py-4 font-fancy text-lg cursor-pointer"
         onclick={() => window.scrollTo({ top: 0 })}
     >
         Back to top

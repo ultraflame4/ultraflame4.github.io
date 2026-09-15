@@ -65,7 +65,7 @@
         inherits: false;
     }
     .ctn {
-        --spotlight-radius: 0%;
+        --spotlight-radius: 10%;
         background: radial-gradient(
             circle at var(--x-percent) var(--y-percent),
             var(--color-accent),
