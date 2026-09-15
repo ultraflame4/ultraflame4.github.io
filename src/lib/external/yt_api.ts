@@ -32,7 +32,8 @@ export function createEmbed(videoId: string, targetElementId: string) {
         height: null,
         videoId: videoId,
         playerVars: {
-            'playsinline': 1
+            'playsinline': 1,
+            'autoplay': 1
         }
     });
 

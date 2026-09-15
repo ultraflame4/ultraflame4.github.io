@@ -59,18 +59,18 @@
 <div class="size-full">
     {#if loaded == false}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div class="lazy-load-cover relative" onmouseenter={try_load}>
+        <div class="lazy-load-cover relative" onclick={try_load}>
             <img
                 src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
                 alt={`Thumbnail for youtube video ${src}`}
             />
-            <div class="blur"></div>
+            <!-- <div class="blur"></div> -->
 
             <!-- <Icon icon="lucide:mouse-pointer-square" class="hover-icon" /> -->
-            <p>
+            <p class="font-mono">
                 {#if !noscript}
                     <!-- <Icon icon="logos:youtube-icon" class="yt" /> -->
-                    {lazy_preview_title ?? "youtube.com - hover to load"}
+                    {lazy_preview_title ?? "youtube.com - click to play"}
                 {/if}
             </p>
             <noscript>
@@ -129,7 +129,6 @@
         gap: 0.2em;
         width: 100%;
         font-weight: 700;
-        font-family: "JetBrains Mono";
         text-transform: lowercase;
         font-size: 0.75rem;
         letter-spacing: -0.25px;
