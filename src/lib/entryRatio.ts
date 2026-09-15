@@ -74,7 +74,9 @@ export function _entryRatio_attachment(
         }
 
 
-        const visiblity_ratio = rect.top > 0 ? (1 - Math.min(rect.top, winHeight) / winHeight) : (Math.min(rect.bottom, winHeight) / winHeight)
+
+        const top_ratio = 1 - Math.min(rect.top, winHeight) / winHeight;
+        const visiblity_ratio = rect.top > 0 ? top_ratio : (Math.min(rect.bottom, winHeight) / winHeight)
 
         // If rect height is bigger than win height, coverage ratio should work still
         // because the we are not limiting the max limti jere

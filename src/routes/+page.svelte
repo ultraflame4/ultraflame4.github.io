@@ -71,7 +71,7 @@
 </StartBanner>
 <Navbar />
 <BgFadeDiv class="h-64" />
-<section class="lg:grid gap-4 px-8" style="grid-template-columns: 2fr 5fr;">
+<section class="lg:grid gap-4 px-8 pt-16" style="grid-template-columns: 2fr 5fr;">
     <ul class="story-keys">
         {#each data.about_story as [key, story]}
             <li class="story-key" data-active={about_loc == key || undefined}>
@@ -211,7 +211,7 @@
         /*Positioning*/
         @apply ml-auto top-1/3 text-right sticky h-fit;
         /*Styling*/
-        @apply mt-16 rounded-3xl font-fancy text-2xl;
+        @apply rounded-3xl font-fancy text-2xl;
         /*Mobile specific*/
         @media (width < 64rem) {
             @apply acrylic px-4 py-2 top-25 h-fit w-fit;
