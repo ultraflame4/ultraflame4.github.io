@@ -72,8 +72,11 @@ export class CubeBannerScene {
     private isRunning = false;
     private _disposed: boolean = false;
 
-    constructor(w: number, h: number, options: Partial<CubeBannerOptions> = {}) {
-
+    constructor(
+        w: number,
+        h: number,
+        options: Partial<CubeBannerOptions> = {},
+    ) {
         this.options = { ...DEFAULT_OPTIONS, ...options };
 
         this.clock = new THREE.Clock();
@@ -93,10 +96,8 @@ export class CubeBannerScene {
         this.setupCubes();
         this.scene.add(this.parent);
 
-
         this.composer.setSize(w, h);
     }
-
 
     // Attach the scene's canvas to specified parent element
     attach(parent: HTMLElement) {
@@ -125,9 +126,11 @@ export class CubeBannerScene {
 
         this.animationFrameId = requestAnimationFrame(loop);
 
-        this.modeInterval = setInterval(() => {
-            this.counter += 1;
-        }, this.options.modeDuration / this.options.speed);
+        if (this.modeInterval == null) {
+            this.modeInterval = setInterval(() => {
+                this.counter += 1;
+            }, this.options.modeDuration / this.options.speed);
+        }
     }
 
     /** Stop the animation loop without disposing resources. */
@@ -137,15 +140,15 @@ export class CubeBannerScene {
             cancelAnimationFrame(this.animationFrameId);
             this.animationFrameId = null;
         }
-        if (this.modeInterval !== null) {
-            clearInterval(this.modeInterval);
-            this.modeInterval = null;
-        }
+        // if (this.modeInterval !== null) {
+        //     clearInterval(this.modeInterval);
+        //     this.modeInterval = null;
+        // }
     }
 
     /** Fully dispose of all Three.js resources and DOM elements. */
     dispose(): void {
-        this._disposed = true
+        this._disposed = true;
         this.stop();
         this.renderer.domElement.remove();
         this.renderer.dispose();
@@ -165,7 +168,6 @@ export class CubeBannerScene {
         this.camera.aspect = w / h;
         this.camera.updateProjectionMatrix();
     }
-
 
     private setupComposer(): EffectComposer {
         const effect = new ASCIIEffect({
@@ -214,7 +216,10 @@ export class CubeBannerScene {
         const mode = this.counter % 3;
         switch (mode) {
             case 1:
-                this.applyLayoutCubeGrid(this.options.gridGap + 0.2, 10 * delta);
+                this.applyLayoutCubeGrid(
+                    this.options.gridGap + 0.2,
+                    10 * delta,
+                );
                 this.applyIndividualCubeRot(10 * delta);
                 break;
             case 2:
@@ -286,7 +291,10 @@ export class CubeBannerScene {
         }
     }
 
-    private calcCubeGridPositions(n: number, gap = 0): [number, number, number][] {
+    private calcCubeGridPositions(
+        n: number,
+        gap = 0,
+    ): [number, number, number][] {
         const positions: [number, number, number][] = [];
         for (let x = 0; x < n; x++) {
             for (let y = 0; y < n; y++) {

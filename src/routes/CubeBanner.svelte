@@ -2,9 +2,12 @@
     import { onMount } from "svelte";
     import { CubeBannerScene } from "./cube_banner";
     import _ from "lodash";
+    import { entryRatio } from "$lib";
 
+
+    let scene: CubeBannerScene;
     onMount(() => {
-        const scene = new CubeBannerScene(
+        scene = new CubeBannerScene(
             window.innerWidth,
             window.innerHeight,
         );
@@ -27,4 +30,17 @@
     });
 </script>
 
-<div style="margin: 0;" id="cubelandingbanner-bg"></div>
+<div
+    style="margin: 0;"
+    id="cubelandingbanner-bg"
+    {@attach entryRatio({
+        visibleChanged(visible){
+            if (!visible){
+                scene.stop()
+            }
+            else{
+                scene.start()
+            }
+        }
+    })}
+></div>
