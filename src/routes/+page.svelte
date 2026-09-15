@@ -118,7 +118,9 @@
                     id={key}
                 >
                     {#if meta.media[0]}
-                        <div class="h-96 m-4 border-2 border-border hover:border-accent">
+                        <div
+                            class="h-96 m-4 border-2 border-border hover:border-accent"
+                        >
                             <MediaEmbed
                                 media={meta.media[0]}
                                 class="size-full brightness-80 group-hover:brightness-100"
@@ -173,16 +175,19 @@
                         <span
                             class="font-thin font-mono text-xs ml-auto text-sub opacity-60"
                         >
-                            Updated {(
+                            Updated - {(
                                 meta.end_date ?? meta.start_date
-                            )?.toLocaleDateString()}
+                            )?.toLocaleDateString() ?? ""}
                         </span>
                     </footer>
                 </article>
             </SpotlightBackground>
         {/each}
         <SpotlightBackground class="col-span-full p-px">
-            <a class="block py-4 font-fancy size-full bg-background text-xl text-center hover:underline" href={resolve("/gallery")}>
+            <a
+                class="block py-4 font-fancy size-full bg-background text-xl text-center hover:underline"
+                href={resolve("/gallery")}
+            >
                 See More At Gallery
             </a>
         </SpotlightBackground>
