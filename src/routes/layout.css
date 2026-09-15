@@ -239,6 +239,10 @@
     /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
 }
 
+@utility absolute-center{
+    @apply absolute top-1/2 left-1/2 -translate-1/2
+}
+
 @layer utilities {
 
     /*

@@ -6,7 +6,8 @@
     } from "$lib/external/yt_api";
     import { onMount } from "svelte";
     import { load } from "../../routes/+page";
-    // import Icon from "@iconify/svelte";
+    import Icon from "@iconify/svelte";
+    import { derived } from "svelte/store";
 
     interface Props {
         src: string;
@@ -23,17 +24,20 @@
         return `ytplayer-${uniqueId}`;
     }
 
-    let ytIsLoaded = $state(false);
+
+
 
     let noscript = $state(true);
-    let loaded: "loading" | boolean = $state(false);
+    let shouldLoad: boolean | "loaded" = $state(false);
+    let loaded = $state(false);
 
+    // Try to load embed. API may not be available ATP
     function try_load() {
-        if (!ytIsLoaded) return;
-        if (loaded !== false) return;
-        console.log("Refreshing youtube url:" + src);
-        loaded = "loading";
+        shouldLoad = true;
+        if (!window.ytLoaded) return;
+        if (loaded) return;
         createEmbed(videoId, getId());
+        console.log("Created embed for youtube url:" + src);
         loaded = true;
     }
 
@@ -41,7 +45,9 @@
         initYoutubeApi();
 
         const onYtLoaded = () => {
-            ytIsLoaded = true;
+            if (shouldLoad) {
+                try_load();
+            }
         };
 
         window.addEventListener("yt-loaded", onYtLoaded);
@@ -57,20 +63,26 @@
 </script>
 
 <div class="size-full">
-    {#if loaded == false}
+    {#if shouldLoad == false}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div class="lazy-load-cover relative" onclick={try_load}>
+        <button
+            class="lazy-load-cover size-full relative cursor-pointer"
+            onclick={try_load}
+        >
             <img
+                class="size-full object-cover"
                 src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
                 alt={`Thumbnail for youtube video ${src}`}
             />
             <!-- <div class="blur"></div> -->
 
             <!-- <Icon icon="lucide:mouse-pointer-square" class="hover-icon" /> -->
-            <p class="font-mono">
+
+            <Icon icon="logos:youtube-icon" class="text-4xl absolute-center" />
+
+            <p class="font-mono absolute mb-4">
                 {#if !noscript}
-                    <!-- <Icon icon="logos:youtube-icon" class="yt" /> -->
-                    {lazy_preview_title ?? "youtube.com - click to play"}
+                    {lazy_preview_title ?? "youtube.com"}
                 {/if}
             </p>
             <noscript>
@@ -87,39 +99,16 @@
                     <i>Javascript disabled, cannot autoload video.</i>
                 </small>
             </noscript>
-        </div>
+        </button>
     {/if}
 
-    <div class="size-full" class:hidden={loaded == false}>
+    <div class="size-full" class:hidden={shouldLoad == false}>
         <!-- Actual youtube iframe mount targer -->
         <div class="ytplayer size-full" id={getId()}>Loading..</div>
     </div>
 </div>
 
 <style>
-    .lazy-load-cover {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        backdrop-filter: blur(0px);
-        gap: 0.4rem;
-    }
-
-    .lazy-load-cover > img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .lazy-load-cover > .blur {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(3px);
-    }
-
     .lazy-load-cover > p {
         position: absolute;
         bottom: 0;
