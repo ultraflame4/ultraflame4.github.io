@@ -117,7 +117,7 @@
                     id={key}
                 >
                     {#if meta.media[0]}
-                        <div class="h-96 m-4 border-2 border-border">
+                        <div class="h-96 m-4 border-2 border-border hover:border-accent">
                             <MediaEmbed
                                 media={meta.media[0]}
                                 class="size-full brightness-80 group-hover:brightness-100"
