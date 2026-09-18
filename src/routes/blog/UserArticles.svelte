@@ -60,7 +60,7 @@
         <ul class="space-y-4">
             {#each posts as post, idx}
                 <li
-                    class="group data-active:text-bright font-fancy text-sm text-right"
+                    class="group data-active:text-bright font-fancy text-xs sm:text-sm text-right"
                     data-active={idx === selectedArticleIndex || undefined}
                 >
                     <a href={post.href} class="flex flex-col">
