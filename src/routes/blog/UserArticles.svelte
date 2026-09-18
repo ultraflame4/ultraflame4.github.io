@@ -41,14 +41,21 @@
 </script>
 
 <section
-    class="bg-background w-full p-4 pt-(--header-spacing) min-h-svh lg:grid gap-x-6"
+    class="bg-background w-full pt-(--header-spacing) min-h-svh grid gap-x-4 lg:gap-x-6"
     style="grid-template-columns: 1fr 3fr;"
     id="blog-posts"
 >
     <aside class="top-(--nav-height-units) sticky h-fit text-right">
-        <h2 class="text-3xl font-fancy">Recent Posts</h2>
-        <p class="text-dimmed text-xs font-mono font lowercase mb-4">
-            view all posts at <a href="https://dev.to/clyh" class="hover:underline hover:text-bright">[dev.to/clyh]</a>
+        <h2 class="text-sm mt-8 sm:text-xl md:text-2xl lg:text-3xl font-fancy">
+            Recent Posts
+        </h2>
+        <p
+            class="text-dimmed text-tiny sm:text-xs font-mono font lowercase mb-4"
+        >
+            view all posts at <a
+                href="https://dev.to/clyh"
+                class="hover:underline hover:text-bright">[dev.to/clyh]</a
+            >
         </p>
         <ul class="space-y-4">
             {#each posts as post, idx}
@@ -58,12 +65,12 @@
                 >
                     <a href={post.href} class="flex flex-col">
                         <h3
-                            class="my-0 group-data-active:opacity-100 opacity-60 group-data-active:scale-120 origin-right"
+                            class="my-0 group-data-active:opacity-100 opacity-60 lg:group-data-active:scale-120 origin-right"
                         >
                             {post.title}
                         </h3>
                         <span
-                            class="text-xs text-dimmed font-mono tracking-wider"
+                            class="text-tiny sm:text-xs text-dimmed font-mono tracking-wider"
                         >
                             {post.createdAt}
                         </span>
