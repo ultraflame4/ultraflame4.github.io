@@ -1,15 +1,16 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
     import { resolve } from "$app/paths";
-    import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
-    import Navbar from "$lib/blocks/Navbar.svelte";
-    import StartBanner from "$lib/blocks/StartBanner.svelte";
-    import MediaEmbed from "$lib/components/MediaEmbed.svelte";
-    import { TextTyper } from "$lib/components/others/typewriter";
-    import Typewriter from "$lib/components/others/Typewriter.svelte";
-    import SpotlightBackground from "$lib/components/SpotlightBackground.svelte";
+    import { BgFadeDiv, Navbar, StartBanner } from "$lib/blocks";
+    import { TextTyper, Typewriter } from "$lib/components/others/typewriter";
+
+    import {
+        AnimatedBanner,
+        SpotlightBackground,
+        MediaEmbed,
+    } from "$lib/components";
     import { entryRatio } from "$lib/entryRatio.js";
-    import CubeBanner from "./CubeBanner.svelte";
+    import { CubeBannerScene } from "./cube_banner";
     const delay = 400;
 
     const { data } = $props();
@@ -51,7 +52,7 @@
 
 <StartBanner>
     {#snippet background()}
-        <CubeBanner />
+        <AnimatedBanner init={(w, h) => new CubeBannerScene(w, h)} />
     {/snippet}
     {#snippet children()}
         <div
@@ -71,7 +72,10 @@
 </StartBanner>
 <Navbar />
 <BgFadeDiv class="h-64" />
-<section class="lg:grid gap-4 px-8 pt-16" style="grid-template-columns: 2fr 5fr;">
+<section
+    class="lg:grid gap-4 px-8 pt-16"
+    style="grid-template-columns: 2fr 5fr;"
+>
     <ul class="story-keys">
         {#each data.about_story as [key, story]}
             <li class="story-key" data-active={about_loc == key || undefined}>
@@ -168,8 +172,7 @@
                             class="font-fancy group"
                             href={resolve("/gallery/" + key)}
                         >
-                            [<span class="hover:underline">READ MORE</span
-                            >]
+                            [<span class="hover:underline">READ MORE</span>]
                         </a>
                         <span
                             class="font-thin font-mono text-xs ml-auto text-sub opacity-60"

@@ -1,3 +1,4 @@
+export { default as Typewriter } from "./Typewriter.svelte";
 
 export type TypeTextOp = {
     ty: "type";

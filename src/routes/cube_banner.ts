@@ -7,6 +7,7 @@ import {
 } from "postprocessing";
 
 import * as THREE from "three";
+import type { AnimatedBannerScene } from "$lib/components/animated_banner";
 
 export interface CubeBannerOptions {
     /** Animation speed multiplier. Default: 1 */
@@ -53,7 +54,7 @@ const DEFAULT_OPTIONS: CubeBannerOptions = {
     modeDuration: 4000,
 };
 
-export class CubeBannerScene {
+export class CubeBannerScene implements AnimatedBannerScene {
     private options: CubeBannerOptions;
 
     private clock: THREE.Clock;
@@ -98,6 +99,7 @@ export class CubeBannerScene {
 
         this.composer.setSize(w, h);
     }
+
 
     // Attach the scene's canvas to specified parent element
     attach(parent: HTMLElement) {

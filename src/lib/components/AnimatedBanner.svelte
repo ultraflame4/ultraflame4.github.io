@@ -1,16 +1,19 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { CubeBannerScene } from "./cube_banner";
     import _ from "lodash";
     import { entryRatio } from "$lib";
+    import type { AnimatedBannerScene } from "./animated_banner";
 
+    interface Props {
+        /** Create the scene with the specified width and height. */
+        init(w: number, h: number): AnimatedBannerScene;
+    }
 
-    let scene: CubeBannerScene;
+    let props: Props = $props();
+
+    let scene: AnimatedBannerScene;
     onMount(() => {
-        scene = new CubeBannerScene(
-            window.innerWidth,
-            window.innerHeight,
-        );
+        scene = props.init(window.innerWidth, window.innerHeight);
         scene.attach(document.getElementById("cubelandingbanner-bg")!);
 
         const on_resize = _.debounce(
@@ -34,13 +37,12 @@
     style="margin: 0;"
     id="cubelandingbanner-bg"
     {@attach entryRatio({
-        visibleChanged(visible){
-            if (!visible){
-                scene.stop()
+        visibleChanged(visible) {
+            if (!visible) {
+                scene.stop();
+            } else {
+                scene.start();
             }
-            else{
-                scene.start()
-            }
-        }
+        },
     })}
 ></div>
