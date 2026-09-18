@@ -3,7 +3,7 @@
     import UserArticleContent from "./UserArticleContent.svelte";
     import { browser } from "$app/environment";
     import { onMount } from "svelte";
-    import { derived } from "svelte/store";
+    import Icon from "@iconify/svelte";
     import SpotlightBackground from "$lib/components/SpotlightBackground.svelte";
 
     export interface Props {
@@ -38,19 +38,38 @@
         articles = await devto.articles.search(username);
         loading = false;
     });
+
+    let sidebarOpen = $state(false);
 </script>
 
 <section
-    class="bg-background w-full pt-(--header-spacing) min-h-svh grid gap-x-4 lg:gap-x-6"
+    class="bg-background w-full pt-(--header-spacing) min-h-svh grid gap-x-4 lg:gap-x-6 relative"
     style="grid-template-columns: 1fr 3fr;"
     id="blog-posts"
+    data-open={sidebarOpen || undefined}
 >
-    <aside class="top-(--nav-height-units) sticky h-fit text-right max-md:hidden">
-        <h2 class="text-sm mt-8 sm:text-xl md:text-2xl lg:text-3xl font-fancy">
+    <!-- Mobile only header -->
+    <h2 class="md:hidden text-3xl font-fancy row-start-1 col-span-full">
+        Recent Posts
+    </h2>
+
+    <button
+        class="md:hidden cursor-pointer acrylic nav-h aspect-square rounded-3xl
+        flex items-center justify-center sticky top-(--nav-offset-units) z-40
+        row-start-1 col-span-full ml-auto"
+        onclick={() => (sidebarOpen = !sidebarOpen)}
+    >
+        <Icon icon={sidebarOpen ? "lucide:x" : "lucide:menu"} />
+    </button>
+
+    <aside
+        class="top-(--nav-height-units) sticky h-fit text-right bg-background mobile-sidebar"
+    >
+        <h2 class="mt-8 text-2xl lg:text-3xl font-fancy">
             Recent Posts
         </h2>
         <p
-            class="text-dimmed text-tiny sm:text-xs font-mono font lowercase mb-4"
+            class="text-dimmed text-xs font-mono font lowercase mb-4 mt-2"
         >
             view all posts at <a
                 href="https://dev.to/clyh"
@@ -60,17 +79,21 @@
         <ul class="space-y-4">
             {#each posts as post, idx}
                 <li
-                    class="group data-active:text-bright font-fancy text-xs sm:text-sm text-right"
+                    class="group data-active:text-bright font-fancy text-basetext-right"
                     data-active={idx === selectedArticleIndex || undefined}
                 >
-                    <a href={post.href} class="flex flex-col">
+                    <a
+                        href={post.href}
+                        class="flex flex-col"
+                        onclick={() => (sidebarOpen = false)}
+                    >
                         <h3
                             class="my-0 group-data-active:opacity-100 opacity-60 lg:group-data-active:scale-120 origin-right"
                         >
                             {post.title}
                         </h3>
                         <span
-                            class="text-tiny sm:text-xs text-dimmed font-mono tracking-wider"
+                            class="text-xs text-dimmed font-mono tracking-wider"
                         >
                             {post.createdAt}
                         </span>
@@ -80,7 +103,9 @@
         </ul>
     </aside>
 
-    <div class="w-full h-full py-4 overflow-hidden max-md:col-span-full">
+    <div
+        class="w-full h-full py-4 overflow-hidden max-md:col-span-full max-md:row-start-2"
+    >
         {#if loading}
             <p class="font-mono">Loading articles...</p>
         {:else if selectedArticleIndex < 0}
@@ -104,3 +129,17 @@
         {/if}
     </div>
 </section>
+
+<style>
+    @reference "../layout.css";
+    @media (width < 48rem) {
+        .mobile-sidebar {
+            /*Mobile specific*/
+
+            @apply row-start-2 col-span-full sticky top-0 w-2/3 translate-x-[-150%] h-dvh pt-(--nav-total-h-units) pr-6 z-10 border border-border;
+        }
+        [data-open] .mobile-sidebar {
+            @apply translate-x-0;
+        }
+    }
+</style>

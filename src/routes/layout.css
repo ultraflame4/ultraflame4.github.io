@@ -89,8 +89,8 @@
         @apply text-fg;
     }
 
-        body,
-        section {
+    body,
+    section {
         @apply bg-background;
     }
 
@@ -232,10 +232,10 @@
 /*A Spacer that pushes content down to avoid the nav bar*/
 @utility nav-h-spacer {
     height: var(--nav-total-h-units);
-    }
-    
-    /*Sets height to nav height*/
-    @utility nav-h {
+}
+
+/*Sets height to nav height*/
+@utility nav-h {
     height: var(--nav-height-units);
 }
 
