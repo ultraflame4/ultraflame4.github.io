@@ -6,9 +6,11 @@
         children?: Snippet;
         background?: Snippet;
         overlay?: Snippet;
+        /** Enables flex centering for the content (children) */
+        flexCenter?: boolean;
     }
 
-    const { children, background, overlay }: Props = $props();
+    const { children, background, overlay, ...props }: Props = $props();
 </script>
 
 <div class="banner relative" {@attach entryRatio()}>
@@ -18,7 +20,7 @@
     >
         {@render background?.()}
     </div>
-    <div class="content">
+    <div class="content flex-col items-center justify-center" class:flex={props.flexCenter}>
         {@render children?.()}
     </div>
     <div class="content pointer-events-none">
