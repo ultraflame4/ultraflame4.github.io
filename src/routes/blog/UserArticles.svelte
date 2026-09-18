@@ -45,7 +45,7 @@
     style="grid-template-columns: 1fr 3fr;"
     id="blog-posts"
 >
-    <aside class="top-(--nav-height-units) sticky h-fit text-right">
+    <aside class="top-(--nav-height-units) sticky h-fit text-right max-md:hidden">
         <h2 class="text-sm mt-8 sm:text-xl md:text-2xl lg:text-3xl font-fancy">
             Recent Posts
         </h2>
@@ -80,7 +80,7 @@
         </ul>
     </aside>
 
-    <div class="max-w-350 w-full h-full py-4">
+    <div class="w-full h-full py-4 overflow-hidden max-md:col-span-full">
         {#if loading}
             <p class="font-mono">Loading articles...</p>
         {:else if selectedArticleIndex < 0}
@@ -88,9 +88,9 @@
         {:else}
             <!-- WindowBook: sections={bookSections} title="Recent Posts" sidebar_heading="Log Entries" sticky_sidebar sidebar_class="min-w-64" onsection-change={updateArticle} -->
             <!-- WindowCardPanel class="overflow-auto" -->
-            <article id="content">
+            <article id="content" class="w-full">
                 <div class="nav-h-spacer mb-8"></div>
-                <SpotlightBackground class="size-fit p-px rounded-2xl">
+                <SpotlightBackground class="h-fit w-full p-px rounded-2xl">
                     <div class="p-6 flex flex-col bg-background rounded-2xl">
                         <UserArticleContent
                             articleBrief={selectedArticle}
