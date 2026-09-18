@@ -231,6 +231,11 @@
 
 /*A Spacer that pushes content down to avoid the nav bar*/
 @utility nav-h-spacer {
+    height: var(--nav-total-h-units);
+    }
+    
+    /*Sets height to nav height*/
+    @utility nav-h {
     height: var(--nav-height-units);
 }
 
@@ -261,12 +266,6 @@
         }
     }
 
-    /*
-    * Total height of the nav header. Useful for applying to spacers
-    */
-    .nav-h {
-        height: var(--nav-total-h-units);
-    }
 
     .font-fancy {
         letter-spacing: -1.5px;
