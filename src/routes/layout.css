@@ -88,7 +88,8 @@
         @apply text-fg;
     }
 
-    body, section {
+        body,
+        section {
         @apply bg-background;
     }
 
@@ -227,6 +228,10 @@
 
 }
 
+/*A Spacer that pushes content down to avoid the nav bar*/
+@utility nav-h-spacer {
+    height: var(--nav-height-units);
+}
 @utility acrylic {
     background: rgba(80, 80, 100, 0.1);
     backdrop-filter: blur(3.5px) brightness(80%);
@@ -239,7 +244,7 @@
     /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
 }
 
-@utility absolute-center{
+@utility absolute-center {
     @apply absolute top-1/2 left-1/2 -translate-1/2
 }
 
