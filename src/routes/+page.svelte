@@ -168,7 +168,7 @@
                             class="font-fancy group"
                             href={resolve("/gallery/" + key)}
                         >
-                            [<span class="group-hover:underline">READ MORE</span
+                            [<span class="hover:underline">READ MORE</span
                             >]
                         </a>
                         <span
