@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { FuseWorker } from "fuse.js/worker";
     import { CubeBannerScene } from "../cube_banner";
     import { BgFadeDiv, Navbar, StartBanner } from "$lib/blocks";
 
@@ -17,6 +18,25 @@
         .wait(1500)
         .seq("Collection of all my projects")
         .build();
+
+    let search_filter = $state("");
+
+    let listing = $state(data.projects);
+
+    const fuse = $derived(
+        new FuseWorker(data.projects, {
+            keys: ["meta.title", "meta.status", "md", "meta.skills"],
+        }),
+    );
+    async function filter_projects() {
+        const query = search_filter;
+        if (query.length == 0) {
+            listing = data.projects;
+            return;
+        }
+        const result = await fuse.search(query);
+        listing = result.map((x) => x.item);
+    }
 </script>
 
 <StartBanner flexCenter>
@@ -43,21 +63,32 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 
-<section class="px-2 xl:px-4 py-32 space-y-8">
+<section class="px-2 xl:px-4 py-32 space-y-8 min-h-screen">
     <div
         class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-8 xl:px-8 max-w-340 mx-auto"
     >
-        <SpotlightBackground class="w-full col-span-full p-px flex gap-px font-fancy">
-            <div class="bg-background aspect-square flex items-center justify-center">
-                <Icon icon="material-symbols:location-searching"></Icon>
-            </div>
-            <input
-                placeholder="Title, Description Tags"
-                class="p-4 bg-background grow"
-            />
-            <button class="bg-background px-6 p-4 btn"> Search </button>
-        </SpotlightBackground>
-        {#each data.projects as project}
+        <form
+            class="w-full col-span-full"
+            onsubmit={(e) => {
+                e.preventDefault();
+                filter_projects();
+            }}
+        >
+            <SpotlightBackground class="size-full p-px flex gap-px font-fancy">
+                <div
+                    class="bg-background aspect-square flex items-center justify-center"
+                >
+                    <Icon icon="material-symbols:location-searching"></Icon>
+                </div>
+                <input
+                    placeholder="Title, Description, Tags"
+                    class="p-4 bg-background grow"
+                    bind:value={search_filter}
+                />
+                <button class="bg-background px-6 p-4 btn"> Search </button>
+            </SpotlightBackground>
+        </form>
+        {#each listing as project}
             <ProjectCard
                 {...project}
                 class="max-w-124 mx-auto xs:max-w-full "

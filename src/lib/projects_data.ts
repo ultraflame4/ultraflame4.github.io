@@ -209,6 +209,7 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema): Normal
 export interface ProjectData {
     key: string
     html: string
+    md: string
     meta: NormalisedProjectMeta
 }
 
@@ -229,6 +230,7 @@ export async function readProjectsData(limit?: number) {
             return {
                 key,
                 html: rendered.value as string,
+                md: v,
                 meta
             } as ProjectData
         })
