@@ -1,6 +1,7 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
     import { asset, resolve } from "$app/paths";
+    import { page } from "$app/state";
 
     interface Props {
         current_section?: string;
@@ -26,6 +27,11 @@
             goto(link.href);
         }
     }
+
+    function isCurrent(href: string) {
+        const href_path = new URL(href, page.url.origin).pathname;
+        return page.url.pathname == href_path;
+    }
 </script>
 
 <svelte:window onkeydown={handleShortcuts} />
@@ -33,13 +39,14 @@
     <a
         href={url}
         class="h-full glow font-fancy relative flex items-center gap-1.5 mr-1"
+        data-active={isCurrent(url)}
         data-shortcutkey={`${index}`}
     >
         <span
             class="inline-flex items-center justify-center font-mono text-xs bg-background size-4 ring ring-black rounded-sm"
             >{index}</span
         >
-        <span>{name}</span>
+        <span class="nav-link-text">{name}</span>
     </a>
 {/snippet}
 
@@ -65,3 +72,10 @@
         {/each}
     </nav>
 </header>
+
+<style>
+    [data-active="true"] .nav-link-text{
+        filter: drop-shadow(0px 0px 2px var(--color-rainbow));
+        /* @apply text-dimmed; */
+    }
+</style>
