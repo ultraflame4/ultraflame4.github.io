@@ -69,12 +69,28 @@
                 </FancyLink>
                 {#if meta.source !== undefined}
                     <FancyLink href={meta.source.url} class="pr-4">
-                        <Icon icon="mdi:source-branch"  />
+                        <Icon icon="mdi:source-branch" />
                         {meta.source.label}
                     </FancyLink>
                 {/if}
+                <div class="mx-auto"></div>
                 <p
-                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs ml-auto text-sub bg-background"
+                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background"
+                >
+                    Status -
+                    <span
+                        class="mx-2
+                         data-[status=completed]:text-green-500
+                         data-[status=inactive]:text-dimmed-400
+                         data-status:text-red-400
+                         "
+                        data-status={meta.status}
+                    >
+                        {meta.status.toLocaleUpperCase()}
+                    </span>
+                </p>
+                <p
+                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background"
                 >
                     Updated - {(
                         meta.end_date ?? meta.start_date
