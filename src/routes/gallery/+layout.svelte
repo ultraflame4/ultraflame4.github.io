@@ -15,7 +15,9 @@
         .build();
 
     
-	let { children } = $props();
+	let { children, data } = $props();
+
+	let navbar_label = $derived(data.project_id)
 </script>
 
 <StartBanner flexCenter>
@@ -39,7 +41,7 @@
         </div>
     {/snippet}
 </StartBanner>
-<Navbar />
+<Navbar label={navbar_label} />
 <BgFadeDiv class="h-64" />
 {@render children()}
 

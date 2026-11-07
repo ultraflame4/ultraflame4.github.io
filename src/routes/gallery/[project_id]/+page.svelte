@@ -1,11 +1,10 @@
 <script>
     import { resolve } from "$app/paths";
-    import { BgFadeDiv, Navbar } from "$lib/blocks";
+    
     import { MediaEmbed, SpotlightBackground } from "$lib/components";
     import FancyLink from "$lib/components/FancyLink.svelte";
     import Icon from "@iconify/svelte";
-    import { cn } from "cn";
-    import { onMount } from "svelte";
+    
 
     const { data } = $props();
 

@@ -4,7 +4,7 @@
     import { page } from "$app/state";
 
     interface Props {
-        current_section?: string;
+        label?: string;
     }
     const props: Props = $props();
 
@@ -29,8 +29,15 @@
     }
 
     function isCurrent(href: string) {
-        const href_path = new URL(href, page.url.origin).pathname;
-        return page.url.pathname == href_path;
+        let href_path = new URL(href, page.url.origin).pathname;
+        if (href_path.endsWith("/")){
+            href_path=href_path.slice(0,-1)
+        }
+
+        if (href_path == import.meta.env.BASE_URL){
+            return page.url.pathname == href_path
+        }
+        return page.url.pathname.startsWith(href_path);
     }
 </script>
 
@@ -55,6 +62,7 @@
 >
     <nav
         class="acrylic h-(--nav-height-units) rounded-2xl min-w-32 w-fit p-2 flex items-center gap-3"
+        
     >
         <a
             href={import.meta.env.BASE_URL}
@@ -63,8 +71,8 @@
         >
             <img class="h-full" src={asset("/brand.png")} alt="clyh.me" />
         </a>
-        {#if props.current_section !== undefined}
-            <span class="font-fancy text-sm">/{props.current_section}</span>
+        {#if props.label !== undefined}
+            <span class="font-fancy max-sm:hidden md:mr-8 lg:mr-32">/{props.label}</span>
         {/if}
 
         {#each Object.entries(links) as [name, url], idx}
