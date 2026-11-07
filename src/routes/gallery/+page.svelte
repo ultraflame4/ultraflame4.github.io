@@ -30,7 +30,7 @@
 
 <section class="px-2 xl:px-4 py-32 space-y-8 min-h-screen">
     <div
-        class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-8 xl:px-8 max-w-340 mx-auto"
+        class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-8 xl:px-8 max-w-340 mx-auto"
     >
         <form
             class="w-full col-span-full"
