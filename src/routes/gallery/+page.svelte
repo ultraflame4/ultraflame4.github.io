@@ -4,7 +4,7 @@
 
     import { AnimatedBanner } from "$lib/components";
     import { TextTyper, Typewriter } from "$lib/components/others/typewriter";
-    import ProjectCard from "$lib/components/ProjectCard.svelte";
+    import GalleryCard from "./GalleryCard.svelte";
 
     const { data } = $props();
     const title = new TextTyper()
@@ -42,10 +42,10 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 
-<section class="px-4">
-    <div class="grid gap-4 grid-cols-2 lg:grid-cols-3 py-32 px-8 xl:px-32">
+<section class="px-2 xl:px-4">
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-32 lg:px-8 xl:px-8 max-w-340 mx-auto">
         {#each data.projects as project}
-            <ProjectCard {...project}  />
+            <GalleryCard {...project} class="max-w-124 mx-auto xs:max-w-full" />
         {/each}
     </div>
 </section>

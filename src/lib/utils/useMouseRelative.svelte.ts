@@ -1,5 +1,9 @@
-export function useMouseRelative(getTarget: () => HTMLElement | undefined) {
+export function useMouseRelative(getTarget: () => HTMLElement | undefined, disabled?: boolean) {
     let state = $state({ xPercent: 0, yPercent: 0 });
+
+    if (disabled) {
+        return state
+    }
 
     $effect(() => {
         function handleMove(e: MouseEvent) {

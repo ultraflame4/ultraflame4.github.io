@@ -8,10 +8,12 @@
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import { resolve } from "$app/paths";
     import { cn } from "cn";
+    import { useMouseRelative } from "$lib";
 
-    type Props = ProjectData & ElementProps 
+    export type Props = ProjectData & ElementProps 
 
     const { key: anchor_id, meta, html: content, class: class_, ...props }: Props = $props();
+
 </script>
 
 <SpotlightBackground class={cn("p-px min-h-128", class_)} {...props}>
