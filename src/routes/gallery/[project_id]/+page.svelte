@@ -1,25 +1,20 @@
 <script>
     import { resolve } from "$app/paths";
-    
+
     import { MediaEmbed, SpotlightBackground } from "$lib/components";
     import FancyLink from "$lib/components/FancyLink.svelte";
     import Icon from "@iconify/svelte";
-    
 
     const { data } = $props();
 
     const { key, meta, html: content } = data.project;
 </script>
 
-<section class="min-page-h p-16">
-    <SpotlightBackground class="p-px h-full">
-        <article
-            class="h-full bg-background grid relative"
-            style="grid-template-columns: 3fr 4fr; grid-template-rows: auto auto 1fr auto;"
-            id="view"
-        >
+<section class="min-page-h flex items-center py-16 px-4 md:p-8 lg:px-16">
+    <SpotlightBackground class="p-px h-fit">
+        <article class="h-fit bg-background grid relative bg-stripes" id="view">
             <h1
-                class="pl-6 py-2 font-fancy text-5xl my-4"
+                class="pl-6 py-2 font-fancy text-5xl my-4 "
                 style="letter-spacing: -3px;"
             >
                 {meta.title ?? key}
@@ -36,13 +31,13 @@
                 {/each}
             </ul>
             <div
-                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base col-1"
+                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base "
             >
                 {@html content}
             </div>
 
-            <div class="row-span-full col-2 py-4 z-10">
-                <ul class="px-4 flex gap-1 row-1 col-2">
+            <div class="row-span-full py-4 z-10 lg:col-2">
+                <ul class="px-4 flex gap-1">
                     {#each meta.skills as skill}
                         <li
                             class="font-mono text-dimmed uppercase font-semibold text-xs border border-border py-1 px-2 bg-background"
@@ -74,7 +69,8 @@
                 {/if}
                 <div class="mx-auto"></div>
                 <p
-                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background"
+                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background "
+                    
                 >
                     Status -
                     <span
@@ -96,9 +92,7 @@
                     )?.toLocaleDateString() ?? ""}
                 </p>
             </footer>
-            <div
-                class="bg-stripes absolute right-0 top-0 bottom-0 left-3/7"
-            ></div>
+            
         </article>
     </SpotlightBackground>
 </section>
@@ -110,7 +104,19 @@
             var(--color-border) 0px,
             var(--color-border) 1px,
             transparent 1px,
-            transparent 1rem
+            transparent 20px
         );
+    }
+
+    article {
+        grid-template-columns: 3fr 4fr;
+        grid-template-rows: auto auto 1fr auto;
+
+        /*Mobile specific*/
+        @media (width < 72rem) {
+            display: flex;
+            flex-direction: column;
+
+        }
     }
 </style>
