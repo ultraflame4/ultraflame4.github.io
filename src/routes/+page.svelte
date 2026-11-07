@@ -96,7 +96,7 @@
                 })}
             >
                 <!-- IMPORTANT! 
-                second div needed, we do CSS transforms on the dic so that it does not affect the 
+                second div needed, we do CSS transforms on the div so that it does not affect the 
                 RECT of the article which entryRatio is on. 
                 (entryRatio will pick up on the CSS transformation also) -->
                 <div class="story-article">
