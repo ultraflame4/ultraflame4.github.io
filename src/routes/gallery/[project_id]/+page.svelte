@@ -19,7 +19,7 @@
             >
                 {meta.title ?? key}
             </h1>
-            <ul class="pl-6 items-center flex gap-1 bg-background">
+            <ul class="pl-6 items-center flex gap-1">
                 {#each meta.links as link}
                     <li
                         class="font-mono text-dimmed uppercase font-bold text-base"
