@@ -235,8 +235,8 @@
         --translate: translate(0, var(--offset));
         --rotate: calc(var(--inverted) * 35deg);
         opacity: calc(pow(var(--v), 2));
-        transform-origin: right;
-        transform: var(--translate) rotateY(var(--rotate)) rotateX( calc(var(--rotate) * -1));
+        transform-origin: bottom right;
+        transform: var(--translate) rotateY(var(--rotate)) rotateX(calc(var(--rotate) * -1));
     }
     article:last-child > .story-article {
         --translate: translate(0, 0);
