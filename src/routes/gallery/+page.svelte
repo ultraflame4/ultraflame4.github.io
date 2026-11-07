@@ -2,9 +2,10 @@
     import { CubeBannerScene } from "../cube_banner";
     import { BgFadeDiv, Navbar, StartBanner } from "$lib/blocks";
 
-    import { AnimatedBanner } from "$lib/components";
+    import { AnimatedBanner, SpotlightBackground } from "$lib/components";
     import { TextTyper, Typewriter } from "$lib/components/others/typewriter";
-    import GalleryCard from "./GalleryCard.svelte";
+    import ProjectCard from "$lib/components/ProjectCard.svelte";
+    import Icon from "@iconify/svelte";
 
     const { data } = $props();
     const title = new TextTyper()
@@ -42,10 +43,25 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 
-<section class="px-2 xl:px-4">
-    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-32 lg:px-8 xl:px-8 max-w-340 mx-auto">
+<section class="px-2 xl:px-4 py-32 space-y-8">
+    <div
+        class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:px-8 xl:px-8 max-w-340 mx-auto"
+    >
+        <SpotlightBackground class="w-full col-span-full p-px flex gap-px font-fancy">
+            <div class="bg-background aspect-square flex items-center justify-center">
+                <Icon icon="material-symbols:location-searching"></Icon>
+            </div>
+            <input
+                placeholder="Title, Description Tags"
+                class="p-4 bg-background grow"
+            />
+            <button class="bg-background px-6 p-4 btn"> Search </button>
+        </SpotlightBackground>
         {#each data.projects as project}
-            <GalleryCard {...project} class="max-w-124 mx-auto xs:max-w-full" />
+            <ProjectCard
+                {...project}
+                class="max-w-124 mx-auto xs:max-w-full "
+            />
         {/each}
     </div>
 </section>

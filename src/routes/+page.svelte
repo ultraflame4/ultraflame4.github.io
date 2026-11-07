@@ -125,7 +125,7 @@
         {/each}
         <SpotlightBackground class="col-span-full p-px">
             <a
-                class="block py-4 font-fancy size-full bg-background text-xl text-center hover:underline hover:bg-accent hover:text-background"
+                class="block py-4 font-fancy size-full bg-background text-xl text-center btn"
                 href={resolve("/gallery")}
             >
                 See More At Gallery
@@ -136,7 +136,7 @@
 
 <SpotlightBackground class="p-px size-fit mx-auto">
     <button
-        class="bg-background px-8 py-4 font-fancy text-lg cursor-pointer"
+        class="bg-background px-8 py-4 font-fancy text-lg btn"
         onclick={() => window.scrollTo({ top: 0 })}
     >
         Back to top
