@@ -224,15 +224,30 @@ export async function readProjectsData(limit?: number) {
 
     const promises = Object.entries(projects_content)
         .slice(0, limit)
-        .map(async ([key, v]) => {
-            const rendered = await render_md(v)
-            const meta = normaliseProjectData(rendered.data.matter as any)
-            return {
-                key,
-                html: rendered.value as string,
-                md: v,
-                meta
-            } as ProjectData
-        })
+        .map(([key, v]) => createProjectData(v, key))
     return await Promise.all(promises)
+}
+
+
+/**
+ * Read a single project (frontmatter) in the data/projects folder.
+ *
+ * @param limit Limit the number of results. //TODO sort by date
+ * @returns
+ */
+export async function readProject(project_id: string) {
+    const projects_content = readContent("projects")
+    return await createProjectData(projects_content[project_id], project_id)
+}
+export async function createProjectData(project_md: string, key: string) {
+    const rendered = await render_md(project_md)
+    const meta = normaliseProjectData(rendered.data.matter as any)
+    return {
+        key,
+        html: rendered.value as string,
+        md: project_md,
+        meta
+    } as ProjectData
+
+
 }

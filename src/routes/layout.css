@@ -245,6 +245,10 @@
     height: var(--nav-height-units);
 }
 
+/*The minimum height of the page content (excluding navbar) This is effectively 100vh - navbar total height*/
+@utility min-page-h {
+    height: calc(100svh - var(--nav-total-h-units));
+}
 @utility acrylic {
     background: rgba(80, 80, 100, 0.1);
     backdrop-filter: blur(3.5px) brightness(80%);

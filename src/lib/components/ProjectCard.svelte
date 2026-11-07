@@ -32,7 +32,7 @@
         <ul class="px-4 flex gap-1">
             {#each meta.skills as skill}
                 <li
-                    class="font-mono text-dimmed uppercase font-thin text-[0.6rem] border border-border py-1 px-2"
+                    class="font-mono text-dimmed uppercase font-thin text-tiny border border-border py-1 px-2"
                 >
                     {skill}
                 </li>
@@ -59,7 +59,7 @@
         <!-- Spacer -->
         <div class="h-13"></div>
         <footer class="absolute bottom-4 w-full flex px-4 items-center">
-            <a class="font-fancy group" href={resolve("/gallery/" + anchor_id)}>
+            <a class="font-fancy group" href={resolve(`/gallery/${anchor_id}#view`)}>
                 [<span class="hover:underline">SEE MORE</span>]
             </a>
             <span
