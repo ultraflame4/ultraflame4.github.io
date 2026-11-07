@@ -143,7 +143,6 @@
     </button>
 </SpotlightBackground>
 
-<div class="h-1000"></div>
 
 <style>
     @reference "./layout.css";
