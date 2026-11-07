@@ -95,6 +95,10 @@
                     onVisible: () => updateAboutLoc(key),
                 })}
             >
+                <!-- IMPORTANT! 
+                second div needed, we do CSS transforms on the dic so that it does not affect the 
+                RECT of the article which entryRatio is on. 
+                (entryRatio will pick up on the CSS transformation also) -->
                 <div class="story-article">
                     <SpotlightBackground class="rounded-3xl p-px">
                         <div
