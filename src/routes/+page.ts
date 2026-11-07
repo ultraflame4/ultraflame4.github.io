@@ -11,7 +11,7 @@ export const load: PageLoad = async (e) => {
         return [k, (await render_md(v)).value] as [string, string];
     })
     const about_story = await Promise.all(promises)
-    const recent_works = readProjectsData(6);
+    const recent_works = await readProjectsData(6);
 
     return {
         ...parent,

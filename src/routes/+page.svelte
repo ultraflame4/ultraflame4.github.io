@@ -48,6 +48,8 @@
     function updateAboutLoc(loc?: string) {
         about_loc = loc;
     }
+
+
 </script>
 
 <StartBanner>
@@ -109,7 +111,7 @@
     </div>
 </section>
 <section id="recent-works">
-    <div class="grid grid-cols-2 lg:grid-cols-3 p-8 xl:p-32">
+    <div class="grid grid-cols-2 lg:grid-cols-3 py-32 px-8 xl:px-32">
         <SpotlightBackground class="col-span-full p-px">
             <h2 class="font-fancy bg-background text-2xl text-center py-4">
                 Recent Works
