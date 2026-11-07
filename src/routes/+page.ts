@@ -7,10 +7,10 @@ const projects_content = readContent("projects");
 
 export const load: PageLoad = async (e) => {
     const parent = await e.parent();
-    const about_story = Object.entries(about_content).map(([k, v]) => {
-        return [k, render_md(v).value] as [string, string];
-    });
-
+    const promises = Object.entries(about_content).map(async ([k, v]) => {
+        return [k, (await render_md(v)).value] as [string, string];
+    })
+    const about_story = await Promise.all(promises)
     const recent_works = readProjectsData(6);
 
     return {

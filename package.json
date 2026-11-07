@@ -27,10 +27,12 @@
 		"tsx": "^4.23.13",
 		"typescript": "^6.0.3",
 		"typescript-json-schema": "^0.68.0",
+		"vfile": "^6.0.3",
 		"vite": "^8.0.16"
 	},
 	"dependencies": {
 		"@fontsource/silkscreen": "^5.3.0",
+		"@shikijs/rehype": "^4.6.0",
 		"cn": "^0.3.0",
 		"lodash": "^4.0.8",
 		"mdast": "^2.3.2",
@@ -42,6 +44,7 @@
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.2",
 		"remark-stringify": "^11.0.0",
+		"shiki": "^4.6.0",
 		"svelte-intersection-observer": "^2.2.0",
 		"three": "^0.186.0",
 		"unified": "^11.0.5",

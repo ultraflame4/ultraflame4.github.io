@@ -10,6 +10,8 @@ import rehypeStringify from 'rehype-stringify';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
 import { matter } from 'vfile-matter';
+import rehypeShiki from '@shikijs/rehype'
+import { createHighlighter } from 'shiki';
 
 
 
@@ -47,14 +49,37 @@ export const remarkExtractFrontmatter: unified.Plugin<void[], mdast.Root> = () =
     }
 }
 
-export function render_md(content: string) {
+
+export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
+    return (tree, file) => {
+        visit(tree, "code", (node) => {
+            console.log(node.lang, node.meta)
+            node.meta
+            node.data = {
+                hProperties: {
+                    "data-lang": node.lang
+                }
+            }
+        })
+    }
+}
+
+
+
+
+export async function render_md(content: string) {
     const processor = unified.unified()
         .use(remarkParse)
         .use(remarkFrontmatter, ['yaml', 'toml'])
         .use(remarkExtractFrontmatter)
+        .use(remarkCodeblock)
         .use(remarkDirective)
         .use(remarkIconDirective)
         .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeShiki, {
+            // or `theme` for a single theme
+            theme: 'github-dark'
+        })
         .use(rehypeStringify, { allowDangerousHtml: true })
-    return processor.processSync(content);
+    return await processor.process(content);
 }

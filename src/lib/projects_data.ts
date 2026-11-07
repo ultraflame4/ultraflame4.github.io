@@ -211,12 +211,13 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema): Normal
  * @param limit Limit the number of results. //TODO sort by date
  * @returns
  */
-export function readProjectsData(limit?: number) {
+export async function readProjectsData(limit?: number) {
     const projects_content = readContent("projects")
 
-    return Object.entries(projects_content).slice(0, limit).map(([k, v]) => {
-        const rendered = render_md(v)
+    const promises = Object.entries(projects_content).slice(0, limit).map(async ([k, v]) => {
+        const rendered = await render_md(v)
         const meta = normaliseProjectData(rendered.data.matter as any)
-        return [k, rendered.value, meta] as [string,string, NormalisedProjectMeta]
+        return [k, rendered.value, meta] as [string, string, NormalisedProjectMeta]
     })
+    return await Promise.all(promises)
 }

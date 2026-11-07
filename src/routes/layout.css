@@ -110,8 +110,7 @@
 
         :not(pre)>code,
         pre {
-            @apply rounded-sm !bg-mdcode;
-            outline: 1px solid rgba(255, 255, 255, 0.1);
+            @apply bg-codeblock;
         }
 
         :not(pre)>code {
@@ -229,6 +228,11 @@
 
 }
 
+/*Forced code block styles*/
+@utility bg-codeblock {
+    @apply rounded-sm !bg-mdcode;
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+}
 /*A Spacer that pushes content down to avoid the nav bar*/
 @utility nav-h-spacer {
     height: var(--nav-total-h-units);

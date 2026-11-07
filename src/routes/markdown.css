@@ -22,3 +22,6 @@
 .prose h1 {
     @apply font-fancy font-light text-3xl tracking-tight
 }
+.shiki {
+    @apply bg-codeblock
+}
