@@ -2,6 +2,8 @@
     import { resolve } from "$app/paths";
     import { BgFadeDiv, Navbar } from "$lib/blocks";
     import { MediaEmbed, SpotlightBackground } from "$lib/components";
+    import FancyLink from "$lib/components/FancyLink.svelte";
+    import Icon from "@iconify/svelte";
     import { cn } from "cn";
     import { onMount } from "svelte";
 
@@ -18,7 +20,7 @@
             id="view"
         >
             <h1
-                class="px-4 py-2 font-fancy text-3xl my-2"
+                class="pl-6 py-2 font-fancy text-5xl my-4"
                 style="letter-spacing: -3px;"
             >
                 {meta.title ?? key}
@@ -35,7 +37,7 @@
                 {/each}
             </ul>
             <div
-                class="prose prose-invert p-4 mt-2 tracking-tight text-dimmed text-base col-1"
+                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base col-1"
             >
                 {@html content}
             </div>
@@ -61,15 +63,16 @@
                     </div>
                 {/if}
             </div>
-            <footer class="p-4 flex col-span-full z-10">
-                <SpotlightBackground class="p-px">
-                    <a
-                        class="font-fancy bg-background px-3 py-2 btn block"
-                        href={resolve("/gallery")}
-                    >
-                        🡐 Back to Gallery
-                    </a>
-                </SpotlightBackground>
+            <footer class="p-4 flex col-span-full z-10 gap-4">
+                <FancyLink href={resolve("/gallery")}>
+                    🡐 Back to Gallery
+                </FancyLink>
+                {#if meta.source !== undefined}
+                    <FancyLink href={meta.source.url} class="pr-4">
+                        <Icon icon="mdi:source-branch"  />
+                        {meta.source.label}
+                    </FancyLink>
+                {/if}
                 <p
                     class="px-3 flex items-center border border-border font-semibold font-mono text-xs ml-auto text-sub bg-background"
                 >

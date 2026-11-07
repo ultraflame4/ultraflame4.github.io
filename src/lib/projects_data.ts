@@ -167,10 +167,10 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema): Normal
     if (data.source) {
         if (typeof data.source == "string") {
             meta.source = {
-                label: "github",
+                label: "source",
                 url: data.source
             }
-        } else if (data.source.url && data.source.label) {
+        } else {
             meta.source = {
                 label: data.source.label,
                 url: data.source.url
