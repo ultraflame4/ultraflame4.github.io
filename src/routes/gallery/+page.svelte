@@ -81,7 +81,7 @@
                     <Icon icon="material-symbols:location-searching"></Icon>
                 </div>
                 <input
-                    placeholder="Title, Description, Tags"
+                    placeholder="title, description, tags"
                     class="p-4 bg-background grow"
                     bind:value={search_filter}
                 />
@@ -94,5 +94,25 @@
                 class="max-w-124 mx-auto xs:max-w-full "
             />
         {/each}
+        {#if listing.length == 0}
+            <div
+                class="col-span-full flex flex-col items-center justify-center h-64 text-border border border-border bg-stripes"
+            >
+                <p class="font-fancy text-dimmed text-2xl">No Results :(</p>
+            </div>
+        {/if}
     </div>
 </section>
+
+<style>
+    .bg-stripes {
+        background-image: repeating-linear-gradient(
+            45deg,
+            currentColor 0px,
+            currentColor 1px,
+            transparent 1px,
+            transparent 1rem
+        );
+        
+    }
+</style>
