@@ -74,7 +74,7 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 <section
-    class="lg:grid gap-4 px-8 pt-16"
+    class="lg:grid gap-4 px-8 pt-16 overflow-hidden"
     style="grid-template-columns: 2fr 5fr;"
 >
     <ul class="story-keys z-10">

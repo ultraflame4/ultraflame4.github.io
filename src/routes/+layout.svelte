@@ -14,7 +14,7 @@
 
 {@render children()}
 
-<footer class="border-t w-full border-border h-12 flex items-center mt-16 text-xs px-4 relative">
+<footer class="border-t border-border h-12 flex items-center mt-16 text-xs px-4 relative overflow-hidden">
     <div class="flex items-center absolute-center">
         <span class="font-fancy">Made with ❤️ by</span>
         <span class="font-mono font-black inline-block px-1 py-0.5 ml-1 rounded-md border border-border bg-mdcode">ultr42</span>
