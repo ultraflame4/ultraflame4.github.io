@@ -48,8 +48,6 @@
     function updateAboutLoc(loc?: string) {
         about_loc = loc;
     }
-
-
 </script>
 
 <StartBanner>
@@ -233,9 +231,12 @@
         transition: all 100ms linear;
         --v: min(1, var(--ratio));
         --inverted: calc(var(--v) - 1);
-        --translate: translate(0, calc(var(--inverted) * -50vh));
-        opacity: calc(pow(var(--v), 3));
-        transform: var(--translate);
+        --offset: calc(var(--inverted) * -50vh);
+        --translate: translate(0, var(--offset));
+        --rotate: calc(var(--inverted) * 35deg);
+        opacity: calc(pow(var(--v), 2));
+        transform-origin: right;
+        transform: var(--translate) rotateY(var(--rotate)) rotateX( calc(var(--rotate) * -1));
     }
     article:last-child > .story-article {
         --translate: translate(0, 0);
