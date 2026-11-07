@@ -74,7 +74,7 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 <section
-    class="lg:grid gap-4 px-8 pt-16 overflow-hidden"
+    class="lg:grid gap-4 px-8 pt-16"
     style="grid-template-columns: 2fr 5fr;"
 >
     <ul class="story-keys z-10">
@@ -85,7 +85,7 @@
         {/each}
     </ul>
     <!-- -space-y is required to reduce spacing cause by pt-32 -->
-    <div>
+    <div class="overflow-x-hidden">
         {#each data.about_story as [key, story]}
             <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <article
@@ -121,7 +121,7 @@
             </h2>
         </SpotlightBackground>
         {#each data.recent_works as project}
-            <ProjectCard {...project} open_label="See more"/>
+            <ProjectCard {...project} open_label="See more" />
         {/each}
         <SpotlightBackground class="col-span-full p-px">
             <a
@@ -142,7 +142,6 @@
         Back to top
     </button>
 </SpotlightBackground>
-
 
 <style>
     @reference "./layout.css";
@@ -171,7 +170,8 @@
         --rotate: calc(var(--inverted) * 35deg);
         opacity: calc(pow(var(--v), 2));
         transform-origin: bottom right;
-        transform: var(--translate) rotateY(var(--rotate)) rotateX(calc(var(--rotate) * -1));
+        transform: var(--translate) rotateY(var(--rotate))
+            rotateX(calc(var(--rotate) * -1));
     }
     article:last-child > .story-article {
         --translate: translate(0, 0);
