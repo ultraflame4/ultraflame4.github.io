@@ -23,6 +23,3 @@ Disclaimer: There are currently no plans to continue with this project.
 A website builder I made for myself to eventually build websites with.
 
 Throughout this process, I’ve learned a lot more about various aspects of web development and tools used.
-
-
-[Webapp](https://ultraflame4.github.io/WebDevCreate)
