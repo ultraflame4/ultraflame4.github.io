@@ -41,7 +41,7 @@
                 <Typewriter inputs={title} interval={50} />
             </h1>
             <p
-                class="mb-8 min-h-[1.5em] font-black text-lg font-mono animate-float [animation-delay:2s]"
+                class="mb-8 min-h-[1.5em] font-normal text-base font-mono animate-float [animation-delay:2s]"
             >
                 <Typewriter inputs={subtitle} interval={20} hideCursor />
             </p>
