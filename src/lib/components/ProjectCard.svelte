@@ -3,17 +3,28 @@
         NormalisedProjectMeta,
         ProjectData,
     } from "$lib/projects_data";
-    import SpotlightBackground, {type ElementProps} from "./SpotlightBackground.svelte";
+    import SpotlightBackground, {
+        type ElementProps,
+    } from "./SpotlightBackground.svelte";
     import MediaEmbed from "./MediaEmbed.svelte";
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import { resolve } from "$app/paths";
     import { cn } from "cn";
     import { useMouseRelative } from "$lib";
 
-    export type Props = ProjectData & ElementProps 
+    export type Props = ProjectData &
+        ElementProps & {
+            open_label?: string;
+        };
 
-    const { key: anchor_id, meta, html: content, class: class_, ...props }: Props = $props();
-
+    const {
+        open_label,
+        key: anchor_id,
+        meta,
+        html: content,
+        class: class_,
+        ...props
+    }: Props = $props();
 </script>
 
 <SpotlightBackground class={cn("p-px min-h-128", class_)} {...props}>
@@ -59,8 +70,11 @@
         <!-- Spacer -->
         <div class="h-13"></div>
         <footer class="absolute bottom-4 w-full flex px-4 items-center">
-            <a class="font-fancy group" href={resolve(`/gallery/${anchor_id}#view`)}>
-                [<span class="hover:underline">SEE MORE</span>]
+            <a
+                class="font-fancy group"
+                href={resolve(`/gallery/${anchor_id}#view`)}
+            >
+                [<span class="hover:underline">{open_label ?? "Open"}</span>]
             </a>
             <span
                 class="font-thin font-mono text-xs ml-auto text-sub opacity-60"

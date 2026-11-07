@@ -121,7 +121,7 @@
             </h2>
         </SpotlightBackground>
         {#each data.recent_works as project}
-            <ProjectCard {...project}/>
+            <ProjectCard {...project} open_label="See more"/>
         {/each}
         <SpotlightBackground class="col-span-full p-px">
             <a
