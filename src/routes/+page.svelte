@@ -76,7 +76,7 @@
     class="lg:grid gap-4 px-8 pt-16"
     style="grid-template-columns: 2fr 5fr;"
 >
-    <ul class="story-keys">
+    <ul class="story-keys z-10">
         {#each data.about_story as [key, story]}
             <li class="story-key" data-active={about_loc == key || undefined}>
                 <a href="#{key}">{key}</a>
@@ -88,20 +88,22 @@
         {#each data.about_story as [key, story]}
             <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <article
-                class="lg:pt-32 lg:-mt-24 pt-64 -mt-56"
+                class="lg:pt-32 lg:-mt-24 pt-64 -mt-56 top-0"
                 id={key}
                 {@attach entryRatio({
                     coverageRatio: 0.8,
                     onVisible: () => updateAboutLoc(key),
                 })}
             >
-                <SpotlightBackground class="rounded-3xl p-px">
-                    <div
-                        class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
-                    >
-                        {@html story}
-                    </div>
-                </SpotlightBackground>
+                <div class="story-article">
+                    <SpotlightBackground class="rounded-3xl p-px">
+                        <div
+                            class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
+                        >
+                            {@html story}
+                        </div>
+                    </SpotlightBackground>
+                </div>
             </article>
         {/each}
     </div>
@@ -224,5 +226,16 @@
     .story-key {
         @apply text-bright opacity-30 origin-right hover:opacity-80;
         @apply data-active:opacity-100 lg:data-active:scale-120;
+    }
+    .story-article {
+        transition: all 100ms linear;
+        --v: min(1, var(--ratio));
+        --inverted: calc(var(--v) - 1);
+        --translate: translate(0, calc(var(--inverted) * -50vh));
+        opacity: calc(pow(var(--v), 3));
+        transform: var(--translate);
+    }
+    article:last-child > .story-article {
+        --translate: translate(0, 0);
     }
 </style>
