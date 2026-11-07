@@ -120,8 +120,8 @@
                 Recent Works
             </h2>
         </SpotlightBackground>
-        {#each data.recent_works as [key, content, meta]}
-            <ProjectCard anchor_id={key} meta={meta} {content}/>
+        {#each data.recent_works as project}
+            <ProjectCard {...project}/>
         {/each}
         <SpotlightBackground class="col-span-full p-px">
             <a

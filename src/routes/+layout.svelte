@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import "@fontsource/silkscreen";
+	import "@fontsource-variable/dancing-script";
 
 	let { children } = $props();
 </script>

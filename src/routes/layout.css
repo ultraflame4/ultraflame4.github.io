@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'markdown.css';
+@import 'rainbow.css';
 @plugin '@tailwindcss/typography';
 
 :root {
@@ -53,7 +54,7 @@
 
     --font-fancy: "Silkscreen";
     --font-cursive: 'Dancing Script Variable', cursive;
-    --font-poppins: "Poppins";
+    
 
 
 

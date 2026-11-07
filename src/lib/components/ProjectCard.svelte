@@ -1,19 +1,20 @@
 <script lang="ts">
-    import type { NormalisedProjectMeta } from "$lib/projects_data";
-    import SpotlightBackground from "./SpotlightBackground.svelte";
+    import type {
+        NormalisedProjectMeta,
+        ProjectData,
+    } from "$lib/projects_data";
+    import SpotlightBackground, {type ElementProps} from "./SpotlightBackground.svelte";
     import MediaEmbed from "./MediaEmbed.svelte";
     import BgFadeDiv from "$lib/blocks/BgFadeDiv.svelte";
     import { resolve } from "$app/paths";
-    
-    type Props = {
-        anchor_id?: string;
-        meta: NormalisedProjectMeta;
-        content: string;
-    };
-    const { anchor_id, meta, content }: Props = $props();
+    import { cn } from "cn";
+
+    type Props = ProjectData & ElementProps 
+
+    const { key: anchor_id, meta, html: content, class: class_, ...props }: Props = $props();
 </script>
 
-<SpotlightBackground class="p-px min-h-128">
+<SpotlightBackground class={cn("p-px min-h-128", class_)} {...props}>
     <article
         class="size-full bg-background overflow-hidden relative group"
         id={anchor_id}

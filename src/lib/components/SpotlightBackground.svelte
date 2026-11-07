@@ -2,13 +2,15 @@
     import { cn } from "cn";
     import type { Snippet } from "svelte";
     import { useMouseRelative } from "$lib";
+    import type { HTMLAttributes } from "svelte/elements";
 
-    interface Props {
+    export type ElementProps = HTMLAttributes<HTMLDivElement>;
+    interface Props extends ElementProps {
         children?: Snippet;
         class?: string;
     }
 
-    let { children, class: class_ }: Props = $props();
+    let { children, class: class_, ...rest }: Props = $props();
 
     let target = $state<HTMLDivElement>();
 
@@ -44,6 +46,7 @@
     bind:this={target}
     style={cssVars}
     data-hover={inside || undefined}
+    {...rest}
 >
     {@render children?.()}
 </div>
@@ -80,8 +83,6 @@
     /*.ctn:hover,*/
     .ctn[data-hover] {
         --spotlight-radius: 50%;
-        transition:
-            --spotlight-radius 400ms ease-out
-            ;
+        transition: --spotlight-radius 400ms ease-out;
     }
 </style>

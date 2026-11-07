@@ -162,8 +162,8 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema): Normal
         title: data.title,
         featured: !!data.flags?.includes("featured")
     }
-    if (data.video) meta.media.push({url: data.video, type: "video"})
-    if (data.image) meta.media.push({url: data.image, type: "img"})
+    if (data.video) meta.media.push({ url: data.video, type: "video" })
+    if (data.image) meta.media.push({ url: data.image, type: "img" })
     if (data.source) {
         if (typeof data.source == "string") {
             meta.source = {
@@ -205,6 +205,13 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema): Normal
     return meta
 }
 
+
+export interface ProjectData {
+    key: string
+    html: string
+    meta: NormalisedProjectMeta
+}
+
 /**
  * Read the projects (frontmatter) in the data/projects folder.
  *
@@ -214,10 +221,16 @@ export function normaliseProjectData(data: FrontmatterProjectDataSchema): Normal
 export async function readProjectsData(limit?: number) {
     const projects_content = readContent("projects")
 
-    const promises = Object.entries(projects_content).slice(0, limit).map(async ([k, v]) => {
-        const rendered = await render_md(v)
-        const meta = normaliseProjectData(rendered.data.matter as any)
-        return [k, rendered.value, meta] as [string, string, NormalisedProjectMeta]
-    })
+    const promises = Object.entries(projects_content)
+        .slice(0, limit)
+        .map(async ([key, v]) => {
+            const rendered = await render_md(v)
+            const meta = normaliseProjectData(rendered.data.matter as any)
+            return {
+                key,
+                html: rendered.value as string,
+                meta
+            } as ProjectData
+        })
     return await Promise.all(promises)
 }
