@@ -62,7 +62,7 @@
             </div>
             <footer class="p-4 flex col-span-full z-10 gap-4 flex-wrap">
                 <FancyLink href={resolve("/gallery")} class="h-10">
-                    🡐 Back to Gallery
+                    🡐 Gallery
                 </FancyLink>
                 {#if meta.source !== undefined}
                     <FancyLink href={meta.source.url} class="pr-4 h-10">
