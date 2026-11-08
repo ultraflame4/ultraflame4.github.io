@@ -8,12 +8,23 @@
     import Icon from "@iconify/svelte";
 
     let { children } = $props();
+
+    let loaded = $state(false);
+    setTimeout(() => {
+        loaded = true;
+    }, 0);
 </script>
 
 <svelte:head>
     <link rel="icon" href={favicon} />
     <title>clyh</title>
 </svelte:head>
+
+<div class="loading-overlay" data-loaded={loaded || undefined}>
+    <div class="absolute-center">
+        <p>LOADING...</p>
+    </div>
+</div>
 
 {@render children()}
 
@@ -42,3 +53,14 @@
         >
     </div>
 </footer>
+
+<style>
+    @reference "./layout.css";
+
+    .loading-overlay {
+        @apply font-fancy bg-background fixed w-screen h-screen z-50 opacity-100;
+    }
+    .loading-overlay[data-loaded] {
+        @apply opacity-0 pointer-events-none;
+    }
+</style>
