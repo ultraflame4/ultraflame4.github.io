@@ -23,7 +23,7 @@
 
 <svelte:head>
     <link rel="icon" href={favicon} />
-    <title>clyh</title>
+    <title>clyh's corner</title>
 </svelte:head>
 
 <div
