@@ -6,13 +6,19 @@
     import "@fontsource-variable/dancing-script";
     import { socials } from "$lib/data";
     import Icon from "@iconify/svelte";
+    import { onMount } from "svelte";
 
     let { children } = $props();
 
     let loaded = $state(false);
-    setTimeout(() => {
-        loaded = true;
-    }, 0);
+    let layout_children = $state<HTMLDivElement>();
+
+    onMount(() => {
+        setTimeout(() => {
+            layout_children!.style = "display: contents";
+            loaded = true;
+        }, 0);
+    });
 </script>
 
 <svelte:head>
@@ -20,13 +26,22 @@
     <title>clyh</title>
 </svelte:head>
 
-<div class="loading-overlay" data-loaded={loaded || undefined}>
+<div
+    class="font-fancy bg-background fixed w-screen h-screen z-50 data-loaded:hidden"
+    data-loaded={loaded || undefined}
+>
     <div class="absolute-center">
         <p>LOADING...</p>
     </div>
 </div>
 
-{@render children()}
+<div
+    style="position: fixed; height: 0;overflow: hidden;"
+    bind:this={layout_children}
+    class="fade-in"
+>
+    {@render children()}
+</div>
 
 <footer
     class="flex items-center h-12 mt-16 px-4 text-xs
@@ -56,11 +71,16 @@
 
 <style>
     @reference "./layout.css";
-
-    .loading-overlay {
-        @apply font-fancy bg-background fixed w-screen h-screen z-50 opacity-100;
+    .fade-in {
+        animation: fadeIn 0.5s ease forwards;
     }
-    .loading-overlay[data-loaded] {
-        @apply opacity-0 pointer-events-none;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 </style>
