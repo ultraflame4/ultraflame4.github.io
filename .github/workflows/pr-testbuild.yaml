@@ -37,3 +37,7 @@ jobs:
 
       # - name: Build (astro.js)
       #   uses: withastro/action@v5
+
+      - name: build
+        run: |
+          npm run build
