@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    import { onMount, untrack } from "svelte";
     import type {
         TextOp,
         TypeTextOp,
@@ -18,7 +18,8 @@
 
     let props: Props = $props();
 
-    let output = $state(`<noscript>${props.inputs.fallback}</noscript>`);
+    let fallback = (() => props.inputs.fallback)();
+    let output = $state(`<noscript>${fallback}</noscript>`);
     let is_typing = $state(false);
 
     const setTyping = _.debounce((value) => (is_typing = value), 400, {
