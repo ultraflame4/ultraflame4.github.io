@@ -1,4 +1,4 @@
-import projectSchema from "../../data/projects/schema.json";
+import socials_ from "../../data/socials.json"
 import { minimatch } from "minimatch";
 
 const full_data = import.meta.glob("../../data/**/*", {
@@ -6,6 +6,7 @@ const full_data = import.meta.glob("../../data/**/*", {
     eager: true
 });
 
+export const socials = socials_
 
 export function readContent(
     folder: string,
@@ -29,3 +30,4 @@ export function readContent(
         });
     return Object.fromEntries(entries);
 }
+

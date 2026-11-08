@@ -130,7 +130,7 @@
                 class="block py-4 font-fancy size-full bg-background text-xl text-center btn"
                 href={resolve("/gallery")}
             >
-                See More At Gallery
+                View All @ Gallery
             </a>
         </SpotlightBackground>
     </div>

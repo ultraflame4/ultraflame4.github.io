@@ -4,6 +4,8 @@
     import favicon from "$lib/assets/favicon.svg";
     import "@fontsource/silkscreen";
     import "@fontsource-variable/dancing-script";
+    import { socials } from "$lib/data";
+    import Icon from "@iconify/svelte";
 
     let { children } = $props();
 </script>
@@ -16,8 +18,22 @@
 {@render children()}
 
 <footer
-    class="border-t border-border h-12 flex items-center mt-16 text-xs px-4 relative overflow-hidden"
+    class="flex items-center h-12 mt-16 px-4 text-xs
+    border-t border-border
+    overflow-hidden relative"
 >
+    <span class="font-mono mr-auto">© Copyright 2026</span>
+    <div class="flex items-center justify-end h-full gap-2">
+        {#each socials as x}
+            <a
+                title={x.title}
+                href={x.url}
+                class="grayscale hover:text-accent hover:grayscale-0"
+            >
+                <Icon inline icon={x.iconify} class="text-xl" />
+            </a>
+        {/each}
+    </div>
     <div class="flex items-center absolute-center">
         <span class="font-fancy">Made with ❤️ by</span>
         <span
@@ -25,5 +41,4 @@
             >ultr42</span
         >
     </div>
-    <span class="font-mono">© Copyright 2026</span>
 </footer>
