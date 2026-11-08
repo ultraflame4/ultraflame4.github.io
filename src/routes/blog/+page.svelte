@@ -4,8 +4,9 @@
     import UserArticles from "./UserArticles.svelte";
     import { AnimatedBanner } from "$lib/components";
     import { TextTyper, Typewriter } from "$lib/components/others/typewriter";
+    import { page } from "$app/state";
+    import { building } from "$app/environment";
 
-    const { data } = $props();
     const title = new TextTyper()
         .wait(500)
         .seq("The B")
@@ -27,6 +28,15 @@
         .wait(300)
         .seq("-n 1000")
         .build();
+
+    const queryPostId = $derived.by(() =>
+        // For some fucking reason svelte decided its illegal to access searchParams during prerender
+        // like why not just fucking treat the path as if there werent any searchParams, aka return null for all fucking results
+        // its a fucking search query for a reason, it is optional.
+        // 
+        // when building, use null instead. 
+        !building ? page.url.searchParams.get("post") : null,
+    );
 </script>
 
 <StartBanner flexCenter>
@@ -34,7 +44,9 @@
         <AnimatedBanner init={(w, h) => new CubeBannerScene(w, h)} />
     {/snippet}
     {#snippet children()}
-        <div class="m-auto flex flex-col items-center justify-center bg-background w-lg border py-4">
+        <div
+            class="m-auto flex flex-col items-center justify-center bg-background w-lg border py-4"
+        >
             <h1
                 class="font-fancy text-6xl p-2 rounded-lg glow mb-2 min-h-[1.5em] animate-float [animation-delay:2s]"
             >
@@ -57,8 +69,5 @@
 <BgFadeDiv class="h-64" />
 
 <section class="px-4">
-    <UserArticles
-        username="clyh"
-        currentPostId={data.queryPostId ?? undefined}
-    />
+    <UserArticles username="clyh" currentPostId={queryPostId ?? undefined} />
 </section>
