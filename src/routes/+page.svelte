@@ -1,0 +1,185 @@
+<script lang="ts">
+    import { goto } from "$app/navigation";
+    import { resolve } from "$app/paths";
+    import { BgFadeDiv, Navbar, StartBanner } from "$lib/blocks";
+    import { TextTyper, Typewriter } from "$lib/components/others/typewriter";
+
+    import {
+        AnimatedBanner,
+        SpotlightBackground,
+        MediaEmbed,
+    } from "$lib/components";
+    import { entryRatio } from "$lib/entryRatio.js";
+    import { CubeBannerScene } from "./cube_banner";
+    import ProjectCard from "$lib/components/ProjectCard.svelte";
+    const delay = 400;
+
+    const { data } = $props();
+
+    const greeting = new TextTyper()
+        .wait(200)
+        .seq("Hello, ")
+        .wait(300)
+        .seq("I'm ")
+        .styled_seq("Chester", { class: "greeting-name" })
+        .ins("<br/>")
+        .wait(300)
+        .seq("I'm a ")
+        .styled_seq("Self-taught", { style: "color:#86EFAC" })
+        .wait(delay)
+        .autoprev()
+        .styled_seq("Programmer", { style: "color:#4f39f6" })
+        .wait(delay)
+        .autoprev()
+        .styled_seq("builder", { style: "color:#ff8904" })
+        .wait(delay)
+        .autoprev()
+        .styled_seq("maker", { style: "color: var(--color-rainbow)" })
+        .wait(8000)
+        .autoprev()
+        .tti_goto(10) // Magic value: found through repeated tries. Cannot just count because some steps contains more than one tti!
+        .build();
+
+    const sub_greeting = new TextTyper()
+        .wait(5500)
+        .seq("Welcome to my little corner of the internet.")
+        .build();
+
+    let about_loc: string | undefined = $state(undefined);
+    function updateAboutLoc(loc?: string) {
+        about_loc = loc;
+    }
+</script>
+
+<StartBanner>
+    {#snippet background()}
+        <AnimatedBanner init={(w, h) => new CubeBannerScene(w, h)} />
+    {/snippet}
+    {#snippet children()}
+        <div
+            class="size-full flex justify-center items-start"
+            style="height: 200%;"
+        >
+            <div
+                class="w-100 border p-4 bg-background sticky top-1/2 -translate-y-1/2 -z-10"
+            >
+                <p class="font-fancy text-3xl h-24">
+                    <Typewriter inputs={greeting} />
+                </p>
+                <p><Typewriter inputs={sub_greeting} /></p>
+            </div>
+        </div>
+    {/snippet}
+</StartBanner>
+<Navbar />
+<BgFadeDiv class="h-64" />
+<section
+    class="lg:grid gap-4 px-8 pt-32"
+    style="grid-template-columns: 2fr 5fr;"
+    id="about"
+>
+
+    <ul class="story-keys z-10">
+        {#each data.about_story as [key, story]}
+            <li class="story-key" data-active={about_loc == key || undefined}>
+                <a href="#{key}">{key}</a>
+            </li>
+        {/each}
+    </ul>
+    <!-- -space-y is required to reduce spacing cause by pt-32 -->
+    <div class="overflow-hidden">
+        {#each data.about_story as [key, story]}
+            <!-- pt-32 offsets the actual content such that it sits below nav header -->
+            <article
+                class="lg:pt-32 lg:-mt-24 pt-64 -mt-56 top-0 overflow-visible"
+                id={key}
+                {@attach entryRatio({
+                    coverageRatio: 0.8,
+                    onVisible: () => updateAboutLoc(key),
+                })}
+            >
+                <!-- IMPORTANT! 
+                second div needed, we do CSS transforms on the div so that it does not affect the 
+                RECT of the article which entryRatio is on. 
+                (entryRatio will pick up on the CSS transformation also) -->
+                <div class="story-article">
+                    <SpotlightBackground class="rounded-3xl p-px">
+                        <div
+                            class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
+                        >
+                            {@html story}
+                        </div>
+                    </SpotlightBackground>
+                </div>
+            </article>
+        {/each}
+    </div>
+</section>
+<section id="recent-works">
+    <div class="grid grid-cols-2 lg:grid-cols-3 py-32 px-8 xl:px-32">
+        <SpotlightBackground class="col-span-full p-px">
+            <h2 class="font-fancy bg-background text-2xl text-center py-4">
+                Recent Works
+            </h2>
+        </SpotlightBackground>
+        {#each data.recent_works as project}
+            <ProjectCard {...project} open_label="See more" />
+        {/each}
+        <SpotlightBackground class="col-span-full p-px">
+            <a
+                class="block py-4 font-fancy size-full bg-background text-xl text-center btn"
+                href={resolve("/gallery")}
+            >
+                View All @ Gallery
+            </a>
+        </SpotlightBackground>
+    </div>
+</section>
+
+<SpotlightBackground class="p-px size-fit mx-auto">
+    <button
+        class="bg-background px-8 py-4 font-fancy text-lg btn"
+        onclick={() => window.scrollTo({ top: 0 })}
+    >
+        Back to top
+    </button>
+</SpotlightBackground>
+
+<style>
+    @reference "./layout.css";
+    .story-keys {
+        /*background: black;*/
+        /*Positioning*/
+        @apply ml-auto top-1/3 text-right sticky h-fit;
+        /*Styling*/
+        @apply rounded-3xl font-fancy text-2xl;
+        /*Mobile specific*/
+        @media (width < 64rem) {
+            @apply acrylic px-4 py-2 top-25 h-fit w-fit;
+        }
+    }
+
+    .story-key {
+        @apply text-bright opacity-30 origin-right hover:opacity-80;
+        @apply data-active:opacity-100 lg:data-active:scale-120;
+    }
+    .story-article {
+        transition: all 100ms linear;
+        --v: min(1, var(--ratio));
+        --inverted: calc(var(--v) - 1);
+        --offset: calc(var(--inverted) * -200%);
+        --translate: translate(0, var(--offset));
+        --rotate: calc(var(--inverted) * 45deg);
+        --scale: min(max(var(--v), 0.95), 1);
+        opacity: calc(pow(var(--v), 3));
+        transform-origin: bottom right;
+        transform: var(--translate) rotateY(var(--rotate))
+            rotateX(calc(var(--rotate) * -1)) scale(var(--scale));
+    }
+    article:last-child > .story-article {
+        --offset: 0;
+        --translate: translate(0, 0);
+        --rotate: 0deg;
+        --scale: 1;
+    }
+</style>

@@ -1,10 +1,9 @@
 # Favourite(s)
 My favourite languages / technologies to work with.
 
-1. :icon[logos:vue] **Vue.js** - *(I build everything with this)*
-2. :icon[logos:vueuse] **vueuse** - *Supercharges vue.js*
-3. :icon[simple-icons:rust] **Rust** -> *This is torture but I love rust macros so much.*
-4. :icon[logos:typescript-icon] **Typescript** - *(Types saves lives)*
+1. :icon[vscode-icons:file-type-svelte] **Svelte.js** - *(Omg why didn't I discover this earlier)*
+2. :icon[simple-icons:rust] **Rust** -> *This is torture but I love rust macros so much.*
+3. :icon[logos:typescript-icon] **Typescript** - *(Types saves lives)*
 
 # Currently Learning
 
@@ -21,9 +20,3 @@ My favourite languages / technologies to work with.
 6. \*:icon[logos:react]**React.js** 
 
 *\*It has been a while since I last touched it.*
-
-<small>
-<b>
-Please do not take the italic, or really any, comments on this page seriously. They are meant to be a light-hearted jokes.
-</b>
-</small>

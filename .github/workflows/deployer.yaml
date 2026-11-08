@@ -1,8 +1,8 @@
 name: build-push-deploy
-run-name: ${{ github.actor }} is building this vite app and pushing it to the builds branch
+run-name: ${{ github.actor }} is building this app and pushing it to the builds branch
 on:
   push:
-    branches: [ "v7" ]
+    branches: [ "v8" ]
 
   workflow_dispatch:
 
@@ -38,17 +38,21 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install all dependencies
         run: npm ci
 
-      - name: Build (astro.js)
-        uses: withastro/action@v5
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      - name: build
+        run: |
+          npm run build
+
+      # - name: Build (astro.js)
+      #   uses: withastro/action@v5
+      #   # with:
+      #     # path: . # The root location of your Astro project inside the repository. (optional)
+      #     # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
+      #     # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop

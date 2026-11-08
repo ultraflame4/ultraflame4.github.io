@@ -21,12 +21,3 @@ end: oct 16 2023
 ---
 This is a fake redirection & human verification service that rick rolled people.
 The best part is that it can be configured by the user such that the link generated only trolled people sometimes.
-
-
-[link](http://links.ultr42.dev/)
-
-
-[rickroll?](https://knowyourmeme.com/memes/rickroll)
-
-
-[example](https://links.ultr42.dev/?q=MXd3dy5nb29nbGUuY29t7A)

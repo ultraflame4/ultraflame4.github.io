@@ -22,8 +22,3 @@ status: completed
 2D N-Body gravity simulation of 2D Circles using Newton's law of universal gravitation.
 
 This project was made with using GLFW, OpenGL, C++ and others.
-
-[Download](https://github.com/ultraflame4/GravSim/releases)
-
-
-[itch.io](https://notlivingstudios.itch.io/gravsim)
