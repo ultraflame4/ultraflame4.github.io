@@ -10,11 +10,14 @@
     const { key, meta, html: content } = data.project;
 </script>
 
-<section class="min-page-h flex items-center py-16 px-4 md:p-8 lg:px-16">
-    <SpotlightBackground class="p-px h-fit">
-        <article class="h-fit grid relative bg-stripes" id="view">
+<section
+    class="min-h-screen flex py-16 px-4 md:p-8 lg:px-16"
+    id="view"
+>
+    <SpotlightBackground class="p-px h-fit m-auto">
+        <article class="lg:min-h-[80vh] grid relative bg-stripes">
             <h1
-                class="pl-6 py-2 font-fancy text-5xl my-4 "
+                class="pl-6 py-2 font-fancy text-5xl my-4"
                 style="letter-spacing: -3px;"
             >
                 {meta.title ?? key}
@@ -31,7 +34,7 @@
                 {/each}
             </ul>
             <div
-                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base "
+                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base"
             >
                 {@html content}
             </div>
@@ -57,7 +60,7 @@
                     </div>
                 {/if}
             </div>
-            <footer class="p-4 flex col-span-full z-10 gap-4 flex-wrap ">
+            <footer class="p-4 flex col-span-full z-10 gap-4 flex-wrap">
                 <FancyLink href={resolve("/gallery")} class="h-10">
                     🡐 Back to Gallery
                 </FancyLink>
@@ -70,7 +73,6 @@
                 <div class="mx-auto"></div>
                 <p
                     class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background h-10"
-                    
                 >
                     Status -
                     <span
@@ -92,14 +94,13 @@
                     )?.toLocaleDateString() ?? ""}
                 </p>
             </footer>
-            
         </article>
     </SpotlightBackground>
 </section>
 
 <style>
     .bg-stripes {
-        --t: rgba(15,15,15,0.8);
+        --t: rgba(15, 15, 15, 0.8);
         background-image: repeating-linear-gradient(
             45deg,
             var(--t) 0px,
@@ -112,14 +113,11 @@
     article {
         grid-template-columns: 3fr 4fr;
         grid-template-rows: auto auto 1fr auto;
-        
 
         /*Mobile specific*/
         @media (width < 72rem) {
             display: flex;
             flex-direction: column;
-
         }
     }
-
 </style>
