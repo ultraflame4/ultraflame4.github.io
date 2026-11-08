@@ -6,7 +6,10 @@ source:
   url: https://github.com/ultraflame4/inuis.blog
 image: https://raw.githubusercontent.com/ultraflame4/inuis.blog/refs/heads/main/docs/blob/image_3.png
 skills:
-  - rust
+  - go
+  - svelte
+  - typescript
+  - sql
 flags: [ featured ]
 index_hint: 0
 start: sep 1 2026
