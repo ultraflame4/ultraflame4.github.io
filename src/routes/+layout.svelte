@@ -1,12 +1,12 @@
 <script lang="ts">
     import "./layout.css";
     import "$lib/icons";
-    import favicon from "$lib/assets/favicon.svg";
     import "@fontsource/silkscreen";
     import "@fontsource-variable/dancing-script";
     import { socials } from "$lib/data";
     import Icon from "@iconify/svelte";
     import { onMount } from "svelte";
+    import { asset } from "$app/paths";
 
     let { children } = $props();
 
@@ -22,8 +22,8 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" href={favicon} />
-    <title>clyh</title>
+    <link rel="icon" href={asset("/brand.png")} />
+    <title>clyh's corner</title>
 </svelte:head>
 
 <div
