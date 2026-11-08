@@ -13,6 +13,10 @@
 		"gen:schema": "tsx tools/schema.ts"
 	},
 	"devDependencies": {
+		"@iconify-json/logos": "^1.2.19",
+		"@iconify-json/lucide": "^1.2.152",
+		"@iconify-json/material-symbols": "^1.2.98",
+		"@iconify-json/mdi": "^1.2.3",
 		"@iconify/svelte": "^5.2.2",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.63.0",
