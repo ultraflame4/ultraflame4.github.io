@@ -16,7 +16,7 @@ import { getIconUrl } from './icons';
 
 import { createOnigurumaEngine } from 'shiki/engine/oniguruma';
 import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
-import { bundledLanguages, bundledLanguagesBase, createHighlighter, type BundledLanguage, type Highlighter } from 'shiki/bundle/full';
+import { bundledLanguages, createHighlighter, type BundledLanguage, type Highlighter } from 'shiki/bundle/full';
 
 
 
@@ -61,29 +61,33 @@ let highlighter = null as null | Highlighter
 async function loadHighlighterLang(lang: string) {
     if (!highlighter)
         return
-    if (!highlighter?.getLoadedLanguages().includes(lang)) {
+    if (highlighter?.getLoadedLanguages().includes(lang)) {
         return
     }
     if (!Object.keys(bundledLanguages).includes(lang)) {
         return
     }
     let blang = lang as BundledLanguage
+    console.log("Dynamically loading langguage:", lang)
     await highlighter?.loadLanguage(blang)
 }
 
 export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
-    return (tree, file) => {
+    return async (tree, file) => {
+        const nodes: mdast.Code[] = []
         visit(tree, "code", (node) => {
-            if (node.lang == null) return
-
-            loadHighlighterLang(node.lang)
-
+            nodes.push(node)
             node.data = {
                 hProperties: {
                     "data-lang": node.lang
                 }
             }
         })
+
+        for (const node of nodes) {
+            if (node.lang == null) continue
+            await loadHighlighterLang(node.lang)
+        }
     }
 }
 
@@ -98,6 +102,7 @@ export async function render_md(content: string) {
             engine: createOnigurumaEngine(() => import('shiki/wasm'))
         })
     }
+
 
     const processor = unified.unified()
         .use(remarkParse)
