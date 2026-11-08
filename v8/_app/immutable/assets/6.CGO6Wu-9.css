@@ -1,0 +1,1 @@
+.bg-stripes.svelte-10dmmpj{--t:#0f0f0fcc;background-image:repeating-linear-gradient(45deg, var(--t) 0px, var(--t) 1px, var(--color-background) 1px, var(--color-background) 20px)}article.svelte-10dmmpj{grid-template-rows:auto auto 1fr auto;grid-template-columns:3fr 4fr}@media (width<72rem){article.svelte-10dmmpj{flex-direction:column;display:flex}}
