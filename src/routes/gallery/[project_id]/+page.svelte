@@ -57,19 +57,19 @@
                     </div>
                 {/if}
             </div>
-            <footer class="p-4 flex col-span-full z-10 gap-4">
-                <FancyLink href={resolve("/gallery")}>
+            <footer class="p-4 flex col-span-full z-10 gap-4 flex-wrap ">
+                <FancyLink href={resolve("/gallery")} class="h-10">
                     🡐 Back to Gallery
                 </FancyLink>
                 {#if meta.source !== undefined}
-                    <FancyLink href={meta.source.url} class="pr-4">
+                    <FancyLink href={meta.source.url} class="pr-4 h-10">
                         <Icon icon="mdi:source-branch" />
                         {meta.source.label}
                     </FancyLink>
                 {/if}
                 <div class="mx-auto"></div>
                 <p
-                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background "
+                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background h-10"
                     
                 >
                     Status -
@@ -85,7 +85,7 @@
                     </span>
                 </p>
                 <p
-                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background"
+                    class="px-3 flex items-center border border-border font-semibold font-mono text-xs text-sub bg-background h-10"
                 >
                     Updated - {(
                         meta.end_date ?? meta.start_date
@@ -99,7 +99,7 @@
 
 <style>
     .bg-stripes {
-        --t: rgba(0,0,0,0.5);
+        --t: rgba(15,15,15,0.8);
         background-image: repeating-linear-gradient(
             45deg,
             var(--t) 0px,

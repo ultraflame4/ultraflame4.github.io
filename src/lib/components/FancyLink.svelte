@@ -7,9 +7,9 @@
         $props();
 </script>
 
-<SpotlightBackground class="p-px ">
+<SpotlightBackground class="p-px">
     <a
-        class={cn("h-full font-fancy bg-background px-3 py-2 btn gap-1.5 flex items-center", class_)}
+        class={cn("h-full font-fancy bg-background px-3  btn gap-1.5 flex items-center", class_)}
         {...props}
     >
         {@render props.children?.()}
