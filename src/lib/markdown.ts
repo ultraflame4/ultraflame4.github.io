@@ -12,6 +12,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 import { matter } from 'vfile-matter';
 import rehypeShiki from '@shikijs/rehype'
 import { createHighlighter } from 'shiki';
+import { iconToDataURI } from './icons';
 
 
 
@@ -31,10 +32,11 @@ export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
                 }
                 const value = node.children.map(get_text).reduce((a, b) => (a ?? '') + (b ?? ''), '')
                 if (!value && value !== "false") return
+                const icon_image = iconToDataURI(value)
                 node.children = [
                     {
                         type: 'html',
-                        value: `<span class="icon remark-icon-directive"><image src="https://api.iconify.design/${value}.svg"></span>`
+                        value: `<span class="icon remark-icon-directive"><image src="${icon_image}"></span>`
                     },
                 ]
             }
