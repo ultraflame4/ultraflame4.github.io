@@ -15,7 +15,7 @@ addCollection(devicon);
 addCollection(simple);
 addCollection(vscode);
 
-function iconToSVG(name: string): string | null {
+export function iconToSVG(name: string): string | null {
     const icon = getIcon(name);
     if (!icon) {
         console.error("Missing icon:", name, "is icon set installed?")
@@ -26,7 +26,7 @@ function iconToSVG(name: string): string | null {
     return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${icon.body}</svg>`;
 }
 
-export function iconToDataURI(name: string): string {
+export function getIconUrl(name: string): string {
     const svg = iconToSVG(name);
     if (!svg) return "missing icon: " + name
     return `data:image/svg+xml,${encodeURIComponent(svg)}`;

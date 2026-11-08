@@ -12,7 +12,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 import { matter } from 'vfile-matter';
 import rehypeShiki from '@shikijs/rehype'
 import { createHighlighter } from 'shiki';
-import { iconToDataURI } from './icons';
+import { getIconUrl } from './icons';
 
 
 
@@ -32,7 +32,7 @@ export const remarkIconDirective: unified.Plugin<any, mdast.Root> = () => {
                 }
                 const value = node.children.map(get_text).reduce((a, b) => (a ?? '') + (b ?? ''), '')
                 if (!value && value !== "false") return
-                const icon_image = iconToDataURI(value)
+                const icon_image = getIconUrl(value)
                 node.children = [
                     {
                         type: 'html',
@@ -55,7 +55,6 @@ export const remarkExtractFrontmatter: unified.Plugin<void[], mdast.Root> = () =
 export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
     return (tree, file) => {
         visit(tree, "code", (node) => {
-            console.log(node.lang, node.meta)
             node.meta
             node.data = {
                 hProperties: {
