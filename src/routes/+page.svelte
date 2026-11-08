@@ -74,9 +74,11 @@
 <Navbar />
 <BgFadeDiv class="h-64" />
 <section
-    class="lg:grid gap-4 px-8 pt-16"
+    class="lg:grid gap-4 px-8 pt-32"
     style="grid-template-columns: 2fr 5fr;"
+    id="about"
 >
+
     <ul class="story-keys z-10">
         {#each data.about_story as [key, story]}
             <li class="story-key" data-active={about_loc == key || undefined}>
@@ -100,7 +102,7 @@
                 second div needed, we do CSS transforms on the div so that it does not affect the 
                 RECT of the article which entryRatio is on. 
                 (entryRatio will pick up on the CSS transformation also) -->
-                <div class="story-article ">
+                <div class="story-article">
                     <SpotlightBackground class="rounded-3xl p-px">
                         <div
                             class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
@@ -178,6 +180,6 @@
         --offset: 0;
         --translate: translate(0, 0);
         --rotate: 0deg;
-        --scale: 1.0;
+        --scale: 1;
     }
 </style>
