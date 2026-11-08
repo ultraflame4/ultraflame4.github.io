@@ -9,6 +9,11 @@ skills:
   - go
   - svelte
   - typescript
+  - html
+  - css
+  - markdown
+  - web
+  - fullstack3
   - sql
 flags: [ featured ]
 index_hint: 0
