@@ -55,11 +55,11 @@ jobs:
       #     # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
       - name: Push
-        uses: s0/git-publish-subdir-action@develop
+        uses: s0/git-publish-subdir-action@v2.6.0
         env:
           REPO: self
           BRANCH: builds # The branch name where you want to push the assets
-          FOLDER: dist # The directory where your assets are generated
+          FOLDER: build # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Push: ({sha}) {msg} ${{ steps.extract_branch.outputs.branch }}" # The commit message
           TARGET_DIR: ${{ steps.extract_branch.outputs.branch }}
