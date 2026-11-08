@@ -14,6 +14,11 @@ export default defineConfig({
             adapter: adapter(),
             paths: {
                 base: '/v8'
+            },
+            prerender: {
+                handleHttpError: (details) => {
+                    console.warn("http error:", details)
+                }
             }
 		})
 	]
