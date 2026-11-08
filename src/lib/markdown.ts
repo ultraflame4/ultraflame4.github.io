@@ -14,6 +14,10 @@ import { matter } from 'vfile-matter';
 
 import { getIconUrl } from './icons';
 
+import { createOnigurumaEngine } from 'shiki/engine/oniguruma';
+import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
+import { bundledLanguages, bundledLanguagesBase, createHighlighter, type BundledLanguage, type Highlighter } from 'shiki/bundle/full';
+
 
 
 
@@ -52,10 +56,28 @@ export const remarkExtractFrontmatter: unified.Plugin<void[], mdast.Root> = () =
 }
 
 
+let highlighter = null as null | Highlighter
+
+async function loadHighlighterLang(lang: string) {
+    if (!highlighter)
+        return
+    if (!highlighter?.getLoadedLanguages().includes(lang)) {
+        return
+    }
+    if (!Object.keys(bundledLanguages).includes(lang)) {
+        return
+    }
+    let blang = lang as BundledLanguage
+    await highlighter?.loadLanguage(blang)
+}
+
 export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
     return (tree, file) => {
         visit(tree, "code", (node) => {
-            node.meta
+            if (node.lang == null) return
+
+            loadHighlighterLang(node.lang)
+
             node.data = {
                 hProperties: {
                     "data-lang": node.lang
@@ -67,9 +89,16 @@ export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
 
 
 
-
 export async function render_md(content: string) {
-    const rehypeShiki = (await import('@shikijs/rehype')).default;
+
+    if (highlighter == null) {
+        highlighter = await createHighlighter({
+            themes: ["github-dark"],
+            langs: [],
+            engine: createOnigurumaEngine(() => import('shiki/wasm'))
+        })
+    }
+
     const processor = unified.unified()
         .use(remarkParse)
         .use(remarkFrontmatter, ['yaml', 'toml'])
@@ -78,9 +107,8 @@ export async function render_md(content: string) {
         .use(remarkDirective)
         .use(remarkIconDirective)
         .use(remarkRehype, { allowDangerousHtml: true })
-        .use(rehypeShiki, {
-            // or `theme` for a single theme
-            theme: 'github-dark'
+        .use(rehypeShikiFromHighlighter, highlighter, {
+            theme: "github-dark"
         })
         .use(rehypeStringify, { allowDangerousHtml: true })
     return await processor.process(content);
