@@ -167,14 +167,14 @@
         transition: all 100ms linear;
         --v: min(1, var(--ratio));
         --inverted: calc(var(--v) - 1);
-        --offset: calc(var(--inverted) * -200%);
+        --offset: calc(var(--inverted) * -150%);
         --translate: translate(0, var(--offset));
-        --rotate: calc(var(--inverted) * 45deg);
+        --rotate: calc(pow(var(--inverted), 2) * 90deg);
         --scale: min(max(var(--v), 0.95), 1);
-        opacity: calc(pow(var(--v), 3));
-        transform-origin: bottom right;
+        opacity: calc(pow(var(--v), 2));
+        transform-origin: bottom;
         transform: var(--translate) rotateY(var(--rotate))
-            rotateX(calc(var(--rotate) * -1)) scale(var(--scale));
+            rotateX(calc(var(--rotate) * -1.2)) scale(var(--scale));
     }
     article:last-child > .story-article {
         --offset: 0;
