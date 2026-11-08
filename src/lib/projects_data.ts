@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { readContent } from "./data";
 import { render_md } from "./markdown";
 
@@ -225,7 +226,13 @@ export async function readProjectsData(limit?: number) {
     const promises = Object.entries(projects_content)
         .slice(0, limit)
         .map(([key, v]) => createProjectData(v, key))
-    return await Promise.all(promises)
+
+    const results = await Promise.all(promises)
+
+    return _.sortBy(results, x => {
+        const date = x.meta.end_date ?? x.meta.start_date
+        return -(date?.getTime() ?? 0)
+    })
 }
 
 
