@@ -10,7 +10,7 @@ import rehypeStringify from 'rehype-stringify';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
 import { matter } from 'vfile-matter';
-import rehypeShiki from '@shikijs/rehype'
+
 
 import { getIconUrl } from './icons';
 
@@ -55,7 +55,6 @@ export const remarkExtractFrontmatter: unified.Plugin<void[], mdast.Root> = () =
 export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
     return (tree, file) => {
         visit(tree, "code", (node) => {
-            console.log("remark-codeblock",)
             node.meta
             node.data = {
                 hProperties: {
@@ -70,6 +69,7 @@ export const remarkCodeblock: unified.Plugin<void[], mdast.Root> = () => {
 
 
 export async function render_md(content: string) {
+    const rehypeShiki = (await import('@shikijs/rehype')).default;
     const processor = unified.unified()
         .use(remarkParse)
         .use(remarkFrontmatter, ['yaml', 'toml'])
