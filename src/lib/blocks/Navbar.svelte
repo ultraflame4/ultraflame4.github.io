@@ -29,15 +29,12 @@
     }
 
     function isCurrent(href: string) {
-        let href_path = new URL(href, page.url.origin).pathname;
-        if (href_path.endsWith("/")){
-            href_path=href_path.slice(0,-1)
-        }
+        let href_url = new URL(href, page.url.origin);
 
-        if (href_path == import.meta.env.BASE_URL){
-            return page.url.pathname == href_path
+        if (href_url.hash !== "") {
+            return page.url.href == href_url.href;
         }
-        return page.url.pathname.startsWith(href_path);
+        return page.url.pathname.startsWith(href_url.pathname);
     }
 </script>
 
@@ -62,7 +59,6 @@
 >
     <nav
         class="acrylic h-(--nav-height-units) rounded-2xl min-w-32 w-fit p-2 flex items-center gap-3"
-        
     >
         <a
             href={import.meta.env.BASE_URL}
@@ -72,7 +68,9 @@
             <img class="h-full" src={asset("/brand.png")} alt="clyh.me" />
         </a>
         {#if props.label !== undefined}
-            <span class="font-fancy max-sm:hidden md:mr-8 lg:mr-32">/{props.label}</span>
+            <span class="font-fancy max-sm:hidden md:mr-8 lg:mr-32"
+                >/{props.label}</span
+            >
         {/if}
 
         {#each Object.entries(links) as [name, url], idx}
@@ -82,7 +80,7 @@
 </header>
 
 <style>
-    [data-active="true"] .nav-link-text{
+    [data-active="true"] .nav-link-text {
         filter: drop-shadow(0px 0px 2px var(--color-rainbow));
         /* @apply text-dimmed; */
     }
