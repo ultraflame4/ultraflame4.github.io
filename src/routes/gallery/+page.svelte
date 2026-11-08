@@ -34,6 +34,7 @@
     >
         <form
             class="w-full col-span-full"
+            onfocusout={filter_projects}
             onsubmit={(e) => {
                 e.preventDefault();
                 filter_projects();
