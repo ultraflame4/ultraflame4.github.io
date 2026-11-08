@@ -66,7 +66,7 @@
     {#if shouldLoad == false}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <button
-            class="lazy-load-cover size-full relative cursor-pointer"
+            class="lazy-load-cover size-full relative cursor-pointer overflow-hidden"
             onclick={try_load}
         >
             <img

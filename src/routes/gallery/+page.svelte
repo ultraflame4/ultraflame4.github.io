@@ -56,7 +56,7 @@
         {#each listing as project}
             <ProjectCard
                 {...project}
-                class="max-w-124 mx-auto xs:max-w-full "
+                class="max-w-124 w-full mx-auto xs:max-w-full "
             />
         {/each}
         {#if listing.length == 0}

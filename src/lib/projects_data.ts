@@ -216,7 +216,7 @@ export interface ProjectData {
 /**
  * Read the projects (frontmatter) in the data/projects folder.
  *
- * @param limit Limit the number of results. //TODO sort by date
+ * @param limit Limit the number of results.
  * @returns
  */
 export async function readProjectsData(limit?: number) {

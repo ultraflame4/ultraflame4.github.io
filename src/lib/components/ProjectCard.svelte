@@ -33,7 +33,9 @@
         id={anchor_id}
     >
         {#if meta.media[0]}
-            <div class="h-64 m-4 border border-border hover:border-accent">
+            <div
+                class="h-64 m-4 overflow-hidden border border-border hover:border-accent"
+            >
                 <MediaEmbed
                     media={meta.media[0]}
                     class="size-full brightness-80 group-hover:brightness-100"
