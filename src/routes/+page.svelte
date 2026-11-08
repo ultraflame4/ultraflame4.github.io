@@ -85,11 +85,11 @@
         {/each}
     </ul>
     <!-- -space-y is required to reduce spacing cause by pt-32 -->
-    <div class="overflow-x-hidden">
+    <div class="overflow-hidden">
         {#each data.about_story as [key, story]}
             <!-- pt-32 offsets the actual content such that it sits below nav header -->
             <article
-                class="lg:pt-32 lg:-mt-24 pt-64 -mt-56 top-0"
+                class="lg:pt-32 lg:-mt-24 pt-64 -mt-56 top-0 overflow-visible"
                 id={key}
                 {@attach entryRatio({
                     coverageRatio: 0.8,
@@ -100,7 +100,7 @@
                 second div needed, we do CSS transforms on the div so that it does not affect the 
                 RECT of the article which entryRatio is on. 
                 (entryRatio will pick up on the CSS transformation also) -->
-                <div class="story-article">
+                <div class="story-article ">
                     <SpotlightBackground class="rounded-3xl p-px">
                         <div
                             class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
@@ -165,15 +165,19 @@
         transition: all 100ms linear;
         --v: min(1, var(--ratio));
         --inverted: calc(var(--v) - 1);
-        --offset: calc(var(--inverted) * -50vh);
+        --offset: calc(var(--inverted) * -200%);
         --translate: translate(0, var(--offset));
-        --rotate: calc(var(--inverted) * 35deg);
-        opacity: calc(pow(var(--v), 2));
+        --rotate: calc(var(--inverted) * 45deg);
+        --scale: min(max(var(--v), 0.95), 1);
+        opacity: calc(pow(var(--v), 3));
         transform-origin: bottom right;
         transform: var(--translate) rotateY(var(--rotate))
-            rotateX(calc(var(--rotate) * -1));
+            rotateX(calc(var(--rotate) * -1)) scale(var(--scale));
     }
     article:last-child > .story-article {
+        --offset: 0;
         --translate: translate(0, 0);
+        --rotate: 0deg;
+        --scale: 1.0;
     }
 </style>
