@@ -42,10 +42,10 @@
                 />
             </div>
         {/if}
-        <ul class="px-4 flex gap-1">
+        <ul class="px-4 flex flex-wrap gap-1 overflow-scroll">
             {#each meta.skills as skill}
                 <li
-                    class="font-mono text-dimmed uppercase font-thin text-tiny border border-border py-1 px-2"
+                    class="font-mono text-dimmed uppercase font-thin text-tiny border border-border py-0.5 px-1.5"
                 >
                     {skill}
                 </li>
