@@ -12,7 +12,7 @@
 
 <section class="min-page-h flex items-center py-16 px-4 md:p-8 lg:px-16">
     <SpotlightBackground class="p-px h-fit">
-        <article class="h-fit bg-background grid relative bg-stripes" id="view">
+        <article class="h-fit grid relative bg-stripes" id="view">
             <h1
                 class="pl-6 py-2 font-fancy text-5xl my-4 "
                 style="letter-spacing: -3px;"
@@ -99,18 +99,20 @@
 
 <style>
     .bg-stripes {
+        --t: rgba(0,0,0,0.5);
         background-image: repeating-linear-gradient(
             45deg,
-            var(--color-border) 0px,
-            var(--color-border) 1px,
-            transparent 1px,
-            transparent 20px
+            var(--t) 0px,
+            var(--t) 1px,
+            var(--color-background) 1px,
+            var(--color-background) 20px
         );
     }
 
     article {
         grid-template-columns: 3fr 4fr;
         grid-template-rows: auto auto 1fr auto;
+        
 
         /*Mobile specific*/
         @media (width < 72rem) {
@@ -119,4 +121,5 @@
 
         }
     }
+
 </style>

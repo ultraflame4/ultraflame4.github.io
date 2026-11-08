@@ -3,6 +3,8 @@
     import type { Snippet } from "svelte";
     import { useMouseRelative } from "$lib";
     import type { HTMLAttributes } from "svelte/elements";
+    import { useDeviceInfo } from "$lib/utils/useDeviceInfo.svelte";
+    import type { MouseRelative } from "$lib/utils/useMouseRelative.svelte";
 
     export type ElementProps = HTMLAttributes<HTMLDivElement>;
     interface Props extends ElementProps {
@@ -14,19 +16,31 @@
 
     let target = $state<HTMLDivElement>();
 
-    let isVisible = $state(false);
+    let visible = $state(false);
+    const device = useDeviceInfo();
 
     const mouse = useMouseRelative(() => target);
-    let cssVars = $derived(
-        isVisible
-            ? `--x-percent: ${mouse.xPercent}%; --y-percent: ${mouse.yPercent}%`
-            : "",
-    );
+
+    function get_style(
+        visible: boolean,
+        lightweight: boolean,
+        mouse: MouseRelative,
+    ) {
+        if (lightweight) {
+            return `--x-percent: 50%; --y-percent:50%`;
+        }
+        if (visible) {
+            return `--x-percent: ${mouse.xPercent}%; --y-percent: ${mouse.yPercent}%`;
+        }
+        return "";
+    }
+
+    let cssVars = $derived(get_style(visible, device.useLightweightUI, mouse));
 
     $effect(() => {
         if (!target) return;
         const observer = new IntersectionObserver(([entry]) => {
-            isVisible = entry.isIntersecting;
+            visible = entry.isIntersecting;
         });
         observer.observe(target);
         return () => observer.disconnect();

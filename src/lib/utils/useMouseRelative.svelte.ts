@@ -1,4 +1,6 @@
-export function useMouseRelative(getTarget: () => HTMLElement | undefined, disabled?: boolean) {
+
+export type MouseRelative = { xPercent: number, yPercent: number }
+export function useMouseRelative(getTarget: () => HTMLElement | undefined, disabled?: boolean): MouseRelative {
     let state = $state({ xPercent: 0, yPercent: 0 });
 
     if (disabled) {
