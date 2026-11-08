@@ -214,6 +214,8 @@ export interface ProjectData {
     meta: NormalisedProjectMeta
 }
 
+export const projectsContent = readContent("projects")
+
 /**
  * Read the projects (frontmatter) in the data/projects folder.
  *
@@ -221,9 +223,8 @@ export interface ProjectData {
  * @returns
  */
 export async function readProjectsData(limit?: number) {
-    const projects_content = readContent("projects")
 
-    const promises = Object.entries(projects_content)
+    const promises = Object.entries(projectsContent)
         .slice(0, limit)
         .map(([key, v]) => createProjectData(v, key))
 
@@ -243,8 +244,8 @@ export async function readProjectsData(limit?: number) {
  * @returns
  */
 export async function readProject(project_id: string) {
-    const projects_content = readContent("projects")
-    return await createProjectData(projects_content[project_id], project_id)
+
+    return await createProjectData(projectsContent[project_id], project_id)
 }
 export async function createProjectData(project_md: string, key: string) {
     const rendered = await render_md(project_md)
