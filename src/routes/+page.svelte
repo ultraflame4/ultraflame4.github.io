@@ -98,9 +98,9 @@
                     onVisible: () => updateAboutLoc(key),
                 })}
             >
-                <!-- IMPORTANT! 
-                second div needed, we do CSS transforms on the div so that it does not affect the 
-                RECT of the article which entryRatio is on. 
+                <!-- IMPORTANT!
+                second div needed, we do CSS transforms on the div so that it does not affect the
+                RECT of the article which entryRatio is on.
                 (entryRatio will pick up on the CSS transformation also) -->
                 <div class="story-article">
                     <SpotlightBackground class="rounded-3xl p-px">
@@ -174,7 +174,9 @@
         opacity: calc(pow(var(--v), 2));
         transform-origin: bottom;
         transform: var(--translate) rotateY(var(--rotate))
-            rotateX(calc(var(--rotate) * -1.2)) scale(var(--scale));
+            rotateX(calc(var(--rotate) * -1.2)) scale(var(--scale))
+            translateZ(0);
+        will-change: transform;
     }
     article:last-child > .story-article {
         --offset: 0;
