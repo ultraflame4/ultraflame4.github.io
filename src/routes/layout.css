@@ -36,6 +36,7 @@
 
     /* Dimmed color for text*/
     --dimmed: var(--color-neutral-400);
+    --muted: var(--color-zinc-600);
 
     --inactive: var(--color-neutral-800);
     --primary: var(--color-rosewater);
@@ -51,8 +52,15 @@
     --color-rosewater: #f5e0dc;
     --color-crust: #111;
 
-    --font-fancy: "Silkscreen";
-    --font-cursive: "Dancing Script Variable", cursive;
+    --font-noto: 'Noto Sans Symbols 2';
+    --font-fira: 'Fira Code Variable', monospace;
+
+    --font-sans: 'Inter Variable', var(--font-noto);
+    --font-serif: serif, var(--font-noto);
+    --font-mono: var(--font-fira), var(--font-noto);
+    
+    --font-fancy: "Silkscreen", var(--font-noto);
+    --font-cursive: "Dancing Script Variable", cursive, var(--font-noto);
 
     /* ----- Theme Colors ----- */
 
@@ -64,6 +72,7 @@
     --color-fg: var(--fore);
     --color-sub: var(--sub);
     --color-dimmed: var(--dimmed);
+    --color-muted: var(--muted);
     --color-inactive: var(--inactive);
     --color-primary: var(--primary);
     --color-accent: var(--accent);

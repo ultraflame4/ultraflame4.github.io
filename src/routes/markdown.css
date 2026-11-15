@@ -26,8 +26,9 @@
     @apply prose-neutral prose-invert;
     /*--tw-prose-bullets: var(--color-accent);
     --tw-prose-counters: var(--color-accent);*/
-    --tw-prose-invert-counters: var(--color-accent);
-    --tw-prose-invert-bullets: var(--color-accent);
+    --tw-prose-invert-counters: var(--color-muted);
+    --tw-prose-invert-bullets: var(--color-muted);
+    --tw-prose-invert-links: var(--color-bright);
 }
 
 @utility markdown-compact {
@@ -78,6 +79,13 @@
 
         li {
             margin: 0 !important;
+        }
+        li::marker {
+            transition: all 200ms ease;
+        }
+        li:hover::marker {
+            font-weight: 400;
+            color: var(--color-accent);
         }
 
         ol,
@@ -131,6 +139,10 @@
 
         a > img {
             margin: 0;
+        }
+
+        a:hover {
+            @apply text-accent;
         }
     }
 }

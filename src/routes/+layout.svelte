@@ -3,6 +3,10 @@
     import "$lib/icons";
     import "@fontsource/silkscreen";
     import "@fontsource-variable/dancing-script";
+    import '@fontsource/noto-sans-symbols-2';
+    import '@fontsource-variable/inter';
+    import '@fontsource-variable/fira-code';
+    
     import { socials } from "$lib/data";
     import Icon from "@iconify/svelte";
     import { onMount } from "svelte";

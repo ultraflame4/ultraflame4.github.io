@@ -10,10 +10,7 @@
     const { key, meta, html: content } = data.project;
 </script>
 
-<section
-    class="min-h-screen flex py-16 px-4 md:p-8 lg:px-16"
-    id="view"
->
+<section class="min-h-screen flex py-16 px-4 md:p-8 lg:px-16" id="view">
     <SpotlightBackground class="p-px h-fit m-auto">
         <article class="lg:min-h-[80vh] grid relative bg-stripes">
             <h1
@@ -43,7 +40,7 @@
                 <ul class="px-4 flex gap-1">
                     {#each meta.skills as skill}
                         <li
-                            class="font-mono text-dimmed uppercase font-semibold text-xs border border-border py-1 px-2 bg-background"
+                            class="font-mono text-dimmed uppercase font-thin hover:text-accent text-xs border border-border py-1 px-2 bg-background"
                         >
                             {skill}
                         </li>
@@ -99,7 +96,6 @@
 </section>
 
 <style>
-    
     article {
         grid-template-columns: 3fr 4fr;
         grid-template-rows: auto auto 1fr auto;
