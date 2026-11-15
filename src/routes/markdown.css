@@ -29,6 +29,9 @@
     --tw-prose-invert-counters: var(--color-muted);
     --tw-prose-invert-bullets: var(--color-muted);
     --tw-prose-invert-links: var(--color-bright);
+    --tw-prose-invert-body: var(--color-fg);
+    --tw-prose-invert-headings: var(--color-bright);
+    --tw-prose-invert-bold: var(--color-bright);
 }
 
 @utility markdown-compact {
@@ -44,11 +47,22 @@
 }
 
 @layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-bright
+    }
+    
     .markdown {
         @apply prose prose-brand max-w-none;
 
         h1 {
             @apply font-fancy font-light text-3xl tracking-tight;
+            color: var(--tw-prose-headings);
         }
 
         :not(pre) > code,

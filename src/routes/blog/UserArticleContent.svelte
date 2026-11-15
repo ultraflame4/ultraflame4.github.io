@@ -1,5 +1,6 @@
 <script lang="ts">
     import { devto, type devto as DevTo } from "$lib/external/dev_to";
+    import Icon from "@iconify/svelte";
     import { cn } from "cn";
 
     interface Props {
@@ -39,9 +40,9 @@
         <ul class="flex gap-2 text-dimmed font-mono text-sm">
             {#each articleBrief.tag_list as tag}
                 <li
-                    class="hover:text-accent bg-background border-border border px-2 py-1 uppercase"
+                    class="hover:text-accent bg-background border-border hover:border-current border px-2 py-1 lowercase"
                 >
-                    {tag}
+                    #{tag}
                 </li>
             {/each}
         </ul>

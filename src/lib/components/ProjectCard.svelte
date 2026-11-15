@@ -79,11 +79,11 @@
                 [<span class="hover:underline">{open_label ?? "Open"}</span>]
             </a>
             <span
-                class="font-thin font-mono text-xs ml-auto text-sub opacity-60"
+                class="font-thin font-mono text-xs ml-auto text-sub"
             >
                 Updated - {(
                     meta.end_date ?? meta.start_date
-                )?.toLocaleDateString() ?? ""}
+                )?.toLocaleDateString() ?? "?"}
             </span>
         </footer>
     </article>

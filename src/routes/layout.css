@@ -29,7 +29,7 @@
     --panel: var(--color-neutral-900);
 
     /* Color for text foreground */
-    --fore: var(--color-stone-300);
+    --fore: var(--color-zinc-300);
 
     /* Color for sub-text (i.e descriptions) foreground */
     --sub: var(--color-stone-400);
@@ -52,13 +52,13 @@
     --color-rosewater: #f5e0dc;
     --color-crust: #111;
 
-    --font-noto: 'Noto Sans Symbols 2';
-    --font-fira: 'Fira Code Variable', monospace;
+    --font-noto: "Noto Sans Symbols 2";
+    --font-fira: "Fira Code Variable", monospace;
 
-    --font-sans: 'Inter Variable', var(--font-noto);
+    --font-sans: "Inter Variable", var(--font-noto);
     --font-serif: serif, var(--font-noto);
     --font-mono: var(--font-fira), var(--font-noto);
-    
+
     --font-fancy: "Silkscreen", var(--font-noto);
     --font-cursive: "Dancing Script Variable", cursive, var(--font-noto);
 
