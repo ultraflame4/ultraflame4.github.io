@@ -36,9 +36,13 @@
     </h1>
 
     {#if articleBrief.tag_list.length > 0}
-        <ul class="flex gap-1">
+        <ul class="flex gap-2 text-dimmed font-mono text-sm">
             {#each articleBrief.tag_list as tag}
-                <li>#{tag}</li>
+                <li
+                    class="hover:text-accent bg-background border-border border px-2 py-1 uppercase"
+                >
+                    {tag}
+                </li>
             {/each}
         </ul>
     {/if}

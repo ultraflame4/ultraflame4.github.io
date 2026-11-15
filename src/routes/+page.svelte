@@ -105,7 +105,7 @@
                 <div class="story-article">
                     <SpotlightBackground class="rounded-3xl p-px">
                         <div
-                            class="prose prose-invert rounded-3xl bg-background p-5 min-w-full"
+                            class="markdown rounded-3xl bg-background p-5 min-w-full"
                         >
                             {@html story}
                         </div>

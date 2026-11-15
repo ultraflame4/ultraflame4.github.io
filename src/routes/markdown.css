@@ -1,4 +1,4 @@
-*:has(>.icon.remark-icon-directive) {
+*:has(> .icon.remark-icon-directive) {
     display: inline;
 }
 
@@ -9,8 +9,7 @@
     margin: 0 0.2em;
 }
 
-
-.icon.remark-icon-directive>img {
+.icon.remark-icon-directive > img {
     display: inline-block;
     margin: 0;
     position: relative;
@@ -19,9 +18,131 @@
     width: 100%;
 }
 
-.prose h1 {
-    @apply font-fancy font-light text-3xl tracking-tight
-}
 .shiki {
-    @apply bg-codeblock
+    @apply bg-codeblock;
+}
+
+@utility prose-brand {
+    @apply prose-neutral prose-invert;
+    /*--tw-prose-bullets: var(--color-accent);
+    --tw-prose-counters: var(--color-accent);*/
+    --tw-prose-invert-counters: var(--color-muted);
+    --tw-prose-invert-bullets: var(--color-muted);
+    --tw-prose-invert-links: var(--color-bright);
+}
+
+@utility markdown-compact {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+}
+
+@layer base {
+    .markdown {
+        @apply prose prose-brand max-w-none;
+
+        h1 {
+            @apply font-fancy font-light text-3xl tracking-tight;
+        }
+
+        :not(pre) > code,
+        pre {
+            @apply bg-codeblock;
+        }
+
+        :not(pre) > code {
+            padding: 0.1rem 0.25rem;
+        }
+
+        code::before,
+        code::after {
+            content: "";
+        }
+
+        p {
+            margin: 0.4em 0;
+        }
+
+        p + p {
+            margin: 0.8em 0;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        li {
+            margin: 0 !important;
+        }
+        li::marker {
+            transition: all 200ms ease;
+        }
+        li:hover::marker {
+            font-weight: 400;
+            color: var(--color-accent);
+        }
+
+        ol,
+        ul {
+            margin: 1em 0;
+        }
+
+        li > p,
+        li > ul,
+        li > ol {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        *:has(> .icon.remark-icon-directive) {
+            display: inline;
+        }
+
+        .icon.remark-icon-directive {
+            display: inline-block;
+            width: 1em;
+            height: 100%;
+            margin: 0 0.2em;
+        }
+
+        .icon.remark-icon-directive > img {
+            display: inline-block;
+            margin: 0;
+            position: relative;
+            bottom: 0.05em;
+            height: 100%;
+            width: 100%;
+        }
+
+        details > table {
+            margin-top: 0.5em;
+        }
+
+        table {
+            margin-bottom: 1em;
+        }
+
+        td {
+            padding: 0.55em;
+        }
+
+        a > br {
+            display: block;
+            margin-top: 0.5em;
+        }
+
+        a > img {
+            margin: 0;
+        }
+
+        a:hover {
+            @apply text-accent;
+        }
+    }
 }

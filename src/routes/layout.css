@@ -1,16 +1,17 @@
-@import 'tailwindcss';
-@import 'markdown.css';
-@import 'rainbow.css';
+@import "tailwindcss";
+@import "markdown.css";
+@import "rainbow.css";
 @plugin '@tailwindcss/typography';
 
 :root {
     --nav-height: 12;
     --nav-offset: 2;
 
-
     --nav-height-units: calc(var(--nav-height) * var(--spacing));
     --nav-offset-units: calc(var(--nav-offset) * var(--spacing));
-    --nav-total-h-units: calc(var(--nav-height-units) + calc(var(--nav-offset-units) * 2));
+    --nav-total-h-units: calc(
+        var(--nav-height-units) + calc(var(--nav-offset-units) * 2)
+    );
 
     /* Alias for --nav-total-h-units*/
     --header-spacing: var(--nav-total-h-units);
@@ -35,6 +36,7 @@
 
     /* Dimmed color for text*/
     --dimmed: var(--color-neutral-400);
+    --muted: var(--color-zinc-600);
 
     --inactive: var(--color-neutral-800);
     --primary: var(--color-rosewater);
@@ -46,17 +48,19 @@
     --mdcode: var(--color-crust);
 }
 
-
 @theme inline {
-
     --color-rosewater: #f5e0dc;
     --color-crust: #111;
 
-    --font-fancy: "Silkscreen";
-    --font-cursive: 'Dancing Script Variable', cursive;
+    --font-noto: 'Noto Sans Symbols 2';
+    --font-fira: 'Fira Code Variable', monospace;
 
-
-
+    --font-sans: 'Inter Variable', var(--font-noto);
+    --font-serif: serif, var(--font-noto);
+    --font-mono: var(--font-fira), var(--font-noto);
+    
+    --font-fancy: "Silkscreen", var(--font-noto);
+    --font-cursive: "Dancing Script Variable", cursive, var(--font-noto);
 
     /* ----- Theme Colors ----- */
 
@@ -68,6 +72,7 @@
     --color-fg: var(--fore);
     --color-sub: var(--sub);
     --color-dimmed: var(--dimmed);
+    --color-muted: var(--muted);
     --color-inactive: var(--inactive);
     --color-primary: var(--primary);
     --color-accent: var(--accent);
@@ -76,9 +81,8 @@
     --color-border: var(--border-color);
     --color-mdcode: var(--mdcode);
     --color-mdlink: var(--color-accent);
-    --text-tiny: 0.6rem
+    --text-tiny: 0.6rem;
 }
-
 
 @layer base {
     * {
@@ -94,106 +98,6 @@
     section {
         @apply bg-background;
     }
-
-    .markdown {
-        @apply prose prose-invert max-w-none;
-
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-bottom: 0.5em;
-
-        }
-
-        :not(pre)>code,
-        pre {
-            @apply bg-codeblock;
-        }
-
-        :not(pre)>code {
-            padding: 0.1rem 0.25rem;
-        }
-
-        code::before,
-        code::after {
-            content: "";
-        }
-
-        p {
-            margin: 0.4em 0;
-        }
-
-        p+p {
-            margin: 0.8em 0;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        li {
-            margin: 0 !important;
-        }
-
-        ol,
-        ul {
-            margin: 1em 0;
-        }
-
-        li>p,
-        li>ul,
-        li>ol {
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-        }
-
-        *:has(>.icon.remark-icon-directive) {
-            display: inline;
-        }
-
-        .icon.remark-icon-directive {
-            display: inline-block;
-            width: 1em;
-            height: 100%;
-            margin: 0 0.2em;
-        }
-
-
-        .icon.remark-icon-directive>img {
-            display: inline-block;
-            margin: 0;
-            position: relative;
-            bottom: 0.05em;
-            height: 100%;
-            width: 100%;
-        }
-
-        details>table {
-            margin-top: 0.5em;
-        }
-
-        table {
-            margin-bottom: 1em;
-        }
-
-        td {
-            padding: 0.55em;
-        }
-
-        a>br {
-            display: block;
-            margin-top: 0.5em;
-        }
-
-        a>img {
-            margin: 0;
-        }
-    }
-
 
     @media screen and (max-width: 870px) {
         :root {
@@ -226,7 +130,6 @@
             font-size: 0.75rem;
         }
     }
-
 }
 
 /*Forced code block styles*/
@@ -260,16 +163,25 @@
     /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
     /*disabled because it causes transparency issues on ios (specifically liquid glass)*/
 }
+@utility bg-stripes {
+    --t: rgba(15, 15, 15, 0.8);
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--t) 0px,
+        var(--t) 1px,
+        var(--color-background) 1px,
+        var(--color-background) 32px
+    );
+}
 
 @utility absolute-center {
-    @apply absolute top-1/2 left-1/2 -translate-1/2
+    @apply absolute top-1/2 left-1/2 -translate-1/2;
 }
 
 @utility btn {
     @apply active:bg-accent active:text-background cursor-pointer;
 }
 @layer utilities {
-
     /*
      * "Collapse" this element in mobile / vertical mode.
      */
@@ -278,7 +190,6 @@
             display: none;
         }
     }
-
 
     .font-fancy {
         letter-spacing: -1.5px;
@@ -295,7 +206,6 @@
     .glow-dark {
         filter: drop-shadow(0 0 48px #000);
     }
-
 
     .badge {
         @apply flex items-center justify-center font-mono text-sm bg-panel py-0.5;
@@ -314,6 +224,5 @@
         color: var(--color-rainbow);
         border-color: var(--color-rainbow);
         /* border-color: hsl(var(--rainbow-value), 100%, 5%); */
-
     }
 }

@@ -10,10 +10,7 @@
     const { key, meta, html: content } = data.project;
 </script>
 
-<section
-    class="min-h-screen flex py-16 px-4 md:p-8 lg:px-16"
-    id="view"
->
+<section class="min-h-screen flex py-16 px-4 md:p-8 lg:px-16" id="view">
     <SpotlightBackground class="p-px h-fit m-auto">
         <article class="lg:min-h-[80vh] grid relative bg-stripes">
             <h1
@@ -34,7 +31,7 @@
                 {/each}
             </ul>
             <div
-                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base"
+                class="markdown px-6 mt-2 tracking-tight text-dimmed text-base"
             >
                 {@html content}
             </div>
@@ -43,7 +40,7 @@
                 <ul class="px-4 flex gap-1">
                     {#each meta.skills as skill}
                         <li
-                            class="font-mono text-dimmed uppercase font-semibold text-xs border border-border py-1 px-2 bg-background"
+                            class="font-mono text-dimmed uppercase font-thin hover:text-accent text-xs border border-border py-1 px-2 bg-background"
                         >
                             {skill}
                         </li>
@@ -99,17 +96,6 @@
 </section>
 
 <style>
-    .bg-stripes {
-        --t: rgba(15, 15, 15, 0.8);
-        background-image: repeating-linear-gradient(
-            45deg,
-            var(--t) 0px,
-            var(--t) 1px,
-            var(--color-background) 1px,
-            var(--color-background) 20px
-        );
-    }
-
     article {
         grid-template-columns: 3fr 4fr;
         grid-template-rows: auto auto 1fr auto;
