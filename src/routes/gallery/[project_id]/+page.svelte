@@ -34,7 +34,7 @@
                 {/each}
             </ul>
             <div
-                class="prose prose-invert px-6 mt-2 tracking-tight text-dimmed text-base"
+                class="markdown px-6 mt-2 tracking-tight text-dimmed text-base"
             >
                 {@html content}
             </div>

@@ -64,7 +64,7 @@
             {/each}
         </ul>
         <div
-            class="prose prose-invert px-4 mt-2 tracking-tight text-sub h-32 overflow-hidden text-sm pointer-events-none"
+            class="markdown markdown-compact px-4 mt-2 tracking-tight text-sub h-32 overflow-hidden text-sm pointer-events-none"
         >
             {@html content}
         </div>
