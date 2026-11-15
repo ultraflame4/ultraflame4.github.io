@@ -99,17 +99,7 @@
 </section>
 
 <style>
-    .bg-stripes {
-        --t: rgba(15, 15, 15, 0.8);
-        background-image: repeating-linear-gradient(
-            45deg,
-            var(--t) 0px,
-            var(--t) 1px,
-            var(--color-background) 1px,
-            var(--color-background) 20px
-        );
-    }
-
+    
     article {
         grid-template-columns: 3fr 4fr;
         grid-template-rows: auto auto 1fr auto;

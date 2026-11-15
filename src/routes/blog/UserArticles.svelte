@@ -115,8 +115,8 @@
             <!-- WindowCardPanel class="overflow-auto" -->
             <article id="content" class="w-full">
                 <div class="nav-h-spacer mb-8"></div>
-                <SpotlightBackground class="h-fit w-full p-px rounded-2xl">
-                    <div class="p-6 flex flex-col bg-background rounded-2xl">
+                <SpotlightBackground class="h-fit w-full p-px">
+                    <div class="p-6 flex flex-col bg-stripes">
                         <UserArticleContent
                             articleBrief={selectedArticle}
                             shouldLoad
