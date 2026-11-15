@@ -31,7 +31,7 @@
                 {/each}
             </ul>
             <div
-                class="markdown px-6 mt-2 tracking-tight text-dimmed text-base"
+                class="markdown px-6 mt-2 tracking-tight  text-base"
             >
                 {@html content}
             </div>
