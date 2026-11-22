@@ -2,6 +2,7 @@
     import { devto, type devto as DevTo } from "$lib/external/dev_to";
     import Icon from "@iconify/svelte";
     import { cn } from "cn";
+    import { onMount } from "svelte";
 
     interface Props {
         articleBrief: DevTo.Article;
@@ -12,16 +13,17 @@
 
     let data: { article: DevTo.Article; active: boolean } | undefined =
         $state();
-    let loading = $state(false);
 
+    let load_status = $state(false as false | "loading" | "loaded");
+    
     async function loadArticle() {
-        if (loading) return;
-        loading = true;
+        if (load_status) return;
+        load_status = "loading";
         data = {
             article: await devto.articles.fetch_detailed(articleBrief.id),
             active: true,
         };
-        loading = false;
+        load_status = "loaded";
     }
 
     $effect(() => {
@@ -73,9 +75,9 @@
     <button
         class="w-fit underline text-dimmed font-fancy hover:text-accent active:text-accent cursor-pointer my-2"
         onclick={loadArticle}
-        disabled={loading}
+        disabled={load_status}
     >
-        {#if loading}
+        {#if load_status}
             Loading...
         {:else}
             Read More
