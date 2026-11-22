@@ -87,6 +87,7 @@ export namespace devto {
         }
 
         export function fetch_detailed(article_id: number): Promise<Article> {
+            console.log("Fetching article contents...")
             return api_fetch(`/articles/${article_id}`)
         }
     }

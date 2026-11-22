@@ -79,7 +79,7 @@
         <ul class="space-y-4">
             {#each posts as post, idx}
                 <li
-                    class="group data-active:text-bright font-fancy text-basetext-right"
+                    class="group data-active:text-bright font-fancy text-lg text-right"
                     data-active={idx === selectedArticleIndex || undefined}
                 >
                     <a
@@ -88,7 +88,7 @@
                         onclick={() => (sidebarOpen = false)}
                     >
                         <h3
-                            class="my-0 group-data-active:opacity-100 opacity-60 lg:group-data-active:scale-120 origin-right"
+                            class="my-0 group-data-active:opacity-100 opacity-60 lg:scale-80 lg:group-data-active:scale-100 origin-bottom-right"
                         >
                             {post.title}
                         </h3>
