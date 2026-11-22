@@ -2,7 +2,7 @@
     import { devto, type devto as DevTo } from "$lib/external/dev_to";
     import Icon from "@iconify/svelte";
     import { cn } from "cn";
-    import { onMount } from "svelte";
+    import { onMount, untrack } from "svelte";
 
     interface Props {
         articleBrief: DevTo.Article;
@@ -15,21 +15,25 @@
         $state();
 
     let load_status = $state(false as false | "loading" | "loaded");
-    
-    async function loadArticle() {
+
+    async function loadArticle(brief: devto.Article) {
         if (load_status) return;
         load_status = "loading";
         data = {
-            article: await devto.articles.fetch_detailed(articleBrief.id),
+            article: await devto.articles.fetch_detailed(brief.id),
             active: true,
         };
         load_status = "loaded";
     }
 
     $effect(() => {
-        if (shouldLoad) {
-            loadArticle();
-        }
+        let brief = articleBrief;
+        untrack(() => {
+            load_status = false;
+            if (shouldLoad) {
+                loadArticle(brief);
+            }
+        });
     });
 </script>
 
@@ -75,9 +79,9 @@
     <button
         class="w-fit underline text-dimmed font-fancy hover:text-accent active:text-accent cursor-pointer my-2"
         onclick={loadArticle}
-        disabled={load_status}
+        disabled={!load_status}
     >
-        {#if load_status}
+        {#if !load_status}
             Loading...
         {:else}
             Read More
